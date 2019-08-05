@@ -1,0 +1,2164 @@
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<!--[if lte IE 9]><html class="ie ie9 lte9" lang="en"><![endif]-->
+<!--[if !IE]><!--><html lang="en"><!--<![endif]-->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head dir="ltr">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+  
+<title data-base-title="
+ Unsupervised Learning | DAFT Courseware | Ironhack Student Platform">
+  
+ Introduction to Unsupervised Learning | Unsupervised Learning | DAFT Courseware | Ironhack Student Platform
+</title>
+
+
+      <script type="text/javascript">
+        /* immediately break out of an iframe if coming from the marketing website */
+        (function(window) {
+          if (window.location !== window.top.location) {
+            window.top.location = window.location;
+          }
+        })(this);
+      </script>
+
+  
+
+  <script type="text/javascript" src="../../../../../static/js/i18n/en/djangojs.e37eef1ffc63.js"></script>
+  <script type="text/javascript" src="../../../../../static/js/ie11_find_array.bd1c6dc7a133.js"></script>
+
+  <link rel="icon" type="image/x-icon" href="../../../../../static/ih-lms-theme/images/favicon.0de58aa5bfca.ico" />
+
+  
+  
+
+    <link href="../../../../../static/ih-lms-theme/css/lms-style-vendor.68e48093f5dd.css" rel="stylesheet" type="text/css" />
+
+
+
+      <link rel="stylesheet" href="../../../../../static/ih-lms-theme/css/bootstrap/lms-main.c54b2923d249.css" type="text/css" media="all" />
+
+    
+    <script type="text/javascript" src="../../../../../static/js/lms-main_vendor.a04b73033169.js" charset="utf-8"></script>
+
+
+    
+    <script type="text/javascript" src="../../../../../static/js/lms-application.e7bd4b65d083.js" charset="utf-8"></script>
+
+
+
+  
+    
+    
+    <script type="text/javascript" src="../../../../../static/bundles/commons.d60dcd98c024881d011e.c835e91d09f6.js" ></script>
+
+
+
+  <script>
+    window.baseUrl = "../../../../../static/index.html";
+    (function (require) {
+      require.config({
+          baseUrl: window.baseUrl
+      });
+    }).call(this, require || RequireJS.require);
+  </script>
+  <script type="text/javascript" src="../../../../../static/lms/js/require-config.8e00198660b0.js"></script>
+  
+    <script type="text/javascript">
+        (function (require) {
+          require.config({
+              paths: {
+                'js/courseware/courseware_factory': 'js/courseware/courseware_factory.1504fc10caef',
+'draggabilly': 'js/vendor/draggabilly.26caba6f7187',
+'js/courseware/toggle_element_visibility': 'js/courseware/toggle_element_visibility.d5f10bc65ed0',
+'hls': 'common/js/vendor/hls.b10b9ef4015b',
+'js/courseware/link_clicked_events': 'js/courseware/link_clicked_events',
+'moment': 'common/js/vendor/moment-with-locales.084396f4103c',
+'moment-timezone': 'common/js/vendor/moment-timezone-with-data.60142e6c4416',
+'js/student_account/logistration_factory': 'js/student_account/logistration_factory.d7765e4e6715',
+'js/groups/views/cohorts_dashboard_factory': 'js/groups/views/cohorts_dashboard_factory.7f46663f97b4',
+'js/dateutil_factory': 'js/dateutil_factory.841c29e02056',
+'course_bookmarks/js/views/bookmark_button': 'course_bookmarks/js/views/bookmark_button.d4cfaf3361fa',
+'js/courseware/accordion_events': 'js/courseware/accordion_events.6064c7809de5',
+'js/views/message_banner': 'js/views/message_banner.af013d0ecbd4',
+'js/groups/discussions_management/discussions_dashboard_factory': 'js/discussions_management/views/discussions_dashboard_factory.2e10d9097343',
+'js/courseware/course_info_events': 'js/courseware/course_info_events.2fc35b57627f'
+            }
+          });
+        }).call(this, require || RequireJS.require);
+    </script>
+  
+
+  
+
+  
+
+    <link href="../../../../../static/ih-lms-theme/css/lms-style-course-vendor.691e50c64ad7.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+
+    <link href="../../../../../static/ih-lms-theme/css/lms-course.1d0edf3ec473.css" rel="stylesheet" type="text/css" />
+
+
+
+
+<script type="text/javascript" src="../../../../../static/js/jquery.autocomplete.3bd10d7510d2.js"></script>
+<script type="text/javascript" src="../../../../../static/js/src/tooltip_manager.da362490e199.js"></script>
+
+<link href="../../../../../static/css/vendor/jquery.autocomplete.896181d3ec33.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="../../../../../static/bundles/XModuleShim.68b7a679342e3bdb698f.c506d949a49b.js" ></script>
+<script type="text/javascript" src="../../../../../static/bundles/HtmlModule.174055b73c05dccfbd8b.823874f69fef.js" ></script>
+<script type="text/javascript" src="../../../../../static/bundles/VerticalStudentView.6f1068648eb9e8d18da9.0a2f678d6564.js" ></script>
+<script type="text/javascript" src="../../../../../static/bundles/SequenceModule.251564cf8963e6f00227.ef752443db97.js" ></script>
+
+  
+
+  
+
+
+  
+
+
+<script type="application/json" id="user-metadata">
+    {"username": "NoahB", "enrollment_mode": "audit", "upgrade_link": null, "user_id": 489, "course_start": "2019-06-10T00:00:00+00:00", "upgrade_deadline": null, "course_key_fields": {"org": "IRONHACK", "run": "201906_MIA", "course": "DAFT"}, "course_end": "2019-08-19T00:00:00+00:00", "pacing_type": "instructor_paced", "upgrade_price": "Free", "course_id": "course-v1:IRONHACK+DAFT+201906_MIA", "has_staff_access": false, "forum_roles": [["Student"]], "enrollment_time": "2019-06-11T20:48:51.323840+00:00", "schedule_start": null, "email": "noahbeckerman@gmail.com"}
+</script>
+
+  
+
+  
+
+
+  
+
+
+<!-- dummy Segment -->
+<script type="text/javascript">
+  var analytics = {
+    track: function() { return; },
+    trackLink: function() { return; },
+    pageview: function() { return; },
+    page: function() { return; }
+  };
+</script>
+<!-- end dummy Segment -->
+
+
+  <meta name="path_prefix" content="">
+  
+  
+
+  <meta name="openedx-release-line" content="hawthorn" />
+
+
+
+
+
+
+  <!-- Hotjar Tracking Code for https://ironhack.school -->
+  <script type="text/javascript">
+      (function(h,o,t,j,a,r){
+          h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+          h._hjSettings={hjid:1193918,hjsv:6};
+          a=o.getElementsByTagName('head')[0];
+          r=o.createElement('script');r.async=1;
+          r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+          a.appendChild(r);
+      })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+  </script>
+
+  <script type="text/javascript">
+    function setCookieHideMobileWarning(expiration_hours) {
+      var date = new Date();
+      date.setTime(date.getTime()+(expiration_hours*60*60*1000));
+      var expires = "; expires=" + date.toGMTString();
+      document.cookie = "ihHideMobileWarning=true" + expires;
+    }
+    
+    function isHideMobileWarningCookieSet() {
+      return document.cookie.replace(/(?:(?:^|.*;\s*)ihHideMobileWarning\s*\=\s*([^;]*).*$)|^.*$/, "$1") !== "true"; 
+    }
+
+    function manageMobileWarning(mobile_warning_container) {
+      if (isHideMobileWarningCookieSet()) {
+        var mobile_warning_dismiss = document.getElementsByClassName('ih-js-hide-mobile-warning', mobile_warning_container)[0];
+        mobile_warning_dismiss.addEventListener('click', function() {
+          var expiration_hours = 48;
+          setCookieHideMobileWarning(expiration_hours);
+          mobile_warning_container.classList.add('hidden');
+        });
+      } else {
+        mobile_warning_container.classList.add('hidden');
+      }
+    }
+
+    var checkMobileWarningLayer = function () {
+      var mobile_warning_container = document.getElementsByClassName('ih-mobile-warning-container')[0];
+      (document.body && mobile_warning_container)? manageMobileWarning(mobile_warning_container) :  window.requestAnimationFrame(checkMobileWarningLayer);
+    }
+
+    window.requestAnimationFrame(checkMobileWarningLayer);
+  </script>
+
+</head>
+
+<body class="ltr view-in-course view-courseware courseware  lang_en">
+
+<div class="ih-mobile-warning-container">
+  <img class="logo" src="../../../../../static/ih-lms-theme/images/logo.6230fc40336b.svg" />
+  <div class="ih-mobile-warning-title">
+    The Learning Platform is best experienced on Desktop devices
+  </div>
+  <div class="ih-mobile-warning-description">
+    We recommend using a Desktop device to get the full experience of the Learning Platform.
+  </div>
+  <div class="ih-mobile-warning-dismiss ih-js-hide-mobile-warning">
+   Continue anyway
+  </div>
+</div>
+
+
+<div id="page-prompt"></div>
+  <div class="window-wrap" dir="ltr">
+    <a class="nav-skip sr-only sr-only-focusable" href="#main">Skip to main content</a>
+
+    
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+<header class="global-header slim ih-global-header">
+    <div class="ih-header-wrapper">
+        <div class="main-header ih-main-header">
+            
+
+
+
+
+
+<h1 class="header-logo">
+  <a href="../../../../../dashboard.html">
+    
+    <img  class="logo" src="../../../../../static/ih-lms-theme/images/logo.6230fc40336b.svg" alt="Ironhack Student Platform Home Page"/>
+    
+  </a>
+    <div class="course-header">
+          
+      
+      <span class="course-name">Data Analytics</span>
+    </div>
+</h1>
+
+            <div class="hamburger-menu" role="button" aria-label=Options Menu aria-expanded="false" aria-controls="mobile-menu" tabindex="0">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+                
+
+
+
+
+
+
+
+
+
+
+<div class="nav-links">
+  <div class="main">
+      
+  </div>
+  <div class="secondary ih-secondary">
+    
+
+
+
+
+
+
+  
+
+<div class="nav-item hidden-mobile toggle-user-dropdown ih-username-container">
+    <div class="menu-title">
+        
+        <span class="sr-only">Dashboard for:</span>
+        <span class="username ih-username">Ironhack (NoahB)</span>
+    </div>
+</div>
+<div class="nav-item hidden-mobile nav-item-dropdown ih-dropdown-wrapper" tabindex="-1">
+    <div class="toggle-user-dropdown ih-toggle-user-dropdown" role="button" aria-label=Options Menu aria-expanded="false" tabindex="0" aria-controls="user-menu">
+        <span class="fa fa-caret-down" aria-hidden="true"></span>
+    </div>
+    <div class="dropdown-user-menu hidden ih-dropdown-user-menu" aria-label=More Options role="menu" id="user-menu" tabindex="-1">
+        <div class="mobile-nav-item dropdown-item dropdown-nav-item ih-dropdown-nav-item"><a href="../../../../../dashboard.html" role="menuitem">My courses</a></div>
+            
+        <div class="mobile-nav-item dropdown-item dropdown-nav-item ih-dropdown-nav-item"><a href="../../../../../account/settings.html" role="menuitem">Account</a></div>
+        <div class="mobile-nav-item dropdown-item dropdown-nav-item ih-dropdown-nav-item"><a href="../../../../../index.html" role="menuitem">Sign Out</a></div>
+    </div>
+</div>
+  </div>
+</div>
+        </div>
+        <div class="mobile-menu hidden" aria-label=More Options role="menu" id="mobile-menu"></div>
+    </div>    
+</header>
+
+<!--[if lte IE 9]>
+<div class="ie-banner" aria-hidden="true"><strong>Warning:</strong> Your browser is not fully supported. We strongly recommend using <a href="https://www.google.com/chrome" target="_blank">Chrome</a> or <a href="http://www.mozilla.org/firefox" target="_blank">Firefox</a>.</div>
+<![endif]-->
+
+
+
+
+            
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+    
+    
+
+      <div 
+          class="ih-content"
+      >
+        <div class="marketing-hero"></div>
+
+        <div class="content-wrapper main-container ih-main-container" id="content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/template" id="image-modal-tpl">
+    <div class="wrapper-modal wrapper-modal-image">
+  <section class="image-link">
+    <%= smallHTML%>
+    <a href="#" class="modal-ui-icon action-fullscreen" role="button">
+      <span class="label">
+        <span class="icon fa fa-arrows-alt fa-large" aria-hidden="true"></span> <%- gettext("Fullscreen") %>
+      </span>
+    </a>
+  </section>
+
+  <section class="image-modal">
+    <section class="image-content">
+      <div class="image-wrapper">
+        <img alt="<%= largeALT %>, <%- gettext('Large') %>" src="<%= largeSRC %>" />
+      </div>
+
+      <a href="#" class="modal-ui-icon action-close" role="button">
+        <span class="label">
+          <span class="icon fa fa-remove fa-large" aria-hidden="true"></span> <%- gettext("Close") %>
+        </span>
+      </a>
+
+      <ul class="image-controls">
+        <li class="image-control">
+          <a href="#" class="modal-ui-icon action-zoom-in" role="button">
+            <span class="label">
+              <span class="icon fa fa fa-search-plus fa-large" aria-hidden="true"></span> <%- gettext("Zoom In") %>
+            </span>
+          </a>
+        </li>
+
+        <li class="image-control">
+          <a href="#" class="modal-ui-icon action-zoom-out is-disabled" aria-disabled="true" role="button">
+            <span class="label">
+              <span class="icon fa fa fa-search-minus fa-large" aria-hidden="true"></span> <%- gettext("Zoom Out") %>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </section>
+</div>
+
+</script>
+
+
+
+
+
+
+
+
+<div class="message-banner" aria-live="polite"></div>
+  
+
+
+
+
+
+
+
+
+    
+        <nav class="navbar course-tabs pb-0 navbar-expand ih-navbar-container" aria-label="Course">
+            <ul class="navbar-nav mr-auto ih-course-tabs">
+                    
+                    
+                        <li class="nav-item ih-nav-item active">
+                            <a href="../../../course/index.html" class="nav-link">
+                                Course
+                                    <span class="sr-only">, current location</span>
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="nav-item ih-nav-item ">
+                            <a href="../../../discussion/forum/index.html" class="nav-link">
+                                Discussion
+                            </a>
+                        </li>
+                    
+                    
+            </ul>
+        </nav>
+
+
+<div class="container ih-course-container"
+    lang="en"
+  >
+  <div class="course-wrapper ih-course-wrapper" role="presentation">
+
+    <section class="course-content" id="course-content">
+        <header class="page-header has-secondary">
+            <div class="page-header-main">
+                <nav aria-label="Course" class="sr-is-focusable" tabindex="-1">
+                    <div class="has-breadcrumbs">
+                        <div class="breadcrumbs">
+                                <span class="nav-item nav-item-course">
+                                    <a href="../../../course/index.html">Course</a>
+                                </span>
+                                <span class="icon fa fa-angle-right" aria-hidden="true"></span>
+                                <span class="nav-item nav-item-chapter" data-course-position="3" data-chapter-position="3">
+                                    <a href="../../../course/index.html#block-v1:IRONHACK+DAFT+201906_MIA+type@chapter+block@c36289e68f4e4029a57c62cfbc5b8ec5">Module 3</a>
+                                </span>
+                                <span class="icon fa fa-angle-right" aria-hidden="true"></span>
+                                <span class="nav-item nav-item-section">
+                                    <a href="../../../course/index.html#block-v1:IRONHACK+DAFT+201906_MIA+type@sequential+block@cb1340a5a8e44a8bb3891cc9907fa742">Unsupervised Learning</a>
+                                </span>
+                                <span class="icon fa fa-angle-right" aria-hidden="true"></span>
+                            <span class="nav-item nav-item-sequence">Introduction to Unsupervised Learning</span>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <main id="main" tabindex="-1" aria-label="Content">
+
+              <div class="xblock xblock-student_view xblock-student_view-sequential xmodule_display xmodule_SequenceModule" data-runtime-class="LmsRuntime" data-init="XBlockToXModuleShim" data-block-type="sequential" data-request-token="7af0eda2939911e99a866e487447f8c8" data-runtime-version="1" data-usage-id="block-v1:IRONHACK+DAFT+201906_MIA+type@sequential+block@cb1340a5a8e44a8bb3891cc9907fa742" data-type="Sequence" data-course-id="course-v1:IRONHACK+DAFT+201906_MIA">
+  <script type="json/xblock-args" class="xblock-json-init-args">
+    {"xmodule-type": "Sequence"}
+  </script>
+  
+
+
+<div id="sequence_cb1340a5a8e44a8bb3891cc9907fa742" class="sequence" data-id="block-v1:IRONHACK+DAFT+201906_MIA+type@sequential+block@cb1340a5a8e44a8bb3891cc9907fa742" data-position="1" data-ajax-url="/courses/course-v1:IRONHACK+DAFT+201906_MIA/xblock/block-v1:IRONHACK+DAFT+201906_MIA+type@sequential+block@cb1340a5a8e44a8bb3891cc9907fa742/handler/xmodule_handler" data-next-url="/courses/course-v1:IRONHACK+DAFT+201906_MIA/courseware/c36289e68f4e4029a57c62cfbc5b8ec5/c0e2dd5ce641411faffe195a7fc7f894/?child=first" data-prev-url="/courses/course-v1:IRONHACK+DAFT+201906_MIA/courseware/c36289e68f4e4029a57c62cfbc5b8ec5/bd9567dc82ba40d1948c334a9a7e2c71/?child=last">
+
+  <div class="sequence-nav ih-js-fire-highlighting-controls">
+    <button class="sequence-nav-button button-previous">
+      <span class="icon fa fa-chevron-prev" aria-hidden="true"></span>
+      <span class="sequence-nav-button-label">Previous</span>
+    </button>
+    <button class="sequence-nav-button button-next">
+      <span class="sequence-nav-button-label">Next</span>
+      <span class="icon fa fa-chevron-next" aria-hidden="true"></span>
+    </button>
+    <nav class="sequence-list-wrapper" aria-label="Sequence">
+      <ol id="sequence-list" role="tablist">
+        <li role="presentation">
+          <button class="seq_other inactive nav-item tab"
+            role="tab"
+            tabindex="-1"
+            aria-selected="false"
+            aria-expanded="false"
+            aria-controls="seq_content"
+            data-index="0"
+            data-id="block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@cbf367989e114308bbac15b04ea538e6"
+            data-element="1"
+            data-page-title="Introduction to Unsupervised Learning"
+            data-path="Module 3 &gt; Unsupervised Learning &gt; Introduction to Unsupervised Learning"
+            data-graded="False"
+            id="tab_0"
+            >
+            <span class="icon fa seq_other" aria-hidden="true"></span>
+              <span 
+                class="fa fa-check-circle check-circle is-hidden" 
+                style="color:green"
+                aria-hidden="true"
+              ></span>
+            <span class="fa fa-fw fa-bookmark bookmark-icon is-hidden" aria-hidden="true"></span>
+            <div class="sequence-tooltip sr"><span class="sr">other&nbsp;</span>Introduction to Unsupervised Learning<span class="sr bookmark-icon-sr">&nbsp;</span></div>
+          </button>
+        </li>
+        <li role="presentation">
+          <button class="seq_other inactive nav-item tab"
+            role="tab"
+            tabindex="-1"
+            aria-selected="false"
+            aria-expanded="false"
+            aria-controls="seq_content"
+            data-index="1"
+            data-id="block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@06bf72539bee4719980945ab507be0f2"
+            data-element="2"
+            data-page-title="Unsupervised Learning with Scikit-Learn"
+            data-path="Module 3 &gt; Unsupervised Learning &gt; Unsupervised Learning with Scikit-Learn"
+            data-graded="False"
+            id="tab_1"
+            >
+            <span class="icon fa seq_other" aria-hidden="true"></span>
+              <span 
+                class="fa fa-check-circle check-circle is-hidden" 
+                style="color:green"
+                aria-hidden="true"
+              ></span>
+            <span class="fa fa-fw fa-bookmark bookmark-icon is-hidden" aria-hidden="true"></span>
+            <div class="sequence-tooltip sr"><span class="sr">other&nbsp;</span>Unsupervised Learning with Scikit-Learn<span class="sr bookmark-icon-sr">&nbsp;</span></div>
+          </button>
+        </li>
+        <li role="presentation">
+          <button class="seq_other inactive nav-item tab"
+            role="tab"
+            tabindex="-1"
+            aria-selected="false"
+            aria-expanded="false"
+            aria-controls="seq_content"
+            data-index="2"
+            data-id="block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@5d198472e7694912a0c8920aaa42df80"
+            data-element="3"
+            data-page-title="Unsupervised Learning Guided Lesson"
+            data-path="Module 3 &gt; Unsupervised Learning &gt; Unsupervised Learning Guided Lesson"
+            data-graded="False"
+            id="tab_2"
+            >
+            <span class="icon fa seq_other" aria-hidden="true"></span>
+              <span 
+                class="fa fa-check-circle check-circle is-hidden" 
+                style="color:green"
+                aria-hidden="true"
+              ></span>
+            <span class="fa fa-fw fa-bookmark bookmark-icon is-hidden" aria-hidden="true"></span>
+            <div class="sequence-tooltip sr"><span class="sr">other&nbsp;</span>Unsupervised Learning Guided Lesson<span class="sr bookmark-icon-sr">&nbsp;</span></div>
+          </button>
+        </li>
+        <li role="presentation">
+          <button class="seq_other inactive nav-item tab"
+            role="tab"
+            tabindex="-1"
+            aria-selected="false"
+            aria-expanded="false"
+            aria-controls="seq_content"
+            data-index="3"
+            data-id="block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@5a82318287874b97b6f46f9c7fca5164"
+            data-element="4"
+            data-page-title="More Unsupervised Learning Models"
+            data-path="Module 3 &gt; Unsupervised Learning &gt; More Unsupervised Learning Models"
+            data-graded="False"
+            id="tab_3"
+            >
+            <span class="icon fa seq_other" aria-hidden="true"></span>
+              <span 
+                class="fa fa-check-circle check-circle is-hidden" 
+                style="color:green"
+                aria-hidden="true"
+              ></span>
+            <span class="fa fa-fw fa-bookmark bookmark-icon is-hidden" aria-hidden="true"></span>
+            <div class="sequence-tooltip sr"><span class="sr">other&nbsp;</span>More Unsupervised Learning Models<span class="sr bookmark-icon-sr">&nbsp;</span></div>
+          </button>
+        </li>
+        <li role="presentation">
+          <button class="seq_other inactive nav-item tab"
+            role="tab"
+            tabindex="-1"
+            aria-selected="false"
+            aria-expanded="false"
+            aria-controls="seq_content"
+            data-index="4"
+            data-id="block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@55df585fc6b04f4490e380dfcf4ea1a5"
+            data-element="5"
+            data-page-title="Unsupervised Learning Model Evaluation"
+            data-path="Module 3 &gt; Unsupervised Learning &gt; Unsupervised Learning Model Evaluation"
+            data-graded="False"
+            id="tab_4"
+            >
+            <span class="icon fa seq_other" aria-hidden="true"></span>
+              <span 
+                class="fa fa-check-circle check-circle is-hidden" 
+                style="color:green"
+                aria-hidden="true"
+              ></span>
+            <span class="fa fa-fw fa-bookmark bookmark-icon is-hidden" aria-hidden="true"></span>
+            <div class="sequence-tooltip sr"><span class="sr">other&nbsp;</span>Unsupervised Learning Model Evaluation<span class="sr bookmark-icon-sr">&nbsp;</span></div>
+          </button>
+        </li>
+      </ol>
+    </nav>
+  </div>
+  <div class="sr-is-focusable" tabindex="-1"></div>
+
+  <div id="seq_contents_0"
+    aria-labelledby="tab_0"
+    aria-hidden="true"
+    class="seq_contents tex2jax_ignore asciimath2jax_ignore">
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-vertical&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;VerticalStudentView&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34; data-request-token=&#34;7af0eda2939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@cbf367989e114308bbac15b04ea538e6&#34; data-block-type=&#34;vertical&#34;&gt;
+  
+
+  &lt;h2 class=&#34;hd hd-2 unit-title&#34;&gt;Introduction to Unsupervised Learning&lt;/h2&gt;
+
+    &lt;div class=&#34;ih-bookmark-button-wrapper&#34;&gt;
+    	
+
+
+
+&lt;div class=&#34;bookmark-button-wrapper&#34;&gt;
+  &lt;button class=&#34;btn btn-link bookmark-button &#34;
+    aria-pressed=&#34;false&#34;
+    data-bookmark-id=&#34;NoahB,block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@cbf367989e114308bbac15b04ea538e6&#34;
+    data-bookmarks-api-url=&#34;/api/bookmarks/v1/bookmarks/&#34;&gt;
+     &lt;span class=&#34;bookmark-text&#34;&gt;Bookmark this page&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+
+    &lt;/div&gt;	
+
+&lt;div class=&#34;vert-mod&#34;&gt;
+  &lt;div class=&#34;vert vert-0&#34; data-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@45a824c2c392450bab34cf561a5c9644&#34;&gt;
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;7af0eda2939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@45a824c2c392450bab34cf561a5c9644&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  &lt;h2&gt;
+    &lt;a id=&#34;user-content-lesson-goals&#34; class=&#34;anchor&#34; href=&#34;#lesson-goals&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Lesson Goals
+&lt;/h2&gt;
+&lt;p&gt;In this lesson you will learn:&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;How to solve Machine Learning problems in the absence of supervision.&lt;/li&gt;
+    &lt;li&gt;What problems are suitable for a solution based on an Unsupervised Machine Learning approach.&lt;/li&gt;
+    &lt;li&gt;What is the process you have to follow to solve a problem using Unsupervised Machine Learning.&lt;/li&gt;
+    &lt;li&gt;How to evaluate and compare solutions based on Unsupervised Machine Learning.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-introduction&#34; class=&#34;anchor&#34; href=&#34;#introduction&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Introduction
+&lt;/h2&gt;
+&lt;p&gt;Imagine a large retailer of home furniture and apparel, selling to a wide variety of target customers, including college students, retired people, young professionals, professionals working from home, first time mothers, large families with young kids, households of single people living alone, etc. The products (like a blanket or a lamp), services (like transportation of goods sold or credit to finance purchases), and marketing (like furniture catalog and special offers) need to be targeted to a specific customer group. What works well for one group may not necessarily work well for other groups. How would you form the groups? In contrast to Supervised Machine Learning, in this problem there is no teaching signal or supervisor to provide pre-labeled instances to guide the process. This is the scenario of 
+    &lt;strong&gt;Unsupervised Machine Learning&lt;/strong&gt;.
+&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-the-scenario-of-unsupervised-machine-learning&#34; class=&#34;anchor&#34; href=&#34;#the-scenario-of-unsupervised-machine-learning&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;The Scenario of Unsupervised Machine Learning
+&lt;/h2&gt;
+&lt;p&gt;Given a set of vectors, Unsupervised Machine Learning (also known as clustering) distributes the vectors into a set of clusters, so that similar vectors are in the same cluster, and similar clusters are closer together than dissimilar clusters. The preceding statement assumes the existence of a similarity measure, and the existence of a metric (or distance function) so that we can measure how far apart two vectors are in vector space. Consequently, for every problem where we want to apply Unsupervised Machine Learning, we will have to define:&lt;/p&gt;
+&lt;ol&gt;
+    &lt;li&gt;The vector representation (in other words, to define the 
+        &lt;em&gt;instance space&lt;/em&gt;).
+    &lt;/li&gt;
+    &lt;li&gt;The metric (distance function) in the instance space.&lt;/li&gt;
+    &lt;li&gt;The similarity measure.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;After the clusters have been formed, the vector at the center of the cluster is considered the 
+    &lt;em&gt;prototype&lt;/em&gt; or
+    &lt;em&gt;representative&lt;/em&gt; of the cluster.
+&lt;/p&gt;
+&lt;p&gt;Now, you may be wondering what these vectors represent, read on for some examples.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-problems-suitable-for-unsupervised-learning&#34; class=&#34;anchor&#34; href=&#34;#problems-suitable-for-unsupervised-learning&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Problems Suitable for Unsupervised Learning
+&lt;/h2&gt;
+&lt;p&gt;We can perform clustering on any set of vectors complying with the scenario presented on the previous section. Some examples of problem domains where we can apply Unsupervised Machine Learning to perform clustering are:&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;
+        &lt;p&gt;Customer segmentation in sectors like retail. In our example of the retailer of home furniture and apparel, every customer would be represented by a vector formed by the values of attributes descriptive of the customer like age, gender, zip code, average purchase amount, average amount of purchases per month, product categories of past purchases, etc. Applying an Unsupervised Machine Learning algorithm to this set of vectors would distribute customers into disjoint segments so that each segment can be given by the retailer a separate treatment. This is usually smarter than giving everyone the same treatment, because what works best for one segment often does not necessarily work best for others.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p&gt;Fraudulent motor insurance claims. In this problem domain, every claim would be represented by a vector of attributes like policy category, zip code of insured owner, vehicle type, vehicle age, accident date, accident time, place of accident, accident type, driver age, driver zip code, effective date of policy, expiration date of policy, policy fee, policy penalty amount, date of last payment, type on injuries, type of damages, estimate for repairs, etc. The application of an Unsupervised Machine Learning algorithm would distribute all claims into clusters, that would require further analyst inspection. Once the analyst finds fraudulent claims in one cluster, he knows that with high probability the rest of the fraudulent claims will be located in the same and nearest clusters. Since it is impossible to check all active claims, this procedure is used to focus the limited time of analysts on the most suspicious claims, as opposed to performing an exhaustive review of all active claims.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p&gt;Response to medical treatments. Different patients may respond differently to the same medication or medical treatment. For instance, a medication may produce adverse side effects on some patients, but not in others; or some patients may react to lower dosages than others. In this problem domain, every patient and treatment are represented in a single vector, with attributes like age, gender, weight, height, dosage, intakes per day, start date, end date, known illnesses, symptoms, side effects, other medications, etc. An Unsupervised Machine Learning algorithm can distribute these vectors so that cases with similar responses are grouped in the same cluster. This allows the development of epidemiological studies, and the development of targeted therapies for specific clusters.&lt;/p&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-examples-of-unsupervised-learning&#34; class=&#34;anchor&#34; href=&#34;#examples-of-unsupervised-learning&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Examples of Unsupervised Learning
+&lt;/h2&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-k-means-clustering&#34; class=&#34;anchor&#34; href=&#34;#k-means-clustering&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;K-Means Clustering
+&lt;/h3&gt;
+&lt;p&gt;K-means is one of the oldest and most popular clustering techniques. The main idea behind k-means clustering is that we choose how many clusters we would like to create (typically we call that number k). We then select random starting points for those cluster centroids. We compute the distance between each observation and the clusters. We reassign a cluster to each observation and then recompute the centroids. We keep doing so until the labels stay constant and we no longer need to reassign.&lt;/p&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-hierarchical-clustering&#34; class=&#34;anchor&#34; href=&#34;#hierarchical-clustering&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Hierarchical Clustering
+&lt;/h3&gt;
+&lt;p&gt;Hierarchical clustering is a clustering technique where we create a hierarchy of clusters. The advantage over k-means is that we do not need to specify the number of clusters. We can observe relationships between observations without a predetermined number of clusters. We can also generate a 
+    &lt;strong&gt;dendogram&lt;/strong&gt; which is a visualization that displays the relationship between observations in the data.
+&lt;/p&gt;
+&lt;p&gt;There are two types of hierarchical clustering&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;
+        &lt;p&gt;Agglomerative - This is a bottom up approach. We start off with a cluster for each observation and then combine similar clusters until we are left with only one large cluster&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p&gt;Divisive - This is a top down approach. We start with one large cluster and keep dividing until we are left with clusters&lt;/p&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Here is an example of a dendogram:&lt;/p&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/08d2b75ed3b434e3e145c07513509238b115aa22/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f63656e7375732d64656e646f6772616d2e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/08d2b75ed3b434e3e145c07513509238b115aa22/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f63656e7375732d64656e646f6772616d2e706e67&#34; alt=&#34;census dendogram&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/census-dendogram.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-outlier-detection&#34; class=&#34;anchor&#34; href=&#34;#outlier-detection&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Outlier Detection
+&lt;/h3&gt;
+&lt;p&gt;Outlier detection is a broad name for various techniques that can be used to identify rare observations. We may want to identify anomalous observations in our data even when there is no clear way to determine if an observation is an anomaly. This can be useful in many applications. For example, in medical applications where we would like to identify anomalous patients in a drug trial.&lt;/p&gt;
+&lt;p&gt;There are many ways to detect anomalies when they aren&#39;t labeled. A common way is to use clustering.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-quality-metrics-for-unsupervised-learning&#34; class=&#34;anchor&#34; href=&#34;#quality-metrics-for-unsupervised-learning&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Quality Metrics for Unsupervised Learning
+&lt;/h2&gt;
+&lt;p&gt;When performing unsupervised learning, there is no real way to determine if our modeling produced an optimal result. This is because there are no labels that we can use for comparison.&lt;/p&gt;
+&lt;p&gt;Ideally the most similar observations should fall in the same cluster, and nearby clusters should contain samples more similar than the distant clusters. Different Unsupervised Machine Learning algorithms will usually produce different clustering, and the same Unsupervised Machine Learning algorithm will produce different clustering depending on:&lt;/p&gt;
+&lt;ol&gt;
+    &lt;li&gt;The set of vectors. More concretely, depending on the number of vectors, how much qualitatively different they are, and whether or not all cases are represented (present) in the set of vectors.&lt;/li&gt;
+    &lt;li&gt;The representation formalism, in other words, how the vectors a represented (the attributes chosen as vector entries).&lt;/li&gt;
+    &lt;li&gt;The distance function used in instance space.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Summarizing, we can obtain different clustering using different unsupervised machine Learning settings, so we are going to need a quality metric to determine which alternative possible clustering is best.&lt;/p&gt;
+&lt;p&gt;The Silhouette Coefficient is an appropriate metric. It was introduced in 1987 by Peter Rousseeuw. This metric measures the similarity of an observation to its own cluster compared to other clusters. The more cohesive a cluster, the larger the silhouette coefficient.&lt;/p&gt;
+&lt;p&gt;The Silhouette Coefficient of a vector v is defined as:&lt;/p&gt;
+&lt;pre&gt;
+    &lt;code&gt;s(v)= (b(v)-a(v)) / max(a(v), b(v)) 
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Where:&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;a(v) is the mean distance from v to the rest of the vectors in the same cluster.&lt;/li&gt;
+    &lt;li&gt;b(v) is the mean distance between v and all the vectors in the nearest cluster.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The mean value of s computed over all vectors will provide a measure of the quality of the segmentation/clustering. Intuitively, a good quality segmentation will have small &#34;a&#34; values, large &#34;b&#34; values, and an average value of s close to +1.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-the-process-model&#34; class=&#34;anchor&#34; href=&#34;#the-process-model&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;The Process Model
+&lt;/h2&gt;
+&lt;p&gt;This is the process model of Unsupervised Machine Learning:&lt;/p&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/5b2df858d2726e7532caae257a7a60a09f71ba0a/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f756e737570657276697365642d6c6561726e696e672d70726f636573732d6d6f64656c2e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/5b2df858d2726e7532caae257a7a60a09f71ba0a/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f756e737570657276697365642d6c6561726e696e672d70726f636573732d6d6f64656c2e706e67&#34; alt=&#34;Unsupervised Machine Learning Process Model&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/unsupervised-learning-process-model.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;We will walk you through the process next. First, you need to determine whether the problem you have to solve is suitable for an Unsupervised Machine Learning approach. You do that by looking for the ingredients:&lt;/p&gt;
+&lt;ol&gt;
+    &lt;li&gt;Set of vectors.&lt;/li&gt;
+    &lt;li&gt;Distance function. This provides a quantitative measure of how far apart two vectors are in vector space.&lt;/li&gt;
+    &lt;li&gt;Similarity function. From the problem perspective, this informs about how similar two problem instances are. For instance, two patients with the same diagnose that react the same to the same medication plan, may be considered similar when studying adverse side effects.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-summary&#34; class=&#34;anchor&#34; href=&#34;#summary&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Summary
+&lt;/h2&gt;
+&lt;p&gt;In this chapter, you learned to solve classification problems when there is no supervision nor teaching signal available, by using Unsupervised Machine Learning. You have learned the basic concepts of Unsupervised Machine Learning, how to determine whether it can be applied to the solution of a particular problem, you have seen examples of several problem domains suitable for an Unsupervised Machine Learning approach. You have also learned what are the steps to take in solving a problem with Unsupervised Machine Learning. In our next chapter, you will gain practical experience in applying this concepts and procedures to the solution of a real world problem.&lt;/p&gt;
+&lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+  </div>
+  <div id="seq_contents_1"
+    aria-labelledby="tab_1"
+    aria-hidden="true"
+    class="seq_contents tex2jax_ignore asciimath2jax_ignore">
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-vertical&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;VerticalStudentView&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34; data-request-token=&#34;7af0eda2939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@06bf72539bee4719980945ab507be0f2&#34; data-block-type=&#34;vertical&#34;&gt;
+  
+
+  &lt;h2 class=&#34;hd hd-2 unit-title&#34;&gt;Unsupervised Learning with Scikit-Learn&lt;/h2&gt;
+
+    &lt;div class=&#34;ih-bookmark-button-wrapper&#34;&gt;
+    	
+
+
+
+&lt;div class=&#34;bookmark-button-wrapper&#34;&gt;
+  &lt;button class=&#34;btn btn-link bookmark-button &#34;
+    aria-pressed=&#34;false&#34;
+    data-bookmark-id=&#34;NoahB,block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@06bf72539bee4719980945ab507be0f2&#34;
+    data-bookmarks-api-url=&#34;/api/bookmarks/v1/bookmarks/&#34;&gt;
+     &lt;span class=&#34;bookmark-text&#34;&gt;Bookmark this page&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+
+    &lt;/div&gt;	
+
+&lt;div class=&#34;vert-mod&#34;&gt;
+  &lt;div class=&#34;vert vert-0&#34; data-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@5b21c1f6fa3449558da41960fece8f51&#34;&gt;
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;7af0eda2939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@5b21c1f6fa3449558da41960fece8f51&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  &lt;h2&gt;
+    &lt;a id=&#34;user-content-lesson-goals&#34; class=&#34;anchor&#34; href=&#34;#lesson-goals&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Lesson Goals
+&lt;/h2&gt;
+&lt;p&gt;This lesson will serve as an introduction to unsupervised learning using Scikit-learn. A number of essential algorithms will be covered along with implementation and examples.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-introduction&#34; class=&#34;anchor&#34; href=&#34;#introduction&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Introduction
+&lt;/h2&gt;
+&lt;p&gt;
+    &lt;strong&gt;Clustering&lt;/strong&gt; is a family of algorithms for uncovering relationships and insight in a dataset. The data is not labeled and so there is no ground truth answer that we are trying to predict. Instead, we use different algorithms to group observations together and uncover what they might have in common. There are multiple clustering techniques. In this lesson we will cover two clustering techniques -
+    &lt;strong&gt;K-means&lt;/strong&gt; and
+    &lt;strong&gt;Hierarchical Clustering&lt;/strong&gt;.
+&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-k-means&#34; class=&#34;anchor&#34; href=&#34;#k-means&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;K-means
+&lt;/h2&gt;
+&lt;p&gt;K-means is one of the oldest and most popular clustering techniques. The main idea behind k-means clustering is that we choose how many clusters we would like to create (typically we call that number k). We then select random starting points for those cluster centroids. We compute the distance between each observation and the clusters. We reassign a cluster to each observation and then recompute the centroids. We keep doing so until the labels stay constant and we no longer need to reassign.&lt;/p&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-k-means-in-scikit-learn&#34; class=&#34;anchor&#34; href=&#34;#k-means-in-scikit-learn&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;K-means in Scikit-Learn
+&lt;/h3&gt;
+&lt;p&gt;We will explore k-means with scikit-learn using our 
+    &lt;a href=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/data/module-3/acs2015_county_data.csv.zip&#34; rel=&#34;nofollow&#34;&gt;census data&lt;/a&gt;. We first load the data.
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;%matplotlib inline
+import pandas as pd
+
+census = pd.read_csv(&#39;./acs2015_county_data.csv&#39;)
+census.describe()
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/7b2fd387209e3841fb770403546e185fbd60a38c/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f63656e7375732d64657363726962652e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/7b2fd387209e3841fb770403546e185fbd60a38c/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f63656e7375732d64657363726962652e706e67&#34; alt=&#34;census describe&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/census-describe.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;Before using our algorithm, we need to do some munging. Our first step should be to check for missing data and based on the amount of missing data decide on a strategy.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;census.isnull().sum(axis = 0)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/4e61fc9d26fcfa51e4dbc053637dd8faa3efc544/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f63656e7375732d6d697373696e672e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/4e61fc9d26fcfa51e4dbc053637dd8faa3efc544/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f63656e7375732d6d697373696e672e706e67&#34; alt=&#34;census missing&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/census-missing.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;There are only a few columns with missing data and each one of them does not have more than one missing observation. Therefore, the simplest strategy would be to remove the missing data.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;census_missing = census.dropna()
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Additionally, we should only be clustering using columns that contain actual information about the data. Therefore, we should probably remove the State and County columns. We should also remove the CensusId column because it contains no information about the each county.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;census_columns = [col for col in census.columns.values if col not in [&#39;CensusId&#39;, &#39;State&#39;, &#39;County&#39;]]
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Now let&#39;s import 
+    &lt;code&gt;Kmeans&lt;/code&gt; from scikit-learn:
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from sklearn.cluster import KMeans
+
+kmeans = KMeans(n_clusters=4)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;We define a k-means object with 4 clusters and then fit our data&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;census_clusters = kmeans.fit(census_missing[census_columns])
+census_clusters.cluster_centers_
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/296e93d803162c8fee2396a523e7a6d47143f755/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f63656e7375732d636c7573746572732e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/296e93d803162c8fee2396a523e7a6d47143f755/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f63656e7375732d636c7573746572732e706e67&#34; alt=&#34;census clusters&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/census-clusters.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;The cluster centers contain the 4 centroids. Since the data contains 34 columns describing each county, each centroid is in a 34 dimensional plane.&lt;/p&gt;
+&lt;p&gt;Using 
+    &lt;code&gt;fit_predict&lt;/code&gt;, we can assign a cluster to each observation and then add this information back to our dataset.
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;census_missing[&#39;Cluster&#39;] = census_clusters.fit_predict(census_missing[census_columns])
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Let&#39;s look at the counts of counties in each cluster:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;census_missing.Cluster.value_counts()
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/3bf6eb66547a80e5e91c1da1b186aa3db901a3de/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f636c7573746572732d636f756e74732e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/3bf6eb66547a80e5e91c1da1b186aa3db901a3de/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f636c7573746572732d636f756e74732e706e67&#34; alt=&#34;clusters counts&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/clusters-counts.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;The majority of the data is in the first cluster, while cluster 2 has only one obervation.&lt;/p&gt;
+&lt;p&gt;Plotting the data will not provide us with a great deal of meaningful information. This is because the data has 34 dimensions. Therefore, creating a two dimensional plot will only capture some of the information and might not show completely separable clusters. However, it is interesting to look at some summary statistics for our clusters.&lt;/p&gt;
+&lt;p&gt;We can look at the count of counties by state for each cluster&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;census_missing[census_missing.Cluster == 0].State.value_counts()
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/a4211df3e4e96b26c74e40d79a54daec119bb64f/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7374617465732d636f756e742d302e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/a4211df3e4e96b26c74e40d79a54daec119bb64f/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7374617465732d636f756e742d302e706e67&#34; alt=&#34;states count cluster 0&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/states-count-0.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;census_missing[census_missing.Cluster == 1].State.value_counts()
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/34c9e6405ff53d5f137c3810efb33a866f784347/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7374617465732d636f756e742d312e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/34c9e6405ff53d5f137c3810efb33a866f784347/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7374617465732d636f756e742d312e706e67&#34; alt=&#34;states count cluster 0&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/states-count-1.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;census_missing[census_missing.Cluster == 2].State.value_counts()
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/9327cc07ed09c435829729fa342b56ea6f9189b4/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7374617465732d636f756e742d322e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/9327cc07ed09c435829729fa342b56ea6f9189b4/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7374617465732d636f756e742d322e706e67&#34; alt=&#34;states count cluster 0&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/states-count-2.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;census_missing[census_missing.Cluster == 3].State.value_counts()
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/0e9b7a74af36ec0f6c9b8976a8e8f895d539765e/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7374617465732d636f756e742d332e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/0e9b7a74af36ec0f6c9b8976a8e8f895d539765e/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7374617465732d636f756e742d332e706e67&#34; alt=&#34;states count cluster 0&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/states-count-3.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;We can also look at the mean income and the mean rate of child poverty for each of the 4 clusters.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;census_missing.groupby([&#39;Cluster&#39;])[&#39;Income&#39;].mean()
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/9ba1648d15e54d4bf73dbf17d7db3a8e9013e44b/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f63656e7375732d6d65616e2d696e636f6d652e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/9ba1648d15e54d4bf73dbf17d7db3a8e9013e44b/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f63656e7375732d6d65616e2d696e636f6d652e706e67&#34; alt=&#34;census mean income&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/census-mean-income.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;census_missing.groupby([&#39;Cluster&#39;])[&#39;ChildPoverty&#39;].mean()
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/068cdb92ffcab735e02807a1bc08dae90e83636f/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f63656e7375732d6d65616e2d6368696c64706f76657274792e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/068cdb92ffcab735e02807a1bc08dae90e83636f/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f63656e7375732d6d65616e2d6368696c64706f76657274792e706e67&#34; alt=&#34;census mean child poverty&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/census-mean-childpoverty.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-hierarchical-clustering&#34; class=&#34;anchor&#34; href=&#34;#hierarchical-clustering&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Hierarchical Clustering
+&lt;/h2&gt;
+&lt;p&gt;Hierarchical clustering is a clustering technique where we create a hierarchy of clusters. The advantage over k-means is that we do not need to specify the number of clusters. We can observe relationships between observations without a predetermined number of clusters. We can also generate a 
+    &lt;strong&gt;dendogram&lt;/strong&gt; which is a visualization that displays the relationship between observations in the data.
+&lt;/p&gt;
+&lt;p&gt;There are two types of hierarchical clustering&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;
+        &lt;p&gt;Agglomerative - This is a bottom up approach. We start off with a cluster for each observation and then combine similar clusters until we are left with only one large cluster&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p&gt;Divisive - This is a top down approach. We start with one large cluster and keep dividing until we are left with clusters&lt;/p&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-hierarchical-clustering-with-scikit-learn&#34; class=&#34;anchor&#34; href=&#34;#hierarchical-clustering-with-scikit-learn&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Hierarchical Clustering with Scikit-learn
+&lt;/h3&gt;
+&lt;p&gt;Hierarchical clustering with scikit-learn is performed using the 
+    &lt;code&gt;AgglomerativeClustering&lt;/code&gt; function.
+&lt;/p&gt;
+&lt;p&gt;In order to demonstrate hierarchical clustering, we will use the census data again. This time, we will take a sample to ensure a clear and uncluttered dendogram just for the sake of this demo.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from sklearn.cluster import AgglomerativeClustering
+
+census_sample = census_missing[census_columns].sample(n=100)
+hier_clust = AgglomerativeClustering(linkage=&#39;ward&#39;)
+census_hier = hier_clust.fit(census_sample)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;In order to plot our dendogram, we need to do some data manipulation. This is because the function to plot a dendogram exists in scipy and not in scikit-learn and requires a slightly different data format.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from scipy.cluster.hierarchy import dendrogram
+import matplotlib.pyplot as plt
+
+def plot_dendrogram(model, **kwargs):
+
+    # Children of hierarchical clustering
+    children = model.children_
+
+    # Distances between each pair of children
+    # Since we don&#39;t have this information, we can use a uniform one for plotting
+    distance = np.arange(children.shape[0])
+
+    # The number of observations contained in each cluster level
+    no_of_observations = np.arange(2, children.shape[0]+2)
+
+    # Create linkage matrix and then plot the dendrogram
+    linkage_matrix = np.column_stack([children, distance, no_of_observations]).astype(float)
+
+    # Plot the corresponding dendrogram
+    dendrogram(linkage_matrix, **kwargs)
+    
+plot_dendrogram(census_hier, labels=census_hier.labels_)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/08d2b75ed3b434e3e145c07513509238b115aa22/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f63656e7375732d64656e646f6772616d2e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/08d2b75ed3b434e3e145c07513509238b115aa22/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f63656e7375732d64656e646f6772616d2e706e67&#34; alt=&#34;census dendogram&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/census-dendogram.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-conclusion&#34; class=&#34;anchor&#34; href=&#34;#conclusion&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Conclusion
+&lt;/h2&gt;
+&lt;p&gt;In this lesson we covered two of the most popular clustering techniques. We learned how to clean and manipulate data to be used as input for these clustering algorithms. We also learned how to look for insight in the clustered data. Finally, we learned how to plot a dendogram.&lt;/p&gt;
+&lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+  </div>
+  <div id="seq_contents_2"
+    aria-labelledby="tab_2"
+    aria-hidden="true"
+    class="seq_contents tex2jax_ignore asciimath2jax_ignore">
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-vertical&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;VerticalStudentView&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34; data-request-token=&#34;7af0eda2939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@5d198472e7694912a0c8920aaa42df80&#34; data-block-type=&#34;vertical&#34;&gt;
+  
+
+  &lt;h2 class=&#34;hd hd-2 unit-title&#34;&gt;Unsupervised Learning Guided Lesson&lt;/h2&gt;
+
+    &lt;div class=&#34;ih-bookmark-button-wrapper&#34;&gt;
+    	
+
+
+
+&lt;div class=&#34;bookmark-button-wrapper&#34;&gt;
+  &lt;button class=&#34;btn btn-link bookmark-button &#34;
+    aria-pressed=&#34;false&#34;
+    data-bookmark-id=&#34;NoahB,block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@5d198472e7694912a0c8920aaa42df80&#34;
+    data-bookmarks-api-url=&#34;/api/bookmarks/v1/bookmarks/&#34;&gt;
+     &lt;span class=&#34;bookmark-text&#34;&gt;Bookmark this page&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+
+    &lt;/div&gt;	
+
+&lt;div class=&#34;vert-mod&#34;&gt;
+  &lt;div class=&#34;vert vert-0&#34; data-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@729a56a28db244f3b76c476c36aeec74&#34;&gt;
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;7af0eda2939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@729a56a28db244f3b76c476c36aeec74&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  &lt;h2&gt;
+    &lt;a id=&#34;user-content-lesson-goals&#34; class=&#34;anchor&#34; href=&#34;#lesson-goals&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Lesson Goals
+&lt;/h2&gt;
+&lt;p&gt;In this guided lesson, we will analyze an unsupervised learning problem from start to finish and introduce several different processing techniques.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-introduction&#34; class=&#34;anchor&#34; href=&#34;#introduction&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Introduction
+&lt;/h2&gt;
+&lt;p&gt;As a data scientist or analyst, you may be asked open ended question about a dataset. One example is to find some patterns in a dataset that is unlabeled. Typically, this happens when analyzing a group of customers and trying to find a common themes between the transactions. The leading choice of algorithm for this type of problem is an unsupervised algorithm. Specifically, this lesson will be using clustering to analyze this problem. In this lesson, we will be analyzing a log of transactions from a bakery to make recommendations about the marketing and sale of products.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-the-data&#34; class=&#34;anchor&#34; href=&#34;#the-data&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;The Data
+&lt;/h2&gt;
+&lt;p&gt;The 
+    &lt;a href=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/data/module-3/BreadBasket_DMS.csv.zip&#34; rel=&#34;nofollow&#34;&gt;dataset&lt;/a&gt; we will be analyzing comes from Kaggle and is a log of transactions from a bakery in Edinburgh called The Bread Basket. We will start by evaluating the types of the variables in the data as well as the contents of the categorical variables and the distribution of the numerical variables.
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;%matplotlib inline
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+
+breadbasket = pd.read_csv(&#39;./BreadBasket_DMS.csv&#39;)
+breadbasket.dtypes
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/13070ed23c9cc0b31dbf0d0d15a3085e8fa35109/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f62726561646261736b65742d74797065732e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/13070ed23c9cc0b31dbf0d0d15a3085e8fa35109/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f62726561646261736b65742d74797065732e706e67&#34; alt=&#34;breadbasket dtypes&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/breadbasket-types.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;breadbasket.head()
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/004dbe470a7d0b382362314d4e32ff907bbe371c/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f62726561646261736b65742d686561642e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/004dbe470a7d0b382362314d4e32ff907bbe371c/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f62726561646261736b65742d686561642e706e67&#34; alt=&#34;breadbasket head&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/breadbasket-head.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;breadbasket.describe()
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/3d48339e771c2edb43d0d836f510c3d26e04cfae/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f62726561646261736b65742d64657363726962652e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/3d48339e771c2edb43d0d836f510c3d26e04cfae/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f62726561646261736b65742d64657363726962652e706e67&#34; alt=&#34;breadbasket describe&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/breadbasket-describe.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;As we can see from these three functions, we have 4 columns in the dataset. The date and time are separated into two columns and stored as text. This means we will have to combine and convert them later on. The transaction variable is ordinal, so the summary statistics really have no meaning in this context. The only meaningful information from the describe function is the max which tells us we have 9684 transactions in the dataset. From the 
+    &lt;code&gt;head&lt;/code&gt; function, we see that each row represents an item in the transaction. This means that there are potentially multiple items per transaction or maybe just one. We might benefit from consolidating the data and creating a new dataset that contains one row per transaction.
+&lt;/p&gt;
+&lt;p&gt;So the data we have is a breakdown of each item in a transaction and the date and time when the transaction occurred. The data we do not have is any information about the customer. Since we cannot associate the transactions back to customers, we cannot tell if a certain customer is a regular who comes in and buys a coffee and a pastry every day or whether a customer is a tourist who came in once and bought a specialty dessert.&lt;/p&gt;
+&lt;p&gt;Our strategy to make sense of the dataset will be to generate derived variables from this transaction log and cluster based on these derived variables. We will evaluate the aggregate information regarding each cluster and make recommendations about which products to advertise and which products should be in stock and at what days and times.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-exploring-the-variables&#34; class=&#34;anchor&#34; href=&#34;#exploring-the-variables&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Exploring the Variables
+&lt;/h2&gt;
+&lt;p&gt;While we only have a few variables, we should explore their contents.&lt;/p&gt;
+&lt;p&gt;First, let&#39;s look at the time and day of week. Hour is a crucial factor since customer behavior differs significantly between the morning and the afternoon. However, we can even find differences between customer behavior at 7 am vs. at 9 am. Similarly, we see differences between weekday and weekend customer behavior.&lt;/p&gt;
+&lt;p&gt;To examine the date and time, we must reformat this variable. We start by combining the date and time into one column and then transforming the column to a datetime column. This allows us to extract the hour and the time of day.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;breadbasket[&#39;DateTime&#39;] = pd.to_datetime(breadbasket.Date + &#39; &#39; + breadbasket.Time)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Next, we look at the item variable. This variable will tell us how many products are sold by the bakery and which products are more popular.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;breadbasket.Item.unique()
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/abf5385e5a2ce295ac835c8bb1671b3d5f2e61ba/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f62726561646261736b65742d756e697175652e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/abf5385e5a2ce295ac835c8bb1671b3d5f2e61ba/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f62726561646261736b65742d756e697175652e706e67&#34; alt=&#34;breadbasket unique&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/breadbasket-unique.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;We can look at the counts as well to see what items are most popular.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;breadbasket.Item.value_counts()
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/6dd9adf4b6d67d8a90b3912d1cf3105811c4ee54/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f62726561646261736b65742d76616c75652d636f756e74732e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/6dd9adf4b6d67d8a90b3912d1cf3105811c4ee54/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f62726561646261736b65742d76616c75652d636f756e74732e706e67&#34; alt=&#34;breadbasket value counts&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/breadbasket-value-counts.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;There are a total of 95 items. The most common items are coffee, bread, tea, cake and pastry. Since 95 is a really large number, if we created dummy variables out of this data, it would produce too many variables. One option is to classify the data. Typically, when working on these types of problems, companies will have a classification system for the items they sell. However, let&#39;s try to come up with our own.&lt;/p&gt;
+&lt;p&gt;Looking at the list of unique items, we can identify a number of obvious categories. We have beverages and breakfast pastries like muffins and medialuna. We have items for kids like juice and pouches. We also have non food items like gift vouchers and t-shirts. Another group of items that we can notice is ready to eat snacks like popcorn and crisps. With a bit of work, we can narrow it down from 95 products to 11 categories: beverage, other, kids, snacks, bread, breakfast pastry, dessert, condiments, breakfast, lunch, and other foods. The last group is used to classify mostly uncommon items that sell very little (like polenta) or have names that are hard to identify (like &#34;Hack the Stack&#34;).&lt;/p&gt;
+&lt;p&gt;We generate the categories using lists and then use the lists to create dummy variables.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;beverage = [&#39;Hot chocolate&#39;, &#39;Coffee&#39;, &#39;Tea&#39;, &#39;Mineral water&#39;, &#39;Juice&#39;, &#39;Coke&#39;, &#39;Smoothies&#39;]
+other = [&#39;NONE&#39;, &#39;Christmas common&#39;, &#39;Gift voucher&#39;, &#34;Valentine&#39;s card&#34;, &#39;Tshirt&#39;, &#39;Afternoon with the baker&#39;, &#39;Postcard&#39;, &#39;Siblings&#39;, &#39;Nomad bag&#39;, &#39;Adjustment&#39;, &#39;Drinking chocolate spoons &#39;, &#39;Coffee granules &#39;]
+kids = [&#34;Ella&#39;s Kitchen Pouches&#34;, &#39;My-5 Fruit Shoot&#39;, &#39;Kids biscuit&#39;]
+snacks = [&#39;Mighty Protein&#39;, &#39;Pick and Mix Bowls&#39;, &#39;Caramel bites&#39;, &#39;Bare Popcorn&#39;, &#39;Crisps&#39;, &#39;Cherry me Dried fruit&#39;, &#39;Raw bars&#39;]
+bread = [&#39;Bread&#39;, &#39;Toast&#39;, &#39;Baguette&#39;, &#39;Focaccia&#39;, &#39;Scandinavian&#39;]
+breakfast_pastry = [&#39;Muffin&#39;, &#39;Pastry&#39;, &#39;Medialuna&#39;, &#39;Scone&#39;]
+dessert = [&#39;Cookies&#39;, &#39;Tartine&#39;, &#39;Fudge&#39;, &#39;Victorian Sponge&#39;, &#39;Cake&#39;, &#39;Alfajores&#39;, &#39;Brownie&#39;, &#39;Bread Pudding&#39;, &#39;Bakewell&#39;, &#39;Raspberry shortbread sandwich&#39;, &#39;Lemon and coconut&#39;, &#39;Crepes&#39;, &#39;Chocolates&#39;, &#39;Truffles&#39;, &#39;Panatone&#39;]
+condiments = [&#39;Jam&#39;, &#39;Dulce de Leche&#39;, &#39;Honey&#39;, &#39;Gingerbread syrup&#39;, &#39;Extra Salami or Feta&#39;, &#39;Bacon&#39;, &#39;Spread&#39;, &#39;Chimichurri Oil&#39;]
+breakfast = [&#39;Eggs&#39;, &#39;Frittata&#39;, &#39;Granola&#39;, &#39;Muesli&#39;, &#39;Duck egg&#39;, &#39;Brioche and salami&#39;]
+lunch = [&#39;Soup&#39;, &#39;Sandwich&#39;, &#39;Chicken sand&#39;, &#39;Salad&#39;, &#39;Chicken Stew&#39;]
+other_food = [x for x in breadbasket.Item.unique() if x not in beverage 
+                and x not in other and x not in kids and x not in snacks 
+                and x not in bread and x not in breakfast_pastry 
+                and x not in dessert and x not in condiments 
+                and x not in breakfast and x not in lunch]
+
+breadbasket[&#39;beverage&#39;] = np.where(breadbasket.Item.isin(beverage), 1, 0)
+breadbasket[&#39;other&#39;] = np.where(breadbasket.Item.isin(other), 1, 0)
+breadbasket[&#39;kids&#39;] = np.where(breadbasket.Item.isin(kids), 1, 0)
+breadbasket[&#39;snacks&#39;] = np.where(breadbasket.Item.isin(snacks), 1, 0)
+breadbasket[&#39;bread&#39;] = np.where(breadbasket.Item.isin(bread), 1, 0)
+breadbasket[&#39;breakfast_pastry&#39;] = np.where(breadbasket.Item.isin(breakfast_pastry), 1, 0)
+breadbasket[&#39;dessert&#39;] = np.where(breadbasket.Item.isin(dessert), 1, 0)
+breadbasket[&#39;condiments&#39;] = np.where(breadbasket.Item.isin(condiments), 1, 0)
+breadbasket[&#39;breakfast&#39;] = np.where(breadbasket.Item.isin(breakfast), 1, 0)
+breadbasket[&#39;lunch&#39;] = np.where(breadbasket.Item.isin(lunch), 1, 0)
+breadbasket[&#39;other_food&#39;] = np.where(breadbasket.Item.isin(other_food), 1, 0)
+breadbasket.head()
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/d822cc827d464d83c39149d2e3a2f45dbe87b074/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f62726561646261736b65742d64756d6d792d686561642e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/d822cc827d464d83c39149d2e3a2f45dbe87b074/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f62726561646261736b65742d64756d6d792d686561642e706e67&#34; alt=&#34;breadbasket-dummy head&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/breadbasket-dummy-head.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-processing-the-data&#34; class=&#34;anchor&#34; href=&#34;#processing-the-data&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Processing the Data
+&lt;/h2&gt;
+&lt;p&gt;The first bit of work we will do to process the data is to aggregate by transaction. This will give us the count of each category per transaction. We will use the 
+    &lt;code&gt;groupby&lt;/code&gt; function to find the sum in each transaction. We group by the datetime as well since we want to keep this column after the aggregation. This should not be a problem since a transaction number and a datetime uniquely identifies each row.
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;bread_group = breadbasket.groupby([&#39;Transaction&#39;,&#39;DateTime&#39;]).sum()
+bread_group
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/a93adb9e6f9f39ba0100fedaeef9dbc48caa8e76/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f62726561642d67726f75702e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/a93adb9e6f9f39ba0100fedaeef9dbc48caa8e76/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f62726561642d67726f75702e706e67&#34; alt=&#34;bread group&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/bread-group.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;Now the transaction number and the datetime are indices in this aggregated dataset. If we would like to use the information in these columns, we would have to reset the index.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;bread_group.reset_index(level=[&#39;DateTime&#39;], inplace=True)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Next, we will generate a column for day of week and for hour.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;bread_group[&#39;hour&#39;] = bread_group.DateTime.dt.hour
+bread_group[&#39;day&#39;] = bread_group.DateTime.dt.day_name()
+bread_group.day.value_counts()
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/8cd463fbc1e97347e6e9d1afcc8a2158bb3aef6d/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f62726561642d6461792d636f756e74732e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/8cd463fbc1e97347e6e9d1afcc8a2158bb3aef6d/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f62726561642d6461792d636f756e74732e706e67&#34; alt=&#34;bread day counts&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/bread-day-counts.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;Saturday has the most transactions of any weekday by far.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;bread_group.hour.value_counts()
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/03fefcffeff4cd1862fd6127cbbec2b75fae99b2/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f62726561642d686f75722d636f756e74732e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/03fefcffeff4cd1862fd6127cbbec2b75fae99b2/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f62726561642d686f75722d636f756e74732e706e67&#34; alt=&#34;bread hour counts&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/bread-hour-counts.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;11 am has the most transactions followed by noon and 10 am.&lt;/p&gt;
+&lt;p&gt;Now let&#39;s create dummy variables out of the day column and drop all other non numeric columns to prepare our dataset for the ML algorithm.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;bread_days = pd.get_dummies(data=bread_group, columns=[&#39;day&#39;])
+bread_days.drop(columns=&#39;DateTime&#39;, inplace=True, axis=1)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-some-more-transformations---pca&#34; class=&#34;anchor&#34; href=&#34;#some-more-transformations---pca&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Some More Transformations - PCA
+&lt;/h2&gt;
+&lt;p&gt;Our plan here is to use k-means clustering. However, an important note on k-means clustering is that it does not respond well to dummy variable columns. Therefore, our best option is to transform the data using principal component analysis or 
+    &lt;strong&gt;PCA&lt;/strong&gt;. What PCA does is project our data onto a lower dimensional subspace. The new data will typically reduce the dimensions of our original data and will therefore, contain less variables. The first dimension will explain the most amount of variation in the data and subsequent components will explain less and less variation. This transformation will provide us with a smaller amount of continuous variables that we can cluster more effectively.
+&lt;/p&gt;
+&lt;p&gt;Here we chose to generate 4 components.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from sklearn.decomposition import PCA
+
+pca = PCA(n_components=4)
+
+principalComponents = pca.fit_transform(bread_days)
+principalDf = pd.DataFrame(data = principalComponents
+             ,columns = [&#39;pc1&#39;, &#39;pc2&#39;, &#39;pc3&#39;, &#39;pc4&#39;])
+principalDf.head()             
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/015b0f74dc1e99b60f4db68dbedb5170c0202956/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7072696e636970616c2d636f6d706f6e656e74732e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/015b0f74dc1e99b60f4db68dbedb5170c0202956/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7072696e636970616c2d636f6d706f6e656e74732e706e67&#34; alt=&#34;principal components&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/principal-components.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-the-algorithm---k-means-clustering&#34; class=&#34;anchor&#34; href=&#34;#the-algorithm---k-means-clustering&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;The Algorithm - K-Means Clustering
+&lt;/h2&gt;
+&lt;p&gt;We are now ready to cluster the data using k-means. We chose to create 5 clusters. The choice is normally arbitrary though there are ways to optimize the number of clusters. Here, the choice is more driven by the number of transaction clusters we would like to create. Two clusters would definitely be too few to capture meaningful differences while 10 is certainly too many.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from sklearn.cluster import KMeans
+
+kmeans = KMeans(n_clusters=5)
+bread_clusters = kmeans.fit(principalDf)
+bread_clusters.cluster_centers_
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/70c2f5f54e268647aeece2430d9741c444a5596a/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f62726561642d636c75737465722d63656e746572732e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/70c2f5f54e268647aeece2430d9741c444a5596a/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f62726561642d636c75737465722d63656e746572732e706e67&#34; alt=&#34;bread cluster centers&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/bread-cluster-centers.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;Let&#39;s apply the labels back to our original data so we can do some analysis.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;bread_days[&#39;labels&#39;] = bread_clusters.fit_predict(principalDf)
+bread_days.reset_index(&#39;Transaction&#39;, inplace=True)
+bread_merged = pd.merge(breadbasket, bread_days[[&#39;Transaction&#39;, &#39;labels&#39;]], on=&#39;Transaction&#39;, how=&#39;outer&#39;)
+bread_merged.head()
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/da3302aa862c231c2977ddac7c11300b5662515d/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f62726561642d6d65726765642e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/da3302aa862c231c2977ddac7c11300b5662515d/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f62726561642d6d65726765642e706e67&#34; alt=&#34;bread merged&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/bread-merged.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;Let&#39;s so some analysis on the clusters. First let&#39;s look at how many transactions we have per cluster.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;bread_merged.labels.value_counts()
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/9c3edd91b3f602f59f354630b070e8b4f371d62f/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f62726561642d636c75737465722d636f756e74732e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/9c3edd91b3f602f59f354630b070e8b4f371d62f/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f62726561642d636c75737465722d636f756e74732e706e67&#34; alt=&#34;bread cluster counts&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/bread-cluster-counts.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;The largest cluster is the 5th cluster (our clusters are numbered 0 through 4).&lt;/p&gt;
+&lt;p&gt;One interesting thing to check is whether the clusters captured a different type of transaction by looking at the hour breakdown for each cluster.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pd.crosstab(bread_days.hour,bread_days.labels)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/370ddd9fafc9311e57898a028e6187e41aff7a50/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f62726561642d636c75737465722d686f75722e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/370ddd9fafc9311e57898a028e6187e41aff7a50/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f62726561642d636c75737465722d686f75722e706e67&#34; alt=&#34;bread cluster counts&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/bread-cluster-hour.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;We can clearly see a separation. Clusters 0, 2, and 4 center around noon. Cluster 1 is an early morning cluster. Cluster 3 is an evening cluster.&lt;/p&gt;
+&lt;p&gt;We can do the same analysis for day of week.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pd.crosstab(bread_group.day,bread_days.labels)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/416b47698459768180b48cfa423501ab58920060/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f62726561642d636c75737465722d6461792e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/416b47698459768180b48cfa423501ab58920060/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f62726561642d636c75737465722d6461792e706e67&#34; alt=&#34;bread cluster days&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/bread-cluster-day.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;In cluster 1 (the early morning cluster), the disparity between the weekends and the weekdays is small. While in the clusters that center around later times, there seem to be more transactions during the weekends.&lt;/p&gt;
+&lt;p&gt;Let&#39;s also look at the top 5 products per cluster&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;a = bread_merged.groupby([&#39;labels&#39;]).Item.value_counts()
+b = a.to_frame(&#34;counts&#34;).reset_index()
+b.set_index(&#34;Item&#34;, inplace=True)
+b.groupby(&#39;labels&#39;).counts.nlargest(5)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/11c3e2e8bf79ad63ab288f84e812f1e8d6ea8db3/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f62726561642d6c6162656c732d746f702d352e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/11c3e2e8bf79ad63ab288f84e812f1e8d6ea8db3/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f62726561642d6c6162656c732d746f702d352e706e67&#34; alt=&#34;bread top 5 per group&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/bread-labels-top-5.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;While tea and coffee are popular in all 3 clusters, the morning cluster (Cluster 1) contains only bread, beverages and breakfast pastries. Clusters 0 and 2 are afternoon cluster and contain cake and sandwiches as top items. Cluster 3 is also an afternoon cluster and contains more desserts.&lt;/p&gt;
+&lt;p&gt;We can use this data to run promotions for certain items like cake and sandwiches at certain hours to increase our sales.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-conclusion&#34; class=&#34;anchor&#34; href=&#34;#conclusion&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Conclusion
+&lt;/h2&gt;
+&lt;p&gt;In this lesson, we used an unsupervised learning technique to analyze a dataset containing a log of transactions for a bakery. We created dummy and derived variables and then applied principal component analysis to ensure our clustering will generate meaningful insights. We then used k-means clustering to group the data and analyze each cluster. We uncovered interesting information about sales patterns during certain times and days of the week.&lt;/p&gt;
+&lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+  </div>
+  <div id="seq_contents_3"
+    aria-labelledby="tab_3"
+    aria-hidden="true"
+    class="seq_contents tex2jax_ignore asciimath2jax_ignore">
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-vertical&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;VerticalStudentView&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34; data-request-token=&#34;7af0eda2939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@5a82318287874b97b6f46f9c7fca5164&#34; data-block-type=&#34;vertical&#34;&gt;
+  
+
+  &lt;h2 class=&#34;hd hd-2 unit-title&#34;&gt;More Unsupervised Learning Models&lt;/h2&gt;
+
+    &lt;div class=&#34;ih-bookmark-button-wrapper&#34;&gt;
+    	
+
+
+
+&lt;div class=&#34;bookmark-button-wrapper&#34;&gt;
+  &lt;button class=&#34;btn btn-link bookmark-button &#34;
+    aria-pressed=&#34;false&#34;
+    data-bookmark-id=&#34;NoahB,block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@5a82318287874b97b6f46f9c7fca5164&#34;
+    data-bookmarks-api-url=&#34;/api/bookmarks/v1/bookmarks/&#34;&gt;
+     &lt;span class=&#34;bookmark-text&#34;&gt;Bookmark this page&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+
+    &lt;/div&gt;	
+
+&lt;div class=&#34;vert-mod&#34;&gt;
+  &lt;div class=&#34;vert vert-0&#34; data-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@4b51bed37bb24a4ba24479c10e63295f&#34;&gt;
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;7af0eda2939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@4b51bed37bb24a4ba24479c10e63295f&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  &lt;h2&gt;
+    &lt;a id=&#34;user-content-lesson-goals&#34; class=&#34;anchor&#34; href=&#34;#lesson-goals&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Lesson Goals
+&lt;/h2&gt;
+&lt;p&gt;In this lesson we will expand our repertoire of unsupervised learning models by introducing Gaussian Mixture Models and DBSCAN. These are two unsupervised learning models that are typically used for clustering.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-introduction&#34; class=&#34;anchor&#34; href=&#34;#introduction&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Introduction
+&lt;/h2&gt;
+&lt;p&gt;So far we have covered K-Means and Hierarchical Clustering. However, different types of data work better with different types of clustering. In this lesson we will cover DBSCAN, which is a clustering method based on the density of the data. We will also cover Gaussian Mixture Models, which is a model that assigns a probability of an observation belonging to each cluster, rather than a definitive answer.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-different-clustering-techniques-for-different-data&#34; class=&#34;anchor&#34; href=&#34;#different-clustering-techniques-for-different-data&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Different Clustering Techniques for Different Data
+&lt;/h2&gt;
+&lt;p&gt;As previously mentioned, there are different types of data that works better with different types of clustering algorithm. Below is a famous example from the Scikit-Learn documentation.&lt;/p&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/bb1b22c71c04bfe300184b986aa045757052f0e2/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f737068785f676c725f706c6f745f636c75737465725f636f6d70617269736f6e5f303031312e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/bb1b22c71c04bfe300184b986aa045757052f0e2/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f737068785f676c725f706c6f745f636c75737465725f636f6d70617269736f6e5f303031312e706e67&#34; alt=&#34;types of clusters&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/sphx_glr_plot_cluster_comparison_0011.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;We can see that K-Means completely fails to detect the two clusters in the first and second rows. Hierarchical clustering (here named Ward and Agglomerative Clustering) have some success. Ward clustering has little success with the first dataset while agglomerative clustering has better success. However, both take about 6-7 times as long as DBSCAN to cluster the data. Gaussian mixture has great success in dataset number 4 and produces an interesting split of the data in dataset number 6. Scenario 6 is something that DBSCAN cannot handle at all.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-dbscan&#34; class=&#34;anchor&#34; href=&#34;#dbscan&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;DBSCAN
+&lt;/h2&gt;
+&lt;p&gt;DBSCAN (Density-Based Spatial Clustering of Applications with Noise) is an algorithm that clusters points based on density, or in other words, based on how close they are to each other. The algorithm creates clusters from points that are packed together and treats points that are far apart as outliers.&lt;/p&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-advantages&#34; class=&#34;anchor&#34; href=&#34;#advantages&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Advantages
+&lt;/h3&gt;
+&lt;ol&gt;
+    &lt;li&gt;We do not need to determine the number of clusters. However, we still tweak some parameters. Instead of selecting the number of clusters, we specify the minimum number of points required for a cluster and the distance between points in a cluster (known as ε in this algorithm).&lt;/li&gt;
+    &lt;li&gt;Another advantage is that the algorithm is more computationally efficient since we determine the classification of all points in one pass through the dataset.&lt;/li&gt;
+    &lt;li&gt;This algorithm is more robust to outliers than some other clustering algorithms.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-disadvantages&#34; class=&#34;anchor&#34; href=&#34;#disadvantages&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Disadvantages
+&lt;/h3&gt;
+&lt;p&gt;This algorithm is not without any disadvantages. We saw in the image of clustering techniques that it cannot handle scenarios where the density of all points is uniform. In these scenarios, we would be better off using a different clustering algorithm.
+Additionally, the algorithm is only as good as the distance metric we use. Typically, we use the Euclidean distance, but this does not always produce the best results for every dataset.&lt;/p&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-the-algorithm&#34; class=&#34;anchor&#34; href=&#34;#the-algorithm&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;The Algorithm
+&lt;/h3&gt;
+&lt;p&gt;There are three types of points in DBSCAN: core points, border points, and noise points.&lt;/p&gt;
+&lt;p&gt;In the algorithm we iterate over all points. For each point we determine whether there are a minimum number of close points within a distance of ε. If so, we classify the point as a core point and add it to the cluster.&lt;/p&gt;
+&lt;p&gt;If there is no point near our point, we classify the point as noise.&lt;/p&gt;
+&lt;p&gt;Border points are points reachable from more than one cluster. We typically use a rule to determine which cluster should take which border point.&lt;/p&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-dbscan-in-scikit-learn&#34; class=&#34;anchor&#34; href=&#34;#dbscan-in-scikit-learn&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;DBSCAN in Scikit-Learn
+&lt;/h3&gt;
+&lt;p&gt;To demonstrate DBSCAN&#39;s strength, we will generate a dataset from Scikit-Learn&#39;s dataset submodule. The 
+    &lt;code&gt;make_moons&lt;/code&gt; function makes two crescent shapes. These shapes wouldn&#39;t be detected by algorithms like k-means but DBSCAN is able to detect them.
+&lt;/p&gt;
+&lt;p&gt;First, we&#39;ll load the 
+    &lt;code&gt;make_moons&lt;/code&gt; function and then we&#39;ll generate and plot our data. We choose a random noise of 0.05 so that the shapes aren&#39;t so perfect looking and slightly harder to detect. The moons data is comprised of a tuple of observations and labels, we will only use the observations.
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;import matplotlib.pyplot as plt
+from sklearn.datasets import make_moons
+
+moons = make_moons(n_samples=100, shuffle=True, noise=0.05)
+
+plt.scatter(moons[0][:,0], moons[0][:,1])
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/ce396032bad0ceeda157941ea5acec3dbd1b9cf4/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6d6f6f6e732e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/ce396032bad0ceeda157941ea5acec3dbd1b9cf4/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6d6f6f6e732e706e67&#34; alt=&#34;unlabeled moons&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/moons.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;Next, we will apply the DBSCAN algorithm to our data and plot the data with the labels generated by DBSCAN.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from sklearn.cluster import DBSCAN
+
+dbscan = DBSCAN(eps=0.3).fit(moons[0])
+dbscan.labels_
+array([0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0,
+       0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 1,
+       1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0,
+       1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 1,
+       1, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0], dtype=int64)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;plt.scatter(moons[0][:,0], moons[0][:,1], c=dbscan.labels_)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/f417fc9b66c43f29143afd6b98be8efe51fa6422/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6d6f6f6e735f6c6162656c65642e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/f417fc9b66c43f29143afd6b98be8efe51fa6422/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6d6f6f6e735f6c6162656c65642e706e67&#34; alt=&#34;labeled moons&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/moons_labeled.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-gaussian-mixture-models&#34; class=&#34;anchor&#34; href=&#34;#gaussian-mixture-models&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Gaussian Mixture Models
+&lt;/h2&gt;
+&lt;p&gt;Another cluster technique that attempts to overcome the many issues with k-means clustering is GMM. This method can handle scenarios where clusters have overlapping points since it does not create a firm boundary for the cluster. Instead, it produces a probability of belonging to a cluster for each observation. We can then use these probabilities to set a threshold for belonging to a cluster or maybe leave the labels as probabilities.&lt;/p&gt;
+&lt;p&gt;GMM describes each cluster by its centroid. We then use this centroid to generate a normal distribution with the centroid as the mean.&lt;/p&gt;
+&lt;p&gt;Similar to k-means, the algorithm alternates through two steps. We call these types of algorithms 
+    &lt;strong&gt;expectation maximization&lt;/strong&gt; algorithms. In the first step, we compute the expected value, in this case, the new centroids of the clusters. In the next step, we try to optimize the normal distribution. We continue doing this until convergence.
+&lt;/p&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-gmm-in-scikit-learn&#34; class=&#34;anchor&#34; href=&#34;#gmm-in-scikit-learn&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;GMM in Scikit-Learn
+&lt;/h3&gt;
+&lt;p&gt;In this example, we will use a dataset where GMM excels. In this data, the clusters will overlap. However, the GMM algorithm will still detect the clusters using our probabilistic approach.&lt;/p&gt;
+&lt;p&gt;In our code, we first generate the data using the
+    &lt;code&gt;make_classification&lt;/code&gt; function provided in Scikit-Learn. This function provides us with the data and the labels.
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from sklearn.datasets import make_classification
+from sklearn import mixture
+
+X = make_classification(n_features=2, n_redundant=0, n_informative=2,
+                             n_clusters_per_class=1)
+plt.scatter(X[0][:, 0], X[0][:, 1], marker=&#39;o&#39;, s=25, edgecolor=&#39;k&#39;)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/1b8af3347865ff82aabc85ebbe01ecbae903086a/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f676d6d2d756e636c757374657265642e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/1b8af3347865ff82aabc85ebbe01ecbae903086a/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f676d6d2d756e636c757374657265642e706e67&#34; alt=&#34;gmm unclustered&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/gmm-unclustered.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;As we can see, there are two clusters that overlap. However, our clustering algorithm will be able to pick up on this since it uses a probabilistic approach. In the code snippet below, we will cluster the data using GMM to produce 2 clusters. We initialize the Gaussian Mixture Model and then fit our data to the model. We then produce the labels using the 
+    &lt;code&gt;predict&lt;/code&gt; function and use those labels to color the observations in the scatter plot.
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;gmm = mixture.GaussianMixture(n_components=2, covariance_type=&#39;full&#39;).fit(X[0])
+plt.scatter(X[0][:, 0], X[0][:, 1], marker=&#39;o&#39;, c=gmm.predict(X[0]),
+            s=25, edgecolor=&#39;k&#39;)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/5deaa0c94a1cd26d3a85b93c52e9381fa81a82cf/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f676d6d2d636c757374657265642e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/5deaa0c94a1cd26d3a85b93c52e9381fa81a82cf/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f676d6d2d636c757374657265642e706e67&#34; alt=&#34;gmm clustered&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/gmm-clustered.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-conclusion&#34; class=&#34;anchor&#34; href=&#34;#conclusion&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Conclusion
+&lt;/h2&gt;
+&lt;p&gt;In this lesson we learned about 2 additional unsupervised learning techniques that help us address different scenarios. DBSCAN is a clustering technique used particularly to detect clusters based on differences in the density (or proximity) of observations. GMM is a clustering technique that creates a probabilistic model for clustering. This approach allows us to detect overlapping clusters. These two techniques expand our ability to cluster all types of datasets and gain meaningful insight about our data.&lt;/p&gt;
+&lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+  </div>
+  <div id="seq_contents_4"
+    aria-labelledby="tab_4"
+    aria-hidden="true"
+    class="seq_contents tex2jax_ignore asciimath2jax_ignore">
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-vertical&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;VerticalStudentView&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34; data-request-token=&#34;7af0eda2939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@55df585fc6b04f4490e380dfcf4ea1a5&#34; data-block-type=&#34;vertical&#34;&gt;
+  
+
+  &lt;h2 class=&#34;hd hd-2 unit-title&#34;&gt;Unsupervised Learning Model Evaluation&lt;/h2&gt;
+
+    &lt;div class=&#34;ih-bookmark-button-wrapper&#34;&gt;
+    	
+
+
+
+&lt;div class=&#34;bookmark-button-wrapper&#34;&gt;
+  &lt;button class=&#34;btn btn-link bookmark-button &#34;
+    aria-pressed=&#34;false&#34;
+    data-bookmark-id=&#34;NoahB,block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@55df585fc6b04f4490e380dfcf4ea1a5&#34;
+    data-bookmarks-api-url=&#34;/api/bookmarks/v1/bookmarks/&#34;&gt;
+     &lt;span class=&#34;bookmark-text&#34;&gt;Bookmark this page&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+
+    &lt;/div&gt;	
+
+&lt;div class=&#34;vert-mod&#34;&gt;
+  &lt;div class=&#34;vert vert-0&#34; data-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@a11e56a1d18f418782275fcb2ab4411d&#34;&gt;
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;7af0eda2939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@a11e56a1d18f418782275fcb2ab4411d&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  &lt;h2&gt;
+    &lt;a id=&#34;user-content-lesson-goals&#34; class=&#34;anchor&#34; href=&#34;#lesson-goals&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Lesson Goals
+&lt;/h2&gt;
+&lt;ul&gt;
+    &lt;li&gt;Learn about unsupervised model evaluation.&lt;/li&gt;
+    &lt;li&gt;Calculate silhouette scores for models.&lt;/li&gt;
+    &lt;li&gt;Determine optimal number of clusters with elbow curves.&lt;/li&gt;
+    &lt;li&gt;Evaluate cluster quality with Adjusted Rand Score.&lt;/li&gt;
+    &lt;li&gt;Use visualization techniques to evaluate clusters.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-introduction&#34; class=&#34;anchor&#34; href=&#34;#introduction&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Introduction
+&lt;/h2&gt;
+&lt;p&gt;Evaluating an unsupervised machine learning model presents a very tricky problem. With supervised learning, the best metric to use to evaluate a model varied from application to application, but the overall idea is straight-forward - come up with a statistically sound way to compare the model predictions with our known ground truth. With an unsupervised problem, generally speaking we 
+    &lt;em&gt;do not&lt;/em&gt; have any ground truth labels, so there&#39;s no definitive source of truth with which we can compare our model predictions. On some level, this presents an impossible problem - there&#39;s no magic bullet or single number that tells us a given unsupervised model is best. Faced with this problem, what are we supposed to do? The answer, unfortunately, is it depends. More specifically, we need to consider what the purpose of our unsupervised learning is, and subjectively analyze it in terms of how well it accomplishes that purpose.
+&lt;/p&gt;
+&lt;p&gt;Broadly speaking, unsupervised learning is the process of using algorithms to discover some latent underlying structure in a dataset. In some cases, this is an end unto itself. An e-commerce site might want to make a recommender system that uses shopping history to present new products of interest to users. There&#39;s no inherent &#34;right&#34; answer here, but a clustering algorithm that does a better job finding clusters of products that are actually related purchases will be better in this context. In other cases, the unsupervised learning is actually a step in a machine learning pipeline - it finds some underlying structures in the data that can be used as features for a supervised learning system to generate better predictions. In this case, we might judge the performance of the unsupervised model by how much it improves the downstream performance of the supervised model (based on the metric(s) of choice for the supervised model).&lt;/p&gt;
+&lt;p&gt;Finally, with unsupervised learning models it is important not to discount the role of human intuition and visualizations to evaluate models. Although we have prominent, well-documented cognitive biases and shortcomings, humans are often quite good at recognizing patterns visually and evaluating whether a model &#34;looks right.&#34; An important step in evaluating a model is thus often to produce visualizations that highlight some aspect of the model&#39;s predictions and see how &#34;right&#34; they look to the human eye. An intuitively similar approach can involve looking at representative samples of members of the clusters/predictions generated by the model. Although this is necessarily a subjective process, it should not be underestimated as a useful tool for evaluation.&lt;/p&gt;
+&lt;p&gt;Compare the two clustering algorithms on the following example:&lt;/p&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/d22e12a671e3bbb1c1449ad94f7f12b3f17a3a68/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f636c75737465722d636f6d70617269736f6e2e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/d22e12a671e3bbb1c1449ad94f7f12b3f17a3a68/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f636c75737465722d636f6d70617269736f6e2e706e67&#34; alt=&#34;Cluster Comparison&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/cluster-comparison.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;It is fairly obvious to the human eye that the first algorithm does a better job at identifying the two qualitatively different classes of data present. Although real-world data is rarely this well-behaved, visualization is often one of the best tools we have to make sense of a clustering algorithm.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-evaluating-quality-of-clustering&#34; class=&#34;anchor&#34; href=&#34;#evaluating-quality-of-clustering&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Evaluating Quality of Clustering
+&lt;/h2&gt;
+&lt;p&gt;In the case where we are simply interested in the quality of clustering for its own sake, we have a few tools at our disposal.&lt;/p&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-silhouette-score&#34; class=&#34;anchor&#34; href=&#34;#silhouette-score&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Silhouette Score
+&lt;/h3&gt;
+&lt;p&gt;This is the closest technique to the relatively simple scoring methods we learned with Supervised Learning. It basically evaluates a model based on how well defined the cluster centers are. For each sample in the dataset, it is defined as:&lt;/p&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/e7664bdfd8e263f7911eecaea32c1b4df371e090/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f73696c686f75657474652d666f726d756c612e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/e7664bdfd8e263f7911eecaea32c1b4df371e090/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f73696c686f75657474652d666f726d756c612e706e67&#34; alt=&#34;Silhouette Score&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/silhouette-formula.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;where 
+    &lt;em&gt;a&lt;/em&gt; is the mean distance between the sample and all other points in the same class, and
+    &lt;em&gt;b&lt;/em&gt; is the mean distance between the sample and all the other points in the next nearest cluster
+&lt;/p&gt;
+&lt;p&gt;For a dataset, we then take the mean Silhouette score for every sample. The score is in the range [-1, 1], with a higher score corresponding to dense, well-separated clusters and scores around 0 indicating overlapping clusters. Scikit-Learn has an 
+    &lt;a href=&#34;https://scikit-learn.org/stable/modules/generated/sklearn.metrics.silhouette_score.html#sklearn.metrics.silhouette_score&#34; rel=&#34;nofollow&#34;&gt;implementation&lt;/a&gt;:
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from sklearn.metrics import silhouette_score
+
+score = silhouette_score(X, labels, metric=&#39;euclidean&#39;)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;This method is useful because it is straightforward and can be calculated without labels on virtually any clustering problem. However, there are a couple of important caveats:&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;
+        &lt;p&gt;The Silhouette score does not say anything, per se, about the usefulness of clusters in a particular case. All it says is how well clusters behave in the definitional sense of clusters - e.g. how dense are they and how well separated.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p&gt;The score is very similar to the metric that common algorithms like KMeans seek to optimize, so it can lead to overfitting (we are judging a model based on how well it does the exact thing it was trained to do). Having a hold-out test set of data can help with this issue.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p&gt;This score favors convex clusters (defined geometrically as clusters where, for every pair of points within the object, every point on the straight line joining them is also within the object). This is fine for data that is amenable to K-Means style clustering, but for many datasets it will give an artificially low score.&lt;/p&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+    &lt;strong&gt;Note:&lt;/strong&gt; The
+    &lt;code&gt;metric&lt;/code&gt; argument is the distance metric to use. Euclidean distance is the simplest, but it does not work well for high dimensional data.
+&lt;/p&gt;
+&lt;p&gt;In the example below, we are generating some data, fitting two clustering models to the data, plotting the clusters assigned by each model, and then printing the silhouette scores for each.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from sklearn import cluster, datasets
+from sklearn.preprocessing import StandardScaler
+from matplotlib.lines import Line2D
+from sklearn.metrics import silhouette_score
+
+n_samples = 1500
+X, y = datasets.make_moons(n_samples=n_samples, noise=.05)
+X = StandardScaler().fit_transform(X)
+
+single = cluster.AgglomerativeClustering(n_clusters=2, linkage=&#39;single&#39;)
+kmeans = cluster.KMeans(n_clusters=2)
+single.fit(X)
+y1_pred = single.labels_.astype(np.int)
+kmeans.fit(X)
+y2_pred = kmeans.predict(X)
+
+
+fig, ax = plt.subplots(1, 2, figsize=(12, 6))
+colors = np.array([&#39;blue&#39;, &#39;red&#39;])
+legend_elems = [Line2D([0], [0], color=color, marker=&#39;o&#39;, linestyle=&#39;&#39;, label=&#34;Predicted Class {}&#34;.format(i))
+                for i, color in enumerate(colors)]
+ax[0].scatter(X[:, 0], X[:, 1], color=colors[y1_pred])
+ax[0].legend(handles=legend_elems, loc=&#39;upper right&#39;)
+ax[1].scatter(X[:, 0], X[:, 1], color=colors[y2_pred])
+ax[1].legend(handles=legend_elems, loc=&#39;upper right&#39;)
+
+print(&#34;Model 1 Silhouette Score: {}&#34;.format(silhouette_score(X, y1_pred)))
+print(&#34;Model 2 Silhouette Score: {}&#34;.format(silhouette_score(X, y2_pred)))
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;pre lang=&#34;text&#34;&gt;
+    &lt;code&gt;Model 1 Silhouette Score: 0.39502725867409694
+Model 2 Silhouette Score: 0.49730694704725587
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/5b7c241f555ec597e125a3ce5e010e7020d94e03/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f636c75737465722d636f6d70617269736f6e2d322e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/5b7c241f555ec597e125a3ce5e010e7020d94e03/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f636c75737465722d636f6d70617269736f6e2d322e706e67&#34; alt=&#34;Cluster Comparison 2&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/cluster-comparison-2.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;As you can see, the second model, based on KMeans and generating convex clusters, has a higher silhouette score, despite doing a qualitatively worse job identifying the clusters in the dataset.&lt;/p&gt;
+&lt;p&gt;Scikit-Learn also has two other metrics, 
+    &lt;a href=&#34;https://scikit-learn.org/stable/modules/generated/sklearn.metrics.calinski_harabaz_score.html#sklearn.metrics.calinski_harabaz_score&#34; rel=&#34;nofollow&#34;&gt;Calinsky-Harabaz Index&lt;/a&gt; and
+    &lt;a href=&#34;https://scikit-learn.org/stable/modules/generated/sklearn.metrics.davies_bouldin_score.html#sklearn.metrics.davies_bouldin_score&#34; rel=&#34;nofollow&#34;&gt;Davies-Bouldin Index&lt;/a&gt; which generate similarly &#34;simple&#34; metrics for cluster quality, but generally suffer from the same problems as Silhouette Score.
+&lt;/p&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-optimal-number-of-clusters&#34; class=&#34;anchor&#34; href=&#34;#optimal-number-of-clusters&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Optimal Number of Clusters
+&lt;/h3&gt;
+&lt;p&gt;When training a clustering algorithm, one of the hardest and most important parameters to optimize is the number of clusters. Having too many clusters might mean that we haven&#39;t actually learned much about the data - the whole point of clustering is to identify a relatively small number of similarities that exist in the dataset. Too few clusters might mean that we are grouping unlike samples together artificially. There are many different methods for choosing the appropriate number of clusters, but one common method is calculating a metric (for KMeans usually using its standard sum-of-square-means score function that it tries to minimize) for each number of clusters, then plotting the error function vs the number of clusters.&lt;/p&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/0d06abd95305bfc994e41037fc697c0a61b624f1/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f656c626f772d63757276652e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/0d06abd95305bfc994e41037fc697c0a61b624f1/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f656c626f772d63757276652e706e67&#34; alt=&#34;Elbow Curve&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/elbow-curve.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;The optimum number of clusters is often where the plot displays an &#34;elbow&#34; or an inflection point where the slope of the line changes significantly. In this case, we can see an elbow at 3 clusters. Unfortunately, in real world datasets this can sometimes be difficult to ascertain, but it is still a worthwhile thing to look at.&lt;/p&gt;
+&lt;p&gt;The Yellowbrick machine visualization library has an implementation of an 
+    &lt;a href=&#34;https://www.scikit-yb.org/en/latest/api/cluster/elbow.html&#34; rel=&#34;nofollow&#34;&gt;elbow curve visualizer&lt;/a&gt; that can be generated as follows.
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from yellowbrick.cluster import KElbowVisualizer
+
+model = KMeans()
+visualizer = KElbowVisualizer(model, k=(4,12))
+visualizer.fit(X)
+visualizer.poof()
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-other-numerical-approaches&#34; class=&#34;anchor&#34; href=&#34;#other-numerical-approaches&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Other Numerical Approaches
+&lt;/h3&gt;
+&lt;p&gt;If ground truth (actual labels) are known for a dataset, the options for evaluating the quality of clustering expand dramatically. These methods were often used in research for the development and refinement of clustering algorithms. In these cases, the ground truth labels were either self-evident (the common benchmark 
+    &lt;a href=&#34;http://yann.lecun.com/exdb/mnist/&#34; rel=&#34;nofollow&#34;&gt;MNIST&lt;/a&gt; dataset of handwritten digits, for example), or were generated using labor-intensive human experts. Regardless of where the labels come from, a set of labeled data can be held out from the data that the clustering algorithm trains on, then used to evaluate performance, a process known as
+    &lt;em&gt;external evaluation&lt;/em&gt;. Scikit-Learn has a number of methods to perform this evaluation, but the most common is the
+    &lt;a href=&#34;https://scikit-learn.org/stable/modules/generated/sklearn.metrics.adjusted_rand_score.html#sklearn.metrics.adjusted_rand_score&#34; rel=&#34;nofollow&#34;&gt;Adjusted Rand Index&lt;/a&gt;:
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from sklearn.metrics import adjusted_rand_score
+
+score = adjusted_rand_score(true_labels, predicted_labels)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;It ranges from [-1, 1], with positive being better. It also does not assume a distribution of the underlying clusters either, so will work equally well on convex and non-convex clusters.&lt;/p&gt;
+&lt;p&gt;In practice, unfortunately, real world datasets for clustering rarely have labels, so this method is of limited use. However, in some problems, you may be able to generate some labels by hand to use as a test set for external evaluation.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-feature-generation-for-supervised-learning&#34; class=&#34;anchor&#34; href=&#34;#feature-generation-for-supervised-learning&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Feature Generation for Supervised Learning
+&lt;/h2&gt;
+&lt;p&gt;Another way that unsupervised learning is frequently used is to find underlying structures in a dataset that can in turn be used by a supervised learning technique such as Linear Regression to improve prediction results. This can be done for a variety of reasons, but one of the most common is the so-called 
+    &lt;a href=&#34;https://en.wikipedia.org/wiki/Curse_of_dimensionality&#34; rel=&#34;nofollow&#34;&gt;curse of dimensionality&lt;/a&gt;, the phenomena whereby the feature space of a dataset increases so fast that the dataset quickly becomes extremely sparse, creating problems for most statistical methods. A solution to this is to first apply an unsupervised dimensionality reduction model on the dataset, then use the resulting smaller set of features in the classifier/regressor. Another use case is creating more interpretable models; if a classifier is built using clusters as features, the relative importance of these clusters as well as the membership of the clusters can be used to gain insight about how the model is making its predictions.
+&lt;/p&gt;
+&lt;p&gt;When using unsupervised learning in this context (creating features for a supervised learning model), we often will use the performance of the derived supervised model to evaluate the quality of the unsupervised model. For the unsupervised model to be useful, it should improve some aspect of performance on the supervised model, so we should be able to use any of the supervised learning model evaluation techniques to compare results with a baseline supervised model that doesn&#39;t use the unsupervised-derived features.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-visualization-techniques&#34; class=&#34;anchor&#34; href=&#34;#visualization-techniques&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Visualization Techniques
+&lt;/h2&gt;
+&lt;p&gt;Visualization is extremely important to understanding Unsupervised models. On low dimensional datasets (2-3 dimensions), it is relatively easy to use plots such as those presented earlier in this lesson to evaluate how well a model does at identifying clusters (or outliers) in the data.&lt;/p&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-visualizing-clusters&#34; class=&#34;anchor&#34; href=&#34;#visualizing-clusters&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Visualizing Clusters
+&lt;/h3&gt;
+&lt;p&gt;The most basic visualization we can do is a basic 2-d scatterplot of the data with colors corresponding to clusters. This lets us visually determine whether the clustering algorithm appears to be doing a good job at identifying clusters.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from sklearn.datasets import make_blobs
+from sklearn.cluster import KMeans
+
+X, _ = make_blobs(n_samples=1500, centers=4, cluster_std=1.5)
+
+kmeans = KMeans(n_clusters=4)
+kmeans.fit(X)
+y_pred = kmeans.predict(X)
+
+plt.figure(figsize=(6,6))
+plt.scatter(X[:, 0], X[:, 1], c=y_pred)
+
+centers = kmeans.cluster_centers_
+plt.scatter(centers[:, 0], centers[:, 1], c=&#39;red&#39;, s=50, alpha=0.75)
+
+plt.show()
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/68acac9480b13e41a9e6050a20aaf05afcf14c61/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f706c6f742d636c7573746572732e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/68acac9480b13e41a9e6050a20aaf05afcf14c61/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f706c6f742d636c7573746572732e706e67&#34; alt=&#34;Plot Clusters&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/plot-clusters.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;This can even be done in 3D in a meaningful way, but in the real world we often have much higher dimensionality data. However, not all dimensions are created equal. We might have 10 or 20 features that are inputs for the clustering, but we&#39;re 
+    &lt;em&gt;really&lt;/em&gt; only interested in a few of those features (or perhaps understand from the problem domain that a few are far more influential than others). We can then hand select a few pairs of important features and construct a cluster plot of these pairs to see whether the clustering algorithm is doing a good job discriminating between these paired variables. A bit of a more robust approach is to construct a scatter matrix containing of all pairs of variables and see where the clustering algorithm appears to be doing a good job of differentiating.
+&lt;/p&gt;
+&lt;p&gt;These ad-hoc dimensionality reduction approaches do have the problem of assuming clean, differentiable pair-wise patterns in the data. In reality, your dataset might be more complicated than that, and have complex, multi-dimensional decision boundaries that when projected into any given 2 dimensions are not particularly enlightening/clear. Still, looking at pair-wise plots via scatter matrices can be a good exercise for many use cases.&lt;/p&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-pca&#34; class=&#34;anchor&#34; href=&#34;#pca&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;PCA
+&lt;/h3&gt;
+&lt;p&gt;Another more sophisticated approach to handling higher dimensional data is a 
+    &lt;em&gt;Principal Component Analysis&lt;/em&gt; (PCA), which we were introduced to in a previous lesson. A PCA transform attempts to find the orthogonal set of vectors that account for as much of the variability of the dataset in as few components as possible. The first principal component will encompass as much of the dataset variation as possible in 1 dimension, the second component will encompass as much as possible of the remaining variation as possible while remaining orthogonal to the first, and so on. Practically speaking, this means that taking the first
+    &lt;code&gt;n&lt;/code&gt; principal components of a dataset captures as much linearly uncorrelated variation as possible.
+&lt;/p&gt;
+&lt;p&gt;This intuition can be seen visually:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from sklearn.datasets import make_blobs
+from mpl_toolkits.mplot3d import Axes3D
+from scipy.spatial.transform import Rotation as R
+
+X, _ = make_blobs(n_samples=500, n_features=2, centers=3, cluster_std=1.0)
+
+X = np.c_[X, 0.5 * np.random.randn(X.shape[0], 1)]
+
+rot = R.from_euler(&#39;y&#39;, 45, degrees=True)
+X = rot.apply(X)
+
+fig = plt.figure(figsize=(8, 8))
+ax = fig.gca(projection=&#39;3d&#39;)
+
+ax.scatter(X[:, 0], X[:, 1], X[:, 2])
+ax.set_xlim(-7, 7)
+ax.set_ylim(-7, 7)
+ax.set_zlim(-7, 7)
+
+ax.view_init(elev=20, azim=65)
+plt.show()
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/2aaa956d734a589bdaf3b9ae001be23f56f06cde/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f33642d636c75737465722d706c6f742e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/2aaa956d734a589bdaf3b9ae001be23f56f06cde/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f33642d636c75737465722d706c6f742e706e67&#34; alt=&#34;3D Cluster Plot&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/3d-cluster-plot.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;In this 3D plot we can see that 3 clusters in the data, but it would be difficult to define these clusters along any of the 3 axes 
+    &lt;code&gt;x&lt;/code&gt;,
+    &lt;code&gt;y&lt;/code&gt;, or
+    &lt;code&gt;z&lt;/code&gt;. Now we apply a PCA and plot the components:
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from sklearn.decomposition import PCA
+
+pca = PCA()
+pca.fit(X)
+pca_X = pca.transform(X)
+
+fig = plt.figure(figsize=(6, 6))
+ax = [plt.subplot2grid((6, 1), (0, 0), rowspan=4), plt.subplot2grid((6, 1), (5, 0))]
+
+ax[0].scatter(pca_X[:, 0], pca_X[:, 1])
+ax[0].set_xlabel(&#34;PCA 1&#34;)
+ax[0].set_ylabel(&#34;PCA 2&#34;)
+
+ax[1].set_title(&#39;PCA 3&#39;, pad=-5)
+ax[1].hlines(1, -7, 10)
+y = np.ones(X.shape[0])
+ax[1].plot(pca_X[:, 2], y, &#39;|&#39;, ms=&#39;20&#39;)
+ax[1].axis(&#39;off&#39;)
+
+plt.show()
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/d6ce5cdc6be81dbae222ba275793d106c0dc5043/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7063612d706c6f742e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/d6ce5cdc6be81dbae222ba275793d106c0dc5043/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7063612d706c6f742e706e67&#34; alt=&#34;PCA Plot&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/pca-plot.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;As we can see, the PCA transformed us into a vector space where the vast majority of the variation in the data (the 3 clusters generated) are in a 2D space (indeed most of the variation for the 3 clusters could be captured in the first vector, 
+    &lt;code&gt;x&lt;/code&gt;), and the last PCA component contains relatively little variation.
+&lt;/p&gt;
+&lt;p&gt;For datasets that are amenable to linear transforms, PCA can be a powerful method to reduce the dimensionality of the dataset and allow us to make 2 or 3 dimensional plots of higher dimensionality data.&lt;/p&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-t-sne-plots&#34; class=&#34;anchor&#34; href=&#34;#t-sne-plots&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;T-SNE Plots
+&lt;/h3&gt;
+&lt;p&gt;Another approach to visualizing high-dimensional datasets is 
+    &lt;em&gt;t-distributed Stochastic Neighbor Embedding&lt;/em&gt; (t-SNE). It is one of the most and widely used of so-called
+    &lt;em&gt;manifold learning&lt;/em&gt; techniques which attempt to achieve similar ends as PCA (dimensionality reduction and maximization of variation in orthogonal vectors) for non-linearly separable datasets.
+&lt;/p&gt;
+&lt;p&gt;t-SNE uses a 
+    &lt;a href=&#34;https://en.wikipedia.org/wiki/T-distributed_stochastic_neighbor_embedding&#34; rel=&#34;nofollow&#34;&gt;complicated algorithm&lt;/a&gt; to come up with a 2D representation of data that allows insightful visualization of high dimensional data. The algorithm is adaptive and non-linear, meaning that it can perform different transformations in different areas of the dataset. This allows it to represent both global and local structure faithfully. It also requires a tuning parameter,
+    &lt;code&gt;perplexity&lt;/code&gt;, which can be thought of as a balancing act between representing local structure vs. global patterns in the data.
+&lt;/p&gt;
+&lt;p&gt;The details of t-SNE are far beyond this lesson, but generally it is worth keeping a few things in mind:&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;
+        &lt;p&gt;t-SNE is much more computationally expensive than a linear transform like PCA, so it will run much slower, especially on large datasets. One approach to counter this can be to first use PCA to lower the dimensionality of the input data, then run t-SNE on the PCA-transformed output.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p&gt;The hyper-parameters (mainly 
+            &lt;code&gt;perplexity&lt;/code&gt;) can produce different plots, so it is important to run it multiple times with different values of
+            &lt;code&gt;perplexity&lt;/code&gt; to compare results.
+        &lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p&gt;t-SNE is all about representing clusters in the data. Relative distances and positions of clusters in the visualization may not have significance.&lt;/p&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;from sklearn.manifold import TSNE
+
+X, y = datasets.load_iris(return_X_y=True)
+
+fig, ax = plt.subplots(1, 4, figsize=(15, 7))
+for i, perp in enumerate([5, 30, 50, 100]):
+    tsne = TSNE(perplexity=perp)
+    x_embedded = tsne.fit_transform(X)
+    ax[i].scatter(x_embedded[:, 0], x_embedded[:, 1], c=y)
+    ax[i].set_title(&#34;Perplexity = {}&#34;.format(perp))
+    
+plt.show()
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/110e67083d5ed43d0dfbbfb1062385d439f93a24/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f74736e652d706c6f74732e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/110e67083d5ed43d0dfbbfb1062385d439f93a24/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f74736e652d706c6f74732e706e67&#34; alt=&#34;T-SNE Plots&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/tsne-plots.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;The output of a t-SNE can be used to visually explore data (to get a sense of the appropriate number of clusters in a high dimensional space, for example), or as the input into another algorithm directly. A clustering algorithm could be applied directly to the output of t-SNE to linearly separate the non-linear clusters in the data it found and build up an accurate or useful unsupervised learning pipeline.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-summary&#34; class=&#34;anchor&#34; href=&#34;#summary&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Summary
+&lt;/h2&gt;
+&lt;p&gt;In this lesson, we have looked at a variety of ways to evaluate the quality of clusters that result from applying unsupervised machine learning models to data. We first looked at silhouette scores and elbow curves to determine the optimal number of clusters into which we should organize our data. We also saw how we can use other numeric methods such as the adjusted rand score to evaluate our clustering efforts. From there, we looked at how to visualize clusters and reduce dimensions via PCA and t-SNE so that examining the results of our models visually becomes easier. Unsupervised model evaluation is really part art and part science, so it often requires a combination of the methods we have covered in this lesson to get a reasonably comprehensive view of model effectiveness and cluster quality.&lt;/p&gt;
+&lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+  </div>
+  <div id="seq_content" class="ih-learnig-unit" role="tabpanel"></div>
+
+  <nav class="sequence-bottom ih-js-fire-highlighting-controls" aria-label="Section">
+    <button class="sequence-nav-button button-previous">
+      <span class="icon fa fa-chevron-prev" aria-hidden="true"></span>
+      <span>Previous</span>
+    </button>
+    <button class="sequence-nav-button button-next">
+      <span>Next</span>
+      <span class="icon fa fa-chevron-next" aria-hidden="true"></span>
+    </button>
+  </nav>
+</div>
+
+</div>
+
+        </main>
+    </section>
+
+    <section class="courseware-results-wrapper">
+      <div id="loading-message" aria-live="polite" aria-relevant="all"></div>
+      <div id="error-message" aria-live="polite"></div>
+      <div class="courseware-results search-results" data-course-id="course-v1:IRONHACK+DAFT+201906_MIA" data-lang-code="en"></div>
+    </section>
+
+  </div>
+  
+
+
+
+
+
+
+
+
+
+    
+    
+    <script type="text/javascript" src="../../../../../static/bundles/CourseSock.43ffb68a30fa51e4e467.1f398818dd61.js" ></script>
+      <script type="text/javascript">
+        
+    new CourseSock({
+        el:'.verification-sock'
+    });
+
+      </script>
+
+
+</div>
+<div class="container-footer">
+</div>
+
+          
+        </div>
+      </div>
+
+    
+    
+
+      <div class="ih-beta-banner">
+        <span class="icon fa fa-flask"></span>
+        <span class="ih-beta-banner-text">We just launched a new version of the student platform. Everything should be fine, but if you encounter a bug, don't hesitate and send it our way.</span>
+      </div>
+
+  </div>
+
+  
+  
+  <script type="text/javascript" src="../../../../../static/common/js/vendor/jquery.scrollTo.525edcc52fe8.js"></script>
+  <script type="text/javascript" src="../../../../../static/js/vendor/flot/jquery.flot.d3d45ff0c6a8.js"></script>
+
+  
+    <script type="text/javascript" src="../../../../../static/js/lms-courseware.43ed60564822.js" charset="utf-8"></script>
+
+
+  
+
+
+
+<script type="text/javascript">
+    // Fast Preview was introduced in 2.5. However, it
+    // causes undesirable flashing/font size changes when
+    // MathJax is used for interactive preview (equation editor).
+    // Setting processSectionDelay to 0 (see below) fully eliminates
+    // fast preview, but to reduce confusion, we are also setting
+    // the option as displayed in the context menu to false.
+    // When upgrading to 2.6, check if this variable name changed.
+    window.MathJax = {
+      menuSettings: {CHTMLpreview: false}
+    };
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [
+        ["\\(","\\)"],
+        ['[mathjaxinline]','[/mathjaxinline]']
+      ],
+      displayMath: [
+        ["\\[","\\]"],
+        ['[mathjax]','[/mathjax]']
+      ]
+    }
+  });
+</script>
+<script type="text/x-mathjax-config">
+
+  // In order to eliminate all flashing during interactive
+  // preview, it is necessary to set processSectionDelay to 0
+  // (remove delay between input and output phases). This
+  // effectively disables fast preview, regardless of
+  // the fast preview setting as shown in the context menu.
+  MathJax.Hub.processSectionDelay = 0;
+
+  MathJax.Hub.signal.Interest(function(message) {
+    if(message[0] === "End Math") {
+        set_mathjax_display_div_settings();
+    }
+  });
+  function set_mathjax_display_div_settings() {
+    $('.MathJax_Display').each(function( index ) {
+      this.setAttribute('tabindex', '0');
+      this.setAttribute('aria-live', 'off');
+      this.removeAttribute('role');
+      this.removeAttribute('aria-readonly');
+    });
+  }
+</script>
+
+
+<!-- This must appear after all mathjax-config blocks, so it is after the imports from the other templates.
+     It can't be run through static.url because MathJax uses crazy url introspection to do lazy loading of
+     MathJax extension libraries -->
+<script type="text/javascript" src="../../../../../../cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJaxf4fa.js?config=TeX-MML-AM_SVG"></script>
+
+
+    
+    
+      <script type="text/javascript" src="../../../../../static/course_search/js/course_search_factory.26a9d7197c46bdd1.js?raw"></script>
+    <script type="text/javascript">
+        (function (require) {
+            require(['course_search/js/course_search_factory'], function (CourseSearchFactory) {
+                
+        var courseId = $('.courseware-results').data('courseId');
+        CourseSearchFactory({
+            courseId: courseId,
+            searchHeader: $('.search-bar')
+        });
+    
+            });
+        }).call(this, require || RequireJS.require);
+    </script>
+
+
+  
+    
+      <script type="text/javascript" src="../../../../../static/js/courseware/courseware_factory.1504fc10caefbdd1.js?raw"></script>
+    <script type="text/javascript">
+        (function (require) {
+            require(['js/courseware/courseware_factory'], function (CoursewareFactory) {
+                
+    CoursewareFactory();
+  
+            });
+        }).call(this, require || RequireJS.require);
+    </script>
+
+
+
+  <script type="text/javascript">
+    var $$course_id = "course\u002Dv1:IRONHACK+DAFT+201906_MIA";
+  </script>
+
+
+
+
+
+
+  
+
+
+
+  <script type="text/javascript" src="../../../../../static/js/vendor/noreferrer.aa62a3e70ffa.js" charset="utf-8"></script>
+  <script type="text/javascript" src="../../../../../static/js/utils/navigation.08930e16ab3d.js" charset="utf-8"></script>
+  <script type="text/javascript" src="../../../../../static/js/header/header.309a1243e175.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="../../../../../static/ih-lms-theme/js/vendor/highlight.min.496e109b43ca.js" ></script>
+    <script type="text/javascript" src="../../../../../static/ih-lms-theme/js/vendor/ih-highlight.0f32f131ba83.js" ></script>
+  
+</body>
+</html>
+
+

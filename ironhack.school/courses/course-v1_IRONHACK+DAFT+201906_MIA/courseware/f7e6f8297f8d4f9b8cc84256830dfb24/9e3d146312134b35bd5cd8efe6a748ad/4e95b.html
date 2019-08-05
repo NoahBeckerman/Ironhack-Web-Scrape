@@ -1,0 +1,2377 @@
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<!--[if lte IE 9]><html class="ie ie9 lte9" lang="en"><![endif]-->
+<!--[if !IE]><!--><html lang="en"><!--<![endif]-->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head dir="ltr">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+  
+<title data-base-title="
+ Data Wrangling and Cleaning with Pandas | DAFT Courseware | Ironhack Student Platform">
+  
+ Data Cleaning | Data Wrangling and Cleaning with Pandas | DAFT Courseware | Ironhack Student Platform
+</title>
+
+
+      <script type="text/javascript">
+        /* immediately break out of an iframe if coming from the marketing website */
+        (function(window) {
+          if (window.location !== window.top.location) {
+            window.top.location = window.location;
+          }
+        })(this);
+      </script>
+
+  
+
+  <script type="text/javascript" src="../../../../../static/js/i18n/en/djangojs.e37eef1ffc63.js"></script>
+  <script type="text/javascript" src="../../../../../static/js/ie11_find_array.bd1c6dc7a133.js"></script>
+
+  <link rel="icon" type="image/x-icon" href="../../../../../static/ih-lms-theme/images/favicon.0de58aa5bfca.ico" />
+
+  
+  
+
+    <link href="../../../../../static/ih-lms-theme/css/lms-style-vendor.68e48093f5dd.css" rel="stylesheet" type="text/css" />
+
+
+
+      <link rel="stylesheet" href="../../../../../static/ih-lms-theme/css/bootstrap/lms-main.c54b2923d249.css" type="text/css" media="all" />
+
+    
+    <script type="text/javascript" src="../../../../../static/js/lms-main_vendor.a04b73033169.js" charset="utf-8"></script>
+
+
+    
+    <script type="text/javascript" src="../../../../../static/js/lms-application.e7bd4b65d083.js" charset="utf-8"></script>
+
+
+
+  
+    
+    
+    <script type="text/javascript" src="../../../../../static/bundles/commons.d60dcd98c024881d011e.c835e91d09f6.js" ></script>
+
+
+
+  <script>
+    window.baseUrl = "../../../../../static/index.html";
+    (function (require) {
+      require.config({
+          baseUrl: window.baseUrl
+      });
+    }).call(this, require || RequireJS.require);
+  </script>
+  <script type="text/javascript" src="../../../../../static/lms/js/require-config.8e00198660b0.js"></script>
+  
+    <script type="text/javascript">
+        (function (require) {
+          require.config({
+              paths: {
+                'js/courseware/courseware_factory': 'js/courseware/courseware_factory.1504fc10caef',
+'draggabilly': 'js/vendor/draggabilly.26caba6f7187',
+'js/courseware/toggle_element_visibility': 'js/courseware/toggle_element_visibility.d5f10bc65ed0',
+'hls': 'common/js/vendor/hls.b10b9ef4015b',
+'js/courseware/link_clicked_events': 'js/courseware/link_clicked_events',
+'moment': 'common/js/vendor/moment-with-locales.084396f4103c',
+'moment-timezone': 'common/js/vendor/moment-timezone-with-data.60142e6c4416',
+'js/student_account/logistration_factory': 'js/student_account/logistration_factory.d7765e4e6715',
+'js/groups/views/cohorts_dashboard_factory': 'js/groups/views/cohorts_dashboard_factory.7f46663f97b4',
+'js/dateutil_factory': 'js/dateutil_factory.841c29e02056',
+'course_bookmarks/js/views/bookmark_button': 'course_bookmarks/js/views/bookmark_button.d4cfaf3361fa',
+'js/courseware/accordion_events': 'js/courseware/accordion_events.6064c7809de5',
+'js/views/message_banner': 'js/views/message_banner.af013d0ecbd4',
+'js/groups/discussions_management/discussions_dashboard_factory': 'js/discussions_management/views/discussions_dashboard_factory.2e10d9097343',
+'js/courseware/course_info_events': 'js/courseware/course_info_events.2fc35b57627f'
+            }
+          });
+        }).call(this, require || RequireJS.require);
+    </script>
+  
+
+  
+
+  
+
+    <link href="../../../../../static/ih-lms-theme/css/lms-style-course-vendor.691e50c64ad7.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+
+    <link href="../../../../../static/ih-lms-theme/css/lms-course.1d0edf3ec473.css" rel="stylesheet" type="text/css" />
+
+
+
+
+<script type="text/javascript" src="../../../../../static/js/jquery.autocomplete.3bd10d7510d2.js"></script>
+<script type="text/javascript" src="../../../../../static/js/src/tooltip_manager.da362490e199.js"></script>
+
+<link href="../../../../../static/css/vendor/jquery.autocomplete.896181d3ec33.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="../../../../../static/bundles/XModuleShim.68b7a679342e3bdb698f.c506d949a49b.js" ></script>
+<script type="text/javascript" src="../../../../../static/bundles/HtmlModule.174055b73c05dccfbd8b.823874f69fef.js" ></script>
+<script type="text/javascript" src="../../../../../static/bundles/VerticalStudentView.6f1068648eb9e8d18da9.0a2f678d6564.js" ></script>
+<script type="text/javascript" src="../../../../../static/bundles/SequenceModule.251564cf8963e6f00227.ef752443db97.js" ></script>
+
+  
+
+  
+
+
+  
+
+
+<script type="application/json" id="user-metadata">
+    {"username": "NoahB", "enrollment_mode": "audit", "upgrade_link": null, "user_id": 489, "course_start": "2019-06-10T00:00:00+00:00", "upgrade_deadline": null, "course_key_fields": {"org": "IRONHACK", "run": "201906_MIA", "course": "DAFT"}, "course_end": "2019-08-19T00:00:00+00:00", "pacing_type": "instructor_paced", "upgrade_price": "Free", "course_id": "course-v1:IRONHACK+DAFT+201906_MIA", "has_staff_access": false, "forum_roles": [["Student"]], "enrollment_time": "2019-06-11T20:48:51.323840+00:00", "schedule_start": null, "email": "noahbeckerman@gmail.com"}
+</script>
+
+  
+
+  
+
+
+  
+
+
+<!-- dummy Segment -->
+<script type="text/javascript">
+  var analytics = {
+    track: function() { return; },
+    trackLink: function() { return; },
+    pageview: function() { return; },
+    page: function() { return; }
+  };
+</script>
+<!-- end dummy Segment -->
+
+
+  <meta name="path_prefix" content="">
+  
+  
+
+  <meta name="openedx-release-line" content="hawthorn" />
+
+
+
+
+
+
+  <!-- Hotjar Tracking Code for https://ironhack.school -->
+  <script type="text/javascript">
+      (function(h,o,t,j,a,r){
+          h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+          h._hjSettings={hjid:1193918,hjsv:6};
+          a=o.getElementsByTagName('head')[0];
+          r=o.createElement('script');r.async=1;
+          r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+          a.appendChild(r);
+      })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+  </script>
+
+  <script type="text/javascript">
+    function setCookieHideMobileWarning(expiration_hours) {
+      var date = new Date();
+      date.setTime(date.getTime()+(expiration_hours*60*60*1000));
+      var expires = "; expires=" + date.toGMTString();
+      document.cookie = "ihHideMobileWarning=true" + expires;
+    }
+    
+    function isHideMobileWarningCookieSet() {
+      return document.cookie.replace(/(?:(?:^|.*;\s*)ihHideMobileWarning\s*\=\s*([^;]*).*$)|^.*$/, "$1") !== "true"; 
+    }
+
+    function manageMobileWarning(mobile_warning_container) {
+      if (isHideMobileWarningCookieSet()) {
+        var mobile_warning_dismiss = document.getElementsByClassName('ih-js-hide-mobile-warning', mobile_warning_container)[0];
+        mobile_warning_dismiss.addEventListener('click', function() {
+          var expiration_hours = 48;
+          setCookieHideMobileWarning(expiration_hours);
+          mobile_warning_container.classList.add('hidden');
+        });
+      } else {
+        mobile_warning_container.classList.add('hidden');
+      }
+    }
+
+    var checkMobileWarningLayer = function () {
+      var mobile_warning_container = document.getElementsByClassName('ih-mobile-warning-container')[0];
+      (document.body && mobile_warning_container)? manageMobileWarning(mobile_warning_container) :  window.requestAnimationFrame(checkMobileWarningLayer);
+    }
+
+    window.requestAnimationFrame(checkMobileWarningLayer);
+  </script>
+
+</head>
+
+<body class="ltr view-in-course view-courseware courseware  lang_en">
+
+<div class="ih-mobile-warning-container">
+  <img class="logo" src="../../../../../static/ih-lms-theme/images/logo.6230fc40336b.svg" />
+  <div class="ih-mobile-warning-title">
+    The Learning Platform is best experienced on Desktop devices
+  </div>
+  <div class="ih-mobile-warning-description">
+    We recommend using a Desktop device to get the full experience of the Learning Platform.
+  </div>
+  <div class="ih-mobile-warning-dismiss ih-js-hide-mobile-warning">
+   Continue anyway
+  </div>
+</div>
+
+
+<div id="page-prompt"></div>
+  <div class="window-wrap" dir="ltr">
+    <a class="nav-skip sr-only sr-only-focusable" href="#main">Skip to main content</a>
+
+    
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+<header class="global-header slim ih-global-header">
+    <div class="ih-header-wrapper">
+        <div class="main-header ih-main-header">
+            
+
+
+
+
+
+<h1 class="header-logo">
+  <a href="../../../../../dashboard.html">
+    
+    <img  class="logo" src="../../../../../static/ih-lms-theme/images/logo.6230fc40336b.svg" alt="Ironhack Student Platform Home Page"/>
+    
+  </a>
+    <div class="course-header">
+          
+      
+      <span class="course-name">Data Analytics</span>
+    </div>
+</h1>
+
+            <div class="hamburger-menu" role="button" aria-label=Options Menu aria-expanded="false" aria-controls="mobile-menu" tabindex="0">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+                
+
+
+
+
+
+
+
+
+
+
+<div class="nav-links">
+  <div class="main">
+      
+  </div>
+  <div class="secondary ih-secondary">
+    
+
+
+
+
+
+
+  
+
+<div class="nav-item hidden-mobile toggle-user-dropdown ih-username-container">
+    <div class="menu-title">
+        
+        <span class="sr-only">Dashboard for:</span>
+        <span class="username ih-username">Ironhack (NoahB)</span>
+    </div>
+</div>
+<div class="nav-item hidden-mobile nav-item-dropdown ih-dropdown-wrapper" tabindex="-1">
+    <div class="toggle-user-dropdown ih-toggle-user-dropdown" role="button" aria-label=Options Menu aria-expanded="false" tabindex="0" aria-controls="user-menu">
+        <span class="fa fa-caret-down" aria-hidden="true"></span>
+    </div>
+    <div class="dropdown-user-menu hidden ih-dropdown-user-menu" aria-label=More Options role="menu" id="user-menu" tabindex="-1">
+        <div class="mobile-nav-item dropdown-item dropdown-nav-item ih-dropdown-nav-item"><a href="../../../../../dashboard.html" role="menuitem">My courses</a></div>
+            
+        <div class="mobile-nav-item dropdown-item dropdown-nav-item ih-dropdown-nav-item"><a href="../../../../../account/settings.html" role="menuitem">Account</a></div>
+        <div class="mobile-nav-item dropdown-item dropdown-nav-item ih-dropdown-nav-item"><a href="../../../../../index.html" role="menuitem">Sign Out</a></div>
+    </div>
+</div>
+  </div>
+</div>
+        </div>
+        <div class="mobile-menu hidden" aria-label=More Options role="menu" id="mobile-menu"></div>
+    </div>    
+</header>
+
+<!--[if lte IE 9]>
+<div class="ie-banner" aria-hidden="true"><strong>Warning:</strong> Your browser is not fully supported. We strongly recommend using <a href="https://www.google.com/chrome" target="_blank">Chrome</a> or <a href="http://www.mozilla.org/firefox" target="_blank">Firefox</a>.</div>
+<![endif]-->
+
+
+
+
+            
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+    
+    
+
+      <div 
+          class="ih-content"
+      >
+        <div class="marketing-hero"></div>
+
+        <div class="content-wrapper main-container ih-main-container" id="content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/template" id="image-modal-tpl">
+    <div class="wrapper-modal wrapper-modal-image">
+  <section class="image-link">
+    <%= smallHTML%>
+    <a href="#" class="modal-ui-icon action-fullscreen" role="button">
+      <span class="label">
+        <span class="icon fa fa-arrows-alt fa-large" aria-hidden="true"></span> <%- gettext("Fullscreen") %>
+      </span>
+    </a>
+  </section>
+
+  <section class="image-modal">
+    <section class="image-content">
+      <div class="image-wrapper">
+        <img alt="<%= largeALT %>, <%- gettext('Large') %>" src="<%= largeSRC %>" />
+      </div>
+
+      <a href="#" class="modal-ui-icon action-close" role="button">
+        <span class="label">
+          <span class="icon fa fa-remove fa-large" aria-hidden="true"></span> <%- gettext("Close") %>
+        </span>
+      </a>
+
+      <ul class="image-controls">
+        <li class="image-control">
+          <a href="#" class="modal-ui-icon action-zoom-in" role="button">
+            <span class="label">
+              <span class="icon fa fa fa-search-plus fa-large" aria-hidden="true"></span> <%- gettext("Zoom In") %>
+            </span>
+          </a>
+        </li>
+
+        <li class="image-control">
+          <a href="#" class="modal-ui-icon action-zoom-out is-disabled" aria-disabled="true" role="button">
+            <span class="label">
+              <span class="icon fa fa fa-search-minus fa-large" aria-hidden="true"></span> <%- gettext("Zoom Out") %>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </section>
+</div>
+
+</script>
+
+
+
+
+
+
+
+
+<div class="message-banner" aria-live="polite"></div>
+  
+
+
+
+
+
+
+
+
+    
+        <nav class="navbar course-tabs pb-0 navbar-expand ih-navbar-container" aria-label="Course">
+            <ul class="navbar-nav mr-auto ih-course-tabs">
+                    
+                    
+                        <li class="nav-item ih-nav-item active">
+                            <a href="../../../course/index.html" class="nav-link">
+                                Course
+                                    <span class="sr-only">, current location</span>
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="nav-item ih-nav-item ">
+                            <a href="../../../discussion/forum/index.html" class="nav-link">
+                                Discussion
+                            </a>
+                        </li>
+                    
+                    
+            </ul>
+        </nav>
+
+
+<div class="container ih-course-container"
+    lang="en"
+  >
+  <div class="course-wrapper ih-course-wrapper" role="presentation">
+
+    <section class="course-content" id="course-content">
+        <header class="page-header has-secondary">
+            <div class="page-header-main">
+                <nav aria-label="Course" class="sr-is-focusable" tabindex="-1">
+                    <div class="has-breadcrumbs">
+                        <div class="breadcrumbs">
+                                <span class="nav-item nav-item-course">
+                                    <a href="../../../course/index.html">Course</a>
+                                </span>
+                                <span class="icon fa fa-angle-right" aria-hidden="true"></span>
+                                <span class="nav-item nav-item-chapter" data-course-position="1" data-chapter-position="4">
+                                    <a href="../../../course/index.html#block-v1:IRONHACK+DAFT+201906_MIA+type@chapter+block@f7e6f8297f8d4f9b8cc84256830dfb24">Module 1</a>
+                                </span>
+                                <span class="icon fa fa-angle-right" aria-hidden="true"></span>
+                                <span class="nav-item nav-item-section">
+                                    <a href="../../../course/index.html#block-v1:IRONHACK+DAFT+201906_MIA+type@sequential+block@9e3d146312134b35bd5cd8efe6a748ad">Data Wrangling and Cleaning with Pandas</a>
+                                </span>
+                                <span class="icon fa fa-angle-right" aria-hidden="true"></span>
+                            <span class="nav-item nav-item-sequence">Data Cleaning</span>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <main id="main" tabindex="-1" aria-label="Content">
+
+              <div class="xblock xblock-student_view xblock-student_view-sequential xmodule_display xmodule_SequenceModule" data-runtime-class="LmsRuntime" data-init="XBlockToXModuleShim" data-block-type="sequential" data-request-token="3dda0638939911e99a866e487447f8c8" data-runtime-version="1" data-usage-id="block-v1:IRONHACK+DAFT+201906_MIA+type@sequential+block@9e3d146312134b35bd5cd8efe6a748ad" data-type="Sequence" data-course-id="course-v1:IRONHACK+DAFT+201906_MIA">
+  <script type="json/xblock-args" class="xblock-json-init-args">
+    {"xmodule-type": "Sequence"}
+  </script>
+  
+
+
+<div id="sequence_9e3d146312134b35bd5cd8efe6a748ad" class="sequence" data-id="block-v1:IRONHACK+DAFT+201906_MIA+type@sequential+block@9e3d146312134b35bd5cd8efe6a748ad" data-position="4" data-ajax-url="/courses/course-v1:IRONHACK+DAFT+201906_MIA/xblock/block-v1:IRONHACK+DAFT+201906_MIA+type@sequential+block@9e3d146312134b35bd5cd8efe6a748ad/handler/xmodule_handler" data-next-url="/courses/course-v1:IRONHACK+DAFT+201906_MIA/courseware/f7e6f8297f8d4f9b8cc84256830dfb24/7ceba53d29aa4316a77a59be3840bcb4/?child=first" data-prev-url="/courses/course-v1:IRONHACK+DAFT+201906_MIA/courseware/f7e6f8297f8d4f9b8cc84256830dfb24/9f1720afbff5499083f82cb937b314cb/?child=last">
+
+  <div class="sequence-nav ih-js-fire-highlighting-controls">
+    <button class="sequence-nav-button button-previous">
+      <span class="icon fa fa-chevron-prev" aria-hidden="true"></span>
+      <span class="sequence-nav-button-label">Previous</span>
+    </button>
+    <button class="sequence-nav-button button-next">
+      <span class="sequence-nav-button-label">Next</span>
+      <span class="icon fa fa-chevron-next" aria-hidden="true"></span>
+    </button>
+    <nav class="sequence-list-wrapper" aria-label="Sequence">
+      <ol id="sequence-list" role="tablist">
+        <li role="presentation">
+          <button class="seq_other inactive nav-item tab"
+            role="tab"
+            tabindex="-1"
+            aria-selected="false"
+            aria-expanded="false"
+            aria-controls="seq_content"
+            data-index="0"
+            data-id="block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@5ca6dd0d3eeb47f3a7fe8a5402c13c0d"
+            data-element="1"
+            data-page-title="Introduction to Numpy"
+            data-path="Module 1 &gt; Data Wrangling and Cleaning with Pandas &gt; Introduction to Numpy"
+            data-graded="False"
+            id="tab_0"
+            >
+            <span class="icon fa seq_other" aria-hidden="true"></span>
+              <span 
+                class="fa fa-check-circle check-circle is-hidden" 
+                style="color:green"
+                aria-hidden="true"
+              ></span>
+            <span class="fa fa-fw fa-bookmark bookmark-icon is-hidden" aria-hidden="true"></span>
+            <div class="sequence-tooltip sr"><span class="sr">other&nbsp;</span>Introduction to Numpy<span class="sr bookmark-icon-sr">&nbsp;</span></div>
+          </button>
+        </li>
+        <li role="presentation">
+          <button class="seq_other inactive nav-item tab"
+            role="tab"
+            tabindex="-1"
+            aria-selected="false"
+            aria-expanded="false"
+            aria-controls="seq_content"
+            data-index="1"
+            data-id="block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@582f3da77faf4ec9bf766b23c4ee62ce"
+            data-element="2"
+            data-page-title="Introduction to Pandas"
+            data-path="Module 1 &gt; Data Wrangling and Cleaning with Pandas &gt; Introduction to Pandas"
+            data-graded="False"
+            id="tab_1"
+            >
+            <span class="icon fa seq_other" aria-hidden="true"></span>
+              <span 
+                class="fa fa-check-circle check-circle is-hidden" 
+                style="color:green"
+                aria-hidden="true"
+              ></span>
+            <span class="fa fa-fw fa-bookmark bookmark-icon is-hidden" aria-hidden="true"></span>
+            <div class="sequence-tooltip sr"><span class="sr">other&nbsp;</span>Introduction to Pandas<span class="sr bookmark-icon-sr">&nbsp;</span></div>
+          </button>
+        </li>
+        <li role="presentation">
+          <button class="seq_other inactive nav-item tab"
+            role="tab"
+            tabindex="-1"
+            aria-selected="false"
+            aria-expanded="false"
+            aria-controls="seq_content"
+            data-index="2"
+            data-id="block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@e239a599aec54ba2a2fd1dc874eb08bc"
+            data-element="3"
+            data-page-title="Importing and Exporting Data"
+            data-path="Module 1 &gt; Data Wrangling and Cleaning with Pandas &gt; Importing and Exporting Data"
+            data-graded="False"
+            id="tab_2"
+            >
+            <span class="icon fa seq_other" aria-hidden="true"></span>
+              <span 
+                class="fa fa-check-circle check-circle is-hidden" 
+                style="color:green"
+                aria-hidden="true"
+              ></span>
+            <span class="fa fa-fw fa-bookmark bookmark-icon is-hidden" aria-hidden="true"></span>
+            <div class="sequence-tooltip sr"><span class="sr">other&nbsp;</span>Importing and Exporting Data<span class="sr bookmark-icon-sr">&nbsp;</span></div>
+          </button>
+        </li>
+        <li role="presentation">
+          <button class="seq_other inactive nav-item tab"
+            role="tab"
+            tabindex="-1"
+            aria-selected="false"
+            aria-expanded="false"
+            aria-controls="seq_content"
+            data-index="3"
+            data-id="block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@417501a0749f4c3294980c33b5dfb7c5"
+            data-element="4"
+            data-page-title="Data Cleaning"
+            data-path="Module 1 &gt; Data Wrangling and Cleaning with Pandas &gt; Data Cleaning"
+            data-graded="False"
+            id="tab_3"
+            >
+            <span class="icon fa seq_other" aria-hidden="true"></span>
+              <span 
+                class="fa fa-check-circle check-circle is-hidden" 
+                style="color:green"
+                aria-hidden="true"
+              ></span>
+            <span class="fa fa-fw fa-bookmark bookmark-icon is-hidden" aria-hidden="true"></span>
+            <div class="sequence-tooltip sr"><span class="sr">other&nbsp;</span>Data Cleaning<span class="sr bookmark-icon-sr">&nbsp;</span></div>
+          </button>
+        </li>
+        <li role="presentation">
+          <button class="seq_other inactive nav-item tab"
+            role="tab"
+            tabindex="-1"
+            aria-selected="false"
+            aria-expanded="false"
+            aria-controls="seq_content"
+            data-index="4"
+            data-id="block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@2d39f50002ec485296a9c26c25cf08ec"
+            data-element="5"
+            data-page-title="Data Manipulation"
+            data-path="Module 1 &gt; Data Wrangling and Cleaning with Pandas &gt; Data Manipulation"
+            data-graded="False"
+            id="tab_4"
+            >
+            <span class="icon fa seq_other" aria-hidden="true"></span>
+              <span 
+                class="fa fa-check-circle check-circle is-hidden" 
+                style="color:green"
+                aria-hidden="true"
+              ></span>
+            <span class="fa fa-fw fa-bookmark bookmark-icon is-hidden" aria-hidden="true"></span>
+            <div class="sequence-tooltip sr"><span class="sr">other&nbsp;</span>Data Manipulation<span class="sr bookmark-icon-sr">&nbsp;</span></div>
+          </button>
+        </li>
+      </ol>
+    </nav>
+  </div>
+  <div class="sr-is-focusable" tabindex="-1"></div>
+
+  <div id="seq_contents_0"
+    aria-labelledby="tab_0"
+    aria-hidden="true"
+    class="seq_contents tex2jax_ignore asciimath2jax_ignore">
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-vertical&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;VerticalStudentView&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34; data-request-token=&#34;3dda0638939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@5ca6dd0d3eeb47f3a7fe8a5402c13c0d&#34; data-block-type=&#34;vertical&#34;&gt;
+  
+
+  &lt;h2 class=&#34;hd hd-2 unit-title&#34;&gt;Introduction to Numpy&lt;/h2&gt;
+
+    &lt;div class=&#34;ih-bookmark-button-wrapper&#34;&gt;
+    	
+
+
+
+&lt;div class=&#34;bookmark-button-wrapper&#34;&gt;
+  &lt;button class=&#34;btn btn-link bookmark-button &#34;
+    aria-pressed=&#34;false&#34;
+    data-bookmark-id=&#34;NoahB,block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@5ca6dd0d3eeb47f3a7fe8a5402c13c0d&#34;
+    data-bookmarks-api-url=&#34;/api/bookmarks/v1/bookmarks/&#34;&gt;
+     &lt;span class=&#34;bookmark-text&#34;&gt;Bookmark this page&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+
+    &lt;/div&gt;	
+
+&lt;div class=&#34;vert-mod&#34;&gt;
+  &lt;div class=&#34;vert vert-0&#34; data-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@7dbbcb7c218b48e3b10b33e49a490373&#34;&gt;
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;3dda0638939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@7dbbcb7c218b48e3b10b33e49a490373&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  &lt;h2&gt;
+    &lt;a id=&#34;user-content-lesson-goals&#34; class=&#34;anchor&#34; href=&#34;#lesson-goals&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Lesson Goals
+&lt;/h2&gt;
+&lt;ul&gt;
+    &lt;li&gt;Learn about Numpy data structures.&lt;/li&gt;
+    &lt;li&gt;Extract data from Numpy arrays.&lt;/li&gt;
+    &lt;li&gt;Convert other Python data structures to Numpy arrays.&lt;/li&gt;
+    &lt;li&gt;Perform basic mathematical functions on arrays and elements.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-introduction&#34; class=&#34;anchor&#34; href=&#34;#introduction&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Introduction
+&lt;/h2&gt;
+&lt;p&gt;Many of the libraries you will use to perform data analysis in Python, as well as many of the mathematical functions you&#39;ll use, will involve working with Numpy. Numpy (short for Numerical Python) is used for numeric computing and includes support for multi-dimensional arrays and matrices along with a variety of mathematical functions to apply to them. In this lesson, we will learn about Numpy&#39;s primary data structures and how to apply some basic math functions to them.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-importing-numpy&#34; class=&#34;anchor&#34; href=&#34;#importing-numpy&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Importing Numpy
+&lt;/h2&gt;
+&lt;p&gt;In order to use Numpy, you must first import it. It is common to also alias it to 
+    &lt;code&gt;np&lt;/code&gt; using the
+    &lt;code&gt;as&lt;/code&gt; keyword so that you don&#39;t have to spell out &#34;numpy&#34; every time you want to call one of its methods.
+&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;import numpy as np
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Once the library has been imported, it is ready to use.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-numpy-arrays&#34; class=&#34;anchor&#34; href=&#34;#numpy-arrays&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Numpy Arrays
+&lt;/h2&gt;
+&lt;p&gt;The basic data structures in Numpy are 
+    &lt;em&gt;arrays&lt;/em&gt;, which can be used to represent tabular data. You can think of arrays as lists of lists, where all the elements of a list are of the same type (typically numeric since the reason you use Numpy is to do numeric computing). A
+    &lt;em&gt;matrix&lt;/em&gt; is just a two-dimensional array.
+&lt;/p&gt;
+&lt;p&gt;The 
+    &lt;em&gt;size&lt;/em&gt; of an array is the total number of elements in every list. The
+    &lt;em&gt;shape&lt;/em&gt; of an array is the size of the array along each dimension (e.g. number of rows and number of columns for a two-dimensional array). Let&#39;s create a two dimensional 10 x 4 array containing random numbers and calculate the shape and size of the array using the
+    &lt;code&gt;shape&lt;/code&gt; and
+    &lt;code&gt;size&lt;/code&gt; methods.
+&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;a = np.random.random((10,4))
+print(a)
+
+[[0.37204558 0.14550841 0.67523958 0.27740608]
+ [0.2384028  0.3046173  0.76776426 0.69283903]
+ [0.13686505 0.61112455 0.76244717 0.55754906]
+ [0.23608745 0.86759653 0.17877306 0.06508108]
+ [0.44207297 0.56918924 0.9812652  0.27621236]
+ [0.70663236 0.49456892 0.47992486 0.30181397]
+ [0.20194912 0.48396116 0.1454686  0.45983845]
+ [0.59407381 0.22715311 0.07311169 0.17287725]
+ [0.45123938 0.61724233 0.3767673  0.77285286]
+ [0.49093615 0.79429658 0.91650027 0.37019243]]
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;pre&gt;
+&lt;code&gt;print(a.shape)
+print(a.size)
+
+(10, 4)
+40
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;As you can see, the array has a shape of 10 x 4 (just as we specified) and the total number of elements in the array is 40.&lt;/p&gt;
+&lt;p&gt;Now that we have seen an example of a basic two-dimensional array (a matrix), let&#39;s learn about how creating arrays with more dimensions than two works in Numpy. Let&#39;s build a three-dimensional array of random numbers and see what that looks like.&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;b = np.random.random((5,2,3))
+print(b)
+
+[[[0.73197433 0.51817745 0.5438668 ]
+  [0.79680624 0.59678796 0.0162289 ]]
+
+ [[0.89476545 0.77451774 0.51565387]
+  [0.81446545 0.11831641 0.97704742]]
+
+ [[0.82995401 0.68795632 0.21211731]
+  [0.1731487  0.36950427 0.0526404 ]]
+
+ [[0.78179768 0.96406835 0.85642039]
+  [0.78479238 0.92167604 0.48239683]]
+
+ [[0.87567854 0.46034393 0.69389202]
+  [0.22559928 0.54405484 0.0284539 ]]]
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;This created an array with five groups of 2 x 3 matrices. Let&#39;s see what happens if we pass four dimensions.&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;c = np.random.random((2,3,4,5))
+print(c)
+
+[[[[0.58736781 0.21494172 0.07269135 0.84555299 0.02206719]
+   [0.65722215 0.96007326 0.37839556 0.77171739 0.97087094]
+   [0.26840046 0.69882463 0.12102026 0.09301578 0.21322542]
+   [0.09457464 0.27874227 0.31017789 0.10225793 0.47767532]]
+
+  [[0.33523433 0.57896303 0.73654348 0.7166764  0.18657457]
+   [0.50989621 0.12692175 0.14334705 0.97374411 0.9407015 ]
+   [0.82055172 0.61183071 0.68798938 0.21174201 0.10522376]
+   [0.73547369 0.66640274 0.50181512 0.79826471 0.42295324]]
+
+  [[0.66188393 0.00233442 0.05928187 0.47321329 0.99491768]
+   [0.48274197 0.18776065 0.1922766  0.01806328 0.07497537]
+   [0.66245574 0.66172635 0.05026587 0.50701135 0.64959154]
+   [0.3402423  0.37189705 0.75641773 0.75925858 0.30409956]]]
+
+
+ [[[0.64058164 0.52463286 0.75176715 0.42144342 0.74667152]
+   [0.55599904 0.83269337 0.12642969 0.91171304 0.20743705]
+   [0.32750787 0.78112983 0.90434313 0.79234105 0.91762167]
+   [0.73860474 0.97166229 0.93089352 0.42083379 0.8593168 ]]
+
+  [[0.96817543 0.82890525 0.47894736 0.36876444 0.72116376]
+   [0.46839119 0.0106908  0.44905365 0.24429013 0.70855621]
+   [0.43040031 0.45217997 0.92004515 0.47573257 0.40573254]
+   [0.14604264 0.11476539 0.6101247  0.99069972 0.75522514]]
+
+  [[0.57347028 0.09737284 0.53702349 0.10981379 0.03451768]
+   [0.4690242  0.24443389 0.19865416 0.22965887 0.57494855]
+   [0.77353871 0.41886521 0.72384725 0.45725317 0.85284934]
+   [0.47088215 0.00314509 0.05658609 0.01090867 0.12534087]]]]
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;This time, we got two groups of three 4 x 5 matrices.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-extracting-data-from-arrays&#34; class=&#34;anchor&#34; href=&#34;#extracting-data-from-arrays&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Extracting Data from Arrays
+&lt;/h2&gt;
+&lt;p&gt;Extracting elements from arrays works just like it does for other Python data structures. We just need to reference the indexes of the values we want to extract. Below are some examples of how to reference specific rows, columns, and values in a two dimensional array.&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;# First row of matrix a
+print(a[0])
+
+[0.37204558 0.14550841 0.67523958 0.27740608]
+
+# First column of matrix a
+print(a[:,0])
+
+[0.37204558 0.2384028  0.13686505 0.23608745 0.44207297 0.70663236
+ 0.20194912 0.59407381 0.45123938 0.49093615]
+
+# Value in the fifth row and third column of matrix a
+print(a[4,2])
+
+0.9812652012454941
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;What about arrays that have more than two dimensions? You just pass a list of indexes for the values you want, and it will return the corresponding dimensions or values.&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;# First group of array c
+print(c[0])
+
+[[[0.58736781 0.21494172 0.07269135 0.84555299 0.02206719]
+  [0.65722215 0.96007326 0.37839556 0.77171739 0.97087094]
+  [0.26840046 0.69882463 0.12102026 0.09301578 0.21322542]
+  [0.09457464 0.27874227 0.31017789 0.10225793 0.47767532]]
+
+ [[0.33523433 0.57896303 0.73654348 0.7166764  0.18657457]
+  [0.50989621 0.12692175 0.14334705 0.97374411 0.9407015 ]
+  [0.82055172 0.61183071 0.68798938 0.21174201 0.10522376]
+  [0.73547369 0.66640274 0.50181512 0.79826471 0.42295324]]
+
+ [[0.66188393 0.00233442 0.05928187 0.47321329 0.99491768]
+  [0.48274197 0.18776065 0.1922766  0.01806328 0.07497537]
+  [0.66245574 0.66172635 0.05026587 0.50701135 0.64959154]
+  [0.3402423  0.37189705 0.75641773 0.75925858 0.30409956]]]
+
+# Second subgroup of the first group
+print(c[0,1])
+
+[[0.33523433 0.57896303 0.73654348 0.7166764  0.18657457]
+ [0.50989621 0.12692175 0.14334705 0.97374411 0.9407015 ]
+ [0.82055172 0.61183071 0.68798938 0.21174201 0.10522376]
+ [0.73547369 0.66640274 0.50181512 0.79826471 0.42295324]]
+
+# Third row of the second subgroup
+print(c[0,1,2])
+
+[0.82055172 0.61183071 0.68798938 0.21174201 0.10522376]
+
+# Fourth column of the second subgroup
+print(c[0,1,:,3])
+
+0.7166764  0.97374411 0.21174201 0.79826471]
+
+# Value in the third row and fourth column of the second subgroup
+print(c[0,1,2,3])
+
+0.21174201468822196
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-converting-other-data-structures-to-arrays&#34; class=&#34;anchor&#34; href=&#34;#converting-other-data-structures-to-arrays&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Converting Other Data Structures to Arrays
+&lt;/h2&gt;
+&lt;p&gt;If you have data in another type of data structure and you would like to convert it to an array so that you can take advantage of Numpy&#39;s mathematical functions, you can convert them using the 
+    &lt;code&gt;array()&lt;/code&gt; method as follows.
+&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;lst_lst = [[1,2,3],[4,5,6],[7,8,9]]
+d = np.array(lst_lst)
+print(d)
+
+[[1 2 3]
+ [4 5 6]
+ [7 8 9]]
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;This works the same way whether you have a list of lists, a list of tuples, a tuple of lists, or a tuple of tuples.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-numpy-math-functions&#34; class=&#34;anchor&#34; href=&#34;#numpy-math-functions&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Numpy Math Functions
+&lt;/h2&gt;
+&lt;p&gt;Now that we know how to create and navigate arrays, let&#39;s take a look at how to perform mathematical calculations on them.&lt;/p&gt;
+&lt;p&gt;One of the most common (and useful) functions is 
+    &lt;code&gt;np.sum&lt;/code&gt;, which lets you obtain the sum of any elements you select from an array.
+&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;# Sum of all elements in matrix a
+print(np.sum(a))
+
+18.28948734532367
+
+# Sum of each column in matrix a
+print(np.sum(a, axis=0))
+
+[3.87030467 5.11525812 5.35726199 3.94666256]
+
+# Sum of each row in matrix a
+print(np.sum(a, axis=1))
+
+[1.47019964 2.00362339 2.06798582 1.34753812 2.26873977 1.98294011
+ 1.29121733 1.06721585 2.21810188 2.57192542]
+
+# Sum of all the elements in the first two groups of array b
+np.sum(b[:2])
+
+7.298608038014308
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;The 
+    &lt;code&gt;np.mean&lt;/code&gt; function works the same way and is also very useful.
+&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;# Mean of all elements in matrix a
+print(np.mean(a))
+
+0.4572371836330918
+
+# Mean of each column in matrix a
+print(np.mean(a, axis=0))
+
+[0.38703047 0.51152581 0.5357262  0.39466626]
+
+# Mean of each row in matrix a
+print(np.,mean(a, axis=1))
+
+[0.36754991 0.50090585 0.51699646 0.33688453 0.56718494 0.49573503
+ 0.32280433 0.26680396 0.55452547 0.64298136]
+
+# Mean of all the elements in the first two groups of array b
+np.mean(b[:2])
+
+0.6082173365011924
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;In addition to letting you perform calculations on individual arrays, Numpy also lets you perform calculations between arrays. For example, let&#39;s select two of the subarrays from array c to illustrate how this works.&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;x = c[0,0]
+print(x)
+
+[[0.58736781 0.21494172 0.07269135 0.84555299 0.02206719]
+ [0.65722215 0.96007326 0.37839556 0.77171739 0.97087094]
+ [0.26840046 0.69882463 0.12102026 0.09301578 0.21322542]
+ [0.09457464 0.27874227 0.31017789 0.10225793 0.47767532]]
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;pre&gt;
+&lt;code&gt;y = c[0,1]
+print(y)
+
+[[0.33523433 0.57896303 0.73654348 0.7166764  0.18657457]
+ [0.50989621 0.12692175 0.14334705 0.97374411 0.9407015 ]
+ [0.82055172 0.61183071 0.68798938 0.21174201 0.10522376]
+ [0.73547369 0.66640274 0.50181512 0.79826471 0.42295324]]
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;We can now add, subtract, multiply, and divide the two arrays.&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;# Add elements of x and y together
+print(np.add(x, y))
+
+[[0.92260213 0.79390476 0.80923482 1.56222939 0.20864175]
+ [1.16711836 1.08699501 0.52174261 1.7454615  1.91157244]
+ [1.08895218 1.31065533 0.80900964 0.3047578  0.31844918]
+ [0.83004833 0.94514501 0.81199301 0.90052264 0.90062856]]
+
+# Subtract elements of x from elements of y
+print(np.subtract(y, x))
+
+[[-0.25213348  0.36402131  0.66385213 -0.12887659  0.16450738]
+ [-0.14732594 -0.83315151 -0.23504851  0.20202671 -0.03016944]
+ [ 0.55215126 -0.08699392  0.56696911  0.11872623 -0.10800166]
+ [ 0.64089905  0.38766047  0.19163723  0.69600678 -0.05472208]]
+
+# Multiply elements of x and y together
+print(np.multiply(x, y))
+
+[[0.19690585 0.12444331 0.05354034 0.60598787 0.00411718]
+ [0.33511509 0.12185418 0.05424189 0.75145527 0.91329975]
+ [0.22023646 0.42756237 0.08326066 0.01969535 0.02243638]
+ [0.06955716 0.18575461 0.15565196 0.0816289  0.20203432]]
+
+# Divide elements of y by elements of x
+print(np.divide(y, x))
+
+[[ 0.57074004  2.69358141 10.13247805  0.84758307  8.45484228]
+ [ 0.77583541  0.13220007  0.37882858  1.26178847  0.96892538]
+ [ 3.05719195  0.87551394  5.68491054  2.27640959  0.49348601]
+ [ 7.77664831  2.39074876  1.61783006  7.80638451  0.88544086]]
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;This is only the tip of the iceberg. Numpy has many more functions, which you can and should explore. You can read more about them in the 
+    &lt;a href=&#34;https://docs.scipy.org/doc/numpy-1.13.0/reference/routines.math.html&#34; rel=&#34;nofollow&#34;&gt;Numpy documentation&lt;/a&gt;.
+&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-summary&#34; class=&#34;anchor&#34; href=&#34;#summary&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Summary
+&lt;/h2&gt;
+&lt;p&gt;In this lesson, we learned the basics of working with Numpy. First, we learned how to import the library so that we could use it. From there, we learned about Numpy arrays, including how to extract data from them and how to convert to them from other Python data structures. Finally, we covered some of the basic mathematical functions in Numpy and saw how we could apply them both to the elements of an array as well as to whole arrays themselves.&lt;/p&gt;
+&lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+  </div>
+  <div id="seq_contents_1"
+    aria-labelledby="tab_1"
+    aria-hidden="true"
+    class="seq_contents tex2jax_ignore asciimath2jax_ignore">
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-vertical&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;VerticalStudentView&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34; data-request-token=&#34;3dda0638939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@582f3da77faf4ec9bf766b23c4ee62ce&#34; data-block-type=&#34;vertical&#34;&gt;
+  
+
+  &lt;h2 class=&#34;hd hd-2 unit-title&#34;&gt;Introduction to Pandas&lt;/h2&gt;
+
+    &lt;div class=&#34;ih-bookmark-button-wrapper&#34;&gt;
+    	
+
+
+
+&lt;div class=&#34;bookmark-button-wrapper&#34;&gt;
+  &lt;button class=&#34;btn btn-link bookmark-button &#34;
+    aria-pressed=&#34;false&#34;
+    data-bookmark-id=&#34;NoahB,block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@582f3da77faf4ec9bf766b23c4ee62ce&#34;
+    data-bookmarks-api-url=&#34;/api/bookmarks/v1/bookmarks/&#34;&gt;
+     &lt;span class=&#34;bookmark-text&#34;&gt;Bookmark this page&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+
+    &lt;/div&gt;	
+
+&lt;div class=&#34;vert-mod&#34;&gt;
+  &lt;div class=&#34;vert vert-0&#34; data-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@a1db5e3d8c764328ada3a466ba64ddd7&#34;&gt;
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;3dda0638939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@a1db5e3d8c764328ada3a466ba64ddd7&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  &lt;h2&gt;
+    &lt;a id=&#34;user-content-lesson-goals&#34; class=&#34;anchor&#34; href=&#34;#lesson-goals&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Lesson Goals
+&lt;/h2&gt;
+&lt;ul&gt;
+    &lt;li&gt;Learn about Pandas data structures and how to extract data from them.&lt;/li&gt;
+    &lt;li&gt;Convert other Python data structures to Pandas DataFrames.&lt;/li&gt;
+    &lt;li&gt;Apply Pandas mathematical functions to data frame fields.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-introduction&#34; class=&#34;anchor&#34; href=&#34;#introduction&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Introduction
+&lt;/h2&gt;
+&lt;p&gt;As a data analyst with Python in your tool kit, one of the libraries you will use most often will be Pandas. Pandas is a useful library that makes data wrangling, transformation, and analysis easier and more intuitive. In this lesson, we will learn about Pandas data structures and how to apply some basic math functions to them.&lt;/p&gt;
+&lt;p&gt;As with Numpy in the previous lesson, you must import Pandas to be able to use it. Just like Numpy is typically aliased to 
+    &lt;code&gt;np&lt;/code&gt;, Pandas is usually aliased to
+    &lt;code&gt;pd&lt;/code&gt;. Let&#39;s import both of them so that we can use them in this lesson.
+&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;import numpy as np
+import pandas as pd
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Now that both libraries are imported, we can begin using them.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-pandas-data-structures&#34; class=&#34;anchor&#34; href=&#34;#pandas-data-structures&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Pandas Data Structures
+&lt;/h2&gt;
+&lt;p&gt;The primary data structures in Pandas are 
+    &lt;em&gt;Series&lt;/em&gt; and
+    &lt;em&gt;DataFrames&lt;/em&gt;. A series is an indexed one-dimensional array where the values can be of any data type. Let&#39;s create a series consisting of 10 random numbers using the Pandas
+    &lt;code&gt;Series()&lt;/code&gt; method.
+&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;a = pd.Series(np.random.random(10))
+print(a)
+
+0    0.799343
+1    0.534252
+2    0.810355
+3    0.928851
+4    0.748286
+5    0.762151
+6    0.774291
+7    0.890176
+8    0.267933
+9    0.248028
+dtype: float64
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;As you can see, this generated an indexed array of random numbers. Just as with other Python data structures, we can reference the elements of this array by their indexes.&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;a[0]
+
+0.7993425723285518
+
+a[5]
+
+0.7621507835939337
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;The other type of data structure, DataFrames, are two-dimensional indexed structures where each column can be of a different data type. DataFrames are very similar to spreadsheets and database tables, and they are one of the most useful data structures you will be working with as a data analyst.&lt;/p&gt;
+&lt;p&gt;DataFrames can be generated using the Pandas 
+    &lt;code&gt;DataFrame&lt;/code&gt; method as follows. We are also going to assign specific column names to each column in the data frame by passing a variable named
+    &lt;code&gt;colnames&lt;/code&gt; with a list of column names to the
+    &lt;code&gt;columns&lt;/code&gt; argument.
+&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;colnames = [&#39;Column1&#39;,&#39;Column2&#39;,&#39;Column3&#39;,&#39;Column4&#39;,&#39;Column5&#39;]
+df = pd.DataFrame(np.random.random((10,5)), columns=colnames)
+df
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/573b56240e64f9a399c95b8e1c15a99c85a8c28b/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f646174616672616d652e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/573b56240e64f9a399c95b8e1c15a99c85a8c28b/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f646174616672616d652e706e67&#34; alt=&#34;DataFrame&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/dataframe.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;We can reference each of the columns in a data frame directly by the column name as follows.&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;df[&#39;Column1&#39;]
+
+0    0.742603
+1    0.578973
+2    0.906471
+3    0.013889
+4    0.440874
+5    0.358352
+6    0.196321
+7    0.345590
+8    0.058615
+9    0.708301
+Name: Column1, dtype: float64
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;This returns a series consisting of the values in the first column of our data frame. If we wanted to extract just the first three columns of our data frame, we would need to include the column names in a list inside the square brackets (so there would be two sets of square brackets).&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;df[[&#39;Column1&#39;,&#39;Column2&#39;,&#39;Column3&#39;]]
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/9ee0563bb1d7b46a982f88ae17197a6f85fa239c/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f646174616672616d652d74687265652d636f6c756d6e732e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/9ee0563bb1d7b46a982f88ae17197a6f85fa239c/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f646174616672616d652d74687265652d636f6c756d6e732e706e67&#34; alt=&#34;Three Column DataFrame&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/dataframe-three-columns.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;When we extract more than one column, it returns the results in a data frame since a series is only one-dimensional.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-converting-other-data-structures-to-dataframes&#34; class=&#34;anchor&#34; href=&#34;#converting-other-data-structures-to-dataframes&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Converting Other Data Structures to DataFrames
+&lt;/h2&gt;
+&lt;p&gt;We can also convert data we receive in other Python data structures into data frames so that we can work with them more intuitively. For example, suppose we had a list of prices that houses sold for recently and we wanted to get those into a data frame. We could do that by applying the 
+    &lt;code&gt;pd.DataFrame&lt;/code&gt; method to the list of prices.
+&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;lst = [208500, 181500, 223500, 140000, 250000, 143000, 307000, 200000, 129900, 118000]
+
+price_df = pd.DataFrame(lst, columns=[&#39;SalePrice&#39;])
+price_df
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/144d5715b158ce069811924cc6fd1a651acaba40/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f73616c652d70726963652d646174616672616d652e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/144d5715b158ce069811924cc6fd1a651acaba40/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f73616c652d70726963652d646174616672616d652e706e67&#34; alt=&#34;Sale Price DataFrame&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/sale-price-dataframe.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;The list was converted into a one-column data frame with a column name of SalePrice.&lt;/p&gt;
+&lt;p&gt;What if we had more than just one list of data? What if we had a list of lists where each sublist in the master list contained information about the sale of a house (the lot area, neighborhood, year built, quality score, and final sale price)? We can apply the same 
+    &lt;code&gt;pd.DataFrame&lt;/code&gt; method to that list of lists and Pandas will create a data frame with columns based on each index in the sublists.
+&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;lst_lst = [[8450, &#39;CollgCr&#39;, 2003, 7, 208500],
+           [9600, &#39;Veenker&#39;, 1976, 6, 181500],
+           [11250, &#39;CollgCr&#39;, 2001, 7, 223500],
+           [9550, &#39;Crawfor&#39;, 1915, 7, 140000],
+           [14260, &#39;NoRidge&#39;, 2000, 8, 250000],
+           [14115, &#39;Mitchel&#39;, 1993, 5, 143000],
+           [10084, &#39;Somerst&#39;, 2004, 8, 307000],
+           [10382, &#39;NWAmes&#39;, 1973, 7, 200000],
+           [6120, &#39;OldTown&#39;, 1931, 7, 129900],
+           [7420, &#39;BrkSide&#39;, 1939, 5, 118000]]
+
+colnames = [&#39;LotSize&#39;,&#39;Neighborhood&#39;,&#39;YearBuilt&#39;,&#39;Quality&#39;,&#39;SalePrice&#39;]
+pd.DataFrame(lst_lst, columns=colnames)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/29fd4dee5ebbef7c46c9787069b49fef8ec78457/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f686f7573652d646174616672616d652e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/29fd4dee5ebbef7c46c9787069b49fef8ec78457/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f686f7573652d646174616672616d652e706e67&#34; alt=&#34;House DataFrame&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/house-dataframe.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;List are not the only data structures that can be converted to a data frame. Data frames can also be created from data stored in a dictionary. Suppose we had a dictionary where the values contained the same information we had in our list of lists, but the keys of the dictionary consisted of the names of each house.&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;house_dict = {&#39;Baker House&#39;: [7420, &#39;BrkSide&#39;, 1939, 5, 118000],
+              &#39;Beazley House&#39;: [14115, &#39;Mitchel&#39;, 1993, 5, 143000],
+              &#39;Dominguez House&#39;: [14260, &#39;NoRidge&#39;, 2000, 8, 250000],
+              &#39;Hamilton House&#39;: [6120, &#39;OldTown&#39;, 1931, 7, 129900],
+              &#39;James House&#39;: [11250, &#39;CollgCr&#39;, 2001, 7, 223500],
+              &#39;Martinez House&#39;: [9600, &#39;Veenker&#39;, 1976, 6, 181500],
+              &#39;Roberts House&#39;: [9550, &#39;Crawfor&#39;, 1915, 7, 140000],
+              &#39;Smith House&#39;: [8450, &#39;CollgCr&#39;, 2003, 7, 208500],
+              &#39;Snyder House&#39;: [10084, &#39;Somerst&#39;, 2004, 8, 307000],
+              &#39;Zuckerman House&#39;: [10382, &#39;NWAmes&#39;, 1973, 7, 200000]}
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;If we use the same approach as with the list of lists, Pandas would by default return a column for each house.&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;pd.DataFrame(house_dict)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/425a4945ee1767ff7e32ddefef6cf352f554caef/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f646963742d746f2d646174616672616d652e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/425a4945ee1767ff7e32ddefef6cf352f554caef/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f646963742d746f2d646174616672616d652e706e67&#34; alt=&#34;Dictionary to DataFrame&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/dict-to-dataframe.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;This is not the format we want for our data. Instead, we want each house represented as a row and the attributes of the houses represented as columns. There are (at least) two ways to transform the data frame to the format we want. Both methods below will return the same result - a data frame with houses as rows and house attributes as columns.&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;# You can transpose the result and adjust the column names.
+house_df = pd.DataFrame(house_dict).transpose()
+house_df.columns = colnames
+
+# Or you can add the from_dict method and specify &#39;index&#39; for the orient parameter, and then adjust your column names.
+house_df = pd.DataFrame.from_dict(house_dict, orient=&#39;index&#39;)
+house_df.columns = colnames
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/4f5a88db17f315f32983392b648435b68496b6cb/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7472616e73706f7365642d64696374696f6e6172792d646174616672616d652e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/4f5a88db17f315f32983392b648435b68496b6cb/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7472616e73706f7365642d64696374696f6e6172792d646174616672616d652e706e67&#34; alt=&#34;Dictionary to DataFrame&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/transposed-dictionary-dataframe.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-applying-mathematical-functions-to-data-frames&#34; class=&#34;anchor&#34; href=&#34;#applying-mathematical-functions-to-data-frames&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Applying Mathematical Functions to Data Frames
+&lt;/h2&gt;
+&lt;p&gt;Like Numpy, Pandas also has some built-in mathematical functions that you can apply to series and data frames. Let&#39;s take a look at some of the basic ones.&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;# Total price of all houses sold
+house_df[&#39;SalePrice&#39;].sum()
+
+1901400
+
+# Average lot size of houses sold
+house_df[&#39;LotSize&#39;].mean()
+
+10123.1
+
+# The latest year a house in the data set was built
+house_df[&#39;YearBuilt&#39;].max()
+
+2004
+
+# The eariliest year a house in the data set was built
+house_df[&#39;YearBuilt&#39;].min()
+
+1915
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-summary&#34; class=&#34;anchor&#34; href=&#34;#summary&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Summary
+&lt;/h2&gt;
+&lt;p&gt;In this lesson, we learned about the two basic Pandas data structures - Series and DataFrames. We also learned how to reference the elements of a series and how to extract specific columns from a data frame. From there, we converted other Python data structures, such as lists and dictionaries, into Pandas DataFrames. Finally, we briefly looked at some basic mathematical functions that can be applied to a data frame&#39;s columns. We will be using all of these concepts and math functions as we progress through the program.&lt;/p&gt;
+&lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+  </div>
+  <div id="seq_contents_2"
+    aria-labelledby="tab_2"
+    aria-hidden="true"
+    class="seq_contents tex2jax_ignore asciimath2jax_ignore">
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-vertical&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;VerticalStudentView&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34; data-request-token=&#34;3dda0638939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@e239a599aec54ba2a2fd1dc874eb08bc&#34; data-block-type=&#34;vertical&#34;&gt;
+  
+
+  &lt;h2 class=&#34;hd hd-2 unit-title&#34;&gt;Importing and Exporting Data&lt;/h2&gt;
+
+    &lt;div class=&#34;ih-bookmark-button-wrapper&#34;&gt;
+    	
+
+
+
+&lt;div class=&#34;bookmark-button-wrapper&#34;&gt;
+  &lt;button class=&#34;btn btn-link bookmark-button &#34;
+    aria-pressed=&#34;false&#34;
+    data-bookmark-id=&#34;NoahB,block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@e239a599aec54ba2a2fd1dc874eb08bc&#34;
+    data-bookmarks-api-url=&#34;/api/bookmarks/v1/bookmarks/&#34;&gt;
+     &lt;span class=&#34;bookmark-text&#34;&gt;Bookmark this page&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+
+    &lt;/div&gt;	
+
+&lt;div class=&#34;vert-mod&#34;&gt;
+  &lt;div class=&#34;vert vert-0&#34; data-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@e1ae25fbca3b4d3d84cc4a2c12bac5c8&#34;&gt;
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;3dda0638939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@e1ae25fbca3b4d3d84cc4a2c12bac5c8&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  &lt;h2&gt;&lt;a id=&#34;user-content-lesson-goals&#34; class=&#34;anchor&#34; href=&#34;#lesson-goals&#34; aria-hidden=&#34;true&#34;&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt; &lt;/a&gt;Lesson Goals&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Learn how to import and export delimited files with Pandas.&lt;/li&gt;
+&lt;li&gt;Learn how to import and export JSON files.&lt;/li&gt;
+&lt;li&gt;Learn how to read data from a database.&lt;/li&gt;
+&lt;li&gt;Learn how to write data to a database.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;&lt;a id=&#34;user-content-introduction&#34; class=&#34;anchor&#34; href=&#34;#introduction&#34; aria-hidden=&#34;true&#34;&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt; &lt;/a&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;No analytics tool operates in a vacuum. Most of the time, the systems that generate the data are not the ones where analysis of that data is conducted. Because of this, we must have a way to obtain data from external data sources, load it into Pandas, and also be able to export data or our results for further use or presentation. In this lesson, we will cover ways to import data from, and export data to, a variety of formats and destinations using Pandas.&lt;/p&gt;
+&lt;h2&gt;&lt;a id=&#34;user-content-preparation&#34; class=&#34;anchor&#34; href=&#34;#preparation&#34; aria-hidden=&#34;true&#34;&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt; &lt;/a&gt;Preparation&lt;/h2&gt;
+&lt;p&gt;Download &lt;a href=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/data/module-1/vehicles.zip&#34; rel=&#34;nofollow&#34;&gt;vehicles.zip&lt;/a&gt; which contains a bunch of data files in different file formats. Extract the content to your machine. You should see the following extracted files:&lt;/p&gt;
+&lt;div class=&#34;highlight highlight-source-shell&#34;&gt;
+&lt;pre&gt;vehicles_messy.csv
+vehicles_pipe.txt
+vehicles_tab.txt
+vehicles.csv
+vehicles.json
+vehicles.xlsx&lt;/pre&gt;
+&lt;/div&gt;
+&lt;h2&gt;&lt;a id=&#34;user-content-importing-and-exporting-delimited-files&#34; class=&#34;anchor&#34; href=&#34;#importing-and-exporting-delimited-files&#34; aria-hidden=&#34;true&#34;&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt; &lt;/a&gt;Importing and Exporting Delimited Files&lt;/h2&gt;
+&lt;p&gt;One of the most common places where data originates are delimited files. Most analytics applications have the ability to read and process delimited files, so they are a popular way to pass information from one system to another. There a few common file formats you are likely to see out in the real world.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Comma-separated variable (CSV) files&lt;/li&gt;
+&lt;li&gt;Tab-delimited files&lt;/li&gt;
+&lt;li&gt;Pipe-delimited files&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Pandas provides us with the ability to import any of these using the &lt;code&gt;read_csv&lt;/code&gt; method. For files delimited with characters other than commas, we just need to specify the type of delimiter via the method&#39;s &lt;code&gt;sep&lt;/code&gt; parameter so that Pandas knows how it should separate the values.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# Import comma-separated variable file
+data = pd.read_csv(&#39;vehicles/vehicles.csv&#39;)
+
+# Import tab-delimited file
+data = pd.read_csv(&#39;vehicles/vehicles_tab.txt&#39;, sep=&#39;\t&#39;)
+
+# Import pipe-delimited file
+data = pd.read_csv(&#39;vehicles/vehicles_pipe.txt&#39;, sep=&#39;|&#39;)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Exporting data as delimited files is just as easy. Instead of using the &lt;code&gt;read_csv&lt;/code&gt; method, you use &lt;code&gt;to_csv&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# Export comma-separated variable file
+data = &lt;/code&gt;&lt;code&gt;&lt;code&gt;data&lt;/code&gt;.to_csv(&#39;vehicles/vehicles.csv&#39;, index=False)
+
+# Export tab-delimited file
+data = &lt;/code&gt;&lt;code&gt;&lt;code&gt;data&lt;/code&gt;.to_csv(&#39;vehicles/vehicles_tab.txt&#39;, sep=&#39;\t&#39;, index=False)
+
+# Export pipe-delimited file
+data = &lt;/code&gt;&lt;code&gt;&lt;code&gt;data&lt;/code&gt;.to_csv(&#39;vehicles/vehicles_pipe.txt&#39;, sep=&#39;|&#39;, index=False)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Note that we set the &lt;code&gt;index&lt;/code&gt; parameter to False. If we did not do that, it would export the data frame with an extra column containing its indexes. Since the indexes have no meaning to us in this case, we are going to exclude them from our export.&lt;/p&gt;
+&lt;h2&gt;&lt;a id=&#34;user-content-importing-and-exporting-excel&#34; class=&#34;anchor&#34; href=&#34;#importing-and-exporting-excel&#34; aria-hidden=&#34;true&#34;&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt; &lt;/a&gt;Importing and Exporting Excel&lt;/h2&gt;
+&lt;p&gt;We can also import and export Microsoft Excel spreadsheets with Pandas. The way to do this is similar to how we imported and exported delimited files, but instead of &lt;code&gt;read_csv&lt;/code&gt; and &lt;code&gt;to_csv&lt;/code&gt;, we will use the &lt;code&gt;read_excel&lt;/code&gt; and &lt;code&gt;to_excel&lt;/code&gt; methods.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;data = pd.read_excel(&#39;vehicles/vehicles.xlsx&#39;)
+
+data.to_excel(&#39;vehicles/vehicles.xlsx&#39;, index=False)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;h2&gt;&lt;a id=&#34;user-content-importing-and-exporting-json&#34; class=&#34;anchor&#34; href=&#34;#importing-and-exporting-json&#34; aria-hidden=&#34;true&#34;&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt; &lt;/a&gt;Importing and Exporting JSON&lt;/h2&gt;
+&lt;p&gt;Another common format for importing and exporting data is JSON. JSON stands for Javascript Object Notation, and it allows you to format data in intuitive ways so that it can be easily read and processed. We can use Pandas to read and write JSON files as follows.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;data = pd.read_json(&#39;vehicles/vehicles.json&#39;, orient=&#39;records&#39;)
+
+data.to_json(&#39;vehicles/vehicles.json&#39;, orient=&#39;records&#39;)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Note that we set the &lt;code&gt;orient&lt;/code&gt; parameter to &lt;code&gt;&#39;records&#39;&lt;/code&gt; in our code examples above. We did this because our JSON file was structured as a list of dictionaries where each dictionary represented a complete record of data. When working with JSON files in Pandas, the way the data is organized is going to dictate the value you pass to the &lt;code&gt;orient&lt;/code&gt; parameter. Below are a few other common ways that JSON files can be structured and the corresponding value you should pass to the &lt;code&gt;orient&lt;/code&gt; parameter for each one.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;&#39;split&#39;&lt;/code&gt;: Dictionary containing indexes, columns, and data.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&#39;index&#39;&lt;/code&gt;: Nested dictionaries containing {index:{column:value}}.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&#39;columns&#39;&lt;/code&gt;: Nested dictionaries containing {column:{index:value}}&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&#39;values&#39;&lt;/code&gt;: Nested list where each sublist contains the values for a record.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&#39;table&#39;&lt;/code&gt;: Nested dictionaries containing schema and data (records).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Challenge:&lt;/strong&gt; Try exporting the data passing each of these values to the &lt;code&gt;orient&lt;/code&gt; parameter. Open each of the files in a text editor and note the differences in structure.&lt;/p&gt;
+&lt;h2&gt;&lt;a id=&#34;user-content-reading-data-from-databases&#34; class=&#34;anchor&#34; href=&#34;#reading-data-from-databases&#34; aria-hidden=&#34;true&#34;&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt; &lt;/a&gt;Reading Data from Databases&lt;/h2&gt;
+&lt;p&gt;In addition to reading data from various types of files, Pandas also provides us with the ability to read data from MySQL databases. To do so, we need to import the &lt;code&gt;pymysql&lt;/code&gt; library and the &lt;code&gt;create_engine&lt;/code&gt; function from the &lt;code&gt;sqlalchemy&lt;/code&gt; library.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;import pymysql
+from sqlalchemy import create_engine
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;We must then call the create_engine function and pass it the string below, replacing &lt;code&gt;username&lt;/code&gt; and &lt;code&gt;password&lt;/code&gt; with the actual username and password for the MySQL database on your local machine. We will assign the result to a variable called &lt;code&gt;engine&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;engine = create_engine(&#39;mysql+pymysql://username:password@localhost/publications&#39;)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;From there, we can use the Pandas &lt;code&gt;read_sql_query&lt;/code&gt; function, pass it a SQL statement, and specify that it is to run that statement on the engine connection we created to our MySQL database. In the example below, we are querying all records from the employee table in our publications database.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;data = pd.read_sql_query(&#39;SELECT * FROM publications.employee&#39;, engine)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;h2&gt;&lt;a id=&#34;user-content-writing-data-to-databases&#34; class=&#34;anchor&#34; href=&#34;#writing-data-to-databases&#34; aria-hidden=&#34;true&#34;&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt; &lt;/a&gt;Writing Data to Databases&lt;/h2&gt;
+&lt;p&gt;Once you have data in a data frame and you have your MySQL database connections saved to the &lt;code&gt;engine&lt;/code&gt; variable, writing the data to a table in the database is pretty straightforward. You can use Pandas&#39; &lt;code&gt;to_sql&lt;/code&gt; method and specify the table name you want to give the data set, the database connection, what you want to happen if the table already exists (replace, append, fail, etc.) and whether you want to include or exclude the indexes.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;data.to_sql(&#39;employee2&#39;, engine, if_exists=&#39;replace&#39;, index=False)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;If you refresh the publications database, you should now see a table named &#34;employee2.&#34;&lt;/p&gt;
+&lt;h2&gt;&lt;a id=&#34;user-content-summary&#34; class=&#34;anchor&#34; href=&#34;#summary&#34; aria-hidden=&#34;true&#34;&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt; &lt;/a&gt;Summary&lt;/h2&gt;
+&lt;p&gt;In this lesson, we covered multiple ways to import data into and export data out of Pandas. First, we learned how to read and write delimited files (csv, tab-delimited, and pipe-delimited). Then we learned how to read and write Excel and JSON files, and finished up the lesson with reading and writing to MySQL databases with the help of the &lt;code&gt;pymysql&lt;/code&gt; and &lt;code&gt;sqlalchemy&lt;/code&gt; libraries.&lt;/p&gt;
+&lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+  </div>
+  <div id="seq_contents_3"
+    aria-labelledby="tab_3"
+    aria-hidden="true"
+    class="seq_contents tex2jax_ignore asciimath2jax_ignore">
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-vertical&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;VerticalStudentView&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34; data-request-token=&#34;3dda0638939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@417501a0749f4c3294980c33b5dfb7c5&#34; data-block-type=&#34;vertical&#34;&gt;
+  
+
+  &lt;h2 class=&#34;hd hd-2 unit-title&#34;&gt;Data Cleaning&lt;/h2&gt;
+
+    &lt;div class=&#34;ih-bookmark-button-wrapper&#34;&gt;
+    	
+
+
+
+&lt;div class=&#34;bookmark-button-wrapper&#34;&gt;
+  &lt;button class=&#34;btn btn-link bookmark-button &#34;
+    aria-pressed=&#34;false&#34;
+    data-bookmark-id=&#34;NoahB,block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@417501a0749f4c3294980c33b5dfb7c5&#34;
+    data-bookmarks-api-url=&#34;/api/bookmarks/v1/bookmarks/&#34;&gt;
+     &lt;span class=&#34;bookmark-text&#34;&gt;Bookmark this page&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+
+    &lt;/div&gt;	
+
+&lt;div class=&#34;vert-mod&#34;&gt;
+  &lt;div class=&#34;vert vert-0&#34; data-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@11dc1d5b33bd4fd7a4ffc70fc346cb53&#34;&gt;
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;3dda0638939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@11dc1d5b33bd4fd7a4ffc70fc346cb53&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  &lt;h2&gt;
+    &lt;a id=&#34;user-content-lesson-goals&#34; class=&#34;anchor&#34; href=&#34;#lesson-goals&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Lesson Goals
+&lt;/h2&gt;
+&lt;ul&gt;
+    &lt;li&gt;Examine data for potential issues.&lt;/li&gt;
+    &lt;li&gt;Identify and fill in missing values.&lt;/li&gt;
+    &lt;li&gt;Identify and correct incorrect values.&lt;/li&gt;
+    &lt;li&gt;Remove low variance columns.&lt;/li&gt;
+    &lt;li&gt;Identify potential outliers.&lt;/li&gt;
+    &lt;li&gt;Correct incorrect data types.&lt;/li&gt;
+    &lt;li&gt;Remove special characters and clean categorical variables.&lt;/li&gt;
+    &lt;li&gt;Identify and remove duplicate records.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-introduction&#34; class=&#34;anchor&#34; href=&#34;#introduction&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Introduction
+&lt;/h2&gt;
+&lt;p&gt;When working with data sets, you will find that they often require a bit of cleaning. Whether Pandas originally read the data types incorrectly, records are duplicated, the data contains special characters or missing value, or there are slightly different references to the same entity, every data analyst must know how to clean the data they are working with before analyzing it. In this lesson, you will learn about some of the most common problems that make data messy and methods for correcting those problems and cleaning your data.&lt;/p&gt;
+&lt;p&gt;The data set we are going to be using for this lesson is a messy version of the vehicles data set we worked with in the previous lesson. Let&#39;s import this version of our data set so that we can then practice cleaning it up.&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;data = pd.read_csv(&#39;data sets/vehicles/vehicles_messy.csv&#39;)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-examining-data-for-potential-issues&#34; class=&#34;anchor&#34; href=&#34;#examining-data-for-potential-issues&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Examining Data for Potential Issues
+&lt;/h2&gt;
+&lt;p&gt;One of the first things we want to do is examine the data and look for any potential issues. Some of the things we are interested in identifying in the data at this stage include:&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;Missing values&lt;/li&gt;
+    &lt;li&gt;Special characters&lt;/li&gt;
+    &lt;li&gt;Incorrect values&lt;/li&gt;
+    &lt;li&gt;Extreme values or outliers&lt;/li&gt;
+    &lt;li&gt;Duplicate records&lt;/li&gt;
+    &lt;li&gt;Incorrect data types&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The presence of these may cause problems when it&#39;s time to analyze the data, so we want to make sure we address them beforehand. We can start by visually inspecting the data using the 
+    &lt;code&gt;head&lt;/code&gt; method, which will show us the first 5 rows of data.
+&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;data.head()
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/4bef0a621462f9bb2da0304a907c72f07365829a/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6d657373792d76656869636c65732d646174612e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/4bef0a621462f9bb2da0304a907c72f07365829a/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6d657373792d76656869636c65732d646174612e706e67&#34; alt=&#34;Messy Vehicles Data&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/messy-vehicles-data.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-missing-values&#34; class=&#34;anchor&#34; href=&#34;#missing-values&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Missing Values
+&lt;/h2&gt;
+&lt;p&gt;From this initial view, we can see that our data set contains some columns that have missing values in them and others that seem to have a lot of zero values. Let&#39;s see how prevalent missing values are in our data. We can use the Pandas 
+    &lt;code&gt;isnull&lt;/code&gt; method to check whether the value in each field is missing (null) and return either True or False for each field. We can use the
+    &lt;code&gt;sum&lt;/code&gt; method to total up the number of True values by column, and then we can add a condition using square brackets that will filter the data and show us only columns where the number of null values were greater than zero.
+&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;null_cols = data.isnull().sum()
+null_cols[null_cols &amp;gt; 0]
+
+cylinders       123
+displ           120
+drive          1189
+eng_dscr      15403
+trany            11
+guzzler       35562
+trans_dscr    22796
+tCharger      32657
+sCharger      37177
+atvType       34771
+fuelType2     36435
+rangeA        36440
+evMotor       37281
+mfrCode       30818
+c240Dscr      37806
+c240bDscr     37807
+startStop     31705
+dtype: int64
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;We can see that some columns have relatively few null values while others have tens of thousands of nulls. For fields that have a lot of null values, you will often have to make a judgement call. If you don&#39;t think the information is going to be very useful to your analysis, then you would remove those columns from your data frame. In Pandas, we can do that using the 
+    &lt;code&gt;drop&lt;/code&gt; method. For our purposes, let&#39;s remove the columns that have more than 10,000 null values in them. We will add these column names to a list, and then we will pass those columns to the
+    &lt;code&gt;drop&lt;/code&gt; method and indicate that we want columns (not rows) dropped by setting the axis parameter to 1.
+&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;drop_cols = list(null_cols[null_cols &amp;gt; 10000].index)
+data = data.drop(drop_cols, axis=1)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;This leaves us with just a handful of remaining columns that have null values. Of the columns that remain, it looks like the cylinders column and the 
+    &lt;em&gt;displ&lt;/em&gt; column have a similar number of nulls. Perhaps they are missing for similar reasons. We can investigate this by subsetting the data set and looking at just the records where
+    &lt;em&gt;displ&lt;/em&gt; is null and just the columns we think will be informative in allowing us to determine a reason.
+&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;null_displ = data[(data[&#39;displ&#39;].isnull()==True)]
+null_displ = null_displ[[&#39;year&#39;, &#39;make&#39;, &#39;model&#39;, &#39;trany&#39;, &#39;drive&#39;,&#39;fuelType&#39;,&#39;cylinders&#39;, &#39;displ&#39;]]
+null_displ
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/ed05459b7598808e88fcd1317e1fcb4712a8e7b4/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6e756c6c2d646973706c6163656d656e742e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/ed05459b7598808e88fcd1317e1fcb4712a8e7b4/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6e756c6c2d646973706c6163656d656e742e706e67&#34; alt=&#34;Null Engine Displacement&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/null-displacement.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;We can see that most of the time, cylinders is null when displ is null and that the most of the records where both fields are null have a fuel type of Electricity. This makes sense, as electric cars do not have cylinders and can therefore not have any displacement. In this case, it would make sense to replace these null values with zeros. Pandas makes it easy to do that with the 
+    &lt;code&gt;fillna&lt;/code&gt; method.
+&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;data[[&#39;displ&#39;, &#39;cylinders&#39;]] = data[[&#39;displ&#39;, &#39;cylinders&#39;]].fillna(0)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;In this example, we filled the nulls in with zeros, but there are other strategies for filling in nulls. Depending on the circumstances, you might want to replace nulls with the column mean or mode values. Once you get more advanced, you can even use a variety of predictive imputation methods.&lt;/p&gt;
+&lt;p&gt;
+    &lt;strong&gt;Challenge:&lt;/strong&gt; Now that we have filled those null values in with zeros, there are only two columns in the data set that still have null values: trany and drive. Use what you have learned in this section to investigate and potentially fill in the remaining null values.
+&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-incorrect-values&#34; class=&#34;anchor&#34; href=&#34;#incorrect-values&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Incorrect Values
+&lt;/h2&gt;
+&lt;p&gt;In addition to null values, we also want to try to identify any values that seem incorrect. For example, in the previous section, we learned that a vehicle without cylinders should not have displacement and vice versa. Let&#39;s check to see if there are any cases that violate these rules.&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;test = data[(data[&#39;cylinders&#39;]==0) &amp;amp; (data[&#39;displ&#39;]!=0)]
+test[[&#39;year&#39;, &#39;make&#39;, &#39;model&#39;, &#39;trany&#39;, &#39;drive&#39;,&#39;fuelType&#39;,&#39;cylinders&#39;, &#39;displ&#39;]]
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/9ac7309747d6ebe0eddf523cd1dfde4c70b3c994/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f696e636f72726563742d76616c7565732e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/9ac7309747d6ebe0eddf523cd1dfde4c70b3c994/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f696e636f72726563742d76616c7565732e706e67&#34; alt=&#34;Incorrect Values&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/incorrect-values.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;Here we have identified a vehicle with a regular gasoline engine that reportedly does not have any cylinders but does have a value for displacement. The way we would correct this would be to either perform some domain research or ask a domain expert to find out how many actual cylinders this vehicle had. Alternatively, you can also try to look at similar vehicles in the data set and determine the most likely value for this field.&lt;/p&gt;
+&lt;p&gt;Suppose that using one of the aforementioned methods, we found out that this vehicle actually has a 4 cylinder engine. Once we have this information, we can use the 
+    &lt;code&gt;loc&lt;/code&gt; method to update  that specific value in the data frame.
+&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;data.loc[(data[&#39;cylinders&#39;]==0) &amp;amp; (data[&#39;displ&#39;]!=0), &#39;cylinders&#39;] = 4
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;strong&gt;Challenge:&lt;/strong&gt; Try to find other values that might be incorrect in the data set based on what you know about automobiles and correct them.
+&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-low-variance-columns&#34; class=&#34;anchor&#34; href=&#34;#low-variance-columns&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Low Variance Columns
+&lt;/h2&gt;
+&lt;p&gt;When analyzing data, we want the fields we are working with to be informative, and we will want to strip away any columns that don&#39;t have a lot of value to us. One easy way to do this is to identify columns that have low variance, where the majority of the values in the column are the same. Since there is not a lot of variability in these columns, they have the potential to not be as informative as columns that have a variety of different values in them.&lt;/p&gt;
+&lt;p&gt;Let&#39;s try to identify columns where at least 90% of the values are the same so that we can remove them from our data set. To do this, we are going to create an empty list called low_variance that will eventually contain the names of columns that fit our criteria. We will then write a for loop that will take the minimum and the 90th percentile value for all the numeric columns in our data set (identified via the 
+    &lt;code&gt;_get_numeric_data&lt;/code&gt; method). If the 90th percentile and the minimum are equal to each other, that means that at least 90% of the values in that column are the same and we will append that column name to our low_variance list.
+&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;low_variance = []
+
+for col in data._get_numeric_data():
+    minimum = min(data[col])
+    ninety_perc = np.percentile(data[col], 90)
+    if ninety_perc == minimum:
+        low_variance.append(col)
+
+print(low_variance)
+
+[&#39;barrelsA08&#39;, &#39;charge120&#39;, &#39;charge240&#39;, &#39;cityA08&#39;, &#39;cityA08U&#39;, &#39;cityCD&#39;, &#39;cityE&#39;, &#39;cityUF&#39;, &#39;co2A&#39;, &#39;co2TailpipeAGpm&#39;, &#39;combA08&#39;, &#39;combA08U&#39;, &#39;combE&#39;, &#39;combinedCD&#39;, &#39;combinedUF&#39;, &#39;fuelCostA08&#39;, &#39;ghgScoreA&#39;, &#39;highwayA08&#39;, &#39;highwayA08U&#39;, &#39;highwayCD&#39;, &#39;highwayE&#39;, &#39;highwayUF&#39;, &#39;phevBlended&#39;, &#39;range&#39;, &#39;rangeCity&#39;, &#39;rangeCityA&#39;, &#39;rangeHwy&#39;, &#39;rangeHwyA&#39;, &#39;UCityA&#39;, &#39;UHighwayA&#39;, &#39;charge240b&#39;, &#39;phevCity&#39;, &#39;phevHwy&#39;, &#39;phevComb&#39;]
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;This returned 34 columns that we could potentially eliminate due to not having high enough variability to be informative. Of course, before we do this, we should check the values that do exist in these fields to confirm that they are not very informative. Once they have been checked, we can use the the 
+    &lt;code&gt;drop&lt;/code&gt; method like we did earlier in this lesson to remove those columns from our data frame.
+&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;data = data.drop(low_variance, axis=1)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-extreme-values-and-outliers&#34; class=&#34;anchor&#34; href=&#34;#extreme-values-and-outliers&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Extreme Values and Outliers
+&lt;/h2&gt;
+&lt;p&gt;Now that we have removed low variance columns, we should look for outliers, or extreme values, in the columns that remain. These outliers can influence our aggregations when we are analyzing data later, so we want to make sure we address them during our data cleaning stage.&lt;/p&gt;
+&lt;p&gt;A common method for identifying outliers is one that leverages the interquartile range (IQR). Once the IQR is calculated, it is multiplied by a constant (typically 1.5) and lower and upper bounds are established at:&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;25th Percentile - (IQR x 1.5)&lt;/li&gt;
+    &lt;li&gt;75th Percentile + (IQR x 1.5)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Any values outside this range are potential outliers and should be investigated.&lt;/p&gt;
+&lt;p&gt;Let&#39;s look at how we would do this for our data set using Python. We will use the Pandas 
+    &lt;code&gt;describe&lt;/code&gt; function to easily calculate the 25th and 75th percentiles for every column and transpose the results so that we can easily reference the values in calculating the interquartile ranges.
+&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;stats = data.describe().transpose()
+stats[&#39;IQR&#39;] = stats[&#39;75%&#39;] - stats[&#39;25%&#39;]
+stats
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/8c5a0a3f66e788286588e8a8fb5cb55062b9bb99/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f76656869636c65732d6971722e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/8c5a0a3f66e788286588e8a8fb5cb55062b9bb99/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f76656869636c65732d6971722e706e67&#34; alt=&#34;Vehicles IQR&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/vehicles-iqr.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;We will then create an empty data frame called outliers with the same columns as our data set. Finally, we will loop through each column in the data calculating the lower and upper bounds, retrieving records where the value for that column falls outside the bounds we established, and appending those results to our outlier data frame.&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;outliers = pd.DataFrame(columns=data.columns)
+
+for col in stats.index:
+    iqr = stats.at[col,&#39;IQR&#39;]
+    cutoff = iqr * 1.5
+    lower = stats.at[col,&#39;25%&#39;] - cutoff
+    upper = stats.at[col,&#39;75%&#39;] + cutoff
+    results = data[(data[col] &amp;lt; lower) | 
+                   (data[col] &amp;gt; upper)].copy()
+    results[&#39;Outlier&#39;] = col
+    outliers = outliers.append(results)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Our outliers data frame should now be populated with records that you can investigate further and determine whether they should be kept in the data or dropped. The Outlier column we added before appending the results for the column to the outliers data frame will let you know what column in each record contained the outlier. If you find that this method is returning too many results, you can be more stringent with your cutoff criteria (e.g. increasing the constant by which you multiply the IQR to 3 instead of 1.5).&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-data-type-correction&#34; class=&#34;anchor&#34; href=&#34;#data-type-correction&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Data Type Correction
+&lt;/h2&gt;
+&lt;p&gt;One common problem that is often overlooked is incorrect data types. This typically occurs when there is a numeric variable that should actually be represented as a categorical variable. The way to check the data type of each column in Pandas is by using the 
+    &lt;code&gt;dtypes&lt;/code&gt; method.
+&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;data.dtypes
+
+barrels08         float64
+city08              int64
+city08U           float64
+co2                 int64
+co2TailpipeGpm    float64
+...
+VClass             object
+year                int64
+youSaveSpend        int64
+createdOn          object
+modifiedOn         object
+dtype: object
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Pandas currently has the year column stored as integers, but what if we wanted the year to be stored as a categorical variable (object) instead? We could easily change that data type using the 
+    &lt;code&gt;astype&lt;/code&gt; method and then check that it changed using the
+    &lt;code&gt;dtypes&lt;/code&gt; method again just on that field.
+&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;data[&#39;year&#39;] = data[&#39;year&#39;].astype(&#39;object&#39;)
+data[&#39;year&#39;].dtype
+
+dtype(&#39;O&#39;)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;You can apply this technique to any column whose data type you would like to change.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-cleaning-text-and-removing-special-characters&#34; class=&#34;anchor&#34; href=&#34;#cleaning-text-and-removing-special-characters&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Cleaning Text and Removing Special Characters
+&lt;/h2&gt;
+&lt;p&gt;The presence of special characters in our fields has the potential to make analyzing our data challenging. Imagine not being able to perform calculations on a numeric field because it was currently represented as an object data type due to the fact that it had a dollar sign ($) in it. Similarly, imagine having a categorical field where you could not group records that belong in the same group together because in one field you are grouping by, terms that refer to the same thing are sometimes hyphenated. In cases like this, it is necessary to remove special characters so that we can properly analyze the data.&lt;/p&gt;
+&lt;p&gt;In our vehicles data set, the trany field has several special characters (parentheses, hyphens, etc.). We can take a look at the unique values in this column by using the 
+    &lt;code&gt;set&lt;/code&gt; function.
+&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;print(set(data[&#39;trany&#39;]))
+
+{nan, &#39;Automatic 4-spd&#39;, &#39;Auto (AV-S6)&#39;, &#39;Auto(AM6)&#39;, &#39;Automatic (S6)&#39;, &#39;Auto(AM-S8)&#39;, &#39;Manual 7-spd&#39;, &#39;Auto(A1)&#39;, &#39;Manual 6-spd&#39;, &#39;Auto(AV-S6)&#39;, &#39;Manual 3-spd&#39;, &#39;Auto(L3)&#39;, &#39;Automatic (S4)&#39;, &#39;Automatic (variable gear ratios)&#39;, &#39;Auto(L4)&#39;, &#39;Manual 4-spd&#39;, &#39;Auto(AV-S7)&#39;, &#39;Automatic 6-spd&#39;, &#39;Auto (AV-S8)&#39;, &#39;Automatic (S9)&#39;, &#39;Manual(M7)&#39;, &#39;Auto(AM8)&#39;, &#39;Automatic 8-spd&#39;, &#39;Automatic 6spd&#39;, &#39;Automatic (S5)&#39;, &#39;Auto(AM-S9)&#39;, &#39;Automatic (AM6)&#39;, &#39;Automatic (AM5)&#39;, &#39;Automatic (AV)&#39;, &#39;Auto(AV-S8)&#39;, &#39;Automatic 5-spd&#39;, &#39;Automatic (A6)&#39;, &#39;Manual 5 spd&#39;, &#39;Auto(AM-S7)&#39;, &#39;Automatic (A1)&#39;, &#39;Auto (AV)&#39;, &#39;Auto(AM5)&#39;, &#39;Auto(AM7)&#39;, &#39;Automatic 9-spd&#39;, &#39;Auto(AM-S6)&#39;, &#39;Manual 5-spd&#39;, &#39;Automatic (S8)&#39;, &#39;Automatic (AV-S6)&#39;, &#39;Automatic 7-spd&#39;, &#39;Manual 4-spd Doubled&#39;, &#39;Automatic (S7)&#39;, &#39;Automatic 3-spd&#39;}
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;We can see that there are instances that refer to the same thing, but would not get grouped together due to special characters (e.g. Automatic 6-spd and Automatic 6spd). So let&#39;s remove all hyphens from this column with the help of the 
+    &lt;code&gt;str.replace&lt;/code&gt; method and then print unique values again to ensure they were removed.
+&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;data[&#39;trany&#39;] = data[&#39;trany&#39;].str.replace(&#39;-&#39;, &#39;&#39;)
+print(set(data[&#39;trany&#39;]))
+
+{nan, &#39;Auto(AM6)&#39;, &#39;Auto(AVS7)&#39;, &#39;Automatic (S6)&#39;, &#39;Manual 4spd Doubled&#39;, &#39;Auto(AVS8)&#39;, &#39;Auto(A1)&#39;, &#39;Manual 5spd&#39;, &#39;Manual 3spd&#39;, &#39;Auto(L3)&#39;, &#39;Automatic (S4)&#39;, &#39;Automatic (variable gear ratios)&#39;, &#39;Auto(L4)&#39;, &#39;Automatic (S9)&#39;, &#39;Auto(AMS8)&#39;, &#39;Manual 7spd&#39;, &#39;Manual(M7)&#39;, &#39;Auto(AM8)&#39;, &#39;Automatic 6spd&#39;, &#39;Automatic (AVS6)&#39;, &#39;Auto (AVS8)&#39;, &#39;Automatic 4spd&#39;, &#39;Automatic 3spd&#39;, &#39;Automatic (S5)&#39;, &#39;Auto (AVS6)&#39;, &#39;Automatic (AM6)&#39;, &#39;Automatic (AM5)&#39;, &#39;Automatic (AV)&#39;, &#39;Automatic 9spd&#39;, &#39;Automatic 8spd&#39;, &#39;Automatic (A6)&#39;, &#39;Manual 5 spd&#39;, &#39;Manual 4spd&#39;, &#39;Automatic (A1)&#39;, &#39;Auto (AV)&#39;, &#39;Auto(AM5)&#39;, &#39;Manual 6spd&#39;, &#39;Auto(AMS6)&#39;, &#39;Auto(AMS9)&#39;, &#39;Auto(AM7)&#39;, &#39;Automatic (S8)&#39;, &#39;Automatic 5spd&#39;, &#39;Auto(AVS6)&#39;, &#39;Automatic (S7)&#39;, &#39;Auto(AMS7)&#39;, &#39;Automatic 7spd&#39;}
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;You will also notice that in some cases Automatic is abbreviated to Auto and in other cases it is spelled out. We can make that more consistent by using the same technique. While we are at it, let&#39;s also attempt to remove parentheses and make spacing more consistent.&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;data[&#39;trany&#39;] = data[&#39;trany&#39;].str.replace(&#39;Automatic&#39;, &#39;Auto&#39;)
+data[&#39;trany&#39;] = data[&#39;trany&#39;].str.replace(&#39;Auto\(&#39;, &#39;Auto &#39;)
+data[&#39;trany&#39;] = data[&#39;trany&#39;].str.replace(&#39;Manual\(&#39;, &#39;Manual &#39;)
+data[&#39;trany&#39;] = data[&#39;trany&#39;].str.replace(&#39;\(&#39;, &#39;&#39;)
+data[&#39;trany&#39;] = data[&#39;trany&#39;].str.replace(&#39;\)&#39;, &#39;&#39;)
+print(set(data[&#39;trany&#39;]))
+
+{nan, &#39;Auto AM5&#39;, &#39;Auto AVS8&#39;, &#39;Auto 7spd&#39;, &#39;Manual 4spd Doubled&#39;, &#39;Auto A1&#39;, &#39;Auto AMS7&#39;, &#39;Auto 8spd&#39;, &#39;Auto 9spd&#39;, &#39;Manual 5spd&#39;, &#39;Auto AMS9&#39;, &#39;Manual M7&#39;, &#39;Manual 3spd&#39;, &#39;Auto AV&#39;, &#39;Auto S4&#39;, &#39;Auto AVS6&#39;, &#39;Auto S6&#39;, &#39;Manual 7spd&#39;, &#39;Auto AMS8&#39;, &#39;Auto 6spd&#39;, &#39;Auto L3&#39;, &#39;Auto AM6&#39;, &#39;Auto L4&#39;, &#39;Auto AVS7&#39;, &#39;Auto S8&#39;, &#39;Auto 5spd&#39;, &#39;Manual 4spd&#39;, &#39;Auto 3spd&#39;, &#39;Auto S5&#39;, &#39;Auto S7&#39;, &#39;Auto A6&#39;, &#39;Manual 5 spd&#39;, &#39;Auto variable gear ratios&#39;, &#39;Auto S9&#39;, &#39;Manual 6spd&#39;, &#39;Auto AM8&#39;, &#39;Auto AM7&#39;, &#39;Auto AMS6&#39;, &#39;Auto 4spd&#39;}
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;As you can see, we now have no special characters, consistent naming, and proper spacing. We started out with 47 unique values in this column, and using this technique, we were able to reduce the number of unique values to 39.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-finding-and-removing-duplicates&#34; class=&#34;anchor&#34; href=&#34;#finding-and-removing-duplicates&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Finding and Removing Duplicates
+&lt;/h2&gt;
+&lt;p&gt;The final topic we are going to cover in this lesson is how to identify and remove duplicate rows (or rows that refer to the same entity) in our data. When trying to identify duplicates, we will use the columns (or attributes) of the data to help us determine what entities are similar enough to be considered the same entity. We want to start with all the columns we currently have available to us and work our way toward a lesser number of attributes in an intuitive fashion. In this process, the act of dropping duplicated records is easy, but identifying the correct attributes for comparison and which records to drop is sometimes quite challenging.&lt;/p&gt;
+&lt;p&gt;The first thing we will do is attempt to drop any duplicate records, considering all the columns we currently have in the data set. Pandas provides us with the ability to do that via the 
+    &lt;code&gt;drop_duplicates&lt;/code&gt; method. We will use the
+    &lt;code&gt;len&lt;/code&gt; method to calculate the number of rows in the data set both before and after removing duplicates and then print the number of rows dropped.
+&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;before = len(data)
+data = data.drop_duplicates()
+after = len(data)
+print(&#39;Number of duplicate records dropped: &#39;, str(before - after))
+
+Number of duplicate records dropped:  0
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;This tells us that there were no records that matched exactly across all columns. However, if we reduce the number of columns in our data that we are interested in, we can try again and have a higher likelihood of finding duplicate records. In the example below, we will select a subset of columns, remove all other columns, and then use the 
+    &lt;code&gt;drop_duplicates&lt;/code&gt; method to drop any duplicate records based on the remaining columns.
+&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;select_columns = [&#39;make&#39;, &#39;model&#39;, &#39;year&#39;, &#39;displ&#39;, &#39;cylinders&#39;, 
+                  &#39;trany&#39;, &#39;drive&#39;, &#39;VClass&#39;,&#39;fuelType&#39;,&#39;barrels08&#39;, 
+                  &#39;city08&#39;, &#39;highway08&#39;, &#39;comb08&#39;, &#39;co2TailpipeGpm&#39;, &#39;fuelCost08&#39;]
+
+data = data[select_columns].drop_duplicates()
+after = len(data)
+print(&#39;Number of duplicate records dropped: &#39;, str(before - after))
+
+Number of duplicate records dropped:  885
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;With the reduced number of columns, we were able to identify and drop 885 duplicate records.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-summary&#34; class=&#34;anchor&#34; href=&#34;#summary&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Summary
+&lt;/h2&gt;
+&lt;p&gt;In this lesson, we have learned many techniques for cleaning our data that will make it easier to analyze later. We started the lesson by learning how to examine the data for potential issues. We quickly moved on to finding missing values and incorrect values and correcting them. From there, we learned how to remove low variance columns and identify potential outliers. After that, we learned how to change a column&#39;s data type and clean our categorical variables in addition to learning how to identify and remove duplicate records. The techniques you have learned in this lesson are ones that you will find yourself revisiting and utilizing almost every time you prepare to analyze a data set, as most data sets you will encounter will require some level of cleaning.&lt;/p&gt;
+&lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+  </div>
+  <div id="seq_contents_4"
+    aria-labelledby="tab_4"
+    aria-hidden="true"
+    class="seq_contents tex2jax_ignore asciimath2jax_ignore">
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-vertical&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;VerticalStudentView&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34; data-request-token=&#34;3dda0638939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@2d39f50002ec485296a9c26c25cf08ec&#34; data-block-type=&#34;vertical&#34;&gt;
+  
+
+  &lt;h2 class=&#34;hd hd-2 unit-title&#34;&gt;Data Manipulation&lt;/h2&gt;
+
+    &lt;div class=&#34;ih-bookmark-button-wrapper&#34;&gt;
+    	
+
+
+
+&lt;div class=&#34;bookmark-button-wrapper&#34;&gt;
+  &lt;button class=&#34;btn btn-link bookmark-button &#34;
+    aria-pressed=&#34;false&#34;
+    data-bookmark-id=&#34;NoahB,block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@2d39f50002ec485296a9c26c25cf08ec&#34;
+    data-bookmarks-api-url=&#34;/api/bookmarks/v1/bookmarks/&#34;&gt;
+     &lt;span class=&#34;bookmark-text&#34;&gt;Bookmark this page&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+
+    &lt;/div&gt;	
+
+&lt;div class=&#34;vert-mod&#34;&gt;
+  &lt;div class=&#34;vert vert-0&#34; data-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@e6a2d56a35db4cc38b973da763c38348&#34;&gt;
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;3dda0638939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@e6a2d56a35db4cc38b973da763c38348&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  &lt;h2&gt;
+    &lt;a id=&#34;user-content-lesson-goals&#34; class=&#34;anchor&#34; href=&#34;#lesson-goals&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Lesson Goals
+&lt;/h2&gt;
+&lt;ul&gt;
+    &lt;li&gt;Learn how to rename columns in a data frame.&lt;/li&gt;
+    &lt;li&gt;Change the order of a data frame&#39;s columns.&lt;/li&gt;
+    &lt;li&gt;Filter records based on conditional statements.&lt;/li&gt;
+    &lt;li&gt;Create additional categories via binning and conditional statements.&lt;/li&gt;
+    &lt;li&gt;Learn how to one-hot encode categorical variables.&lt;/li&gt;
+    &lt;li&gt;Combine data frames via merging and concatenation.&lt;/li&gt;
+    &lt;li&gt;Melt data from wide format into long format.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-introduction&#34; class=&#34;anchor&#34; href=&#34;#introduction&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Introduction
+&lt;/h2&gt;
+&lt;p&gt;One of the reasons Pandas has become such a popular tool for data analysts over the last few years is because it makes data transformation and manipulation much faster and easier. In this lesson, we will take a look at how to rename and restructure data as we prepare it to be analyzed.&lt;/p&gt;
+&lt;p&gt;For this lesson, we will be using the same vehicles data set that we practiced importing and exporting in the Import and Export lesson. Let&#39;s go ahead and import the CSV version of the data set and see what it actually looks like.&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;import pandas as pd
+
+data = pd.read_csv(&#39;vehicles/vehicles.csv&#39;)
+data.head()
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/ae9a6e74a68906e53f13eceac38643153d8caa26/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f76656869636c65732d686561642e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/ae9a6e74a68906e53f13eceac38643153d8caa26/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f76656869636c65732d686561642e706e67&#34; alt=&#34;Vehicles Data&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/vehicles-head.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-renaming-columns&#34; class=&#34;anchor&#34; href=&#34;#renaming-columns&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Renaming Columns
+&lt;/h2&gt;
+&lt;p&gt;Data will often come either without column names or with column names that are not as intuitive as they could be. When this is the case, we want to assign descriptive names to the columns so that we remember what the values in each column represent. Intuitively naming your columns before diving in and analyzing your data is a good habit to develop.&lt;/p&gt;
+&lt;p&gt;Pandas provides us with a couple different ways to modify column names. For example, the 
+    &lt;code&gt;columns&lt;/code&gt; method will return a list of all the column names in the data set.
+&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;data.columns
+
+Index([&#39;Make&#39;, &#39;Model&#39;, &#39;Year&#39;, &#39;Engine Displacement&#39;, &#39;Cylinders&#39;,
+       &#39;Transmission&#39;, &#39;Drivetrain&#39;, &#39;Vehicle Class&#39;, &#39;Fuel Type&#39;,
+       &#39;Fuel Barrels/Year&#39;, &#39;City MPG&#39;, &#39;Highway MPG&#39;, &#39;Combined MPG&#39;,
+       &#39;CO2 Emission Grams/Mile&#39;, &#39;Fuel Cost/Year&#39;],
+      dtype=&#39;object&#39;)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;If you want to set the column names for every column in the data set, or change the names of multiple columns, you can just pass the 
+    &lt;code&gt;columns&lt;/code&gt; method a list with the same number of column names as the data has columns, and Pandas will update all the column names. In the example below, we are updating the Make column name to Manufacturer and the Engine Displacement column name to Displacement using this method.
+&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;data.columns = [&#39;Manufacturer&#39;,&#39;Model&#39;,&#39;Year&#39;,&#39;Displacement&#39;,
+                &#39;Cylinders&#39;,&#39;Transmission&#39;,&#39;Drivetrain&#39;,
+                &#39;Vehicle Class&#39;,&#39;Fuel Type&#39;,&#39;Fuel Barrels/Year&#39;,
+                &#39;City MPG&#39;,&#39;Highway MPG&#39;,&#39;Combined MPG&#39;,
+                &#39;CO2 Emission Grams/Mile&#39;,&#39;Fuel Cost/Year&#39;]
+
+data.columns
+
+Index([&#39;Manufacturer&#39;, &#39;Model&#39;, &#39;Year&#39;, &#39;Displacement&#39;, &#39;Cylinders&#39;,
+       &#39;Transmission&#39;, &#39;Drivetrain&#39;, &#39;Vehicle Class&#39;, &#39;Fuel Type&#39;,
+       &#39;Fuel Barrels/Year&#39;, &#39;City MPG&#39;, &#39;Highway MPG&#39;, &#39;Combined MPG&#39;,
+       &#39;CO2 Emission Grams/Mile&#39;, &#39;Fuel Cost/Year&#39;],
+      dtype=&#39;object&#39;)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;If you want to rename just a single column, or just a few columns, you can use the 
+    &lt;code&gt;rename&lt;/code&gt; method and pass a dictionary containing the existing column names and new column names to the columns parameter. Below, we will change the column names we modified in the previous example back to their original column names using the
+    &lt;code&gt;rename&lt;/code&gt; method.
+&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;data = data.rename(columns={&#39;Manufacturer&#39;:&#39;Make&#39;,
+                            &#39;Displacement&#39;:&#39;Engine Displacement&#39;})
+
+data.columns
+
+Index([&#39;Make&#39;, &#39;Model&#39;, &#39;Year&#39;, &#39;Engine Displacement&#39;, &#39;Cylinders&#39;,
+       &#39;Transmission&#39;, &#39;Drivetrain&#39;, &#39;Vehicle Class&#39;, &#39;Fuel Type&#39;,
+       &#39;Fuel Barrels/Year&#39;, &#39;City MPG&#39;, &#39;Highway MPG&#39;, &#39;Combined MPG&#39;,
+       &#39;CO2 Emission Grams/Mile&#39;, &#39;Fuel Cost/Year&#39;],
+      dtype=&#39;object&#39;)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-changing-column-order&#34; class=&#34;anchor&#34; href=&#34;#changing-column-order&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Changing Column Order
+&lt;/h2&gt;
+&lt;p&gt;You can also reorder columns in a data frame. To do this, you would create a list containing the data frame&#39;s column names in the order you would like them. Then you can just recreate the data frame with the customized ordering as follows.&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;column_order = [&#39;Year&#39;,&#39;Make&#39;,&#39;Model&#39;,&#39;Vehicle Class&#39;,
+                &#39;Transmission&#39;,&#39;Drivetrain&#39;,&#39;Fuel Type&#39;,
+                &#39;Cylinders&#39;,&#39;Engine Displacement&#39;,&#39;Fuel Barrels/Year&#39;,
+                &#39;City MPG&#39;,&#39;Highway MPG&#39;,&#39;Combined MPG&#39;,
+                &#39;CO2 Emission Grams/Mile&#39;,&#39;Fuel Cost/Year&#39;]
+
+data = data[column_order]
+data.head()
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/2cc6c58b839034657db46596bdff66ab09fc8ce0/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f76656869636c65732d72656f726465722d636f6c756d6e732e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/2cc6c58b839034657db46596bdff66ab09fc8ce0/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f76656869636c65732d72656f726465722d636f6c756d6e732e706e67&#34; alt=&#34;Reorder Columns&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/vehicles-reorder-columns.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-filtering-records&#34; class=&#34;anchor&#34; href=&#34;#filtering-records&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Filtering Records
+&lt;/h2&gt;
+&lt;p&gt;When working with data, analysts often need to filter the data based on one or more conditional statements. This is similar to adding a 
+    &lt;code&gt;WHERE&lt;/code&gt; clause to a query in SQL. For example, suppose we needed to filter our data set for all Ford vehicles that had a 6 or more cylinders and a combined MPG of less than 18. We could enter our conditions inside square brackets to subset the data set for just the records that meet the conditions we&#39;ve specified.
+&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;filtered = data[(data[&#39;Make&#39;]==&#39;Ford&#39;) &amp;amp; 
+                (data[&#39;Cylinders&#39;]&amp;gt;=6) &amp;amp; 
+                (data[&#39;Combined MPG&#39;] &amp;lt; 18)]
+
+filtered.head()
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/227cf55275d9238e27c649cd687104a01f09b833/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f76656869636c65732d66696c74657265642e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/227cf55275d9238e27c649cd687104a01f09b833/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f76656869636c65732d66696c74657265642e706e67&#34; alt=&#34;Vehicles Filtered&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/vehicles-filtered.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;There are a couple of important things to note here. First, when you want to apply multiple conditions, you need to use an &#34;and&#34; operator (&amp;amp;) or an &#34;or&#34; operator (|) between your conditions. The &#34;and&#34; operator will return records where 
+    &lt;em&gt;both&lt;/em&gt; of the conditions surrounding it are true, and the &#34;or&#34; operator will return records where
+    &lt;em&gt;either&lt;/em&gt; of the conditions surrounding it are true. The second thing to note is that all our conditional statements are enclosed in parentheses. This is easy to forget, but necessary or else your results will be incorrect.
+&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-binning-numeric-variables&#34; class=&#34;anchor&#34; href=&#34;#binning-numeric-variables&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Binning Numeric Variables
+&lt;/h2&gt;
+&lt;p&gt;When preparing data to be analyzed, one of the things that is useful to do is to create additional categorical variables. Categorical variables allow you to group records in different ways, and each way that you categorize them can provide you with a different perspective when you&#39;re conducting your analysis. A common way of creating additional categorical fields is to bin numeric variables in a column based on how relatively high or low they are.&lt;/p&gt;
+&lt;p&gt;For example, our data set has a Combined MPG variable that tells us how many miles per gallon of gasoline the vehicle can travel - in other words, the vehicle&#39;s fuel efficiency. However, it isn&#39;t easy to tell whether a vehicle has low or high fuel efficiency just by looking at the numbers. To help with this, we can bin the values in the Combined MPG field into an intuitive number of categories.&lt;/p&gt;
+&lt;p&gt;For this column, let&#39;s choose 5 bins so that we have one middle/moderate bin, two relatively low and high bins outside of that, and then two very low/high bins at the ends.&lt;/p&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/8807ecba60dc7abb01c75efbb4f520e2cc1257d4/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f666976652d62696e732e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/8807ecba60dc7abb01c75efbb4f520e2cc1257d4/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f666976652d62696e732e706e67&#34; alt=&#34;Five Bins&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/five-bins.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;In Python, let&#39;s create a list of labels that will be assigned to our bins.&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;mpg_labels = [&#39;Very Low&#39;, &#39;Low&#39;, &#39;Moderate&#39;, &#39;High&#39;, &#39;Very High&#39;]
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Next, we must determine how we want our data to be binned. There are three main approaches that we can choose from:&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;
+        &lt;strong&gt;Equal width bins:&lt;/strong&gt; the range for each bin is the same size.
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;strong&gt;Equal frequency bins:&lt;/strong&gt; approximately the same number of records in each bin.
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;strong&gt;Custom-sized bins:&lt;/strong&gt; the user explicitly defines where they want the cutoff for each bin to be.
+    &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you want equal width bins, you can use the 
+    &lt;code&gt;cut&lt;/code&gt; method in Pandas and pass it the column you want to bin, the number of bins and the list of labels.
+&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;bins = pd.cut(data[&#39;Combined MPG&#39;],5, labels=mpg_labels)
+bins.head(10)
+
+0         Low
+1    Very Low
+2    Very Low
+3    Very Low
+4    Very Low
+5         Low
+6         Low
+7         Low
+8         Low
+9         Low
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;If you want equal frequency bins, you would use the 
+    &lt;code&gt;qcut&lt;/code&gt; method instead with all the same inputs.
+&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;bins = pd.qcut(data[&#39;Combined MPG&#39;],5, labels=mpg_labels)
+bins.head(10)
+
+0         Low
+1    Very Low
+2    Very Low
+3    Very Low
+4    Very Low
+5        High
+6        High
+7    Moderate
+8        High
+9        High
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Note the difference in results. With equal width binning, there will be some bins that contain more records than others (such as the Low bin). With equal frequency binning, some of those records will be forced into other bins (e.g. the Moderate bin and even the High bin). This is an important consideration when determining how you want to categorize your data.&lt;/p&gt;
+&lt;p&gt;Finally, if you want custom bin sizes, you can pass a list of bin range values to the 
+    &lt;code&gt;cut&lt;/code&gt; method instead of the number of bins, and it will bin the values for you accordingly.
+&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;cutoffs = [7,14,21,23,30,40]
+bins = pd.cut(data[&#39;Combined MPG&#39;],cutoffs, labels=mpg_labels)
+bins.head(10)
+
+0         Low
+1    Very Low
+2         Low
+3    Very Low
+4         Low
+5    Moderate
+6        High
+7         Low
+8    Moderate
+9        High
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-conditional-categories&#34; class=&#34;anchor&#34; href=&#34;#conditional-categories&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Conditional Categories
+&lt;/h2&gt;
+&lt;p&gt;Another way to create intuitive additional categories in your data is to create columns based on conditional statements. Earlier in this lesson, we filtered our data based on conditional statements. Here, we will populate the values in a column based on them using the 
+    &lt;code&gt;loc&lt;/code&gt; method.
+&lt;/p&gt;
+&lt;p&gt;Our vehicles data set currently has 45 different values in the Transmission field, but one of the key pieces of information embedded in there is whether a vehicle has an automatic or manual transmission. It would be valuable to extract that so that we could group vehicles by their transmission type. Let&#39;s look at how we can create a new TransType column that only contains one of two values for each vehicle: Automatic or Manual.&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;data.loc[data[&#39;Transmission&#39;].str.startswith(&#39;A&#39;), &#39;TransType&#39;] = &#39;Automatic&#39;
+data.loc[data[&#39;Transmission&#39;].str.startswith(&#39;M&#39;), &#39;TransType&#39;] = &#39;Manual&#39;
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;We were able to leverage the 
+    &lt;code&gt;str.startswith&lt;/code&gt; method in our conditional statements such that whenever the value in the Transmission field started with an A, we would assign a TransType of Automatic, and when the value started with M, we would assign a TransType of Manual.
+&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-one-hot-encoding-categorical-variables&#34; class=&#34;anchor&#34; href=&#34;#one-hot-encoding-categorical-variables&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;One-Hot Encoding Categorical Variables
+&lt;/h2&gt;
+&lt;p&gt;One-hot encoding is a technique used to expand a single categorical column into as many columns as there are categories. Each column contains a 1 if that record belongs to the category and a 0 if it does not. This is useful for performing analyses where you want to know whether something falls into a specific category or not. It will also be useful when you learn about machine learning, as one-hot encoding makes it easier for some algorithms to interpret and find patterns in categorical data.&lt;/p&gt;
+&lt;p&gt;To perform one-hot encoding on a column, you can use the Pandas 
+    &lt;code&gt;get_dummies&lt;/code&gt; method and pass it the column you would like to one-hot encode.
+&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;drivetrain = pd.get_dummies(data[&#39;Drivetrain&#39;])
+drivetrain.head()
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/dc3c35ae544603540f3a508c84067365b98426fc/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6f6e652d686f742d656e636f64696e672e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/dc3c35ae544603540f3a508c84067365b98426fc/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6f6e652d686f742d656e636f64696e672e706e67&#34; alt=&#34;One Hot Encoding&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/one-hot-encoding.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-combining-data-frames&#34; class=&#34;anchor&#34; href=&#34;#combining-data-frames&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Combining Data Frames
+&lt;/h2&gt;
+&lt;p&gt;Another useful thing to do with data sets is to combine them. Pandas provides us with a few different ways to do this. The first way is by merging. Merging is similar to creating a join in SQL, where you can specify common fields between the two tables and then include information from both in your query. Pandas has a 
+    &lt;code&gt;merge&lt;/code&gt; method that functions in a similar way.
+&lt;/p&gt;
+&lt;p&gt;To illustrate, let&#39;s create a data frame that has the average Combined MPG for each Make using the 
+    &lt;code&gt;groupby&lt;/code&gt; method. We will merge that average into our data frame, joining on Make, so that we can see how fuel efficient a vehicle is in comparison to the other vehicles made by the same manufacturer.
+&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;avg_mpg = data.groupby(&#39;Make&#39;, as_index=False).agg({&#39;Combined MPG&#39;:&#39;mean&#39;})
+avg_mpg.columns = [&#39;Make&#39;, &#39;Avg_MPG&#39;]
+
+data = pd.merge(data, avg_mpg, on=&#39;Make&#39;)
+data.head(10)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/eff331bea3e5722639e5d546bde631a7c65f0f87/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f76656869636c65732d6d65726765642e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/eff331bea3e5722639e5d546bde631a7c65f0f87/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f76656869636c65732d6d65726765642e706e67&#34; alt=&#34;Vehicles Merged&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/vehicles-merged.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;Another method that Pandas provides for combining data sets is concatenation. The pandas 
+    &lt;code&gt;concat&lt;/code&gt; method lets you attach columns or rows from one data set onto another data set as long as both data sets have the same number of rows (if you are concatenating columns) or columns (if you are concatenating rows). Let&#39;s take a look at examples for each of these.
+&lt;/p&gt;
+&lt;p&gt;For column concatenation, we can use the one-hot encoded drivetrain data frame we created earlier and add those columns to our vehicles data set. Note that the data frames passed to the 
+    &lt;code&gt;concat&lt;/code&gt; method must be in a list and you set the axis parameter to 1 in order to indicate that you are concatenating columns.
+&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;data = pd.concat([data, drivetrain], axis=1)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;To illustrate row concatenation, let&#39;s create two new data frames based on conditional filters from our original data frame - one containing only Lexus vehicles and another containing only Audi vehicles. We will then combine them using the 
+    &lt;code&gt;concat&lt;/code&gt; method into a lexus_audi data frame that contains only vehicles manufactured by those two companies.
+&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;lexus = data[data[&#39;Make&#39;]==&#39;Lexus&#39;]
+audi = data[data[&#39;Make&#39;]==&#39;Audi&#39;]
+
+lexus_audi = pd.concat([lexus, audi], axis=0)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Again, note that the data frames are passed as a list and that this time the axis is set to 0 to specify that we are concatenating rows.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-melting-data-into-long-format&#34; class=&#34;anchor&#34; href=&#34;#melting-data-into-long-format&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Melting Data Into Long Format
+&lt;/h2&gt;
+&lt;p&gt;Our vehicles data set currently has a wide format, where there is a column for each attribute. However, some analytic and visualization tasks will require that the data be in a long format, where there are a few variables that define the entities and then all other attribute information is condensed into two columns: one containing the column/attribute names and another containing the value for that attribute for each entity. Pandas makes it easy to format data this way with the 
+    &lt;code&gt;melt&lt;/code&gt; function. For example, suppose we were going to perform some analysis or visualization task where we needed the Year, Make, and Model to identify the vehicles and then we also needed the City MPG, Highway MPG, and Combined MPG fields for performing various calculations. Below is how we would melt the data into the proper format.
+&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;melted = pd.melt(data, id_vars=[&#39;Year&#39;,&#39;Make&#39;,&#39;Model&#39;], 
+                 value_vars=[&#39;City MPG&#39;,&#39;Highway MPG&#39;,&#39;Combined MPG&#39;])
+melted.head(10)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/fcd383b21a51174278e5a1d0fbfcce33b768fcb5/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f76656869636c65732d6d656c7465642e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/fcd383b21a51174278e5a1d0fbfcce33b768fcb5/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f76656869636c65732d6d656c7465642e706e67&#34; alt=&#34;Vehicles Melted&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/vehicles-melted.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;As you can see, the column names have been stacked into the the 
+    &lt;em&gt;variable&lt;/em&gt; field and their corresponding values have been stacked into the
+    &lt;em&gt;value&lt;/em&gt; field.
+&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-summary&#34; class=&#34;anchor&#34; href=&#34;#summary&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Summary
+&lt;/h2&gt;
+&lt;p&gt;In this lesson, we learned a variety of ways to manipulate data frames. We started by covering how to change the names of a data frame&#39;s columns and the order in which those columns appear. We then learned how to filter records based on conditional logic and how to add create additional categorical columns that may be useful to us when analyzing and modeling data later. From there, we learned how to combine data from multiple data sets and also how to melt data to make it easier to compute upon.&lt;/p&gt;
+&lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+  </div>
+  <div id="seq_content" class="ih-learnig-unit" role="tabpanel"></div>
+
+  <nav class="sequence-bottom ih-js-fire-highlighting-controls" aria-label="Section">
+    <button class="sequence-nav-button button-previous">
+      <span class="icon fa fa-chevron-prev" aria-hidden="true"></span>
+      <span>Previous</span>
+    </button>
+    <button class="sequence-nav-button button-next">
+      <span>Next</span>
+      <span class="icon fa fa-chevron-next" aria-hidden="true"></span>
+    </button>
+  </nav>
+</div>
+
+</div>
+
+        </main>
+    </section>
+
+    <section class="courseware-results-wrapper">
+      <div id="loading-message" aria-live="polite" aria-relevant="all"></div>
+      <div id="error-message" aria-live="polite"></div>
+      <div class="courseware-results search-results" data-course-id="course-v1:IRONHACK+DAFT+201906_MIA" data-lang-code="en"></div>
+    </section>
+
+  </div>
+  
+
+
+
+
+
+
+
+
+
+    
+    
+    <script type="text/javascript" src="../../../../../static/bundles/CourseSock.43ffb68a30fa51e4e467.1f398818dd61.js" ></script>
+      <script type="text/javascript">
+        
+    new CourseSock({
+        el:'.verification-sock'
+    });
+
+      </script>
+
+
+</div>
+<div class="container-footer">
+</div>
+
+          
+        </div>
+      </div>
+
+    
+    
+
+      <div class="ih-beta-banner">
+        <span class="icon fa fa-flask"></span>
+        <span class="ih-beta-banner-text">We just launched a new version of the student platform. Everything should be fine, but if you encounter a bug, don't hesitate and send it our way.</span>
+      </div>
+
+  </div>
+
+  
+  
+  <script type="text/javascript" src="../../../../../static/common/js/vendor/jquery.scrollTo.525edcc52fe8.js"></script>
+  <script type="text/javascript" src="../../../../../static/js/vendor/flot/jquery.flot.d3d45ff0c6a8.js"></script>
+
+  
+    <script type="text/javascript" src="../../../../../static/js/lms-courseware.43ed60564822.js" charset="utf-8"></script>
+
+
+  
+
+
+
+<script type="text/javascript">
+    // Fast Preview was introduced in 2.5. However, it
+    // causes undesirable flashing/font size changes when
+    // MathJax is used for interactive preview (equation editor).
+    // Setting processSectionDelay to 0 (see below) fully eliminates
+    // fast preview, but to reduce confusion, we are also setting
+    // the option as displayed in the context menu to false.
+    // When upgrading to 2.6, check if this variable name changed.
+    window.MathJax = {
+      menuSettings: {CHTMLpreview: false}
+    };
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [
+        ["\\(","\\)"],
+        ['[mathjaxinline]','[/mathjaxinline]']
+      ],
+      displayMath: [
+        ["\\[","\\]"],
+        ['[mathjax]','[/mathjax]']
+      ]
+    }
+  });
+</script>
+<script type="text/x-mathjax-config">
+
+  // In order to eliminate all flashing during interactive
+  // preview, it is necessary to set processSectionDelay to 0
+  // (remove delay between input and output phases). This
+  // effectively disables fast preview, regardless of
+  // the fast preview setting as shown in the context menu.
+  MathJax.Hub.processSectionDelay = 0;
+
+  MathJax.Hub.signal.Interest(function(message) {
+    if(message[0] === "End Math") {
+        set_mathjax_display_div_settings();
+    }
+  });
+  function set_mathjax_display_div_settings() {
+    $('.MathJax_Display').each(function( index ) {
+      this.setAttribute('tabindex', '0');
+      this.setAttribute('aria-live', 'off');
+      this.removeAttribute('role');
+      this.removeAttribute('aria-readonly');
+    });
+  }
+</script>
+
+
+<!-- This must appear after all mathjax-config blocks, so it is after the imports from the other templates.
+     It can't be run through static.url because MathJax uses crazy url introspection to do lazy loading of
+     MathJax extension libraries -->
+<script type="text/javascript" src="../../../../../../cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJaxf4fa.js?config=TeX-MML-AM_SVG"></script>
+
+
+    
+    
+      <script type="text/javascript" src="../../../../../static/course_search/js/course_search_factory.26a9d7197c46bdd1.js?raw"></script>
+    <script type="text/javascript">
+        (function (require) {
+            require(['course_search/js/course_search_factory'], function (CourseSearchFactory) {
+                
+        var courseId = $('.courseware-results').data('courseId');
+        CourseSearchFactory({
+            courseId: courseId,
+            searchHeader: $('.search-bar')
+        });
+    
+            });
+        }).call(this, require || RequireJS.require);
+    </script>
+
+
+  
+    
+      <script type="text/javascript" src="../../../../../static/js/courseware/courseware_factory.1504fc10caefbdd1.js?raw"></script>
+    <script type="text/javascript">
+        (function (require) {
+            require(['js/courseware/courseware_factory'], function (CoursewareFactory) {
+                
+    CoursewareFactory();
+  
+            });
+        }).call(this, require || RequireJS.require);
+    </script>
+
+
+
+  <script type="text/javascript">
+    var $$course_id = "course\u002Dv1:IRONHACK+DAFT+201906_MIA";
+  </script>
+
+
+
+
+
+
+  
+
+
+
+  <script type="text/javascript" src="../../../../../static/js/vendor/noreferrer.aa62a3e70ffa.js" charset="utf-8"></script>
+  <script type="text/javascript" src="../../../../../static/js/utils/navigation.08930e16ab3d.js" charset="utf-8"></script>
+  <script type="text/javascript" src="../../../../../static/js/header/header.309a1243e175.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="../../../../../static/ih-lms-theme/js/vendor/highlight.min.496e109b43ca.js" ></script>
+    <script type="text/javascript" src="../../../../../static/ih-lms-theme/js/vendor/ih-highlight.0f32f131ba83.js" ></script>
+  
+</body>
+</html>
+
+

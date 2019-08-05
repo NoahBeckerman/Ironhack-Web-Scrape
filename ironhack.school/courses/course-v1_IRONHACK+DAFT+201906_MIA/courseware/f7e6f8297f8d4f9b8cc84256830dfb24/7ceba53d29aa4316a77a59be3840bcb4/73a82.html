@@ -1,0 +1,2874 @@
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<!--[if lte IE 9]><html class="ie ie9 lte9" lang="en"><![endif]-->
+<!--[if !IE]><!--><html lang="en"><!--<![endif]-->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head dir="ltr">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+  
+<title data-base-title="
+ APIs and Web Scraping | DAFT Courseware | Ironhack Student Platform">
+  
+ Working with RSS Feeds | APIs and Web Scraping | DAFT Courseware | Ironhack Student Platform
+</title>
+
+
+      <script type="text/javascript">
+        /* immediately break out of an iframe if coming from the marketing website */
+        (function(window) {
+          if (window.location !== window.top.location) {
+            window.top.location = window.location;
+          }
+        })(this);
+      </script>
+
+  
+
+  <script type="text/javascript" src="../../../../../static/js/i18n/en/djangojs.e37eef1ffc63.js"></script>
+  <script type="text/javascript" src="../../../../../static/js/ie11_find_array.bd1c6dc7a133.js"></script>
+
+  <link rel="icon" type="image/x-icon" href="../../../../../static/ih-lms-theme/images/favicon.0de58aa5bfca.ico" />
+
+  
+  
+
+    <link href="../../../../../static/ih-lms-theme/css/lms-style-vendor.68e48093f5dd.css" rel="stylesheet" type="text/css" />
+
+
+
+      <link rel="stylesheet" href="../../../../../static/ih-lms-theme/css/bootstrap/lms-main.c54b2923d249.css" type="text/css" media="all" />
+
+    
+    <script type="text/javascript" src="../../../../../static/js/lms-main_vendor.a04b73033169.js" charset="utf-8"></script>
+
+
+    
+    <script type="text/javascript" src="../../../../../static/js/lms-application.e7bd4b65d083.js" charset="utf-8"></script>
+
+
+
+  
+    
+    
+    <script type="text/javascript" src="../../../../../static/bundles/commons.d60dcd98c024881d011e.c835e91d09f6.js" ></script>
+
+
+
+  <script>
+    window.baseUrl = "../../../../../static/index.html";
+    (function (require) {
+      require.config({
+          baseUrl: window.baseUrl
+      });
+    }).call(this, require || RequireJS.require);
+  </script>
+  <script type="text/javascript" src="../../../../../static/lms/js/require-config.8e00198660b0.js"></script>
+  
+    <script type="text/javascript">
+        (function (require) {
+          require.config({
+              paths: {
+                'js/courseware/courseware_factory': 'js/courseware/courseware_factory.1504fc10caef',
+'draggabilly': 'js/vendor/draggabilly.26caba6f7187',
+'js/courseware/toggle_element_visibility': 'js/courseware/toggle_element_visibility.d5f10bc65ed0',
+'hls': 'common/js/vendor/hls.b10b9ef4015b',
+'js/courseware/link_clicked_events': 'js/courseware/link_clicked_events',
+'moment': 'common/js/vendor/moment-with-locales.084396f4103c',
+'moment-timezone': 'common/js/vendor/moment-timezone-with-data.60142e6c4416',
+'js/student_account/logistration_factory': 'js/student_account/logistration_factory.d7765e4e6715',
+'js/groups/views/cohorts_dashboard_factory': 'js/groups/views/cohorts_dashboard_factory.7f46663f97b4',
+'js/dateutil_factory': 'js/dateutil_factory.841c29e02056',
+'course_bookmarks/js/views/bookmark_button': 'course_bookmarks/js/views/bookmark_button.d4cfaf3361fa',
+'js/courseware/accordion_events': 'js/courseware/accordion_events.6064c7809de5',
+'js/views/message_banner': 'js/views/message_banner.af013d0ecbd4',
+'js/groups/discussions_management/discussions_dashboard_factory': 'js/discussions_management/views/discussions_dashboard_factory.2e10d9097343',
+'js/courseware/course_info_events': 'js/courseware/course_info_events.2fc35b57627f'
+            }
+          });
+        }).call(this, require || RequireJS.require);
+    </script>
+  
+
+  
+
+  
+
+    <link href="../../../../../static/ih-lms-theme/css/lms-style-course-vendor.691e50c64ad7.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+
+    <link href="../../../../../static/ih-lms-theme/css/lms-course.1d0edf3ec473.css" rel="stylesheet" type="text/css" />
+
+
+
+
+<script type="text/javascript" src="../../../../../static/js/jquery.autocomplete.3bd10d7510d2.js"></script>
+<script type="text/javascript" src="../../../../../static/js/src/tooltip_manager.da362490e199.js"></script>
+
+<link href="../../../../../static/css/vendor/jquery.autocomplete.896181d3ec33.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="../../../../../static/bundles/XModuleShim.68b7a679342e3bdb698f.c506d949a49b.js" ></script>
+<script type="text/javascript" src="../../../../../static/bundles/HtmlModule.174055b73c05dccfbd8b.823874f69fef.js" ></script>
+<script type="text/javascript" src="../../../../../static/bundles/VerticalStudentView.6f1068648eb9e8d18da9.0a2f678d6564.js" ></script>
+<script type="text/javascript" src="../../../../../static/bundles/SequenceModule.251564cf8963e6f00227.ef752443db97.js" ></script>
+
+  
+
+  
+
+
+  
+
+
+<script type="application/json" id="user-metadata">
+    {"username": "NoahB", "enrollment_mode": "audit", "upgrade_link": null, "user_id": 489, "course_start": "2019-06-10T00:00:00+00:00", "upgrade_deadline": null, "course_key_fields": {"org": "IRONHACK", "run": "201906_MIA", "course": "DAFT"}, "course_end": "2019-08-19T00:00:00+00:00", "pacing_type": "instructor_paced", "upgrade_price": "Free", "course_id": "course-v1:IRONHACK+DAFT+201906_MIA", "has_staff_access": false, "forum_roles": [["Student"]], "enrollment_time": "2019-06-11T20:48:51.323840+00:00", "schedule_start": null, "email": "noahbeckerman@gmail.com"}
+</script>
+
+  
+
+  
+
+
+  
+
+
+<!-- dummy Segment -->
+<script type="text/javascript">
+  var analytics = {
+    track: function() { return; },
+    trackLink: function() { return; },
+    pageview: function() { return; },
+    page: function() { return; }
+  };
+</script>
+<!-- end dummy Segment -->
+
+
+  <meta name="path_prefix" content="">
+  
+  
+
+  <meta name="openedx-release-line" content="hawthorn" />
+
+
+
+
+
+
+  <!-- Hotjar Tracking Code for https://ironhack.school -->
+  <script type="text/javascript">
+      (function(h,o,t,j,a,r){
+          h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+          h._hjSettings={hjid:1193918,hjsv:6};
+          a=o.getElementsByTagName('head')[0];
+          r=o.createElement('script');r.async=1;
+          r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+          a.appendChild(r);
+      })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+  </script>
+
+  <script type="text/javascript">
+    function setCookieHideMobileWarning(expiration_hours) {
+      var date = new Date();
+      date.setTime(date.getTime()+(expiration_hours*60*60*1000));
+      var expires = "; expires=" + date.toGMTString();
+      document.cookie = "ihHideMobileWarning=true" + expires;
+    }
+    
+    function isHideMobileWarningCookieSet() {
+      return document.cookie.replace(/(?:(?:^|.*;\s*)ihHideMobileWarning\s*\=\s*([^;]*).*$)|^.*$/, "$1") !== "true"; 
+    }
+
+    function manageMobileWarning(mobile_warning_container) {
+      if (isHideMobileWarningCookieSet()) {
+        var mobile_warning_dismiss = document.getElementsByClassName('ih-js-hide-mobile-warning', mobile_warning_container)[0];
+        mobile_warning_dismiss.addEventListener('click', function() {
+          var expiration_hours = 48;
+          setCookieHideMobileWarning(expiration_hours);
+          mobile_warning_container.classList.add('hidden');
+        });
+      } else {
+        mobile_warning_container.classList.add('hidden');
+      }
+    }
+
+    var checkMobileWarningLayer = function () {
+      var mobile_warning_container = document.getElementsByClassName('ih-mobile-warning-container')[0];
+      (document.body && mobile_warning_container)? manageMobileWarning(mobile_warning_container) :  window.requestAnimationFrame(checkMobileWarningLayer);
+    }
+
+    window.requestAnimationFrame(checkMobileWarningLayer);
+  </script>
+
+</head>
+
+<body class="ltr view-in-course view-courseware courseware  lang_en">
+
+<div class="ih-mobile-warning-container">
+  <img class="logo" src="../../../../../static/ih-lms-theme/images/logo.6230fc40336b.svg" />
+  <div class="ih-mobile-warning-title">
+    The Learning Platform is best experienced on Desktop devices
+  </div>
+  <div class="ih-mobile-warning-description">
+    We recommend using a Desktop device to get the full experience of the Learning Platform.
+  </div>
+  <div class="ih-mobile-warning-dismiss ih-js-hide-mobile-warning">
+   Continue anyway
+  </div>
+</div>
+
+
+<div id="page-prompt"></div>
+  <div class="window-wrap" dir="ltr">
+    <a class="nav-skip sr-only sr-only-focusable" href="#main">Skip to main content</a>
+
+    
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+<header class="global-header slim ih-global-header">
+    <div class="ih-header-wrapper">
+        <div class="main-header ih-main-header">
+            
+
+
+
+
+
+<h1 class="header-logo">
+  <a href="../../../../../dashboard.html">
+    
+    <img  class="logo" src="../../../../../static/ih-lms-theme/images/logo.6230fc40336b.svg" alt="Ironhack Student Platform Home Page"/>
+    
+  </a>
+    <div class="course-header">
+          
+      
+      <span class="course-name">Data Analytics</span>
+    </div>
+</h1>
+
+            <div class="hamburger-menu" role="button" aria-label=Options Menu aria-expanded="false" aria-controls="mobile-menu" tabindex="0">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+                
+
+
+
+
+
+
+
+
+
+
+<div class="nav-links">
+  <div class="main">
+      
+  </div>
+  <div class="secondary ih-secondary">
+    
+
+
+
+
+
+
+  
+
+<div class="nav-item hidden-mobile toggle-user-dropdown ih-username-container">
+    <div class="menu-title">
+        
+        <span class="sr-only">Dashboard for:</span>
+        <span class="username ih-username">Ironhack (NoahB)</span>
+    </div>
+</div>
+<div class="nav-item hidden-mobile nav-item-dropdown ih-dropdown-wrapper" tabindex="-1">
+    <div class="toggle-user-dropdown ih-toggle-user-dropdown" role="button" aria-label=Options Menu aria-expanded="false" tabindex="0" aria-controls="user-menu">
+        <span class="fa fa-caret-down" aria-hidden="true"></span>
+    </div>
+    <div class="dropdown-user-menu hidden ih-dropdown-user-menu" aria-label=More Options role="menu" id="user-menu" tabindex="-1">
+        <div class="mobile-nav-item dropdown-item dropdown-nav-item ih-dropdown-nav-item"><a href="../../../../../dashboard.html" role="menuitem">My courses</a></div>
+            
+        <div class="mobile-nav-item dropdown-item dropdown-nav-item ih-dropdown-nav-item"><a href="../../../../../account/settings.html" role="menuitem">Account</a></div>
+        <div class="mobile-nav-item dropdown-item dropdown-nav-item ih-dropdown-nav-item"><a href="../../../../../index.html" role="menuitem">Sign Out</a></div>
+    </div>
+</div>
+  </div>
+</div>
+        </div>
+        <div class="mobile-menu hidden" aria-label=More Options role="menu" id="mobile-menu"></div>
+    </div>    
+</header>
+
+<!--[if lte IE 9]>
+<div class="ie-banner" aria-hidden="true"><strong>Warning:</strong> Your browser is not fully supported. We strongly recommend using <a href="https://www.google.com/chrome" target="_blank">Chrome</a> or <a href="http://www.mozilla.org/firefox" target="_blank">Firefox</a>.</div>
+<![endif]-->
+
+
+
+
+            
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+    
+    
+
+      <div 
+          class="ih-content"
+      >
+        <div class="marketing-hero"></div>
+
+        <div class="content-wrapper main-container ih-main-container" id="content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/template" id="image-modal-tpl">
+    <div class="wrapper-modal wrapper-modal-image">
+  <section class="image-link">
+    <%= smallHTML%>
+    <a href="#" class="modal-ui-icon action-fullscreen" role="button">
+      <span class="label">
+        <span class="icon fa fa-arrows-alt fa-large" aria-hidden="true"></span> <%- gettext("Fullscreen") %>
+      </span>
+    </a>
+  </section>
+
+  <section class="image-modal">
+    <section class="image-content">
+      <div class="image-wrapper">
+        <img alt="<%= largeALT %>, <%- gettext('Large') %>" src="<%= largeSRC %>" />
+      </div>
+
+      <a href="#" class="modal-ui-icon action-close" role="button">
+        <span class="label">
+          <span class="icon fa fa-remove fa-large" aria-hidden="true"></span> <%- gettext("Close") %>
+        </span>
+      </a>
+
+      <ul class="image-controls">
+        <li class="image-control">
+          <a href="#" class="modal-ui-icon action-zoom-in" role="button">
+            <span class="label">
+              <span class="icon fa fa fa-search-plus fa-large" aria-hidden="true"></span> <%- gettext("Zoom In") %>
+            </span>
+          </a>
+        </li>
+
+        <li class="image-control">
+          <a href="#" class="modal-ui-icon action-zoom-out is-disabled" aria-disabled="true" role="button">
+            <span class="label">
+              <span class="icon fa fa fa-search-minus fa-large" aria-hidden="true"></span> <%- gettext("Zoom Out") %>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </section>
+</div>
+
+</script>
+
+
+
+
+
+
+
+
+<div class="message-banner" aria-live="polite"></div>
+  
+
+
+
+
+
+
+
+
+    
+        <nav class="navbar course-tabs pb-0 navbar-expand ih-navbar-container" aria-label="Course">
+            <ul class="navbar-nav mr-auto ih-course-tabs">
+                    
+                    
+                        <li class="nav-item ih-nav-item active">
+                            <a href="../../../course/index.html" class="nav-link">
+                                Course
+                                    <span class="sr-only">, current location</span>
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="nav-item ih-nav-item ">
+                            <a href="../../../discussion/forum/index.html" class="nav-link">
+                                Discussion
+                            </a>
+                        </li>
+                    
+                    
+            </ul>
+        </nav>
+
+
+<div class="container ih-course-container"
+    lang="en"
+  >
+  <div class="course-wrapper ih-course-wrapper" role="presentation">
+
+    <section class="course-content" id="course-content">
+        <header class="page-header has-secondary">
+            <div class="page-header-main">
+                <nav aria-label="Course" class="sr-is-focusable" tabindex="-1">
+                    <div class="has-breadcrumbs">
+                        <div class="breadcrumbs">
+                                <span class="nav-item nav-item-course">
+                                    <a href="../../../course/index.html">Course</a>
+                                </span>
+                                <span class="icon fa fa-angle-right" aria-hidden="true"></span>
+                                <span class="nav-item nav-item-chapter" data-course-position="1" data-chapter-position="5">
+                                    <a href="../../../course/index.html#block-v1:IRONHACK+DAFT+201906_MIA+type@chapter+block@f7e6f8297f8d4f9b8cc84256830dfb24">Module 1</a>
+                                </span>
+                                <span class="icon fa fa-angle-right" aria-hidden="true"></span>
+                                <span class="nav-item nav-item-section">
+                                    <a href="../../../course/index.html#block-v1:IRONHACK+DAFT+201906_MIA+type@sequential+block@7ceba53d29aa4316a77a59be3840bcb4">APIs and Web Scraping</a>
+                                </span>
+                                <span class="icon fa fa-angle-right" aria-hidden="true"></span>
+                            <span class="nav-item nav-item-sequence">Working with RSS Feeds</span>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <main id="main" tabindex="-1" aria-label="Content">
+
+              <div class="xblock xblock-student_view xblock-student_view-sequential xmodule_display xmodule_SequenceModule" data-runtime-class="LmsRuntime" data-init="XBlockToXModuleShim" data-block-type="sequential" data-request-token="45fcde30939911e99a866e487447f8c8" data-runtime-version="1" data-usage-id="block-v1:IRONHACK+DAFT+201906_MIA+type@sequential+block@7ceba53d29aa4316a77a59be3840bcb4" data-type="Sequence" data-course-id="course-v1:IRONHACK+DAFT+201906_MIA">
+  <script type="json/xblock-args" class="xblock-json-init-args">
+    {"xmodule-type": "Sequence"}
+  </script>
+  
+
+
+<div id="sequence_7ceba53d29aa4316a77a59be3840bcb4" class="sequence" data-id="block-v1:IRONHACK+DAFT+201906_MIA+type@sequential+block@7ceba53d29aa4316a77a59be3840bcb4" data-position="7" data-ajax-url="/courses/course-v1:IRONHACK+DAFT+201906_MIA/xblock/block-v1:IRONHACK+DAFT+201906_MIA+type@sequential+block@7ceba53d29aa4316a77a59be3840bcb4/handler/xmodule_handler" data-next-url="/courses/course-v1:IRONHACK+DAFT+201906_MIA/courseware/f7e6f8297f8d4f9b8cc84256830dfb24/01fd8fa4f3d9412789ca5a3325f30d1e/?child=first" data-prev-url="/courses/course-v1:IRONHACK+DAFT+201906_MIA/courseware/f7e6f8297f8d4f9b8cc84256830dfb24/9e3d146312134b35bd5cd8efe6a748ad/?child=last">
+
+  <div class="sequence-nav ih-js-fire-highlighting-controls">
+    <button class="sequence-nav-button button-previous">
+      <span class="icon fa fa-chevron-prev" aria-hidden="true"></span>
+      <span class="sequence-nav-button-label">Previous</span>
+    </button>
+    <button class="sequence-nav-button button-next">
+      <span class="sequence-nav-button-label">Next</span>
+      <span class="icon fa fa-chevron-next" aria-hidden="true"></span>
+    </button>
+    <nav class="sequence-list-wrapper" aria-label="Sequence">
+      <ol id="sequence-list" role="tablist">
+        <li role="presentation">
+          <button class="seq_other inactive nav-item tab"
+            role="tab"
+            tabindex="-1"
+            aria-selected="false"
+            aria-expanded="false"
+            aria-controls="seq_content"
+            data-index="0"
+            data-id="block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@68b835ed31df48cfbda777aa0b4363e0"
+            data-element="1"
+            data-page-title="Working with APIs"
+            data-path="Module 1 &gt; APIs and Web Scraping &gt; Working with APIs"
+            data-graded="False"
+            id="tab_0"
+            >
+            <span class="icon fa seq_other" aria-hidden="true"></span>
+              <span 
+                class="fa fa-check-circle check-circle is-hidden" 
+                style="color:green"
+                aria-hidden="true"
+              ></span>
+            <span class="fa fa-fw fa-bookmark bookmark-icon is-hidden" aria-hidden="true"></span>
+            <div class="sequence-tooltip sr"><span class="sr">other&nbsp;</span>Working with APIs<span class="sr bookmark-icon-sr">&nbsp;</span></div>
+          </button>
+        </li>
+        <li role="presentation">
+          <button class="seq_other inactive nav-item tab"
+            role="tab"
+            tabindex="-1"
+            aria-selected="false"
+            aria-expanded="false"
+            aria-controls="seq_content"
+            data-index="1"
+            data-id="block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@202e947d2d6c414484ea97240ce5eb0f"
+            data-element="2"
+            data-page-title="Advanced APIs"
+            data-path="Module 1 &gt; APIs and Web Scraping &gt; Advanced APIs"
+            data-graded="False"
+            id="tab_1"
+            >
+            <span class="icon fa seq_other" aria-hidden="true"></span>
+              <span 
+                class="fa fa-check-circle check-circle is-hidden" 
+                style="color:green"
+                aria-hidden="true"
+              ></span>
+            <span class="fa fa-fw fa-bookmark bookmark-icon is-hidden" aria-hidden="true"></span>
+            <div class="sequence-tooltip sr"><span class="sr">other&nbsp;</span>Advanced APIs<span class="sr bookmark-icon-sr">&nbsp;</span></div>
+          </button>
+        </li>
+        <li role="presentation">
+          <button class="seq_other inactive nav-item tab"
+            role="tab"
+            tabindex="-1"
+            aria-selected="false"
+            aria-expanded="false"
+            aria-controls="seq_content"
+            data-index="2"
+            data-id="block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@f4c09a3397fd4658a87a79e99516117c"
+            data-element="3"
+            data-page-title="API Wrappers"
+            data-path="Module 1 &gt; APIs and Web Scraping &gt; API Wrappers"
+            data-graded="False"
+            id="tab_2"
+            >
+            <span class="icon fa seq_other" aria-hidden="true"></span>
+              <span 
+                class="fa fa-check-circle check-circle is-hidden" 
+                style="color:green"
+                aria-hidden="true"
+              ></span>
+            <span class="fa fa-fw fa-bookmark bookmark-icon is-hidden" aria-hidden="true"></span>
+            <div class="sequence-tooltip sr"><span class="sr">other&nbsp;</span>API Wrappers<span class="sr bookmark-icon-sr">&nbsp;</span></div>
+          </button>
+        </li>
+        <li role="presentation">
+          <button class="seq_other inactive nav-item tab"
+            role="tab"
+            tabindex="-1"
+            aria-selected="false"
+            aria-expanded="false"
+            aria-controls="seq_content"
+            data-index="3"
+            data-id="block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@f48258aa73964be69fd62590aac59fd3"
+            data-element="4"
+            data-page-title="Understanding Web Content"
+            data-path="Module 1 &gt; APIs and Web Scraping &gt; Understanding Web Content"
+            data-graded="False"
+            id="tab_3"
+            >
+            <span class="icon fa seq_other" aria-hidden="true"></span>
+              <span 
+                class="fa fa-check-circle check-circle is-hidden" 
+                style="color:green"
+                aria-hidden="true"
+              ></span>
+            <span class="fa fa-fw fa-bookmark bookmark-icon is-hidden" aria-hidden="true"></span>
+            <div class="sequence-tooltip sr"><span class="sr">other&nbsp;</span>Understanding Web Content<span class="sr bookmark-icon-sr">&nbsp;</span></div>
+          </button>
+        </li>
+        <li role="presentation">
+          <button class="seq_other inactive nav-item tab"
+            role="tab"
+            tabindex="-1"
+            aria-selected="false"
+            aria-expanded="false"
+            aria-controls="seq_content"
+            data-index="4"
+            data-id="block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@e5e78bd8161645c8aaae585d7b838403"
+            data-element="5"
+            data-page-title="Web Scraping"
+            data-path="Module 1 &gt; APIs and Web Scraping &gt; Web Scraping"
+            data-graded="False"
+            id="tab_4"
+            >
+            <span class="icon fa seq_other" aria-hidden="true"></span>
+              <span 
+                class="fa fa-check-circle check-circle is-hidden" 
+                style="color:green"
+                aria-hidden="true"
+              ></span>
+            <span class="fa fa-fw fa-bookmark bookmark-icon is-hidden" aria-hidden="true"></span>
+            <div class="sequence-tooltip sr"><span class="sr">other&nbsp;</span>Web Scraping<span class="sr bookmark-icon-sr">&nbsp;</span></div>
+          </button>
+        </li>
+        <li role="presentation">
+          <button class="seq_other inactive nav-item tab"
+            role="tab"
+            tabindex="-1"
+            aria-selected="false"
+            aria-expanded="false"
+            aria-controls="seq_content"
+            data-index="5"
+            data-id="block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@3d85b77fb1e84587903d1a4e9e0ad52f"
+            data-element="6"
+            data-page-title="Web Scraping Deep Dive"
+            data-path="Module 1 &gt; APIs and Web Scraping &gt; Web Scraping Deep Dive"
+            data-graded="False"
+            id="tab_5"
+            >
+            <span class="icon fa seq_other" aria-hidden="true"></span>
+              <span 
+                class="fa fa-check-circle check-circle is-hidden" 
+                style="color:green"
+                aria-hidden="true"
+              ></span>
+            <span class="fa fa-fw fa-bookmark bookmark-icon is-hidden" aria-hidden="true"></span>
+            <div class="sequence-tooltip sr"><span class="sr">other&nbsp;</span>Web Scraping Deep Dive<span class="sr bookmark-icon-sr">&nbsp;</span></div>
+          </button>
+        </li>
+        <li role="presentation">
+          <button class="seq_other inactive nav-item tab"
+            role="tab"
+            tabindex="-1"
+            aria-selected="false"
+            aria-expanded="false"
+            aria-controls="seq_content"
+            data-index="6"
+            data-id="block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@f1b45adbad174bc6abd393d2781427b5"
+            data-element="7"
+            data-page-title="Working with RSS Feeds"
+            data-path="Module 1 &gt; APIs and Web Scraping &gt; Working with RSS Feeds"
+            data-graded="False"
+            id="tab_6"
+            >
+            <span class="icon fa seq_other" aria-hidden="true"></span>
+              <span 
+                class="fa fa-check-circle check-circle is-hidden" 
+                style="color:green"
+                aria-hidden="true"
+              ></span>
+            <span class="fa fa-fw fa-bookmark bookmark-icon is-hidden" aria-hidden="true"></span>
+            <div class="sequence-tooltip sr"><span class="sr">other&nbsp;</span>Working with RSS Feeds<span class="sr bookmark-icon-sr">&nbsp;</span></div>
+          </button>
+        </li>
+      </ol>
+    </nav>
+  </div>
+  <div class="sr-is-focusable" tabindex="-1"></div>
+
+  <div id="seq_contents_0"
+    aria-labelledby="tab_0"
+    aria-hidden="true"
+    class="seq_contents tex2jax_ignore asciimath2jax_ignore">
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-vertical&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;VerticalStudentView&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34; data-request-token=&#34;45fcde30939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@68b835ed31df48cfbda777aa0b4363e0&#34; data-block-type=&#34;vertical&#34;&gt;
+  
+
+  &lt;h2 class=&#34;hd hd-2 unit-title&#34;&gt;Working with APIs&lt;/h2&gt;
+
+    &lt;div class=&#34;ih-bookmark-button-wrapper&#34;&gt;
+    	
+
+
+
+&lt;div class=&#34;bookmark-button-wrapper&#34;&gt;
+  &lt;button class=&#34;btn btn-link bookmark-button &#34;
+    aria-pressed=&#34;false&#34;
+    data-bookmark-id=&#34;NoahB,block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@68b835ed31df48cfbda777aa0b4363e0&#34;
+    data-bookmarks-api-url=&#34;/api/bookmarks/v1/bookmarks/&#34;&gt;
+     &lt;span class=&#34;bookmark-text&#34;&gt;Bookmark this page&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+
+    &lt;/div&gt;	
+
+&lt;div class=&#34;vert-mod&#34;&gt;
+  &lt;div class=&#34;vert vert-0&#34; data-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@3d7f673e9a6c437fac7887e33fb93ac3&#34;&gt;
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;45fcde30939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@3d7f673e9a6c437fac7887e33fb93ac3&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  &lt;h2&gt;
+    &lt;a id=&#34;user-content-lesson-goals&#34; class=&#34;anchor&#34; href=&#34;#lesson-goals&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Lesson Goals
+&lt;/h2&gt;
+&lt;ul&gt;
+    &lt;li&gt;Understand what is API and what it does.&lt;/li&gt;
+    &lt;li&gt;Learn how to make simple calls to an API and retrieve JSON data.&lt;/li&gt;
+    &lt;li&gt;Learn how to handle nested JSON API results.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-introduction&#34; class=&#34;anchor&#34; href=&#34;#introduction&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Introduction
+&lt;/h2&gt;
+&lt;p&gt;Thus far in the program, we have learned how to obtain data from files and from relational databases. However, sometimes the data we need is not readily available via one of these two data sources. In some cases, the data we need may be contained within an application. Application owners will often create APIs (or Application Programming Interface) so that their applications can talk to other applications. An API is a set of programmatic instructions for accessing software applications, and the data that comes from APIs typically contains some sort of structure (such as JSON). This structure makes working with API data preferable to crawling websites and scraping content off of web pages.&lt;/p&gt;
+&lt;p&gt;In this lesson, we are going to learn how to make API calls to an application, retrieve data in JSON format, learn about API authentication, and use Python libraries to obtain data from APIs.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-simple-api-example-with-requests&#34; class=&#34;anchor&#34; href=&#34;#simple-api-example-with-requests&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Simple API Example with Requests
+&lt;/h2&gt;
+&lt;p&gt;There are a few libraries that can be used for working with APIs in Python, but the 
+    &lt;em&gt;Requests&lt;/em&gt; library is one of the most intuitive. It has a
+    &lt;code&gt;get&lt;/code&gt; method that allows you to send an HTTP request to an application and receive a response. Let&#39;s take a look at a basic API call using the requests library.
+&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;import json
+import requests
+
+response = requests.get(&#39;https://jsonplaceholder.typicode.com/todos&#39;)
+results = response.json()
+results
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;pre lang=&#34;text&#34;&gt;
+    &lt;code&gt;[{&#39;completed&#39;: False, &#39;id&#39;: 1, &#39;title&#39;: &#39;delectus aut autem&#39;, &#39;userId&#39;: 1},
+ {&#39;completed&#39;: False,
+  &#39;id&#39;: 2,
+  &#39;title&#39;: &#39;quis ut nam facilis et officia qui&#39;,
+  &#39;userId&#39;: 1},
+ {&#39;completed&#39;: False, &#39;id&#39;: 3, &#39;title&#39;: &#39;fugiat veniam minus&#39;, &#39;userId&#39;: 1},
+ {&#39;completed&#39;: True, &#39;id&#39;: 4, &#39;title&#39;: &#39;et porro tempora&#39;, &#39;userId&#39;: 1},
+ {&#39;completed&#39;: False,
+  &#39;id&#39;: 5,
+  &#39;title&#39;: &#39;laboriosam mollitia et enim quasi adipisci quia provident illum&#39;,
+  &#39;userId&#39;: 1},
+...
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;In this example, we used the 
+    &lt;code&gt;get&lt;/code&gt; method to send a request to the JSONPlaceholder API, and we received back a response in the form of JSON structured data. If we wanted to analyze this data, we could easily use Pandas to convert the results into a data frame to which we can then apply various analytical methods.
+&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;import pandas as pd
+
+data = pd.DataFrame(results)
+data.head(10)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/e2d52dec8dd6d903062d4ee388a868769af3eb10/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f73696d706c652d6170692d726573756c74732e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/e2d52dec8dd6d903062d4ee388a868769af3eb10/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f73696d706c652d6170692d726573756c74732e706e67&#34; alt=&#34;Simple API Results&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/simple-api-results.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-more-complex-requests-api-example&#34; class=&#34;anchor&#34; href=&#34;#more-complex-requests-api-example&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;More Complex Requests API Example
+&lt;/h2&gt;
+&lt;p&gt;In the previous section, the data we received from the API was not very complex. It was all at a single level and fit neatly into a data frame. However, sometimes API responses contain data that is nested, and we must find a way to flatten the JSON data so that it fits nicely into a data frame. Let&#39;s make an API call to the Github public API, create a Pandas data frame from the results, and examine the structure of the data.&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;response = requests.get(&#39;https://api.github.com/events&#39;)
+
+data = pd.DataFrame(response.json())
+data.head(10)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/3344c59db71a72813d30d2a286e35a7a16a8a463/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6e65737465642d6170692d726573756c74732e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/3344c59db71a72813d30d2a286e35a7a16a8a463/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6e65737465642d6170692d726573756c74732e706e67&#34; alt=&#34;Nested API Results&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/nested-api-results.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;When we look at the data frame, we can see that there are dictionaries nested in several fields. We need to extract the information that is in these fields and add them to the data frame as columns. To do this, we are going to create our own 
+    &lt;code&gt;flatten&lt;/code&gt; function that accepts a data frame and a list of columns that contain nested dictionaries in them. Our function is going to iterate through the columns and, for each column, it is going to:
+&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;Turn the nested dictionaries into a data frame with a column for each key&lt;/li&gt;
+    &lt;li&gt;Assign column names to each column in this new data frame&lt;/li&gt;
+    &lt;li&gt;Add these new columns to the original data frame&lt;/li&gt;
+    &lt;li&gt;Drop the column with the nested dictionaries&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;
+&lt;code&gt;def flatten(data, col_list):
+    for column in col_list:
+        flattened = pd.DataFrame(dict(data[column])).transpose()
+        columns = [str(col) for col in flattened.columns]
+        flattened.columns = [column + &#39;_&#39; + colname for colname in columns]
+        data = pd.concat([data, flattened], axis=1)
+        data = data.drop(column, axis=1)
+    return data
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Now that we have our function, let&#39;s apply it to the columns that have nested dictionaries and get back a revised data frame.&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;nested_columns = [&#39;actor&#39;, &#39;org&#39;, &#39;payload&#39;, &#39;repo&#39;]
+
+flat = flatten(data, nested_columns)
+flat.head(10)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/528281dcade455b873bfa34ee7f4de623f1c048c/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f666c617474656e65642d6170692d726573756c74732e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/528281dcade455b873bfa34ee7f4de623f1c048c/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f666c617474656e65642d6170692d726573756c74732e706e67&#34; alt=&#34;Flattened API Results&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/flattened-api-results.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;Alternatively, we can flatten nested data using the function 
+    &lt;code&gt;json_normalize&lt;/code&gt;. This function is part of the Pandas library. The function will flatten and rename each flattened column to the name of the original column and the name of the nested column separated by a period. For example
+    &lt;code&gt;actor.avatar_url&lt;/code&gt;.
+&lt;/p&gt;
+&lt;p&gt;Here is an example of how to use this function. Note that you have to import it separately in order to avoid using the full path when calling the function.&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;from pandas.io.json import json_normalize
+
+results = response.json()
+flattened_data = json_normalize(results)
+
+flattened_data
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/82b5850478270f84cb3bfff7ad7e711050715741/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f666c617474656e65642d6a736f6e2d6e6f726d616c697a652e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/82b5850478270f84cb3bfff7ad7e711050715741/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f666c617474656e65642d6a736f6e2d6e6f726d616c697a652e706e67&#34; alt=&#34;json normalize flattened&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/flattened-json-normalize.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+This data looks much cleaner, and now we have access to the information that was enclosed within those dictionaries. Sometimes multiple rounds of flattening will be required if the JSON data returned from the API you are working with has hierarchically nested data.
+&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-summary&#34; class=&#34;anchor&#34; href=&#34;#summary&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Summary
+&lt;/h2&gt;
+&lt;p&gt;In this lesson, we covered the basics of working with APIs. We began by introducing the 
+    &lt;em&gt;requests&lt;/em&gt; library and showing how to make a simple API call using it. We then obtained some more complex JSON data from an API, where the information was nested, and learned how to flatten it.
+&lt;/p&gt;
+&lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+  </div>
+  <div id="seq_contents_1"
+    aria-labelledby="tab_1"
+    aria-hidden="true"
+    class="seq_contents tex2jax_ignore asciimath2jax_ignore">
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-vertical&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;VerticalStudentView&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34; data-request-token=&#34;45fcde30939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@202e947d2d6c414484ea97240ce5eb0f&#34; data-block-type=&#34;vertical&#34;&gt;
+  
+
+  &lt;h2 class=&#34;hd hd-2 unit-title&#34;&gt;Advanced APIs&lt;/h2&gt;
+
+    &lt;div class=&#34;ih-bookmark-button-wrapper&#34;&gt;
+    	
+
+
+
+&lt;div class=&#34;bookmark-button-wrapper&#34;&gt;
+  &lt;button class=&#34;btn btn-link bookmark-button &#34;
+    aria-pressed=&#34;false&#34;
+    data-bookmark-id=&#34;NoahB,block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@202e947d2d6c414484ea97240ce5eb0f&#34;
+    data-bookmarks-api-url=&#34;/api/bookmarks/v1/bookmarks/&#34;&gt;
+     &lt;span class=&#34;bookmark-text&#34;&gt;Bookmark this page&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+
+    &lt;/div&gt;	
+
+&lt;div class=&#34;vert-mod&#34;&gt;
+  &lt;div class=&#34;vert vert-0&#34; data-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@31724808afa74fa7bf46670a875837fc&#34;&gt;
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;45fcde30939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@31724808afa74fa7bf46670a875837fc&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  &lt;h2&gt;&lt;a id=&#34;user-content-lesson-goals&#34; class=&#34;anchor&#34; href=&#34;#lesson-goals&#34; aria-hidden=&#34;true&#34;&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt; &lt;/a&gt;Lesson Goals&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Understand HTTP Communication Protocol&lt;/li&gt;
+&lt;li&gt;Learn about the Request-Response Cycle&lt;/li&gt;
+&lt;li&gt;Differentiate between GET and POST requests&lt;/li&gt;
+&lt;li&gt;Familiarize with http headers&lt;/li&gt;
+&lt;li&gt;Learn about oAuth authentication&lt;/li&gt;
+&lt;li&gt;Familiarize with a few tools to work with APIs&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;&lt;a id=&#34;user-content-introduction---http-protocol&#34; class=&#34;anchor&#34; href=&#34;#introduction---http-protocol&#34; aria-hidden=&#34;true&#34;&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt; &lt;/a&gt;Introduction - HTTP Protocol&lt;/h2&gt;
+&lt;p&gt;HTTP v1 protocol was introduced in 1991, it&#39;s this protocol that has driven the advance we&#39;ve seen in the past two decades in information sharing as it&#39;s the basis for websites and we can argue that nowadays is the basis for most of the comunications that people needs in a daily basis. When you pay with your VISA online, the transaction travels via secure HTTP comunication known as HTTPS, HTTP is also the protocol choosen in quite different applications that range from synchronize traffic lights in a city to receive a video when you visit Youtube, quite powerful. It hasn&#39;t seen many updates over this years, nowadays the most recent version is HTTP2 as defined in RFC7540 that is the document that defines how the standard works. But let us deep dive a bit on how HTTP works in following sections.&lt;/p&gt;
+&lt;h3&gt;&lt;a id=&#34;user-content-request-response-cycle&#34; class=&#34;anchor&#34; href=&#34;#request-response-cycle&#34; aria-hidden=&#34;true&#34;&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt; &lt;/a&gt;Request-Response Cycle&lt;/h3&gt;
+&lt;p&gt;In an overview, the HTTP protocol consists of one participant computer asking questions to a source of information that is in another computer (but it can be the same one). The one that makes the question is known as the &lt;code&gt;CLIENT&lt;/code&gt; and the one responding to those questions is named the &lt;code&gt;SERVER&lt;/code&gt;. For each question there must be always an answer, even if the answer is &#34;i don&#39;t have an answer for what you are asking for&#34;, this is what we call the request-response cycle. If both parties &lt;code&gt;CLIENT&lt;/code&gt; and &lt;code&gt;SERVER&lt;/code&gt; can communicate, they should be able to complete this cycle. For sure there are corner cases, for example when the &lt;code&gt;CLIENT&lt;/code&gt; cannot sent a question to the &lt;code&gt;SERVER&lt;/code&gt; because maybe the &lt;code&gt;SERVER&lt;/code&gt; is offline.&lt;/p&gt;
+&lt;p&gt;In fact, the proper way to refer when a &lt;code&gt;CLIENT&lt;/code&gt; makes a question to a &lt;code&gt;SERVER&lt;/code&gt; is known in HTTP jargon to say we are making a &lt;code&gt;REQUEST&lt;/code&gt;, and for each request the server sends a &lt;code&gt;RESPONSE&lt;/code&gt;.&lt;/p&gt;
+&lt;h3&gt;&lt;a id=&#34;user-content-http-url&#34; class=&#34;anchor&#34; href=&#34;#http-url&#34; aria-hidden=&#34;true&#34;&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt; &lt;/a&gt;HTTP Url&lt;/h3&gt;
+&lt;p&gt;The &lt;code&gt;URL&lt;/code&gt; is an important part of the protocol, it contains information of which resource whe are asking the &lt;code&gt;SERVER&lt;/code&gt; for. It shoudld follow this format:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Format:
+scheme:[//authority]path[?query][#fragment]
+
+Example:
+http://www.ironhack.com/learning/1234?user=pepe
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;This is read as the following:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;scheme&lt;/strong&gt;: in this case it&#39;s &lt;code&gt;http&lt;/code&gt;, but it can be also &lt;code&gt;https&lt;/code&gt; in case we are connecting securely.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;authority&lt;/strong&gt;: In this case &lt;code&gt;www.ironhack.com&lt;/code&gt; this is the server we are connecting to send the &lt;code&gt;REQUEST&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;path&lt;/strong&gt;: Also known as the &lt;code&gt;RESOURCE&lt;/code&gt; we are aksing for, in this case &lt;code&gt;/learning/1234&lt;/code&gt;. Normally a server holds multiple pieces of information and serves the &lt;code&gt;REQUESTS&lt;/code&gt; primarily based on the path of the url.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;Side note:&lt;/em&gt; To understand the &lt;em&gt;format&lt;/em&gt; &lt;code&gt;[someting]&lt;/code&gt; means &lt;code&gt;something&lt;/code&gt; is optional and can be present or not.&lt;/p&gt;
+&lt;h3&gt;&lt;a id=&#34;user-content-request&#34; class=&#34;anchor&#34; href=&#34;#request&#34; aria-hidden=&#34;true&#34;&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt; &lt;/a&gt;Request&lt;/h3&gt;
+&lt;p&gt;As we&#39;ve said, the request is a question we formulate to a &lt;code&gt;SERVER&lt;/code&gt; in order to receive a piece of information. This piece of information which can be anything, is not defined in the &lt;code&gt;HTTP&lt;/code&gt; standard what information the &lt;code&gt;SERVER&lt;/code&gt; should answer with. It can be anything: an image, a video, a HTML page, a PDF file, etc.&lt;/p&gt;
+&lt;p&gt;The format of the &lt;code&gt;REQUEST&lt;/code&gt; contains two main parts, the &lt;code&gt;VERB&lt;/code&gt; of the request and the &lt;code&gt;HEADERS&lt;/code&gt;. The verb contains information like which type of request we are making, and the headers contain metadata for the request, for example who is making the request, at what time, if is a known user, cookies, etc.&lt;/p&gt;
+&lt;h4&gt;&lt;a id=&#34;user-content-http-verbs&#34; class=&#34;anchor&#34; href=&#34;#http-verbs&#34; aria-hidden=&#34;true&#34;&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt; &lt;/a&gt;Http Verbs&lt;/h4&gt;
+&lt;p&gt;There are quite a few &lt;code&gt;VERBS&lt;/code&gt;, but the main ones are &lt;code&gt;GET&lt;/code&gt; and &lt;code&gt;POST&lt;/code&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;GET&lt;/code&gt;: Just expresses that we want some resource from a &lt;code&gt;SERVER&lt;/code&gt;. For example, let&#39;s assume you are asking about the twitter timeline. As you are just refering to the timeline, twitter will send you the global timeline for the whole world.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This is how a raw &lt;code&gt;GET&lt;/code&gt; http &lt;code&gt;REQUEST&lt;/code&gt; is sent over the wire:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;GET /timeline HTTP/1.1
+Host: www.twitter.com
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_2) Chrome/71.0.3578.98 Safari/537.36
+Accept: text/htm
+Accept-Language: en,es
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;You can note that we are asking for the &lt;code&gt;/timeline&lt;/code&gt; resource. But what if we want just the timeline for the users i&#39;m following. Then i have to make a &lt;code&gt;POST&lt;/code&gt; request.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;POST&lt;/code&gt; verb requests are different from &lt;code&gt;GET&lt;/code&gt; requests as they contain information for the &lt;code&gt;SERVER&lt;/code&gt; to respond according to it.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;POST /timeline HTTP/1.1
+Host: www.twitter.com
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_2) Chrome/71.0.3578.98 Safari/537.36
+Accept: text/htm
+Accept-Language: en,es
+
+username=pepe
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Here you can see that we are sending a parameter that is the username we want the timeline for the user &lt;em&gt;pepe&lt;/em&gt;. The resource is the same ( &lt;code&gt;/timeline&lt;/code&gt;) but the server will send us a different &lt;code&gt;RESPONSE&lt;/code&gt; according to this parameter we are sending. Those parameters are named &lt;code&gt;POST BODY&lt;/code&gt; and what parameters to send depends on who we are asking, this is not standarized.&lt;/p&gt;
+&lt;h4&gt;&lt;a id=&#34;user-content-request-headers&#34; class=&#34;anchor&#34; href=&#34;#request-headers&#34; aria-hidden=&#34;true&#34;&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt; &lt;/a&gt;Request Headers&lt;/h4&gt;
+&lt;p&gt;Also in a request there are the headers, let&#39;s analyze some of it:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;GET /timeline HTTP/1.1
+Host: www.twitter.com
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_2) Chrome/71.0.3578.98 Safari/537.36
+Accept: text/html
+Accept-Language: en,es
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;User-Agent&lt;/strong&gt;: The browser that is making the &lt;code&gt;REQUEST&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Accept-Language&lt;/strong&gt;: The language in which we&#39;ve configured our browser.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The headers can vary between requests, there are some standard ones. The &lt;code&gt;WEB SERVERS&lt;/code&gt; following the &lt;code&gt;HTTP&lt;/code&gt; standard agree on how to proceed depending on which headers are present in a &lt;code&gt;REQUEST&lt;/code&gt;, but you can add personalized ones if you want.&lt;/p&gt;
+&lt;h3&gt;&lt;a id=&#34;user-content-response&#34; class=&#34;anchor&#34; href=&#34;#response&#34; aria-hidden=&#34;true&#34;&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt; &lt;/a&gt;Response&lt;/h3&gt;
+&lt;p&gt;All responses follow the same structure. They have a &lt;code&gt;HEADER&lt;/code&gt; section that contains metadata about what the behaviour of the server and a &lt;code&gt;BODY&lt;/code&gt; that contains the desired piece of information.&lt;/p&gt;
+&lt;h4&gt;&lt;a id=&#34;user-content-status-codes&#34; class=&#34;anchor&#34; href=&#34;#status-codes&#34; aria-hidden=&#34;true&#34;&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt; &lt;/a&gt;Status Codes&lt;/h4&gt;
+&lt;p&gt;One important part of the &lt;code&gt;RESPONSE HEADER&lt;/code&gt; is the status code. This code is a numerical code indicating the result of the server. There are different status codes depending if the server succedded to perform the &lt;code&gt;REQUEST&lt;/code&gt; of didn&#39;t manage to do anything at all. This are some groups of status codes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;2xx Success&lt;/strong&gt;: The most important status code here is &lt;code&gt;200&lt;/code&gt; that means everything worked as expected and the resource is found on the &lt;code&gt;SERVER&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;4xx Client errors&lt;/strong&gt;: Those are codes for errors on the client side, meaning the client asked for a wrong resource or the one that overybody knows &lt;code&gt;404&lt;/code&gt; that means resource can&#39;t be found on the &lt;code&gt;SERVER&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;5xx Server errors&lt;/strong&gt;: This means the &lt;code&gt;SERVER&lt;/code&gt; itself chashed when processing your &lt;code&gt;REQUEST&lt;/code&gt;. Maybe due to a bug on server&#39;s code or something related.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For a complete list see &lt;a href=&#34;https://en.wikipedia.org/wiki/List_of_HTTP_status_codes&#34; rel=&#34;nofollow&#34;&gt;Wikipedia&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;&lt;a id=&#34;user-content-oauth-authentication&#34; class=&#34;anchor&#34; href=&#34;#oauth-authentication&#34; aria-hidden=&#34;true&#34;&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt; &lt;/a&gt;OAuth Authentication&lt;/h3&gt;
+&lt;p&gt;OAuth is simply a secure authorization protocol that works on top of &lt;code&gt;HTTP&lt;/code&gt;. When you are consuming some external service via &lt;code&gt;HTTP&lt;/code&gt; calls, servers want to take control over their service and maybe limit the numer of requests you can do, or ask you to pay for it. Or maybe they don&#39;t want you to see data from other users in the systems. For this purposes, you should authenticate yourself.&lt;/p&gt;
+&lt;p&gt;The oauth authentication is a common used one among lots of API providers as it is a well known public standard. This learning is not meant to cover how oauth work, but just to introduce you an important aspect about those. When working with oauth, the service you are asking a &lt;code&gt;REQUEST&lt;/code&gt; must provide you some authenticated credentials that normally have names like &lt;code&gt;clientId&lt;/code&gt; or &lt;code&gt;apiKey&lt;/code&gt; and &lt;code&gt;apiSecret&lt;/code&gt; or &lt;code&gt;apiToken&lt;/code&gt; or simply &lt;code&gt;token&lt;/code&gt;. This will be used to authenticate instead of username+password. The reason? it is not as secure to be transfering your password up and down as credentials, also credentials can be revoked if lost or stolen.&lt;/p&gt;
+&lt;p&gt;The credentials &lt;strong&gt;should be kept securelly&lt;/strong&gt;, and must not be shared with anyone else, &lt;strong&gt;so, do not add it inside a git repo&lt;/strong&gt; as there are online hackers that scan for them and make fraudulent use, possibly wasting lots of dollars in your name!&lt;/p&gt;
+&lt;h2&gt;&lt;a id=&#34;user-content-tools-to-work-with-apis&#34; class=&#34;anchor&#34; href=&#34;#tools-to-work-with-apis&#34; aria-hidden=&#34;true&#34;&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt; &lt;/a&gt;Tools to work with APIs&lt;/h2&gt;
+&lt;h3&gt;&lt;a id=&#34;user-content-curl---making-http-requests-with-your-terminal&#34; class=&#34;anchor&#34; href=&#34;#curl---making-http-requests-with-your-terminal&#34; aria-hidden=&#34;true&#34;&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt; &lt;/a&gt;CURL - Making HTTP requests with your terminal&lt;/h3&gt;
+&lt;p&gt;Curl is a command-line tool that allows you to make &lt;code&gt;HTTP&lt;/code&gt;requests as easy as this:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ curl www.ironhack.com
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Calling curl like this will make a &lt;code&gt;GET&lt;/code&gt; request to &lt;code&gt;www.ironhack.com&lt;/code&gt;, you will see the &lt;code&gt;RESPONSE BODY&lt;/code&gt; as text in your terminal. &lt;strong&gt;Try it!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;If you want to save the response to a text file, just redirect the output to a file like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ curl www.ironhack.com &amp;gt; index.html
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;This redirection operation can be done with any command output, not just curl.&lt;/p&gt;
+&lt;p&gt;Good news!, Curl is already installed by default on your terminal.&lt;/p&gt;
+&lt;h3&gt;&lt;a id=&#34;user-content-debug-api-calls-using-charles-proxy&#34; class=&#34;anchor&#34; href=&#34;#debug-api-calls-using-charles-proxy&#34; aria-hidden=&#34;true&#34;&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt; &lt;/a&gt;Debug API calls using Charles Proxy&lt;/h3&gt;
+&lt;p&gt;Charles is an HTTP proxy / HTTP monitor / Reverse Proxy that enables a developer to view all of the HTTP and SSL / HTTPS traffic between their machine and the Internet. This includes requests, responses and the HTTP headers (which contain the cookies and caching information).&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.charlesproxy.com/&#34; rel=&#34;nofollow&#34;&gt;Download it here&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;&lt;a id=&#34;user-content-test-api-calls-using-postman&#34; class=&#34;anchor&#34; href=&#34;#test-api-calls-using-postman&#34; aria-hidden=&#34;true&#34;&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt; &lt;/a&gt;Test API calls using Postman&lt;/h3&gt;
+&lt;p&gt;Postman is a great tool when trying to dissect &lt;code&gt;APIs&lt;/code&gt; made by others or test ones you have made yourself. It offers a sleek user interface with which to make HTML requests, without the hassle of writing a bunch of code just to test an API&#39;s functionality.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.getpostman.com/&#34; rel=&#34;nofollow&#34;&gt;Download it here&lt;/a&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2&gt;&lt;a id=&#34;user-content-summary&#34; class=&#34;anchor&#34; href=&#34;#summary&#34; aria-hidden=&#34;true&#34;&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt; &lt;/a&gt;Summary&lt;/h2&gt;
+&lt;p&gt;In this lesson, we covered the HTTP protocol terms and introduced the proper terminology and aspects of how HTTP works. We also covered the request response cycle that forms the core of the HTTP protocol. Finally we saw some tools that are proven to be really useful when working with HTTP services.&lt;/p&gt;
+&lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+  </div>
+  <div id="seq_contents_2"
+    aria-labelledby="tab_2"
+    aria-hidden="true"
+    class="seq_contents tex2jax_ignore asciimath2jax_ignore">
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-vertical&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;VerticalStudentView&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34; data-request-token=&#34;45fcde30939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@f4c09a3397fd4658a87a79e99516117c&#34; data-block-type=&#34;vertical&#34;&gt;
+  
+
+  &lt;h2 class=&#34;hd hd-2 unit-title&#34;&gt;API Wrappers&lt;/h2&gt;
+
+    &lt;div class=&#34;ih-bookmark-button-wrapper&#34;&gt;
+    	
+
+
+
+&lt;div class=&#34;bookmark-button-wrapper&#34;&gt;
+  &lt;button class=&#34;btn btn-link bookmark-button &#34;
+    aria-pressed=&#34;false&#34;
+    data-bookmark-id=&#34;NoahB,block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@f4c09a3397fd4658a87a79e99516117c&#34;
+    data-bookmarks-api-url=&#34;/api/bookmarks/v1/bookmarks/&#34;&gt;
+     &lt;span class=&#34;bookmark-text&#34;&gt;Bookmark this page&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+
+    &lt;/div&gt;	
+
+&lt;div class=&#34;vert-mod&#34;&gt;
+  &lt;div class=&#34;vert vert-0&#34; data-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@530497a02b81426ca6dc398c485351e1&#34;&gt;
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;45fcde30939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@530497a02b81426ca6dc398c485351e1&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  &lt;h2&gt;
+    &lt;a id=&#34;user-content-lesson-goals&#34; class=&#34;anchor&#34; href=&#34;#lesson-goals&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Lesson Goals
+&lt;/h2&gt;
+&lt;ul&gt;
+    &lt;li&gt;Understand what is API wrapper&lt;/li&gt;
+    &lt;li&gt;Learn how to use the Twitter API wrapper&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-introduction---authentication-and-python-api-wrappers&#34; class=&#34;anchor&#34; href=&#34;#introduction---authentication-and-python-api-wrappers&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Introduction - Authentication and Python API Wrappers
+&lt;/h2&gt;
+&lt;p&gt;Most application that you will want to request data from (social networks, search engines, etc.) will want to know who is accessing their application, how they plan on doing so, and what they plan to do with the data.&lt;/p&gt;
+&lt;p&gt;For these popular applications, there are also Python wrappers that have been written for their APIs that make interacting with them much easier than it would be otherwise.&lt;/p&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-access-twitter-api-using-python&#34; class=&#34;anchor&#34; href=&#34;#access-twitter-api-using-python&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Access Twitter API using Python
+&lt;/h3&gt;
+&lt;p&gt;One example is the 
+    &lt;em&gt;tweepy&lt;/em&gt; library that makes obtaining data from the Twitter API relatively simple.
+&lt;/p&gt;
+&lt;p&gt;Before we can use it, we need to create a developer account (if we don&#39;t already have one, create an application, and obtain credentials from Twitter. To create a developer account, follow the steps below.&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;Go to 
+        &lt;a href=&#34;https://developer.twitter.com/en/apply-for-access.html&#34; rel=&#34;nofollow&#34;&gt;https://developer.twitter.com/en/apply-for-access.html&lt;/a&gt;.
+    &lt;/li&gt;
+    &lt;li&gt;Click 
+        &lt;em&gt;Apply for a developer account&lt;/em&gt;.
+    &lt;/li&gt;
+    &lt;li&gt;Follow the instructions and provide the information necessary to create a developer account for personal use.&lt;/li&gt;
+    &lt;li&gt;Twitter will review your application and approve your account (assuming you didn&#39;t say you would do anything that violates their terms of service).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;After receiving confirmation that your developer account has been approved, you must create an application by logging into your account and following the steps to create a new app. Once the app has been created, the next step is to obtain your credentials. These credentials will give you permission to access the Twitter API. The credentials consist of an API key, API secret key, access token, and access token secret. They can be found by viewing the details of your app and clicking on the 
+    &lt;em&gt;Keys and Tokens&lt;/em&gt; tab.
+&lt;/p&gt;
+&lt;p&gt;
+    &lt;strong&gt;Warning:&lt;/strong&gt; You should store your credentials in a safe place, never share them, and never upload them to Github.
+&lt;/p&gt;
+&lt;p&gt;Now that we have obtained our credentials, we can use tweepy to access the Twitter API as follows. You will need to replace the credentials below with your actual credentials for this code to function.&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;import tweepy
+
+API_KEY = &#34;YourAPIKey&#34;
+API_SECRET = &#34;YourAPISecret&#34;
+ACCESS_TOKEN = &#34;YourAccessToken&#34;
+ACCESS_TOKEN_SECRET = &#34;YourAccessTokenSecret&#34;
+
+auth = tweepy.OAuthHandler(API_KEY, API_SECRET)
+auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
+api = tweepy.API(auth)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;We can now create a function that will send some sort of request to the Twitter API. For example, suppose we wanted to create a data frame that contained 100 users that follow Ironhack on Twitter. We could construct a 
+    &lt;code&gt;get_followers&lt;/code&gt; function that leverages tweepy&#39;s
+    &lt;code&gt;followers&lt;/code&gt; method, create a list comprehension of the results, and then turn that into a data frame.
+&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;def get_followers(user, count=100):
+    results = api.followers(user, count=count)
+    followers = [pd.Series(follower._json) for follower in ironhack]
+    df = pd.DataFrame(followers)
+    return df
+
+ironhack = get_followers(&#39;ironhack&#39;)
+ironhack.head(10)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/f6f651cac8b9c12a1ca9acd514007170c9a1d15a/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6170692d69726f6e6861636b2d666f6c6c6f776572732e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/f6f651cac8b9c12a1ca9acd514007170c9a1d15a/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6170692d69726f6e6861636b2d666f6c6c6f776572732e706e67&#34; alt=&#34;Ironhack Twitter Followers&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/api-ironhack-followers.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;
+    &lt;strong&gt;Challenge:&lt;/strong&gt; The tweepy library has many more
+    &lt;a href=&#34;https://tweepy.readthedocs.io/en/v3.6.0/index.html&#34; rel=&#34;nofollow&#34;&gt;methods&lt;/a&gt; for interacting with the Twitter API. Practice writing functions for getting a user&#39;s profile information or getting tweets from a user&#39;s timeline.
+&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-summary&#34; class=&#34;anchor&#34; href=&#34;#summary&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Summary
+&lt;/h2&gt;
+&lt;p&gt;In this lesson we&#39;ve discussed the need for authentication and the steps needed to register a developer account and create an app with Twitter. Finally, we saw how useful Python wrappers for APIs, such as the tweepy library, can be for interacting with web applications.&lt;/p&gt;
+&lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+  </div>
+  <div id="seq_contents_3"
+    aria-labelledby="tab_3"
+    aria-hidden="true"
+    class="seq_contents tex2jax_ignore asciimath2jax_ignore">
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-vertical&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;VerticalStudentView&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34; data-request-token=&#34;45fcde30939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@f48258aa73964be69fd62590aac59fd3&#34; data-block-type=&#34;vertical&#34;&gt;
+  
+
+  &lt;h2 class=&#34;hd hd-2 unit-title&#34;&gt;Understanding Web Content&lt;/h2&gt;
+
+    &lt;div class=&#34;ih-bookmark-button-wrapper&#34;&gt;
+    	
+
+
+
+&lt;div class=&#34;bookmark-button-wrapper&#34;&gt;
+  &lt;button class=&#34;btn btn-link bookmark-button &#34;
+    aria-pressed=&#34;false&#34;
+    data-bookmark-id=&#34;NoahB,block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@f48258aa73964be69fd62590aac59fd3&#34;
+    data-bookmarks-api-url=&#34;/api/bookmarks/v1/bookmarks/&#34;&gt;
+     &lt;span class=&#34;bookmark-text&#34;&gt;Bookmark this page&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+
+    &lt;/div&gt;	
+
+&lt;div class=&#34;vert-mod&#34;&gt;
+  &lt;div class=&#34;vert vert-0&#34; data-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@e30c95b7e88e426d8b5dad946911f456&#34;&gt;
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;45fcde30939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@e30c95b7e88e426d8b5dad946911f456&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  &lt;h2&gt;
+    &lt;a id=&#34;user-content-learning-goals&#34; class=&#34;anchor&#34; href=&#34;#learning-goals&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Learning Goals
+&lt;/h2&gt;
+&lt;ul&gt;
+    &lt;li&gt;
+        &lt;p&gt;Understand different types of web content.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p&gt;Understand the structure of a HTML document.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p&gt;Learn to use Google Chrome DevTools.&lt;/p&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-introduction&#34; class=&#34;anchor&#34; href=&#34;#introduction&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Introduction
+&lt;/h2&gt;
+&lt;p&gt;By 
+    &lt;em&gt;web content&lt;/em&gt; we mean the documents and assets you download to your computer when you open a webpage in the browser. Why is it important to understand web content? As a data analyst you need to have the ability to
+    &lt;em&gt;decipher&lt;/em&gt; various types of complex data. And the World Wide Web (WWW) is the biggest man-made data repository in the world. Therefore, decoding web data is an essential skill for every data specialist.
+&lt;/p&gt;
+&lt;p&gt;In this lesson we will first introduce you the most common types of web content, among which HTML is the type most relevant to you. We will then focus on explaining the structure of HTML. We will also introduce you a powerful tool - Google Chrome DevTools - with which you can inspect, explore, and interact with webpages.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-types-of-web-content&#34; class=&#34;anchor&#34; href=&#34;#types-of-web-content&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Types of Web Content
+&lt;/h2&gt;
+&lt;p&gt;
+    &lt;strong&gt;Multipurpose Internet Mail Extensions (MIME)&lt;/strong&gt; is an Internet standard originally designed for emails to support different types of web media. Later, the Internet communication protocols including HTTP and HTTPS also adopted MIME. MIME is a handy reference for you to understand what different file extensions do in
+    &lt;a href=&#34;http://WWW&#34; rel=&#34;nofollow&#34;&gt;WWW&lt;/a&gt;.
+&lt;/p&gt;
+&lt;p&gt;The Mozilla Developer Network has 
+    &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types#Important_MIME_types_for_Web_developers&#34; rel=&#34;nofollow&#34;&gt;a good resource&lt;/a&gt; for you to get started to learn about the most commonly used MIME types.
+&lt;/p&gt;
+&lt;p&gt;
+    &lt;g-emoji class=&#34;g-emoji&#34; alias=&#34;bulb&#34; fallback-src=&#34;https://github.githubassets.com/images/icons/emoji/unicode/1f4a1.png&#34;&gt;&lt;/g-emoji&gt;
+    &lt;em&gt;After taking the Web Scraping lesson at a later time, you will also be able to utilize the 
+        &lt;a href=&#34;https://docs.python.org/3/library/mimetypes.html&#34; rel=&#34;nofollow&#34;&gt;Python mimetypes library&lt;/a&gt; to analyze what media types are contained in HTML webpages.
+    &lt;/em&gt;
+&lt;/p&gt;
+&lt;p&gt;In the table below, you will learn about the most common types of web content in contemporary websites.&lt;/p&gt;
+&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Name&lt;/th&gt;
+            &lt;th&gt;MIME Type&lt;/th&gt;
+            &lt;th&gt;Common Extensions&lt;/th&gt;
+            &lt;th&gt;Description&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;HTML&lt;/td&gt;
+            &lt;td&gt;text/html&lt;/td&gt;
+            &lt;td&gt;
+                &lt;code&gt;htm&lt;/code&gt;,
+                &lt;code&gt;html&lt;/code&gt;
+            &lt;/td&gt;
+            &lt;td&gt;HTML defines the structure of a webpage. It is one of the textual content types which is so important that we take it separately from other textual types. HTML contains the main information of a webpage. Without other content types such as CSS and JavaScript, a HTML document merely displays plain texts. The latest standard of HTML is the 
+                &lt;a href=&#34;https://en.wikipedia.org/wiki/HTML5&#34; rel=&#34;nofollow&#34;&gt;HTML 5 Specification&lt;/a&gt; which features enhanced support for media, interaction, and semantic content.
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Image&lt;/td&gt;
+            &lt;td&gt;image/*&lt;/td&gt;
+            &lt;td&gt;
+                &lt;code&gt;jpg&lt;/code&gt;,
+                &lt;code&gt;jpeg&lt;/code&gt;,
+                &lt;code&gt;png&lt;/code&gt;,
+                &lt;code&gt;gif&lt;/code&gt;,
+                &lt;code&gt;webp&lt;/code&gt;,
+                &lt;code&gt;svg&lt;/code&gt;
+            &lt;/td&gt;
+            &lt;td&gt;Images are visual elements in the webpage. Most web image types except 
+                &lt;code&gt;gif&lt;/code&gt; are single frame which is not animated.
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Audio Media&lt;/td&gt;
+            &lt;td&gt;audio/*&lt;/td&gt;
+            &lt;td&gt;
+                &lt;code&gt;mp3&lt;/code&gt;,
+                &lt;code&gt;m4a&lt;/code&gt;
+            &lt;/td&gt;
+            &lt;td&gt;Web audio used to be a popular web media type in the 90&#39;s and 00&#39;s when the Internet bandwidth was narrow for most people. But in the past two decades web video has taken over and become the most popular web media, though some websites are still using web audio for specific purposes.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Video Media&lt;/td&gt;
+            &lt;td&gt;video/*&lt;/td&gt;
+            &lt;td&gt;
+                &lt;code&gt;mp4&lt;/code&gt;,
+                &lt;code&gt;ogg&lt;/code&gt;,
+                &lt;code&gt;webm&lt;/code&gt;
+            &lt;/td&gt;
+            &lt;td&gt;Video is basically a sequence of images. Different browsers support different extensions of web video. At present, 
+                &lt;code&gt;mp4&lt;/code&gt; and
+                &lt;code&gt;ogg&lt;/code&gt; are the best supported extensions in mainstream browsers.
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;CSS&lt;/td&gt;
+            &lt;td&gt;text/css&lt;/td&gt;
+            &lt;td&gt;
+                &lt;code&gt;css&lt;/code&gt;
+            &lt;/td&gt;
+            &lt;td&gt;CSS stands for 
+                &lt;em&gt;Cascading Style Sheets&lt;/em&gt; which defines how web content (HTML, image, and video) is visually presented to the end user.
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Application&lt;/td&gt;
+            &lt;td&gt;application/*&lt;/td&gt;
+            &lt;td&gt;
+                &lt;code&gt;js&lt;/code&gt;,
+                &lt;code&gt;json&lt;/code&gt;,
+                &lt;code&gt;xml&lt;/code&gt;,
+                &lt;code&gt;pdf&lt;/code&gt;
+            &lt;/td&gt;
+            &lt;td&gt;Application content types usually require special software or browser extensions to execute or extract the containted information.&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;JavaScript&lt;/td&gt;
+            &lt;td&gt;text/javascript&lt;/td&gt;
+            &lt;td&gt;
+                &lt;code&gt;js&lt;/code&gt;
+            &lt;/td&gt;
+            &lt;td&gt;JavaScript is a 
+                &lt;em&gt;client-side programming language&lt;/em&gt; to make web content dynamic and interactive. End users actually download JavaScript files to the computer when they launch a webpage, which is in contrast to
+                &lt;em&gt;server-side programming languages&lt;/em&gt; such as
+                &lt;code&gt;php&lt;/code&gt; and
+                &lt;code&gt;python&lt;/code&gt; that stays on the server. The latest HTML 5 standard supports a lot of the interactions natively in the browser which are previously achieved with JavaScript.
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Font&lt;/td&gt;
+            &lt;td&gt;
+                &lt;em&gt;mixed&lt;/em&gt;
+            &lt;/td&gt;
+            &lt;td&gt;
+                &lt;code&gt;svg&lt;/code&gt;,
+                &lt;code&gt;ttf&lt;/code&gt;,
+                &lt;code&gt;woff&lt;/code&gt;,
+                &lt;code&gt;woff2&lt;/code&gt;,
+                &lt;code&gt;eot&lt;/code&gt;
+            &lt;/td&gt;
+            &lt;td&gt;Modern web browsers support a collection of basic fonts. For specialized fonts, the font files must be downloaded separately in order for the browser to display the fonts as intended. The font styles and font file locations are defined in CSS.&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;From the table above, you can see HTML is the most important type for data analytics because it contains the majority of the textual information that can be analyzed. The information contained in images and videos is not textual and requires advanced machine learning algorithms to analyze, which is not covered in this course. In the next section, we will help you understand what HTML is and how it works.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-html-basics&#34; class=&#34;anchor&#34; href=&#34;#html-basics&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;HTML Basics
+&lt;/h2&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-what-is-html&#34; class=&#34;anchor&#34; href=&#34;#what-is-html&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;What is HTML?
+&lt;/h3&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/HTML&#34; rel=&#34;nofollow&#34;&gt;HyperText Markup Language&lt;/a&gt; (HTML) is a language for creating web pages and web applications. HTML special instructions are the building blocks of web pages.
+&lt;/p&gt;
+&lt;p&gt;A web page is a collection of many kinds of content. This might be text, graphics, forms, audio and video files, etc. These elements live inside HTML tags. The browser uses these tags to decide how to display, order and style the content on the page.&lt;/p&gt;
+&lt;p&gt;HTML files that produce web pages are simple text files. Text is a universal way of representing data for computers. Any HTML you create on a Windows PC could work on a Mac, Linux/Unix, or any other operating system.&lt;/p&gt;
+&lt;p&gt;The best way to understand HTML is to jump right in. So let&#39;s see a real example:&lt;/p&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/2f5fe0786f073bf23b62ada3f864327642516dc9/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f68746d6c2d6578616d706c652e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/2f5fe0786f073bf23b62ada3f864327642516dc9/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f68746d6c2d6578616d706c652e706e67&#34; alt=&#34;HTML Example&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/html-example.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;
+    &lt;strong&gt;
+        &lt;a href=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/documents/the-html5-breakfast-site.html&#34; rel=&#34;nofollow&#34;&gt;Link to Webpage&lt;/a&gt;
+    &lt;/strong&gt;
+&lt;/p&gt;
+&lt;p&gt;Let&#39;s take a look at the picture above. It shows a  simple web page with a title, a menu, a picture and some written information.&lt;/p&gt;
+&lt;p&gt;Web browsers read and display HTML markup. This markup 
+    &lt;em&gt;- with the help of CSS -&lt;/em&gt; tells the browser how to present the information visually.
+&lt;/p&gt;
+&lt;p&gt;In the HTML file you will find the content of the components shown below.&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html&amp;gt;
+  &amp;lt;head&amp;gt;
+    &amp;lt;title&amp;gt;The HTML5 Breakfast Site&amp;lt;/title&amp;gt;
+    &amp;lt;meta charset=&#34;UTF-8&#34;&amp;gt;
+
+    &amp;lt;style&amp;gt;
+      body {
+        background-color: limegreen;
+        margin: 40px;
+      } 
+    &amp;lt;/style&amp;gt;
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body&amp;gt;
+    &amp;lt;div id=&#34;container&#34;&amp;gt;
+
+      &amp;lt;nav id=&#34;topnav&#34;&amp;gt;
+        &amp;lt;a href=&#34;https://www.ironhack.com&#34; target=&#34;_blank&#34;&amp;gt;HOME&amp;lt;/a&amp;gt; |
+        &amp;lt;a href=&#34;https://www.ironhack.com/en/team&#34; target=&#34;_blank&#34;&amp;gt;ABOUT US&amp;lt;/a&amp;gt; |
+        &amp;lt;a href=&#34;https://www.ironhack.com/en/contact&#34; target=&#34;_blank&#34;&amp;gt;CONTACT US&amp;lt;/a&amp;gt;
+      &amp;lt;/nav&amp;gt;
+
+      &amp;lt;section id=&#34;content&#34;&amp;gt;
+        &amp;lt;h1&amp;gt;The Ironhack Breakfast Place&amp;lt;/h1&amp;gt;
+        &amp;lt;p&amp;gt;Here you will find all sorts of delicious treats&amp;lt;/p&amp;gt;
+        &amp;lt;figure&amp;gt;
+          &amp;lt;img src=&#34;breakfast.jpg&#34; width=&#34;400&#34; alt=&#34;healthy breakfast&#34;&amp;gt;
+          &amp;lt;figcaption&amp;gt;CC Image courtesy of Ruth Hartnup on Flickr&amp;lt;/figcaption&amp;gt;
+        &amp;lt;/figure&amp;gt;
+      &amp;lt;/section&amp;gt;
+
+      &amp;lt;footer&amp;gt;
+        &amp;lt;p class=&#34;love&#34;&amp;gt;Made with love by Ironhack&amp;lt;/p&amp;gt;
+      &amp;lt;/footer&amp;gt;
+
+    &amp;lt;/div&amp;gt;
+  &amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Try to locate these components in the HTML Code and in the picture:&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;Title: The HTML5 Breakfast Site&lt;/li&gt;
+    &lt;li&gt;Navigation Bar: (HOME | ABOUT US | CONTACT US)&lt;/li&gt;
+    &lt;li&gt;Text: Here you will find all sorts of delicious treats&lt;/li&gt;
+    &lt;li&gt;The food image&lt;/li&gt;
+    &lt;li&gt;The image attribution&lt;/li&gt;
+    &lt;li&gt;Footer: Made with love by Ironhack&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Can you find them all?&lt;/p&gt;
+&lt;p&gt;Additional challenge: how does the webpage know to use the lime green color as the background?&lt;/p&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-html-dom-tree&#34; class=&#34;anchor&#34; href=&#34;#html-dom-tree&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;HTML DOM tree
+&lt;/h3&gt;
+&lt;p&gt;Every HTML Document can be 
+    &lt;strong&gt;represented&lt;/strong&gt; as a tree using the Document Object Model (DOM), which contains all the elements of the HTML document, their format and the browser state at a specific moment.
+&lt;/p&gt;
+&lt;p&gt;The DOM structure is usually represented as a tree of nodes, where we can see what nodes (such as 
+    &lt;code&gt;&amp;lt;html&amp;gt;&lt;/code&gt;) have which other nodes inside, for example
+    &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt;.
+&lt;/p&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/615c521e427ff36af59fd5693d6d72ac61c76205/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f646f6d2d7374727563747572652e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/615c521e427ff36af59fd5693d6d72ac61c76205/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f646f6d2d7374727563747572652e706e67&#34; alt=&#34;DOM Structure&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/dom-structure.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;In the HTML DOM, everything is a node.  The document is a document node. But the elements, attributes and the content inside de elements are nodes, too. We will learn about this in further lessons.&lt;/p&gt;
+&lt;p&gt;Now let&#39;s take a look at the code in the given example and let&#39;s explain some of the syntax:&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html&amp;gt;
+  &amp;lt;head&amp;gt;
+    &amp;lt;title&amp;gt;My first document&amp;lt;/title&amp;gt;
+    &amp;lt;meta charset=&#34;UTF-8&#34;&amp;gt;
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body&amp;gt;
+    ...
+  &amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;ul&gt;
+    &lt;li&gt;
+        &lt;code&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/code&gt;
+DOCTYPE Indicates that the markup language for your document content is HTML5.
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;code&gt;&amp;lt;html&amp;gt;&lt;/code&gt;
+html Represents the root of an HTML document. All other elements must be descendants of this element. It&#39;s the first node in our DOM. It is mandatory to close the tag at the very end of the document by typing
+        &lt;code&gt;&amp;lt;/html&amp;gt;&lt;/code&gt;.
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt;
+head Defines an element that provides general information (metadata) about the document, including its title and links to its scripts and style sheets. Usually it contains:
+        &lt;ul&gt;
+            &lt;li&gt;
+                &lt;code&gt;&amp;lt;title&amp;gt;&lt;/code&gt;
+Defines the title of the document, there&#39;s only one title element in the head element of an HTML. This title contains only text and it is shown in a browser&#39;s title bar or on the page&#39;s tab.
+            &lt;/li&gt;
+            &lt;li&gt;
+                &lt;code&gt;&amp;lt;meta&amp;gt;&lt;/code&gt;
+Used to define metadata. This includes information about styles, scripts and data to help browsers use and render the page. One of the most commons elements is the
+                &lt;code&gt;&amp;lt;meta charset=&#34;UTF-8&#34;&amp;gt;&lt;/code&gt; in our example. This specifies the character encoding for the HTML document as
+                &lt;a href=&#34;https://en.wikipedia.org/wiki/UTF-8&#34; rel=&#34;nofollow&#34;&gt;UTF-8&lt;/a&gt;.
+            &lt;/li&gt;
+            &lt;li&gt;
+                &lt;code&gt;&amp;lt;style&amp;gt;&lt;/code&gt;
+Defines the CSS styles of the document. The CSS rules can be either defined as a block in the
+                &lt;code&gt;&amp;lt;head&amp;gt;&lt;/code&gt; tag or referenced from an external file.
+            &lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;code&gt;&amp;lt;body&amp;gt;&lt;/code&gt;
+body is the element containing all the content of an HTML document. Every HTML component should be written between the opening and the closing body tag. As there can be only one entire body in a document, there can be only one
+        &lt;code&gt;&amp;lt;body&amp;gt;&lt;/code&gt; element.
+    &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Not difficult at all to understand right? Next we&#39;ll briefly introduce some of the most commonly used HTML tags.&lt;/p&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-paragraphs&#34; class=&#34;anchor&#34; href=&#34;#paragraphs&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Paragraphs
+&lt;/h3&gt;
+&lt;p&gt;The HTML 
+    &lt;code&gt;&amp;lt;p&amp;gt;&lt;/code&gt; element represents a paragraph of text. Paragraphs are blocks of text separated from adjacent blocks by vertical blank space and/or first-line indentation.
+&lt;/p&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-preformated-text&#34; class=&#34;anchor&#34; href=&#34;#preformated-text&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Preformated text
+&lt;/h3&gt;
+&lt;p&gt;The 
+    &lt;code&gt;&amp;lt;pre&amp;gt;&lt;/code&gt; element represents preformatted text. Text within this element is typically displayed in a non-proportional (&#34;monospace&#34;) font exactly as it is laid out in the file.
+&lt;/p&gt;
+&lt;p&gt;This is an example of preformatted text.&lt;/p&gt;
+&lt;pre&gt;This is a preformatted text&lt;/pre&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-headings&#34; class=&#34;anchor&#34; href=&#34;#headings&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Headings
+&lt;/h3&gt;
+&lt;p&gt;Heading elements have six levels of document headings (titles): 
+    &lt;code&gt;&amp;lt;h1&amp;gt;&lt;/code&gt; is the most important and
+    &lt;code&gt;&amp;lt;h6&amp;gt;&lt;/code&gt; is the least. A title briefly describes the topic of the section it introduces.
+&lt;/p&gt;
+&lt;p&gt;The following code shows all the heading levels, in use.&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;&amp;lt;h1&amp;gt;Heading level 1&amp;lt;/h1&amp;gt;
+&amp;lt;h2&amp;gt;Heading level 2&amp;lt;/h2&amp;gt;
+&amp;lt;h3&amp;gt;Heading level 3&amp;lt;/h3&amp;gt;
+&amp;lt;h4&amp;gt;Heading level 4&amp;lt;/h4&amp;gt;
+&amp;lt;h5&amp;gt;Heading level 5&amp;lt;/h5&amp;gt;
+&amp;lt;h6&amp;gt;Heading level 6&amp;lt;/h6&amp;gt;
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-lists&#34; class=&#34;anchor&#34; href=&#34;#lists&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Lists
+&lt;/h3&gt;
+&lt;h4&gt;
+    &lt;a id=&#34;user-content-ordered-list&#34; class=&#34;anchor&#34; href=&#34;#ordered-list&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Ordered List
+&lt;/h4&gt;
+&lt;p&gt;The HTML 
+    &lt;code&gt;&amp;lt;ol&amp;gt;&lt;/code&gt; element represents an ordered list of items. Each list item is numbered.
+&lt;/p&gt;
+&lt;h4&gt;
+    &lt;a id=&#34;user-content-unordered-list&#34; class=&#34;anchor&#34; href=&#34;#unordered-list&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Unordered List
+&lt;/h4&gt;
+&lt;p&gt;The 
+    &lt;code&gt;&amp;lt;ul&amp;gt;&lt;/code&gt; element represents a list of items too. However, the order of items is not relevant.
+&lt;/p&gt;
+&lt;p&gt;Here&#39;s a good trick to determine which one to use: try changing the order of the list items; if the meaning is changed, the 
+    &lt;code&gt;&amp;lt;ol&amp;gt;&lt;/code&gt; element should be used, else the
+    &lt;code&gt;&amp;lt;ul&amp;gt;&lt;/code&gt; is adequate.
+&lt;/p&gt;
+&lt;p&gt;There is no limitation to the depth and overlap of lists defined with the 
+    &lt;code&gt;&amp;lt;ol&amp;gt;&lt;/code&gt; and
+    &lt;code&gt;&amp;lt;ul&amp;gt;&lt;/code&gt; elements.
+&lt;/p&gt;
+&lt;h4&gt;
+    &lt;a id=&#34;user-content-list-items&#34; class=&#34;anchor&#34; href=&#34;#list-items&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;List Items
+&lt;/h4&gt;
+&lt;p&gt;Ordered and unordered lists both have elements within them. These elements are declared as 
+    &lt;code&gt;li&lt;/code&gt; elements.
+&lt;/p&gt;
+&lt;p&gt;This would be an example of code for an ordered list:&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;&amp;lt;ol&amp;gt;
+  &amp;lt;li&amp;gt;first item&amp;lt;/li&amp;gt;
+  &amp;lt;li&amp;gt;second item&amp;lt;/li&amp;gt;
+  &amp;lt;li&amp;gt;third item&amp;lt;/li&amp;gt;
+&amp;lt;/ol&amp;gt;
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;h4&gt;
+    &lt;a id=&#34;user-content-nested-lists&#34; class=&#34;anchor&#34; href=&#34;#nested-lists&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Nested Lists
+&lt;/h4&gt;
+&lt;p&gt;You can use an ordered or unordered list inside a list item tag, which will create nested lists for you. For example:&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;&amp;lt;ol&amp;gt;
+  &amp;lt;li&amp;gt;first item&amp;lt;/li&amp;gt;
+  &amp;lt;li&amp;gt;second item
+    &amp;lt;ul&amp;gt;
+      &amp;lt;li&amp;gt;nested list item 1&amp;lt;/li&amp;gt;
+      &amp;lt;li&amp;gt;nested list item 2&amp;lt;/li&amp;gt;
+    &amp;lt;/ul&amp;gt;
+  &amp;lt;/li&amp;gt;
+  &amp;lt;li&amp;gt;third item&amp;lt;/li&amp;gt;
+&amp;lt;/ol&amp;gt;
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;The HTML code above will look like below in a webpage:&lt;/p&gt;
+&lt;ol&gt;
+    &lt;li&gt;first item&lt;/li&gt;
+    &lt;li&gt;second item
+    
+        &lt;ul&gt;
+            &lt;li&gt;nested list item 1&lt;/li&gt;
+            &lt;li&gt;nested list item 2&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;third item&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-tables&#34; class=&#34;anchor&#34; href=&#34;#tables&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Tables
+&lt;/h3&gt;
+&lt;p&gt;table, tr, td, tfoot, thead&lt;/p&gt;
+&lt;h4&gt;
+    &lt;a id=&#34;user-content-the-table-tag&#34; class=&#34;anchor&#34; href=&#34;#the-table-tag&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;The
+    &lt;code&gt;&amp;lt;table&amp;gt;&lt;/code&gt; tag
+&lt;/h4&gt;
+&lt;p&gt;This element is used to express information in a two dimensional data table. It requires several other elements inside to make sense.&lt;/p&gt;
+&lt;p&gt;The HTML element table row 
+    &lt;code&gt;&amp;lt;tr&amp;gt;&lt;/code&gt; defines a row of cells in a table. If the element inside a row defines a header, we should use the
+    &lt;code&gt;&amp;lt;th&amp;gt;&lt;/code&gt;
+    &lt;em&gt;(table header)&lt;/em&gt;, otherwise we should use the
+    &lt;code&gt;&amp;lt;td&amp;gt;&lt;/code&gt;
+    &lt;em&gt;(table data)&lt;/em&gt;.
+&lt;/p&gt;
+&lt;p&gt;This would be a simple example of a table&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;&amp;lt;table&amp;gt;
+  &amp;lt;tr&amp;gt;
+    &amp;lt;th&amp;gt;Name&amp;lt;/th&amp;gt;
+    &amp;lt;th&amp;gt;Bootcamp&amp;lt;/th&amp;gt;
+    &amp;lt;th&amp;gt;City&amp;lt;/th&amp;gt;
+  &amp;lt;/tr&amp;gt;
+  &amp;lt;tr&amp;gt;
+    &amp;lt;td&amp;gt;Jose Perez&amp;lt;/td&amp;gt;
+    &amp;lt;td&amp;gt;FullStack WebDev&amp;lt;/td&amp;gt;
+    &amp;lt;td&amp;gt;Madrid&amp;lt;/td&amp;gt;
+  &amp;lt;/tr&amp;gt;
+  &amp;lt;tr&amp;gt;
+    &amp;lt;td&amp;gt;Michael Smith&amp;lt;/td&amp;gt;
+    &amp;lt;td&amp;gt;FrontEnd WebDev&amp;lt;/td&amp;gt;
+    &amp;lt;td&amp;gt;Barcelona&amp;lt;/td&amp;gt;
+  &amp;lt;/tr&amp;gt;
+  &amp;lt;tr&amp;gt;
+    &amp;lt;td&amp;gt;Ariel Quinones&amp;lt;/td&amp;gt;
+    &amp;lt;td&amp;gt;MasterChef WebDev&amp;lt;/td&amp;gt;
+    &amp;lt;td&amp;gt;Miami&amp;lt;/td&amp;gt;
+  &amp;lt;/tr&amp;gt;
+&amp;lt;/table&amp;gt;
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;And this is its output:&lt;/p&gt;
+&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Name&lt;/th&gt;
+        &lt;th&gt;Bootcamp&lt;/th&gt;
+        &lt;th&gt;City&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Jose Perez&lt;/td&gt;
+        &lt;td&gt;FullStack WebDev&lt;/td&gt;
+        &lt;td&gt;Madrid&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Michael Smith&lt;/td&gt;
+        &lt;td&gt;FrontEnd WebDev&lt;/td&gt;
+        &lt;td&gt;Barcelona&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Ariel Quinones&lt;/td&gt;
+        &lt;td&gt;MasterChef WebDev&lt;/td&gt;
+        &lt;td&gt;Miami&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-forms&#34; class=&#34;anchor&#34; href=&#34;#forms&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Forms
+&lt;/h3&gt;
+&lt;p&gt;The 
+    &lt;code&gt;&amp;lt;form&amp;gt;&lt;/code&gt; element is a section that allows the user to input information in the page. The
+    &lt;code&gt;&amp;lt;form&amp;gt;&lt;/code&gt; elements holds inputs, radio buttons, select boxes, etc. Usually we will send this information to a web server, although we will learn how to access the user input from javascript as well.
+&lt;/p&gt;
+&lt;p&gt;The form element requires two very important attributes to work properly. Those are the 
+    &lt;code&gt;action&lt;/code&gt; and
+    &lt;code&gt;method&lt;/code&gt; attributes.
+&lt;/p&gt;
+&lt;p&gt;Remember forms are elements created to allow users to send information to the website&#39;s server. When a user does this it&#39;s known as a 
+    &lt;code&gt;post&lt;/code&gt; (as in the user
+    &lt;em&gt;posts&lt;/em&gt; information).
+&lt;/p&gt;
+&lt;h4&gt;
+    &lt;a id=&#34;user-content-action&#34; class=&#34;anchor&#34; href=&#34;#action&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Action
+&lt;/h4&gt;
+&lt;p&gt;This attribute sets the 
+    &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Glossary/URI&#34; rel=&#34;nofollow&#34;&gt;URI&lt;/a&gt; to the program that processes the form information. In other words, it tells the form where to send the information.
+&lt;/p&gt;
+&lt;h4&gt;
+    &lt;a id=&#34;user-content-method&#34; class=&#34;anchor&#34; href=&#34;#method&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Method
+&lt;/h4&gt;
+&lt;p&gt;This attribute sets the HTTP method that the browser uses to submit the form. We will learn just the 
+    &lt;code&gt;post&lt;/code&gt; method for now.
+&lt;/p&gt;
+&lt;p&gt;The 
+    &lt;code&gt;post&lt;/code&gt; method corresponds to the
+    &lt;a href=&#34;https://en.wikipedia.org/wiki/POST_(HTTP)&#34; rel=&#34;nofollow&#34;&gt;HTTP POST method&lt;/a&gt;. This method sends the data inserted in the form to the server.
+&lt;/p&gt;
+&lt;p&gt;An example of a simple 
+    &lt;code&gt;form&lt;/code&gt; with a post request would be:
+&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;&amp;lt;form action=&#34;&#34; method=&#34;post&#34;&amp;gt;
+  &amp;lt;label for=&#34;name&#34;&amp;gt;Name:&amp;lt;/label&amp;gt;
+  &amp;lt;input id=&#34;name&#34; type=&#34;text&#34;&amp;gt;
+  &amp;lt;input type=&#34;submit&#34; value=&#34;Save&#34;&amp;gt;
+&amp;lt;/form&amp;gt;
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;h4&gt;
+    &lt;a id=&#34;user-content-fieldset&#34; class=&#34;anchor&#34; href=&#34;#fieldset&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Fieldset
+&lt;/h4&gt;
+&lt;p&gt;The HTML 
+    &lt;code&gt;&amp;lt;fieldset&amp;gt;&lt;/code&gt; element is used to group several controls as well as labels (
+    &lt;code&gt;&amp;lt;label&amp;gt;&lt;/code&gt;) within a web form.
+&lt;/p&gt;
+&lt;p&gt;We would need to group elements inside a form for different reasons: style purposes, organization and 
+    &lt;a href=&#34;https://en.wikipedia.org/wiki/Web_accessibility&#34; rel=&#34;nofollow&#34;&gt;web accesibility&lt;/a&gt; features.
+&lt;/p&gt;
+&lt;p&gt;This is a form example with fieldset and label. It only includes one clickable element.&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;&amp;lt;form action=&#34;test.php&#34; method=&#34;post&#34;&amp;gt;
+  &amp;lt;fieldset&amp;gt;
+    &amp;lt;input type=&#34;radio&#34; id=&#34;radio&#34;&amp;gt; &amp;lt;label for=&#34;radio&#34;&amp;gt;Click me&amp;lt;/label&amp;gt;
+  &amp;lt;/fieldset&amp;gt;
+&amp;lt;/form&amp;gt;
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-google-chrome-devtools&#34; class=&#34;anchor&#34; href=&#34;#google-chrome-devtools&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Google Chrome DevTools
+&lt;/h2&gt;
+&lt;p&gt;The DevTools built in Google Chrome is a handy tool for you to understand what a webpage does. You can activate the Developer Tools from one of the following ways:&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;Click menu 
+        &lt;em&gt;View &amp;gt;&amp;gt; Developer &amp;gt;&amp;gt; Developer Tools&lt;/em&gt;.
+    &lt;/li&gt;
+    &lt;li&gt;Press Command+Option+C (Mac) or Control+Shift+C (Windows/Linux).&lt;/li&gt;
+    &lt;li&gt;Right click the webpage and click 
+        &lt;em&gt;View Page Source&lt;/em&gt;.
+    &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Below is a screenshot of the Chrome DevTools, where you can also see brief descriptions on what you can do with the features most relevant to you.&lt;/p&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/22582e87d0ccbe640bd54d72825f04a34f00bb7d/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6368726f6d652d646576656c6f7065722d746f6f6c732e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/22582e87d0ccbe640bd54d72825f04a34f00bb7d/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6368726f6d652d646576656c6f7065722d746f6f6c732e706e67&#34; alt=&#34;Chrome DevTools&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/chrome-developer-tools.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-summary&#34; class=&#34;anchor&#34; href=&#34;#summary&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Summary
+&lt;/h2&gt;
+&lt;p&gt;In this unit, we learned about what MIME type is and the common types of web content such as HTML, images, videos, and CSS. We then took an in-depth look at HTML by understanding the structure of webpages and the most common HTML tags. Additionally, we learned how to use Chrome DevTools to help understand webpages.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-extra-resources&#34; class=&#34;anchor&#34; href=&#34;#extra-resources&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Extra Resources
+&lt;/h2&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://en.wikipedia.org/wiki/HTML5&#34; rel=&#34;nofollow&#34;&gt;HTML 5 Specification&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://en.wikipedia.org/wiki/MIME&#34; rel=&#34;nofollow&#34;&gt;MIME&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types#Important_MIME_types_for_Web_developers&#34; rel=&#34;nofollow&#34;&gt;Important MIME Types for Web Developers&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://developers.google.com/web/tools/chrome-devtools/&#34; rel=&#34;nofollow&#34;&gt;Google Chrome DevTools&lt;/a&gt;
+&lt;/p&gt;
+&lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+  </div>
+  <div id="seq_contents_4"
+    aria-labelledby="tab_4"
+    aria-hidden="true"
+    class="seq_contents tex2jax_ignore asciimath2jax_ignore">
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-vertical&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;VerticalStudentView&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34; data-request-token=&#34;45fcde30939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@e5e78bd8161645c8aaae585d7b838403&#34; data-block-type=&#34;vertical&#34;&gt;
+  
+
+  &lt;h2 class=&#34;hd hd-2 unit-title&#34;&gt;Web Scraping&lt;/h2&gt;
+
+    &lt;div class=&#34;ih-bookmark-button-wrapper&#34;&gt;
+    	
+
+
+
+&lt;div class=&#34;bookmark-button-wrapper&#34;&gt;
+  &lt;button class=&#34;btn btn-link bookmark-button &#34;
+    aria-pressed=&#34;false&#34;
+    data-bookmark-id=&#34;NoahB,block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@e5e78bd8161645c8aaae585d7b838403&#34;
+    data-bookmarks-api-url=&#34;/api/bookmarks/v1/bookmarks/&#34;&gt;
+     &lt;span class=&#34;bookmark-text&#34;&gt;Bookmark this page&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+
+    &lt;/div&gt;	
+
+&lt;div class=&#34;vert-mod&#34;&gt;
+  &lt;div class=&#34;vert vert-0&#34; data-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@fe16f374e363401b9f9deb8cf866562b&#34;&gt;
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;45fcde30939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@fe16f374e363401b9f9deb8cf866562b&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  &lt;h2&gt;
+    &lt;a id=&#34;user-content-lesson-goals&#34; class=&#34;anchor&#34; href=&#34;#lesson-goals&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Lesson Goals
+&lt;/h2&gt;
+&lt;ul&gt;
+    &lt;li&gt;Learn the basics of scraping content from web pages.&lt;/li&gt;
+    &lt;li&gt;Perform scraping of text from a web page.&lt;/li&gt;
+    &lt;li&gt;Perform extraction of an HTML table from a web page into a Pandas data frame.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-introduction&#34; class=&#34;anchor&#34; href=&#34;#introduction&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Introduction
+&lt;/h2&gt;
+&lt;p&gt;Web scraping refers to the automatic extraction of information from a web page. This information is often a page&#39;s content, but it can also include information in the page&#39;s headers, links present on the page, or any other information embedded in the page&#39;s HTML. Because of this, scraping has become one of the most popular ways to extract data from the web. With basic knowledge of HTML and the help of a few Python libraries, you can obtain information from just about any page on the internet.&lt;/p&gt;
+&lt;p&gt;In this lesson, we will cover the basics of web scraping with Python and show examples of how to scrape text content from a simple web page as well the more complex task of extracting data from an HTML table embedded on a web page.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-scraping-a-simple-web-page&#34; class=&#34;anchor&#34; href=&#34;#scraping-a-simple-web-page&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Scraping a Simple Web Page
+&lt;/h2&gt;
+&lt;p&gt;Scraping a simple website is relatively straightforward. The first thing we need to do is determine the web page we want to scrape and the information we would like to obtain from it. For our purposes, let&#39;s suppose we wanted to scrape a Reuters news article and we wanted to extract the main text content (article title, story, etc.).&lt;/p&gt;
+&lt;p&gt;We first need to specify the URL of the page we want to scrape and then use the requests library&#39;s 
+    &lt;code&gt;get&lt;/code&gt; method to request the page and the
+    &lt;code&gt;content&lt;/code&gt; method to retrieve the HTML content.
+&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;import requests
+
+url = &#39;https://www.reuters.com/article/us-shazam-m-a-apple-eu/eu-clears-apples-purchase-of-shazam-idUSKCN1LM1TZ&#39;
+html = requests.get(url).content
+html[0:600]
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;While printing the first 600 characters of the HTML content, you&#39;ll see something like:&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;b&#39;&amp;lt;!--[if !IE]&amp;gt; This has been served from cache &amp;lt;![endif]--&amp;gt;\n&amp;lt;!--[if !IE]&amp;gt; Request served from apache server: prodie--i-0c04c71a420a41783 &amp;lt;![endif]--&amp;gt;\n&amp;lt;!--[if !IE]&amp;gt; Cached on Mon, 08 Oct 2018 15:35:48 GMT and will expire on Mon, 08 Oct 2018 15:50:48 GMT &amp;lt;![endif]--&amp;gt;\n&amp;lt;!--[if !IE]&amp;gt; token: 183d7330-3bbf-4990-b6a5-223a87bd9a15 &amp;lt;![endif]--&amp;gt;\n&amp;lt;!--[if !IE]&amp;gt; App Server /prodie--i-0c04c71a420a41783/ &amp;lt;![endif]--&amp;gt;\n\n&amp;lt;!doctype html&amp;gt;&amp;lt;html lang=&#34;en&#34; data-edition=&#34;BETAUS&#34;&amp;gt;\n    &amp;lt;head&amp;gt;\n\n    &amp;lt;title&amp;gt;\n                EU clears Apple\&#39;s purchase of Shazam | Reuters&amp;lt;/title&amp;gt;\n        &amp;lt;meta http-equiv=&#34;X-UA-Compatible&#34; con&#39;
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;As you can see, there is a lot of extra information here that we don&#39;t really need if all we are interested in is the text content from the page. We will need to perform a few steps to clean this up, the first of which is to use the BeautifulSoup library to read the raw HTML and structure it in a way where we will be able to more easily parse the information we want out of it. In BeautifulSoup terms, this is called &#34;making the soup.&#34;&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;from bs4 import BeautifulSoup
+
+soup = BeautifulSoup(html, &#34;lxml&#34;)
+soup
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;pre&gt;
+&lt;code&gt;&amp;lt;!--[if !IE]&amp;gt; This has been served from cache &amp;lt;![endif]--&amp;gt;&amp;lt;!--[if !IE]&amp;gt; Request served from apache server: produs--i-0758d3a2a706a519d &amp;lt;![endif]--&amp;gt;&amp;lt;!--[if !IE]&amp;gt; Cached on Thu, 06 Sep 2018 14:41:34 GMT and will expire on Thu, 06 Sep 2018 14:56:33 GMT &amp;lt;![endif]--&amp;gt;&amp;lt;!--[if !IE]&amp;gt; token: acbf5604-af64-471f-8f8b-8d010b921037 &amp;lt;![endif]--&amp;gt;&amp;lt;!--[if !IE]&amp;gt; App Server /produs--i-00127219d2753366b/ &amp;lt;![endif]--&amp;gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html data-edition=&#34;BETAUS&#34; lang=&#34;en&#34;&amp;gt;
+&amp;lt;head&amp;gt;
+&amp;lt;title&amp;gt;
+                EU clears Apple&#39;s purchase of Shazam | Reuters&amp;lt;/title&amp;gt;
+...
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;You can see that our soup is slightly more structured than our raw HTML, but the best part about BeautifulSoup comes next. It allows us to extract specific HTML elements from the soup we have created using the 
+    &lt;code&gt;find_all&lt;/code&gt; method. In our case, we are going to use it to find and extract all the text contained within header tags and paragraph tags.
+&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;tags = [&#39;h1&#39;, &#39;h2&#39;, &#39;h3&#39;, &#39;h4&#39;, &#39;h5&#39;, &#39;h6&#39;, &#39;h7&#39;, &#39;p&#39;]
+text = [element.text for element in soup.find_all(tags)]
+text
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;pre&gt;
+&lt;code&gt;[&#34;EU clears Apple&#39;s purchase of Shazam&#34;,
+ &#39;2 Min Read&#39;,
+ &#39;BRUSSELS (Reuters) - The European Union approved Apple’s planned acquisition of British music discovery app Shazam on Thursday, saying an EU antitrust investigation showed it would not harm competition in the bloc. &#39;,
+ &#39;The deal, announced in December last year, would help the iPhone maker better compete with Spotify, the industry leader in music streaming services. Shazam identifies songs when a smartphone is pointed at an audio source. &#39;,
+ &#39;“After thoroughly analyzing Shazam’s user and music data, we found that their acquisition by Apple would not reduce competition in the digital music streaming market,” EU competition commissioner Margrethe Vestager said in a statement. &#39;,
+ &#39;“Data is key in the digital economy. We must therefore carefully review transactions which lead to the acquisition of important sets of data, including potentially commercially sensitive ones,” she added. &#39;,
+ &#39;The European Commission opened a full-scale investigation into the deal in April, emblematic of its recent worries that companies may buy a data-rich rival to mine it for information or drive others out of the market. &#39;,
+ &#39;Reuters last month reported sources saying that Apple was set to win unconditional EU antitrust approval for the deal following the probe requested by seven European countries including France, Italy, Spain and Sweden. &#39;,
+ &#39;Reporting by Alissa de Carbonnel; Editing by Alastair Macdonald&#39;,
+ &#39;All quotes delayed a minimum of 15 minutes. See here for a complete list of exchanges and delays.&#39;,
+ &#39;© 2018 Reuters. All Rights Reserved.&#39;]
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;This gives us a neat list where the text of each HTML element BeautifulSoup found is an element in the list. If we want to view it in paragraph form, we can simply call the 
+    &lt;code&gt;join&lt;/code&gt; method, use a new line (\n) to join the elements together, and we get the text neatly in paragraph form.
+&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;print(&#39;\n&#39;.join(text))
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;pre&gt;
+&lt;code&gt;EU clears Apple&#39;s purchase of Shazam
+2 Min Read
+BRUSSELS (Reuters) - The European Union approved Apple’s planned acquisition of British music discovery app Shazam on Thursday, saying an EU antitrust investigation showed it would not harm competition in the bloc. 
+The deal, announced in December last year, would help the iPhone maker better compete with Spotify, the industry leader in music streaming services. Shazam identifies songs when a smartphone is pointed at an audio source. 
+“After thoroughly analyzing Shazam’s user and music data, we found that their acquisition by Apple would not reduce competition in the digital music streaming market,” EU competition commissioner Margrethe Vestager said in a statement. 
+“Data is key in the digital economy. We must therefore carefully review transactions which lead to the acquisition of important sets of data, including potentially commercially sensitive ones,” she added. 
+The European Commission opened a full-scale investigation into the deal in April, emblematic of its recent worries that companies may buy a data-rich rival to mine it for information or drive others out of the market. 
+Reuters last month reported sources saying that Apple was set to win unconditional EU antitrust approval for the deal following the probe requested by seven European countries including France, Italy, Spain and Sweden. 
+Reporting by Alissa de Carbonnel; Editing by Alastair Macdonald
+All quotes delayed a minimum of 15 minutes. See here for a complete list of exchanges and delays.
+© 2018 Reuters. All Rights Reserved.
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-more-complex-single-page-scraping&#34; class=&#34;anchor&#34; href=&#34;#more-complex-single-page-scraping&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;More Complex Single-Page Scraping
+&lt;/h2&gt;
+&lt;p&gt;The previous example was relatively straightforward because we were just extracting the text content from the page. Suppose we wanted to extract data that was contained within an HTML table and store it in a Pandas data frame. This objective makes our scraping task a bit more complex as we would need to identify the table within the HTML, identify the rows within the table, and then read and format the information within those rows so that they fit within a data frame. Let&#39;s look at an example of how we would extract a table containing life expectancies for each European country from Wikipedia.&lt;/p&gt;
+&lt;p&gt;This task would start out just like the previous one. We would specify the URL, use the requests library to request the page and retrieve the raw HTML content, and turn the HTML into soup using BeautifulSoup.&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;url = &#39;https://en.wikipedia.org/wiki/List_of_European_countries_by_life_expectancy&#39;
+html = requests.get(url).content
+soup = BeautifulSoup(html, &#34;lxml&#34;)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Once we have our soup, we need to extract the table containing each country&#39;s life expectancy. You can look at the page source in a browser to determine whether you can specify a class for it. In the case of our table, it did have a class of &#34;sortable wikitable&#34; so we will use that as well as the index [0] to get just the single table we want.&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;table = soup.find_all(&#39;table&#39;,{&#39;class&#39;:&#39;sortable wikitable&#39;})[0]
+table
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;pre&gt;
+&lt;code&gt;&amp;lt;table class=&#34;sortable wikitable&#34;&amp;gt;
+&amp;lt;tbody&amp;gt;&amp;lt;tr bgcolor=&#34;#efefef&#34;&amp;gt;
+&amp;lt;th&amp;gt;Country&amp;lt;/th&amp;gt;
+&amp;lt;th&amp;gt;&amp;lt;a href=&#34;/wiki/List_of_countries_by_life_expectancy&#34; title=&#34;List of countries by life expectancy&#34;&amp;gt;Life expectancy&amp;lt;/a&amp;gt;
+&amp;lt;/th&amp;gt;&amp;lt;/tr&amp;gt;
+&amp;lt;tr&amp;gt;
+&amp;lt;td&amp;gt;&amp;lt;span class=&#34;flagicon&#34;&amp;gt;&amp;lt;img alt=&#34;&#34; class=&#34;thumbborder&#34; data-file-height=&#34;500&#34; data-file-width=&#34;700&#34; height=&#34;15&#34; src=&#34;//upload.wikimedia.org/wikipedia/commons/thumb/3/36/Flag_of_Albania.svg/21px-Flag_of_Albania.svg.png&#34; srcset=&#34;//upload.wikimedia.org/wikipedia/commons/thumb/3/36/Flag_of_Albania.svg/32px-Flag_of_Albania.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/3/36/Flag_of_Albania.svg/42px-Flag_of_Albania.svg.png 2x&#34; width=&#34;21&#34;/&amp;gt; &amp;lt;/span&amp;gt;Albania&amp;lt;/td&amp;gt;
+&amp;lt;td&amp;gt;72
+&amp;lt;/td&amp;gt;&amp;lt;/tr&amp;gt;
+...
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;We now have the table we want, but to be able to load the data into Pandas, we need to extract each of the rows (&lt;/p&gt; tags) and their cell values into a a nested list. We can do that with just a couple lines of Python.
+&lt;pre&gt;
+&lt;code&gt;rows = table.find_all(&#39;tr&#39;)
+rows = [row.text.strip().split(&#34;\n&#34;) for row in rows]
+rows
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;pre&gt;
+&lt;code&gt;[[&#39;Country&#39;, &#39;Life expectancy&#39;],
+ [&#39;Albania&#39;, &#39;72&#39;],
+ [&#39;Austria&#39;, &#39;82&#39;],
+ [&#39;Belarus&#39;, &#39;74&#39;],
+ [&#39;Belgium&#39;, &#39;81&#39;],
+ [&#39;Bosnia and Herzegovina&#39;, &#39;77&#39;],
+ [&#39;Bulgaria&#39;, &#39;75&#39;],
+ [&#39;Croatia&#39;, &#39;77&#39;],
+ [&#39;Cyprus&#39;, &#39;80&#39;],
+ [&#39;Czech Republic&#39;, &#39;79&#39;],
+ ...
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;From this nested list, we can specify what the column names are and then use the rest of the data to populate a data frame.&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;colnames = rows[0]
+data = rows[1:]
+
+df = pd.DataFrame(data, columns=colnames)
+df
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/e85c46ee6e7b48f6a7ed8644b663f6c50fdfe19d/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6c6966652d657870656374616e63792d646174616672616d652e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/e85c46ee6e7b48f6a7ed8644b663f6c50fdfe19d/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6c6966652d657870656374616e63792d646174616672616d652e706e67&#34; alt=&#34;Life Expectancy Data Frame&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/life-expectancy-dataframe.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-web-scraping-challenges&#34; class=&#34;anchor&#34; href=&#34;#web-scraping-challenges&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Web Scraping Challenges
+&lt;/h2&gt;
+&lt;p&gt;The two scraping tasks we performed in this lesson were possible because the web pages were created with HTML. It is important to note that this is not always the case and that it will make your scraping efforts more difficult (if not impossible) when it is not.&lt;/p&gt;
+&lt;p&gt;Aside from this, there are several other factors that may present challenges when performing web scraping. Below is a list of challenges and considerations that should be helpful to keep in mind while performing web scraping.&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;Need to determine what information you want to extract from each page.&lt;/li&gt;
+    &lt;li&gt;Consider creating a customized scraper for each site to account for different formatting from one site to the next.&lt;/li&gt;
+    &lt;li&gt;Consider that different pages within the same site may have different structure.&lt;/li&gt;
+    &lt;li&gt;Consider that a page&#39;s content and structure can change over time.&lt;/li&gt;
+    &lt;li&gt;Terms of service for a website may not allow for scraping of their pages.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-summary&#34; class=&#34;anchor&#34; href=&#34;#summary&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Summary
+&lt;/h2&gt;
+&lt;p&gt;In this lesson, we covered the basics of web scraping. We began by looking at an example of how we can scrape text from a web page using Python&#39;s requests and BeautifulSoup libraries. We then studied a more complex example where we had to extract a specific table from the HTML of a web page and then extract the rows of that table so that we could load them into a Pandas data frame. We finished up the chapter by noting some important challenges and considerations you should keep in mind while scraping. Now that you have completed this lesson, you should have the skills you need to obtain data from web pages and structure it in a way where it can be analyzed.&lt;/p&gt;
+&lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+  </div>
+  <div id="seq_contents_5"
+    aria-labelledby="tab_5"
+    aria-hidden="true"
+    class="seq_contents tex2jax_ignore asciimath2jax_ignore">
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-vertical&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;VerticalStudentView&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34; data-request-token=&#34;45fcde30939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@3d85b77fb1e84587903d1a4e9e0ad52f&#34; data-block-type=&#34;vertical&#34;&gt;
+  
+
+  &lt;h2 class=&#34;hd hd-2 unit-title&#34;&gt;Web Scraping Deep Dive&lt;/h2&gt;
+
+    &lt;div class=&#34;ih-bookmark-button-wrapper&#34;&gt;
+    	
+
+
+
+&lt;div class=&#34;bookmark-button-wrapper&#34;&gt;
+  &lt;button class=&#34;btn btn-link bookmark-button &#34;
+    aria-pressed=&#34;false&#34;
+    data-bookmark-id=&#34;NoahB,block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@3d85b77fb1e84587903d1a4e9e0ad52f&#34;
+    data-bookmarks-api-url=&#34;/api/bookmarks/v1/bookmarks/&#34;&gt;
+     &lt;span class=&#34;bookmark-text&#34;&gt;Bookmark this page&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+
+    &lt;/div&gt;	
+
+&lt;div class=&#34;vert-mod&#34;&gt;
+  &lt;div class=&#34;vert vert-0&#34; data-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@93b3a7a797084b79b4d4497a5880289c&#34;&gt;
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;45fcde30939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@93b3a7a797084b79b4d4497a5880289c&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  &lt;h2&gt;
+    &lt;a id=&#34;user-content-lesson-goals&#34; class=&#34;anchor&#34; href=&#34;#lesson-goals&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Lesson Goals
+&lt;/h2&gt;
+&lt;ul&gt;
+    &lt;li&gt;Learn how to handle different response status codes.&lt;/li&gt;
+    &lt;li&gt;Learn how to handle request errors.&lt;/li&gt;
+    &lt;li&gt;Learn how to define the user agent string in requests.&lt;/li&gt;
+    &lt;li&gt;Learn how to make asynchronous requests.&lt;/li&gt;
+    &lt;li&gt;Learn how to limit asynchronous requests rate.&lt;/li&gt;
+    &lt;li&gt;Understanding robots.txt&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-introduction&#34; class=&#34;anchor&#34; href=&#34;#introduction&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Introduction
+&lt;/h2&gt;
+&lt;p&gt;Now that you have had the basic knowledge about and hands-on experience with web scraping, it&#39;s the time to dive deep in. WWW is the biggest man-made data repository in the history. But the format, quality, and stability of the data sources (i.e. websites) are extremely unpredictable. Therefore, you have to learn how to deal with those issues in this imperfect world. In addition, there are many human-imposed rules and conventions we need to follow and respect because we are data analysts not Internet spies.&lt;/p&gt;
+&lt;p&gt;In this lesson, you will learn about the common challenges and pitfalls in web scraping as well as what techniques you can use in order to get the job done. After mastering those techniques, you will be prepared to scrape the modern web in reality.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-handling-web-response-status-codes&#34; class=&#34;anchor&#34; href=&#34;#handling-web-response-status-codes&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Handling Web Response Status Codes
+&lt;/h2&gt;
+&lt;p&gt;In the API Deep Dive lesson, you have learned about the API response status codes. In web scraping you will encounter the same status codes because those status codes are designed for the whole Internet. The 
+    &lt;code&gt;request&lt;/code&gt; Python library you have learned previously allows you to detect the web response status code so that you can handle different types of responses accordingly.
+&lt;/p&gt;
+&lt;p&gt;Try the command below in your Python console:&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;&amp;gt;&amp;gt;&amp;gt; import requests
+&amp;gt;&amp;gt;&amp;gt; r1 = requests.get(&#39;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/documents/the-html5-breakfast-site.html&#39;)
+&amp;gt;&amp;gt;&amp;gt; print(r1.status_code)
+200
+&amp;gt;&amp;gt;&amp;gt; r2 = requests.get(&#39;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/documents/forbidden&#39;)
+&amp;gt;&amp;gt;&amp;gt; print(r2.status_code)
+403
+&amp;gt;&amp;gt;&amp;gt; r3 = requests.get(&#39;http://google.com&#39;)
+&amp;gt;&amp;gt;&amp;gt; print(r3.history)
+[&amp;lt;Response [301]&amp;gt;]
+&amp;gt;&amp;gt;&amp;gt; print(r3.history[0].status_code)
+301
+&amp;gt;&amp;gt;&amp;gt; print(r3.history[0].text)
+&amp;lt;HTML&amp;gt;&amp;lt;HEAD&amp;gt;&amp;lt;meta http-equiv=&#34;content-type&#34; content=&#34;text/html;charset=utf-8&#34;&amp;gt;
+&amp;lt;TITLE&amp;gt;301 Moved&amp;lt;/TITLE&amp;gt;&amp;lt;/HEAD&amp;gt;&amp;lt;BODY&amp;gt;
+&amp;lt;H1&amp;gt;301 Moved&amp;lt;/H1&amp;gt;
+The document has moved
+&amp;lt;A HREF=&#34;http://www.google.com/&#34;&amp;gt;here&amp;lt;/A&amp;gt;.
+&amp;lt;/BODY&amp;gt;&amp;lt;/HTML&amp;gt;
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;As you see, the 
+    &lt;code&gt;requests&lt;/code&gt; library allows you to check whether your web request is successful (i.e. with
+    &lt;code&gt;20x&lt;/code&gt; status codes) or not (i.e. with
+    &lt;code&gt;40x&lt;/code&gt;, or
+    &lt;code&gt;50x&lt;/code&gt; status codes). It&#39;s a good idea to check the status code before you parse the response text. Once you receive the response from the
+    &lt;code&gt;requests.get&lt;/code&gt; method, do something like below:
+&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;import requests
+r = requests.get(url) # `url` has been defined before
+if r.status_code &amp;lt; 300:
+    print(&#39;request was successful&#39;)
+elif r.status_code &amp;gt;= 400 and r.status_code &amp;lt; 500:
+    print(&#39;request failed because the resource either does not exist or is forbidden&#39;)
+else:
+    print(&#39;request failed because the response server encountered an error&#39;)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;It should be noted that the 
+    &lt;code&gt;requests&lt;/code&gt; lib automatically makes additional requests to the redirected URL if the web resource is moved (i.e.
+    &lt;code&gt;30x&lt;/code&gt; status codes). Even if a moved web resource redirects once again, the
+    &lt;code&gt;requests&lt;/code&gt; lib will track it all the way down until it receives success or failure
+    &lt;strong&gt;as long as the number of redirects does not exceed the redirect limit (default 30)&lt;/strong&gt;. You can choose to disallow redirects by using
+    &lt;code&gt;requests.get(url, allow_redirects=False)&lt;/code&gt; so that
+    &lt;code&gt;requests&lt;/code&gt; will not track down the redirected URL. Or you can choose to reduce the max redirects allowed by using
+    &lt;code&gt;requests.get(url, max_redirects=3)&lt;/code&gt; so as to avoid endless redirects or save time in making requests.
+&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-handling-reqeust-errors&#34; class=&#34;anchor&#34; href=&#34;#handling-reqeust-errors&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Handling Reqeust Errors
+&lt;/h2&gt;
+&lt;p&gt;Sometimes 
+    &lt;code&gt;requests&lt;/code&gt; cannot complete its transaction and you will need to catch the error then handle them accordingly. Some of the common errors you may encounter include:
+&lt;/p&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-exceeing-max-redirects&#34; class=&#34;anchor&#34; href=&#34;#exceeing-max-redirects&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Exceeing Max Redirects
+&lt;/h3&gt;
+&lt;p&gt;As previously mentioned, there is a max redirects number by default (30) which you can override with 
+    &lt;code&gt;max_redirects&lt;/code&gt;. If the number of redirects exceeds the limit,
+    &lt;code&gt;requests&lt;/code&gt; will throw a
+    &lt;code&gt;TooManyRedirects&lt;/code&gt; exception.
+&lt;/p&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-timeout&#34; class=&#34;anchor&#34; href=&#34;#timeout&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Timeout
+&lt;/h3&gt;
+&lt;p&gt;Sometimes a remote server is not responsive either because 
+    &lt;code&gt;requests&lt;/code&gt; cannot connect to the intended web resource or because the remote server does not send back the promised data. If that happens,
+    &lt;code&gt;requests&lt;/code&gt; will typically wait for a long period of time until the connection is closed by the remote server then throw a
+    &lt;code&gt;ConnectTimeout&lt;/code&gt; exception. This is a big waste of time because most modern websites respond to web requests within a couple of seconds. Therefore, it&#39;s a desirable approach to supply a
+    &lt;code&gt;timeout&lt;/code&gt; argument to
+    &lt;code&gt;requests&lt;/code&gt; to limit the amount of wait time.
+&lt;/p&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-ssl-certificate-error&#34; class=&#34;anchor&#34; href=&#34;#ssl-certificate-error&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;SSL Certificate Error
+&lt;/h3&gt;
+&lt;p&gt;Secure Sockets Layer (SSL) is a standard security protocol for establishing encrypted links between a web server and a browser in an online communication. To know if the browser connection to a website is encrypted or not, simply check if the URL starts with HTTP or HTTPS. The successor of SSL is Transport Layer Security (TLS) which is strongly promoted by tech giants such as Google. For example, Chrome has been marking HTTP webpage as insecure and discouraging users from connecting to those webpages. The efforts from these tech giants are effectively pushing the whole Internet towards adopting SSL/TLS because if a website doesn&#39;t adopt the standard it will lose users.&lt;/p&gt;
+&lt;p&gt;However, if a website wants to use SSL/TLS, it has to purchase a special certificate from certificate vendors and configure the web server properly in order for the certificate to be functional. If the SSL/TLS certificate is not installed properly or it has expired (purchased certificate has to be renewed every two years), modern browsers such as Chrome will indicate the problem to the users. The 
+    &lt;code&gt;requests&lt;/code&gt; lib, similarly, will throw an exception if it detects the SSL certificate is problematic.
+&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;try:
+    r = requests.get(url, timeout=10)
+except requests.exceptions.Timeout:
+    # timeout error... do something
+except requests.exceptions.TooManyRedirects:
+    # redirect error... do something
+except requests.exceptions.SSLError:
+    # ssl error... do something
+except requests.exceptions.RequestException as e:
+    # other unknown errors... do something
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-user-agent&#34; class=&#34;anchor&#34; href=&#34;#user-agent&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;User Agent
+&lt;/h2&gt;
+&lt;p&gt;When a browser makes HTTP/HTTPS requests, there is a special field in the request header called 
+    &lt;code&gt;User-Agent&lt;/code&gt; that identifies the browser and operating system from which the request is made. Some websites send out different responses to the requests made with different user agents for reasons such as:
+&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;
+        &lt;p&gt;They want to avoid bugs of the website that only occur in certain browsers or browser versions.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p&gt;They want to personalize user experience (e.g. desktop vs mobile, small vs big screen, etc.) by sending different data.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p&gt;They don&#39;t want to send the same responses to search engines as to human users.&lt;/p&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Not all websites differentiate user agents and if they do there is often a good reason. You don&#39;t need to worry too much about what user agents to use when you request web data. But it&#39;s helpful to have this knowledge. In case you decide to 
+    &lt;em&gt;fool&lt;/em&gt; the website by pretending to be a certain browser, use the approach below.
+&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;headers = {&#39;User-Agent&#39;: &#39;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36&#39;}
+response = requests.get(url, headers=headers)
+print(response.content)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;With the uer agent string above, the request pretends to be from Chrome browser v71.0.3578.98 in macOS 10.14.2 (Mojave). To see what the user agent string look like in other browsers/OS, check out 
+    &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent&#34; rel=&#34;nofollow&#34;&gt;this documentation&lt;/a&gt;.
+&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-making-asynchronous-requests&#34; class=&#34;anchor&#34; href=&#34;#making-asynchronous-requests&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Making Asynchronous Requests
+&lt;/h2&gt;
+&lt;p&gt;When you make massive requests to websites, it can be extremely time-consuming. To complete your request faster, you can take advantage of the 
+    &lt;code&gt;async&lt;/code&gt; module of
+    &lt;code&gt;requests&lt;/code&gt;. Here&#39;s how (
+    &lt;strong&gt;you&#39;ll need to first install 
+        &lt;code&gt;asyncio&lt;/code&gt; with
+        &lt;code&gt;pip&lt;/code&gt; before you can try the following code
+    &lt;/strong&gt;):
+&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;import asyncio, requests
+
+urls = [
+    &#39;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/documents/breakfast.jpg&#39;,
+    &#39;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/documents/forbidden&#39;,
+    &#39;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/documents/the-html5-breakfast-site.html&#39;
+]
+
+async def main():
+    loop = asyncio.get_event_loop()
+    futures = [loop.run_in_executor(None, requests.get, url) for url in urls]
+    for response in await asyncio.gather(*futures):
+        print(response.status_code)
+
+loop = asyncio.get_event_loop()
+loop.run_until_complete(main())
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-dealing-with-throttling-and-rate-limiting&#34; class=&#34;anchor&#34; href=&#34;#dealing-with-throttling-and-rate-limiting&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Dealing with Throttling and Rate Limiting
+&lt;/h2&gt;
+&lt;p&gt;In modern websites especially those having massive users, throttling and/or rate limiting is often enforced so that a certain person cannot make too frequent API/web requests to the website. These approaches are not targeting at regular human users but rather search engine bots and especially hackers. With 
+    &lt;strong&gt;throttling&lt;/strong&gt;, the same requester (usually judged by IP address or account) cannot make more requests than the limit allowed within a certain period of time (e.g. 10,000 requests/day). If the limit is exceeded, the requester will receive an error or simply no response. With
+    &lt;strong&gt;rate limiting&lt;/strong&gt;, a requester must control the frequency of the requests under a certain threshold (e.g. 10 requests/second). When you test your web scraping scripts, if you receive a lot of errors in your responses, it does not necessarily mean the web resources are invlaid. It may because the websites you make requests to are throttling or limiting your requests.
+&lt;/p&gt;
+&lt;p&gt;The throttling thresholds and wait peroids differ from website to website. In order to know whether you may be throttled by exceeding the limit, you need to check out the user agreement of the website that you make requests to.&lt;/p&gt;
+&lt;p&gt;To control the request rate of your scripts, you can wait a period of time after making each request by calling 
+    &lt;code&gt;time.sleep()&lt;/code&gt;. For example:
+&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;import requests, time
+
+urls = [
+    &#39;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/documents/breakfast.jpg&#39;,
+    &#39;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/documents/forbidden&#39;,
+    &#39;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/documents/the-html5-breakfast-site.html&#39;
+]
+
+for url in urls:
+    response = requests.get(url)
+    print(response.status_code)
+    time.sleep(1)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-understanding-robotstxt&#34; class=&#34;anchor&#34; href=&#34;#understanding-robotstxt&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Understanding
+    &lt;code&gt;robots.txt&lt;/code&gt;
+&lt;/h2&gt;
+&lt;p&gt;As mentioned earlier, some websites may impose throttling and rate limiting on search engine bots (a.k.a. crawlers, spiders). There are many reasons why some websites don&#39;t welcome bots. For example, when bots crawls a website, it takes up some CPU, memory, and bandwidth resources of the server that should have been dedicated to the normal users. Sometimes the website admin does not want to expose certain semi-confidential web resources to the search engines. And sometimes the website admin wants to promote the most important web resources rather than letting the search engines see many irrelevant or outdated resources resting on the server. To achieve those different purposes, the common practice is to create a 
+    &lt;code&gt;robots.txt&lt;/code&gt; file in the root level of the website to instruct the bots what to crawl and what not to.
+&lt;/p&gt;
+&lt;p&gt;Take a look at Github&#39;s 
+    &lt;code&gt;robots.txt&lt;/code&gt; at
+    &lt;a href=&#34;https://github.com/robots.txt&#34;&gt;https://github.com/robots.txt&lt;/a&gt;. It&#39;s a long file so we excerpt part of it to show you what it looks like:
+&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;# If you would like to crawl GitHub contact us at support@github.com.
+# We also provide an extensive API: https://developer.github.com/
+
+User-agent: CCBot
+Allow: /*/*/tree/master
+Allow: /*/*/blob/master
+Disallow: /ekansa/Open-Context-Data
+Disallow: /ekansa/opencontext-*
+Disallow: /*/*/pulse
+...
+
+User-agent: coccoc
+Allow: /*/*/tree/master
+Allow: /*/*/blob/master
+Disallow: /ekansa/Open-Context-Data
+Disallow: /ekansa/opencontext-*
+Disallow: /*/*/pulse
+...
+
+User-agent: Daumoa
+Allow: /*/*/tree/master
+Allow: /*/*/blob/master
+Disallow: /ekansa/Open-Context-Data
+Disallow: /ekansa/opencontext-*
+Disallow: /*/*/pulse
+...
+
+...
+
+User-agent: Yandex
+Allow: /*/*/tree/master
+Allow: /*/*/blob/master
+Disallow: /ekansa/Open-Context-Data
+Disallow: /ekansa/opencontext-*
+Disallow: /*/*/pulse
+...
+
+User-agent: *
+Allow: /humans.txt
+Disallow: /
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;em&gt;Retrieved and exerpted 12/1/2019&lt;/em&gt;
+&lt;/p&gt;
+&lt;p&gt;Take a few minutes to try to understand the patterns of the example above. Then continue to read how 
+    &lt;code&gt;robots.txt&lt;/code&gt; works:
+&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;
+        &lt;p&gt;One or more blocks can be defined in 
+            &lt;code&gt;robots.txt&lt;/code&gt; to instruct the rules (a.k.a. directives) for different bots. A
+            &lt;code&gt;robots.txt&lt;/code&gt; file can have over one thousand lines (such as Github&#39;s). But a
+            &lt;code&gt;robotx.txt&lt;/code&gt; file is considered complete as long as it has a line for
+            &lt;code&gt;User-agent&lt;/code&gt; and a line for
+            &lt;code&gt;Disallow&lt;/code&gt;.
+        &lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p&gt;When a bot prepares to crawl a website, it should first check if its name (consistent with its user-agent string in the header) has a directives block in the website&#39;s 
+            &lt;code&gt;robots.txt&lt;/code&gt;. If there is one, it should respect the rules defined there. Note that
+            &lt;code&gt;User-agent: *&lt;/code&gt; applies to all bots in case the bot doesn&#39;t find an exact match for its name.
+        &lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p&gt;A directive uses 
+            &lt;code&gt;Disallow: [URL string not to be crawled]&lt;/code&gt; to instruct the URL path that should not be crawled.
+        &lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p&gt;A URL path string in a directive can be either a directory or a file. Wildcard 
+            &lt;code&gt;*&lt;/code&gt; can be used for pattern matching.
+        &lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p&gt;
+            &lt;code&gt;Allow: [URL string to be crawled]&lt;/code&gt; can be explicitly defined. The
+            &lt;code&gt;Allow&lt;/code&gt; directive is often used to instruct bots may crawl subpaths of a previously disallowed parent path.
+        &lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p&gt;If a URL path is not explicitly disallowed, a bot may crawl it.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p&gt;Two directives that the Github 
+            &lt;code&gt;robots.txt&lt;/code&gt; does not have are:
+        &lt;/p&gt;
+        &lt;ul&gt;
+            &lt;li&gt;
+                &lt;code&gt;Crawl-delay&lt;/code&gt;: how many milliseconds a crawler should wait between requests.
+            &lt;/li&gt;
+            &lt;li&gt;
+                &lt;code&gt;Sitemap&lt;/code&gt;: where is this website&#39;s sitemap(s) located.
+            &lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p&gt;For additional explanations of 
+            &lt;code&gt;robots.txt&lt;/code&gt; refer to
+            &lt;a href=&#34;https://moz.com/learn/seo/robotstxt&#34; rel=&#34;nofollow&#34;&gt;this resource&lt;/a&gt;.
+        &lt;/p&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;It should be noted that not all websites have a 
+    &lt;code&gt;robots.txt&lt;/code&gt;. And not all bots play nicely to follow the directives defined in
+    &lt;code&gt;robots.txt&lt;/code&gt;. But if you develop a web crawler yourself, it&#39;s a good idea to follow the directives in
+    &lt;code&gt;robots.txt&lt;/code&gt; because if you don&#39;t, the web admin may throttle your requests or even block your IP.
+&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-summary&#34; class=&#34;anchor&#34; href=&#34;#summary&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Summary
+&lt;/h2&gt;
+&lt;p&gt;In this lesson we dived deep into web scraping by learning about different challenges and pitfalls when working with real websites. The Internet is tremendous and imperfect. Helpful techniques such as response status code handling, error handling, requesting with different user agents, making asychronous requests, and limiting request rate can help solve many common problems encountered in web scraping. Finally, we also learned about 
+    &lt;code&gt;robots.txt&lt;/code&gt; which contains rules that modern websites set for bots. It&#39;s typically a good idea to respect the rules set forth in
+    &lt;code&gt;robots.txt&lt;/code&gt; while crawling a website.
+&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-references&#34; class=&#34;anchor&#34; href=&#34;#references&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;References
+&lt;/h2&gt;
+&lt;p&gt;
+    &lt;a href=&#34;http://docs.python-requests.org/en/master/_modules/requests/exceptions/&#34; rel=&#34;nofollow&#34;&gt;Requests Exceptions&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent&#34; rel=&#34;nofollow&#34;&gt;User Agent&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://moz.com/learn/seo/robotstxt&#34; rel=&#34;nofollow&#34;&gt;Robots.txt&lt;/a&gt;
+&lt;/p&gt;
+&lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+  </div>
+  <div id="seq_contents_6"
+    aria-labelledby="tab_6"
+    aria-hidden="true"
+    class="seq_contents tex2jax_ignore asciimath2jax_ignore">
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-vertical&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;VerticalStudentView&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34; data-request-token=&#34;45fcde30939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@f1b45adbad174bc6abd393d2781427b5&#34; data-block-type=&#34;vertical&#34;&gt;
+  
+
+  &lt;h2 class=&#34;hd hd-2 unit-title&#34;&gt;Working with RSS Feeds&lt;/h2&gt;
+
+    &lt;div class=&#34;ih-bookmark-button-wrapper&#34;&gt;
+    	
+
+
+
+&lt;div class=&#34;bookmark-button-wrapper&#34;&gt;
+  &lt;button class=&#34;btn btn-link bookmark-button &#34;
+    aria-pressed=&#34;false&#34;
+    data-bookmark-id=&#34;NoahB,block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@f1b45adbad174bc6abd393d2781427b5&#34;
+    data-bookmarks-api-url=&#34;/api/bookmarks/v1/bookmarks/&#34;&gt;
+     &lt;span class=&#34;bookmark-text&#34;&gt;Bookmark this page&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+
+    &lt;/div&gt;	
+
+&lt;div class=&#34;vert-mod&#34;&gt;
+  &lt;div class=&#34;vert vert-0&#34; data-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@a00572a7da60417ca80d1fbb764f6569&#34;&gt;
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;45fcde30939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@a00572a7da60417ca80d1fbb764f6569&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  &lt;h2&gt;
+    &lt;a id=&#34;user-content-lesson-goals&#34; class=&#34;anchor&#34; href=&#34;#lesson-goals&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Lesson Goals
+&lt;/h2&gt;
+&lt;ul&gt;
+    &lt;li&gt;Learn about the feedparser library&lt;/li&gt;
+    &lt;li&gt;Use feedparser to parse RSS feeds&lt;/li&gt;
+    &lt;li&gt;Explore the components of parsed RSS feeds&lt;/li&gt;
+    &lt;li&gt;Convert results into data frames and conduct analysis&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-introduction&#34; class=&#34;anchor&#34; href=&#34;#introduction&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Introduction
+&lt;/h2&gt;
+&lt;p&gt;In the previous lesson, we learned how to use Python to extract structured information from web APIs. In this lesson, we are going to take a look at another source of structured web content called RSS. RSS stands for Rich Site Summary or Really Simple Syndication, and it is a type of web feed which allows users and applications to access updates to online content in a standardized, computer-readable format (typically XML).&lt;/p&gt;
+&lt;p&gt;Python has an excellent library called 
+    &lt;em&gt;feedparser&lt;/em&gt; that is very useful for reading and parsing RSS feeds. We are going to be using this library throughout the lesson, so let&#39;s make sure it is installed and imported.
+&lt;/p&gt;
+&lt;div class=&#34;highlight highlight-source-shell&#34;&gt;
+    &lt;pre&gt;$ pip install feedparser&lt;/pre&gt;
+&lt;/div&gt;
+&lt;pre&gt;
+&lt;code&gt;import feedparser
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-rss-feed-versions-formats&#34; class=&#34;anchor&#34; href=&#34;#rss-feed-versions-formats&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;RSS Feed Versions Formats
+&lt;/h2&gt;
+&lt;p&gt;Due to the way web feeds evolved, there are various versions of RSS (0.9X, 1.0, 2.0, etc.) as well as alternate forms of feeds (Atom, CDF, etc.). We would have to worry about slight differences in formats if we were going to parse the feeds manually, but feedparser is able to handle all of them, so that is one less thing we need to worry about.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-parsing-rss-feeds&#34; class=&#34;anchor&#34; href=&#34;#parsing-rss-feeds&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Parsing RSS Feeds
+&lt;/h2&gt;
+&lt;p&gt;To parse an RSS feed with feedparser, you just need to call its 
+    &lt;code&gt;parse&lt;/code&gt; method and pass it a URL. Let&#39;s take a look at an example using the RSS feed for the tech subreddit category.
+&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;reddit = feedparser.parse(&#39;https://www.reddit.com/r/tech.rss&#39;)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;If we take a look at the results, we will see a nested dictionary structure that contains a lot of information and looks something like the following.&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;print(reddit)
+
+{&#39;feed&#39;: {&#39;tags&#39;: [{&#39;term&#39;: &#39;tech&#39;, &#39;scheme&#39;: None, &#39;label&#39;: &#39;r/tech&#39;}],
+  &#39;updated&#39;: &#39;2019-01-04T22:25:07+00:00&#39;,
+  &#39;updated_parsed&#39;: time.struct_time(tm_year=2019, tm_mon=1, tm_mday=4, tm_hour=22, tm_min=25, tm_sec=7, tm_wday=4, tm_yday=4, tm_isdst=0),
+  &#39;icon&#39;: &#39;https://www.redditstatic.com/icon.png/&#39;,
+  &#39;id&#39;: &#39;https://www.reddit.com/r/tech.rss&#39;,
+  &#39;guidislink&#39;: True,
+  &#39;link&#39;: &#39;https://www.reddit.com/r/tech&#39;,
+  &#39;links&#39;: [{&#39;rel&#39;: &#39;self&#39;,
+    &#39;href&#39;: &#39;https://www.reddit.com/r/tech.rss&#39;,
+    &#39;type&#39;: &#39;application/atom+xml&#39;},
+   {&#39;rel&#39;: &#39;alternate&#39;,
+    &#39;href&#39;: &#39;https://www.reddit.com/r/tech&#39;,
+    &#39;type&#39;: &#39;text/html&#39;}],
+...
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;This is great because we can now use what we learned earlier in the program about working with data structures to explore and extract the information we need from this.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-exploring-the-parsed-feed&#34; class=&#34;anchor&#34; href=&#34;#exploring-the-parsed-feed&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Exploring the Parsed Feed
+&lt;/h2&gt;
+&lt;p&gt;Let&#39;s take a look at the first level of dictionary keys from the results and see what each of them looks like.&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;reddit.keys()
+
+dict_keys([&#39;feed&#39;, &#39;entries&#39;, &#39;bozo&#39;, &#39;headers&#39;, &#39;href&#39;, &#39;status&#39;, &#39;encoding&#39;, &#39;version&#39;, &#39;namespaces&#39;])
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;These are the different components of the RSS feed, and each of them is going to contain information about something more specific. For example, 
+    &lt;code&gt;feed&lt;/code&gt; is going to contain information about this Reddit RSS feed,
+    &lt;code&gt;entries&lt;/code&gt; is going to contain information about the specific entries in the feed, etc.
+&lt;/p&gt;
+&lt;p&gt;Since the 
+    &lt;code&gt;feed&lt;/code&gt; component is now structured as just a dictionary inside the larger dictionary, we can view its keys to get a sense of what type of information is available to us within the
+    &lt;code&gt;feed&lt;/code&gt; dictionary.
+&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;reddit.feed.keys()
+
+dict_keys([&#39;tags&#39;, &#39;updated&#39;, &#39;updated_parsed&#39;, &#39;icon&#39;, &#39;id&#39;, &#39;guidislink&#39;, &#39;link&#39;, &#39;links&#39;, &#39;logo&#39;, &#39;subtitle&#39;, &#39;subtitle_detail&#39;, &#39;title&#39;, &#39;title_detail&#39;])
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Here, we can see that we would be able to extract any tags for the feed, when the feed was updated, and the icon image for the feed as well as the feed title, subtitle, and various other pieces of information about it. You can see what each of those looks like by calling each component from 
+    &lt;code&gt;reddit.feed&lt;/code&gt;.
+&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;reddit.feed.tags
+
+[{&#39;term&#39;: &#39;tech&#39;, &#39;scheme&#39;: None, &#39;label&#39;: &#39;r/tech&#39;}]
+
+
+reddit.feed.icon
+
+&#39;https://www.redditstatic.com/icon.png/&#39;
+
+
+reddit.feed.title
+
+&#39;/r/tech: Technological innovations and changes.&#39;
+
+
+reddit.feed.subtitle
+
+&#39;The goal of /r/tech is to provide a space dedicated to the intelligent discussion of innovations and changes to technology in our ever changing world. We focus on high quality news articles about technology and informative and thought provoking self posts.&#39;
+
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;This is great, but the most interesting part of the feed is probably going to be the entries. We can access them as follows.&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;reddit.entries
+
+[{&#39;authors&#39;: [{&#39;name&#39;: &#39;/u/OriginalHoneyBadger&#39;,
+    &#39;href&#39;: &#39;https://www.reddit.com/user/OriginalHoneyBadger&#39;}],
+  &#39;author_detail&#39;: {&#39;name&#39;: &#39;/u/OriginalHoneyBadger&#39;,
+   &#39;href&#39;: &#39;https://www.reddit.com/user/OriginalHoneyBadger&#39;},
+  &#39;href&#39;: &#39;https://www.reddit.com/user/OriginalHoneyBadger&#39;,
+  &#39;author&#39;: &#39;/u/OriginalHoneyBadger&#39;,
+  &#39;tags&#39;: [{&#39;term&#39;: &#39;tech&#39;, &#39;scheme&#39;: None, &#39;label&#39;: &#39;r/tech&#39;}],
+...
+],
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;We can see that the data structure within this seems to be a list where each entry is an element that contains a dictionary with the information for each entry. We can access the individual entries via indexing and then we can look at the keys available for the entry by calling the 
+    &lt;code&gt;keys()&lt;/code&gt; method.
+&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;reddit.entries[0].keys()
+
+dict_keys([&#39;authors&#39;, &#39;author_detail&#39;, &#39;href&#39;, &#39;author&#39;, &#39;tags&#39;, &#39;content&#39;, &#39;summary&#39;, &#39;id&#39;, &#39;guidislink&#39;, &#39;link&#39;, &#39;links&#39;, &#39;updated&#39;, &#39;updated_parsed&#39;, &#39;title&#39;, &#39;title_detail&#39;])
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;If we wanted to obtain a particular piece of data for an entry, we could just index that entry and then call the key for the information we wanted. For example, if we wanted to get the title of the third entry, we would obtain it as follows.&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;reddit.entries[2].title
+
+&#39;New AI can detect Alzheimer’s six years before it hits&#39;
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;To extract the titles for all the entries, we could use a list comprehension.&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;titles = [reddit.entries[i].title for i in range(len(reddit.entries))]
+print(titles)
+
+[&#34;/r/Tech now has it&#39;s own Discord server!&#34;, &#39;Dell patents the weirdest 2-in-1 laptop with two detachable displays&#39;, &#39;New AI can detect Alzheimer’s six years before it hits&#39;, &#39;MIT Tech Review: In 2019, blockchains will start to become boring&#39;, &#39;Is the new iPad pro late 2018 worth the money?&#39;, &#39;Xiaomi’s forthcoming affordable flagship, the Poco F2 was spotted&#39;, &#39;A nostalgic look back at digital music piracy in the 2000s&#39;, &#39;Technology that will impact our lives forever&#39;, &#34;USB Type-C Authentication Program gets started, sounds like it&#39;s effectively DRM for Type-C devices&#34;, &#39;The Minijack Resistance is still alive&#39;, &#39;It’s Official: Apple Confirms Slower iPhone Sales&#39;, &#39;&#34;Company Tried to Patent My Work After a Job Interview&#34;&#39;, &#39;Mad Box: a new next-gen console made exclusively for VR gaming&#39;, &#39;China says it has landed a robotic probe on the far side of the Moon&#39;, &#39;Acer helps connect the gap between tech and religion.&#39;, &#39;AI News: Scientists from the University of California, Berkeley and Google Brain developed an AI system that taught a robot how to walk&#39;, &#34;While everybody reviews the 8gb $550 surface go, here&#39;s a review of the base model ($399)&#34;, &#39;In January, the EU starts running Bug Bounties on Free and Open Source Software&#39;, &#39;Musk vs. Bezos: The Battle of the Space Billionaires Heats Up&#39;, &#39;How Apps on Android Share Data with Facebook&#39;, &#39;Google Has Lawsuit in Illinois Over Facial Recognition Scanning in Google Photos Dismissed&#39;, &#34;The War between Silicon Valley &amp;amp; Govt&#39;s (the Five Eyes)&#34;, &#39;Leaked Documents Show How Instagram Polices Stories&#39;, &#39;Drones Used to Find Toy-Like &#34;Butterfly&#34; Land Mines&#39;, &#39;How Does Apple And Google Know About These Small Tech Startups, How is in Charge of Keeping an Ear to the Streets ?&#39;, &#39;Seven New Year’s resolutions for Big Tech in 2019&#39;]
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-analyzing-data-from-an-rss-feed&#34; class=&#34;anchor&#34; href=&#34;#analyzing-data-from-an-rss-feed&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Analyzing Data From an RSS Feed
+&lt;/h2&gt;
+&lt;p&gt;Thus far, feedparser has helped us obtain data from an RSS feed and structure in a way that makes it easy for us to explore it and extract the information we need. If we wanted to analyze the data further, we could leverage the Pandas library and create a data frame containing the information about entries in the feed.&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;import pandas as pd
+
+df = pd.DataFrame(reddit.entries)
+df.head(10)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/077e26273481003c411ff6116c1a5f6e498071b0/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7273732d64662e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/077e26273481003c411ff6116c1a5f6e498071b0/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7273732d64662e706e67&#34; alt=&#34;RSS Dataframe&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/rss-df.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;Now that we have the information in a data frame, we can use Pandas to perform a variety of aggregations and calculations. For example, suppose we wanted to know which author has posted the most entries. We could do that by aggregating by author, counting the number of entry titles, and then sorting the results in descending order.&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;authors = df.groupby(&#39;author&#39;, as_index=False).agg({&#39;title&#39;:&#39;count&#39;})
+authors.columns = [&#39;author&#39;, &#39;entries&#39;]
+authors.sort_values(&#39;entries&#39;, ascending=False)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/6485077fcae123c87e9c456479749687c1f11df2/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f656e74726965732d7065722d617574686f722e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/6485077fcae123c87e9c456479749687c1f11df2/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f656e74726965732d7065722d617574686f722e706e67&#34; alt=&#34;Entries per Author&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/entries-per-author.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;Similarly, if we wanted to see which entries had the longest titles, we could create a new column called 
+    &lt;code&gt;title_length&lt;/code&gt; that contains the number of characters in the title and then sort the data frame by that new column.
+&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;df[&#39;title_length&#39;] = df[&#39;title&#39;].apply(len)
+df[[&#39;title&#39;, &#39;author&#39;, &#39;title_length&#39;]].sort_values(&#39;title_length&#39;, ascending=False)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/824d35fd953ef27e474f9e049c8880d45969934b/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f656e7472792d7469746c652d6c656e6774682e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/824d35fd953ef27e474f9e049c8880d45969934b/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f656e7472792d7469746c652d6c656e6774682e706e67&#34; alt=&#34;Entry Title Length&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/entry-title-length.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;These are just a couple of the things you can analyze about the entries using the information we were able to obtain.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-summary&#34; class=&#34;anchor&#34; href=&#34;#summary&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Summary
+&lt;/h2&gt;
+&lt;p&gt;RSS feeds are an important source of information because they provide us with structured, parseable data that we would otherwise have had to obtain via messier methods such as web scraping. In this lesson, we introduced the feedparser library and learned how to use it to parse an RSS feed. Once we had a parsed feed, we learned how we could explore the contents of that feed and view the different types of information contained within. Finally, we saw an example of how to take data parsed from an RSS feed, convert it into a Pandas data frame, and perform some basic analyses on it.&lt;/p&gt;
+&lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+  </div>
+  <div id="seq_content" class="ih-learnig-unit" role="tabpanel"></div>
+
+  <nav class="sequence-bottom ih-js-fire-highlighting-controls" aria-label="Section">
+    <button class="sequence-nav-button button-previous">
+      <span class="icon fa fa-chevron-prev" aria-hidden="true"></span>
+      <span>Previous</span>
+    </button>
+    <button class="sequence-nav-button button-next">
+      <span>Next</span>
+      <span class="icon fa fa-chevron-next" aria-hidden="true"></span>
+    </button>
+  </nav>
+</div>
+
+</div>
+
+        </main>
+    </section>
+
+    <section class="courseware-results-wrapper">
+      <div id="loading-message" aria-live="polite" aria-relevant="all"></div>
+      <div id="error-message" aria-live="polite"></div>
+      <div class="courseware-results search-results" data-course-id="course-v1:IRONHACK+DAFT+201906_MIA" data-lang-code="en"></div>
+    </section>
+
+  </div>
+  
+
+
+
+
+
+
+
+
+
+    
+    
+    <script type="text/javascript" src="../../../../../static/bundles/CourseSock.43ffb68a30fa51e4e467.1f398818dd61.js" ></script>
+      <script type="text/javascript">
+        
+    new CourseSock({
+        el:'.verification-sock'
+    });
+
+      </script>
+
+
+</div>
+<div class="container-footer">
+</div>
+
+          
+        </div>
+      </div>
+
+    
+    
+
+      <div class="ih-beta-banner">
+        <span class="icon fa fa-flask"></span>
+        <span class="ih-beta-banner-text">We just launched a new version of the student platform. Everything should be fine, but if you encounter a bug, don't hesitate and send it our way.</span>
+      </div>
+
+  </div>
+
+  
+  
+  <script type="text/javascript" src="../../../../../static/common/js/vendor/jquery.scrollTo.525edcc52fe8.js"></script>
+  <script type="text/javascript" src="../../../../../static/js/vendor/flot/jquery.flot.d3d45ff0c6a8.js"></script>
+
+  
+    <script type="text/javascript" src="../../../../../static/js/lms-courseware.43ed60564822.js" charset="utf-8"></script>
+
+
+  
+
+
+
+<script type="text/javascript">
+    // Fast Preview was introduced in 2.5. However, it
+    // causes undesirable flashing/font size changes when
+    // MathJax is used for interactive preview (equation editor).
+    // Setting processSectionDelay to 0 (see below) fully eliminates
+    // fast preview, but to reduce confusion, we are also setting
+    // the option as displayed in the context menu to false.
+    // When upgrading to 2.6, check if this variable name changed.
+    window.MathJax = {
+      menuSettings: {CHTMLpreview: false}
+    };
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [
+        ["\\(","\\)"],
+        ['[mathjaxinline]','[/mathjaxinline]']
+      ],
+      displayMath: [
+        ["\\[","\\]"],
+        ['[mathjax]','[/mathjax]']
+      ]
+    }
+  });
+</script>
+<script type="text/x-mathjax-config">
+
+  // In order to eliminate all flashing during interactive
+  // preview, it is necessary to set processSectionDelay to 0
+  // (remove delay between input and output phases). This
+  // effectively disables fast preview, regardless of
+  // the fast preview setting as shown in the context menu.
+  MathJax.Hub.processSectionDelay = 0;
+
+  MathJax.Hub.signal.Interest(function(message) {
+    if(message[0] === "End Math") {
+        set_mathjax_display_div_settings();
+    }
+  });
+  function set_mathjax_display_div_settings() {
+    $('.MathJax_Display').each(function( index ) {
+      this.setAttribute('tabindex', '0');
+      this.setAttribute('aria-live', 'off');
+      this.removeAttribute('role');
+      this.removeAttribute('aria-readonly');
+    });
+  }
+</script>
+
+
+<!-- This must appear after all mathjax-config blocks, so it is after the imports from the other templates.
+     It can't be run through static.url because MathJax uses crazy url introspection to do lazy loading of
+     MathJax extension libraries -->
+<script type="text/javascript" src="../../../../../../cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJaxf4fa.js?config=TeX-MML-AM_SVG"></script>
+
+
+    
+    
+      <script type="text/javascript" src="../../../../../static/course_search/js/course_search_factory.26a9d7197c46bdd1.js?raw"></script>
+    <script type="text/javascript">
+        (function (require) {
+            require(['course_search/js/course_search_factory'], function (CourseSearchFactory) {
+                
+        var courseId = $('.courseware-results').data('courseId');
+        CourseSearchFactory({
+            courseId: courseId,
+            searchHeader: $('.search-bar')
+        });
+    
+            });
+        }).call(this, require || RequireJS.require);
+    </script>
+
+
+  
+    
+      <script type="text/javascript" src="../../../../../static/js/courseware/courseware_factory.1504fc10caefbdd1.js?raw"></script>
+    <script type="text/javascript">
+        (function (require) {
+            require(['js/courseware/courseware_factory'], function (CoursewareFactory) {
+                
+    CoursewareFactory();
+  
+            });
+        }).call(this, require || RequireJS.require);
+    </script>
+
+
+
+  <script type="text/javascript">
+    var $$course_id = "course\u002Dv1:IRONHACK+DAFT+201906_MIA";
+  </script>
+
+
+
+
+
+
+  
+
+
+
+  <script type="text/javascript" src="../../../../../static/js/vendor/noreferrer.aa62a3e70ffa.js" charset="utf-8"></script>
+  <script type="text/javascript" src="../../../../../static/js/utils/navigation.08930e16ab3d.js" charset="utf-8"></script>
+  <script type="text/javascript" src="../../../../../static/js/header/header.309a1243e175.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="../../../../../static/ih-lms-theme/js/vendor/highlight.min.496e109b43ca.js" ></script>
+    <script type="text/javascript" src="../../../../../static/ih-lms-theme/js/vendor/ih-highlight.0f32f131ba83.js" ></script>
+  
+</body>
+</html>
+
+

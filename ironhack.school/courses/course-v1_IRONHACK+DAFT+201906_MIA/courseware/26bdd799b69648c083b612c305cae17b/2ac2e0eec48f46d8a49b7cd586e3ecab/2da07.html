@@ -1,0 +1,1204 @@
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<!--[if lte IE 9]><html class="ie ie9 lte9" lang="en"><![endif]-->
+<!--[if !IE]><!--><html lang="en"><!--<![endif]-->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head dir="ltr">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+  
+<title data-base-title="
+ Business Intelligence with Tableau | DAFT Courseware | Ironhack Student Platform">
+  
+ Introduction to Tableau | Business Intelligence with Tableau | DAFT Courseware | Ironhack Student Platform
+</title>
+
+
+      <script type="text/javascript">
+        /* immediately break out of an iframe if coming from the marketing website */
+        (function(window) {
+          if (window.location !== window.top.location) {
+            window.top.location = window.location;
+          }
+        })(this);
+      </script>
+
+  
+
+  <script type="text/javascript" src="../../../../../static/js/i18n/en/djangojs.e37eef1ffc63.js"></script>
+  <script type="text/javascript" src="../../../../../static/js/ie11_find_array.bd1c6dc7a133.js"></script>
+
+  <link rel="icon" type="image/x-icon" href="../../../../../static/ih-lms-theme/images/favicon.0de58aa5bfca.ico" />
+
+  
+  
+
+    <link href="../../../../../static/ih-lms-theme/css/lms-style-vendor.68e48093f5dd.css" rel="stylesheet" type="text/css" />
+
+
+
+      <link rel="stylesheet" href="../../../../../static/ih-lms-theme/css/bootstrap/lms-main.c54b2923d249.css" type="text/css" media="all" />
+
+    
+    <script type="text/javascript" src="../../../../../static/js/lms-main_vendor.a04b73033169.js" charset="utf-8"></script>
+
+
+    
+    <script type="text/javascript" src="../../../../../static/js/lms-application.e7bd4b65d083.js" charset="utf-8"></script>
+
+
+
+  
+    
+    
+    <script type="text/javascript" src="../../../../../static/bundles/commons.d60dcd98c024881d011e.c835e91d09f6.js" ></script>
+
+
+
+  <script>
+    window.baseUrl = "../../../../../static/index.html";
+    (function (require) {
+      require.config({
+          baseUrl: window.baseUrl
+      });
+    }).call(this, require || RequireJS.require);
+  </script>
+  <script type="text/javascript" src="../../../../../static/lms/js/require-config.8e00198660b0.js"></script>
+  
+    <script type="text/javascript">
+        (function (require) {
+          require.config({
+              paths: {
+                'js/courseware/courseware_factory': 'js/courseware/courseware_factory.1504fc10caef',
+'draggabilly': 'js/vendor/draggabilly.26caba6f7187',
+'js/courseware/toggle_element_visibility': 'js/courseware/toggle_element_visibility.d5f10bc65ed0',
+'hls': 'common/js/vendor/hls.b10b9ef4015b',
+'js/courseware/link_clicked_events': 'js/courseware/link_clicked_events',
+'moment': 'common/js/vendor/moment-with-locales.084396f4103c',
+'moment-timezone': 'common/js/vendor/moment-timezone-with-data.60142e6c4416',
+'js/student_account/logistration_factory': 'js/student_account/logistration_factory.d7765e4e6715',
+'js/groups/views/cohorts_dashboard_factory': 'js/groups/views/cohorts_dashboard_factory.7f46663f97b4',
+'js/dateutil_factory': 'js/dateutil_factory.841c29e02056',
+'course_bookmarks/js/views/bookmark_button': 'course_bookmarks/js/views/bookmark_button.d4cfaf3361fa',
+'js/courseware/accordion_events': 'js/courseware/accordion_events.6064c7809de5',
+'js/views/message_banner': 'js/views/message_banner.af013d0ecbd4',
+'js/groups/discussions_management/discussions_dashboard_factory': 'js/discussions_management/views/discussions_dashboard_factory.2e10d9097343',
+'js/courseware/course_info_events': 'js/courseware/course_info_events.2fc35b57627f'
+            }
+          });
+        }).call(this, require || RequireJS.require);
+    </script>
+  
+
+  
+
+  
+
+    <link href="../../../../../static/ih-lms-theme/css/lms-style-course-vendor.691e50c64ad7.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+
+    <link href="../../../../../static/ih-lms-theme/css/lms-course.1d0edf3ec473.css" rel="stylesheet" type="text/css" />
+
+
+
+
+<script type="text/javascript" src="../../../../../static/js/jquery.autocomplete.3bd10d7510d2.js"></script>
+<script type="text/javascript" src="../../../../../static/js/src/tooltip_manager.da362490e199.js"></script>
+
+<link href="../../../../../static/css/vendor/jquery.autocomplete.896181d3ec33.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="../../../../../static/bundles/XModuleShim.68b7a679342e3bdb698f.c506d949a49b.js" ></script>
+<script type="text/javascript" src="../../../../../static/bundles/HtmlModule.174055b73c05dccfbd8b.823874f69fef.js" ></script>
+<script type="text/javascript" src="../../../../../static/bundles/VerticalStudentView.6f1068648eb9e8d18da9.0a2f678d6564.js" ></script>
+<script type="text/javascript" src="../../../../../static/bundles/SequenceModule.251564cf8963e6f00227.ef752443db97.js" ></script>
+
+  
+
+  
+
+
+  
+
+
+<script type="application/json" id="user-metadata">
+    {"username": "NoahB", "enrollment_mode": "audit", "upgrade_link": null, "user_id": 489, "course_start": "2019-06-10T00:00:00+00:00", "upgrade_deadline": null, "course_key_fields": {"org": "IRONHACK", "run": "201906_MIA", "course": "DAFT"}, "course_end": "2019-08-19T00:00:00+00:00", "pacing_type": "instructor_paced", "upgrade_price": "Free", "course_id": "course-v1:IRONHACK+DAFT+201906_MIA", "has_staff_access": false, "forum_roles": [["Student"]], "enrollment_time": "2019-06-11T20:48:51.323840+00:00", "schedule_start": null, "email": "noahbeckerman@gmail.com"}
+</script>
+
+  
+
+  
+
+
+  
+
+
+<!-- dummy Segment -->
+<script type="text/javascript">
+  var analytics = {
+    track: function() { return; },
+    trackLink: function() { return; },
+    pageview: function() { return; },
+    page: function() { return; }
+  };
+</script>
+<!-- end dummy Segment -->
+
+
+  <meta name="path_prefix" content="">
+  
+  
+
+  <meta name="openedx-release-line" content="hawthorn" />
+
+
+
+
+
+
+  <!-- Hotjar Tracking Code for https://ironhack.school -->
+  <script type="text/javascript">
+      (function(h,o,t,j,a,r){
+          h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+          h._hjSettings={hjid:1193918,hjsv:6};
+          a=o.getElementsByTagName('head')[0];
+          r=o.createElement('script');r.async=1;
+          r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+          a.appendChild(r);
+      })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+  </script>
+
+  <script type="text/javascript">
+    function setCookieHideMobileWarning(expiration_hours) {
+      var date = new Date();
+      date.setTime(date.getTime()+(expiration_hours*60*60*1000));
+      var expires = "; expires=" + date.toGMTString();
+      document.cookie = "ihHideMobileWarning=true" + expires;
+    }
+    
+    function isHideMobileWarningCookieSet() {
+      return document.cookie.replace(/(?:(?:^|.*;\s*)ihHideMobileWarning\s*\=\s*([^;]*).*$)|^.*$/, "$1") !== "true"; 
+    }
+
+    function manageMobileWarning(mobile_warning_container) {
+      if (isHideMobileWarningCookieSet()) {
+        var mobile_warning_dismiss = document.getElementsByClassName('ih-js-hide-mobile-warning', mobile_warning_container)[0];
+        mobile_warning_dismiss.addEventListener('click', function() {
+          var expiration_hours = 48;
+          setCookieHideMobileWarning(expiration_hours);
+          mobile_warning_container.classList.add('hidden');
+        });
+      } else {
+        mobile_warning_container.classList.add('hidden');
+      }
+    }
+
+    var checkMobileWarningLayer = function () {
+      var mobile_warning_container = document.getElementsByClassName('ih-mobile-warning-container')[0];
+      (document.body && mobile_warning_container)? manageMobileWarning(mobile_warning_container) :  window.requestAnimationFrame(checkMobileWarningLayer);
+    }
+
+    window.requestAnimationFrame(checkMobileWarningLayer);
+  </script>
+
+</head>
+
+<body class="ltr view-in-course view-courseware courseware  lang_en">
+
+<div class="ih-mobile-warning-container">
+  <img class="logo" src="../../../../../static/ih-lms-theme/images/logo.6230fc40336b.svg" />
+  <div class="ih-mobile-warning-title">
+    The Learning Platform is best experienced on Desktop devices
+  </div>
+  <div class="ih-mobile-warning-description">
+    We recommend using a Desktop device to get the full experience of the Learning Platform.
+  </div>
+  <div class="ih-mobile-warning-dismiss ih-js-hide-mobile-warning">
+   Continue anyway
+  </div>
+</div>
+
+
+<div id="page-prompt"></div>
+  <div class="window-wrap" dir="ltr">
+    <a class="nav-skip sr-only sr-only-focusable" href="#main">Skip to main content</a>
+
+    
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+<header class="global-header slim ih-global-header">
+    <div class="ih-header-wrapper">
+        <div class="main-header ih-main-header">
+            
+
+
+
+
+
+<h1 class="header-logo">
+  <a href="../../../../../dashboard.html">
+    
+    <img  class="logo" src="../../../../../static/ih-lms-theme/images/logo.6230fc40336b.svg" alt="Ironhack Student Platform Home Page"/>
+    
+  </a>
+    <div class="course-header">
+          
+      
+      <span class="course-name">Data Analytics</span>
+    </div>
+</h1>
+
+            <div class="hamburger-menu" role="button" aria-label=Options Menu aria-expanded="false" aria-controls="mobile-menu" tabindex="0">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+                
+
+
+
+
+
+
+
+
+
+
+<div class="nav-links">
+  <div class="main">
+      
+  </div>
+  <div class="secondary ih-secondary">
+    
+
+
+
+
+
+
+  
+
+<div class="nav-item hidden-mobile toggle-user-dropdown ih-username-container">
+    <div class="menu-title">
+        
+        <span class="sr-only">Dashboard for:</span>
+        <span class="username ih-username">Ironhack (NoahB)</span>
+    </div>
+</div>
+<div class="nav-item hidden-mobile nav-item-dropdown ih-dropdown-wrapper" tabindex="-1">
+    <div class="toggle-user-dropdown ih-toggle-user-dropdown" role="button" aria-label=Options Menu aria-expanded="false" tabindex="0" aria-controls="user-menu">
+        <span class="fa fa-caret-down" aria-hidden="true"></span>
+    </div>
+    <div class="dropdown-user-menu hidden ih-dropdown-user-menu" aria-label=More Options role="menu" id="user-menu" tabindex="-1">
+        <div class="mobile-nav-item dropdown-item dropdown-nav-item ih-dropdown-nav-item"><a href="../../../../../dashboard.html" role="menuitem">My courses</a></div>
+            
+        <div class="mobile-nav-item dropdown-item dropdown-nav-item ih-dropdown-nav-item"><a href="../../../../../account/settings.html" role="menuitem">Account</a></div>
+        <div class="mobile-nav-item dropdown-item dropdown-nav-item ih-dropdown-nav-item"><a href="../../../../../index.html" role="menuitem">Sign Out</a></div>
+    </div>
+</div>
+  </div>
+</div>
+        </div>
+        <div class="mobile-menu hidden" aria-label=More Options role="menu" id="mobile-menu"></div>
+    </div>    
+</header>
+
+<!--[if lte IE 9]>
+<div class="ie-banner" aria-hidden="true"><strong>Warning:</strong> Your browser is not fully supported. We strongly recommend using <a href="https://www.google.com/chrome" target="_blank">Chrome</a> or <a href="http://www.mozilla.org/firefox" target="_blank">Firefox</a>.</div>
+<![endif]-->
+
+
+
+
+            
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+    
+    
+
+      <div 
+          class="ih-content"
+      >
+        <div class="marketing-hero"></div>
+
+        <div class="content-wrapper main-container ih-main-container" id="content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/template" id="image-modal-tpl">
+    <div class="wrapper-modal wrapper-modal-image">
+  <section class="image-link">
+    <%= smallHTML%>
+    <a href="#" class="modal-ui-icon action-fullscreen" role="button">
+      <span class="label">
+        <span class="icon fa fa-arrows-alt fa-large" aria-hidden="true"></span> <%- gettext("Fullscreen") %>
+      </span>
+    </a>
+  </section>
+
+  <section class="image-modal">
+    <section class="image-content">
+      <div class="image-wrapper">
+        <img alt="<%= largeALT %>, <%- gettext('Large') %>" src="<%= largeSRC %>" />
+      </div>
+
+      <a href="#" class="modal-ui-icon action-close" role="button">
+        <span class="label">
+          <span class="icon fa fa-remove fa-large" aria-hidden="true"></span> <%- gettext("Close") %>
+        </span>
+      </a>
+
+      <ul class="image-controls">
+        <li class="image-control">
+          <a href="#" class="modal-ui-icon action-zoom-in" role="button">
+            <span class="label">
+              <span class="icon fa fa fa-search-plus fa-large" aria-hidden="true"></span> <%- gettext("Zoom In") %>
+            </span>
+          </a>
+        </li>
+
+        <li class="image-control">
+          <a href="#" class="modal-ui-icon action-zoom-out is-disabled" aria-disabled="true" role="button">
+            <span class="label">
+              <span class="icon fa fa fa-search-minus fa-large" aria-hidden="true"></span> <%- gettext("Zoom Out") %>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </section>
+</div>
+
+</script>
+
+
+
+
+
+
+
+
+<div class="message-banner" aria-live="polite"></div>
+  
+
+
+
+
+
+
+
+
+    
+        <nav class="navbar course-tabs pb-0 navbar-expand ih-navbar-container" aria-label="Course">
+            <ul class="navbar-nav mr-auto ih-course-tabs">
+                    
+                    
+                        <li class="nav-item ih-nav-item active">
+                            <a href="../../../course/index.html" class="nav-link">
+                                Course
+                                    <span class="sr-only">, current location</span>
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="nav-item ih-nav-item ">
+                            <a href="../../../discussion/forum/index.html" class="nav-link">
+                                Discussion
+                            </a>
+                        </li>
+                    
+                    
+            </ul>
+        </nav>
+
+
+<div class="container ih-course-container"
+    lang="en"
+  >
+  <div class="course-wrapper ih-course-wrapper" role="presentation">
+
+    <section class="course-content" id="course-content">
+        <header class="page-header has-secondary">
+            <div class="page-header-main">
+                <nav aria-label="Course" class="sr-is-focusable" tabindex="-1">
+                    <div class="has-breadcrumbs">
+                        <div class="breadcrumbs">
+                                <span class="nav-item nav-item-course">
+                                    <a href="../../../course/index.html">Course</a>
+                                </span>
+                                <span class="icon fa fa-angle-right" aria-hidden="true"></span>
+                                <span class="nav-item nav-item-chapter" data-course-position="2" data-chapter-position="5">
+                                    <a href="../../../course/index.html#block-v1:IRONHACK+DAFT+201906_MIA+type@chapter+block@26bdd799b69648c083b612c305cae17b">Module 2</a>
+                                </span>
+                                <span class="icon fa fa-angle-right" aria-hidden="true"></span>
+                                <span class="nav-item nav-item-section">
+                                    <a href="../../../course/index.html#block-v1:IRONHACK+DAFT+201906_MIA+type@sequential+block@2ac2e0eec48f46d8a49b7cd586e3ecab">Business Intelligence with Tableau</a>
+                                </span>
+                                <span class="icon fa fa-angle-right" aria-hidden="true"></span>
+                            <span class="nav-item nav-item-sequence">Introduction to Tableau</span>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <main id="main" tabindex="-1" aria-label="Content">
+
+              <div class="xblock xblock-student_view xblock-student_view-sequential xmodule_display xmodule_SequenceModule" data-runtime-class="LmsRuntime" data-init="XBlockToXModuleShim" data-block-type="sequential" data-request-token="6e2db6e0939911e99a866e487447f8c8" data-runtime-version="1" data-usage-id="block-v1:IRONHACK+DAFT+201906_MIA+type@sequential+block@2ac2e0eec48f46d8a49b7cd586e3ecab" data-type="Sequence" data-course-id="course-v1:IRONHACK+DAFT+201906_MIA">
+  <script type="json/xblock-args" class="xblock-json-init-args">
+    {"xmodule-type": "Sequence"}
+  </script>
+  
+
+
+<div id="sequence_2ac2e0eec48f46d8a49b7cd586e3ecab" class="sequence" data-id="block-v1:IRONHACK+DAFT+201906_MIA+type@sequential+block@2ac2e0eec48f46d8a49b7cd586e3ecab" data-position="2" data-ajax-url="/courses/course-v1:IRONHACK+DAFT+201906_MIA/xblock/block-v1:IRONHACK+DAFT+201906_MIA+type@sequential+block@2ac2e0eec48f46d8a49b7cd586e3ecab/handler/xmodule_handler" data-next-url="/courses/course-v1:IRONHACK+DAFT+201906_MIA/courseware/26bdd799b69648c083b612c305cae17b/660e88cc59324d5488321dddcaf596a5/?child=first" data-prev-url="/courses/course-v1:IRONHACK+DAFT+201906_MIA/courseware/26bdd799b69648c083b612c305cae17b/aac9162564384e31bf24c402d1064692/?child=last">
+
+  <div class="sequence-nav ih-js-fire-highlighting-controls">
+    <button class="sequence-nav-button button-previous">
+      <span class="icon fa fa-chevron-prev" aria-hidden="true"></span>
+      <span class="sequence-nav-button-label">Previous</span>
+    </button>
+    <button class="sequence-nav-button button-next">
+      <span class="sequence-nav-button-label">Next</span>
+      <span class="icon fa fa-chevron-next" aria-hidden="true"></span>
+    </button>
+    <nav class="sequence-list-wrapper" aria-label="Sequence">
+      <ol id="sequence-list" role="tablist">
+        <li role="presentation">
+          <button class="seq_other inactive nav-item tab"
+            role="tab"
+            tabindex="-1"
+            aria-selected="false"
+            aria-expanded="false"
+            aria-controls="seq_content"
+            data-index="0"
+            data-id="block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@6db2f4168901426d84a1b2e83fb34ddf"
+            data-element="1"
+            data-page-title="Introduction to Business Intelligence"
+            data-path="Module 2 &gt; Business Intelligence with Tableau &gt; Introduction to Business Intelligence"
+            data-graded="False"
+            id="tab_0"
+            >
+            <span class="icon fa seq_other" aria-hidden="true"></span>
+              <span 
+                class="fa fa-check-circle check-circle is-hidden" 
+                style="color:green"
+                aria-hidden="true"
+              ></span>
+            <span class="fa fa-fw fa-bookmark bookmark-icon is-hidden" aria-hidden="true"></span>
+            <div class="sequence-tooltip sr"><span class="sr">other&nbsp;</span>Introduction to Business Intelligence<span class="sr bookmark-icon-sr">&nbsp;</span></div>
+          </button>
+        </li>
+        <li role="presentation">
+          <button class="seq_other inactive nav-item tab"
+            role="tab"
+            tabindex="-1"
+            aria-selected="false"
+            aria-expanded="false"
+            aria-controls="seq_content"
+            data-index="1"
+            data-id="block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@5cc7b9c49bcc4f8fac0e15db808b2cb2"
+            data-element="2"
+            data-page-title="Introduction to Tableau"
+            data-path="Module 2 &gt; Business Intelligence with Tableau &gt; Introduction to Tableau"
+            data-graded="False"
+            id="tab_1"
+            >
+            <span class="icon fa seq_other" aria-hidden="true"></span>
+              <span 
+                class="fa fa-check-circle check-circle is-hidden" 
+                style="color:green"
+                aria-hidden="true"
+              ></span>
+            <span class="fa fa-fw fa-bookmark bookmark-icon is-hidden" aria-hidden="true"></span>
+            <div class="sequence-tooltip sr"><span class="sr">other&nbsp;</span>Introduction to Tableau<span class="sr bookmark-icon-sr">&nbsp;</span></div>
+          </button>
+        </li>
+        <li role="presentation">
+          <button class="seq_other inactive nav-item tab"
+            role="tab"
+            tabindex="-1"
+            aria-selected="false"
+            aria-expanded="false"
+            aria-controls="seq_content"
+            data-index="2"
+            data-id="block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@21d01a52237d4647873ebdabe02e0a1e"
+            data-element="3"
+            data-page-title="Data Visualization with Tableau"
+            data-path="Module 2 &gt; Business Intelligence with Tableau &gt; Data Visualization with Tableau"
+            data-graded="False"
+            id="tab_2"
+            >
+            <span class="icon fa seq_other" aria-hidden="true"></span>
+              <span 
+                class="fa fa-check-circle check-circle is-hidden" 
+                style="color:green"
+                aria-hidden="true"
+              ></span>
+            <span class="fa fa-fw fa-bookmark bookmark-icon is-hidden" aria-hidden="true"></span>
+            <div class="sequence-tooltip sr"><span class="sr">other&nbsp;</span>Data Visualization with Tableau<span class="sr bookmark-icon-sr">&nbsp;</span></div>
+          </button>
+        </li>
+        <li role="presentation">
+          <button class="seq_other inactive nav-item tab"
+            role="tab"
+            tabindex="-1"
+            aria-selected="false"
+            aria-expanded="false"
+            aria-controls="seq_content"
+            data-index="3"
+            data-id="block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@eab61b02a10d468383239b58328e479e"
+            data-element="4"
+            data-page-title="BI Analysis with Tableau"
+            data-path="Module 2 &gt; Business Intelligence with Tableau &gt; BI Analysis with Tableau"
+            data-graded="False"
+            id="tab_3"
+            >
+            <span class="icon fa seq_other" aria-hidden="true"></span>
+              <span 
+                class="fa fa-check-circle check-circle is-hidden" 
+                style="color:green"
+                aria-hidden="true"
+              ></span>
+            <span class="fa fa-fw fa-bookmark bookmark-icon is-hidden" aria-hidden="true"></span>
+            <div class="sequence-tooltip sr"><span class="sr">other&nbsp;</span>BI Analysis with Tableau<span class="sr bookmark-icon-sr">&nbsp;</span></div>
+          </button>
+        </li>
+      </ol>
+    </nav>
+  </div>
+  <div class="sr-is-focusable" tabindex="-1"></div>
+
+  <div id="seq_contents_0"
+    aria-labelledby="tab_0"
+    aria-hidden="true"
+    class="seq_contents tex2jax_ignore asciimath2jax_ignore">
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-vertical&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;VerticalStudentView&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34; data-request-token=&#34;6e2db6e0939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@6db2f4168901426d84a1b2e83fb34ddf&#34; data-block-type=&#34;vertical&#34;&gt;
+  
+
+  &lt;h2 class=&#34;hd hd-2 unit-title&#34;&gt;Introduction to Business Intelligence&lt;/h2&gt;
+
+    &lt;div class=&#34;ih-bookmark-button-wrapper&#34;&gt;
+    	
+
+
+
+&lt;div class=&#34;bookmark-button-wrapper&#34;&gt;
+  &lt;button class=&#34;btn btn-link bookmark-button &#34;
+    aria-pressed=&#34;false&#34;
+    data-bookmark-id=&#34;NoahB,block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@6db2f4168901426d84a1b2e83fb34ddf&#34;
+    data-bookmarks-api-url=&#34;/api/bookmarks/v1/bookmarks/&#34;&gt;
+     &lt;span class=&#34;bookmark-text&#34;&gt;Bookmark this page&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+
+    &lt;/div&gt;	
+
+&lt;div class=&#34;vert-mod&#34;&gt;
+  &lt;div class=&#34;vert vert-0&#34; data-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@3ca9490952c34a77a2a3b57b2b3b9f28&#34;&gt;
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;6e2db6e0939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@3ca9490952c34a77a2a3b57b2b3b9f28&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  &lt;h2&gt;
+&lt;a id=&#34;user-content-lesson-goals&#34; class=&#34;anchor&#34; href=&#34;#lesson-goals&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Lesson Goals&lt;/h2&gt;
+&lt;p&gt;This lesson will introduce the key concepts in Business Intelligence.&lt;/p&gt;
+&lt;h2&gt;
+&lt;a id=&#34;user-content-introduction&#34; class=&#34;anchor&#34; href=&#34;#introduction&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Business Intelligence is an application of data analysis that aids companies in making data driven decisions. Using Business Intelligence, technologies we can provide insights on the performance of a business in the past and the present as well as make predictions or recommendations for the future. A key difference between Business Intelligence and data analysis is that insights are meant to be actionable and geared towards helping a business make decisions.&lt;/p&gt;
+&lt;h2&gt;
+&lt;a id=&#34;user-content-key-concepts&#34; class=&#34;anchor&#34; href=&#34;#key-concepts&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Key Concepts&lt;/h2&gt;
+&lt;h3&gt;
+&lt;a id=&#34;user-content-data-data-warehouse-vs-unstructured-data&#34; class=&#34;anchor&#34; href=&#34;#data-data-warehouse-vs-unstructured-data&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Data: Data Warehouse vs. Unstructured Data&lt;/h3&gt;
+&lt;p&gt;Businesses store vast amounts of data. Some for compliance reasons and other data specifically for deriving insights and historical reporting. The data can be stored in many forms including emails, invoices, and presentations but also in the form of structured tables.&lt;/p&gt;
+&lt;h4&gt;
+&lt;a id=&#34;user-content-data-warehouse-olap-and-oltp&#34; class=&#34;anchor&#34; href=&#34;#data-warehouse-olap-and-oltp&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Data Warehouse: OLAP and OLTP&lt;/h4&gt;
+&lt;p&gt;Typically companies invest a great deal of resources in storing important data in relational databases. Data warehouses are typically a group of relational databases accessible using SQL. Many companies have two types of databases. &lt;strong&gt;OLAP&lt;/strong&gt; (On-Line Analytical Processing) is a data store that is characterized by a relatively low volume of transactions. This database is typically used for complex queries and therefore the time it takes to write to the database can be long, but the read time needs to be short. On the other hand, &lt;strong&gt;OLTP&lt;/strong&gt; (On-Line Transaction Processing) is a database that is used for a large volume of short on-line transactions. This type of database is used for fast query processing. Each database has advantages and disadvantages. By using both databases, we can optimize performance for both complex queries and a large volume of simple queries and insertions.&lt;/p&gt;
+&lt;h4&gt;
+&lt;a id=&#34;user-content-unstructured-data-data-lake&#34; class=&#34;anchor&#34; href=&#34;#unstructured-data-data-lake&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Unstructured Data: Data Lake&lt;/h4&gt;
+&lt;p&gt;In the past, most of the data used to extract Business Intelligence was stored in relational databases. However, nowadays storage has become very cheap and technologies for distributed storage have been the standard for over a decade. Therefore, many organizations find it to be more cost effective to store their data unstructured and process the data at query time. A repository that contains both structured and unstructured data is called a data lake.&lt;/p&gt;
+&lt;h3&gt;
+&lt;a id=&#34;user-content-metrics&#34; class=&#34;anchor&#34; href=&#34;#metrics&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Metrics&lt;/h3&gt;
+&lt;p&gt;A metric is a quantifiable measure that provides us with information about how well a company is doing at achieving its business objectives. Since companies can only improve the things they measure, it is a crucial part of an analyst&#39;s job to use the most appropriate metrics. Many companies like to use the term &lt;strong&gt;KPI&lt;/strong&gt; (Key Performance Indicator) interchangeably with metrics. An example of a metric is the amount of money spent per sale or the percent of customers that buy a product out of all customers visiting the site.&lt;/p&gt;
+&lt;h3&gt;
+&lt;a id=&#34;user-content-actionable-insights&#34; class=&#34;anchor&#34; href=&#34;#actionable-insights&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Actionable Insights&lt;/h3&gt;
+&lt;p&gt;Typically analysts try to create reports that contain insights that can produce an increase in revenue. While it is interesting to learn certain facts about the company and the products using data, we try to limit ourselves to recommendations that when acted on, will boost the bottom line.&lt;/p&gt;
+&lt;h2&gt;
+&lt;a id=&#34;user-content-summary&#34; class=&#34;anchor&#34; href=&#34;#summary&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Summary&lt;/h2&gt;
+&lt;p&gt;In this lesson we learned about the key concepts of Business Analytics. We learned about different types of data stores as well as metrics and KPIs. In the following lessons, we will use Tableau to produce actionable insights.&lt;/p&gt;
+
+&lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+  </div>
+  <div id="seq_contents_1"
+    aria-labelledby="tab_1"
+    aria-hidden="true"
+    class="seq_contents tex2jax_ignore asciimath2jax_ignore">
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-vertical&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;VerticalStudentView&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34; data-request-token=&#34;6e2db6e0939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@5cc7b9c49bcc4f8fac0e15db808b2cb2&#34; data-block-type=&#34;vertical&#34;&gt;
+  
+
+  &lt;h2 class=&#34;hd hd-2 unit-title&#34;&gt;Introduction to Tableau&lt;/h2&gt;
+
+    &lt;div class=&#34;ih-bookmark-button-wrapper&#34;&gt;
+    	
+
+
+
+&lt;div class=&#34;bookmark-button-wrapper&#34;&gt;
+  &lt;button class=&#34;btn btn-link bookmark-button &#34;
+    aria-pressed=&#34;false&#34;
+    data-bookmark-id=&#34;NoahB,block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@5cc7b9c49bcc4f8fac0e15db808b2cb2&#34;
+    data-bookmarks-api-url=&#34;/api/bookmarks/v1/bookmarks/&#34;&gt;
+     &lt;span class=&#34;bookmark-text&#34;&gt;Bookmark this page&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+
+    &lt;/div&gt;	
+
+&lt;div class=&#34;vert-mod&#34;&gt;
+  &lt;div class=&#34;vert vert-0&#34; data-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@f0de3bcbd54c4af5a918f196ff2260df&#34;&gt;
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;6e2db6e0939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@f0de3bcbd54c4af5a918f196ff2260df&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  &lt;h2&gt;
+&lt;a id=&#34;user-content-lesson-goals&#34; class=&#34;anchor&#34; href=&#34;#lesson-goals&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Lesson Goals&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Learn about the most important features of Tableau.&lt;/li&gt;
+&lt;li&gt;Import data from a text (CSV) file into Tableau.&lt;/li&gt;
+&lt;li&gt;Connect a Google Sheets spreadsheet to Tableau.&lt;/li&gt;
+&lt;li&gt;Learn how to inspect and change data types for imported data.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;
+&lt;a id=&#34;user-content-introduction&#34; class=&#34;anchor&#34; href=&#34;#introduction&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Tableau is one of the most popular and intuitive applications for business intelligence and visual data exploration today. The application makes it easy to connect to an existing data source, create interactive visualizations, and perform basic analysis to discover insights. In this lesson, we will learn about the different features of Tableau and how it can be a valuable addition to your analytics tool kit. We will also cover how to load data into Tableau - both from file and hosted data sources.&lt;/p&gt;
+&lt;p&gt;For this lesson, we will be using the free version of Tableau called Tableau Public.&lt;/p&gt;
+&lt;h2&gt;
+&lt;a id=&#34;user-content-overview-of-tableau-features&#34; class=&#34;anchor&#34; href=&#34;#overview-of-tableau-features&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Overview of Tableau Features&lt;/h2&gt;
+&lt;p&gt;Tableau has several features that make it a great tool for data analysis. In this section, we will highlight some of the most important ones.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Drag &amp;amp; Drop Interface:&lt;/strong&gt; One of the things that makes Tableau so popular is its ease of use. It allows you to intuitively drag and drop fields where you want them and move things around to get exactly the visualization you want.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Variety of Visualizations:&lt;/strong&gt; Tableau has several types of visualizations you can use - from bar charts, line charts, and scatter plots to area charts, bubble charts, tree maps. Speaking of maps, it also allows you to visualize your data geographically.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Dashboards and Stories:&lt;/strong&gt; You can combine several visualizations into dashboards and stories that focus on communicating interesting insights with the stakeholders that need the information.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Data Exploration:&lt;/strong&gt; Perhaps one of Tableau&#39;s most useful features is how easy it is to explore data with it. You can start with an aggregate view of the data, filter to zoom in on something that looks interesting, add dimensions to get more well-rounded perspectives, and look at the underlying records to get to the bottom of what you&#39;re trying to investigate.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;
+&lt;a id=&#34;user-content-installing-tableau-public&#34; class=&#34;anchor&#34; href=&#34;#installing-tableau-public&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Installing Tableau Public&lt;/h2&gt;
+&lt;p&gt;In this course we will focus on the free version of Tableau called Tableau Public. This version has all the features we need without a costly license.&lt;/p&gt;
+&lt;p&gt;We can download Tableau Public by visiting the company&#39;s site at &lt;a href=&#34;https://public.tableau.com/&#34; rel=&#34;nofollow&#34;&gt;https://public.tableau.com&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;We then enter our email in the box and this should redirect us to the download page.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/1d2b8e4e1d6be1d9d387ef8d1a794cb6557d8024/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7461626c6561752d656e7465722d656d61696c2e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/1d2b8e4e1d6be1d9d387ef8d1a794cb6557d8024/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7461626c6561752d656e7465722d656d61696c2e706e67&#34; alt=&#34;Tableau enter email&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/tableau-enter-email.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You will be automatically redirected to the Mac or Windows version. Download the installer and follow the directions in the .exe or .dmg installer.&lt;/p&gt;
+&lt;h2&gt;
+&lt;a id=&#34;user-content-loading-data-into-tableau&#34; class=&#34;anchor&#34; href=&#34;#loading-data-into-tableau&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Loading Data Into Tableau&lt;/h2&gt;
+&lt;p&gt;When you first open Tableau Public, you should see the home screen.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/1670532291b6dbb587f8e6a052dc497fc3f743cb/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7461626c6561752d686f6d652e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/1670532291b6dbb587f8e6a052dc497fc3f743cb/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7461626c6561752d686f6d652e706e67&#34; alt=&#34;Tableau Home Screen&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/tableau-home.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;On the left side bar, you have several options for connecting to a data source via one of several file formats or via a couple types of server connections. For this section, we will be loading the same data set from two different data sources - a local CSV (text) file and then from a hosted Google Sheets spreadsheet. The data set will contain information about the 2018 Fortune 1000 companies.&lt;/p&gt;
+&lt;h3&gt;
+&lt;a id=&#34;user-content-loading-data-from-csv-files&#34; class=&#34;anchor&#34; href=&#34;#loading-data-from-csv-files&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Loading Data from CSV Files&lt;/h3&gt;
+&lt;p&gt;Loading data from a file into Tableau is very straightforward. To load a CSV file, follow the steps below:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Download &lt;a href=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/data/module-2/fortune1000.csv&#34; rel=&#34;nofollow&#34;&gt;fortune1000.csv&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;On the &lt;em&gt;Connect&lt;/em&gt; sidebar, under &lt;em&gt;To a File&lt;/em&gt;, select the &lt;em&gt;Text file&lt;/em&gt; option.&lt;/li&gt;
+&lt;li&gt;Navigate to the directory that contains our Fortune 1000 company (fortune1000.csv) data set.&lt;/li&gt;
+&lt;li&gt;Select the CSV file and click the &lt;em&gt;Open&lt;/em&gt; button.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;
+&lt;a id=&#34;user-content-loading-data-from-google-sheets&#34; class=&#34;anchor&#34; href=&#34;#loading-data-from-google-sheets&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Loading Data from Google Sheets&lt;/h3&gt;
+&lt;p&gt;Loading data from Google Sheets into Tableau requires just a few steps as well. Before following the steps below, ensure that you have a Google account as you will need to provide Tableau access to see what spreadsheets your account has access to.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;On the &lt;em&gt;Connect&lt;/em&gt; sidebar, under &lt;em&gt;To a Server&lt;/em&gt;, select &lt;em&gt;More...&lt;/em&gt; and then &lt;em&gt;Google Sheets&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;A browser tab will open asking you to log into your Google account. Log in and then click &lt;em&gt;Allow&lt;/em&gt; to allow Tableau to access your Google account.&lt;/li&gt;
+&lt;li&gt;Back in Tableau, you should now see a list of Google Sheets that can be accessed by your account.&lt;/li&gt;
+&lt;li&gt;Select the &lt;em&gt;Fortune1000&lt;/em&gt; file and then click &lt;em&gt;Connect&lt;/em&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;
+&lt;a id=&#34;user-content-checking-data-types&#34; class=&#34;anchor&#34; href=&#34;#checking-data-types&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Checking Data Types&lt;/h2&gt;
+&lt;p&gt;Once the data is imported successfully, you should see the following screen with the file name in the top pane and a preview of the data set in the bottom pane.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/4e99d4bf7c2953cd6301382fbb74df44577dfa87/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7461626c6561752d696d706f72742d6373762e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/4e99d4bf7c2953cd6301382fbb74df44577dfa87/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7461626c6561752d696d706f72742d6373762e706e67&#34; alt=&#34;Tableau Imported CSV&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/tableau-import-csv.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Here, you can verify that Tableau has read the data correctly and that it looks as expected. You will notice that across the very tops of the column headings, Tableau indicates the data type (string, number, date, etc.) that is currently assigned to each field. If you scroll all the way to the right, you will see that the last 4 columns (City, State, Latitude, and Longitude) have been identified as geographic fields in addition to their data type. This is important if we want plot the data on a map.&lt;/p&gt;
+&lt;p&gt;If you need to change any data types, you can simply click on the data type icon for that column and select the correct type from the menu. For example, the column &lt;em&gt;Years on Fortune 500 List&lt;/em&gt; is currently a string field. Go ahead and change its data type to &lt;em&gt;Number (whole)&lt;/em&gt;. The &lt;em&gt;Profit Change&lt;/em&gt; column should also be set to &lt;em&gt;Number (decimal)&lt;/em&gt;, so go ahead and change that as well.&lt;/p&gt;
+&lt;h2&gt;
+&lt;a id=&#34;user-content-summary&#34; class=&#34;anchor&#34; href=&#34;#summary&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Summary&lt;/h2&gt;
+&lt;p&gt;In this lesson, we provided an introduction to Tableau - a very popular business intelligence application that allows you to easily explore data and create interactive visualizations. We started the lesson by looking at some of Tableau&#39;s most important features. Next, we learned how to load data into Tableau, both from a text file and from a Google Sheets spreadsheet. We finished the lesson by learning how we can inspect the default data types assigned by Tableau to our imported data and making any necessary corrections.&lt;/p&gt;
+
+&lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+  </div>
+  <div id="seq_contents_2"
+    aria-labelledby="tab_2"
+    aria-hidden="true"
+    class="seq_contents tex2jax_ignore asciimath2jax_ignore">
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-vertical&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;VerticalStudentView&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34; data-request-token=&#34;6e2db6e0939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@21d01a52237d4647873ebdabe02e0a1e&#34; data-block-type=&#34;vertical&#34;&gt;
+  
+
+  &lt;h2 class=&#34;hd hd-2 unit-title&#34;&gt;Data Visualization with Tableau&lt;/h2&gt;
+
+    &lt;div class=&#34;ih-bookmark-button-wrapper&#34;&gt;
+    	
+
+
+
+&lt;div class=&#34;bookmark-button-wrapper&#34;&gt;
+  &lt;button class=&#34;btn btn-link bookmark-button &#34;
+    aria-pressed=&#34;false&#34;
+    data-bookmark-id=&#34;NoahB,block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@21d01a52237d4647873ebdabe02e0a1e&#34;
+    data-bookmarks-api-url=&#34;/api/bookmarks/v1/bookmarks/&#34;&gt;
+     &lt;span class=&#34;bookmark-text&#34;&gt;Bookmark this page&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+
+    &lt;/div&gt;	
+
+&lt;div class=&#34;vert-mod&#34;&gt;
+  &lt;div class=&#34;vert vert-0&#34; data-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@936b9149817642f0a8352ac70d94a4f4&#34;&gt;
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;6e2db6e0939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@936b9149817642f0a8352ac70d94a4f4&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  &lt;h2&gt;
+&lt;a id=&#34;user-content-lesson-goals&#34; class=&#34;anchor&#34; href=&#34;#lesson-goals&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Lesson Goals&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Learn how to create basic data visualizations in Tableau.&lt;/li&gt;
+&lt;li&gt;Learn how to layer on additional details to create more advanced visualizations.&lt;/li&gt;
+&lt;li&gt;Learn how to use maps in Tableau to plot data geographically.&lt;/li&gt;
+&lt;li&gt;Create dashboards that combine several visualizations on a single page.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;
+&lt;a id=&#34;user-content-introduction&#34; class=&#34;anchor&#34; href=&#34;#introduction&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;One of the primary tasks that data analysts use Tableau for is creating data visualizations. Visualizations help you intuitively understand how the entities in your data compare to each other, how similarly or differently they behave, and where there are values that look extreme or incorrect. In this lesson, we will learn how to create several types of visualizations using Tableau.&lt;/p&gt;
+&lt;p&gt;This lesson will pick up where the &lt;em&gt;Introduction to Tableau&lt;/em&gt; lesson left off: we have loaded our Fortune 1000 company data set, corrected a couple of incorrect data types, and are ready to dive into creating some visualizations!&lt;/p&gt;
+&lt;h2&gt;
+&lt;a id=&#34;user-content-creating-basic-visualizations&#34; class=&#34;anchor&#34; href=&#34;#creating-basic-visualizations&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Creating Basic Visualizations&lt;/h2&gt;
+&lt;p&gt;To get started creating visualizations, click the &lt;em&gt;Sheet 1&lt;/em&gt; tab at the bottom of the screen below.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/4e99d4bf7c2953cd6301382fbb74df44577dfa87/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7461626c6561752d696d706f72742d6373762e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/4e99d4bf7c2953cd6301382fbb74df44577dfa87/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7461626c6561752d696d706f72742d6373762e706e67&#34; alt=&#34;Tableau Imported CSV&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/tableau-import-csv.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You should be presented with the following worksheet screen from which we can start putting together some visualizations.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/f6ab4a9ad90adbd01c7233baec900f4d0bcdd4ee/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7461626c6561752d776f726b73686565742e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/f6ab4a9ad90adbd01c7233baec900f4d0bcdd4ee/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7461626c6561752d776f726b73686565742e706e67&#34; alt=&#34;Tableau Worksheet&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/tableau-worksheet.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You will notice that in the left sidebar, the string fields in the data are listed as &lt;em&gt;Dimensions&lt;/em&gt; and the numeric fields are listed as &lt;em&gt;Measures&lt;/em&gt;. Dimensions in Tableau are ways that you can group and slice the data while measures are fields that you can use to perform calculations. There are also a couple of measures that are not fields in the database - &lt;em&gt;Number of Records&lt;/em&gt; and &lt;em&gt;Measure Values&lt;/em&gt;. You can hover over each of those for an explanation of what they do.&lt;/p&gt;
+&lt;p&gt;Tableau works primarily via drag-and-drop, so if we wanted to see the number of companies on the Fortune 1000 from each sector, we would begin by dragging the &lt;em&gt;Number of Records&lt;/em&gt; measure into the middle of the workspace. When we do this, we should see the number 1,000 which is that total number of rows we have in our data set. To split that up by sector, we would drag the &lt;em&gt;Sector&lt;/em&gt; dimension and drop it into the &lt;em&gt;Rows&lt;/em&gt; section near the top of the worksheet. This produces a tabular numeric breakdown by default.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/27746ea823e7aee9487fd9d29f49ba2204a75238/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7461626c6561752d746162756c61722e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/27746ea823e7aee9487fd9d29f49ba2204a75238/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7461626c6561752d746162756c61722e706e67&#34; alt=&#34;Tableau Table&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/tableau-tabular.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Once we have this, we can change the type of visualization by clicking on the &lt;em&gt;Show Me&lt;/em&gt; button in the upper right of the screen. This will expand a menu of different charts and graphs that you can select from. For this type of information, it might be useful to display it as a horizontal bar chart. To do this, we would select the &lt;em&gt;horizontal bars&lt;/em&gt; option (leftmost option on the third row) and the resulting visualization would look as follows.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/ff042916dc15c1a465cf2c47545beaa5e06d5c21/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7461626c6561752d62617263686172742e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/ff042916dc15c1a465cf2c47545beaa5e06d5c21/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7461626c6561752d62617263686172742e706e67&#34; alt=&#34;Tableau Barchart&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/tableau-barchart.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;If we wanted a different view of the data, we could change the visualization to a &lt;em&gt;tree map&lt;/em&gt; (leftmost option on the fourth row), which will show proportionally bigger and darker sections for the sectors that have more companies in them.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/28b4943c4d301988a94b00356f75420f4367bca1/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7461626c6561752d747265656d61702e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/28b4943c4d301988a94b00356f75420f4367bca1/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7461626c6561752d747265656d61702e706e67&#34; alt=&#34;Tableau Treemap&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/tableau-treemap.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Another visualization we could use for our data would be a &lt;em&gt;packed bubble&lt;/em&gt; chart (rightmost option of last row) which would show bubbles of increasing size for each sector according to number of companies in that sector.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/b7a11434308205bae2fc5eb25a2d997a8999dd59/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7461626c6561752d627562626c652e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/b7a11434308205bae2fc5eb25a2d997a8999dd59/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7461626c6561752d627562626c652e706e67&#34; alt=&#34;Tableau Bubble&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/tableau-bubble.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Note that to the left of our visualizations, there is a box labeled &lt;em&gt;Marks&lt;/em&gt; whose contents keep changing when we change visualizations. This box allows you to customize the way your visualization looks. It has sub-boxes for color, size, labels, etc. that can help us identify and distinguish between the different entities we are seeing in our visualizations. For example, notice that for our bubble chart we have the sum of the number of records represented by size of the bubbles and sector identified by labeling. This is nice, but the bubbles look rather uniform since they are all the same color. If we wanted to liven up our visualization and distinguish between the sectors a bit more, we could drag the &lt;em&gt;Sector&lt;/em&gt; dimension into the &lt;em&gt;Color&lt;/em&gt; sub-box and watch our bubble chart become colorful!&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/7839e53fe3d71bdf37410cfd7e3638f88cd12f1e/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7461626c6561752d636f6c6f722d627562626c652e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/7839e53fe3d71bdf37410cfd7e3638f88cd12f1e/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7461626c6561752d636f6c6f722d627562626c652e706e67&#34; alt=&#34;Tableau Bubble&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/tableau-color-bubble.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;
+&lt;a id=&#34;user-content-more-advanced-visualizations&#34; class=&#34;anchor&#34; href=&#34;#more-advanced-visualizations&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;More Advanced Visualizations&lt;/h2&gt;
+&lt;p&gt;In the previous section, we created a variety of visualizations using only the Sector dimension and the Number of Records measure. Let&#39;s now explore how we can incorporate additional dimensions and measures into our visualizations.&lt;/p&gt;
+&lt;p&gt;To get started, let&#39;s plot two measures against each other by dragging the Revenues field to the Columns and the Profits column to the Rows section. By default, Tableau will aggregate these two measures, and you will end up with a plot that has a single point.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/86cda48edd81c82e3c0b179e2984e15a194237eb/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7461626c6561752d72657670726f66697473756d2e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/86cda48edd81c82e3c0b179e2984e15a194237eb/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7461626c6561752d72657670726f66697473756d2e706e67&#34; alt=&#34;Sum of Revenue and Profit&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/tableau-revprofitsum.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;However, what we would expect to see is a scatter plot with a point for every record in our data set. In other words, we need to let Tableau know that we don&#39;t want it to aggregate these measures, we just want it to plot them as they are. We can do this by selecting &lt;em&gt;Analysis&lt;/em&gt; from the top menu and unchecking &lt;em&gt;Aggregate Measures&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/ee52a2f0812fbc6c5fbcefe93cf4967d1a7dbd70/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7461626c6561752d72657670726f666974736361747465722e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/ee52a2f0812fbc6c5fbcefe93cf4967d1a7dbd70/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7461626c6561752d72657670726f666974736361747465722e706e67&#34; alt=&#34;Revenue and Profit Scatter Plot&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/tableau-revprofitscatter.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Now we have a proper scatter plot that we can work with. From here, we can add a few more dimensions to make this visualization informative. If we hover our mouse pointer over any of the points, we can see the revenue and profit figures for that company, but we don&#39;t know what companies are represented by any of the points. Let&#39;s fix that.&lt;/p&gt;
+&lt;p&gt;First, let&#39;s right-click on the Title dimension, select &lt;em&gt;Rename&lt;/em&gt;, and change its name to Company Name. Then, let&#39;s drag that field over to the &lt;em&gt;Label&lt;/em&gt; box inside the &lt;em&gt;Marks&lt;/em&gt; section. We can now see company names in our scatter plot!&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/85b961724c8e139db0d7aebf14dfe814da3b207c/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7461626c6561752d736361747465722d6e616d65732e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/85b961724c8e139db0d7aebf14dfe814da3b207c/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7461626c6561752d736361747465722d6e616d65732e706e67&#34; alt=&#34;Scatter Plot with Labels&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/tableau-scatter-names.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;From here, we can layer in additional information. For example, let&#39;s drag the Assets measure into the &lt;em&gt;Size&lt;/em&gt; box and the Sector dimension into the &lt;em&gt;Color&lt;/em&gt; box. If you get a warning message when performing the latter, click &lt;em&gt;Add all members&lt;/em&gt;. We should now have a visualization that looks like this.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/9300e5213e0529b8bf407b995e90ecfcc73e7d16/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7461626c6561752d736361747465722d66696e616c2e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/9300e5213e0529b8bf407b995e90ecfcc73e7d16/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7461626c6561752d736361747465722d66696e616c2e706e67&#34; alt=&#34;Scatter Plot with Labels&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/tableau-scatter-final.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;
+&lt;a id=&#34;user-content-geographic-data-visualizations&#34; class=&#34;anchor&#34; href=&#34;#geographic-data-visualizations&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Geographic Data Visualizations&lt;/h2&gt;
+&lt;p&gt;In addition to various interactive charts and graphs, Tableau also provides us with an easy way to plot data on geographic maps. How easy you ask? Drag the City dimension into the center of a blank worksheet. Tableau will automatically generate a map with plot points on every city.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/bc60b160ffcbb11bb4607bba7f8195194c5e98fc/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7461626c6561752d67656f2d6369746965732e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/bc60b160ffcbb11bb4607bba7f8195194c5e98fc/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7461626c6561752d67656f2d6369746965732e706e67&#34; alt=&#34;Map with Cities&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/tableau-geo-cities.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;From here, we can drag the Profits field over to the &lt;em&gt;Size&lt;/em&gt; box, the Sector field over to the &lt;em&gt;Color&lt;/em&gt; box, and Company Name to the &lt;em&gt;Details&lt;/em&gt; box. What we end up with is a map visualization like the one below, where we can see not only the geographic distribution of companies but also what sectors are present in each geographic region as well as getting a sense of how much profit is generated by each region.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/876bdc8ab3c79297523d5d6ea22229e57ba28241/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7461626c6561752d70726f6669742d736563746f722d6d61702e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/876bdc8ab3c79297523d5d6ea22229e57ba28241/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7461626c6561752d70726f6669742d736563746f722d6d61702e706e67&#34; alt=&#34;Profit Sector Map&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/tableau-profit-sector-map.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;
+&lt;a id=&#34;user-content-creating-dashboards&#34; class=&#34;anchor&#34; href=&#34;#creating-dashboards&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Creating Dashboards&lt;/h2&gt;
+&lt;p&gt;Dashboards are collections of multiple data visualizations all on one page. They help provide several different views of a data set simultaneously. Once you have created a few visualizations in Tableau, it is relatively easy to combine them into a dashboard. Below are some steps you can follow to create a dashboard from the three visualizations we have ended up with thus far in this lesson (the colorful bubble chart, the scatter plot, and the geographic map).&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Ensure that each visualization is on its own worksheet. Feel free to create new worksheets by clicking on the &lt;em&gt;New Worksheet&lt;/em&gt; button on either the top or bottom toolbars.&lt;/li&gt;
+&lt;li&gt;Once you have a worksheet for each visualization, you can click on the &lt;em&gt;New Dashboard&lt;/em&gt; button in either the top or bottom toolbar. You should see a new, blank dashboard that looks like the following.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/861c610e56c4be3176d1bfa55dcf66981da46045/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7461626c6561752d64617368626f6172642d626c616e6b2e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/861c610e56c4be3176d1bfa55dcf66981da46045/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7461626c6561752d64617368626f6172642d626c616e6b2e706e67&#34; alt=&#34;Tableau Dashboard Blank&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/tableau-dashboard-blank.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Make sure that the &lt;em&gt;Size&lt;/em&gt; dropdown on the left sidebar is set to Automatic so that the dashboard will automatically adjust to the size of the screen where it is being viewed.&lt;/li&gt;
+&lt;li&gt;Next, you can drag each of the worksheets listed in the left sidebar under the &lt;em&gt;Sheets&lt;/em&gt; heading onto the main area of the dashboard (where it currently says &#34;Drop sheets here&#34;).&lt;/li&gt;
+&lt;li&gt;Organize and rearrange the visualizations in a way that they look best by dragging them around.&lt;/li&gt;
+&lt;li&gt;You can also give the dashboard a title by checking the &lt;em&gt;Show dashboard title&lt;/em&gt; checkbox at the bottom left of the screen. You should see a title appear, which you can edit by double clicking on it. You can do the same with the individual visualization titles as well.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Your final dashboard should look something like the one below.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/2a64afa71c692e741d94a92f66eeb97aceee24a1/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7461626c6561752d64617368626f6172642d66696e616c2e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/2a64afa71c692e741d94a92f66eeb97aceee24a1/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7461626c6561752d64617368626f6172642d66696e616c2e706e67&#34; alt=&#34;Tableau Dashboard Final&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/tableau-dashboard-final.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;
+&lt;a id=&#34;user-content-summary&#34; class=&#34;anchor&#34; href=&#34;#summary&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Summary&lt;/h2&gt;
+&lt;p&gt;In this lesson, we dove into Tableau and learned how to create several types of data visualizations. Once we had a grasp of how to generate simpler visualizations, we saw how we could layer on dimensions to create more advanced visualizations that convey a lot of information. We also covered how to plot data geographically on a map and how to combine multiple visualizations into a dashboard. Now that you have completed this lesson, you should now have a strong foundation from which we can perform further data exploration and analysis with Tableau.&lt;/p&gt;
+
+&lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+  </div>
+  <div id="seq_contents_3"
+    aria-labelledby="tab_3"
+    aria-hidden="true"
+    class="seq_contents tex2jax_ignore asciimath2jax_ignore">
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-vertical&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;VerticalStudentView&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34; data-request-token=&#34;6e2db6e0939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@eab61b02a10d468383239b58328e479e&#34; data-block-type=&#34;vertical&#34;&gt;
+  
+
+  &lt;h2 class=&#34;hd hd-2 unit-title&#34;&gt;BI Analysis with Tableau&lt;/h2&gt;
+
+    &lt;div class=&#34;ih-bookmark-button-wrapper&#34;&gt;
+    	
+
+
+
+&lt;div class=&#34;bookmark-button-wrapper&#34;&gt;
+  &lt;button class=&#34;btn btn-link bookmark-button &#34;
+    aria-pressed=&#34;false&#34;
+    data-bookmark-id=&#34;NoahB,block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@eab61b02a10d468383239b58328e479e&#34;
+    data-bookmarks-api-url=&#34;/api/bookmarks/v1/bookmarks/&#34;&gt;
+     &lt;span class=&#34;bookmark-text&#34;&gt;Bookmark this page&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+
+    &lt;/div&gt;	
+
+&lt;div class=&#34;vert-mod&#34;&gt;
+  &lt;div class=&#34;vert vert-0&#34; data-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@5159cfe97df04a8697e9ef39d9827ec4&#34;&gt;
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;6e2db6e0939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@5159cfe97df04a8697e9ef39d9827ec4&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  &lt;h2&gt;
+&lt;a id=&#34;user-content-lesson-goals&#34; class=&#34;anchor&#34; href=&#34;#lesson-goals&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Lesson Goals&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Understand the differences between visualization for exploration and communication.&lt;/li&gt;
+&lt;li&gt;Perform BI analysis on a company data set.&lt;/li&gt;
+&lt;li&gt;Construct Tableau Stories to effectively communicate insights.&lt;/li&gt;
+&lt;li&gt;Learn about Tableau features such as filtering and sorting.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;
+&lt;a id=&#34;user-content-introduction&#34; class=&#34;anchor&#34; href=&#34;#introduction&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;At its core, business intelligence is about extracting actionable insights and helping with business decision-making. Therefore, when we analyze data from a business intelligence context, we should do it with one of two objectives in mind:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Exploring the data to derive insights.&lt;/li&gt;
+&lt;li&gt;Effectively communicating those insights to stakeholders.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Data visualization can help with both of these, but the approaches for each of the aforementioned objectives differ because communicating insights often relies upon data exploration.&lt;/p&gt;
+&lt;p&gt;In this lesson we will explore and analyze a data set and construct reporting that communicates our findings, all the while noticing the differences between visualization for exploration vs. visualization for presentation. Along the way, we will learn various ways to analyze data and see some more useful features in Tableau.&lt;/p&gt;
+&lt;p&gt;For this lesson, we will use an Online Retail (&lt;a href=&#34;https://ih-materials.s3-eu-west-1.amazonaws.com/uploads/data-static/data/module-2/online-retail.xlsx&#34;&gt;Online Retail.xlsx&lt;/a&gt;) data set. The data set contains invoice information for a retail company based in the United Kingdom that sells products all over the world. Our job will be to discover interesting things hidden in this company&#39;s data and then put together a series of reports that will help the company&#39;s management track how the company is performing and make decisions about its future direction.&lt;/p&gt;
+&lt;h2&gt;
+&lt;a id=&#34;user-content-loading-the-retail-data-set&#34; class=&#34;anchor&#34; href=&#34;#loading-the-retail-data-set&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Loading the Retail Data Set&lt;/h2&gt;
+&lt;p&gt;Before we can analyze the data, we must load it into Tableau. From the left sidebar, we are going to choose the &lt;em&gt;Microsoft Excel&lt;/em&gt; option, navigate to where we have saved the data file, select it, and click &lt;em&gt;Open&lt;/em&gt;. The data set should look like the one below.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/9cb42a369eab733b86bc21017c798c0b3e39fa75/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7461626c6561752d72657461696c2d646174612e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/9cb42a369eab733b86bc21017c798c0b3e39fa75/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7461626c6561752d72657461696c2d646174612e706e67&#34; alt=&#34;Tableau Retail Data&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/tableau-retail-data.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; The data set is not small so it might take a few minutes for it to load. This is good practice as the data sets you encounter in the real world will likely be large as well.&lt;/p&gt;
+&lt;p&gt;Next, we will inspect the data types and make any necessary adjustments. The InvoiceNo and Customer ID fields contain numeric values, but they serve as identifiers for specific entities that we may want to aggregate. Because of this, we should change their data types to string. Now that this is complete, we are ready to start exploring the data.&lt;/p&gt;
+&lt;h2&gt;
+&lt;a id=&#34;user-content-visual-data-exploration&#34; class=&#34;anchor&#34; href=&#34;#visual-data-exploration&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Visual Data Exploration&lt;/h2&gt;
+&lt;p&gt;When exploring a data set, you want to start with the entities because these are the things you will actually be analyzing. In Tableau, these are represented by dimensions. Below are the entities for this data set along with their corresponding dimensions:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Country: Country&lt;/li&gt;
+&lt;li&gt;Customer: Customer ID&lt;/li&gt;
+&lt;li&gt;Invoice: Invoice No&lt;/li&gt;
+&lt;li&gt;Product: Stock Code and Description&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The measures represent what we can view about these entities and include Quantity, Revenue, and Unit Price for our data set. You can start exploring by matching up dimensions and measures. For example, let&#39;s start by looking at total number of units sold (Quantity) for each country. We can do this by creating a new worksheet, dragging the Quantity field into the center of it, and then dragging the Country field into the &lt;em&gt;Columns&lt;/em&gt; section. This will show the results as a table by default, but let&#39;s select a bar chart from the &lt;em&gt;Show Me&lt;/em&gt; menu and also swap the rows and columns by clicking the &lt;em&gt;Swap Rows and Columns&lt;/em&gt; button on the top toolbar. We should end up with a vertical bar chart that looks like the one below.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/db107a98c4159d0779971620f8fd26cba48f7472/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7461626c6561752d756e6974732d636f756e7472792e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/db107a98c4159d0779971620f8fd26cba48f7472/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7461626c6561752d756e6974732d636f756e7472792e706e67&#34; alt=&#34;Units Sold by Country&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/tableau-units-country.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;We can see that the vast majority of units have been sold in the United Kingdom. Because of the large number of units sold in the U.K., it is difficult to see how unit sales in the other countries compare to each other. We can get a better view by clicking on the United Kingdom bar and selecting &lt;em&gt;Exclude&lt;/em&gt;. This provides us with a better perspective on how the company&#39;s sales outside its home country are distributed.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/d22ec64ce9433a0bf3ca0319563a7c5ebe4857fd/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7461626c6561752d756e6974732d666f726569676e2e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/d22ec64ce9433a0bf3ca0319563a7c5ebe4857fd/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7461626c6561752d756e6974732d666f726569676e2e706e67&#34; alt=&#34;Units Sold Outside UK&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/tableau-units-foreign.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;We can see that the company&#39;s highest unit sales outside of the U.K. have occurred in the Netherlands, Ireland (EIRE), Germany, France, and Australia.&lt;/p&gt;
+&lt;p&gt;Next, let&#39;s try to get a sense of who the company&#39;s most valuable customers are and what country they are from. To do this, we will create a new worksheet and drag the Revenue field into the center. We will also drag the Customer ID and Country fields into the &lt;em&gt;Rows&lt;/em&gt; section so that we are viewing total revenue by customer and country. Now, we will need to sort our customers so that the ones with the largest revenue appear at the top. We can do this by clicking on the down arrow next to our Customer ID field in the &lt;em&gt;Rows&lt;/em&gt; section, clicking Sort, and then choosing &lt;em&gt;Descending&lt;/em&gt; by the &lt;em&gt;Sum&lt;/em&gt; of the &lt;em&gt;Revenue&lt;/em&gt; field.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/4877d6780eb5b4b7298d16905224407c3750be34/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7461626c6561752d736f72742e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/4877d6780eb5b4b7298d16905224407c3750be34/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7461626c6561752d736f72742e706e67&#34; alt=&#34;Tableau Sort&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/tableau-sort.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The results we get show us which customers have spent the most amount of money with the company and where those customers are from. If we would like to turn this into a bar chart, we can just drag the Revenue field into the &lt;em&gt;Columns&lt;/em&gt; section and now we have a sorted horizontal bar chart with labels showing revenue by customer and country.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/259f64d88e0fa1ef1a4c79af66ad9263e5829438/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7461626c6561752d637573746f6d65722d726576656e75652e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/259f64d88e0fa1ef1a4c79af66ad9263e5829438/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7461626c6561752d637573746f6d65722d726576656e75652e706e67&#34; alt=&#34;Customer Revenue&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/tableau-customer-revenue.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Challenge:&lt;/strong&gt; There is much more to discover about this data set. Continue exploring the data using what you have learned in this section. For example, try creating visualizations showing which products have generated the most revenue for the company and what the relationship between Unit Price and Revenue looks like.&lt;/p&gt;
+&lt;h2&gt;
+&lt;a id=&#34;user-content-reporting-and-communicating-insights&#34; class=&#34;anchor&#34; href=&#34;#reporting-and-communicating-insights&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Reporting and Communicating Insights&lt;/h2&gt;
+&lt;p&gt;Once we have sufficiently explored and analyzed our data, it&#39;s time to summarize our findings and communicate them to the appropriate stakeholders. In the previous lesson, we learned how to create dashboards that can accomplish this. Tableau also has another medium called Stories through which you can visually tell a story about the insights you have found in your data. In this section, we will focus on building a story using visualizations. In order to do this, make sure you have created at least 4 visualizations for the data set.&lt;/p&gt;
+&lt;p&gt;To create a new story in Tableau, click on the &lt;em&gt;New Story&lt;/em&gt; button in either the top or bottom toolbars. Tableau should create a blank story that looks like this.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/4cda1fcab97c3be819385e109af6dbca8789d002/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7461626c6561752d73746f72792e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/4cda1fcab97c3be819385e109af6dbca8789d002/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7461626c6561752d73746f72792e706e67&#34; alt=&#34;Tableau Story&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/tableau-story.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;A story in Tableau is like a slide presentation, only that the equivalent of a slide is called a &lt;em&gt;Story Point&lt;/em&gt;. You can add story points by clicking on either of the buttons under the &lt;em&gt;New story point&lt;/em&gt; section of the left sidebar - the &lt;em&gt;Blank&lt;/em&gt; button to create a blank story point or the &lt;em&gt;Duplicate&lt;/em&gt; button to create a duplicate of the current story point which you can then modify. You can also add a title to your story and captions to each of your story points.&lt;/p&gt;
+&lt;p&gt;Let&#39;s create four blank story points, dragging one of the sheets we created during our exploration of the data in the previous section into each one. Once we have dragged our sheets into our story points, write a brief caption for each one explaining what the visualization shows. You can even add annotations or notes to the visualizations by going to the left sidebar and dragging the &lt;em&gt;Drag to add text&lt;/em&gt; section onto the visualization. When you are ready to present your story, you can go into Tableau&#39;s presentation mode by clicking the &lt;em&gt;Presentation Mode&lt;/em&gt; button (second from right on top toolbar).&lt;/p&gt;
+&lt;p&gt;Below are example screenshots of a completed story.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/bba158a366b0339692a443840271f935568062ff/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7461626c6561752d73746f72792d312e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/bba158a366b0339692a443840271f935568062ff/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7461626c6561752d73746f72792d312e706e67&#34; alt=&#34;Tableau Story Point 1&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/tableau-story-1.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/e140f32b58bddc42b6e5acf89a951cf0f53f39a9/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7461626c6561752d73746f72792d322e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/e140f32b58bddc42b6e5acf89a951cf0f53f39a9/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7461626c6561752d73746f72792d322e706e67&#34; alt=&#34;Tableau Story Point 2&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/tableau-story-2.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/1e710158544bd125f6fb085883a9f293cc17c032/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7461626c6561752d73746f72792d332e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/1e710158544bd125f6fb085883a9f293cc17c032/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7461626c6561752d73746f72792d332e706e67&#34; alt=&#34;Tableau Story Point 3&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/tableau-story-3.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/41e6406f731f8f874ec6e017be70b2910000955b/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7461626c6561752d73746f72792d342e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/41e6406f731f8f874ec6e017be70b2910000955b/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7461626c6561752d73746f72792d342e706e67&#34; alt=&#34;Tableau Story Point 4&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/tableau-story-4.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;
+&lt;a id=&#34;user-content-summary&#34; class=&#34;anchor&#34; href=&#34;#summary&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Summary&lt;/h2&gt;
+&lt;p&gt;In this lesson, we learned how to analyze a data set in a business intelligence context and communicate insights. We began the lesson by explaining the concepts of visualization for exploration and visualization for communication. From there, we looked at Tableau by analyzing some online retail data from a few different dimensions and putting together corresponding visualizations. Along the way, we witnessed some additional useful features Tableau has that lets us filter and sort our data. We wrapped up the chapter by introducing Tableau Stories and showing how we can construct them using the visualizations we had created on Tableau worksheets.&lt;/p&gt;
+
+&lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+  </div>
+  <div id="seq_content" class="ih-learnig-unit" role="tabpanel"></div>
+
+  <nav class="sequence-bottom ih-js-fire-highlighting-controls" aria-label="Section">
+    <button class="sequence-nav-button button-previous">
+      <span class="icon fa fa-chevron-prev" aria-hidden="true"></span>
+      <span>Previous</span>
+    </button>
+    <button class="sequence-nav-button button-next">
+      <span>Next</span>
+      <span class="icon fa fa-chevron-next" aria-hidden="true"></span>
+    </button>
+  </nav>
+</div>
+
+</div>
+
+        </main>
+    </section>
+
+    <section class="courseware-results-wrapper">
+      <div id="loading-message" aria-live="polite" aria-relevant="all"></div>
+      <div id="error-message" aria-live="polite"></div>
+      <div class="courseware-results search-results" data-course-id="course-v1:IRONHACK+DAFT+201906_MIA" data-lang-code="en"></div>
+    </section>
+
+  </div>
+  
+
+
+
+
+
+
+
+
+
+    
+    
+    <script type="text/javascript" src="../../../../../static/bundles/CourseSock.43ffb68a30fa51e4e467.1f398818dd61.js" ></script>
+      <script type="text/javascript">
+        
+    new CourseSock({
+        el:'.verification-sock'
+    });
+
+      </script>
+
+
+</div>
+<div class="container-footer">
+</div>
+
+          
+        </div>
+      </div>
+
+    
+    
+
+      <div class="ih-beta-banner">
+        <span class="icon fa fa-flask"></span>
+        <span class="ih-beta-banner-text">We just launched a new version of the student platform. Everything should be fine, but if you encounter a bug, don't hesitate and send it our way.</span>
+      </div>
+
+  </div>
+
+  
+  
+  <script type="text/javascript" src="../../../../../static/common/js/vendor/jquery.scrollTo.525edcc52fe8.js"></script>
+  <script type="text/javascript" src="../../../../../static/js/vendor/flot/jquery.flot.d3d45ff0c6a8.js"></script>
+
+  
+    <script type="text/javascript" src="../../../../../static/js/lms-courseware.43ed60564822.js" charset="utf-8"></script>
+
+
+  
+
+
+
+<script type="text/javascript">
+    // Fast Preview was introduced in 2.5. However, it
+    // causes undesirable flashing/font size changes when
+    // MathJax is used for interactive preview (equation editor).
+    // Setting processSectionDelay to 0 (see below) fully eliminates
+    // fast preview, but to reduce confusion, we are also setting
+    // the option as displayed in the context menu to false.
+    // When upgrading to 2.6, check if this variable name changed.
+    window.MathJax = {
+      menuSettings: {CHTMLpreview: false}
+    };
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [
+        ["\\(","\\)"],
+        ['[mathjaxinline]','[/mathjaxinline]']
+      ],
+      displayMath: [
+        ["\\[","\\]"],
+        ['[mathjax]','[/mathjax]']
+      ]
+    }
+  });
+</script>
+<script type="text/x-mathjax-config">
+
+  // In order to eliminate all flashing during interactive
+  // preview, it is necessary to set processSectionDelay to 0
+  // (remove delay between input and output phases). This
+  // effectively disables fast preview, regardless of
+  // the fast preview setting as shown in the context menu.
+  MathJax.Hub.processSectionDelay = 0;
+
+  MathJax.Hub.signal.Interest(function(message) {
+    if(message[0] === "End Math") {
+        set_mathjax_display_div_settings();
+    }
+  });
+  function set_mathjax_display_div_settings() {
+    $('.MathJax_Display').each(function( index ) {
+      this.setAttribute('tabindex', '0');
+      this.setAttribute('aria-live', 'off');
+      this.removeAttribute('role');
+      this.removeAttribute('aria-readonly');
+    });
+  }
+</script>
+
+
+<!-- This must appear after all mathjax-config blocks, so it is after the imports from the other templates.
+     It can't be run through static.url because MathJax uses crazy url introspection to do lazy loading of
+     MathJax extension libraries -->
+<script type="text/javascript" src="../../../../../../cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJaxf4fa.js?config=TeX-MML-AM_SVG"></script>
+
+
+    
+    
+      <script type="text/javascript" src="../../../../../static/course_search/js/course_search_factory.26a9d7197c46bdd1.js?raw"></script>
+    <script type="text/javascript">
+        (function (require) {
+            require(['course_search/js/course_search_factory'], function (CourseSearchFactory) {
+                
+        var courseId = $('.courseware-results').data('courseId');
+        CourseSearchFactory({
+            courseId: courseId,
+            searchHeader: $('.search-bar')
+        });
+    
+            });
+        }).call(this, require || RequireJS.require);
+    </script>
+
+
+  
+    
+      <script type="text/javascript" src="../../../../../static/js/courseware/courseware_factory.1504fc10caefbdd1.js?raw"></script>
+    <script type="text/javascript">
+        (function (require) {
+            require(['js/courseware/courseware_factory'], function (CoursewareFactory) {
+                
+    CoursewareFactory();
+  
+            });
+        }).call(this, require || RequireJS.require);
+    </script>
+
+
+
+  <script type="text/javascript">
+    var $$course_id = "course\u002Dv1:IRONHACK+DAFT+201906_MIA";
+  </script>
+
+
+
+
+
+
+  
+
+
+
+  <script type="text/javascript" src="../../../../../static/js/vendor/noreferrer.aa62a3e70ffa.js" charset="utf-8"></script>
+  <script type="text/javascript" src="../../../../../static/js/utils/navigation.08930e16ab3d.js" charset="utf-8"></script>
+  <script type="text/javascript" src="../../../../../static/js/header/header.309a1243e175.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="../../../../../static/ih-lms-theme/js/vendor/highlight.min.496e109b43ca.js" ></script>
+    <script type="text/javascript" src="../../../../../static/ih-lms-theme/js/vendor/ih-highlight.0f32f131ba83.js" ></script>
+  
+</body>
+</html>
+
+

@@ -1,0 +1,2473 @@
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<!--[if lte IE 9]><html class="ie ie9 lte9" lang="en"><![endif]-->
+<!--[if !IE]><!--><html lang="en"><!--<![endif]-->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head dir="ltr">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+  
+<title data-base-title="
+ Supervised Learning | DAFT Courseware | Ironhack Student Platform">
+  
+ Supervised Learning Model Evaluation | Supervised Learning | DAFT Courseware | Ironhack Student Platform
+</title>
+
+
+      <script type="text/javascript">
+        /* immediately break out of an iframe if coming from the marketing website */
+        (function(window) {
+          if (window.location !== window.top.location) {
+            window.top.location = window.location;
+          }
+        })(this);
+      </script>
+
+  
+
+  <script type="text/javascript" src="../../../../../static/js/i18n/en/djangojs.e37eef1ffc63.js"></script>
+  <script type="text/javascript" src="../../../../../static/js/ie11_find_array.bd1c6dc7a133.js"></script>
+
+  <link rel="icon" type="image/x-icon" href="../../../../../static/ih-lms-theme/images/favicon.0de58aa5bfca.ico" />
+
+  
+  
+
+    <link href="../../../../../static/ih-lms-theme/css/lms-style-vendor.68e48093f5dd.css" rel="stylesheet" type="text/css" />
+
+
+
+      <link rel="stylesheet" href="../../../../../static/ih-lms-theme/css/bootstrap/lms-main.c54b2923d249.css" type="text/css" media="all" />
+
+    
+    <script type="text/javascript" src="../../../../../static/js/lms-main_vendor.a04b73033169.js" charset="utf-8"></script>
+
+
+    
+    <script type="text/javascript" src="../../../../../static/js/lms-application.e7bd4b65d083.js" charset="utf-8"></script>
+
+
+
+  
+    
+    
+    <script type="text/javascript" src="../../../../../static/bundles/commons.d60dcd98c024881d011e.c835e91d09f6.js" ></script>
+
+
+
+  <script>
+    window.baseUrl = "../../../../../static/index.html";
+    (function (require) {
+      require.config({
+          baseUrl: window.baseUrl
+      });
+    }).call(this, require || RequireJS.require);
+  </script>
+  <script type="text/javascript" src="../../../../../static/lms/js/require-config.8e00198660b0.js"></script>
+  
+    <script type="text/javascript">
+        (function (require) {
+          require.config({
+              paths: {
+                'js/courseware/courseware_factory': 'js/courseware/courseware_factory.1504fc10caef',
+'draggabilly': 'js/vendor/draggabilly.26caba6f7187',
+'js/courseware/toggle_element_visibility': 'js/courseware/toggle_element_visibility.d5f10bc65ed0',
+'hls': 'common/js/vendor/hls.b10b9ef4015b',
+'js/courseware/link_clicked_events': 'js/courseware/link_clicked_events',
+'moment': 'common/js/vendor/moment-with-locales.084396f4103c',
+'moment-timezone': 'common/js/vendor/moment-timezone-with-data.60142e6c4416',
+'js/student_account/logistration_factory': 'js/student_account/logistration_factory.d7765e4e6715',
+'js/groups/views/cohorts_dashboard_factory': 'js/groups/views/cohorts_dashboard_factory.7f46663f97b4',
+'js/dateutil_factory': 'js/dateutil_factory.841c29e02056',
+'course_bookmarks/js/views/bookmark_button': 'course_bookmarks/js/views/bookmark_button.d4cfaf3361fa',
+'js/courseware/accordion_events': 'js/courseware/accordion_events.6064c7809de5',
+'js/views/message_banner': 'js/views/message_banner.af013d0ecbd4',
+'js/groups/discussions_management/discussions_dashboard_factory': 'js/discussions_management/views/discussions_dashboard_factory.2e10d9097343',
+'js/courseware/course_info_events': 'js/courseware/course_info_events.2fc35b57627f'
+            }
+          });
+        }).call(this, require || RequireJS.require);
+    </script>
+  
+
+  
+
+  
+
+    <link href="../../../../../static/ih-lms-theme/css/lms-style-course-vendor.691e50c64ad7.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+
+    <link href="../../../../../static/ih-lms-theme/css/lms-course.1d0edf3ec473.css" rel="stylesheet" type="text/css" />
+
+
+
+
+<script type="text/javascript" src="../../../../../static/js/jquery.autocomplete.3bd10d7510d2.js"></script>
+<script type="text/javascript" src="../../../../../static/js/src/tooltip_manager.da362490e199.js"></script>
+
+<link href="../../../../../static/css/vendor/jquery.autocomplete.896181d3ec33.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="../../../../../static/bundles/XModuleShim.68b7a679342e3bdb698f.c506d949a49b.js" ></script>
+<script type="text/javascript" src="../../../../../static/bundles/HtmlModule.174055b73c05dccfbd8b.823874f69fef.js" ></script>
+<script type="text/javascript" src="../../../../../static/bundles/VerticalStudentView.6f1068648eb9e8d18da9.0a2f678d6564.js" ></script>
+<script type="text/javascript" src="../../../../../static/bundles/SequenceModule.251564cf8963e6f00227.ef752443db97.js" ></script>
+
+  
+
+  
+
+
+  
+
+
+<script type="application/json" id="user-metadata">
+    {"username": "NoahB", "enrollment_mode": "audit", "upgrade_link": null, "user_id": 489, "course_start": "2019-06-10T00:00:00+00:00", "upgrade_deadline": null, "course_key_fields": {"org": "IRONHACK", "run": "201906_MIA", "course": "DAFT"}, "course_end": "2019-08-19T00:00:00+00:00", "pacing_type": "instructor_paced", "upgrade_price": "Free", "course_id": "course-v1:IRONHACK+DAFT+201906_MIA", "has_staff_access": false, "forum_roles": [["Student"]], "enrollment_time": "2019-06-11T20:48:51.323840+00:00", "schedule_start": null, "email": "noahbeckerman@gmail.com"}
+</script>
+
+  
+
+  
+
+
+  
+
+
+<!-- dummy Segment -->
+<script type="text/javascript">
+  var analytics = {
+    track: function() { return; },
+    trackLink: function() { return; },
+    pageview: function() { return; },
+    page: function() { return; }
+  };
+</script>
+<!-- end dummy Segment -->
+
+
+  <meta name="path_prefix" content="">
+  
+  
+
+  <meta name="openedx-release-line" content="hawthorn" />
+
+
+
+
+
+
+  <!-- Hotjar Tracking Code for https://ironhack.school -->
+  <script type="text/javascript">
+      (function(h,o,t,j,a,r){
+          h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+          h._hjSettings={hjid:1193918,hjsv:6};
+          a=o.getElementsByTagName('head')[0];
+          r=o.createElement('script');r.async=1;
+          r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+          a.appendChild(r);
+      })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+  </script>
+
+  <script type="text/javascript">
+    function setCookieHideMobileWarning(expiration_hours) {
+      var date = new Date();
+      date.setTime(date.getTime()+(expiration_hours*60*60*1000));
+      var expires = "; expires=" + date.toGMTString();
+      document.cookie = "ihHideMobileWarning=true" + expires;
+    }
+    
+    function isHideMobileWarningCookieSet() {
+      return document.cookie.replace(/(?:(?:^|.*;\s*)ihHideMobileWarning\s*\=\s*([^;]*).*$)|^.*$/, "$1") !== "true"; 
+    }
+
+    function manageMobileWarning(mobile_warning_container) {
+      if (isHideMobileWarningCookieSet()) {
+        var mobile_warning_dismiss = document.getElementsByClassName('ih-js-hide-mobile-warning', mobile_warning_container)[0];
+        mobile_warning_dismiss.addEventListener('click', function() {
+          var expiration_hours = 48;
+          setCookieHideMobileWarning(expiration_hours);
+          mobile_warning_container.classList.add('hidden');
+        });
+      } else {
+        mobile_warning_container.classList.add('hidden');
+      }
+    }
+
+    var checkMobileWarningLayer = function () {
+      var mobile_warning_container = document.getElementsByClassName('ih-mobile-warning-container')[0];
+      (document.body && mobile_warning_container)? manageMobileWarning(mobile_warning_container) :  window.requestAnimationFrame(checkMobileWarningLayer);
+    }
+
+    window.requestAnimationFrame(checkMobileWarningLayer);
+  </script>
+
+</head>
+
+<body class="ltr view-in-course view-courseware courseware  lang_en">
+
+<div class="ih-mobile-warning-container">
+  <img class="logo" src="../../../../../static/ih-lms-theme/images/logo.6230fc40336b.svg" />
+  <div class="ih-mobile-warning-title">
+    The Learning Platform is best experienced on Desktop devices
+  </div>
+  <div class="ih-mobile-warning-description">
+    We recommend using a Desktop device to get the full experience of the Learning Platform.
+  </div>
+  <div class="ih-mobile-warning-dismiss ih-js-hide-mobile-warning">
+   Continue anyway
+  </div>
+</div>
+
+
+<div id="page-prompt"></div>
+  <div class="window-wrap" dir="ltr">
+    <a class="nav-skip sr-only sr-only-focusable" href="#main">Skip to main content</a>
+
+    
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+<header class="global-header slim ih-global-header">
+    <div class="ih-header-wrapper">
+        <div class="main-header ih-main-header">
+            
+
+
+
+
+
+<h1 class="header-logo">
+  <a href="../../../../../dashboard.html">
+    
+    <img  class="logo" src="../../../../../static/ih-lms-theme/images/logo.6230fc40336b.svg" alt="Ironhack Student Platform Home Page"/>
+    
+  </a>
+    <div class="course-header">
+          
+      
+      <span class="course-name">Data Analytics</span>
+    </div>
+</h1>
+
+            <div class="hamburger-menu" role="button" aria-label=Options Menu aria-expanded="false" aria-controls="mobile-menu" tabindex="0">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+                
+
+
+
+
+
+
+
+
+
+
+<div class="nav-links">
+  <div class="main">
+      
+  </div>
+  <div class="secondary ih-secondary">
+    
+
+
+
+
+
+
+  
+
+<div class="nav-item hidden-mobile toggle-user-dropdown ih-username-container">
+    <div class="menu-title">
+        
+        <span class="sr-only">Dashboard for:</span>
+        <span class="username ih-username">Ironhack (NoahB)</span>
+    </div>
+</div>
+<div class="nav-item hidden-mobile nav-item-dropdown ih-dropdown-wrapper" tabindex="-1">
+    <div class="toggle-user-dropdown ih-toggle-user-dropdown" role="button" aria-label=Options Menu aria-expanded="false" tabindex="0" aria-controls="user-menu">
+        <span class="fa fa-caret-down" aria-hidden="true"></span>
+    </div>
+    <div class="dropdown-user-menu hidden ih-dropdown-user-menu" aria-label=More Options role="menu" id="user-menu" tabindex="-1">
+        <div class="mobile-nav-item dropdown-item dropdown-nav-item ih-dropdown-nav-item"><a href="../../../../../dashboard.html" role="menuitem">My courses</a></div>
+            
+        <div class="mobile-nav-item dropdown-item dropdown-nav-item ih-dropdown-nav-item"><a href="../../../../../account/settings.html" role="menuitem">Account</a></div>
+        <div class="mobile-nav-item dropdown-item dropdown-nav-item ih-dropdown-nav-item"><a href="../../../../../index.html" role="menuitem">Sign Out</a></div>
+    </div>
+</div>
+  </div>
+</div>
+        </div>
+        <div class="mobile-menu hidden" aria-label=More Options role="menu" id="mobile-menu"></div>
+    </div>    
+</header>
+
+<!--[if lte IE 9]>
+<div class="ie-banner" aria-hidden="true"><strong>Warning:</strong> Your browser is not fully supported. We strongly recommend using <a href="https://www.google.com/chrome" target="_blank">Chrome</a> or <a href="http://www.mozilla.org/firefox" target="_blank">Firefox</a>.</div>
+<![endif]-->
+
+
+
+
+            
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+    
+    
+
+      <div 
+          class="ih-content"
+      >
+        <div class="marketing-hero"></div>
+
+        <div class="content-wrapper main-container ih-main-container" id="content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/template" id="image-modal-tpl">
+    <div class="wrapper-modal wrapper-modal-image">
+  <section class="image-link">
+    <%= smallHTML%>
+    <a href="#" class="modal-ui-icon action-fullscreen" role="button">
+      <span class="label">
+        <span class="icon fa fa-arrows-alt fa-large" aria-hidden="true"></span> <%- gettext("Fullscreen") %>
+      </span>
+    </a>
+  </section>
+
+  <section class="image-modal">
+    <section class="image-content">
+      <div class="image-wrapper">
+        <img alt="<%= largeALT %>, <%- gettext('Large') %>" src="<%= largeSRC %>" />
+      </div>
+
+      <a href="#" class="modal-ui-icon action-close" role="button">
+        <span class="label">
+          <span class="icon fa fa-remove fa-large" aria-hidden="true"></span> <%- gettext("Close") %>
+        </span>
+      </a>
+
+      <ul class="image-controls">
+        <li class="image-control">
+          <a href="#" class="modal-ui-icon action-zoom-in" role="button">
+            <span class="label">
+              <span class="icon fa fa fa-search-plus fa-large" aria-hidden="true"></span> <%- gettext("Zoom In") %>
+            </span>
+          </a>
+        </li>
+
+        <li class="image-control">
+          <a href="#" class="modal-ui-icon action-zoom-out is-disabled" aria-disabled="true" role="button">
+            <span class="label">
+              <span class="icon fa fa fa-search-minus fa-large" aria-hidden="true"></span> <%- gettext("Zoom Out") %>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </section>
+</div>
+
+</script>
+
+
+
+
+
+
+
+
+<div class="message-banner" aria-live="polite"></div>
+  
+
+
+
+
+
+
+
+
+    
+        <nav class="navbar course-tabs pb-0 navbar-expand ih-navbar-container" aria-label="Course">
+            <ul class="navbar-nav mr-auto ih-course-tabs">
+                    
+                    
+                        <li class="nav-item ih-nav-item active">
+                            <a href="../../../course/index.html" class="nav-link">
+                                Course
+                                    <span class="sr-only">, current location</span>
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="nav-item ih-nav-item ">
+                            <a href="../../../discussion/forum/index.html" class="nav-link">
+                                Discussion
+                            </a>
+                        </li>
+                    
+                    
+            </ul>
+        </nav>
+
+
+<div class="container ih-course-container"
+    lang="en"
+  >
+  <div class="course-wrapper ih-course-wrapper" role="presentation">
+
+    <section class="course-content" id="course-content">
+        <header class="page-header has-secondary">
+            <div class="page-header-main">
+                <nav aria-label="Course" class="sr-is-focusable" tabindex="-1">
+                    <div class="has-breadcrumbs">
+                        <div class="breadcrumbs">
+                                <span class="nav-item nav-item-course">
+                                    <a href="../../../course/index.html">Course</a>
+                                </span>
+                                <span class="icon fa fa-angle-right" aria-hidden="true"></span>
+                                <span class="nav-item nav-item-chapter" data-course-position="3" data-chapter-position="2">
+                                    <a href="../../../course/index.html#block-v1:IRONHACK+DAFT+201906_MIA+type@chapter+block@c36289e68f4e4029a57c62cfbc5b8ec5">Module 3</a>
+                                </span>
+                                <span class="icon fa fa-angle-right" aria-hidden="true"></span>
+                                <span class="nav-item nav-item-section">
+                                    <a href="../../../course/index.html#block-v1:IRONHACK+DAFT+201906_MIA+type@sequential+block@bd9567dc82ba40d1948c334a9a7e2c71">Supervised Learning</a>
+                                </span>
+                                <span class="icon fa fa-angle-right" aria-hidden="true"></span>
+                            <span class="nav-item nav-item-sequence">Supervised Learning Model Evaluation</span>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <main id="main" tabindex="-1" aria-label="Content">
+
+              <div class="xblock xblock-student_view xblock-student_view-sequential xmodule_display xmodule_SequenceModule" data-runtime-class="LmsRuntime" data-init="XBlockToXModuleShim" data-block-type="sequential" data-request-token="7a06e41e939911e99a866e487447f8c8" data-runtime-version="1" data-usage-id="block-v1:IRONHACK+DAFT+201906_MIA+type@sequential+block@bd9567dc82ba40d1948c334a9a7e2c71" data-type="Sequence" data-course-id="course-v1:IRONHACK+DAFT+201906_MIA">
+  <script type="json/xblock-args" class="xblock-json-init-args">
+    {"xmodule-type": "Sequence"}
+  </script>
+  
+
+
+<div id="sequence_bd9567dc82ba40d1948c334a9a7e2c71" class="sequence" data-id="block-v1:IRONHACK+DAFT+201906_MIA+type@sequential+block@bd9567dc82ba40d1948c334a9a7e2c71" data-position="5" data-ajax-url="/courses/course-v1:IRONHACK+DAFT+201906_MIA/xblock/block-v1:IRONHACK+DAFT+201906_MIA+type@sequential+block@bd9567dc82ba40d1948c334a9a7e2c71/handler/xmodule_handler" data-next-url="/courses/course-v1:IRONHACK+DAFT+201906_MIA/courseware/c36289e68f4e4029a57c62cfbc5b8ec5/cb1340a5a8e44a8bb3891cc9907fa742/?child=first" data-prev-url="/courses/course-v1:IRONHACK+DAFT+201906_MIA/courseware/c36289e68f4e4029a57c62cfbc5b8ec5/c0023a8b1a944355879206af7c1ad140/?child=last">
+
+  <div class="sequence-nav ih-js-fire-highlighting-controls">
+    <button class="sequence-nav-button button-previous">
+      <span class="icon fa fa-chevron-prev" aria-hidden="true"></span>
+      <span class="sequence-nav-button-label">Previous</span>
+    </button>
+    <button class="sequence-nav-button button-next">
+      <span class="sequence-nav-button-label">Next</span>
+      <span class="icon fa fa-chevron-next" aria-hidden="true"></span>
+    </button>
+    <nav class="sequence-list-wrapper" aria-label="Sequence">
+      <ol id="sequence-list" role="tablist">
+        <li role="presentation">
+          <button class="seq_other inactive nav-item tab"
+            role="tab"
+            tabindex="-1"
+            aria-selected="false"
+            aria-expanded="false"
+            aria-controls="seq_content"
+            data-index="0"
+            data-id="block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@9f098a91d3704e749142766818ce6ad9"
+            data-element="1"
+            data-page-title="Introduction to Supervised Learning"
+            data-path="Module 3 &gt; Supervised Learning &gt; Introduction to Supervised Learning"
+            data-graded="False"
+            id="tab_0"
+            >
+            <span class="icon fa seq_other" aria-hidden="true"></span>
+              <span 
+                class="fa fa-check-circle check-circle is-hidden" 
+                style="color:green"
+                aria-hidden="true"
+              ></span>
+            <span class="fa fa-fw fa-bookmark bookmark-icon is-hidden" aria-hidden="true"></span>
+            <div class="sequence-tooltip sr"><span class="sr">other&nbsp;</span>Introduction to Supervised Learning<span class="sr bookmark-icon-sr">&nbsp;</span></div>
+          </button>
+        </li>
+        <li role="presentation">
+          <button class="seq_other inactive nav-item tab"
+            role="tab"
+            tabindex="-1"
+            aria-selected="false"
+            aria-expanded="false"
+            aria-controls="seq_content"
+            data-index="1"
+            data-id="block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@36df47fdf0ca406899483378f02f9adb"
+            data-element="2"
+            data-page-title="Supervised Learning with Scikit-Learn"
+            data-path="Module 3 &gt; Supervised Learning &gt; Supervised Learning with Scikit-Learn"
+            data-graded="False"
+            id="tab_1"
+            >
+            <span class="icon fa seq_other" aria-hidden="true"></span>
+              <span 
+                class="fa fa-check-circle check-circle is-hidden" 
+                style="color:green"
+                aria-hidden="true"
+              ></span>
+            <span class="fa fa-fw fa-bookmark bookmark-icon is-hidden" aria-hidden="true"></span>
+            <div class="sequence-tooltip sr"><span class="sr">other&nbsp;</span>Supervised Learning with Scikit-Learn<span class="sr bookmark-icon-sr">&nbsp;</span></div>
+          </button>
+        </li>
+        <li role="presentation">
+          <button class="seq_other inactive nav-item tab"
+            role="tab"
+            tabindex="-1"
+            aria-selected="false"
+            aria-expanded="false"
+            aria-controls="seq_content"
+            data-index="2"
+            data-id="block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@e5f1a375ba85486fa9c79388db2f6d92"
+            data-element="3"
+            data-page-title="Supervised Learning Guided Lesson"
+            data-path="Module 3 &gt; Supervised Learning &gt; Supervised Learning Guided Lesson"
+            data-graded="False"
+            id="tab_2"
+            >
+            <span class="icon fa seq_other" aria-hidden="true"></span>
+              <span 
+                class="fa fa-check-circle check-circle is-hidden" 
+                style="color:green"
+                aria-hidden="true"
+              ></span>
+            <span class="fa fa-fw fa-bookmark bookmark-icon is-hidden" aria-hidden="true"></span>
+            <div class="sequence-tooltip sr"><span class="sr">other&nbsp;</span>Supervised Learning Guided Lesson<span class="sr bookmark-icon-sr">&nbsp;</span></div>
+          </button>
+        </li>
+        <li role="presentation">
+          <button class="seq_other inactive nav-item tab"
+            role="tab"
+            tabindex="-1"
+            aria-selected="false"
+            aria-expanded="false"
+            aria-controls="seq_content"
+            data-index="3"
+            data-id="block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@44360126c3f94489840a7ce6e0129c40"
+            data-element="4"
+            data-page-title="More Supervised Learning Models"
+            data-path="Module 3 &gt; Supervised Learning &gt; More Supervised Learning Models"
+            data-graded="False"
+            id="tab_3"
+            >
+            <span class="icon fa seq_other" aria-hidden="true"></span>
+              <span 
+                class="fa fa-check-circle check-circle is-hidden" 
+                style="color:green"
+                aria-hidden="true"
+              ></span>
+            <span class="fa fa-fw fa-bookmark bookmark-icon is-hidden" aria-hidden="true"></span>
+            <div class="sequence-tooltip sr"><span class="sr">other&nbsp;</span>More Supervised Learning Models<span class="sr bookmark-icon-sr">&nbsp;</span></div>
+          </button>
+        </li>
+        <li role="presentation">
+          <button class="seq_other inactive nav-item tab"
+            role="tab"
+            tabindex="-1"
+            aria-selected="false"
+            aria-expanded="false"
+            aria-controls="seq_content"
+            data-index="4"
+            data-id="block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@24676f162cfe4cc0a3a5980a65f749e2"
+            data-element="5"
+            data-page-title="Supervised Learning Model Evaluation"
+            data-path="Module 3 &gt; Supervised Learning &gt; Supervised Learning Model Evaluation"
+            data-graded="False"
+            id="tab_4"
+            >
+            <span class="icon fa seq_other" aria-hidden="true"></span>
+              <span 
+                class="fa fa-check-circle check-circle is-hidden" 
+                style="color:green"
+                aria-hidden="true"
+              ></span>
+            <span class="fa fa-fw fa-bookmark bookmark-icon is-hidden" aria-hidden="true"></span>
+            <div class="sequence-tooltip sr"><span class="sr">other&nbsp;</span>Supervised Learning Model Evaluation<span class="sr bookmark-icon-sr">&nbsp;</span></div>
+          </button>
+        </li>
+      </ol>
+    </nav>
+  </div>
+  <div class="sr-is-focusable" tabindex="-1"></div>
+
+  <div id="seq_contents_0"
+    aria-labelledby="tab_0"
+    aria-hidden="true"
+    class="seq_contents tex2jax_ignore asciimath2jax_ignore">
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-vertical&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;VerticalStudentView&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34; data-request-token=&#34;7a06e41e939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@9f098a91d3704e749142766818ce6ad9&#34; data-block-type=&#34;vertical&#34;&gt;
+  
+
+  &lt;h2 class=&#34;hd hd-2 unit-title&#34;&gt;Introduction to Supervised Learning&lt;/h2&gt;
+
+    &lt;div class=&#34;ih-bookmark-button-wrapper&#34;&gt;
+    	
+
+
+
+&lt;div class=&#34;bookmark-button-wrapper&#34;&gt;
+  &lt;button class=&#34;btn btn-link bookmark-button &#34;
+    aria-pressed=&#34;false&#34;
+    data-bookmark-id=&#34;NoahB,block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@9f098a91d3704e749142766818ce6ad9&#34;
+    data-bookmarks-api-url=&#34;/api/bookmarks/v1/bookmarks/&#34;&gt;
+     &lt;span class=&#34;bookmark-text&#34;&gt;Bookmark this page&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+
+    &lt;/div&gt;	
+
+&lt;div class=&#34;vert-mod&#34;&gt;
+  &lt;div class=&#34;vert vert-0&#34; data-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@96c2d0c7e56f4b498639c57480545ef5&#34;&gt;
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;7a06e41e939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@96c2d0c7e56f4b498639c57480545ef5&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  &lt;h2&gt;
+    &lt;a id=&#34;user-content-lesson-goals&#34; class=&#34;anchor&#34; href=&#34;#lesson-goals&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Lesson Goals
+&lt;/h2&gt;
+&lt;p&gt;In this lesson you will learn the concepts and procedures of Supervised Machine Learning:&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;The meaning of Supervision in Machine Learning.&lt;/li&gt;
+    &lt;li&gt;Criteria for determining the suitability of a Supervised Machine Learning approach.&lt;/li&gt;
+    &lt;li&gt;The software applications required in Supervised Machine Learning.&lt;/li&gt;
+    &lt;li&gt;The process model of Supervised Machine Learning.&lt;/li&gt;
+    &lt;li&gt;Eager vs. Lazy Machine Learning.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-introduction&#34; class=&#34;anchor&#34; href=&#34;#introduction&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Introduction
+&lt;/h2&gt;
+&lt;p&gt;In the same ways that human beings can learn from their past experience, Machine Learning systems can also learn from past problem cases represented in the form of a dataset. As long as the dataset contains enough cases of the problems (
+    &lt;strong&gt;problem instances&lt;/strong&gt;) coupled with the correct solutions, the Machine Learning algorithms can learn the underlying relations between those problems and their corresponding solutions. Machine Learning systems can also use what they have learned to predict the correct solutions for new problems not contained in the dataset. We call this type of Machine Learning the
+    &lt;strong&gt;Supervised Learning&lt;/strong&gt;.
+&lt;/p&gt;
+&lt;p&gt;In Supervised Learning, the dataset containing the problem-solution cases is referred to as the 
+    &lt;strong&gt;training data set&lt;/strong&gt;. Each case of the training data consists of an input object (typically a vector of
+    &lt;strong&gt;attribute-value&lt;/strong&gt; pairs) and a desired output value (the
+    &lt;strong&gt;supervisory signal&lt;/strong&gt; or the
+    &lt;strong&gt;teaching signal&lt;/strong&gt;). The larger the amount of qualitatively distinct problem instances in the training data set, the better the Machine Learning systems will be able to learn the problem-solution relations, and the more accurate they can make predictions for new problem solutions.
+&lt;/p&gt;
+&lt;p&gt;There are other forms of Machine Learning where the supervisory signal is not available. It is still possible for Machine Learning systems to predict solutions for these problems and one way to achieve that is using 
+    &lt;strong&gt;Unsupervised Learning&lt;/strong&gt;. We will cover the topic of Unsupervised Learning in a later lesson. For now, it is sufficient to know the difference between Supervised and Unsupervised Machine Learning.
+&lt;/p&gt;
+&lt;p&gt;Regarding what is a well-formed Supervised Learning problem, we have to look for two ingredients:&lt;/p&gt;
+&lt;ol&gt;
+    &lt;li&gt;The problem descriptions expressed as problem instances (a list of attribute-value pairs).&lt;/li&gt;
+    &lt;li&gt;The corresponding solutions expressed as the value of the target attribute.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Let&#39;s see some examples in the following section.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-problems-suitable-for-supervised-learning&#34; class=&#34;anchor&#34; href=&#34;#problems-suitable-for-supervised-learning&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Problems suitable for Supervised Learning
+&lt;/h2&gt;
+&lt;p&gt;Problems where experience is available as a set of solved cases are suitable for Supervised Machine Learning. For instance, consider the following three:&lt;/p&gt;
+&lt;ol&gt;
+    &lt;li&gt;
+        &lt;p&gt;
+            &lt;strong&gt;Medical diagnosing.&lt;/strong&gt; Health systems contain databases with the historical eHRs (electronic Health Records) of millions of patients suffering and not suffering from diabetes. In this problem, each patient would be a problem instance described by a set of attributes:
+            &lt;em&gt;age, gender, height, weight, known past diseases, genetic risks, values obtained from blood tests, symptoms, etc.&lt;/em&gt; And the solution corresponding to this problem instance is encoded as the value of a binary target attribute indicating &#34;positive&#34; or &#34;negative&#34; depending on whether at this moment the patient suffers from diabetes. Using this dataset as a training set, we can train a Supervised Machine Learning model, to learn from the historical database how to diagnose diabetes, and use this model to diagnose new patients.
+        &lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p&gt;
+            &lt;strong&gt;Credit Risk Assignment.&lt;/strong&gt; Credit card companies have huge historical databases of customers who have used credit cards in the past, and have (or have not) paid their credit card debt on time. In this problem, every credit card customer is a problem instance, described by attributes such as:
+            &lt;em&gt;age, gender, average account balance, area of residence, occupation, purchase history, etc.&lt;/em&gt; And the solution corresponding to this problem instance is stored in the target attribute as either &#34;low risk,&#34; &#34;medium risk,&#34; or &#34;high risk&#34; (based on the repayment history found for the client in the historical database). A training set can be obtained from the historical database, and used to train a Supervised Machine Learning model so that it learns how to associate customers with levels of risk. After this Machine Learning model is trained, we can use it to assess the risk of providing credit to new customers.
+        &lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p&gt;
+            &lt;strong&gt;News Recommendation.&lt;/strong&gt; News websites provide users with the electronic version of the daily newspapers. They usually want to maximize the time spent by each user on the website, and they want to provide relevant and interesting content to its registered users. Every registered user has a particular reading history, formed by the topics of the news he has read, where he has clicked, and how much time was spent reading each article (or watching each video). Newspaper websites store this information in huge historical databases that reflect the interests and preferences of its registered users. A Supervised Machine Learning model can be trained for each registered user, to predict how interesting an article is for them. In this problem, an article is represented as a problem instance described as a set of attributes such as: topic of article, keywords of article, opinion targets in the article, sentiments about opinion targets, subscription fee of registered user, average subscription duration of readers of the article, average time readers of the article spent on website, average time readers of the article spent on each section of website, keywords of other articles read, etc. And the solution corresponding to this problem instance is either &#34;interesting&#34; or &#34;not interesting&#34; for a particular registered user (depending on the time spent, if any, reading the article). A training set can be obtained from the historical database for each registered user. Using these training sets, models specific to concrete users can be trained using Supervised Machine Learning. These models can be used to recommend new articles to registered users, thus improving the benefit obtained from the time spent on the website.
+        &lt;/p&gt;
+    &lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-examples-of-supervised-learning-algorithms&#34; class=&#34;anchor&#34; href=&#34;#examples-of-supervised-learning-algorithms&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Examples of Supervised Learning Algorithms
+&lt;/h2&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-linear-regression&#34; class=&#34;anchor&#34; href=&#34;#linear-regression&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Linear Regression
+&lt;/h3&gt;
+&lt;p&gt;Linear regression is one of the most used models in statistics. The general idea behind this model is that we have a predictor (or independent) variables and one or more response (also known as target or dependent) variables. We would like to to predict our response variable using a linear combination of the predictor variables. Typically, for a set of predictor variables X
+    &lt;sub&gt;1&lt;/sub&gt;, X
+    &lt;sub&gt;2&lt;/sub&gt;,..., X
+    &lt;sub&gt;n&lt;/sub&gt;, and a response variable Y, we construct the following model:
+&lt;/p&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/14ded4d1fa56aa7e60e3318b01bfd64ed538c042/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f72656772657373696f6e2d6571756174696f6e2e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/14ded4d1fa56aa7e60e3318b01bfd64ed538c042/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f72656772657373696f6e2d6571756174696f6e2e706e67&#34; alt=&#34;regression equation&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/regression-equation.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;Where β
+    &lt;sub&gt;0&lt;/sub&gt;, β
+    &lt;sub&gt;1&lt;/sub&gt;,...,β
+    &lt;sub&gt;n&lt;/sub&gt; are constants that we compute. We find the optimal values of these constants for each model based on the data. We then generate predictions using this model. The difference between the observed values and the predicted values is called the error (or residual). Our goal is to minimize the error.
+&lt;/p&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-logistic-regression&#34; class=&#34;anchor&#34; href=&#34;#logistic-regression&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Logistic Regression
+&lt;/h3&gt;
+&lt;p&gt;While linear regression is used for predicting a numeric variable, logistic regression is used for classification. Logistic is used to explain a relationship between the predictor variables and a response variable(s) that can take values of either 0 or 1.  Logistic regression does not need to satisfy the same assumptions as linear regression. The only assumptions we need to satisfy are that the predictor variables are independent of each other and not correlated with each other. We also need the response variable to be binary (meaning, have only two possible values) and the residuals to be independent of each other.&lt;/p&gt;
+&lt;p&gt;Our regression equation is:&lt;/p&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/36171528e607cdb6899f5a2b8e7d4b31ecc08b5a/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6c6f6769737469632d6571756174696f6e2e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/36171528e607cdb6899f5a2b8e7d4b31ecc08b5a/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6c6f6769737469632d6571756174696f6e2e706e67&#34; alt=&#34;logistic equation&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/logistic-equation.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;Where p̂ (pronounced p hat) is the predicted probability of success. Notice that we have our regression equation in the exponent.&lt;/p&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-support-vector-machine---svm&#34; class=&#34;anchor&#34; href=&#34;#support-vector-machine---svm&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Support Vector Machine - SVM
+&lt;/h3&gt;
+&lt;p&gt;Support Vector Machine is another algorithm developed for classification. The main idea behind this algorithm is to draw a line between all data labeled 0 and all data labeled 1. This line will separate the data such that we can put as many observations of each category on a different side of the line. We will then say that the data is 
+    &lt;em&gt;linearly separable&lt;/em&gt;. Our line should be drawn such that all the data is as far as possible from the line.
+&lt;/p&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/1a534c8b3968834c8b20addb10fca957027f5bde/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f73766d2d706c6f742e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/1a534c8b3968834c8b20addb10fca957027f5bde/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f73766d2d706c6f742e706e67&#34; alt=&#34;svm plot&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/svm-plot.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;Sometimes the data cannot be completely linearly separable. In this case we will increase the number of dimensions using a technique called the 
+    &lt;em&gt;kernel trick&lt;/em&gt;. We continue to do this until we have achieved linear separability.
+&lt;/p&gt;
+&lt;p&gt;The 
+    &lt;strong&gt;kernel trick&lt;/strong&gt; is a method for creating a linear decision boundary when one cannot be found in the current number of dimensions that exist in the problem. We apply a transformation to the data by using a function. This function will increase the number of dimensions of the data and create a new dataset where our points will be linearly separable. We realize that this sounds nice in theory but harder to do in practice. This technique uses optimization to find the ideal multidimensional space.
+&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-the-modeling-process&#34; class=&#34;anchor&#34; href=&#34;#the-modeling-process&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;The Modeling Process
+&lt;/h2&gt;
+&lt;p&gt;In Supervised Machine Learning, you follow this procedure:&lt;/p&gt;
+&lt;ol&gt;
+    &lt;li&gt;Determine suitability of Supervised Machine Learning solution depending on the possibility of building a dataset with problem instances and their corresponding solutions.&lt;/li&gt;
+    &lt;li&gt;Clean and munge the dataset.&lt;/li&gt;
+    &lt;li&gt;Split the dataset into disjoint training and test sets. Alternately, you can do cross-validation here.&lt;/li&gt;
+    &lt;li&gt;Train using a Supervised Machine Learning algorithm.&lt;/li&gt;
+    &lt;li&gt;Test and obtain quality metrics.&lt;/li&gt;
+    &lt;li&gt;If quality metrics are satisfactory, deploy the model. Otherwise design new experiment and iterate.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/45ee5c7164305e85049cdd3ab82988f53af4c345/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f737570657276697365642d6d6c2d70726f636573732d6d6f64656c2d736872756e6b2e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/45ee5c7164305e85049cdd3ab82988f53af4c345/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f737570657276697365642d6d6c2d70726f636573732d6d6f64656c2d736872756e6b2e706e67&#34; alt=&#34;Supervised ML Process Model&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/supervised-ml-process-model-shrunk.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;Usually, the first time you follow this procedure the results are not optimal, and you have to change something (i.e. design a new experiment) and iterate. These are ideas you can use to design a new Machine Learning experiment:&lt;/p&gt;
+&lt;ol&gt;
+    &lt;li&gt;Use additional data.&lt;/li&gt;
+    &lt;li&gt;Remove useless attributes that are misleading the Machine Learning algorithm.&lt;/li&gt;
+    &lt;li&gt;Add additional relevant attributes.&lt;/li&gt;
+    &lt;li&gt;Use a different Machine Learning algorithm.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-summary&#34; class=&#34;anchor&#34; href=&#34;#summary&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Summary
+&lt;/h2&gt;
+&lt;p&gt;In this lesson, you have learned about the basic concepts and procedures of Supervised Machine Learning. In the next chapter, we will provide examples of how to implement these ideas in Python using Scikit-learn. You now have a concrete criterion to determine whether a problem is suitable for Supervised Machine Learning or not. You have also learned about different examples of supervised learning. So now you have all the background required to start the implementation of Supervised Machine Learning systems. Let&#39;s see how to do it in our next chapter!&lt;/p&gt;
+&lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+  </div>
+  <div id="seq_contents_1"
+    aria-labelledby="tab_1"
+    aria-hidden="true"
+    class="seq_contents tex2jax_ignore asciimath2jax_ignore">
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-vertical&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;VerticalStudentView&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34; data-request-token=&#34;7a06e41e939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@36df47fdf0ca406899483378f02f9adb&#34; data-block-type=&#34;vertical&#34;&gt;
+  
+
+  &lt;h2 class=&#34;hd hd-2 unit-title&#34;&gt;Supervised Learning with Scikit-Learn&lt;/h2&gt;
+
+    &lt;div class=&#34;ih-bookmark-button-wrapper&#34;&gt;
+    	
+
+
+
+&lt;div class=&#34;bookmark-button-wrapper&#34;&gt;
+  &lt;button class=&#34;btn btn-link bookmark-button &#34;
+    aria-pressed=&#34;false&#34;
+    data-bookmark-id=&#34;NoahB,block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@36df47fdf0ca406899483378f02f9adb&#34;
+    data-bookmarks-api-url=&#34;/api/bookmarks/v1/bookmarks/&#34;&gt;
+     &lt;span class=&#34;bookmark-text&#34;&gt;Bookmark this page&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+
+    &lt;/div&gt;	
+
+&lt;div class=&#34;vert-mod&#34;&gt;
+  &lt;div class=&#34;vert vert-0&#34; data-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@adf006e024de4230a63fa92ab2f0f80c&#34;&gt;
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;7a06e41e939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@adf006e024de4230a63fa92ab2f0f80c&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  &lt;h2&gt;
+    &lt;a id=&#34;user-content-lesson-goals&#34; class=&#34;anchor&#34; href=&#34;#lesson-goals&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Lesson Goals
+&lt;/h2&gt;
+&lt;p&gt;This lesson will serve as an introduction to supervised learning using Scikit-learn. Two important algorithms will be covered along with implementation and examples.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-introduction&#34; class=&#34;anchor&#34; href=&#34;#introduction&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Introduction
+&lt;/h2&gt;
+&lt;p&gt;Supervised learning is an extremely important part of machine learning. This is because a large portion of machine learning algorithms are used for classification and regression. The scikit-learn has implementations for a large number of supervised learning algorithms. In this lesson we will explore two algorithms in depth.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-linear-regression&#34; class=&#34;anchor&#34; href=&#34;#linear-regression&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Linear Regression
+&lt;/h2&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-definition&#34; class=&#34;anchor&#34; href=&#34;#definition&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Definition
+&lt;/h3&gt;
+&lt;p&gt;Linear regression is one of the most used models in statistics. The general idea behind this model is that we have a predictor (or independent) variables and one or more response (also known as target or dependent) variables. We would like to to predict our response variable using a linear combination of the predictor variables. Typically, for a set of predictor variables X
+    &lt;sub&gt;1&lt;/sub&gt;, X
+    &lt;sub&gt;2&lt;/sub&gt;,..., X
+    &lt;sub&gt;n&lt;/sub&gt;, and a response variable Y, we construct the following model:
+&lt;/p&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/14ded4d1fa56aa7e60e3318b01bfd64ed538c042/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f72656772657373696f6e2d6571756174696f6e2e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/14ded4d1fa56aa7e60e3318b01bfd64ed538c042/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f72656772657373696f6e2d6571756174696f6e2e706e67&#34; alt=&#34;regression equation&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/regression-equation.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;Where β
+    &lt;sub&gt;0&lt;/sub&gt;, β
+    &lt;sub&gt;1&lt;/sub&gt;,...,β
+    &lt;sub&gt;n&lt;/sub&gt; are constants that we compute. We find the optimal values of these constants for each model based on the data. We then generate predictions using this model. The difference between the observed values and the predicted values is called the error (or residual). Our goal is to minimize the error.
+&lt;/p&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-linear-regression-with-scikit-learn&#34; class=&#34;anchor&#34; href=&#34;#linear-regression-with-scikit-learn&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Linear Regression with Scikit-learn
+&lt;/h3&gt;
+&lt;p&gt;Linear regression in scikit-learn is performed using the 
+    &lt;code&gt;linear_regression&lt;/code&gt; submodule. To demonstrate a linear model with scikit-learn, we will use the beer dataset found
+    &lt;a href=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/data/module-3/lager_antioxidant_reg.csv&#34; rel=&#34;nofollow&#34;&gt;here&lt;/a&gt;.
+&lt;/p&gt;
+&lt;p&gt;First we import the dataset using Pandas.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;import pandas as pd
+from sklearn import linear_model
+
+coal = pd.read_csv(&#39;./lager_antioxidant_reg.csv.csv&#39;)
+coal.head()
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/53fc0639daf4e67f2ea14e846a6c2948eacd55f2/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f626565722d686561642e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/53fc0639daf4e67f2ea14e846a6c2948eacd55f2/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f626565722d686561642e706e67&#34; alt=&#34;beer head&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/beer-head.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;The dataset contains 7 variables :&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;tpc - Total phenolic content&lt;/li&gt;
+    &lt;li&gt;ma - melanoidin content&lt;/li&gt;
+    &lt;li&gt;dsa - DPPH radical scavenging activity&lt;/li&gt;
+    &lt;li&gt;asa - ABTS radical cation scavenging activity&lt;/li&gt;
+    &lt;li&gt;orac - Oxygen radical absorbance activity&lt;/li&gt;
+    &lt;li&gt;rp - Reducing Power&lt;/li&gt;
+    &lt;li&gt;mca - Metal Chelaing Activity&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The next step for scikit-learn is to separate the dataset into two parts - the predictor variables and the response variable. In this case we would like to predict the level of total phenolic content using the remaining 6 variables.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;x_columns = [col for col in beer.columns.values if col != &#34;tpc&#34;]
+beer_x = beer[x_columns]
+beer_y = beer[&#34;tpc&#34;]
+
+beer_model = linear_model.LinearRegression()
+#create the model
+beer_model.fit(beer_x, beer_y)
+#now we print the model coefficients
+beer_model.intercept_
+19.049664352739313
+beer_model.coef_
+array([1.28791969, 125.33843146, -0.92370963, -0.93261523, 76.61686364, 0.38036155])
+#score returns the coefficient of determination or r squared. 
+#This number tells us what proportion of the variation in the data is explained by the model
+beer_model.score(beer_x, beer_y)
+0.8218263273491389
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;What these coefficients mean is that our linear model is:&lt;/p&gt;
+&lt;p&gt;tpc = 19.049664352739313 = 1.28791969 * ma + 125.33843146 * dsa + (-0.92370963) * asa +  (-0.93261523) * orac + 76.61686364 * rp + 0.38036155 * mca&lt;/p&gt;
+&lt;p&gt;Typically, we perform a few diagnostic tests to ensure that a linear model is the most appropriate choice for this data.&lt;/p&gt;
+&lt;ol&gt;
+    &lt;li&gt;The predictor variables are linearly independent&lt;/li&gt;
+    &lt;li&gt;There is a linear relationship between predictors and response&lt;/li&gt;
+    &lt;li&gt;The errors have a constant variance&lt;/li&gt;
+    &lt;li&gt;The errors are normally distributed&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;As far as testing assumptions, we will focus on the last two. We will plot the residuals vs. fit plot to diagnose a problem with assumption number 3. A model that meets this assumption will have a random pattern of points in this plot. This means that there is no trend in the variance of the residuals.&lt;/p&gt;
+&lt;p&gt;This plot exists in the yellowbrick library. We will install this library and then use our existing linear model to plot the residual vs. fit graph.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#!pip install yellowbrick
+
+from yellowbrick.regressor import ResidualsPlot
+
+visualizer = ResidualsPlot(beer_model, hist=False)
+visualizer.fit(beer_x, beer_y)  # Fit the training data to the model
+visualizer.score(beer_x, beer_y)  
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/96c99e0ad72d8f010b26cdc667b909d18d60241a/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f626565722d726573696475616c732e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/96c99e0ad72d8f010b26cdc667b909d18d60241a/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f626565722d726573696475616c732e706e67&#34; alt=&#34;residual vs fit&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/beer-residuals.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;We see that except for one outlier, we have a fairly random pattern. So the assumption is met.&lt;/p&gt;
+&lt;p&gt;Now we will look at the 4th assumption. In order to examine the distribution of the residuals, we can plot a Normal QQ plot of the residuals. This plot will compare the residuals with a theoretical normal distribution. If the graph of the actual vs. the theoretical will produce a linear pattern, this means that the residuals are approximately normally distributed.&lt;/p&gt;
+&lt;p&gt;To do this, we use the statsmodels library&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;!pip install patsy
+!pip install statsmodels
+
+import statsmodels.api as sm
+
+predictions = beer_model.predict(beer_x)
+residuals = beer_y - predictions
+sm.qqplot(residuals)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/7c2c040ebf10dbb078c39d2b74f5e64d027b483e/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f626565722d71712e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/7c2c040ebf10dbb078c39d2b74f5e64d027b483e/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f626565722d71712e706e67&#34; alt=&#34;residual qq plot&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/beer-qq.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;Since we have a linear relationship, we can assume that the residuals are normally distributed.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-logistic-regression&#34; class=&#34;anchor&#34; href=&#34;#logistic-regression&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Logistic Regression
+&lt;/h2&gt;
+&lt;p&gt;While linear regression is used for predicting a numeric variable, logistic regression is used for classification. Logistic is used to explain a relationship between the predictor variables and a response variable(s) that can take values of either 0 or 1.  Logistic regression does not need to satisfy the same assumptions as linear regression. The only assumptions we need to satisfy are that the predictor variables are independent of each other and not correlated with each other. We also need the response variable to be binary (meaning, have only two possible values) and the residuals to be independent of each other.&lt;/p&gt;
+&lt;p&gt;Our regression equation is:&lt;/p&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/36171528e607cdb6899f5a2b8e7d4b31ecc08b5a/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6c6f6769737469632d6571756174696f6e2e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/36171528e607cdb6899f5a2b8e7d4b31ecc08b5a/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6c6f6769737469632d6571756174696f6e2e706e67&#34; alt=&#34;logistic equation&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/logistic-equation.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;Where p̂ (pronounced p hat) is the predicted probability of success. Notice that we have our regression equation in the exponent.&lt;/p&gt;
+&lt;h4&gt;
+    &lt;a id=&#34;user-content-logistic-regression-with-scikit-learn&#34; class=&#34;anchor&#34; href=&#34;#logistic-regression-with-scikit-learn&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Logistic Regression with Scikit-learn
+&lt;/h4&gt;
+&lt;p&gt;Here we use the 
+    &lt;code&gt;linear_model&lt;/code&gt; submodule from scikit-learn as well. We will be applying the logistic regression model to the famous Titanic dataset from
+    &lt;a href=&#34;https://www.kaggle.com/c/titanic/data&#34; rel=&#34;nofollow&#34;&gt;Kaggle&lt;/a&gt;.
+&lt;/p&gt;
+&lt;p&gt;Before we apply the model to the data, we must do some essential munging.&lt;/p&gt;
+&lt;p&gt;First, let&#39;s look at the data using the 
+    &lt;code&gt;head&lt;/code&gt; function.
+&lt;/p&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/5d9ee089cb4936f3dcee6d5eba8e7faa886ecf9c/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f746974616e69632d686561642e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/5d9ee089cb4936f3dcee6d5eba8e7faa886ecf9c/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f746974616e69632d686561642e706e67&#34; alt=&#34;titanic head&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/titanic-head.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;We see that there is a number of columns that convey information that cannot be modeled. Particularly the Name and Ticket columns. We will delete these features from the dataset. Additionally, the PassengerId column contains a number that is simply incremented with every row and contains no information about the data. We will drop this column as well.&lt;/p&gt;
+&lt;p&gt;We also see that there are quite a few NaNs in the Cabin column. Let&#39;s investigate how many NaNs we have in each column to evaluate how to address the missing data.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;titanic_drop.isnull().sum(axis = 0)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/072bf856e5f496f394bafb5ad5f8847d6e3d8e7e/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f746974616e69632d6e616e732e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/072bf856e5f496f394bafb5ad5f8847d6e3d8e7e/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f746974616e69632d6e616e732e706e67&#34; alt=&#34;titanic nans&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/titanic-nans.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;We can see the NaN count for each column. The Cabin column has 687 NaNs. With so much missing data, we are better off just dropping this column all together.&lt;/p&gt;
+&lt;p&gt;We have identified 4 columns for dropping. Let&#39;s drop them using the 
+    &lt;code&gt;drop&lt;/code&gt; function in Pandas.
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;titanic_drop = titanic.drop(columns=[&#34;PassengerId&#34;, &#34;Cabin&#34;, &#34;Name&#34;, &#34;Ticket&#34;])
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;To address the remaining missing data, we will drop all rows that contain at least one NaN.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;titanic_missing = titanic_drop.dropna()
+titanic_missing
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/347dc26540764dbb5f8b493e3537d5a71b01eb77/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f746974616e69632d6d697373696e672e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/347dc26540764dbb5f8b493e3537d5a71b01eb77/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f746974616e69632d6d697373696e672e706e67&#34; alt=&#34;titanic missing&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/titanic-missing.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;We now have 712 rows and 8 columns&lt;/p&gt;
+&lt;p&gt;As we can see, there is still one more step before we can model the data, we need to create dummy variables out of the Pclass, Sex, and Embarked columns.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;titanic_with_dummies = pd.get_dummies(titanic_missing, columns=[&#39;Pclass&#39;, &#39;Sex&#39;, &#39;Embarked&#39;], drop_first=True)
+titanic_with_dummies.head()
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/465d1231f167311d160edf50793746d9cffb459d/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f746974616e69632d776974682d64756d6d6965732e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/465d1231f167311d160edf50793746d9cffb459d/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f746974616e69632d776974682d64756d6d6965732e706e67&#34; alt=&#34;titanic with dummies&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/titanic-with-dummies.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;At this point, we can perform the logistic regression. We start, as before, by separating the data into predictor and response variables. Then we create a model. We look at the r squared for the model using the 
+    &lt;code&gt;score&lt;/code&gt; function. This number explains what percent of the variation in the data is explained by our model. The more variation our model can explain, the better it is at producing predictions.
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;x_columns = [col for col in titanic_with_dummies.columns.values if col != &#34;Survived&#34;]
+titanic_x = titanic_with_dummies[x_columns]
+titanic_y = titanic_with_dummies[&#34;Survived&#34;]
+titanic_model = LogisticRegression()
+titanic_model.fit(titanic_x, titanic_y)
+titanic_model.score(titanic_x, titanic_y)
+0.797752808988764
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Our model predicts almost 80% of the variation in the data.&lt;/p&gt;
+&lt;h4&gt;
+    &lt;a id=&#34;user-content-roc-curve&#34; class=&#34;anchor&#34; href=&#34;#roc-curve&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;ROC Curve
+&lt;/h4&gt;
+&lt;p&gt;The ROC (or Receiving Operator Characteristic) curve is a graph that gives us more information about how well our classification algorithm classifies our data. The goal is to increase the area under the curve as much as possible. If the area under the curve is below the y = x line, this means that our algorithm is worse than a coin flip. Therefore, we must aspire to be at least above that line. However, what we really aspire to is an area of 0.9 or higher.&lt;/p&gt;
+&lt;p&gt;This plot utilizes matplotlib. Additionally, we will compute the true positive rate and false positive rate (tpr, fpr) to generate this plot.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from sklearn import metrics
+import matplotlib.pyplot as plt
+
+y_pred_proba = titanic_model.predict_proba(titanic_x)[::,1]
+fpr, tpr, _ = metrics.roc_curve(titanic_y,  y_pred_proba)
+auc = metrics.roc_auc_score(titanic_y, y_pred_proba)
+plt.plot(fpr,tpr)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/66a4860a4c2f46835a1869a1b222be27b3051efa/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f746974616e69632d726f632e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/66a4860a4c2f46835a1869a1b222be27b3051efa/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f746974616e69632d726f632e706e67&#34; alt=&#34;titanic roc&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/titanic-roc.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;We can see that the area under the curve is larger than the x = y diagonal. In fact, we have computed it to be over 0.85.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;auc
+0.8580319706498951
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-conclusion&#34; class=&#34;anchor&#34; href=&#34;#conclusion&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Conclusion
+&lt;/h2&gt;
+&lt;p&gt;In this lesson we have learned how to use the 
+    &lt;code&gt;linear_model&lt;/code&gt; submodule. We learned about linear regression. We learned how to use linear regression in scikit-learn and how to make sure we are using the model correctly by checking for assumptions. We also learned about logistic regression. We learned about the assumptions for logistic regression. Additionally, we plotted the ROC curve for our model in order to evaluate the model&#39;s performance.
+&lt;/p&gt;
+&lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+  </div>
+  <div id="seq_contents_2"
+    aria-labelledby="tab_2"
+    aria-hidden="true"
+    class="seq_contents tex2jax_ignore asciimath2jax_ignore">
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-vertical&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;VerticalStudentView&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34; data-request-token=&#34;7a06e41e939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@e5f1a375ba85486fa9c79388db2f6d92&#34; data-block-type=&#34;vertical&#34;&gt;
+  
+
+  &lt;h2 class=&#34;hd hd-2 unit-title&#34;&gt;Supervised Learning Guided Lesson&lt;/h2&gt;
+
+    &lt;div class=&#34;ih-bookmark-button-wrapper&#34;&gt;
+    	
+
+
+
+&lt;div class=&#34;bookmark-button-wrapper&#34;&gt;
+  &lt;button class=&#34;btn btn-link bookmark-button &#34;
+    aria-pressed=&#34;false&#34;
+    data-bookmark-id=&#34;NoahB,block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@e5f1a375ba85486fa9c79388db2f6d92&#34;
+    data-bookmarks-api-url=&#34;/api/bookmarks/v1/bookmarks/&#34;&gt;
+     &lt;span class=&#34;bookmark-text&#34;&gt;Bookmark this page&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+
+    &lt;/div&gt;	
+
+&lt;div class=&#34;vert-mod&#34;&gt;
+  &lt;div class=&#34;vert vert-0&#34; data-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@67e37fe5edd445f7afdc8db1b70ffb6d&#34;&gt;
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;7a06e41e939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@67e37fe5edd445f7afdc8db1b70ffb6d&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  &lt;h2&gt;
+    &lt;a id=&#34;user-content-lesson-goals&#34; class=&#34;anchor&#34; href=&#34;#lesson-goals&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Lesson Goals
+&lt;/h2&gt;
+&lt;p&gt;In this guided lesson, we will analyze a machine learning problem from start to finish and compare the performance of a few algorithms.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-introduction&#34; class=&#34;anchor&#34; href=&#34;#introduction&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Introduction
+&lt;/h2&gt;
+&lt;p&gt;Many times as a data scientist or analyst, you are asked to perform classification tasks. In this lesson, we will evaluate a Kickstarter dataset. Perhaps we would like to find out what makes a kickstarter project successful. This analysis will lead us closer to making recommendations that will improve the chances of getting funded.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-the-data&#34; class=&#34;anchor&#34; href=&#34;#the-data&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;The data
+&lt;/h2&gt;
+&lt;p&gt;The 
+    &lt;a href=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/data/ks-projects-201801.csv.zip&#34; rel=&#34;nofollow&#34;&gt;kickstarter dataset&lt;/a&gt; is provided on Kaggle. It contains 15 columns and over 300,000 rows. Let&#39;s do some exploratory data analysis to find out more about our data.
+&lt;/p&gt;
+&lt;p&gt;We start with our imports:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;%matplotlib inline
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Let&#39;s also set a format for floats to improve readability.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pd.options.display.float_format = &#39;{:.4f}&#39;.format
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Now we&#39;ll read our dataset with pandas:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;kickstarter = pd.read_csv(&#39;./ks-projects-201801.csv&#39;)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Let&#39;s start by looking at the shape of our data and the column types.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;kickstarter.shape
+(378661, 15)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;kickstarter.dtypes
+ID                    int64
+name                 object
+category             object
+main_category        object
+currency             object
+deadline             object
+goal                float64
+launched             object
+pledged             float64
+state                object
+backers               int64
+country              object
+usd pledged         float64
+usd_pledged_real    float64
+usd_goal_real       float64
+dtype: object
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Now we will evaluate all columns using the 
+    &lt;code&gt;head&lt;/code&gt; function.
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;kickstarter.head()
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/03e627f4afd6446d293787d116c58768bd595e5a/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6b69636b737461727465722d686561642e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/03e627f4afd6446d293787d116c58768bd595e5a/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6b69636b737461727465722d686561642e706e67&#34; alt=&#34;kickstarter-head&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/kickstarter-head.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;We should also look at the summary statistics for all the numeric columns using the 
+    &lt;code&gt;describe&lt;/code&gt; function.
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;kickstarter.describe()
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/05db9fb596c3229ccb78fbb63966f466555d8d71/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6b69636b737461727465722d64657363726962652e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/05db9fb596c3229ccb78fbb63966f466555d8d71/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6b69636b737461727465722d64657363726962652e706e67&#34; alt=&#34;kickstarter-describe&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/kickstarter-describe.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;What does all this information tell us?&lt;/p&gt;
+&lt;ol&gt;
+    &lt;li&gt;
+        &lt;p&gt;We can see which columns don&#39;t contain useful information for our predictions:&lt;/p&gt;
+        &lt;ul&gt;
+            &lt;li&gt;The ID column contains a unique identifier for each row and will not be useful for prediction&lt;/li&gt;
+            &lt;li&gt;The name column also contains a unique identifier. Since our analysis is currently a quantitative one, we will not be using the information in this column. We might be interested in the information in this column if we were to perform natural language processing on the names.&lt;/li&gt;
+            &lt;li&gt;The category column contains highly detailed classification information. To use this information, we will need to generate dummy variables from this column. We might be creating too many dummy variables by using this column. Our goal is not to create an overcomplicated model. Therefore, we will most likely not be using the information in this column (unless our model proves to be very inaccurate without this information).&lt;/li&gt;
+            &lt;li&gt;There are multiple columns containing information about the total amount pledged. These columns may prove to be highly correlated. Therefore, we should probably only keep one.&lt;/li&gt;
+            &lt;li&gt;There seems to be a close relationship between country and currency. We should consider dropping one of those columns as well.&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p&gt;The date columns (launched and deadline) will be transformed into a column measuring the length of the campaign in days.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p&gt;The backers and goal columns are highly skewed. We will evaluate whether we should drop the outliers in these columns or keep them.&lt;/p&gt;
+    &lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-exploring-the-variables&#34; class=&#34;anchor&#34; href=&#34;#exploring-the-variables&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Exploring the Variables
+&lt;/h2&gt;
+&lt;p&gt;Since we intend to predict the state variable, we will start with this variable.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;kickstarter.state.value_counts()
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/9f1666cc0fbdb6a374e57ada59f821eaa810842b/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6b69636b737461727465722d73746174652d636f756e74732e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/9f1666cc0fbdb6a374e57ada59f821eaa810842b/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6b69636b737461727465722d73746174652d636f756e74732e706e67&#34; alt=&#34;kickstarter state&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/kickstarter-state-counts.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;We can evaluate the percent of projects in each group as well by setting normalize to 
+    &lt;code&gt;True&lt;/code&gt; in the function.
+&lt;/p&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/a38056da9bcbdb4d5a7b0f021fad14aa57b06e14/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6b69636b737461727465722d73746174652d636f756e74732d6e6f726d616c697a652e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/a38056da9bcbdb4d5a7b0f021fad14aa57b06e14/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6b69636b737461727465722d73746174652d636f756e74732d6e6f726d616c697a652e706e67&#34; alt=&#34;kickstarter state normalized&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/kickstarter-state-counts-normalize.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;It seems that about 52% of projects while about 35% have succeeded. The rest have classifications that really aren&#39;t relevant for our analysis. Therefore, we should remove these rows from our data.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;kickstarter_classify = kickstarter[kickstarter.state.isin([&#39;failed&#39;, &#39;successful&#39;])]
+kickstarter_classify.state.value_counts(normalize=True)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/99059941294cb553a569c28aa043a76cf776c563/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6b69636b737461727465722d73746174652d636c6173736966792e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/99059941294cb553a569c28aa043a76cf776c563/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6b69636b737461727465722d73746174652d636c6173736966792e706e67&#34; alt=&#34;kickstarter state normalized classify&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/kickstarter-state-classify.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;Now we have a split of about 40% successful and 60% failed projects. Note that we assigned the filtered data to a new variable. It is always good practice to keep the old data around and assign transformed data to a new variable while performing exploratory data analysis. This reduces the chance of losing previous iterations of our data in case we make a mistake in our code.&lt;/p&gt;
+&lt;p&gt;Next we look at the main_category column. We use the 
+    &lt;code&gt;value_counts&lt;/code&gt; function to evaluate how many projects are in each category.
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;kickstarter_classify.main_category.value_counts()
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/bf852a97da02825057817c05b77103f763c8fca8/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6b69636b737461727465722d63617465676f72792e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/bf852a97da02825057817c05b77103f763c8fca8/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6b69636b737461727465722d63617465676f72792e706e67&#34; alt=&#34;kickstarter-category&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/kickstarter-category.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;It seems like the most popular category is Film &amp;amp; Video while the least popular category is Dance.&lt;/p&gt;
+&lt;p&gt;We can use the 
+    &lt;code&gt;crosstab&lt;/code&gt; function to see how successful projects are in each category.
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pd.crosstab(kickstarter_classify.main_category,kickstarter_classify.state)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/a4cd3b7cec3e2de11c34b9852b1aed937c019a8c/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6b69636b737461727465722d63617465676f72792d73746174652e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/a4cd3b7cec3e2de11c34b9852b1aed937c019a8c/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6b69636b737461727465722d63617465676f72792d73746174652e706e67&#34; alt=&#34;kickstarter-category state&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/kickstarter-category-state.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;We can also add the success rate for each category.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;category_crosstab = pd.crosstab(kickstarter_classify.main_category,kickstarter_classify.state)
+category_crosstab[&#39;success_rate&#39;] = category_crosstab.successful/(category_crosstab.successful+category_crosstab.failed)
+category_crosstab
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/dfd34aae264cdd10edeb873f7ac9c71f2c1b23be/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6b69636b737461727465722d63617465676f72792d737563636573732d726174652e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/dfd34aae264cdd10edeb873f7ac9c71f2c1b23be/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6b69636b737461727465722d63617465676f72792d737563636573732d726174652e706e67&#34; alt=&#34;kickstarter-category success rate&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/kickstarter-category-success-rate.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;Comics, music, and dance seem to be the only 3 categories where there are more successful than failed projects. While Film &amp;amp; Video has a success rate lower than 0.5 despite being the most popular category.&lt;/p&gt;
+&lt;p&gt;Now we will explore the currency variable.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;kickstarter_classify.currency.value_counts()
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/d3cc0ed6176e86c1e56cc650820659df27565394/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6b69636b737461727465722d63757272656e63792d636f756e74732e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/d3cc0ed6176e86c1e56cc650820659df27565394/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6b69636b737461727465722d63757272656e63792d636f756e74732e706e67&#34; alt=&#34;kickstarter currency counts&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/kickstarter-currency-counts.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;Clearly, the most popular currency is the US Dollar.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;currency_crosstab = pd.crosstab(kickstarter_classify.currency,kickstarter_classify.state)
+currency_crosstab[&#39;success_rate&#39;] = currency_crosstab.successful/(currency_crosstab.successful+currency_crosstab.failed)
+currency_crosstab
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/b734ce851d2106e1cc9edd0fa1e63570e84745d1/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6b69636b737461727465722d63757272656e63792d63726f73737461622e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/b734ce851d2106e1cc9edd0fa1e63570e84745d1/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6b69636b737461727465722d63757272656e63792d63726f73737461622e706e67&#34; alt=&#34;kickstarter currency crosstab&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/kickstarter-currency-crosstab.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;It seems that none of the currencies seem to break the 50% success rate. However, it looks like it does make a difference which currency you use since some are more successful than others.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-visualizing-the-data&#34; class=&#34;anchor&#34; href=&#34;#visualizing-the-data&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Visualizing the Data
+&lt;/h2&gt;
+&lt;p&gt;It would be useful to see the distribution of project length for both successful and failed projects. To do this, we will transform the variable and then plot a side-by-side histogram.&lt;/p&gt;
+&lt;p&gt;First, we will transform the variable. Currently the date variables are stored as text. We saw this in the output of the 
+    &lt;code&gt;dtypes&lt;/code&gt; function. Therefore, the first step in finding the project duration is to convert both columns to a
+    &lt;code&gt;datetime&lt;/code&gt; type. After this conversion, we will find the difference between the columns, round it to days, and then assign this data to a new column.
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;kickstarter_classify[&#39;launched_date&#39;] = pd.to_datetime(kickstarter_classify.launched)
+kickstarter_classify[&#39;deadline_date&#39;] = pd.to_datetime(kickstarter_classify.deadline)
+kickstarter_classify[&#39;duration&#39;] = (kickstarter_classify.deadline_date - kickstarter_classify.launched_date).dt.days
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Initially, we plot the histogram of all durations.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;kickstarter_classify.duration.hist()
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/a62c2d5ad67624e9e2ac3ebe3c1c7cf1c1c66315/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6b69636b737461727465722d6475726174696f6e2d686973742e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/a62c2d5ad67624e9e2ac3ebe3c1c7cf1c1c66315/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6b69636b737461727465722d6475726174696f6e2d686973742e706e67&#34; alt=&#34;kickstarter duration histogram&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/kickstarter-duration-hist.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;The majority of projects last around a month.&lt;/p&gt;
+&lt;p&gt;Let&#39;s plot the successful and failed projects side by side to see if their distributions differ.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;kickstarter_classify.duration.hist(by=kickstarter_classify.state)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/3dd6efef0d37254bbee8ed6f3d3abedd4915c976/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6b69636b737461727465722d6475726174696f6e2d686973742d62792d73746174652e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/3dd6efef0d37254bbee8ed6f3d3abedd4915c976/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6b69636b737461727465722d6475726174696f6e2d686973742d62792d73746174652e706e67&#34; alt=&#34;kickstarter duration histogram by state&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/kickstarter-duration-hist-by-state.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;The majority of both failed and successful projects last about a month.&lt;/p&gt;
+&lt;p&gt;Next up is the goal in real US Dollar.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;kickstarter_classify.usd_goal_real.hist()
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/bcce706d928fa99509608d8a5fbb3ef788007f2b/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6b69636b737461727465722d7573642d686973742e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/bcce706d928fa99509608d8a5fbb3ef788007f2b/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6b69636b737461727465722d7573642d686973742e706e67&#34; alt=&#34;kickstarter real usd histogram&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/kickstarter-usd-hist.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;It seems like there is an outlier that is preventing us to see the distribution.&lt;/p&gt;
+&lt;p&gt;Perhaps if we increase the number of bins, this should give us a better picture of the distribution.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;kickstarter_classify.usd_goal_real.hist(bins=100)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/da584905a658bbf6c4ed30119cbf70b3f882fbdd/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6b69636b737461727465722d7573642d686973742d3130302e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/da584905a658bbf6c4ed30119cbf70b3f882fbdd/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6b69636b737461727465722d7573642d686973742d3130302e706e67&#34; alt=&#34;kickstarter real usd histogram bins=100&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/kickstarter-usd-hist-100.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;It looks like this still isn&#39;t enough to give us a more granular view of the distribution.&lt;/p&gt;
+&lt;p&gt;Let&#39;s try to evaluate how many outliers there are and whether they are intentional or perhaps they should be removed.&lt;/p&gt;
+&lt;p&gt;First, let&#39;s look at the largest value.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;max(kickstarter_classify.usd_goal_real)
+166361390.71
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;The max value is about $166 million dollars.&lt;/p&gt;
+&lt;p&gt;Let&#39;s look at the projects asking for more than a million dollars in real USD goal.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;kickstarter_classify[kickstarter_classify.usd_goal_real &amp;gt; 1000000]
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/663ddb67aaba2673921a1c38ea4ff24870cc3185/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6b69636b737461727465722d6f7665722d6d696c6c696f6e2e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/663ddb67aaba2673921a1c38ea4ff24870cc3185/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6b69636b737461727465722d6f7665722d6d696c6c696f6e2e706e67&#34; alt=&#34;kickstarter over a million&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/kickstarter-over-million.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;These seem to be legitimate projects.&lt;/p&gt;
+&lt;p&gt;Let&#39;s look at the success breakdown:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;kickstarter_classify[kickstarter_classify.usd_goal_real &amp;gt; 1000000].state.value_counts()
+failed        829
+successful     11
+Name: state, dtype: int64
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Only 11 projects of the 840 projects asking for more than a million dollars were successful. Since the data seems legitimate and not erroneously entered, we will keep these rows in the dataset.&lt;/p&gt;
+&lt;p&gt;The next step is to look at the correlation between the numeric variables to determine that there are no highly correlated variables.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;kickstarter_classify.corr()
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/b455a6fa3b2c699d73a885bb80ef8e5be59a8b45/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6b69636b737461727465722d636f72722e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/b455a6fa3b2c699d73a885bb80ef8e5be59a8b45/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6b69636b737461727465722d636f72722e706e67&#34; alt=&#34;kickstarter correlation&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/kickstarter-corr.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;The most correlated variables are USD pledged and USD pledged real and goal and USD goal real. Pledged and backers are moderately correlated with a correlation of 0.7173. Since the more backers we have, the more pledged money we have, we are better off removing that variable as well.&lt;/p&gt;
+&lt;p&gt;Before creating our model, we should ensure that there is no missing data. Some models will not produce a meaningful result with missing data. If there is a significant amount of missing data, then we should come up with a meaningful strategy to address the missing data.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;kickstarter_classify.isnull().sum(axis = 0)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/df0bd29b9bd05b38bd1c347f935d7d95e2a0e6b0/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6b69636b737461727465722d6d697373696e672e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/df0bd29b9bd05b38bd1c347f935d7d95e2a0e6b0/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6b69636b737461727465722d6d697373696e672e706e67&#34; alt=&#34;kickstarter missing data&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/kickstarter-missing.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;The only variable containing missing data is the amount of pledged dollars. This confirms that we should remove this column.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-preparing-the-data&#34; class=&#34;anchor&#34; href=&#34;#preparing-the-data&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Preparing the Data
+&lt;/h2&gt;
+&lt;p&gt;At this point we will start to prepare the data for applying ML algorithms to the data.&lt;/p&gt;
+&lt;p&gt;The first step is to pick only the columns that we decided to keep as well as separating the data to predictor (x) and response (y) variables. We use the 
+    &lt;code&gt;get dummies&lt;/code&gt; function on the response variables to convert them from categorical values to a variable containing zeros and ones. We use the
+    &lt;code&gt;drop_first&lt;/code&gt; option to ensure that we only get one column (since for n values, the
+    &lt;code&gt;drop_first&lt;/code&gt; option will create n-1 variable)
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;kickstarter_variables = kickstarter_classify[[&#39;usd_goal_real&#39;, &#39;backers&#39;, &#39;main_category&#39;, &#39;duration&#39;, &#39;currency&#39;]]
+kickstarter_y = pd.get_dummies(data=kickstarter_classify[&#39;state&#39;], drop_first=True)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;The next step in our data processing is to convert the categorical variables to dummy variables using the 
+    &lt;code&gt;get_dummies&lt;/code&gt; function.
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;kickstarter_x = pd.get_dummies(data=kickstarter_variables, columns=[&#39;main_category&#39;, &#39;currency&#39;], drop_first=True)
+kickstarter_x.head()
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/f195a25996811a5f4cfe66a23b9dfc4f52db253b/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6b69636b737461727465722d782e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/f195a25996811a5f4cfe66a23b9dfc4f52db253b/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6b69636b737461727465722d782e706e67&#34; alt=&#34;kickstarter x variables&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/kickstarter-x.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;Using the 
+    &lt;code&gt;head&lt;/code&gt; function shows us that we have increased the number of columns from the 5 that we initially selected to 30 columns total.
+&lt;/p&gt;
+&lt;p&gt;The final step in the processing phase is to separate the data into test and train datasets. We do this to ensure that our model performs well even on the data that was not used for training. This is how we reduce overfitting. We randomly select 80% of the data for the training dataset and the remaining 20% is used for the test dataset.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from sklearn.model_selection import train_test_split
+
+X_train, X_test, y_train, y_test = train_test_split(kickstarter_x, kickstarter_y, test_size=0.2)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-creating-the-model&#34; class=&#34;anchor&#34; href=&#34;#creating-the-model&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Creating the Model
+&lt;/h2&gt;
+&lt;p&gt;Since this is a classification problem, there are a number of algorithms at our disposal. Logistic regression is a good choice for our problem. Another good choice is random forest. SVM is also a suitable option for this type of problem. However, due to how SVM is implemented in scikit-learn, it is not recommended to use this algorithm on data with more than 10000 rows. Therefore, we will avoid using this algorithm for now, even though it is otherwise a good choice for this type of problem.&lt;/p&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-logistic-regression&#34; class=&#34;anchor&#34; href=&#34;#logistic-regression&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Logistic Regression
+&lt;/h3&gt;
+&lt;p&gt;First we generate our model and then we will proceed to evaluate it.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from sklearn.linear_model import LogisticRegression
+
+ks_model = LogisticRegression().fit(X_train, y_train)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;One way to evaluate the model is using a confusion matrix. The confusion matrix specifies how many observations were correctly classified and how many were incorrectly classified.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from sklearn.metrics import confusion_matrix
+
+y_pred_test = ks_model.predict(X_test)
+confusion_matrix(y_test, y_pred_test)
+array([[37686,  1765],
+       [ 4522, 22362]], dtype=int64)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;The first entry in our matrix is the number of observations correctly classified as 0 (or failure). The second entry in the matrix are all entries incorrectly classified as 1 (or success). These observations are actually zeros but our algorithm classified them as 1. The third entry contains the count of all observations incorrectly classified as zero (or failure). The last entry contains the count of observations correctly classified as 1. Our goal is to maximize the first and last entries (the correctly classified observations) and minimize the incorrectly classified information. As we can see, out of 66335 observations, 60048 (or 90.5%) are correctly classified.&lt;/p&gt;
+&lt;p&gt;We have previously looked at the ROC curve. Recall that this curve is a measure of describing how well our algorithm classifies the data. The better our classification algorithm, the larger the area under the curve (also known as AUC=Area Under the Curve).&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from sklearn import metrics
+
+y_pred_proba = ks_model.predict_proba(X_test)[::,1]
+fpr, tpr, _ = metrics.roc_curve(y_test,  y_pred_proba)
+auc = metrics.roc_auc_score(y_test, y_pred_proba)
+
+plt.plot(fpr,tpr)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/cf2077469634058ab62db88f695ee14030ae1ba2/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6b69636b737461727465722d6c722d726f632e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/cf2077469634058ab62db88f695ee14030ae1ba2/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6b69636b737461727465722d6c722d726f632e706e67&#34; alt=&#34;kickstarter logistic regression roc&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/kickstarter-lr-roc.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;auc
+0.9577120643267472
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;The area under the curve is over 0.95. This is a decent number, but perhaps we could do better with a different algorithm.&lt;/p&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-random-forest&#34; class=&#34;anchor&#34; href=&#34;#random-forest&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Random Forest
+&lt;/h3&gt;
+&lt;p&gt;Random forest is an ensemble algorithm. This means that it resamples the data multiple times and generates a decision tree from each sample. We then think of the trees as a group of algorithms. We base our decision on the outcome of the majority of algorithms in the ensemble.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from sklearn.ensemble import RandomForestClassifier
+
+ks_rf = RandomForestClassifier().fit(X_train, y_train)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Here is our confusion matrix:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;y_pred_test_rf = ks_rf.predict(X_test)
+confusion_matrix(y_test, y_pred_test_rf)
+array([[36917,  2534],
+       [ 2748, 24136]], dtype=int64)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Let&#39;s plot the ROC curve for the random forest that we have generated.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;y_pred_proba_rf = ks_rf.predict_proba(X_test)[::,1]
+fpr, tpr, _ = metrics.roc_curve(y_test,  y_pred_proba_rf)
+auc = metrics.roc_auc_score(y_test, y_pred_proba_rf)
+
+plt.plot(fpr,tpr)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/780d593cee29636527083d383a37596ff811210b/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6b69636b737461727465722d72662d726f632e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/780d593cee29636527083d383a37596ff811210b/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6b69636b737461727465722d72662d726f632e706e67&#34; alt=&#34;kickstarter random forest roc&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/kickstarter-rf-roc.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;auc
+0.9673171236612177
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;While our AUC was already high, we have improved the score using the random forest algorithm.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-summary&#34; class=&#34;anchor&#34; href=&#34;#summary&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Summary
+&lt;/h2&gt;
+&lt;p&gt;In this lesson we covered many steps in exploratory data analysis and visualization, data processing and munging and machine learning algorithms for classification problems. Hopefully this lesson has given you an insight into the steps needed to solve such a problem from start to finish.&lt;/p&gt;
+&lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+  </div>
+  <div id="seq_contents_3"
+    aria-labelledby="tab_3"
+    aria-hidden="true"
+    class="seq_contents tex2jax_ignore asciimath2jax_ignore">
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-vertical&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;VerticalStudentView&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34; data-request-token=&#34;7a06e41e939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@44360126c3f94489840a7ce6e0129c40&#34; data-block-type=&#34;vertical&#34;&gt;
+  
+
+  &lt;h2 class=&#34;hd hd-2 unit-title&#34;&gt;More Supervised Learning Models&lt;/h2&gt;
+
+    &lt;div class=&#34;ih-bookmark-button-wrapper&#34;&gt;
+    	
+
+
+
+&lt;div class=&#34;bookmark-button-wrapper&#34;&gt;
+  &lt;button class=&#34;btn btn-link bookmark-button &#34;
+    aria-pressed=&#34;false&#34;
+    data-bookmark-id=&#34;NoahB,block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@44360126c3f94489840a7ce6e0129c40&#34;
+    data-bookmarks-api-url=&#34;/api/bookmarks/v1/bookmarks/&#34;&gt;
+     &lt;span class=&#34;bookmark-text&#34;&gt;Bookmark this page&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+
+    &lt;/div&gt;	
+
+&lt;div class=&#34;vert-mod&#34;&gt;
+  &lt;div class=&#34;vert vert-0&#34; data-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@f8d4835b712d4ecd8f5e0176045990dd&#34;&gt;
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;7a06e41e939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@f8d4835b712d4ecd8f5e0176045990dd&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  &lt;h2&gt;
+    &lt;a id=&#34;user-content-lesson-goals&#34; class=&#34;anchor&#34; href=&#34;#lesson-goals&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Lesson Goals
+&lt;/h2&gt;
+&lt;p&gt;In this lesson we will expand our repertoire of supervised learning models by introducing naive bayes and k-nearest neighbors. These are two supervised learning models that are typically used for classification problems.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-introduction&#34; class=&#34;anchor&#34; href=&#34;#introduction&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Introduction
+&lt;/h2&gt;
+&lt;p&gt;So far, we have discovered a few models for supervised learning. In this lesson, we will explore two different classification models. Naive Bayes is a probabilistic model for classification. K Nearest Neighbors is a model that makes a prediction based on the observations closest to it. Both models make certain assumptions for us to consider them.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-naive-bayes&#34; class=&#34;anchor&#34; href=&#34;#naive-bayes&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Naive Bayes
+&lt;/h2&gt;
+&lt;p&gt;You may recall Bayes Theorem for conditional probability. This theorem states that the probability of A given B is the probability of the intersection of A and B divided by the probability of B.&lt;/p&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/cb4eaba66cce1e452f7dbd0b0f5a8889f7449983/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f62617965732e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/cb4eaba66cce1e452f7dbd0b0f5a8889f7449983/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f62617965732e706e67&#34; alt=&#34;bayes theorem&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/bayes.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;We can rewrite our theorem like this:&lt;/p&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/5e8d8e7b4f8bcd72807912801a19dc6d71e4bf37/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f62617965732d72657665727365642e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/5e8d8e7b4f8bcd72807912801a19dc6d71e4bf37/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f62617965732d72657665727365642e706e67&#34; alt=&#34;bayes-reversed&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/bayes-reversed.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;We use this rule to create a general model. Say we would like to make a revenue prediction for our e-commerce site. We know that our site follows the following distribution table:&lt;/p&gt;
+&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Site Version&lt;/th&gt;
+            &lt;th&gt;Customer Group&lt;/th&gt;
+            &lt;th&gt;Purchase&lt;/th&gt;
+            &lt;th&gt;No Purchase&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Version 1&lt;/td&gt;
+            &lt;td&gt;Millennial&lt;/td&gt;
+            &lt;td&gt;350&lt;/td&gt;
+            &lt;td&gt;550&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Version 2&lt;/td&gt;
+            &lt;td&gt;Millennial&lt;/td&gt;
+            &lt;td&gt;150&lt;/td&gt;
+            &lt;td&gt;100&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Version 1&lt;/td&gt;
+            &lt;td&gt;Gen Z&lt;/td&gt;
+            &lt;td&gt;400&lt;/td&gt;
+            &lt;td&gt;450&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Version 2&lt;/td&gt;
+            &lt;td&gt;Gen Z&lt;/td&gt;
+            &lt;td&gt;100&lt;/td&gt;
+            &lt;td&gt;300&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;From this table, we know the joint probability of a customer making a purchase. Using Bayes Theorem, we can make a prediction of a customer making a purchase given the version of the website they see and the customer group they are in.&lt;/p&gt;
+&lt;p&gt;It is important to note that the Naive Bayes algorithm makes a 
+    &lt;strong&gt;conditional independence&lt;/strong&gt; assumption. This means that the effect of a single predictor on the outcome is independent on the values of the other predictor variables. This is a simplifying assumption that cannot always be made in some scenarios. Therefore, we should try to see if making this assumption may or may not work with our data.
+&lt;/p&gt;
+&lt;p&gt;To calculate the probability of a customer making a purchase given that they are a millennial and looking at site version 1, we use the following formula.&lt;/p&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/07f52670429f3bb96354cd422c1ee8426702c6a9/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f62617965732d66697273742d737465702e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/07f52670429f3bb96354cd422c1ee8426702c6a9/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f62617965732d66697273742d737465702e706e67&#34; alt=&#34;first step calculation&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/bayes-first-step.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;We are using the model to compute probabilities and compare them. Therefore, we don&#39;t care about the denominator. We then get rid of the denominator and change our equation from being equal to, to being proportional to the probability of a purchase given customer group and site version.&lt;/p&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/64ec71dd2614df9f7cfefd42b574ef2aec093ad3/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f62617965732d7365636f6e642d737465702e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/64ec71dd2614df9f7cfefd42b574ef2aec093ad3/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f62617965732d7365636f6e642d737465702e706e67&#34; alt=&#34;second step calculation&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/bayes-second-step.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;Using the rewritten formula for Bayes Theorem, we convert the joint probability to a product of a two probabilities. Since our formula is only proportional rather than equal, we are left with:&lt;/p&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/96333099a65685798ecd751ef0b8615b0c4ae67d/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f62617965732d74686972642d737465702e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/96333099a65685798ecd751ef0b8615b0c4ae67d/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f62617965732d74686972642d737465702e706e67&#34; alt=&#34;third step calculation&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/bayes-third-step.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;This equation contains two important parts. The first part is called the 
+    &lt;strong&gt;prior&lt;/strong&gt;. This is the probability of a purchase occurring overall. This is our initial evidence. The second part is called the
+    &lt;strong&gt;likelihood&lt;/strong&gt;. This part of the equation is the conditional probability for each of the features that we measure. Since we assume independence, we simply write this part as a product of all the conditional probabilities. The product of the prior and the likelihood is called the
+    &lt;strong&gt;posterior&lt;/strong&gt;.
+&lt;/p&gt;
+&lt;p&gt;To decide whether millennials who see version 1 of the site are more likely to purchase or not, we will compute both the posterior for making a purchase and not making a purchase and compare the two. We perform this comparison since our equation is proportional to the posterior probability rather than equal. Therefore we can only compare the two numbers rather than look at the actual value.&lt;/p&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/363b8bd394c6591159aacc991ef8d8ad28cd8da5/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f62617965732d70757263686173652e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/363b8bd394c6591159aacc991ef8d8ad28cd8da5/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f62617965732d70757263686173652e706e67&#34; alt=&#34;bayes purchase calculation&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/bayes-purchase.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;Similarly, we compute the numerator of the posterior for no purchase.&lt;/p&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/0034db3b35625eb8739f7576d56a0555df9a0250/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f62617965732d6e6f2d70757263686173652e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/0034db3b35625eb8739f7576d56a0555df9a0250/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f62617965732d6e6f2d70757263686173652e706e67&#34; alt=&#34;bayes no purchase calculation&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/bayes-no-purchase.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;We conclude that a millennial looking at version 1 of the site is more likely to not purchase an item since 0.193452 &amp;gt; 0.15625.&lt;/p&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-gaussian-naive-bayes&#34; class=&#34;anchor&#34; href=&#34;#gaussian-naive-bayes&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Gaussian Naive Bayes
+&lt;/h3&gt;
+&lt;p&gt;Instead of looking at a probability distribution table, we can make the assumption that our likelihood comes from a Gaussian (or normal) distribution.&lt;/p&gt;
+&lt;p&gt;To examine the code in Scikit-Learn, we will look at the famous Iris dataset. This dataset was first introduced by Ronald Fisher in 1936 and is used in many classification examples. The Iris dataset contains 4 features for Iris flowers (petal length, petal width, sepal length, and sepal width). The measurements in these variables are used to classify the type of Iris flower. We will import the dataset from Scikit-Learn and then fit the 
+    &lt;code&gt;GaussianNB&lt;/code&gt; model to the data.
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from sklearn import datasets
+from sklearn.naive_bayes import GaussianNB
+
+iris = datasets.load_iris()
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;The 
+    &lt;code&gt;iris&lt;/code&gt; dataset contains the features in the
+    &lt;code&gt;data&lt;/code&gt; section and the classification in the
+    &lt;code&gt;target&lt;/code&gt;.
+&lt;/p&gt;
+&lt;p&gt;Next, we will initialize the 
+    &lt;code&gt;GaussianNB&lt;/code&gt; model and fit the model.
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;gnb = GaussianNB()
+y_pred = gnb.fit(iris.data, iris.target).predict(iris.data)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;We can then generate predictions and compare the predictions with the observed data.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from sklearn import metrics
+
+y_pred = gnb.fit(iris.data, iris.target).predict(iris.data)
+metrics.confusion_matrix(iris.target, y_pred)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/2c7109c486b3d5d986762661949beedae3f06983/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f697269732d636f6e667573696f6e2d6d61747269782e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/2c7109c486b3d5d986762661949beedae3f06983/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f697269732d636f6e667573696f6e2d6d61747269782e706e67&#34; alt=&#34;iris confusion matrix&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/iris-confusion-matrix.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;The accuracy of a model is measured by how many observations are classified correctly. All the data correctly classified appears in a confusion matrix along the diagonal. So out of 150 observations, only 6 are incorrectly classified.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-k-nearest-neighbors&#34; class=&#34;anchor&#34; href=&#34;#k-nearest-neighbors&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;K-Nearest Neighbors
+&lt;/h2&gt;
+&lt;p&gt;This algorithm is based on the idea that observations in a &#34;neighorbood&#34; will have the same classification. We typically decide whether observations are considered neighbors by a distance metric of our choice. Two common choices for distance metrics are Euclidean distance (defined as the sum of squared distances) or L1 distance (defined as the sum of the absolute value of the distances). We look at the labels of all the observations in the &#34;neighborhood&#34; and assign the most common label (the mode) to the observation that we are trying to predict.&lt;/p&gt;
+&lt;p&gt;Our choice of k is defined by us. We can test different models with multiple values of k and select the model with the highest accuracy. This is the most common way to optimize k.&lt;/p&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-advantages-and-disadvantages-of-k-nearest-neighbors&#34; class=&#34;anchor&#34; href=&#34;#advantages-and-disadvantages-of-k-nearest-neighbors&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Advantages and Disadvantages of K-Nearest Neighbors
+&lt;/h3&gt;
+&lt;p&gt;The main advantage is that while we can train a model and then apply it to new data, we do not have to perform this process. We can use the k closest observations with known labels to predict the label of the new observations and make predictions on the fly. However, this means that every time we make a prediction, we have to compute the distance between the observation and all labeled data. This can be computationally intensive and a disadvantage of this algorithm.&lt;/p&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-k-nearest-neighbors-with-scikit-learn&#34; class=&#34;anchor&#34; href=&#34;#k-nearest-neighbors-with-scikit-learn&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;K-Nearest Neighbors with Scikit-Learn
+&lt;/h3&gt;
+&lt;p&gt;We are able to apply a K-Nearest Neighbors model to our data using the 
+    &lt;code&gt;KNeighborsClassifier&lt;/code&gt; in Scikit-Learn. In the example below, we will use the abalone data from the UCI dataset repository. This data contains 8 features describing different abalone observations. Using these features, we are able to predict the sex of the abalone (Male, Female, or Infant).
+&lt;/p&gt;
+&lt;p&gt;We&#39;ll start by loading the data and examining it.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;import pandas as pd
+
+abalone_url = &#39;https://archive.ics.uci.edu/ml/machine-learning-databases/abalone/abalone.data&#39;
+abalone_cols = [&#39;Sex&#39;, &#39;Length&#39;, &#39;Diameter&#39;, &#39;Height&#39;, &#39;Whole_Weight&#39;, 
+                &#39;Shucked_Weight&#39;, &#39;Visecra_Weight&#39;, &#39;Shell_Weight&#39;, &#39;Rings&#39;]
+abalone = pd.read_csv(abalone_url, names=abalone_cols)
+abalone.head()
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/47b073420a29d8bc49e4d008e2b53034fb258191/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6162616c6f6e652d686561642e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/47b073420a29d8bc49e4d008e2b53034fb258191/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6162616c6f6e652d686561642e706e67&#34; alt=&#34;abalone head&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/abalone-head.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;Next, we will load the 
+    &lt;code&gt;KNeighborsClassifier&lt;/code&gt; from Scikit-Learn and create a model with k=3.
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from sklearn.neighbors import KNeighborsClassifier
+
+# We create a list of all feature columns.
+cols = [x for x in abalone.columns.values if x != &#39;Sex&#39;]
+
+neighbor_model = KNeighborsClassifier(n_neighbors=3)
+neighbor_model.fit(abalone[cols], abalone[&#39;Sex&#39;]) 
+KNeighborsClassifier()
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Now that we have created our model, we will create a single observation and predict the sex of this observation.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;obs = np.array([[0.5, 0.3, 0.05, 0.6, 0.2, 0.1, 0.1, 8]])
+print(neighbor_model.predict(obs))
+[&#39;I&#39;]
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-conclusion&#34; class=&#34;anchor&#34; href=&#34;#conclusion&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Conclusion
+&lt;/h2&gt;
+&lt;p&gt;In this lesson, we have learned about two supervised learning techniques. Naive Bayes is a technique that computes a number proportional to the posterior probability and returns the class with the highest number. This model is simple to compute but makes some simplifying assumptions about the independence between variables that don&#39;t always hold in every scenario.&lt;/p&gt;
+&lt;p&gt;K-Nearest Neighbors is a model that assumes that the observations closest to each other should have the same classification. It is a simple model to compute but may require a large number of computations.&lt;/p&gt;
+&lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+  </div>
+  <div id="seq_contents_4"
+    aria-labelledby="tab_4"
+    aria-hidden="true"
+    class="seq_contents tex2jax_ignore asciimath2jax_ignore">
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-vertical&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;VerticalStudentView&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34; data-request-token=&#34;7a06e41e939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@24676f162cfe4cc0a3a5980a65f749e2&#34; data-block-type=&#34;vertical&#34;&gt;
+  
+
+  &lt;h2 class=&#34;hd hd-2 unit-title&#34;&gt;Supervised Learning Model Evaluation&lt;/h2&gt;
+
+    &lt;div class=&#34;ih-bookmark-button-wrapper&#34;&gt;
+    	
+
+
+
+&lt;div class=&#34;bookmark-button-wrapper&#34;&gt;
+  &lt;button class=&#34;btn btn-link bookmark-button &#34;
+    aria-pressed=&#34;false&#34;
+    data-bookmark-id=&#34;NoahB,block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@24676f162cfe4cc0a3a5980a65f749e2&#34;
+    data-bookmarks-api-url=&#34;/api/bookmarks/v1/bookmarks/&#34;&gt;
+     &lt;span class=&#34;bookmark-text&#34;&gt;Bookmark this page&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+
+    &lt;/div&gt;	
+
+&lt;div class=&#34;vert-mod&#34;&gt;
+  &lt;div class=&#34;vert vert-0&#34; data-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@8d3c5e1af28b42b5ac204fb68db38be2&#34;&gt;
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;7a06e41e939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@8d3c5e1af28b42b5ac204fb68db38be2&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  &lt;h2&gt;
+    &lt;a id=&#34;user-content-lesson-goals&#34; class=&#34;anchor&#34; href=&#34;#lesson-goals&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Lesson Goals
+&lt;/h2&gt;
+&lt;ul&gt;
+    &lt;li&gt;Explain the importance of a training-test split of your data and how this relates to model overfitting.&lt;/li&gt;
+    &lt;li&gt;Explain what cross-validation is and why it is important.&lt;/li&gt;
+    &lt;li&gt;Calculate several different types of evaluation metrics for a regression model and discuss the pros &amp;amp; cons of each.&lt;/li&gt;
+    &lt;li&gt;Calculate several types of evaluation metrics for a classification model and discuss the pros &amp;amp; cons of each.&lt;/li&gt;
+    &lt;li&gt;Perform basic classifier model diagnostics based on examples.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-introduction&#34; class=&#34;anchor&#34; href=&#34;#introduction&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Introduction
+&lt;/h2&gt;
+&lt;p&gt;One of the most important parts of building a machine learning pipeline is evaluating the quality of the models we create. For a supervised learning problem, this boils down to quantifying an answer to the question: How well does this model describe the underlying process that created my data?&lt;/p&gt;
+&lt;p&gt;Often there is more than one right answer to this question, and sometimes different answers will be contradictory. In this lesson, we will walk through some of the ways we can go about answering this question and when each approach may or may not be appropriate.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-splitting-your-data&#34; class=&#34;anchor&#34; href=&#34;#splitting-your-data&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Splitting Your Data
+&lt;/h2&gt;
+&lt;p&gt;When training a model, it is generally helpful to give it as much data as possible; companies will literally spend millions of dollars just to acquire more data to increase the accuracy of their models. Because of this, it is fair to assume that when you go to train a machine learning model, you would want to give the model access to your entire dataset to train on. However, this can lead to some unexpected problems. Consider the following simple example:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;def true_fxn(x):
+    &#34;&#34;&#34;Sine wave function&#34;&#34;&#34;
+    return np.sin(2 * np.pi * x)
+
+np.random.seed(0)
+
+# Generate random points centered around the true function with a bit of random noise added
+num_samples = 30
+noise_strength = 0.1
+X = np.sort(np.random.rand(num_samples))
+y = true_fxn(X) + np.random.randn(num_samples) * noise_strength
+
+plt.figure(figsize=(10, 6))
+X_range = np.linspace(0, 1, 100)
+plt.plot(X_range, true_fxn(X_range), label=&#34;True Function&#34;)
+plt.scatter(X, y, label=&#34;Samples&#34;, edgecolor=&#39;r&#39;)
+plt.legend(loc=&#34;best&#34;)
+plt.show()
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/9481f2b8b1f894d9dda6d6fac45d60c7cc00172f/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f747275652d66756e6374696f6e2d73616d706c65732e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/9481f2b8b1f894d9dda6d6fac45d60c7cc00172f/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f747275652d66756e6374696f6e2d73616d706c65732e706e67&#34; alt=&#34;True Function Samples&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/true-function-samples.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;In this example, we define a true function (a sine wave), then sample it at 30 points, with a bit of random noise added at each point. In a machine learning problem, our goal might be to train a regression model to predict the sample value (y) based on any input (x). We want to use a high-powered, descriptive model, so let&#39;s try to train a high-order model on this dataset. After all, it has a lot of different parameters, so it must be able to fit the data well! Here we&#39;ll use Scikit-learn to train a linear model based on polynomial regression.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from sklearn.preprocessing import PolynomialFeatures
+from sklearn.linear_model import LinearRegression
+from sklearn.pipeline import make_pipeline
+
+model = make_pipeline(PolynomialFeatures(degree=40), LinearRegression())
+model.fit(X[:, np.newaxis], y)
+
+plt.figure(figsize=(10, 6))
+X_range = np.linspace(0, 1, 100)
+plt.plot(X_range, true_fxn(X_range), label=&#34;True Function&#34;)
+plt.plot(X_range, model.predict(X_range[:, np.newaxis]), label=&#34;model&#34;)
+plt.scatter(X, y, label=&#34;Samples&#34;, edgecolor=&#39;r&#39;)
+plt.legend(loc=&#34;best&#34;)
+plt.ylim((-2, 2))
+plt.show()
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/371b95306a78db397697627d63e5d74502bf132b/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6c696e6561722d6d6f64656c2d706f6c796e6f6d69616c2e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/371b95306a78db397697627d63e5d74502bf132b/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6c696e6561722d6d6f64656c2d706f6c796e6f6d69616c2e706e67&#34; alt=&#34;Linear Model Polynomial&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/linear-model-polynomial.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;Looking at this plot, we can quickly see that this is a terrible model. It is wildly unstable, and sampling from it in most places along this range would result in values far away from the true function (blue line). However, when we score this model using Scikit-learn&#39;s built-in 
+    &lt;code&gt;score&lt;/code&gt; method, it looks like a great model!
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;model.score(X[:, np.newaxis], y)
+
+0.9956743693783364
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Is Scikit-learn&#39;s score function broken? Lets take another look at the plot again. The model is a poor representation of the underlying function, but it does pass exactly through virtually every point we sampled. We&#39;ll get into exactly how score is calculated shortly, but for now it&#39;s enough to know that it takes every training example we give it in 
+    &lt;code&gt;x&lt;/code&gt;, predicts the output using the trained model, then compares it to the real value,
+    &lt;code&gt;y&lt;/code&gt;. In this case, the model gets y almost exactly right for all 30 points in
+    &lt;code&gt;x&lt;/code&gt;, so our naive score of the model is very high, despite the model being a poor representation of the true underlying function. Indeed, if we took this model and tried to use it to predict arbitrary values, we would quickly run into trouble. It has done a good job of fitting to the 30 specific points that we sampled to, at the expensive of fidelity to the underlying function. This is a classic example of
+    &lt;em&gt;overfitting&lt;/em&gt;.
+&lt;/p&gt;
+&lt;p&gt;This was a simple example, but in the real world, we frequently apply extremely powerful, versatile models with hundreds, thousands, or even millions of adjustable parameters to large data sets. These models have extraordinary expressive power, but this same flexibility also makes them very susceptible to overfitting. There are many techniques, under the broad heading of regularization to combat this during model training, but it is extremely important that we constantly watch out for the possibility of overfitting when evaluating models.&lt;/p&gt;
+&lt;p&gt;One of the easiest, and most common, ways to do this is to separate our data into 
+    &lt;em&gt;training&lt;/em&gt; and
+    &lt;em&gt;testing&lt;/em&gt; sets before we train the model. The model never sees the testing data at any step of the training process, so it never gets a chance to adjust its shape to it. Then, after training the model, we evaluate the model performance not on the training data that it has seen before, but on the testing data. We can split a data set into training and testing sets using Scikit-learn&#39;s
+    &lt;code&gt;train_test_split&lt;/code&gt; function as follows.
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from sklearn.model_selection import train_test_split
+
+X_train, X_test, y_train, y_test = train_test_split(X.reshape(30, 1), y, test_size=0.3)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;In this example, we randomly split off 30% of the data into a testing set and trained the model on the remaining 70%. Now, when we then fit and score the model on both the training set and the testing set, we can see just how poorly this model fits the unseen examples in the testing set.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;model.fit(X_train, y_train)
+
+print(&#34;Model performance on traing set: {}&#34;.format(model.score(X_train, y_train)))
+print(&#34;Model performance on testing set: {}&#34;.format(model.score(X_test, y_test)))
+
+Model performance on traing set: 0.9999999992058155
+Model performance on testing set: -2601.598061987397
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;We can see this visually on the plot below - the model goes through almost all of the green points, but some of the red points are nowhere near the model function. High performance on a training set combined with lower performance on a testing/holdout set is a classic signature of overfitting.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;plt.figure(figsize=(10, 6))
+X_range = np.linspace(0, 1, 100)
+plt.plot(X_range, true_fxn(X_range), label=&#34;True Function&#34;)
+plt.plot(X_range, model.predict(X_range[:, np.newaxis]), label=&#34;model&#34;)
+plt.scatter(X_train, y_train, label=&#34;Training Samples&#34;, color=&#39;g&#39;)
+plt.scatter(X_test, y_test, label=&#34;Testing Samples&#34;, color=&#39;r&#39;, marker=&#34;+&#34;)
+plt.legend(loc=&#34;best&#34;)
+plt.ylim((-2, 2))
+plt.show()
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/0df37cd3be66f84d775bb0abf981812909034fec/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f747261696e2d746573742d6669742d636f6d70617269736f6e2e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/0df37cd3be66f84d775bb0abf981812909034fec/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f747261696e2d746573742d6669742d636f6d70617269736f6e2e706e67&#34; alt=&#34;Train Test Fit Comparison&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/train-test-fit-comparison.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;A few key points to take away from this example are:&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;
+        &lt;p&gt;You should always hold a bit of your data separate when performing machine learning. The exact split can vary, but 25-30% is typical. Holding more than that can risk reducing the amount of training data you have available to you, especially with small datasets.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p&gt;Holding out a test set doesn&#39;t, by itself, prevent overfitting. It just gives you a tool to recognize overfitting is occurring so that you can take preventative measures.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p&gt;For a test set to be useful, it needs to be representative of the overall dataset. You should use statistical tools (min/max, average measures, standard deviation, etc.) and plots to ensure that the training and testing set look more or less the same on aggregate.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p&gt;If both the training and the test set share a systematic skew (e.g. both have some inaccuracy with respect to the underlying function), the testing set will not help you realize that the model is picking up this skew. It is important to independently evaluate whether your data accurately represent the underlying process.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p&gt;We generally want our models to be as generalizable as possible to data they haven&#39;t yet seen. If the testing set is limited to the same range of input values as the training set, it does not tell you much about how generalizable the model is to input values outside that range.&lt;/p&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;With these caveats in mind, holding out an independent testing set for final model evaluation is one of the most useful and easiest tools for being aware of and evaluating the extent of model overfitting.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-evaluating-regression-models&#34; class=&#34;anchor&#34; href=&#34;#evaluating-regression-models&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Evaluating Regression Models
+&lt;/h2&gt;
+&lt;p&gt;One of the major types of supervised learning learning problems is a 
+    &lt;em&gt;regression&lt;/em&gt; model. This type of problem involves finding a model to predict a real-valued output for a real-valued input. The overfitting example we reviewed earlier is an example of a regression model. There are a few different
+    &lt;em&gt;evaluation metrics&lt;/em&gt; that are commonly used to evaluate the performance of regression models. No single metric is necessarily better than another; they each provide a slightly different look at an aspect of model fit and give the modeler information about how well the model does on that particular aspect.
+&lt;/p&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-r-squared-coefficient-of-determination&#34; class=&#34;anchor&#34; href=&#34;#r-squared-coefficient-of-determination&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;R-Squared (Coefficient of Determination)
+&lt;/h3&gt;
+&lt;p&gt;R-squared is arguably the most commonly used metric in basic linear regression problems (it is the default metric for the 
+    &lt;code&gt;score&lt;/code&gt; function we saw in the
+    &lt;code&gt;LinearRegression&lt;/code&gt; model used in the overfitting example earlier). It ranges from 1.0 (perfect fit to the data) to arbitrarily large negative values (models that fit the data very poorly), but normally ranges between 0.0 and 1.0 for well-behaved, reasonably accurate models. Technically speaking, R-squared is the proportion of the variance in the model predictions that is predictable based on the input values. Practically speaking, it attempts to say how likely future samples are to be predicted accurately by this model, based on the tested values. We can think of it as model explained variation / total variation in a model.
+&lt;/p&gt;
+&lt;p&gt;Mathematically, R-squared is calculated using the following formula:&lt;/p&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/763a4447cb68cba3f49a3812a9c35ce32e29de80/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f722d737175617265642d666f726d756c612e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/763a4447cb68cba3f49a3812a9c35ce32e29de80/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f722d737175617265642d666f726d756c612e706e67&#34; alt=&#34;R-Squared Formula&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/r-squared-formula.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;where 
+    &lt;em&gt;y
+        &lt;sub&gt;i&lt;/sub&gt;
+    &lt;/em&gt; is the predicted value and
+    &lt;em&gt;y-hat&lt;/em&gt; is the actual value.
+&lt;/p&gt;
+&lt;p&gt;In other words,  1 minus the ratio of the sum of all of the prediction errors squared to the sum of all the squared differences between the predictions and the mean value of the function. We&#39;re basically looking at how large the errors are compared to the variation of the values in the function itself.&lt;/p&gt;
+&lt;p&gt;R-squared is a useful metric because it provides a fairly robust measure of how well the model predicts the response variable. However, there are a some major limitations to be wary of:&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;
+        &lt;p&gt;Calculated as defined above, the R-squared value is technically an estimate of the real R-squared value of a model. This estimate is inherently biased toward the points that we use to evaluate it on (this relates to the idea of overfitting presented earlier). We can try to sample our evaluation points to limit this bias, but in non-trivial cases (e.g. when we don&#39;t know the true underlying function) it is impossible to truly avoid.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p&gt;A &#34;good enough&#34; R-squared value is extremely dependent on the domain and problem. Even a model that produces a &#34;low&#34; value can be a valuable model that gives you some powerful insights about a relatively noisy or hard to predict problem. A model with a &#34;high&#34; value can still be inaccurate in very important ways when used to make real world predictions.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p&gt;The way we calculate R-squared above implicitly assumes normally distributed error that is small relative to the variation of the function. However, this is not always the case. The statistical intricacies are well beyond the scope of this lesson, but if you&#39;re interested in reading more about some reasons not to use R-squared, check out: 
+            &lt;a href=&#34;https://data.library.virginia.edu/is-r-squared-useless/&#34; rel=&#34;nofollow&#34;&gt;https://data.library.virginia.edu/is-r-squared-useless/&lt;/a&gt;
+        &lt;/p&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In general, R-squared is an easy to understand way of evaluating regression models that does a good job in most simple examples. It can break down with more complicated examples though.&lt;/p&gt;
+&lt;p&gt;Using Scikit-learn, you can calculate R-squared once you have a set of predictions from your model that you can compare to the actual values as follows.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from sklearn.metrics import r2_score
+
+score = r2_score(actual_values, predictions)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-mean-squared-error&#34; class=&#34;anchor&#34; href=&#34;#mean-squared-error&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Mean Squared Error
+&lt;/h3&gt;
+&lt;p&gt;Another commonly used metric is Mean Squared Error (MSE). This is an easy error metric to understand - it simply takes the error between the predicted and actual value, squares it, then takes the average (mean). Mathematically, this can be calculated by:&lt;/p&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/7c6bc857a83b554bfe49c28b638d39cd0192ed43/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6d73652d666f726d756c612e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/7c6bc857a83b554bfe49c28b638d39cd0192ed43/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6d73652d666f726d756c612e706e67&#34; alt=&#34;Mean Squared Error Formula&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/mse-formula.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;MSE is a straightforward metric that allows us to track or compare the relative strength of different models (or iterations of the same model during training). It is not normalized, however, so the raw value isn&#39;t necessarily meaningful in the abstract. The MSE of a well-fitting model with generally numerically large values might be much higher than the MSE of poor fitting model with numerically small values.&lt;/p&gt;
+&lt;p&gt;The squaring of the value means that MSE increases quadratically as examples have large error values. This can be a good behavior for heavily penalizing a relatively uniform model for getting incorrect values. However, it can also mean that a relatively small number of incorrect outlier predictions can have a disproportionately large effect on the value. If occasional large incorrect outliers are less important to the solution than average performance, this may not be the desired behavior.&lt;/p&gt;
+&lt;p&gt;You can calculate the MSE for a model using Scikit-learn&#39;s 
+    &lt;code&gt;mean_squared_error&lt;/code&gt; function as follows.
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from sklearn.metrics import mean_squared_error
+
+score = mean_squared_error(actual_values, predictions)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;strong&gt;Note:&lt;/strong&gt; Another common variation on MSE is Root Mean Squared Error (RMSE), which simply takes the square root of MSE.
+&lt;/p&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-mean-absolute-error&#34; class=&#34;anchor&#34; href=&#34;#mean-absolute-error&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Mean Absolute Error
+&lt;/h3&gt;
+&lt;p&gt;Another similar error metric is Mean Absolute Error (MAE). As the name suggests, it is the average (mean) of the absolute value of the errors between predicted and actual values.&lt;/p&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/1556dcdde8c48195fe81602fd04f62d02380c3b8/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6d61652d666f726d756c612e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/1556dcdde8c48195fe81602fd04f62d02380c3b8/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6d61652d666f726d756c612e706e67&#34; alt=&#34;Mean Absolute Error Formula&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/mae-formula.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;This error metric is similar to MAE, but is less affected by individual large outlier errors. This may be more representative in cases where outliers are not hugely important.&lt;/p&gt;
+&lt;p&gt;Computationally, absolute values can be more expensive than squaring, meaning that this metric can be less efficient to compute. With many problems this isn&#39;t a huge concern, but with many training iterations on large datasets, this can become a concern.&lt;/p&gt;
+&lt;p&gt;Scikit Learn has a 
+    &lt;code&gt;mean_absolute_error&lt;/code&gt; function that you can use to calculate this for your models.
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from sklearn.metrics import mean_absolute_error
+
+score = mean_absolute_error(actual_values, predictions)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-other-metrics&#34; class=&#34;anchor&#34; href=&#34;#other-metrics&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Other Metrics
+&lt;/h3&gt;
+&lt;p&gt;There are other variations on the metrics described here which may be more appropriate for certain classes of problems. One example is using median instead of mean average functions with either squared or absolute error; this has the effect of being even less sensitive to outliers, which can be desirable in some cases. Another variation is applying a log function instead of using the raw errors. This metric is useful for regression problems with exponential characteristics, since later values would otherwise overwhelm earlier predictions.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-evaluating-classification-models&#34; class=&#34;anchor&#34; href=&#34;#evaluating-classification-models&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Evaluating Classification Models
+&lt;/h2&gt;
+&lt;p&gt;The other major type of supervised learning models is 
+    &lt;em&gt;classification&lt;/em&gt; models. Classification models attempt to predict which of two or more classes a training example fits into. Because the predictions are not real-valued, on one level this makes error metrics simpler - a prediction is either right or wrong. However, in real world problems, we frequently care more about some types of errors than others, and this leads to a variety of different metrics for different types of problems.
+&lt;/p&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-accuracy-score&#34; class=&#34;anchor&#34; href=&#34;#accuracy-score&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Accuracy Score
+&lt;/h3&gt;
+&lt;p&gt;The simplest classification metric simply calculates the ratio of correct to incorrect predictions.&lt;/p&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/f6d7ba6319573ceed63f537a792deb5292195b04/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f61636375726163792d666f726d756c612e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/f6d7ba6319573ceed63f537a792deb5292195b04/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f61636375726163792d666f726d756c612e706e67&#34; alt=&#34;Accuracy Score Formula&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/accuracy-formula.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;This metric is easy to understand, but can be skewed in the common case where a dataset has many more of one class than another (an 
+    &lt;em&gt;unbalanced&lt;/em&gt; data set). In this case, the accuracy metric may be heavily dominated by its performance on the more common class, and the metric will not accurately report classifier performance for other any other class(es). An example where this might be very problematic would be a classifier system for a rare type of cancer - for the vast majority of cases, the cancer would not be present, and a classifier might naively predict no cancer for almost all cases. This would yield a high accuracy score, however we would be missing the rare yet very important positive cases that we were attempting to find in the first place.
+&lt;/p&gt;
+&lt;p&gt;Scikit Learn has an 
+    &lt;code&gt;accuracy_score&lt;/code&gt; function you can use to calculate the accuracy of a classification model.
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from sklearn.metrics import accuracy_score
+
+score = accuracy_score(actual_values, predictions)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-balanced-accuracy-score&#34; class=&#34;anchor&#34; href=&#34;#balanced-accuracy-score&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Balanced Accuracy Score
+&lt;/h3&gt;
+&lt;p&gt;To combat accuracy issues with unbalanced datasets, we can calculate a weighted accuracy.&lt;/p&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/f197cbd3a4b2981a6a0fb12bc38080bc9e6ab342/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f62616c616e6365642d61636375726163792d666f726d756c612e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/f197cbd3a4b2981a6a0fb12bc38080bc9e6ab342/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f62616c616e6365642d61636375726163792d666f726d756c612e706e67&#34; alt=&#34;Balanced Accuracy Formula&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/balanced-accuracy-formula.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;where 
+    &lt;em&gt;w-hat&lt;/em&gt; corresponds to the weights for each class.
+&lt;/p&gt;
+&lt;p&gt;The easiest and most common weighting scheme is to calculate weights based on the relative proportion of a class in the dataset, however they can be customized to reflect the subjective relative importance of prediction in cases where some class predictions are more important than others for a successful solution.&lt;/p&gt;
+&lt;p&gt;Scikit-learn has a 
+    &lt;code&gt;balanced_accuracy_score&lt;/code&gt; function that we can use to calculate this for a model given the actual values and our predictions.
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from sklearn.metrics import balanced_accuracy_score
+
+score = balanced_accuracy_score(actual_values, predictions)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-precision-vs-recall&#34; class=&#34;anchor&#34; href=&#34;#precision-vs-recall&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Precision vs. Recall
+&lt;/h3&gt;
+&lt;p&gt;No matter how good our balancing function is, we often find the need for a more nuanced understanding of accuracy than a simple accuracy calculation gives us. Another common way to evaluate and tune classifier performance is to look at Precision vs. Recall of a classifier.&lt;/p&gt;
+&lt;p&gt;
+    &lt;em&gt;Precision&lt;/em&gt; refers to how well the classifier does at identifying a class (a &#34;true positive&#34; in binary problems), as a ratio of all the predictions of that class it made; what percentage of predictions of a given class were true? This measure rewards a classifier that rarely gives a class label to an example that is incorrect. It can be thought of penalizing a classifier for being &#34;risky&#34; - giving a label without being confident.
+&lt;/p&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/a836b6ec5a025a875c4dd91f859c9d17d37b9fa3/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f707265636973696f6e2d666f726d756c612e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/a836b6ec5a025a875c4dd91f859c9d17d37b9fa3/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f707265636973696f6e2d666f726d756c612e706e67&#34; alt=&#34;Precision Formula&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/precision-formula.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;where tp is 
+    &lt;em&gt;true positives&lt;/em&gt; (a correct classification of the class) and fp is
+    &lt;em&gt;false positives&lt;/em&gt; (an example the classifier incorrectly thought was a member of the class).
+&lt;/p&gt;
+&lt;p&gt;
+    &lt;em&gt;Recall&lt;/em&gt;, on the other hand, refers to how well a classifier does at finding all of the examples of a given class. It rewards a classifier for casting a wide net to find all possibilities for a given class.
+&lt;/p&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/6b48cb2a0d8530bdb129be0a1cf671e0dd2619c1/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f726563616c6c2d666f726d756c612e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/6b48cb2a0d8530bdb129be0a1cf671e0dd2619c1/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f726563616c6c2d666f726d756c612e706e67&#34; alt=&#34;Recall Formula&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/recall-formula.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;where fn is an example of the class that the classifier missed.&lt;/p&gt;
+&lt;p&gt;Intuitively there is a trade-off between precision and recall. A cautious classifier could have near perfect precision by requiring extremely high confidence to ever make a prediction of a class, thus minimizing the number of false positives. Conversely, an aggressive classifier could ensure that it captured virtually all examples of a class (maximizing recall) by labeling any example with even a small chance of being part of a class. In a real problem, the relative consequences of missing positive classifications in ambiguous circumstances (false negatives) vs. incorrect classifications (false positives) must be evaluated to come up with a system that best fits the task at hand. In our cancer detection system discussed earlier, this might mean making a trade-off between missing the occasional cancer or incurring the emotional pain and expense of falsely diagnosing a healthy patient.&lt;/p&gt;
+&lt;p&gt;There is no one-size fits all model for balancing precision and recall, so the best approach is to calculate both and make a determination on a case by case basis. However, a commonly used tool called an F1 Score has been developed to help balance precision and recall in a single numeric metric. It is calculated as follows.&lt;/p&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/35d50e0a1e2084fce9ac6bf039cfd37041c25ac5/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f66312d73636f72652d666f726d756c612e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/35d50e0a1e2084fce9ac6bf039cfd37041c25ac5/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f66312d73636f72652d666f726d756c612e706e67&#34; alt=&#34;F1 Score Formula&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/f1-score-formula.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;F1 Scores can help automate the precision/recall trade-off, but should not be relied on exclusively, as it more or less evenly balances the two values, which is not appropriate for many applications.&lt;/p&gt;
+&lt;p&gt;Scikit-learn has functions for all three of these metrics (precision, recall, and f1 score), and they can be calculated as follows.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from sklearn.metrics import precision_score, recall_score, f1_score
+
+precision = precision_score(actual_values, predictions)
+recall = recall_score(actual_values, predictions)
+f1_score = f1_score(actual_values, predictions)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-roc-plots&#34; class=&#34;anchor&#34; href=&#34;#roc-plots&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;ROC Plots
+&lt;/h3&gt;
+&lt;p&gt;When tuning precision and recall, it can be useful to adjust the sensitivity of the model by changing the confidence threshold that the model uses to make a given class prediction. This is known as the 
+    &lt;em&gt;Receiver Operating Characteristic (ROC) curve&lt;/em&gt;. It is created by varying the classification threshold and plotting the fraction of true positives out of all positive cases (true positive rate, or TPR) vs. false positives out of all negative cases (false positive rate, or FPR) at each threshold value.
+&lt;/p&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/e4d826189d527620b51f27300a8c6033a06ac1ca/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f524f432d63757276652e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/e4d826189d527620b51f27300a8c6033a06ac1ca/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f524f432d63757276652e706e67&#34; alt=&#34;ROC Curve&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/ROC-curve.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;We can also summarize the ROC curve by calculating the integral, or area under the curve (AUC). This is referred to as a ROC AUC Score, and helps identify an accurate model (although it doesn&#39;t necessarily tell us where to set the sensitivity/threshold). All else being equal, a model with a higher ROC AUC score will generally be more accurate at a given sensitivity level.&lt;/p&gt;
+&lt;p&gt;We can calculate the components to plot a ROC curve as well as the ROC AUC score using Scikit-learn as follows.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from sklearn.metrics import roc_curve, roc_auc_score
+
+fpr, tpr, thresholds = roc_curve(y, scores)
+
+roc_auc_score(y_true, y_scores)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-confusion-matrix&#34; class=&#34;anchor&#34; href=&#34;#confusion-matrix&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Confusion Matrix
+&lt;/h3&gt;
+&lt;p&gt;Another important tool in evaluating how a classification model is working, especially in a when you have multiple classes, is the 
+    &lt;em&gt;confusion matrix&lt;/em&gt;. It counts all of the possible pair-wise combos of (
+    &lt;code&gt;predicted_class&lt;/code&gt;,
+    &lt;code&gt;actual_class&lt;/code&gt;) as a 2D matrix. The diagonal of this matrix represents true predictions - that is,
+    &lt;code&gt;predicted_class&lt;/code&gt; that match
+    &lt;code&gt;actual_class&lt;/code&gt;. Any off-diagonal members of this matrix are incorrect predictions. By looking at specific pairs that are frequently incorrectly classified, we can often get some insight about how a model is making mistakes.
+&lt;/p&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/a637f218ec7599455f4d605faecba73b39f1ad12/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f636f6e667573696f6e2d6d61747269782e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/a637f218ec7599455f4d605faecba73b39f1ad12/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f636f6e667573696f6e2d6d61747269782e706e67&#34; alt=&#34;Confusion Matrix&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/confusion-matrix.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;In the example above, the classifier is mostly correct (most of the values are on the diagonal), but it has some issues differentiating between the latter 2 classes, as shown by the 4 in the off diagonal cell.&lt;/p&gt;
+&lt;p&gt;You can create a confusion matrix using Scikit-learn by leveraging the 
+    &lt;code&gt;confusion_matrix&lt;/code&gt; function as follows.
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from sklearn.metrics import confusion_matrix
+
+actual_values = [2, 0, 2, 2, 0, 1]
+predictions = [0, 0, 2, 2, 0, 2]
+
+confusion_matrix(actual_values, predictions)
+
+array([[2, 0, 0],
+       [0, 0, 1],
+       [1, 0, 2]])
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-summary&#34; class=&#34;anchor&#34; href=&#34;#summary&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Summary
+&lt;/h2&gt;
+&lt;p&gt;There are many different metrics and tools that apply to evaluating supervised learning models. This lesson has just highlighted a few of the most commonly used ones for both regression and classification problems. Scikit-learn has excellent implementations of these and other metric functions as well as more information on each of the metrics in the 
+    &lt;a href=&#34;https://scikit-learn.org/stable/modules/classes.html#sklearn-metrics-metrics&#34; rel=&#34;nofollow&#34;&gt;documentation&lt;/a&gt;. When performing supervised learning, we should look at several of these metrics simultaneously to evaluate our models and make sure that we remember to consider how our models will be used when attempting to select the most appropriate evaluation criteria.
+&lt;/p&gt;
+&lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+  </div>
+  <div id="seq_content" class="ih-learnig-unit" role="tabpanel"></div>
+
+  <nav class="sequence-bottom ih-js-fire-highlighting-controls" aria-label="Section">
+    <button class="sequence-nav-button button-previous">
+      <span class="icon fa fa-chevron-prev" aria-hidden="true"></span>
+      <span>Previous</span>
+    </button>
+    <button class="sequence-nav-button button-next">
+      <span>Next</span>
+      <span class="icon fa fa-chevron-next" aria-hidden="true"></span>
+    </button>
+  </nav>
+</div>
+
+</div>
+
+        </main>
+    </section>
+
+    <section class="courseware-results-wrapper">
+      <div id="loading-message" aria-live="polite" aria-relevant="all"></div>
+      <div id="error-message" aria-live="polite"></div>
+      <div class="courseware-results search-results" data-course-id="course-v1:IRONHACK+DAFT+201906_MIA" data-lang-code="en"></div>
+    </section>
+
+  </div>
+  
+
+
+
+
+
+
+
+
+
+    
+    
+    <script type="text/javascript" src="../../../../../static/bundles/CourseSock.43ffb68a30fa51e4e467.1f398818dd61.js" ></script>
+      <script type="text/javascript">
+        
+    new CourseSock({
+        el:'.verification-sock'
+    });
+
+      </script>
+
+
+</div>
+<div class="container-footer">
+</div>
+
+          
+        </div>
+      </div>
+
+    
+    
+
+      <div class="ih-beta-banner">
+        <span class="icon fa fa-flask"></span>
+        <span class="ih-beta-banner-text">We just launched a new version of the student platform. Everything should be fine, but if you encounter a bug, don't hesitate and send it our way.</span>
+      </div>
+
+  </div>
+
+  
+  
+  <script type="text/javascript" src="../../../../../static/common/js/vendor/jquery.scrollTo.525edcc52fe8.js"></script>
+  <script type="text/javascript" src="../../../../../static/js/vendor/flot/jquery.flot.d3d45ff0c6a8.js"></script>
+
+  
+    <script type="text/javascript" src="../../../../../static/js/lms-courseware.43ed60564822.js" charset="utf-8"></script>
+
+
+  
+
+
+
+<script type="text/javascript">
+    // Fast Preview was introduced in 2.5. However, it
+    // causes undesirable flashing/font size changes when
+    // MathJax is used for interactive preview (equation editor).
+    // Setting processSectionDelay to 0 (see below) fully eliminates
+    // fast preview, but to reduce confusion, we are also setting
+    // the option as displayed in the context menu to false.
+    // When upgrading to 2.6, check if this variable name changed.
+    window.MathJax = {
+      menuSettings: {CHTMLpreview: false}
+    };
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [
+        ["\\(","\\)"],
+        ['[mathjaxinline]','[/mathjaxinline]']
+      ],
+      displayMath: [
+        ["\\[","\\]"],
+        ['[mathjax]','[/mathjax]']
+      ]
+    }
+  });
+</script>
+<script type="text/x-mathjax-config">
+
+  // In order to eliminate all flashing during interactive
+  // preview, it is necessary to set processSectionDelay to 0
+  // (remove delay between input and output phases). This
+  // effectively disables fast preview, regardless of
+  // the fast preview setting as shown in the context menu.
+  MathJax.Hub.processSectionDelay = 0;
+
+  MathJax.Hub.signal.Interest(function(message) {
+    if(message[0] === "End Math") {
+        set_mathjax_display_div_settings();
+    }
+  });
+  function set_mathjax_display_div_settings() {
+    $('.MathJax_Display').each(function( index ) {
+      this.setAttribute('tabindex', '0');
+      this.setAttribute('aria-live', 'off');
+      this.removeAttribute('role');
+      this.removeAttribute('aria-readonly');
+    });
+  }
+</script>
+
+
+<!-- This must appear after all mathjax-config blocks, so it is after the imports from the other templates.
+     It can't be run through static.url because MathJax uses crazy url introspection to do lazy loading of
+     MathJax extension libraries -->
+<script type="text/javascript" src="../../../../../../cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJaxf4fa.js?config=TeX-MML-AM_SVG"></script>
+
+
+    
+    
+      <script type="text/javascript" src="../../../../../static/course_search/js/course_search_factory.26a9d7197c46bdd1.js?raw"></script>
+    <script type="text/javascript">
+        (function (require) {
+            require(['course_search/js/course_search_factory'], function (CourseSearchFactory) {
+                
+        var courseId = $('.courseware-results').data('courseId');
+        CourseSearchFactory({
+            courseId: courseId,
+            searchHeader: $('.search-bar')
+        });
+    
+            });
+        }).call(this, require || RequireJS.require);
+    </script>
+
+
+  
+    
+      <script type="text/javascript" src="../../../../../static/js/courseware/courseware_factory.1504fc10caefbdd1.js?raw"></script>
+    <script type="text/javascript">
+        (function (require) {
+            require(['js/courseware/courseware_factory'], function (CoursewareFactory) {
+                
+    CoursewareFactory();
+  
+            });
+        }).call(this, require || RequireJS.require);
+    </script>
+
+
+
+  <script type="text/javascript">
+    var $$course_id = "course\u002Dv1:IRONHACK+DAFT+201906_MIA";
+  </script>
+
+
+
+
+
+
+  
+
+
+
+  <script type="text/javascript" src="../../../../../static/js/vendor/noreferrer.aa62a3e70ffa.js" charset="utf-8"></script>
+  <script type="text/javascript" src="../../../../../static/js/utils/navigation.08930e16ab3d.js" charset="utf-8"></script>
+  <script type="text/javascript" src="../../../../../static/js/header/header.309a1243e175.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="../../../../../static/ih-lms-theme/js/vendor/highlight.min.496e109b43ca.js" ></script>
+    <script type="text/javascript" src="../../../../../static/ih-lms-theme/js/vendor/ih-highlight.0f32f131ba83.js" ></script>
+  
+</body>
+</html>
+
+

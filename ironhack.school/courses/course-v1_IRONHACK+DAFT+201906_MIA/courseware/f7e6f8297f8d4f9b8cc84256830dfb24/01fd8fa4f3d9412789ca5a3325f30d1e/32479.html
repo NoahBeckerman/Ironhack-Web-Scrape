@@ -1,0 +1,1397 @@
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<!--[if lte IE 9]><html class="ie ie9 lte9" lang="en"><![endif]-->
+<!--[if !IE]><!--><html lang="en"><!--<![endif]-->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head dir="ltr">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+  
+<title data-base-title="
+ Python Intermediate &amp; Applied | DAFT Courseware | Ironhack Student Platform">
+  
+ Multiprocessing &amp; Parallelization | Python Intermediate &amp; Applied | DAFT Courseware | Ironhack Student Platform
+</title>
+
+
+      <script type="text/javascript">
+        /* immediately break out of an iframe if coming from the marketing website */
+        (function(window) {
+          if (window.location !== window.top.location) {
+            window.top.location = window.location;
+          }
+        })(this);
+      </script>
+
+  
+
+  <script type="text/javascript" src="../../../../../static/js/i18n/en/djangojs.e37eef1ffc63.js"></script>
+  <script type="text/javascript" src="../../../../../static/js/ie11_find_array.bd1c6dc7a133.js"></script>
+
+  <link rel="icon" type="image/x-icon" href="../../../../../static/ih-lms-theme/images/favicon.0de58aa5bfca.ico" />
+
+  
+  
+
+    <link href="../../../../../static/ih-lms-theme/css/lms-style-vendor.68e48093f5dd.css" rel="stylesheet" type="text/css" />
+
+
+
+      <link rel="stylesheet" href="../../../../../static/ih-lms-theme/css/bootstrap/lms-main.c54b2923d249.css" type="text/css" media="all" />
+
+    
+    <script type="text/javascript" src="../../../../../static/js/lms-main_vendor.a04b73033169.js" charset="utf-8"></script>
+
+
+    
+    <script type="text/javascript" src="../../../../../static/js/lms-application.e7bd4b65d083.js" charset="utf-8"></script>
+
+
+
+  
+    
+    
+    <script type="text/javascript" src="../../../../../static/bundles/commons.d60dcd98c024881d011e.c835e91d09f6.js" ></script>
+
+
+
+  <script>
+    window.baseUrl = "../../../../../static/index.html";
+    (function (require) {
+      require.config({
+          baseUrl: window.baseUrl
+      });
+    }).call(this, require || RequireJS.require);
+  </script>
+  <script type="text/javascript" src="../../../../../static/lms/js/require-config.8e00198660b0.js"></script>
+  
+    <script type="text/javascript">
+        (function (require) {
+          require.config({
+              paths: {
+                'js/courseware/courseware_factory': 'js/courseware/courseware_factory.1504fc10caef',
+'draggabilly': 'js/vendor/draggabilly.26caba6f7187',
+'js/courseware/toggle_element_visibility': 'js/courseware/toggle_element_visibility.d5f10bc65ed0',
+'hls': 'common/js/vendor/hls.b10b9ef4015b',
+'js/courseware/link_clicked_events': 'js/courseware/link_clicked_events',
+'moment': 'common/js/vendor/moment-with-locales.084396f4103c',
+'moment-timezone': 'common/js/vendor/moment-timezone-with-data.60142e6c4416',
+'js/student_account/logistration_factory': 'js/student_account/logistration_factory.d7765e4e6715',
+'js/groups/views/cohorts_dashboard_factory': 'js/groups/views/cohorts_dashboard_factory.7f46663f97b4',
+'js/dateutil_factory': 'js/dateutil_factory.841c29e02056',
+'course_bookmarks/js/views/bookmark_button': 'course_bookmarks/js/views/bookmark_button.d4cfaf3361fa',
+'js/courseware/accordion_events': 'js/courseware/accordion_events.6064c7809de5',
+'js/views/message_banner': 'js/views/message_banner.af013d0ecbd4',
+'js/groups/discussions_management/discussions_dashboard_factory': 'js/discussions_management/views/discussions_dashboard_factory.2e10d9097343',
+'js/courseware/course_info_events': 'js/courseware/course_info_events.2fc35b57627f'
+            }
+          });
+        }).call(this, require || RequireJS.require);
+    </script>
+  
+
+  
+
+  
+
+    <link href="../../../../../static/ih-lms-theme/css/lms-style-course-vendor.691e50c64ad7.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+
+    <link href="../../../../../static/ih-lms-theme/css/lms-course.1d0edf3ec473.css" rel="stylesheet" type="text/css" />
+
+
+
+
+<script type="text/javascript" src="../../../../../static/js/jquery.autocomplete.3bd10d7510d2.js"></script>
+<script type="text/javascript" src="../../../../../static/js/src/tooltip_manager.da362490e199.js"></script>
+
+<link href="../../../../../static/css/vendor/jquery.autocomplete.896181d3ec33.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="../../../../../static/bundles/XModuleShim.68b7a679342e3bdb698f.c506d949a49b.js" ></script>
+<script type="text/javascript" src="../../../../../static/bundles/HtmlModule.174055b73c05dccfbd8b.823874f69fef.js" ></script>
+<script type="text/javascript" src="../../../../../static/bundles/VerticalStudentView.6f1068648eb9e8d18da9.0a2f678d6564.js" ></script>
+<script type="text/javascript" src="../../../../../static/bundles/SequenceModule.251564cf8963e6f00227.ef752443db97.js" ></script>
+
+  
+
+  
+
+
+  
+
+
+<script type="application/json" id="user-metadata">
+    {"username": "NoahB", "enrollment_mode": "audit", "upgrade_link": null, "user_id": 489, "course_start": "2019-06-10T00:00:00+00:00", "upgrade_deadline": null, "course_key_fields": {"org": "IRONHACK", "run": "201906_MIA", "course": "DAFT"}, "course_end": "2019-08-19T00:00:00+00:00", "pacing_type": "instructor_paced", "upgrade_price": "Free", "course_id": "course-v1:IRONHACK+DAFT+201906_MIA", "has_staff_access": false, "forum_roles": [["Student"]], "enrollment_time": "2019-06-11T20:48:51.323840+00:00", "schedule_start": null, "email": "noahbeckerman@gmail.com"}
+</script>
+
+  
+
+  
+
+
+  
+
+
+<!-- dummy Segment -->
+<script type="text/javascript">
+  var analytics = {
+    track: function() { return; },
+    trackLink: function() { return; },
+    pageview: function() { return; },
+    page: function() { return; }
+  };
+</script>
+<!-- end dummy Segment -->
+
+
+  <meta name="path_prefix" content="">
+  
+  
+
+  <meta name="openedx-release-line" content="hawthorn" />
+
+
+
+
+
+
+  <!-- Hotjar Tracking Code for https://ironhack.school -->
+  <script type="text/javascript">
+      (function(h,o,t,j,a,r){
+          h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+          h._hjSettings={hjid:1193918,hjsv:6};
+          a=o.getElementsByTagName('head')[0];
+          r=o.createElement('script');r.async=1;
+          r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+          a.appendChild(r);
+      })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+  </script>
+
+  <script type="text/javascript">
+    function setCookieHideMobileWarning(expiration_hours) {
+      var date = new Date();
+      date.setTime(date.getTime()+(expiration_hours*60*60*1000));
+      var expires = "; expires=" + date.toGMTString();
+      document.cookie = "ihHideMobileWarning=true" + expires;
+    }
+    
+    function isHideMobileWarningCookieSet() {
+      return document.cookie.replace(/(?:(?:^|.*;\s*)ihHideMobileWarning\s*\=\s*([^;]*).*$)|^.*$/, "$1") !== "true"; 
+    }
+
+    function manageMobileWarning(mobile_warning_container) {
+      if (isHideMobileWarningCookieSet()) {
+        var mobile_warning_dismiss = document.getElementsByClassName('ih-js-hide-mobile-warning', mobile_warning_container)[0];
+        mobile_warning_dismiss.addEventListener('click', function() {
+          var expiration_hours = 48;
+          setCookieHideMobileWarning(expiration_hours);
+          mobile_warning_container.classList.add('hidden');
+        });
+      } else {
+        mobile_warning_container.classList.add('hidden');
+      }
+    }
+
+    var checkMobileWarningLayer = function () {
+      var mobile_warning_container = document.getElementsByClassName('ih-mobile-warning-container')[0];
+      (document.body && mobile_warning_container)? manageMobileWarning(mobile_warning_container) :  window.requestAnimationFrame(checkMobileWarningLayer);
+    }
+
+    window.requestAnimationFrame(checkMobileWarningLayer);
+  </script>
+
+</head>
+
+<body class="ltr view-in-course view-courseware courseware  lang_en">
+
+<div class="ih-mobile-warning-container">
+  <img class="logo" src="../../../../../static/ih-lms-theme/images/logo.6230fc40336b.svg" />
+  <div class="ih-mobile-warning-title">
+    The Learning Platform is best experienced on Desktop devices
+  </div>
+  <div class="ih-mobile-warning-description">
+    We recommend using a Desktop device to get the full experience of the Learning Platform.
+  </div>
+  <div class="ih-mobile-warning-dismiss ih-js-hide-mobile-warning">
+   Continue anyway
+  </div>
+</div>
+
+
+<div id="page-prompt"></div>
+  <div class="window-wrap" dir="ltr">
+    <a class="nav-skip sr-only sr-only-focusable" href="#main">Skip to main content</a>
+
+    
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+<header class="global-header slim ih-global-header">
+    <div class="ih-header-wrapper">
+        <div class="main-header ih-main-header">
+            
+
+
+
+
+
+<h1 class="header-logo">
+  <a href="../../../../../dashboard.html">
+    
+    <img  class="logo" src="../../../../../static/ih-lms-theme/images/logo.6230fc40336b.svg" alt="Ironhack Student Platform Home Page"/>
+    
+  </a>
+    <div class="course-header">
+          
+      
+      <span class="course-name">Data Analytics</span>
+    </div>
+</h1>
+
+            <div class="hamburger-menu" role="button" aria-label=Options Menu aria-expanded="false" aria-controls="mobile-menu" tabindex="0">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+                
+
+
+
+
+
+
+
+
+
+
+<div class="nav-links">
+  <div class="main">
+      
+  </div>
+  <div class="secondary ih-secondary">
+    
+
+
+
+
+
+
+  
+
+<div class="nav-item hidden-mobile toggle-user-dropdown ih-username-container">
+    <div class="menu-title">
+        
+        <span class="sr-only">Dashboard for:</span>
+        <span class="username ih-username">Ironhack (NoahB)</span>
+    </div>
+</div>
+<div class="nav-item hidden-mobile nav-item-dropdown ih-dropdown-wrapper" tabindex="-1">
+    <div class="toggle-user-dropdown ih-toggle-user-dropdown" role="button" aria-label=Options Menu aria-expanded="false" tabindex="0" aria-controls="user-menu">
+        <span class="fa fa-caret-down" aria-hidden="true"></span>
+    </div>
+    <div class="dropdown-user-menu hidden ih-dropdown-user-menu" aria-label=More Options role="menu" id="user-menu" tabindex="-1">
+        <div class="mobile-nav-item dropdown-item dropdown-nav-item ih-dropdown-nav-item"><a href="../../../../../dashboard.html" role="menuitem">My courses</a></div>
+            
+        <div class="mobile-nav-item dropdown-item dropdown-nav-item ih-dropdown-nav-item"><a href="../../../../../account/settings.html" role="menuitem">Account</a></div>
+        <div class="mobile-nav-item dropdown-item dropdown-nav-item ih-dropdown-nav-item"><a href="../../../../../index.html" role="menuitem">Sign Out</a></div>
+    </div>
+</div>
+  </div>
+</div>
+        </div>
+        <div class="mobile-menu hidden" aria-label=More Options role="menu" id="mobile-menu"></div>
+    </div>    
+</header>
+
+<!--[if lte IE 9]>
+<div class="ie-banner" aria-hidden="true"><strong>Warning:</strong> Your browser is not fully supported. We strongly recommend using <a href="https://www.google.com/chrome" target="_blank">Chrome</a> or <a href="http://www.mozilla.org/firefox" target="_blank">Firefox</a>.</div>
+<![endif]-->
+
+
+
+
+            
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+    
+    
+
+      <div 
+          class="ih-content"
+      >
+        <div class="marketing-hero"></div>
+
+        <div class="content-wrapper main-container ih-main-container" id="content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/template" id="image-modal-tpl">
+    <div class="wrapper-modal wrapper-modal-image">
+  <section class="image-link">
+    <%= smallHTML%>
+    <a href="#" class="modal-ui-icon action-fullscreen" role="button">
+      <span class="label">
+        <span class="icon fa fa-arrows-alt fa-large" aria-hidden="true"></span> <%- gettext("Fullscreen") %>
+      </span>
+    </a>
+  </section>
+
+  <section class="image-modal">
+    <section class="image-content">
+      <div class="image-wrapper">
+        <img alt="<%= largeALT %>, <%- gettext('Large') %>" src="<%= largeSRC %>" />
+      </div>
+
+      <a href="#" class="modal-ui-icon action-close" role="button">
+        <span class="label">
+          <span class="icon fa fa-remove fa-large" aria-hidden="true"></span> <%- gettext("Close") %>
+        </span>
+      </a>
+
+      <ul class="image-controls">
+        <li class="image-control">
+          <a href="#" class="modal-ui-icon action-zoom-in" role="button">
+            <span class="label">
+              <span class="icon fa fa fa-search-plus fa-large" aria-hidden="true"></span> <%- gettext("Zoom In") %>
+            </span>
+          </a>
+        </li>
+
+        <li class="image-control">
+          <a href="#" class="modal-ui-icon action-zoom-out is-disabled" aria-disabled="true" role="button">
+            <span class="label">
+              <span class="icon fa fa fa-search-minus fa-large" aria-hidden="true"></span> <%- gettext("Zoom Out") %>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </section>
+</div>
+
+</script>
+
+
+
+
+
+
+
+
+<div class="message-banner" aria-live="polite"></div>
+  
+
+
+
+
+
+
+
+
+    
+        <nav class="navbar course-tabs pb-0 navbar-expand ih-navbar-container" aria-label="Course">
+            <ul class="navbar-nav mr-auto ih-course-tabs">
+                    
+                    
+                        <li class="nav-item ih-nav-item active">
+                            <a href="../../../course/index.html" class="nav-link">
+                                Course
+                                    <span class="sr-only">, current location</span>
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="nav-item ih-nav-item ">
+                            <a href="../../../discussion/forum/index.html" class="nav-link">
+                                Discussion
+                            </a>
+                        </li>
+                    
+                    
+            </ul>
+        </nav>
+
+
+<div class="container ih-course-container"
+    lang="en"
+  >
+  <div class="course-wrapper ih-course-wrapper" role="presentation">
+
+    <section class="course-content" id="course-content">
+        <header class="page-header has-secondary">
+            <div class="page-header-main">
+                <nav aria-label="Course" class="sr-is-focusable" tabindex="-1">
+                    <div class="has-breadcrumbs">
+                        <div class="breadcrumbs">
+                                <span class="nav-item nav-item-course">
+                                    <a href="../../../course/index.html">Course</a>
+                                </span>
+                                <span class="icon fa fa-angle-right" aria-hidden="true"></span>
+                                <span class="nav-item nav-item-chapter" data-course-position="1" data-chapter-position="6">
+                                    <a href="../../../course/index.html#block-v1:IRONHACK+DAFT+201906_MIA+type@chapter+block@f7e6f8297f8d4f9b8cc84256830dfb24">Module 1</a>
+                                </span>
+                                <span class="icon fa fa-angle-right" aria-hidden="true"></span>
+                                <span class="nav-item nav-item-section">
+                                    <a href="../../../course/index.html#block-v1:IRONHACK+DAFT+201906_MIA+type@sequential+block@01fd8fa4f3d9412789ca5a3325f30d1e">Python Intermediate &amp; Applied</a>
+                                </span>
+                                <span class="icon fa fa-angle-right" aria-hidden="true"></span>
+                            <span class="nav-item nav-item-sequence">Multiprocessing &amp; Parallelization</span>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <main id="main" tabindex="-1" aria-label="Content">
+
+              <div class="xblock xblock-student_view xblock-student_view-sequential xmodule_display xmodule_SequenceModule" data-runtime-class="LmsRuntime" data-init="XBlockToXModuleShim" data-block-type="sequential" data-request-token="4acd70a0939911e99a866e487447f8c8" data-runtime-version="1" data-usage-id="block-v1:IRONHACK+DAFT+201906_MIA+type@sequential+block@01fd8fa4f3d9412789ca5a3325f30d1e" data-type="Sequence" data-course-id="course-v1:IRONHACK+DAFT+201906_MIA">
+  <script type="json/xblock-args" class="xblock-json-init-args">
+    {"xmodule-type": "Sequence"}
+  </script>
+  
+
+
+<div id="sequence_01fd8fa4f3d9412789ca5a3325f30d1e" class="sequence" data-id="block-v1:IRONHACK+DAFT+201906_MIA+type@sequential+block@01fd8fa4f3d9412789ca5a3325f30d1e" data-position="3" data-ajax-url="/courses/course-v1:IRONHACK+DAFT+201906_MIA/xblock/block-v1:IRONHACK+DAFT+201906_MIA+type@sequential+block@01fd8fa4f3d9412789ca5a3325f30d1e/handler/xmodule_handler" data-next-url="/courses/course-v1:IRONHACK+DAFT+201906_MIA/courseware/f7e6f8297f8d4f9b8cc84256830dfb24/cf2d314211224cf3a85335715ad3a633/?child=first" data-prev-url="/courses/course-v1:IRONHACK+DAFT+201906_MIA/courseware/f7e6f8297f8d4f9b8cc84256830dfb24/7ceba53d29aa4316a77a59be3840bcb4/?child=last">
+
+  <div class="sequence-nav ih-js-fire-highlighting-controls">
+    <button class="sequence-nav-button button-previous">
+      <span class="icon fa fa-chevron-prev" aria-hidden="true"></span>
+      <span class="sequence-nav-button-label">Previous</span>
+    </button>
+    <button class="sequence-nav-button button-next">
+      <span class="sequence-nav-button-label">Next</span>
+      <span class="icon fa fa-chevron-next" aria-hidden="true"></span>
+    </button>
+    <nav class="sequence-list-wrapper" aria-label="Sequence">
+      <ol id="sequence-list" role="tablist">
+        <li role="presentation">
+          <button class="seq_other inactive nav-item tab"
+            role="tab"
+            tabindex="-1"
+            aria-selected="false"
+            aria-expanded="false"
+            aria-controls="seq_content"
+            data-index="0"
+            data-id="block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@8e705fed37ec4de3aae7644d3cf49cc7"
+            data-element="1"
+            data-page-title="Code Simplicity and Efficiency"
+            data-path="Module 1 &gt; Python Intermediate &amp; Applied &gt; Code Simplicity and Efficiency"
+            data-graded="False"
+            id="tab_0"
+            >
+            <span class="icon fa seq_other" aria-hidden="true"></span>
+              <span 
+                class="fa fa-check-circle check-circle is-hidden" 
+                style="color:green"
+                aria-hidden="true"
+              ></span>
+            <span class="fa fa-fw fa-bookmark bookmark-icon is-hidden" aria-hidden="true"></span>
+            <div class="sequence-tooltip sr"><span class="sr">other&nbsp;</span>Code Simplicity and Efficiency<span class="sr bookmark-icon-sr">&nbsp;</span></div>
+          </button>
+        </li>
+        <li role="presentation">
+          <button class="seq_other inactive nav-item tab"
+            role="tab"
+            tabindex="-1"
+            aria-selected="false"
+            aria-expanded="false"
+            aria-controls="seq_content"
+            data-index="1"
+            data-id="block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@8aad25d3d210432c9da5c4b7b137f1a4"
+            data-element="2"
+            data-page-title="Map, Reduce, Filter"
+            data-path="Module 1 &gt; Python Intermediate &amp; Applied &gt; Map, Reduce, Filter"
+            data-graded="False"
+            id="tab_1"
+            >
+            <span class="icon fa seq_other" aria-hidden="true"></span>
+              <span 
+                class="fa fa-check-circle check-circle is-hidden" 
+                style="color:green"
+                aria-hidden="true"
+              ></span>
+            <span class="fa fa-fw fa-bookmark bookmark-icon is-hidden" aria-hidden="true"></span>
+            <div class="sequence-tooltip sr"><span class="sr">other&nbsp;</span>Map, Reduce, Filter<span class="sr bookmark-icon-sr">&nbsp;</span></div>
+          </button>
+        </li>
+        <li role="presentation">
+          <button class="seq_other inactive nav-item tab"
+            role="tab"
+            tabindex="-1"
+            aria-selected="false"
+            aria-expanded="false"
+            aria-controls="seq_content"
+            data-index="2"
+            data-id="block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@95e3196429f046398ad19c7229a86790"
+            data-element="3"
+            data-page-title="Multiprocessing &amp; Parallelization"
+            data-path="Module 1 &gt; Python Intermediate &amp; Applied &gt; Multiprocessing &amp; Parallelization"
+            data-graded="False"
+            id="tab_2"
+            >
+            <span class="icon fa seq_other" aria-hidden="true"></span>
+              <span 
+                class="fa fa-check-circle check-circle is-hidden" 
+                style="color:green"
+                aria-hidden="true"
+              ></span>
+            <span class="fa fa-fw fa-bookmark bookmark-icon is-hidden" aria-hidden="true"></span>
+            <div class="sequence-tooltip sr"><span class="sr">other&nbsp;</span>Multiprocessing &amp; Parallelization<span class="sr bookmark-icon-sr">&nbsp;</span></div>
+          </button>
+        </li>
+      </ol>
+    </nav>
+  </div>
+  <div class="sr-is-focusable" tabindex="-1"></div>
+
+  <div id="seq_contents_0"
+    aria-labelledby="tab_0"
+    aria-hidden="true"
+    class="seq_contents tex2jax_ignore asciimath2jax_ignore">
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-vertical&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;VerticalStudentView&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34; data-request-token=&#34;4acd70a0939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@8e705fed37ec4de3aae7644d3cf49cc7&#34; data-block-type=&#34;vertical&#34;&gt;
+  
+
+  &lt;h2 class=&#34;hd hd-2 unit-title&#34;&gt;Code Simplicity and Efficiency&lt;/h2&gt;
+
+    &lt;div class=&#34;ih-bookmark-button-wrapper&#34;&gt;
+    	
+
+
+
+&lt;div class=&#34;bookmark-button-wrapper&#34;&gt;
+  &lt;button class=&#34;btn btn-link bookmark-button &#34;
+    aria-pressed=&#34;false&#34;
+    data-bookmark-id=&#34;NoahB,block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@8e705fed37ec4de3aae7644d3cf49cc7&#34;
+    data-bookmarks-api-url=&#34;/api/bookmarks/v1/bookmarks/&#34;&gt;
+     &lt;span class=&#34;bookmark-text&#34;&gt;Bookmark this page&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+
+    &lt;/div&gt;	
+
+&lt;div class=&#34;vert-mod&#34;&gt;
+  &lt;div class=&#34;vert vert-0&#34; data-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@3f206bc4cfe14483a6de81d63b32e11b&#34;&gt;
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;4acd70a0939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@3f206bc4cfe14483a6de81d63b32e11b&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  &lt;h2&gt;
+    &lt;a id=&#34;user-content-lesson-goals&#34; class=&#34;anchor&#34; href=&#34;#lesson-goals&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Lesson Goals
+&lt;/h2&gt;
+&lt;ul&gt;
+    &lt;li&gt;
+        &lt;p&gt;Learn about the basic principles of writing simple and clean code.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p&gt;Understand the basic tips provided in this lesson on how to write efficient Python code.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p&gt;Start developing your awareness and habit of writing simple, clean, and efficient code.&lt;/p&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-introduction&#34; class=&#34;anchor&#34; href=&#34;#introduction&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Introduction
+&lt;/h2&gt;
+&lt;p&gt;Programming is an essential skill for data analysts, data scientists, and especially data engineers. Although you are not a software engineer, writing good code is important for you because your colleagues will read your code and machines will execute your code. Your work is not worthy if no one can understand your code or the machine will break on your code.&lt;/p&gt;
+&lt;p&gt;Then what code is 
+    &lt;em&gt;good code&lt;/em&gt;? There are many criteria to judge the quality of the code but the bottom line is it needs to be simple and efficient.
+&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-simple-and-clean-code&#34; class=&#34;anchor&#34; href=&#34;#simple-and-clean-code&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Simple and Clean Code
+&lt;/h2&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-why&#34; class=&#34;anchor&#34; href=&#34;#why&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Why
+&lt;/h3&gt;
+&lt;p&gt;Writing simple code allows you to be more productive and prevents your code from running into unnecessary errors. It also makes your code more readable, easier to be debugged, and easier to be updated. In product development, it&#39;s common sense that one should focus on a limited set of features and make each feature as efficient and usable as possible. Because the more features one attempts to achieve, the less effort will be put into improving each feature. In programming, it&#39;s the same as in product development.&lt;/p&gt;
+&lt;p&gt;Programming has a human/social dimension. At the end of the day the machine is not the only consumer of your code. Your colleagues will read your code because coding is often team work. Your mentor/supervisor will read your code because they need to evaluate your work. You yourself will read your own code because you need to debug errors. If you are in the open-source community there will also be strangers reading your code because they need to build their codes on top of yours. The simplicity of code allows it to be easily understood by human programmers.&lt;/p&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-code-simplicity&#34; class=&#34;anchor&#34; href=&#34;#code-simplicity&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Code Simplicity
+&lt;/h3&gt;
+&lt;p&gt;In order to write simple codes, you need to develop design thinking. There is a famous saying that 
+    &lt;strong&gt;everybody who writes software is a designer&lt;/strong&gt;. You write codes to solve problems and to help people. What are the key issues to solve? What are the possible solutions? What is the right solution to use? These are the questions you need to ask yourself and it requires design skills to find the solution that works best. You will make autonomous decisions and you will need to put all your existing knowledge and all your past experience on the table to help you make the
+    &lt;em&gt;right&lt;/em&gt; decisions. You will also need to think from the shoes of your users to make sure your solution will indeed help them.
+&lt;/p&gt;
+&lt;p&gt;The 
+    &lt;a href=&#34;https://en.wikipedia.org/wiki/KISS_principle&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;strong&gt;&#34;keep it simple, stupid&#34; (KISS) principle&lt;/strong&gt;
+    &lt;/a&gt; states that your code should not attempt to achieve unnecessary, &#34;smart&#34; features. The more complicated your code is, the more error-prone and less maintainable it becomes. When you write a function to parse JSON data, for example, let it focus on parsing and nothing else. Don&#39;t introduce other functionalities in the same function such as removing special characters, converting letter cases, etc. If you really need to achieve extra goals, write additional functions.
+&lt;/p&gt;
+&lt;p&gt;The KISS principle is related to the 
+    &lt;a href=&#34;https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;strong&gt;&#34;You Aren&#39;t Gonna Need It&#34; (YAGNI)&lt;/strong&gt;
+    &lt;/a&gt; and the
+    &lt;a href=&#34;https://en.wikipedia.org/wiki/Lean_software_development&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;strong&gt;Lean Software Developoment&lt;/strong&gt;
+    &lt;/a&gt;. These principles state that you shouldn&#39;t add features to your code unless you absolutely know they are needed. Taking the parsing JSON data example again, you shouldn&#39;t even write the functions to remove special characters or converting letter cases unless you have proof that it will be problematic if your code doesn&#39;t do that. Sometimes your data sources have already removed special characters so you don&#39;t need to do it in your code. Sometimes letter cases don&#39;t matter in the analysis. So try to finish writing the code as quickly as you can by achieving the minimal set of features. Then you come back to test your code with real data. If you find evidence that the features missing are causing probloms, you can then add those features.
+&lt;/p&gt;
+&lt;p&gt;Also, an 
+    &lt;em&gt;easy&lt;/em&gt; way does not necessarily mean a
+    &lt;em&gt;good&lt;/em&gt; way. For instance, you have written a piece of code to parse JSON and you find you just need to modify a few lines to make your code work for parsing other data formats such as XML and RSS. So you copy and paste the same piece of code several times and modify them in order to handle XML and RSS.
+    &lt;strong&gt;BAD PRACTICE!&lt;/strong&gt; You are breaking the coding principle called
+    &lt;a href=&#34;https://en.wikipedia.org/wiki/Don%27t_repeat_yourself&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;strong&gt;&#34;don&#39;t repeat yourself&#34; (DRY)&lt;/strong&gt;
+    &lt;/a&gt;. Copy-n-pasting is indeed easy for you to get things done. However, when people read your code it&#39;ll be a big waste of time. When you want to fix an error in your code you will also need to make the fix multiple times. The right approach here is to write a function with variables so that you can reuse the same piece of code for XML and RSS.
+&lt;/p&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-clean-code&#34; class=&#34;anchor&#34; href=&#34;#clean-code&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Clean Code
+&lt;/h3&gt;
+&lt;p&gt;Clean code has a lot to overlap with simple code. It means you should keep your code as 
+    &lt;strong&gt;concise, readable, and maintainable&lt;/strong&gt; as possible. If you can achieve your goal with one line of code, don&#39;t make it two lines. You should avoid making your code messy or cumbersome which the DRY principle previously mentioned can be of great help. You should also design your code with maintainable structure so that it can continue evolving as you build up your project.
+&lt;/p&gt;
+&lt;p&gt;The 
+    &lt;strong&gt;readability&lt;/strong&gt; of your code means your code should be self-explanatory about what it does. Some techniques to achieve good readability include:
+&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;
+        &lt;p&gt;Organizing your files. For example, if you have many files in your project you should create folders to hold different types of them such as spreadsheets, textual files, images, etc. Don&#39;t put all the files in one level as in a large project it&#39;ll be super difficult to find the files you want.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p&gt;Structuring your code. For example, place library imports at the beginning, define global variables next, then define functions, then write the rest of the code. Similarly, in a function, define the local variables first then write the code.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p&gt;Respect coding conventions (e.g. 
+            &lt;a href=&#34;https://www.python.org/dev/peps/pep-0008/&#34; rel=&#34;nofollow&#34;&gt;Style Guide for Python Code&lt;/a&gt;). Most importantly, follow naming conventions. For instance, in Python the following are the basic naming conventions:
+        &lt;/p&gt;
+        &lt;ul&gt;
+            &lt;li&gt;Use 
+                &lt;em&gt;CapWords&lt;/em&gt; to declare class names.
+            &lt;/li&gt;
+            &lt;li&gt;Use 
+                &lt;em&gt;words_connected_by_underscores&lt;/em&gt; to declare variables and functions.
+            &lt;/li&gt;
+            &lt;li&gt;Use 
+                &lt;em&gt;CAPITAL_LETTERS&lt;/em&gt; to declare constants.
+            &lt;/li&gt;
+            &lt;li&gt;Use descriptive names for all declarations. Examples: 
+                &lt;code&gt;parse_json&lt;/code&gt; is better than
+                &lt;code&gt;my_function&lt;/code&gt; as a function name because it is self-explanatory on what this function does. And
+                &lt;code&gt;raw_data&lt;/code&gt; is better than
+                &lt;code&gt;d&lt;/code&gt; as a variable name because it clearly indicates what this variable is.
+            &lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-code-efficiency&#34; class=&#34;anchor&#34; href=&#34;#code-efficiency&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Code Efficiency
+&lt;/h2&gt;
+&lt;p&gt;Code efficiency is another dimension of your code that you will be increasingly concerned about as your role becomes more senior. In addition to making your code readable by humans your code should also be efficient to be executed on machines. Often times there are multiple ways to achieve the same goal and you should find out the way that gives your code the best performance. Improving your code efficiency requires fundamental knowledge about how the programming language is executed on machines and it&#39;s lifelong learning because new technologies and practices are constantly being improved/invented. In this course you won&#39;t need to worry too much about your code efficiency but it&#39;s great that you keep it in mind while you grow.&lt;/p&gt;
+&lt;p&gt;In the context of this course, Python and SQL are where you can start developing your awareness for code efficiency. Below we provide some basic tips for you on how to write more effient code.&lt;/p&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-efficient-python-coding-tips&#34; class=&#34;anchor&#34; href=&#34;#efficient-python-coding-tips&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Efficient Python Coding Tips
+&lt;/h3&gt;
+&lt;h4&gt;
+    &lt;a id=&#34;user-content-use-the-join-method-instead-of-the--operator-in-string-concatenation&#34; class=&#34;anchor&#34; href=&#34;#use-the-join-method-instead-of-the--operator-in-string-concatenation&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Use the
+    &lt;code&gt;join&lt;/code&gt; method instead of the
+    &lt;code&gt;+&lt;/code&gt; operator in string concatenation
+&lt;/h4&gt;
+&lt;p&gt;Avoid:&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;s = &#34;&#34;
+for substring in list:
+    s += substring
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Use:&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;s = &#34;&#34;.join(list)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;h4&gt;
+    &lt;a id=&#34;user-content-use-the--instead-of--operator-in-string-formatting&#34; class=&#34;anchor&#34; href=&#34;#use-the--instead-of--operator-in-string-formatting&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Use the
+    &lt;code&gt;%&lt;/code&gt; instead of
+    &lt;code&gt;+&lt;/code&gt; operator in string formatting
+&lt;/h4&gt;
+&lt;p&gt;Avoid:&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;out = &#34;&amp;lt;html&amp;gt;&#34; + head + prologue + query + tail + &#34;&amp;lt;/html&amp;gt;&#34;
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Use:&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;out = &#34;&amp;lt;html&amp;gt;%s%s%s%s&amp;lt;/html&amp;gt;&#34; % (head, prologue, query, tail)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;h4&gt;
+    &lt;a id=&#34;user-content-avoid-loops-whenever-you-can&#34; class=&#34;anchor&#34; href=&#34;#avoid-loops-whenever-you-can&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Avoid loops whenever you can
+&lt;/h4&gt;
+&lt;p&gt;Avoid:&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;newlist = []
+for word in oldlist:
+    newlist.append(word.upper())
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Use:&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;newlist = map(str.upper, oldlist)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;or&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;newlist = [s.upper() for s in oldlist]
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Avoid:&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;results = []
+for i in range(10):
+    for j in range(i):
+        results.append((i, j))
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Use:&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;results = [(i, j)
+           for i in range(10)
+           for j in range(i)]
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-summary&#34; class=&#34;anchor&#34; href=&#34;#summary&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Summary
+&lt;/h2&gt;
+&lt;p&gt;In this lesson we introduced the basic concepts and principles of simple, clean code. We also provided concrete tips about how to write efficient Python codes. We hope this lesson is your starting point to develop the awareness and habit of writing simple, clean, and efficient code, which will be increasingly important as your career deepens as a data analyst, data scientist, or data engineer.&lt;/p&gt;
+&lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+  </div>
+  <div id="seq_contents_1"
+    aria-labelledby="tab_1"
+    aria-hidden="true"
+    class="seq_contents tex2jax_ignore asciimath2jax_ignore">
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-vertical&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;VerticalStudentView&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34; data-request-token=&#34;4acd70a0939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@8aad25d3d210432c9da5c4b7b137f1a4&#34; data-block-type=&#34;vertical&#34;&gt;
+  
+
+  &lt;h2 class=&#34;hd hd-2 unit-title&#34;&gt;Map, Reduce, Filter&lt;/h2&gt;
+
+    &lt;div class=&#34;ih-bookmark-button-wrapper&#34;&gt;
+    	
+
+
+
+&lt;div class=&#34;bookmark-button-wrapper&#34;&gt;
+  &lt;button class=&#34;btn btn-link bookmark-button &#34;
+    aria-pressed=&#34;false&#34;
+    data-bookmark-id=&#34;NoahB,block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@8aad25d3d210432c9da5c4b7b137f1a4&#34;
+    data-bookmarks-api-url=&#34;/api/bookmarks/v1/bookmarks/&#34;&gt;
+     &lt;span class=&#34;bookmark-text&#34;&gt;Bookmark this page&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+
+    &lt;/div&gt;	
+
+&lt;div class=&#34;vert-mod&#34;&gt;
+  &lt;div class=&#34;vert vert-0&#34; data-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@ae63d357a84c41dfaa5b19948d3ee974&#34;&gt;
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;4acd70a0939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@ae63d357a84c41dfaa5b19948d3ee974&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  &lt;h2&gt;&lt;a id=&#34;user-content-lesson-goals&#34; class=&#34;anchor&#34; href=&#34;#lesson-goals&#34; aria-hidden=&#34;true&#34;&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt; &lt;/a&gt;Lesson Goals&lt;/h2&gt;
+&lt;p&gt;In this lesson you will learn all about:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Mapping, reducing, and filtering in Python&lt;/li&gt;
+&lt;li&gt;The apply function in pandas and how it relates to the Python functions above&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;&lt;a id=&#34;user-content-introduction&#34; class=&#34;anchor&#34; href=&#34;#introduction&#34; aria-hidden=&#34;true&#34;&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt; &lt;/a&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Mapping, and filtering are important concepts in functional programming. These concepts come up in other distributed programming frameworks and exist in Python as well. In this lesson we will expand on the functional programming concepts we have learned in previous lessons and apply these concepts using mapping, reducing, and filtering.&lt;/p&gt;
+&lt;h2&gt;&lt;a id=&#34;user-content-functional-programming-recap&#34; class=&#34;anchor&#34; href=&#34;#functional-programming-recap&#34; aria-hidden=&#34;true&#34;&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt; &lt;/a&gt;Functional Programming Recap&lt;/h2&gt;
+&lt;p&gt;As we have learned in previous lessons, functional programming is a programming paradigm where code is written in such a way that avoids mutability or sharing state. Operations are performed by passing data through functions and storing the result in a new variable.&lt;/p&gt;
+&lt;h3&gt;&lt;a id=&#34;user-content-immutability&#34; class=&#34;anchor&#34; href=&#34;#immutability&#34; aria-hidden=&#34;true&#34;&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt; &lt;/a&gt;Immutability&lt;/h3&gt;
+&lt;p&gt;An immutable object is an object that cannot be changed after it is created. By sticking with functional programming, we ensure that no two processes will modify the same data. Instead, when each function modifies the data, it will then store the resulting data in a new variable. This results in cleaner, safer and easier to read code.&lt;/p&gt;
+&lt;h3&gt;&lt;a id=&#34;user-content-transforming-state&#34; class=&#34;anchor&#34; href=&#34;#transforming-state&#34; aria-hidden=&#34;true&#34;&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt; &lt;/a&gt;Transforming State&lt;/h3&gt;
+&lt;p&gt;When writing functionally, we can think of a function as a mapping from input to output. An example of shared state is a computer game where we have multiple characters moving on the screen. Moving one character might affect another character, even unintentionally. With functional programming, this is not a concern for us.&lt;/p&gt;
+&lt;h2&gt;&lt;a id=&#34;user-content-mapping&#34; class=&#34;anchor&#34; href=&#34;#mapping&#34; aria-hidden=&#34;true&#34;&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt; &lt;/a&gt;Mapping&lt;/h2&gt;
+&lt;p&gt;The goal of using the &lt;code&gt;map()&lt;/code&gt; function is to apply a function to a sequence (like a list or a set). The &lt;code&gt;map()&lt;/code&gt; function takes a function as an argument as well as a sequence and returns a sequence with the function applied to every element in the sequence. For example, let&#39;s create a function that divides a number by 2 and returns the result.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;def half(x):
+    return x / 2
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Now that we have our function, let&#39;s apply it to a list of numbers.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;l = [10, 12, 34, 23]
+map(half, l)
+&amp;lt;map object at 0x000001CD4B9AA860&amp;gt;
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;The &lt;code&gt;map()&lt;/code&gt; function creates a map object which is an iterable object. To create a new list, one option is to convert the iterable into a list.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;list(map(half, l))
+[5.0, 6.0, 17.0, 11.5]
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Similarly, we can cast the iterable into a set.&lt;/p&gt;
+&lt;h2&gt;&lt;a id=&#34;user-content-filtering&#34; class=&#34;anchor&#34; href=&#34;#filtering&#34; aria-hidden=&#34;true&#34;&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt; &lt;/a&gt;Filtering&lt;/h2&gt;
+&lt;p&gt;Like the &lt;code&gt;map()&lt;/code&gt; function, the filter function takes a function and a sequence and returns an iterable. The goal of this function is to use the function we pass to it to remove elements from our sequence. Our function should return true for all the elements we want to keep and false for the ones we want to remove. For example, we can create a function that returns true if a number is odd and false if it is even. In fact, let&#39;s use a lambda expression for this task.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;filter(lambda x: x % 2 == 1, l)
+&amp;lt;filter object at 0x000001CD4B9AA940&amp;gt;
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Again, this returns an iterable, so we will cast it to a list.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;list(filter(lambda x: x % 2 == 1, l))
+[23]
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;h2&gt;&lt;a id=&#34;user-content-reducing&#34; class=&#34;anchor&#34; href=&#34;#reducing&#34; aria-hidden=&#34;true&#34;&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt; &lt;/a&gt;Reducing&lt;/h2&gt;
+&lt;p&gt;While the &lt;code&gt;map()&lt;/code&gt; function applies the function to each element in the sequence, sometimes we might want to apply a function that will aggregate all elements in the sequence. There are built-in examples in Python for this like the &lt;code&gt;max()&lt;/code&gt; function or the &lt;code&gt;sum()&lt;/code&gt; function. The &lt;code&gt;reduce()&lt;/code&gt; does exactly this. This function is not standard in Python and needs to be imported from the &lt;code&gt;functools&lt;/code&gt; library. The &lt;code&gt;reduce&lt;/code&gt; function starts from the beginning of the sequence and operates on two elements at a time. This is why the function passed to &lt;code&gt;reduce()&lt;/code&gt; should always take two elements and return one.&lt;/p&gt;
+&lt;p&gt;For example, if we would like to create a summation function using &lt;code&gt;reduce()&lt;/code&gt;, we will sum two elements at a time.&lt;/p&gt;
+&lt;p&gt;Let&#39;s write a lambda expression that will take two elements and sum them.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;summation = lambda a, b: a + b&lt;/code&gt;
+&lt;/pre&gt;
+&lt;pre&gt;By passing this lambda expression to the &lt;code&gt;reduce()&lt;/code&gt; function (along with a list &lt;code&gt;[10, 12, 34, 23]&lt;/code&gt;), we will perform the following operations in this order:&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;&amp;gt; a = 10&lt;/code&gt;&lt;br /&gt;&lt;code&gt;&amp;gt; a = 12 + 10 = 22&lt;/code&gt;&lt;br /&gt;&lt;code&gt;&amp;gt; a = 22 + 34 = 56&lt;/code&gt;&lt;br /&gt;&lt;code&gt;&amp;gt; a = 56 + 23 = 79&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Here is the completed snippet of code to find the sum:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from functools import reduce
+l = [10, 12, 34, 23]
+reduce(lambda a, b: a + b, l)
+79&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Here is another example of &lt;code&gt;reduce()&lt;/code&gt;. This time we will use &lt;code&gt;reduce()&lt;/code&gt; to find the maximum of a list. We will do this by comparing two elements at a time and returning the largest of the two.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;reduce(lambda a, b: a if a &amp;gt; b else b, l)
+34
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;h2&gt;&lt;a id=&#34;user-content-functional-programming-in-pandas&#34; class=&#34;anchor&#34; href=&#34;#functional-programming-in-pandas&#34; aria-hidden=&#34;true&#34;&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt; &lt;/a&gt;Functional Programming in Pandas&lt;/h2&gt;
+&lt;p&gt;In pandas, we can use the &lt;code&gt;apply()&lt;/code&gt; function to apply a function to a dataset. We do not make a distinction between functions that are applied to every row or every column and aggregate functions. We can use the apply function for both types.&lt;/p&gt;
+&lt;p&gt;Here is an example of a dataframe.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;import numpy as np
+import pandas as pd
+
+df = pd.DataFrame(np.random.randn(4, 3), columns=[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;])
+df
+          a         b         c
+0  1.007118 -1.469496 -0.267296
+1 -1.372287  1.451564 -0.333397
+2  0.731125 -0.448180  1.779717
+3 -0.903802  0.349003 -0.121670
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;We can use the &lt;code&gt;half()&lt;/code&gt; function we defined earlier and apply it to every cell in the dataframe.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;df.apply(half)
+          a         b         c
+0  0.503559 -0.734748 -0.133648
+1 -0.686143  0.725782 -0.166698
+2  0.365563 -0.224090  0.889859
+3 -0.451901  0.174501 -0.060835
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Furthermore, we can define an aggregate function that will return the range of a column (the difference between the maximum and the minimum values).&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;def range_func(x):
+    return max(x) - min(x)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;When we apply the function to our dataframe, it will compute the range for each column by default.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;df.apply(range_func)
+a    2.379404
+b    2.921060
+c    2.113114
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;h2&gt;&lt;a id=&#34;user-content-summary&#34; class=&#34;anchor&#34; href=&#34;#summary&#34; aria-hidden=&#34;true&#34;&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt; &lt;/a&gt;Summary&lt;/h2&gt;
+&lt;p&gt;In this lesson, we learned about an aspect of functional programming in Python. The &lt;code&gt;map()&lt;/code&gt; function allows us to apply a function to an entire sequence. We use this function to map an input to an output in an immutable fashion. Similarly, the &lt;code&gt;filter()&lt;/code&gt; function allows us to use a function to remove elements from a sequence that do not meet the condition specified by the function. The third function discussed in this lesson is the &lt;code&gt;reduce()&lt;/code&gt; function. This function allows us to perform an aggregation on a sequence of elements. We perform this aggregation on two elements at a time. We have also learned how to apply functions to dataframes. We can use the same function both for applying a function to every cell and for aggregate functions. In upcoming lessons, we will be able to utilize these concepts to write code functionally.&lt;/p&gt;
+&lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+  </div>
+  <div id="seq_contents_2"
+    aria-labelledby="tab_2"
+    aria-hidden="true"
+    class="seq_contents tex2jax_ignore asciimath2jax_ignore">
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-vertical&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;VerticalStudentView&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34; data-request-token=&#34;4acd70a0939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@95e3196429f046398ad19c7229a86790&#34; data-block-type=&#34;vertical&#34;&gt;
+  
+
+  &lt;h2 class=&#34;hd hd-2 unit-title&#34;&gt;Multiprocessing &amp;amp; Parallelization&lt;/h2&gt;
+
+    &lt;div class=&#34;ih-bookmark-button-wrapper&#34;&gt;
+    	
+
+
+
+&lt;div class=&#34;bookmark-button-wrapper&#34;&gt;
+  &lt;button class=&#34;btn btn-link bookmark-button &#34;
+    aria-pressed=&#34;false&#34;
+    data-bookmark-id=&#34;NoahB,block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@95e3196429f046398ad19c7229a86790&#34;
+    data-bookmarks-api-url=&#34;/api/bookmarks/v1/bookmarks/&#34;&gt;
+     &lt;span class=&#34;bookmark-text&#34;&gt;Bookmark this page&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+
+    &lt;/div&gt;	
+
+&lt;div class=&#34;vert-mod&#34;&gt;
+  &lt;div class=&#34;vert vert-0&#34; data-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@f3e2a82dd4e8430dae61f34973925631&#34;&gt;
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;4acd70a0939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@f3e2a82dd4e8430dae61f34973925631&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  &lt;h2&gt;
+    &lt;a id=&#34;user-content-lesson-goals&#34; class=&#34;anchor&#34; href=&#34;#lesson-goals&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Lesson Goals
+&lt;/h2&gt;
+&lt;ul&gt;
+    &lt;li&gt;Understand the concepts of sequential vs. parallel processing.&lt;/li&gt;
+    &lt;li&gt;Introduce the Python multiprocessing library.&lt;/li&gt;
+    &lt;li&gt;Produce examples of sequential and parallel processing.&lt;/li&gt;
+    &lt;li&gt;Compare performance results and observe how much faster processes finish with multiprocessing.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-introduction&#34; class=&#34;anchor&#34; href=&#34;#introduction&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Introduction
+&lt;/h2&gt;
+&lt;p&gt;When working as a data analyst or data scientist, there will be times where you will have to apply the same function or operation to a large number of items. By default, Python processes each task you tell it to perform sequentially, which can take a substantial amount of time when either the number of tasks is large, the number of items on which you need to perform the task is large, or both.&lt;/p&gt;
+&lt;p&gt;When the information you need to compute upon is large or the computation is complex, your program can take a long time to run. In cases like these, it is often useful to divide the work among the computing resources available on your machine. This is known as multiprocessing or parallelization, and it can save you significant amounts of time.&lt;/p&gt;
+&lt;p&gt;Parallelization refers to the act of performing tasks in parallel. This is made possible by the existence of multiple CPUs or cores on a computer.&lt;/p&gt;
+&lt;p&gt;Python has a 
+    &lt;code&gt;multiprocessing&lt;/code&gt; library that allows you to spread the work your programs need to perform over the number of cores your machine has. In this lesson, we will learn how to parallelize our code using the multiprocessing library. Along the way, we will practice parallelizing via a variety of examples. Let&#39;s go ahead and import it so that it&#39;s ready to be used.
+&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;import multiprocessing
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;The multiprocessing library contains several tools for parallelizing your workflow, but the most commonly used is the 
+    &lt;code&gt;Pool.map&lt;/code&gt; method. Just like the regular
+    &lt;code&gt;map&lt;/code&gt; function in Python,
+    &lt;code&gt;Pool.map&lt;/code&gt; applies a given function to an iterable such as a list or tuple. However, the main difference is that it does so in parallel. It is relatively straightforward to understand and should work for the majority of cases where you will need parallelization, so we will be focusing on this aspect of the multiprocessing library in this lesson.
+&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-getting-started&#34; class=&#34;anchor&#34; href=&#34;#getting-started&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Getting Started
+&lt;/h2&gt;
+&lt;p&gt;The code examples in this lesson use the dataset 
+    &lt;code&gt;directories.zip&lt;/code&gt; which you can download
+    &lt;a href=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/data/module-1/directories.zip&#34; rel=&#34;nofollow&#34;&gt;here&lt;/a&gt;. After downloading the file, extract the content. You will have a folder called
+    &lt;code&gt;directories&lt;/code&gt; that contains sub-folders and files.
+&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-sequential-processing&#34; class=&#34;anchor&#34; href=&#34;#sequential-processing&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Sequential Processing
+&lt;/h2&gt;
+&lt;p&gt;When you perform a series of tasks in Python, it will execute them sequentially, or one at a time. When a task is performed this way, a subsequent computation does not occur until the one before it is complete.&lt;/p&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/8d9656a11bf22450288fc21409467f77dd86db39/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f73657175656e7469616c2d70726f63657373696e672e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/8d9656a11bf22450288fc21409467f77dd86db39/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f73657175656e7469616c2d70726f63657373696e672e706e67&#34; alt=&#34;Sequential Processing&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/sequential-processing.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;For example, let&#39;s suppose you had a function that would square any number and a list of numbers between 0 and 99 that you wanted to square.&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;def square(x):  
+    return x*x
+
+data = [x for x in range(100)]
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;You could get a list containing the square of each number by applying the 
+    &lt;code&gt;square&lt;/code&gt; function to each number in the list and enclosing it in a list comprehension.
+&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;%%time
+seq = [square(x) for x in data]
+print(seq)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;pre lang=&#34;text&#34;&gt;
+    &lt;code&gt;[0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225, 256, 289, 324, 361, 400, 441, 484, 529, 576, 625, 676, 729, 784, 841, 900, 961, 1024, 1089, 1156, 1225, 1296, 1369, 1444, 1521, 1600, 1681, 1764, 1849, 1936, 2025, 2116, 2209, 2304, 2401, 2500, 2601, 2704, 2809, 2916, 3025, 3136, 3249, 3364, 3481, 3600, 3721, 3844, 3969, 4096, 4225, 4356, 4489, 4624, 4761, 4900, 5041, 5184, 5329, 5476, 5625, 5776, 5929, 6084, 6241, 6400, 6561, 6724, 6889, 7056, 7225, 7396, 7569, 7744, 7921, 8100, 8281, 8464, 8649, 8836, 9025, 9216, 9409, 9604, 9801]
+CPU times: user 230 µs, sys: 63 µs, total: 293 µs
+Wall time: 264 µs
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;In this example, Python applied the function to each list element sequentially. In other words, first it squared 0, then it squared 1, then it squared 2, etc. It took a total of 293 milliseconds to run through the list squaring each number and then printing then printing the entire list.&lt;/p&gt;
+&lt;p&gt;
+    &lt;strong&gt;Side Note&lt;/strong&gt;: Note the use of the
+    &lt;code&gt;%%time&lt;/code&gt; magic command. When used at the beginning of a Jupyter Notebook cell, it calculates the amount of time it takes for the contents of that cell to run. This will help us compare execution times between sequentially and parallel processed cells.
+&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-parallel-processing&#34; class=&#34;anchor&#34; href=&#34;#parallel-processing&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Parallel Processing
+&lt;/h2&gt;
+&lt;p&gt;If we wanted to speed up the squaring of these numbers, we could parallelize the operation. Doing so would split the job we have to do across the number of cores our machine has (ex. 4 cores) and assign each core a task that it would perform at the same time as the other cores.&lt;/p&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/15d01985b85db30ceed8908651872bc6277068c3/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f706172616c6c656c2d70726f63657373696e672e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/15d01985b85db30ceed8908651872bc6277068c3/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f706172616c6c656c2d70726f63657373696e672e706e67&#34; alt=&#34;Parallel Processing&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/parallel-processing.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;To do this in Python, all we would have to do is call the 
+    &lt;code&gt;Pool&lt;/code&gt; class from the multiprocessing library and then simply
+    &lt;code&gt;map&lt;/code&gt; the function to the data. This would apply the function in a parallel fashion across however many cores your computer has at a time. Once that has happened, we call the
+    &lt;code&gt;terminate&lt;/code&gt; method to stop and shutdown the job and then the
+    &lt;code&gt;join&lt;/code&gt; method to prevent any &#34;zombie&#34; processes that may result from a child process continuing after a parent process has terminated.
+&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;%%time
+pool = multiprocessing.Pool()
+result = pool.map(square, data)
+pool.terminate()
+pool.join()
+print(result)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;pre lang=&#34;text&#34;&gt;
+    &lt;code&gt;[0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225, 256, 289, 324, 361, 400, 441, 484, 529, 576, 625, 676, 729, 784, 841, 900, 961, 1024, 1089, 1156, 1225, 1296, 1369, 1444, 1521, 1600, 1681, 1764, 1849, 1936, 2025, 2116, 2209, 2304, 2401, 2500, 2601, 2704, 2809, 2916, 3025, 3136, 3249, 3364, 3481, 3600, 3721, 3844, 3969, 4096, 4225, 4356, 4489, 4624, 4761, 4900, 5041, 5184, 5329, 5476, 5625, 5776, 5929, 6084, 6241, 6400, 6561, 6724, 6889, 7056, 7225, 7396, 7569, 7744, 7921, 8100, 8281, 8464, 8649, 8836, 9025, 9216, 9409, 9604, 9801]
+CPU times: user 16.5 ms, sys: 19.9 ms, total: 36.4 ms
+Wall time: 40.3 ms
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;We can see that this took a total of 36.4 milliseconds, which means it finished in 3.4% of the time it took to perform the task sequentially.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-use-case-file-system-traversal&#34; class=&#34;anchor&#34; href=&#34;#use-case-file-system-traversal&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Use Case: File System Traversal
+&lt;/h2&gt;
+&lt;p&gt;The example in the previous section was a simple one intended to show how easy it can be to parallelize operations using Python&#39;s multiprocessing library. In this section, we will take a look at a real-world use case where parallelization would be helpful and see how we can use the previous example as a guide in parallelizing our tasks.&lt;/p&gt;
+&lt;p&gt;Suppose we had a directory with a hundred folders and hundreds of files in each folder. There are various file types contained within each folder, and we are specifically interested in knowing how many markdown files are in our directory and where they are located. These files can be identified by a .md file extension.&lt;/p&gt;
+&lt;p&gt;To start, we will get a list of the directories using the 
+    &lt;code&gt;listdir&lt;/code&gt; method from the
+    &lt;code&gt;os&lt;/code&gt; library. We are going to remove a hidden file called .DS_Store that was automatically created in the directory because it is not a folder and we want just a list of folders that we can search through.
+&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;import os
+
+dirs = os.listdir(&#39;./directories&#39;)
+dirs.remove(&#39;.DS_Store&#39;)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;This list is an iterable, much like the list of numbers we used in the previous example.&lt;/p&gt;
+&lt;p&gt;Next, we will define a function that will search through a given directory folder and extract a list of files that end with the .md file extension.&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;def find_markdowns(dir):
+    files = os.listdir(dir)
+    markdowns = [dir +&#39;/&#39; + file for file in files if file.endswith(&#39;.md&#39;)]
+    return markdowns
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;This function can be applied to the iterable list just like our 
+    &lt;code&gt;square&lt;/code&gt; function could be applied to the list of numbers in our earlier example.
+&lt;/p&gt;
+&lt;p&gt;Let&#39;s apply this function to our directory list in a sequential fashion, time it the execution, and see how fast it can identify all the markdown files. To do this, we will apply the function inside a list comprehension to every directory in our directory list. This will produce a list of lists, which we will then flatten into a single list containing the location of all the markdown files as elements.&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;%%time
+result = [find_markdowns(dir) for dir in dirs]
+flatten = [file for sublist in result for file in sublist]
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;pre lang=&#34;text&#34;&gt;
+    &lt;code&gt;CPU times: user 22.2 ms, sys: 49.3 ms, total: 71.4 ms
+Wall time: 70.8 ms
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;We can see that the total time it took for this process to run sequentially was 71.4 milliseconds.&lt;/p&gt;
+&lt;p&gt;Next, let&#39;s see if we can achieve any performance gains by applying the function to the iterable in parrallel. As before, we are going to call the 
+    &lt;code&gt;Pool&lt;/code&gt; class and then map the function to the iterable. We are also going to flatten the results here just like we did for the sequential run.
+&lt;/p&gt;
+&lt;pre&gt;
+&lt;code&gt;%%time
+pool = multiprocessing.Pool()
+result = pool.map(find_markdowns, dirs)
+pool.terminate()
+pool.join()
+flatten = [file for sublist in result for file in sublist]
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;pre lang=&#34;text&#34;&gt;
+    &lt;code&gt;CPU times: user 15.5 ms, sys: 23.1 ms, total: 38.6 ms
+Wall time: 133 ms
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;This time, it only took 38.6 milliseconds to run, which is almost twice as fast as it took to run the process sequentially.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-summary&#34; class=&#34;anchor&#34; href=&#34;#summary&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Summary
+&lt;/h2&gt;
+&lt;p&gt;In this lesson, we introduced the concepts of sequential and parallel processing. We looked at a basic example of sequential processing and then parallel processing using the Python multiprocessing library and witnessed a significant improvement in performance using multiprocessing. We then used what we learned from the basic example and applied it to a real-world use case where we wanted to extract a certain type of file from a directory with a hundred folders and hundreds of files in each folder. We saw first-hand the performance gains that are possible with parallelization. As you work through the rest of the program, keep these concepts in mind and try to think about ways to implement multiprocessing when you have a time-consuming process that involves a large amount of data, very complex computations, or both.&lt;/p&gt;
+&lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+  </div>
+  <div id="seq_content" class="ih-learnig-unit" role="tabpanel"></div>
+
+  <nav class="sequence-bottom ih-js-fire-highlighting-controls" aria-label="Section">
+    <button class="sequence-nav-button button-previous">
+      <span class="icon fa fa-chevron-prev" aria-hidden="true"></span>
+      <span>Previous</span>
+    </button>
+    <button class="sequence-nav-button button-next">
+      <span>Next</span>
+      <span class="icon fa fa-chevron-next" aria-hidden="true"></span>
+    </button>
+  </nav>
+</div>
+
+</div>
+
+        </main>
+    </section>
+
+    <section class="courseware-results-wrapper">
+      <div id="loading-message" aria-live="polite" aria-relevant="all"></div>
+      <div id="error-message" aria-live="polite"></div>
+      <div class="courseware-results search-results" data-course-id="course-v1:IRONHACK+DAFT+201906_MIA" data-lang-code="en"></div>
+    </section>
+
+  </div>
+  
+
+
+
+
+
+
+
+
+
+    
+    
+    <script type="text/javascript" src="../../../../../static/bundles/CourseSock.43ffb68a30fa51e4e467.1f398818dd61.js" ></script>
+      <script type="text/javascript">
+        
+    new CourseSock({
+        el:'.verification-sock'
+    });
+
+      </script>
+
+
+</div>
+<div class="container-footer">
+</div>
+
+          
+        </div>
+      </div>
+
+    
+    
+
+      <div class="ih-beta-banner">
+        <span class="icon fa fa-flask"></span>
+        <span class="ih-beta-banner-text">We just launched a new version of the student platform. Everything should be fine, but if you encounter a bug, don't hesitate and send it our way.</span>
+      </div>
+
+  </div>
+
+  
+  
+  <script type="text/javascript" src="../../../../../static/common/js/vendor/jquery.scrollTo.525edcc52fe8.js"></script>
+  <script type="text/javascript" src="../../../../../static/js/vendor/flot/jquery.flot.d3d45ff0c6a8.js"></script>
+
+  
+    <script type="text/javascript" src="../../../../../static/js/lms-courseware.43ed60564822.js" charset="utf-8"></script>
+
+
+  
+
+
+
+<script type="text/javascript">
+    // Fast Preview was introduced in 2.5. However, it
+    // causes undesirable flashing/font size changes when
+    // MathJax is used for interactive preview (equation editor).
+    // Setting processSectionDelay to 0 (see below) fully eliminates
+    // fast preview, but to reduce confusion, we are also setting
+    // the option as displayed in the context menu to false.
+    // When upgrading to 2.6, check if this variable name changed.
+    window.MathJax = {
+      menuSettings: {CHTMLpreview: false}
+    };
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [
+        ["\\(","\\)"],
+        ['[mathjaxinline]','[/mathjaxinline]']
+      ],
+      displayMath: [
+        ["\\[","\\]"],
+        ['[mathjax]','[/mathjax]']
+      ]
+    }
+  });
+</script>
+<script type="text/x-mathjax-config">
+
+  // In order to eliminate all flashing during interactive
+  // preview, it is necessary to set processSectionDelay to 0
+  // (remove delay between input and output phases). This
+  // effectively disables fast preview, regardless of
+  // the fast preview setting as shown in the context menu.
+  MathJax.Hub.processSectionDelay = 0;
+
+  MathJax.Hub.signal.Interest(function(message) {
+    if(message[0] === "End Math") {
+        set_mathjax_display_div_settings();
+    }
+  });
+  function set_mathjax_display_div_settings() {
+    $('.MathJax_Display').each(function( index ) {
+      this.setAttribute('tabindex', '0');
+      this.setAttribute('aria-live', 'off');
+      this.removeAttribute('role');
+      this.removeAttribute('aria-readonly');
+    });
+  }
+</script>
+
+
+<!-- This must appear after all mathjax-config blocks, so it is after the imports from the other templates.
+     It can't be run through static.url because MathJax uses crazy url introspection to do lazy loading of
+     MathJax extension libraries -->
+<script type="text/javascript" src="../../../../../../cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJaxf4fa.js?config=TeX-MML-AM_SVG"></script>
+
+
+    
+    
+      <script type="text/javascript" src="../../../../../static/course_search/js/course_search_factory.26a9d7197c46bdd1.js?raw"></script>
+    <script type="text/javascript">
+        (function (require) {
+            require(['course_search/js/course_search_factory'], function (CourseSearchFactory) {
+                
+        var courseId = $('.courseware-results').data('courseId');
+        CourseSearchFactory({
+            courseId: courseId,
+            searchHeader: $('.search-bar')
+        });
+    
+            });
+        }).call(this, require || RequireJS.require);
+    </script>
+
+
+  
+    
+      <script type="text/javascript" src="../../../../../static/js/courseware/courseware_factory.1504fc10caefbdd1.js?raw"></script>
+    <script type="text/javascript">
+        (function (require) {
+            require(['js/courseware/courseware_factory'], function (CoursewareFactory) {
+                
+    CoursewareFactory();
+  
+            });
+        }).call(this, require || RequireJS.require);
+    </script>
+
+
+
+  <script type="text/javascript">
+    var $$course_id = "course\u002Dv1:IRONHACK+DAFT+201906_MIA";
+  </script>
+
+
+
+
+
+
+  
+
+
+
+  <script type="text/javascript" src="../../../../../static/js/vendor/noreferrer.aa62a3e70ffa.js" charset="utf-8"></script>
+  <script type="text/javascript" src="../../../../../static/js/utils/navigation.08930e16ab3d.js" charset="utf-8"></script>
+  <script type="text/javascript" src="../../../../../static/js/header/header.309a1243e175.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="../../../../../static/ih-lms-theme/js/vendor/highlight.min.496e109b43ca.js" ></script>
+    <script type="text/javascript" src="../../../../../static/ih-lms-theme/js/vendor/ih-highlight.0f32f131ba83.js" ></script>
+  
+</body>
+</html>
+
+

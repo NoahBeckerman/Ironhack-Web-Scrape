@@ -1,0 +1,1161 @@
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<!--[if lte IE 9]><html class="ie ie9 lte9" lang="en"><![endif]-->
+<!--[if !IE]><!--><html lang="en"><!--<![endif]-->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head dir="ltr">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+  
+<title data-base-title="
+ Applied Machine Learning | DAFT Courseware | Ironhack Student Platform">
+  
+ Machine Learning Pipelines | Applied Machine Learning | DAFT Courseware | Ironhack Student Platform
+</title>
+
+
+      <script type="text/javascript">
+        /* immediately break out of an iframe if coming from the marketing website */
+        (function(window) {
+          if (window.location !== window.top.location) {
+            window.top.location = window.location;
+          }
+        })(this);
+      </script>
+
+  
+
+  <script type="text/javascript" src="../../../../../static/js/i18n/en/djangojs.e37eef1ffc63.js"></script>
+  <script type="text/javascript" src="../../../../../static/js/ie11_find_array.bd1c6dc7a133.js"></script>
+
+  <link rel="icon" type="image/x-icon" href="../../../../../static/ih-lms-theme/images/favicon.0de58aa5bfca.ico" />
+
+  
+  
+
+    <link href="../../../../../static/ih-lms-theme/css/lms-style-vendor.68e48093f5dd.css" rel="stylesheet" type="text/css" />
+
+
+
+      <link rel="stylesheet" href="../../../../../static/ih-lms-theme/css/bootstrap/lms-main.c54b2923d249.css" type="text/css" media="all" />
+
+    
+    <script type="text/javascript" src="../../../../../static/js/lms-main_vendor.a04b73033169.js" charset="utf-8"></script>
+
+
+    
+    <script type="text/javascript" src="../../../../../static/js/lms-application.e7bd4b65d083.js" charset="utf-8"></script>
+
+
+
+  
+    
+    
+    <script type="text/javascript" src="../../../../../static/bundles/commons.d60dcd98c024881d011e.c835e91d09f6.js" ></script>
+
+
+
+  <script>
+    window.baseUrl = "../../../../../static/index.html";
+    (function (require) {
+      require.config({
+          baseUrl: window.baseUrl
+      });
+    }).call(this, require || RequireJS.require);
+  </script>
+  <script type="text/javascript" src="../../../../../static/lms/js/require-config.8e00198660b0.js"></script>
+  
+    <script type="text/javascript">
+        (function (require) {
+          require.config({
+              paths: {
+                'js/courseware/courseware_factory': 'js/courseware/courseware_factory.1504fc10caef',
+'draggabilly': 'js/vendor/draggabilly.26caba6f7187',
+'js/courseware/toggle_element_visibility': 'js/courseware/toggle_element_visibility.d5f10bc65ed0',
+'hls': 'common/js/vendor/hls.b10b9ef4015b',
+'js/courseware/link_clicked_events': 'js/courseware/link_clicked_events',
+'moment': 'common/js/vendor/moment-with-locales.084396f4103c',
+'moment-timezone': 'common/js/vendor/moment-timezone-with-data.60142e6c4416',
+'js/student_account/logistration_factory': 'js/student_account/logistration_factory.d7765e4e6715',
+'js/groups/views/cohorts_dashboard_factory': 'js/groups/views/cohorts_dashboard_factory.7f46663f97b4',
+'js/dateutil_factory': 'js/dateutil_factory.841c29e02056',
+'course_bookmarks/js/views/bookmark_button': 'course_bookmarks/js/views/bookmark_button.d4cfaf3361fa',
+'js/courseware/accordion_events': 'js/courseware/accordion_events.6064c7809de5',
+'js/views/message_banner': 'js/views/message_banner.af013d0ecbd4',
+'js/groups/discussions_management/discussions_dashboard_factory': 'js/discussions_management/views/discussions_dashboard_factory.2e10d9097343',
+'js/courseware/course_info_events': 'js/courseware/course_info_events.2fc35b57627f'
+            }
+          });
+        }).call(this, require || RequireJS.require);
+    </script>
+  
+
+  
+
+  
+
+    <link href="../../../../../static/ih-lms-theme/css/lms-style-course-vendor.691e50c64ad7.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+
+    <link href="../../../../../static/ih-lms-theme/css/lms-course.1d0edf3ec473.css" rel="stylesheet" type="text/css" />
+
+
+
+
+<script type="text/javascript" src="../../../../../static/js/jquery.autocomplete.3bd10d7510d2.js"></script>
+<script type="text/javascript" src="../../../../../static/js/src/tooltip_manager.da362490e199.js"></script>
+
+<link href="../../../../../static/css/vendor/jquery.autocomplete.896181d3ec33.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="../../../../../static/bundles/XModuleShim.68b7a679342e3bdb698f.c506d949a49b.js" ></script>
+<script type="text/javascript" src="../../../../../static/bundles/HtmlModule.174055b73c05dccfbd8b.823874f69fef.js" ></script>
+<script type="text/javascript" src="../../../../../static/bundles/VerticalStudentView.6f1068648eb9e8d18da9.0a2f678d6564.js" ></script>
+<script type="text/javascript" src="../../../../../static/bundles/SequenceModule.251564cf8963e6f00227.ef752443db97.js" ></script>
+
+  
+
+  
+
+
+  
+
+
+<script type="application/json" id="user-metadata">
+    {"username": "NoahB", "enrollment_mode": "audit", "upgrade_link": null, "user_id": 489, "course_start": "2019-06-10T00:00:00+00:00", "upgrade_deadline": null, "course_key_fields": {"org": "IRONHACK", "run": "201906_MIA", "course": "DAFT"}, "course_end": "2019-08-19T00:00:00+00:00", "pacing_type": "instructor_paced", "upgrade_price": "Free", "course_id": "course-v1:IRONHACK+DAFT+201906_MIA", "has_staff_access": false, "forum_roles": [["Student"]], "enrollment_time": "2019-06-11T20:48:51.323840+00:00", "schedule_start": null, "email": "noahbeckerman@gmail.com"}
+</script>
+
+  
+
+  
+
+
+  
+
+
+<!-- dummy Segment -->
+<script type="text/javascript">
+  var analytics = {
+    track: function() { return; },
+    trackLink: function() { return; },
+    pageview: function() { return; },
+    page: function() { return; }
+  };
+</script>
+<!-- end dummy Segment -->
+
+
+  <meta name="path_prefix" content="">
+  
+  
+
+  <meta name="openedx-release-line" content="hawthorn" />
+
+
+
+
+
+
+  <!-- Hotjar Tracking Code for https://ironhack.school -->
+  <script type="text/javascript">
+      (function(h,o,t,j,a,r){
+          h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+          h._hjSettings={hjid:1193918,hjsv:6};
+          a=o.getElementsByTagName('head')[0];
+          r=o.createElement('script');r.async=1;
+          r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+          a.appendChild(r);
+      })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+  </script>
+
+  <script type="text/javascript">
+    function setCookieHideMobileWarning(expiration_hours) {
+      var date = new Date();
+      date.setTime(date.getTime()+(expiration_hours*60*60*1000));
+      var expires = "; expires=" + date.toGMTString();
+      document.cookie = "ihHideMobileWarning=true" + expires;
+    }
+    
+    function isHideMobileWarningCookieSet() {
+      return document.cookie.replace(/(?:(?:^|.*;\s*)ihHideMobileWarning\s*\=\s*([^;]*).*$)|^.*$/, "$1") !== "true"; 
+    }
+
+    function manageMobileWarning(mobile_warning_container) {
+      if (isHideMobileWarningCookieSet()) {
+        var mobile_warning_dismiss = document.getElementsByClassName('ih-js-hide-mobile-warning', mobile_warning_container)[0];
+        mobile_warning_dismiss.addEventListener('click', function() {
+          var expiration_hours = 48;
+          setCookieHideMobileWarning(expiration_hours);
+          mobile_warning_container.classList.add('hidden');
+        });
+      } else {
+        mobile_warning_container.classList.add('hidden');
+      }
+    }
+
+    var checkMobileWarningLayer = function () {
+      var mobile_warning_container = document.getElementsByClassName('ih-mobile-warning-container')[0];
+      (document.body && mobile_warning_container)? manageMobileWarning(mobile_warning_container) :  window.requestAnimationFrame(checkMobileWarningLayer);
+    }
+
+    window.requestAnimationFrame(checkMobileWarningLayer);
+  </script>
+
+</head>
+
+<body class="ltr view-in-course view-courseware courseware  lang_en">
+
+<div class="ih-mobile-warning-container">
+  <img class="logo" src="../../../../../static/ih-lms-theme/images/logo.6230fc40336b.svg" />
+  <div class="ih-mobile-warning-title">
+    The Learning Platform is best experienced on Desktop devices
+  </div>
+  <div class="ih-mobile-warning-description">
+    We recommend using a Desktop device to get the full experience of the Learning Platform.
+  </div>
+  <div class="ih-mobile-warning-dismiss ih-js-hide-mobile-warning">
+   Continue anyway
+  </div>
+</div>
+
+
+<div id="page-prompt"></div>
+  <div class="window-wrap" dir="ltr">
+    <a class="nav-skip sr-only sr-only-focusable" href="#main">Skip to main content</a>
+
+    
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+<header class="global-header slim ih-global-header">
+    <div class="ih-header-wrapper">
+        <div class="main-header ih-main-header">
+            
+
+
+
+
+
+<h1 class="header-logo">
+  <a href="../../../../../dashboard.html">
+    
+    <img  class="logo" src="../../../../../static/ih-lms-theme/images/logo.6230fc40336b.svg" alt="Ironhack Student Platform Home Page"/>
+    
+  </a>
+    <div class="course-header">
+          
+      
+      <span class="course-name">Data Analytics</span>
+    </div>
+</h1>
+
+            <div class="hamburger-menu" role="button" aria-label=Options Menu aria-expanded="false" aria-controls="mobile-menu" tabindex="0">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+                
+
+
+
+
+
+
+
+
+
+
+<div class="nav-links">
+  <div class="main">
+      
+  </div>
+  <div class="secondary ih-secondary">
+    
+
+
+
+
+
+
+  
+
+<div class="nav-item hidden-mobile toggle-user-dropdown ih-username-container">
+    <div class="menu-title">
+        
+        <span class="sr-only">Dashboard for:</span>
+        <span class="username ih-username">Ironhack (NoahB)</span>
+    </div>
+</div>
+<div class="nav-item hidden-mobile nav-item-dropdown ih-dropdown-wrapper" tabindex="-1">
+    <div class="toggle-user-dropdown ih-toggle-user-dropdown" role="button" aria-label=Options Menu aria-expanded="false" tabindex="0" aria-controls="user-menu">
+        <span class="fa fa-caret-down" aria-hidden="true"></span>
+    </div>
+    <div class="dropdown-user-menu hidden ih-dropdown-user-menu" aria-label=More Options role="menu" id="user-menu" tabindex="-1">
+        <div class="mobile-nav-item dropdown-item dropdown-nav-item ih-dropdown-nav-item"><a href="../../../../../dashboard.html" role="menuitem">My courses</a></div>
+            
+        <div class="mobile-nav-item dropdown-item dropdown-nav-item ih-dropdown-nav-item"><a href="../../../../../account/settings.html" role="menuitem">Account</a></div>
+        <div class="mobile-nav-item dropdown-item dropdown-nav-item ih-dropdown-nav-item"><a href="../../../../../index.html" role="menuitem">Sign Out</a></div>
+    </div>
+</div>
+  </div>
+</div>
+        </div>
+        <div class="mobile-menu hidden" aria-label=More Options role="menu" id="mobile-menu"></div>
+    </div>    
+</header>
+
+<!--[if lte IE 9]>
+<div class="ie-banner" aria-hidden="true"><strong>Warning:</strong> Your browser is not fully supported. We strongly recommend using <a href="https://www.google.com/chrome" target="_blank">Chrome</a> or <a href="http://www.mozilla.org/firefox" target="_blank">Firefox</a>.</div>
+<![endif]-->
+
+
+
+
+            
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+    
+    
+
+      <div 
+          class="ih-content"
+      >
+        <div class="marketing-hero"></div>
+
+        <div class="content-wrapper main-container ih-main-container" id="content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/template" id="image-modal-tpl">
+    <div class="wrapper-modal wrapper-modal-image">
+  <section class="image-link">
+    <%= smallHTML%>
+    <a href="#" class="modal-ui-icon action-fullscreen" role="button">
+      <span class="label">
+        <span class="icon fa fa-arrows-alt fa-large" aria-hidden="true"></span> <%- gettext("Fullscreen") %>
+      </span>
+    </a>
+  </section>
+
+  <section class="image-modal">
+    <section class="image-content">
+      <div class="image-wrapper">
+        <img alt="<%= largeALT %>, <%- gettext('Large') %>" src="<%= largeSRC %>" />
+      </div>
+
+      <a href="#" class="modal-ui-icon action-close" role="button">
+        <span class="label">
+          <span class="icon fa fa-remove fa-large" aria-hidden="true"></span> <%- gettext("Close") %>
+        </span>
+      </a>
+
+      <ul class="image-controls">
+        <li class="image-control">
+          <a href="#" class="modal-ui-icon action-zoom-in" role="button">
+            <span class="label">
+              <span class="icon fa fa fa-search-plus fa-large" aria-hidden="true"></span> <%- gettext("Zoom In") %>
+            </span>
+          </a>
+        </li>
+
+        <li class="image-control">
+          <a href="#" class="modal-ui-icon action-zoom-out is-disabled" aria-disabled="true" role="button">
+            <span class="label">
+              <span class="icon fa fa fa-search-minus fa-large" aria-hidden="true"></span> <%- gettext("Zoom Out") %>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </section>
+</div>
+
+</script>
+
+
+
+
+
+
+
+
+<div class="message-banner" aria-live="polite"></div>
+  
+
+
+
+
+
+
+
+
+    
+        <nav class="navbar course-tabs pb-0 navbar-expand ih-navbar-container" aria-label="Course">
+            <ul class="navbar-nav mr-auto ih-course-tabs">
+                    
+                    
+                        <li class="nav-item ih-nav-item active">
+                            <a href="../../../course/index.html" class="nav-link">
+                                Course
+                                    <span class="sr-only">, current location</span>
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="nav-item ih-nav-item ">
+                            <a href="../../../discussion/forum/index.html" class="nav-link">
+                                Discussion
+                            </a>
+                        </li>
+                    
+                    
+            </ul>
+        </nav>
+
+
+<div class="container ih-course-container"
+    lang="en"
+  >
+  <div class="course-wrapper ih-course-wrapper" role="presentation">
+
+    <section class="course-content" id="course-content">
+        <header class="page-header has-secondary">
+            <div class="page-header-main">
+                <nav aria-label="Course" class="sr-is-focusable" tabindex="-1">
+                    <div class="has-breadcrumbs">
+                        <div class="breadcrumbs">
+                                <span class="nav-item nav-item-course">
+                                    <a href="../../../course/index.html">Course</a>
+                                </span>
+                                <span class="icon fa fa-angle-right" aria-hidden="true"></span>
+                                <span class="nav-item nav-item-chapter" data-course-position="3" data-chapter-position="4">
+                                    <a href="../../../course/index.html#block-v1:IRONHACK+DAFT+201906_MIA+type@chapter+block@c36289e68f4e4029a57c62cfbc5b8ec5">Module 3</a>
+                                </span>
+                                <span class="icon fa fa-angle-right" aria-hidden="true"></span>
+                                <span class="nav-item nav-item-section">
+                                    <a href="../../../course/index.html#block-v1:IRONHACK+DAFT+201906_MIA+type@sequential+block@c0e2dd5ce641411faffe195a7fc7f894">Applied Machine Learning</a>
+                                </span>
+                                <span class="icon fa fa-angle-right" aria-hidden="true"></span>
+                            <span class="nav-item nav-item-sequence">Machine Learning Pipelines</span>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <main id="main" tabindex="-1" aria-label="Content">
+
+              <div class="xblock xblock-student_view xblock-student_view-sequential xmodule_display xmodule_SequenceModule" data-runtime-class="LmsRuntime" data-init="XBlockToXModuleShim" data-block-type="sequential" data-request-token="806156c8939911e99a866e487447f8c8" data-runtime-version="1" data-usage-id="block-v1:IRONHACK+DAFT+201906_MIA+type@sequential+block@c0e2dd5ce641411faffe195a7fc7f894" data-type="Sequence" data-course-id="course-v1:IRONHACK+DAFT+201906_MIA">
+  <script type="json/xblock-args" class="xblock-json-init-args">
+    {"xmodule-type": "Sequence"}
+  </script>
+  
+
+
+<div id="sequence_c0e2dd5ce641411faffe195a7fc7f894" class="sequence" data-id="block-v1:IRONHACK+DAFT+201906_MIA+type@sequential+block@c0e2dd5ce641411faffe195a7fc7f894" data-position="1" data-ajax-url="/courses/course-v1:IRONHACK+DAFT+201906_MIA/xblock/block-v1:IRONHACK+DAFT+201906_MIA+type@sequential+block@c0e2dd5ce641411faffe195a7fc7f894/handler/xmodule_handler" data-next-url="/courses/course-v1:IRONHACK+DAFT+201906_MIA/courseware/c36289e68f4e4029a57c62cfbc5b8ec5/e42795de07004f87bc900e4a6ceeb3fe/?child=first" data-prev-url="/courses/course-v1:IRONHACK+DAFT+201906_MIA/courseware/c36289e68f4e4029a57c62cfbc5b8ec5/cb1340a5a8e44a8bb3891cc9907fa742/?child=last">
+
+  <div class="sequence-nav ih-js-fire-highlighting-controls">
+    <button class="sequence-nav-button button-previous">
+      <span class="icon fa fa-chevron-prev" aria-hidden="true"></span>
+      <span class="sequence-nav-button-label">Previous</span>
+    </button>
+    <button class="sequence-nav-button button-next">
+      <span class="sequence-nav-button-label">Next</span>
+      <span class="icon fa fa-chevron-next" aria-hidden="true"></span>
+    </button>
+    <nav class="sequence-list-wrapper" aria-label="Sequence">
+      <ol id="sequence-list" role="tablist">
+        <li role="presentation">
+          <button class="seq_other inactive nav-item tab"
+            role="tab"
+            tabindex="-1"
+            aria-selected="false"
+            aria-expanded="false"
+            aria-controls="seq_content"
+            data-index="0"
+            data-id="block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@e503a035cc0d4dabadea829648d27949"
+            data-element="1"
+            data-page-title="Machine Learning Pipelines"
+            data-path="Module 3 &gt; Applied Machine Learning &gt; Machine Learning Pipelines"
+            data-graded="False"
+            id="tab_0"
+            >
+            <span class="icon fa seq_other" aria-hidden="true"></span>
+              <span 
+                class="fa fa-check-circle check-circle is-hidden" 
+                style="color:green"
+                aria-hidden="true"
+              ></span>
+            <span class="fa fa-fw fa-bookmark bookmark-icon is-hidden" aria-hidden="true"></span>
+            <div class="sequence-tooltip sr"><span class="sr">other&nbsp;</span>Machine Learning Pipelines<span class="sr bookmark-icon-sr">&nbsp;</span></div>
+          </button>
+        </li>
+      </ol>
+    </nav>
+  </div>
+  <div class="sr-is-focusable" tabindex="-1"></div>
+
+  <div id="seq_contents_0"
+    aria-labelledby="tab_0"
+    aria-hidden="true"
+    class="seq_contents tex2jax_ignore asciimath2jax_ignore">
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-vertical&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;VerticalStudentView&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34; data-request-token=&#34;806156c8939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@e503a035cc0d4dabadea829648d27949&#34; data-block-type=&#34;vertical&#34;&gt;
+  
+
+  &lt;h2 class=&#34;hd hd-2 unit-title&#34;&gt;Machine Learning Pipelines&lt;/h2&gt;
+
+    &lt;div class=&#34;ih-bookmark-button-wrapper&#34;&gt;
+    	
+
+
+
+&lt;div class=&#34;bookmark-button-wrapper&#34;&gt;
+  &lt;button class=&#34;btn btn-link bookmark-button &#34;
+    aria-pressed=&#34;false&#34;
+    data-bookmark-id=&#34;NoahB,block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@e503a035cc0d4dabadea829648d27949&#34;
+    data-bookmarks-api-url=&#34;/api/bookmarks/v1/bookmarks/&#34;&gt;
+     &lt;span class=&#34;bookmark-text&#34;&gt;Bookmark this page&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+
+    &lt;/div&gt;	
+
+&lt;div class=&#34;vert-mod&#34;&gt;
+  &lt;div class=&#34;vert vert-0&#34; data-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@a1028b7b25dd45e8aaee10f0722621b1&#34;&gt;
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;806156c8939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@a1028b7b25dd45e8aaee10f0722621b1&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  &lt;h2&gt;
+    &lt;a id=&#34;user-content-lesson-goals&#34; class=&#34;anchor&#34; href=&#34;#lesson-goals&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Lesson Goals
+&lt;/h2&gt;
+&lt;p&gt;In this lesson you will learn about:&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;Machine Learning pipelines.&lt;/li&gt;
+    &lt;li&gt;Why you need them.&lt;/li&gt;
+    &lt;li&gt;How to implement them in Scikit-learn.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-introduction&#34; class=&#34;anchor&#34; href=&#34;#introduction&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Introduction
+&lt;/h2&gt;
+&lt;p&gt;In fact you have seen machine learning pipelines in the previous lessons and labs though we haven&#39;t formally introuced the concept. What is a pipeline? In general, a pipeline is a complex process formed by subprocesses, so that the output of one subprocess is consumed as input by the following subprocess. Below is a simple example of using two Unix commands as a pipeline. The output of the first command is passed to the second command as its input by using the pipeline (|) connector:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ cat /etc/mtab | grep sda5
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;The first command produces the content of the file /etc/mtab, which you do not see in the console because the content is consumed as input by the second command 
+    &lt;code&gt;grep&lt;/code&gt;. The eventual output you see is what
+    &lt;code&gt;grep&lt;/code&gt; produces, a line containing the string
+    &lt;code&gt;sda5&lt;/code&gt;:
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;/dev/sda5 / ext4 rw,relatime,errors=remount-ro,data=ordered 0 0
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Although the execution of this example may produce a different output in different computers, because the /etc/mtab file usually differs from one computer to another, the key point here is that the output of the first command (or subprocess) is automatically fed as input to the second command (or subprocess) in a transparent way. We only see the output produced by the last command (or subprocess) of the pipeline.&lt;/p&gt;
+&lt;p&gt;Containing only two subprocesses, this small example provides an idea of how a minimalist pipeline works. A real Machine Learning pipeline may contain as many subprocesses as needed, as long as you relay the output of each subprocess to the next one.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-machine-learning-pipelines&#34; class=&#34;anchor&#34; href=&#34;#machine-learning-pipelines&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Machine Learning Pipelines
+&lt;/h2&gt;
+&lt;p&gt;We now transfer this concept to the domain of Machine Learning. In ML, the term pipeline is somewhat misleading because it sounds like ML is a one-way flow of data. On the contrary, however, ML pipelines are cyclic and iterative. Typically, one iteration of the ML pipeline consists the following subprocesses:&lt;/p&gt;
+&lt;ol&gt;
+    &lt;li&gt;
+        &lt;strong&gt;Feature selection&lt;/strong&gt; - select which feature set to be included in the ML model
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;strong&gt;Training set formation&lt;/strong&gt; - split the dataset into a training set and a testing set
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;strong&gt;Training&lt;/strong&gt; - use the training set to training the ML model
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;strong&gt;Estimate test set&lt;/strong&gt; - use the trained ML model to estimate the test set
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;strong&gt;Evaluation&lt;/strong&gt; - compare the estimated test set with the real test set
+    &lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Several iterations of ML pipelines are usually needed in order to improve/optimize you ML model. In each iteration, you can experiment different feature sets, different ML algorithms, or both. You save the state of your pipeline in each iteration. You keep performing as many iterations as you want but you should stop at a point when your further time investment is not rewarded by signficant performance gains of your ML model.&lt;/p&gt;
+&lt;p&gt;
+    &lt;strong&gt;All sounds good. But isn&#39;t that the same as conduting ML analysis with the same dataset but different algorithms???&lt;/strong&gt;
+&lt;/p&gt;
+&lt;p&gt;No they are not the same. You may have encountered the experience that when you perform the same ML analysis repeatedly, the outputs are different every time even if you are using exactly the same feature set and ML algorithm. This happens because when you split the train-test dataset each time, the randomization algorithm makes things different and your model performance scores become different. This makes it impossible to compare your model performance from iteration to iteration. Therefore, it&#39;s a good idea to take advantage of ML pipelines which makes sure you won&#39;t run into such troubles.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-scikit-learn-pipelines&#34; class=&#34;anchor&#34; href=&#34;#scikit-learn-pipelines&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Scikit-learn Pipelines
+&lt;/h2&gt;
+&lt;p&gt;The module 
+    &lt;code&gt;sklearn.pipeline&lt;/code&gt; contains the class Pipeline that we can use to implement a Machine Learning pipeline. This class allows the implementation of a sequence of chained transformations that must end with an estimation. In other words, it creates a chain of transformers followed by an estimator.
+&lt;/p&gt;
+&lt;p&gt;One advantage this implementation has is you do not need to build the pipeline every time it is going to be used: the whole pipeline can be serialized and saved to a file on its first use, and we can read the file an example below to show how this is done.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-the-lymphography-application&#34; class=&#34;anchor&#34; href=&#34;#the-lymphography-application&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;The Lymphography Application
+&lt;/h2&gt;
+&lt;p&gt;A lymphography is an X-ray image of a person&#39;s lymphatic system, including but not limited to the lymph nodes. Imagine you are provided with the lymphography data of 148 lymphographies obtained at a hospital from patients with metastases and malign lymphs, and you are asked to build a Machine Learning based system for diagnosing new patients based on the data of the 148 cases. How would you proceed? In this lesson we show you how to proceed, walking you through a process of 8 phases, that uses and exemplifies Machine Learning pipelines implemented in Scikit-learn. In your future Machine Learning projects, this 8 phase process can be reused and adapted, so that you do not have to start from zero, and you have an idea of how the whole process looks. So, let&#39;s get started!&lt;/p&gt;
+&lt;p&gt;We will build a Machine Learning based application to diagnose metastases and malign lymph. For this purpose we will use the public 
+    &lt;a href=&#34;https://archive.ics.uci.edu/ml/datasets/Lymphography&#34; rel=&#34;nofollow&#34;&gt;Lymphography dataset&lt;/a&gt; available at the Machine Learning Repository at UCI (University of California at Irvine). We will break the process down into 8 phases:
+&lt;/p&gt;
+&lt;ol&gt;
+    &lt;li&gt;Load Dataset&lt;/li&gt;
+    &lt;li&gt;Slice Dataset&lt;/li&gt;
+    &lt;li&gt;Create Pipeline&lt;/li&gt;
+    &lt;li&gt;Train&lt;/li&gt;
+    &lt;li&gt;Evaluate&lt;/li&gt;
+    &lt;li&gt;Save the Pipeline&lt;/li&gt;
+    &lt;li&gt;Load the Pipeline&lt;/li&gt;
+    &lt;li&gt;Classify new instances&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;We will explain what each stage does and its implementation, providing code snippets for each phase. At the end we will put all the snippets together and we will provide the whole Python program. Let&#39;s get started!&lt;/p&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-phase-1-load-dataset&#34; class=&#34;anchor&#34; href=&#34;#phase-1-load-dataset&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Phase 1: Load Dataset
+&lt;/h3&gt;
+&lt;p&gt;For reading the CSV file into a Pandas dataframe, we use this function again (which we have already used in previous lessons):&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;import pandas.io
+
+def readCsvToDataFrame(path, row_with_column_names):
+    theDataFrame= pandas.read_csv(path, header=row_with_column_names)
+    return theDataFrame
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;And we invoke like this:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;dataset = readCsvToDataFrame(DATASETPATH, None)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;DATASETPATH is a constant that contains the path to the CSV file. It is usually a good idea to inspect the structure of the object just read and to preview a few lines. This is a handy function that you can use for the inspection:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;def show_df_info(dataframe):
+    # get the data type
+    print(type(dataframe))
+    print(&#34;amount of entries is %s&#34; % dataframe.size)
+    print(&#34;dimensions= %i&#34; % dataframe.ndim)
+    print(&#34;shape is &#34;, end=&#34;&#34;)
+    print(dataframe.shape)
+    print(&#34;axes: &#34;, end=&#34;&#34;)
+    print(dataframe.axes)
+    print(&#34;data types of columns:&#34;)
+    print(dataframe.dtypes)
+    print(&#34;features: %s&#34; % dataframe.columns)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Then, we would invoke the function and preview a few lines:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;show_df_info(dataset)
+print(dataset.head(5))
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-phase-2-slice-the-dataset&#34; class=&#34;anchor&#34; href=&#34;#phase-2-slice-the-dataset&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Phase 2: Slice the Dataset
+&lt;/h3&gt;
+&lt;p&gt;It is a good idea to encapsulate the details of the slicing that will vary from one software application to another, inside a function: that makes the rest of the code more reusable. In our example, we use this function:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;def sliceDataFrame(df):
+    # remove 2 instances with class label &#34;normal find&#34;
+    df= df.drop(df[df[0]==1].index)
+    # remove 4 instances with class label &#34;fibrosis&#34;
+    df = df.drop(df[df[0] == 4].index)
+    # iloc arguments: range of rows, range of columns
+    # class &#39;pandas.core.series.Series&#39;
+    return df.iloc[:, 1:], df.iloc[:, 0]
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Note that in the slicing we have removed the instances of classes &#34;normal find&#34; and &#34;fibrosis,&#34; because there are not enough of them to perform 5-fold cross validation. Then, using 
+    &lt;code&gt;iloc&lt;/code&gt;, attributes have been selected, starting at column with index 1 and finishing at the last column. Also, using
+    &lt;code&gt;iloc&lt;/code&gt;, the class labels (target values) have been selected from the first column (index 0).
+&lt;/p&gt;
+&lt;p&gt;Now we will invoke the function and then do some inspection and previewing of the dataframe afterwards:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;training_instances, class_labels = sliceDataFrame(dataset)
+show_df_info(training_instances)
+
+# preview the data
+print(training_instances.head(5))
+print()
+print(class_labels.head(5))
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-phase-3-create-the-pipeline&#34; class=&#34;anchor&#34; href=&#34;#phase-3-create-the-pipeline&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Phase 3: Create the Pipeline
+&lt;/h3&gt;
+&lt;p&gt;This is the code snippet that creates the Scikit-learn pipeline:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from sklearn import tree, pipeline, preprocessing
+from sklearn.feature_selection import SelectKBest
+from sklearn.feature_selection import chi2
+
+cart_model = tree.DecisionTreeClassifier()
+
+pipe = pipeline.Pipeline(steps=[
+    (&#34;feature_selection&#34;, SelectKBest(chi2, k=8)),
+    (&#34;scale&#34;, preprocessing.StandardScaler()),  
+    (&#34;CART&#34;, cart_model)])
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;After the required imports, a CART model is created (as you may remember, this is something we did in a previous lesson), and then a pipeline is created with the following steps as argument:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;steps=[
+    (&#34;feature_selection&#34;, SelectKBest(chi2, k=8)),
+    (&#34;scale&#34;, preprocessing.StandardScaler()),  
+    (&#34;CART&#34;, cart_model)]
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;The first argument indicates the name of the step , in this case &#34;feature_selection&#34;. The second argument is the invocation that implements the step, in this case: 
+    &lt;code&gt;SelectKBest(chi2, k=8&lt;/code&gt;).
+    &lt;code&gt;SelectKBest()&lt;/code&gt; will evaluate each feature using chi-squared, and will return the best 8 features out of a total of 18 available features (this is called dimensionality reduction, which you can find more information about in our previous lesson on &#34;Feature Extraction and Engineering&#34;).
+&lt;/p&gt;
+&lt;p&gt;The second step of the pipeline is &#34;scale&#34;, and it scales the dataset resulting from the feature selection step, so that the domain of all features lies in the range [0, 1]. This is accomplished with this invocation:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;preprocessing.StandardScaler()
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;The third step in the pipeline &#34;CART&#34; and it applies the Machine Learning trained model to the scaled dataset output by the previous step.&lt;/p&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-phase-4-train&#34; class=&#34;anchor&#34; href=&#34;#phase-4-train&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Phase 4: Train
+&lt;/h3&gt;
+&lt;p&gt;In the previous phase we created the pipeline, now we train it with a single invocation:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pipe.fit(training_instances, y=class_labels)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Note that the fit() method is applied to all the steps in the pipeline, although there is a single invocation at the pipeline level.&lt;/p&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-phase-5-evaluation&#34; class=&#34;anchor&#34; href=&#34;#phase-5-evaluation&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Phase 5: Evaluation
+&lt;/h3&gt;
+&lt;p&gt;We will evaluate the pipeline using the same method that we used in previous lessons: we run cross-validation and use as quality metric the average of the resulting scores. This is how you do it:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;# return value is array of scores
+scores = cross_val_score(pipe, training_instances, class_labels, cv=5)
+
+# use as quality metric the average CV score
+meanCvAccuracy = scores.mean()
+
+print(&#34;Mean CV accuracy= %f&#34; % meanCvAccuracy)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;This is the output produced:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Mean CV accuracy= 0.760952
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;The interpretation of the output is that, based on the tests performed, the model is expected to provide the correct diagnose in 76% of new cases.&lt;/p&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-phase-6-save-the-pipeline&#34; class=&#34;anchor&#34; href=&#34;#phase-6-save-the-pipeline&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Phase 6: Save the Pipeline
+&lt;/h3&gt;
+&lt;p&gt;Our pipeline is a chain of 3 steps, but we do not have to save them independently, we can save the whole pipeline with a single invocation:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;joblib.dump(pipe, PIPELINEPATH, compress = 1)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;PIPELINE is a constant that contains the path to the file where the pipeline will be stored.&lt;/p&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-phase-7-load-the-pipeline&#34; class=&#34;anchor&#34; href=&#34;#phase-7-load-the-pipeline&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Phase 7: Load the Pipeline
+&lt;/h3&gt;
+&lt;p&gt;Next time we need the pipeline, we do not have to build it again, we can reuse the pipeline we saved. It is read in the following code snippet:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pipeline_loaded = joblib.load(PIPELINEPATH)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-phase-8-classify-new-instances&#34; class=&#34;anchor&#34; href=&#34;#phase-8-classify-new-instances&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Phase 8: Classify New Instances
+&lt;/h3&gt;
+&lt;p&gt;We can use the pipeline we just loaded to classify new problem instances. In the following code, a new instance is created in variable vector, then it is processed by the pipeline, and the final classification result is printed:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;import numpy
+
+# create new random problem instance
+vector = numpy.random.randint(0, 8, size=18)
+print(vector)
+
+result = pipeline_loaded.predict([vector,])
+print(&#34;class label is %i&#34; % result)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;This is the output to the console:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[0 1 0 5 4 7 1 3 4 2 2 2 0 2 7 1 1 2]
+class label is 3
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-the-whole-program&#34; class=&#34;anchor&#34; href=&#34;#the-whole-program&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;The Whole Program
+&lt;/h2&gt;
+&lt;p&gt;If we glue all the phases together, this is the resulting program:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;import numpy
+from sklearn import datasets, utils
+from sklearn.model_selection import cross_val_score
+import pandas.io
+from sklearn import tree, pipeline, preprocessing
+from sklearn.feature_selection import SelectKBest
+from sklearn.feature_selection import chi2
+from sklearn.externals import joblib
+
+
+#
+# DECLARATION PART
+#
+PIPELINEPATH= &#34;ser_pipeline.pickle&#34;
+DATASETPATH= &#34;lymphography.data&#34;
+
+
+
+# if there is no header row with the column/attribute names, use the constant None for row_with_column_names
+def readCsvToDataFrame(path, row_with_column_names):
+    theDataFrame= pandas.read_csv(path, header=row_with_column_names)
+    return theDataFrame
+
+
+
+def show_df_info(dataframe):
+    # get the data type
+    print(type(dataframe))
+    print(&#34;amount of entries is %s&#34; % dataframe.size)
+    print(&#34;dimensions= %i&#34; % dataframe.ndim)
+    print(&#34;shape is &#34;, end=&#34;&#34;)
+    print(dataframe.shape)
+    print(&#34;axes: &#34;, end=&#34;&#34;)
+    print(dataframe.axes)
+    print(&#34;data types of columns:&#34;)
+    print(dataframe.dtypes)
+    print(&#34;features: %s&#34; % dataframe.columns)
+
+
+
+def sliceDataFrame(df):
+    # remove 2 instances with class label &#34;normal find&#34;
+    df= df.drop(df[df[0]==1].index)
+    # remove 4 instances with class label &#34;fibrosis&#34;
+    df = df.drop(df[df[0] == 4].index)
+    # iloc arguments: range of rows, range of columns
+    # class &#39;pandas.core.series.Series&#39;
+    return df.iloc[:, 1:], df.iloc[:, 0]
+
+
+
+#
+# PROGRAM BODY
+#
+
+## PHASE 1: LOAD DATASET
+dataset= readCsvToDataFrame(DATASETPATH, None)
+show_df_info(dataset)
+print(dataset.head(5))
+
+## PHASE 2: SLICE DATASET
+training_instances, class_labels= sliceDataFrame(dataset)
+show_df_info(training_instances)
+# preview the data
+print(training_instances.head(5))
+print()
+print(class_labels.head(5))
+
+## PHASE 3: CREATE PIPELINE
+cart_model= tree.DecisionTreeClassifier()
+pipe= pipeline.Pipeline(steps=[(&#34;feature_selection&#34;, SelectKBest(chi2, k=8)), (&#34;scale&#34;, preprocessing.StandardScaler()),  (&#34;CART&#34;, cart_model)])
+
+## PHASE 4: TRAIN
+# fit all stages of the pipeline
+pipe.fit(training_instances, y=class_labels)
+
+## PHASE 5: EVALUATE
+# return value is array of scores
+scores = cross_val_score(pipe, training_instances, class_labels, cv=5)
+# use as quality metric the average CV score
+meanCvAccuracy= scores.mean()
+print(&#34;Mean CV accuracy= %f&#34; % meanCvAccuracy)
+
+## PHASE 6: SAVE PIPELINE
+# the whole pipeline in one single file
+joblib.dump(pipe, PIPELINEPATH, compress = 1)
+
+## PHASE 7: LOAD THE PIPELINE
+# read the file and deserialize the pipeline
+pipeline_loaded = joblib.load(PIPELINEPATH)
+
+## PHASE 8: CLASSIFY NEW INSTANCES
+# create new random problem instance
+vector= numpy.random.randint(0, 8, size=18)
+print(vector)
+result= pipeline_loaded.predict([vector,])
+print(&#34;class label is %i&#34; % result)
+
+print(&#34;--- end of execution ---&#34;)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-summary&#34; class=&#34;anchor&#34; href=&#34;#summary&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Summary
+&lt;/h2&gt;
+&lt;p&gt;In this lesson, you have learned what a Machine Learning pipeline is, its advantages, and the procedure to create one using Scikit-learn. You can reproduce the 8 phases shown here on your future Machine Learning projects, and adapt and reuse the code snippets. Now, you are ready to go!&lt;/p&gt;
+&lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+  </div>
+  <div id="seq_content" class="ih-learnig-unit" role="tabpanel"></div>
+
+  <nav class="sequence-bottom ih-js-fire-highlighting-controls" aria-label="Section">
+    <button class="sequence-nav-button button-previous">
+      <span class="icon fa fa-chevron-prev" aria-hidden="true"></span>
+      <span>Previous</span>
+    </button>
+    <button class="sequence-nav-button button-next">
+      <span>Next</span>
+      <span class="icon fa fa-chevron-next" aria-hidden="true"></span>
+    </button>
+  </nav>
+</div>
+
+</div>
+
+        </main>
+    </section>
+
+    <section class="courseware-results-wrapper">
+      <div id="loading-message" aria-live="polite" aria-relevant="all"></div>
+      <div id="error-message" aria-live="polite"></div>
+      <div class="courseware-results search-results" data-course-id="course-v1:IRONHACK+DAFT+201906_MIA" data-lang-code="en"></div>
+    </section>
+
+  </div>
+  
+
+
+
+
+
+
+
+
+
+    
+    
+    <script type="text/javascript" src="../../../../../static/bundles/CourseSock.43ffb68a30fa51e4e467.1f398818dd61.js" ></script>
+      <script type="text/javascript">
+        
+    new CourseSock({
+        el:'.verification-sock'
+    });
+
+      </script>
+
+
+</div>
+<div class="container-footer">
+</div>
+
+          
+        </div>
+      </div>
+
+    
+    
+
+      <div class="ih-beta-banner">
+        <span class="icon fa fa-flask"></span>
+        <span class="ih-beta-banner-text">We just launched a new version of the student platform. Everything should be fine, but if you encounter a bug, don't hesitate and send it our way.</span>
+      </div>
+
+  </div>
+
+  
+  
+  <script type="text/javascript" src="../../../../../static/common/js/vendor/jquery.scrollTo.525edcc52fe8.js"></script>
+  <script type="text/javascript" src="../../../../../static/js/vendor/flot/jquery.flot.d3d45ff0c6a8.js"></script>
+
+  
+    <script type="text/javascript" src="../../../../../static/js/lms-courseware.43ed60564822.js" charset="utf-8"></script>
+
+
+  
+
+
+
+<script type="text/javascript">
+    // Fast Preview was introduced in 2.5. However, it
+    // causes undesirable flashing/font size changes when
+    // MathJax is used for interactive preview (equation editor).
+    // Setting processSectionDelay to 0 (see below) fully eliminates
+    // fast preview, but to reduce confusion, we are also setting
+    // the option as displayed in the context menu to false.
+    // When upgrading to 2.6, check if this variable name changed.
+    window.MathJax = {
+      menuSettings: {CHTMLpreview: false}
+    };
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [
+        ["\\(","\\)"],
+        ['[mathjaxinline]','[/mathjaxinline]']
+      ],
+      displayMath: [
+        ["\\[","\\]"],
+        ['[mathjax]','[/mathjax]']
+      ]
+    }
+  });
+</script>
+<script type="text/x-mathjax-config">
+
+  // In order to eliminate all flashing during interactive
+  // preview, it is necessary to set processSectionDelay to 0
+  // (remove delay between input and output phases). This
+  // effectively disables fast preview, regardless of
+  // the fast preview setting as shown in the context menu.
+  MathJax.Hub.processSectionDelay = 0;
+
+  MathJax.Hub.signal.Interest(function(message) {
+    if(message[0] === "End Math") {
+        set_mathjax_display_div_settings();
+    }
+  });
+  function set_mathjax_display_div_settings() {
+    $('.MathJax_Display').each(function( index ) {
+      this.setAttribute('tabindex', '0');
+      this.setAttribute('aria-live', 'off');
+      this.removeAttribute('role');
+      this.removeAttribute('aria-readonly');
+    });
+  }
+</script>
+
+
+<!-- This must appear after all mathjax-config blocks, so it is after the imports from the other templates.
+     It can't be run through static.url because MathJax uses crazy url introspection to do lazy loading of
+     MathJax extension libraries -->
+<script type="text/javascript" src="../../../../../../cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJaxf4fa.js?config=TeX-MML-AM_SVG"></script>
+
+
+    
+    
+      <script type="text/javascript" src="../../../../../static/course_search/js/course_search_factory.26a9d7197c46bdd1.js?raw"></script>
+    <script type="text/javascript">
+        (function (require) {
+            require(['course_search/js/course_search_factory'], function (CourseSearchFactory) {
+                
+        var courseId = $('.courseware-results').data('courseId');
+        CourseSearchFactory({
+            courseId: courseId,
+            searchHeader: $('.search-bar')
+        });
+    
+            });
+        }).call(this, require || RequireJS.require);
+    </script>
+
+
+  
+    
+      <script type="text/javascript" src="../../../../../static/js/courseware/courseware_factory.1504fc10caefbdd1.js?raw"></script>
+    <script type="text/javascript">
+        (function (require) {
+            require(['js/courseware/courseware_factory'], function (CoursewareFactory) {
+                
+    CoursewareFactory();
+  
+            });
+        }).call(this, require || RequireJS.require);
+    </script>
+
+
+
+  <script type="text/javascript">
+    var $$course_id = "course\u002Dv1:IRONHACK+DAFT+201906_MIA";
+  </script>
+
+
+
+
+
+
+  
+
+
+
+  <script type="text/javascript" src="../../../../../static/js/vendor/noreferrer.aa62a3e70ffa.js" charset="utf-8"></script>
+  <script type="text/javascript" src="../../../../../static/js/utils/navigation.08930e16ab3d.js" charset="utf-8"></script>
+  <script type="text/javascript" src="../../../../../static/js/header/header.309a1243e175.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="../../../../../static/ih-lms-theme/js/vendor/highlight.min.496e109b43ca.js" ></script>
+    <script type="text/javascript" src="../../../../../static/ih-lms-theme/js/vendor/ih-highlight.0f32f131ba83.js" ></script>
+  
+</body>
+</html>
+
+

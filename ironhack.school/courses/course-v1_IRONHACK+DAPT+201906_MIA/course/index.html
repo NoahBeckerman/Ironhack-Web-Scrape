@@ -1,0 +1,612 @@
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<!--[if lte IE 9]><html class="ie ie9 lte9" lang="en"><![endif]-->
+<!--[if !IE]><!--><html lang="en"><!--<![endif]-->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head dir="ltr">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+  
+      <title>
+       Course | DAPT | Ironhack Student Platform
+      </title>
+  
+
+      <script type="text/javascript">
+        /* immediately break out of an iframe if coming from the marketing website */
+        (function(window) {
+          if (window.location !== window.top.location) {
+            window.top.location = window.location;
+          }
+        })(this);
+      </script>
+
+  
+
+  <script type="text/javascript" src="../../../static/js/i18n/en/djangojs.e37eef1ffc63.js"></script>
+  <script type="text/javascript" src="../../../static/js/ie11_find_array.bd1c6dc7a133.js"></script>
+
+  <link rel="icon" type="image/x-icon" href="../../../static/ih-lms-theme/images/favicon.0de58aa5bfca.ico" />
+
+  
+  
+
+    <link href="../../../static/ih-lms-theme/css/lms-style-vendor.68e48093f5dd.css" rel="stylesheet" type="text/css" />
+
+
+
+      <link rel="stylesheet" href="../../../static/ih-lms-theme/css/bootstrap/lms-main.c54b2923d249.css" type="text/css" media="all" />
+
+    
+    <script type="text/javascript" src="../../../static/js/lms-base-vendor.cb449c35a4fc.js" charset="utf-8"></script>
+
+
+    
+    <script type="text/javascript" src="../../../static/js/lms-base-application.2062f84b79fa.js" charset="utf-8"></script>
+
+
+
+  
+    
+    
+    <script type="text/javascript" src="../../../static/bundles/commons.d60dcd98c024881d011e.c835e91d09f6.js" ></script>
+
+
+    <script type="text/javascript" src="../../../static/common/js/vendor/bootstrap.bundle.6a7d42b0348b.js"></script>
+
+  <script>
+    window.baseUrl = "../../../static/index.html";
+    (function (require) {
+      require.config({
+          baseUrl: window.baseUrl
+      });
+    }).call(this, require || RequireJS.require);
+  </script>
+  <script type="text/javascript" src="../../../static/lms/js/require-config.8e00198660b0.js"></script>
+  
+    <script type="text/javascript">
+        (function (require) {
+          require.config({
+              paths: {
+                'js/courseware/courseware_factory': 'js/courseware/courseware_factory.1504fc10caef',
+'draggabilly': 'js/vendor/draggabilly.26caba6f7187',
+'js/courseware/toggle_element_visibility': 'js/courseware/toggle_element_visibility.d5f10bc65ed0',
+'hls': 'common/js/vendor/hls.b10b9ef4015b',
+'js/courseware/link_clicked_events': 'js/courseware/link_clicked_events',
+'moment': 'common/js/vendor/moment-with-locales.084396f4103c',
+'moment-timezone': 'common/js/vendor/moment-timezone-with-data.60142e6c4416',
+'js/student_account/logistration_factory': 'js/student_account/logistration_factory.d7765e4e6715',
+'js/groups/views/cohorts_dashboard_factory': 'js/groups/views/cohorts_dashboard_factory.7f46663f97b4',
+'js/dateutil_factory': 'js/dateutil_factory.841c29e02056',
+'course_bookmarks/js/views/bookmark_button': 'course_bookmarks/js/views/bookmark_button.d4cfaf3361fa',
+'js/courseware/accordion_events': 'js/courseware/accordion_events.6064c7809de5',
+'js/views/message_banner': 'js/views/message_banner.af013d0ecbd4',
+'js/groups/discussions_management/discussions_dashboard_factory': 'js/discussions_management/views/discussions_dashboard_factory.2e10d9097343',
+'js/courseware/course_info_events': 'js/courseware/course_info_events.2fc35b57627f'
+            }
+          });
+        }).call(this, require || RequireJS.require);
+    </script>
+  
+
+  
+  
+
+
+
+  
+
+
+  
+
+
+<script type="application/json" id="user-metadata">
+    {"username": "", "enrollment_mode": null, "upgrade_link": null, "user_id": null, "course_start": "2019-06-03T00:00:00+00:00", "upgrade_deadline": null, "course_key_fields": {"org": "IRONHACK", "run": "201906_MIA", "course": "DAPT"}, "course_end": null, "pacing_type": "instructor_paced", "upgrade_price": "Free", "course_id": "course-v1:IRONHACK+DAPT+201906_MIA", "has_staff_access": false, "forum_roles": [], "enrollment_time": null, "schedule_start": null}
+</script>
+
+  
+
+  
+
+
+  
+
+
+<!-- dummy Segment -->
+<script type="text/javascript">
+  var analytics = {
+    track: function() { return; },
+    trackLink: function() { return; },
+    pageview: function() { return; },
+    page: function() { return; }
+  };
+</script>
+<!-- end dummy Segment -->
+
+
+  <meta name="path_prefix" content="">
+  
+  
+
+  <meta name="openedx-release-line" content="hawthorn" />
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    function setCookieHideMobileWarning(expiration_hours) {
+      var date = new Date();
+      date.setTime(date.getTime()+(expiration_hours*60*60*1000));
+      var expires = "; expires=" + date.toGMTString();
+      document.cookie = "ihHideMobileWarning=true" + expires;
+    }
+    
+    function isHideMobileWarningCookieSet() {
+      return document.cookie.replace(/(?:(?:^|.*;\s*)ihHideMobileWarning\s*\=\s*([^;]*).*$)|^.*$/, "$1") !== "true"; 
+    }
+
+    function manageMobileWarning(mobile_warning_container) {
+      if (isHideMobileWarningCookieSet()) {
+        var mobile_warning_dismiss = document.getElementsByClassName('ih-js-hide-mobile-warning', mobile_warning_container)[0];
+        mobile_warning_dismiss.addEventListener('click', function() {
+          var expiration_hours = 48;
+          setCookieHideMobileWarning(expiration_hours);
+          mobile_warning_container.classList.add('hidden');
+        });
+      } else {
+        mobile_warning_container.classList.add('hidden');
+      }
+    }
+
+    var checkMobileWarningLayer = function () {
+      var mobile_warning_container = document.getElementsByClassName('ih-mobile-warning-container')[0];
+      (document.body && mobile_warning_container)? manageMobileWarning(mobile_warning_container) :  window.requestAnimationFrame(checkMobileWarningLayer);
+    }
+
+    window.requestAnimationFrame(checkMobileWarningLayer);
+  </script>
+
+</head>
+
+<body class="ltr None lang_en">
+
+<div class="ih-mobile-warning-container">
+  <img class="logo" src="../../../static/ih-lms-theme/images/logo.6230fc40336b.svg" />
+  <div class="ih-mobile-warning-title">
+    The Learning Platform is best experienced on Desktop devices
+  </div>
+  <div class="ih-mobile-warning-description">
+    We recommend using a Desktop device to get the full experience of the Learning Platform.
+  </div>
+  <div class="ih-mobile-warning-dismiss ih-js-hide-mobile-warning">
+   Continue anyway
+  </div>
+</div>
+
+
+<div id="page-prompt"></div>
+  <div class="window-wrap" dir="ltr">
+    <a class="nav-skip sr-only sr-only-focusable" href="#main">Skip to main content</a>
+
+    
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+<header class="global-header slim ih-global-header">
+    <div class="ih-header-wrapper">
+        <div class="main-header ih-main-header">
+            
+
+
+
+
+
+<h1 class="header-logo">
+  <a href="../../../dashboard.html">
+    
+    <img  class="logo" src="../../../static/ih-lms-theme/images/logo.6230fc40336b.svg" alt="Ironhack Student Platform Home Page"/>
+    
+  </a>
+    <div class="course-header">
+          
+      
+      <span class="course-name">Data Analytics</span>
+    </div>
+</h1>
+
+            <div class="hamburger-menu" role="button" aria-label=Options Menu aria-expanded="false" aria-controls="mobile-menu" tabindex="0">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+                
+
+
+
+
+
+
+
+
+<nav class="nav-links" aria-label=Supplemental Links>
+  <div class="main">
+  </div>
+  <div class="secondary">
+    <div>
+    </div>
+  </div>
+</nav>
+
+        </div>
+        <div class="mobile-menu hidden" aria-label=More Options role="menu" id="mobile-menu"></div>
+    </div>    
+</header>
+
+<!--[if lte IE 9]>
+<div class="ie-banner" aria-hidden="true"><strong>Warning:</strong> Your browser is not fully supported. We strongly recommend using <a href="https://www.google.com/chrome" target="_blank">Chrome</a> or <a href="http://www.mozilla.org/firefox" target="_blank">Firefox</a>.</div>
+<![endif]-->
+
+
+
+
+            
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+    <div class="page-banner">
+        <div class="user-messages">
+                <div class="alert alert-warning" role="alert">
+                    <span class="icon icon-alert fa fa fa-warning" aria-hidden="true"></span>
+                    <div class="message-content">To see course content, <a href="../../../logind1d6.html?next=%2Fcourses%2Fcourse-v1%3AIRONHACK%2BDAPT%2B201906_MIA%2Fcourse%2F">sign in</a> or <a href="../../../registerd1d6.html?next=%2Fcourses%2Fcourse-v1%3AIRONHACK%2BDAPT%2B201906_MIA%2Fcourse%2F">register</a>.</div>
+                </div>
+        </div>
+    </div>
+
+
+    
+    
+
+      <div 
+          class="ih-content"
+      >
+        <div class="marketing-hero"></div>
+
+        <div class="content-wrapper main-container ih-main-container" id="content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+        <nav class="navbar course-tabs pb-0 navbar-expand ih-navbar-container" aria-label="Course">
+            <ul class="navbar-nav mr-auto ih-course-tabs">
+                    
+                    
+                        <li class="nav-item ih-nav-item active">
+                            <a href="index.html" class="nav-link">
+                                Course
+                                    <span class="sr-only">, current location</span>
+                            </a>
+                        </li>
+            </ul>
+        </nav>
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="../../../static/paragon/static/paragon.min.2e6b88936ef5.css" />
+
+
+
+<div class="course-view page-content-container ih-course-container" id="course-container">
+
+
+
+    <header class="page-header has-secondary ih-page-header">
+        <div class="page-header-main">
+            <nav aria-label="Course Outline" class="sr-is-focusable" tabindex="-1">
+                <h2 class="hd hd-3 page-title">Course Outline</h2>
+            </nav>
+        </div>
+        
+            <button class="btn btn-primary"
+                    id="expand-collapse-outline-all-button"
+                    aria-expanded="false"
+                    aria-controls="course-outline-block-tree"
+                    >
+              <span class="expand-collapse-outline-all-extra-padding" id="expand-collapse-outline-all-span">Expand All</span>
+            </button>
+        
+        <div class="page-header-secondary">
+                <div class="page-header-search">
+                    <form class="search-form input-group" role="search" action="http://ironhack.school/courses/course-v1:IRONHACK+DAPT+201906_MIA/search/">
+                        <label class="field-label sr-only" for="search" id="search-hint">Search the course</label>
+                        <input
+                                class="field-input input-text search-input form-control"
+                                type="search"
+                                name="query"
+                                id="search"
+                                placeholder="Search the course"
+                        />
+                        <span class="input-group-btn">
+                            <button class="btn btn-outline-primary search-button ih-search-button" type="submit">Search</button>
+                        </span>
+                    </form>
+                </div>
+            <div class="form-actions">
+            </div>
+        </div>
+    </header>
+    <div class="page-content ih-page-content">
+        <div class="page-content-main">
+                <div class="ih-course-home-message-wrapper">
+                    
+
+
+
+
+
+
+
+        <div class="course-message">
+                <img class="message-author" alt="" src="../../../static/course_experience/images/home_message_author.a48ad5205f6b.png"/>
+            <div class="message-content" aria-live="polite">
+                <div class="message-header">You must be enrolled in the course to see course content.</div><a href="../../../logind1d6.html?next=%2Fcourses%2Fcourse-v1%3AIRONHACK%2BDAPT%2B201906_MIA%2Fcourse%2F">Sign in</a> or <a href="../../../registerd1d6.html?next=%2Fcourses%2Fcourse-v1%3AIRONHACK%2BDAPT%2B201906_MIA%2Fcourse%2F">register</a> and then enroll in this course.
+            </div>
+        </div>
+
+
+    
+    
+    <script type="text/javascript" src="../../../static/bundles/CourseGoals.08a1ee32a23bd0c511c5.7ac838ac0d97.js" ></script>
+      <script type="text/javascript">
+        
+    new CourseGoals({
+        goalApiUrl: "http://ironhack.school/api/course_goals/v0/course_goals/",
+        courseId: "course\u002Dv1:IRONHACK+DAPT+201906_MIA",
+        username: "",
+    });
+
+      </script>
+
+
+                </div>    
+
+
+        </div>
+        <aside class="page-content-secondary course-sidebar ih-course-sidebar">
+                <div class="section section-dates">
+                    
+
+
+
+
+
+<h3 class="hd hd-6 handouts-header">Important Course Dates</h3>
+
+
+    	
+
+<div class="date-summary-container">
+    <div class="date-summary date-summary-todays-date">
+                <span class="hd hd-6 heading localized-datetime" data-datetime="2019-06-20 20:27:14.029040+00:00" data-string="Today is {date}" data-timezone="None" data-language="None"></span>
+    </div>
+</div>
+
+
+
+  
+  <script type="text/javascript">
+    (function (require) {
+        require(['/static/js/dateutil_factory.841c29e02056.js?raw'], function () {
+          require(['js/dateutil_factory'], function (DateUtilFactory) {
+            
+    DateUtilFactory.transform('.localized-datetime');
+
+          });
+        });
+    }).call(this, require || RequireJS.require);
+  </script>
+
+
+                </div>
+        </aside>
+    </div>
+</div>
+
+
+
+    
+    
+    <script type="text/javascript" src="../../../static/bundles/CourseHome.9cafd328372dcb349520.01aef9f9dabf.js" ></script>
+      <script type="text/javascript">
+        
+    new CourseHome({
+        courseRunKey: "course\u002Dv1:IRONHACK+DAPT+201906_MIA",
+        resumeCourseLink: ".action-resume-course",
+        courseToolLink: ".course-tool-link",
+        goalApiUrl: "http://ironhack.school/api/course_goals/v0/course_goals/",
+        username: "",
+        courseId: "course\u002Dv1:IRONHACK+DAPT+201906_MIA",
+    });
+
+      </script>
+
+
+
+    
+    
+    <script type="text/javascript" src="../../../static/bundles/Enrollment.57a1f0e198ade3332c48.3286fd5f3f05.js" ></script>
+      <script type="text/javascript">
+        
+    new CourseEnrollment('.enroll-btn', 'course\u002Dv1:IRONHACK+DAPT+201906_MIA');
+
+      </script>
+
+
+
+
+          
+        </div>
+      </div>
+
+    
+    
+
+
+  </div>
+
+  
+
+
+
+
+<script type="text/javascript">
+    // Fast Preview was introduced in 2.5. However, it
+    // causes undesirable flashing/font size changes when
+    // MathJax is used for interactive preview (equation editor).
+    // Setting processSectionDelay to 0 (see below) fully eliminates
+    // fast preview, but to reduce confusion, we are also setting
+    // the option as displayed in the context menu to false.
+    // When upgrading to 2.6, check if this variable name changed.
+    window.MathJax = {
+      menuSettings: {CHTMLpreview: false}
+    };
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [
+        ["\\(","\\)"],
+        ['[mathjaxinline]','[/mathjaxinline]']
+      ],
+      displayMath: [
+        ["\\[","\\]"],
+        ['[mathjax]','[/mathjax]']
+      ]
+    }
+  });
+</script>
+<script type="text/x-mathjax-config">
+
+  // In order to eliminate all flashing during interactive
+  // preview, it is necessary to set processSectionDelay to 0
+  // (remove delay between input and output phases). This
+  // effectively disables fast preview, regardless of
+  // the fast preview setting as shown in the context menu.
+  MathJax.Hub.processSectionDelay = 0;
+
+  MathJax.Hub.signal.Interest(function(message) {
+    if(message[0] === "End Math") {
+        set_mathjax_display_div_settings();
+    }
+  });
+  function set_mathjax_display_div_settings() {
+    $('.MathJax_Display').each(function( index ) {
+      this.setAttribute('tabindex', '0');
+      this.setAttribute('aria-live', 'off');
+      this.removeAttribute('role');
+      this.removeAttribute('aria-readonly');
+    });
+  }
+</script>
+
+
+<!-- This must appear after all mathjax-config blocks, so it is after the imports from the other templates.
+     It can't be run through static.url because MathJax uses crazy url introspection to do lazy loading of
+     MathJax extension libraries -->
+<script type="text/javascript" src="../../../../cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJaxf4fa.js?config=TeX-MML-AM_SVG"></script>
+
+
+
+  
+
+  
+
+
+
+  <script type="text/javascript" src="../../../static/js/vendor/noreferrer.aa62a3e70ffa.js" charset="utf-8"></script>
+  <script type="text/javascript" src="../../../static/js/utils/navigation.08930e16ab3d.js" charset="utf-8"></script>
+  <script type="text/javascript" src="../../../static/js/header/header.309a1243e175.js"></script>
+  
+
+  
+
+  
+</body>
+</html>
+
+

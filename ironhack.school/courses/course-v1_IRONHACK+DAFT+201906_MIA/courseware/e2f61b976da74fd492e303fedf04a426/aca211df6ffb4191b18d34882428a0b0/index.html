@@ -1,0 +1,1395 @@
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<!--[if lte IE 9]><html class="ie ie9 lte9" lang="en"><![endif]-->
+<!--[if !IE]><!--><html lang="en"><!--<![endif]-->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head dir="ltr">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+  
+<title data-base-title="
+ Capstone Project | DAFT Courseware | Ironhack Student Platform">
+  
+ Capstone Project Template | Capstone Project | DAFT Courseware | Ironhack Student Platform
+</title>
+
+
+      <script type="text/javascript">
+        /* immediately break out of an iframe if coming from the marketing website */
+        (function(window) {
+          if (window.location !== window.top.location) {
+            window.top.location = window.location;
+          }
+        })(this);
+      </script>
+
+  
+
+  <script type="text/javascript" src="../../../../../static/js/i18n/en/djangojs.e37eef1ffc63.js"></script>
+  <script type="text/javascript" src="../../../../../static/js/ie11_find_array.bd1c6dc7a133.js"></script>
+
+  <link rel="icon" type="image/x-icon" href="../../../../../static/ih-lms-theme/images/favicon.0de58aa5bfca.ico" />
+
+  
+  
+
+    <link href="../../../../../static/ih-lms-theme/css/lms-style-vendor.68e48093f5dd.css" rel="stylesheet" type="text/css" />
+
+
+
+      <link rel="stylesheet" href="../../../../../static/ih-lms-theme/css/bootstrap/lms-main.c54b2923d249.css" type="text/css" media="all" />
+
+    
+    <script type="text/javascript" src="../../../../../static/js/lms-main_vendor.a04b73033169.js" charset="utf-8"></script>
+
+
+    
+    <script type="text/javascript" src="../../../../../static/js/lms-application.e7bd4b65d083.js" charset="utf-8"></script>
+
+
+
+  
+    
+    
+    <script type="text/javascript" src="../../../../../static/bundles/commons.d60dcd98c024881d011e.c835e91d09f6.js" ></script>
+
+
+
+  <script>
+    window.baseUrl = "../../../../../static/index.html";
+    (function (require) {
+      require.config({
+          baseUrl: window.baseUrl
+      });
+    }).call(this, require || RequireJS.require);
+  </script>
+  <script type="text/javascript" src="../../../../../static/lms/js/require-config.8e00198660b0.js"></script>
+  
+    <script type="text/javascript">
+        (function (require) {
+          require.config({
+              paths: {
+                'js/courseware/courseware_factory': 'js/courseware/courseware_factory.1504fc10caef',
+'draggabilly': 'js/vendor/draggabilly.26caba6f7187',
+'js/courseware/toggle_element_visibility': 'js/courseware/toggle_element_visibility.d5f10bc65ed0',
+'hls': 'common/js/vendor/hls.b10b9ef4015b',
+'js/courseware/link_clicked_events': 'js/courseware/link_clicked_events',
+'moment': 'common/js/vendor/moment-with-locales.084396f4103c',
+'moment-timezone': 'common/js/vendor/moment-timezone-with-data.60142e6c4416',
+'js/student_account/logistration_factory': 'js/student_account/logistration_factory.d7765e4e6715',
+'js/groups/views/cohorts_dashboard_factory': 'js/groups/views/cohorts_dashboard_factory.7f46663f97b4',
+'js/dateutil_factory': 'js/dateutil_factory.841c29e02056',
+'course_bookmarks/js/views/bookmark_button': 'course_bookmarks/js/views/bookmark_button.d4cfaf3361fa',
+'js/courseware/accordion_events': 'js/courseware/accordion_events.6064c7809de5',
+'js/views/message_banner': 'js/views/message_banner.af013d0ecbd4',
+'js/groups/discussions_management/discussions_dashboard_factory': 'js/discussions_management/views/discussions_dashboard_factory.2e10d9097343',
+'js/courseware/course_info_events': 'js/courseware/course_info_events.2fc35b57627f'
+            }
+          });
+        }).call(this, require || RequireJS.require);
+    </script>
+  
+
+  
+
+  
+
+    <link href="../../../../../static/ih-lms-theme/css/lms-style-course-vendor.691e50c64ad7.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+
+    <link href="../../../../../static/ih-lms-theme/css/lms-course.1d0edf3ec473.css" rel="stylesheet" type="text/css" />
+
+
+
+
+<script type="text/javascript" src="../../../../../static/js/jquery.autocomplete.3bd10d7510d2.js"></script>
+<script type="text/javascript" src="../../../../../static/js/src/tooltip_manager.da362490e199.js"></script>
+
+<link href="../../../../../static/css/vendor/jquery.autocomplete.896181d3ec33.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="../../../../../static/bundles/XModuleShim.68b7a679342e3bdb698f.c506d949a49b.js" ></script>
+<script type="text/javascript" src="../../../../../static/bundles/HtmlModule.174055b73c05dccfbd8b.823874f69fef.js" ></script>
+<script type="text/javascript" src="../../../../../static/bundles/VerticalStudentView.6f1068648eb9e8d18da9.0a2f678d6564.js" ></script>
+<script type="text/javascript" src="../../../../../static/bundles/SequenceModule.251564cf8963e6f00227.ef752443db97.js" ></script>
+
+  
+
+  
+
+
+  
+
+
+<script type="application/json" id="user-metadata">
+    {"username": "NoahB", "enrollment_mode": "audit", "upgrade_link": null, "user_id": 489, "course_start": "2019-06-10T00:00:00+00:00", "upgrade_deadline": null, "course_key_fields": {"org": "IRONHACK", "run": "201906_MIA", "course": "DAFT"}, "course_end": "2019-08-19T00:00:00+00:00", "pacing_type": "instructor_paced", "upgrade_price": "Free", "course_id": "course-v1:IRONHACK+DAFT+201906_MIA", "has_staff_access": false, "forum_roles": [["Student"]], "enrollment_time": "2019-06-11T20:48:51.323840+00:00", "schedule_start": null, "email": "noahbeckerman@gmail.com"}
+</script>
+
+  
+
+  
+
+
+  
+
+
+<!-- dummy Segment -->
+<script type="text/javascript">
+  var analytics = {
+    track: function() { return; },
+    trackLink: function() { return; },
+    pageview: function() { return; },
+    page: function() { return; }
+  };
+</script>
+<!-- end dummy Segment -->
+
+
+  <meta name="path_prefix" content="">
+  
+  
+
+  <meta name="openedx-release-line" content="hawthorn" />
+
+
+
+
+
+
+  <!-- Hotjar Tracking Code for https://ironhack.school -->
+  <script type="text/javascript">
+      (function(h,o,t,j,a,r){
+          h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+          h._hjSettings={hjid:1193918,hjsv:6};
+          a=o.getElementsByTagName('head')[0];
+          r=o.createElement('script');r.async=1;
+          r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+          a.appendChild(r);
+      })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+  </script>
+
+  <script type="text/javascript">
+    function setCookieHideMobileWarning(expiration_hours) {
+      var date = new Date();
+      date.setTime(date.getTime()+(expiration_hours*60*60*1000));
+      var expires = "; expires=" + date.toGMTString();
+      document.cookie = "ihHideMobileWarning=true" + expires;
+    }
+    
+    function isHideMobileWarningCookieSet() {
+      return document.cookie.replace(/(?:(?:^|.*;\s*)ihHideMobileWarning\s*\=\s*([^;]*).*$)|^.*$/, "$1") !== "true"; 
+    }
+
+    function manageMobileWarning(mobile_warning_container) {
+      if (isHideMobileWarningCookieSet()) {
+        var mobile_warning_dismiss = document.getElementsByClassName('ih-js-hide-mobile-warning', mobile_warning_container)[0];
+        mobile_warning_dismiss.addEventListener('click', function() {
+          var expiration_hours = 48;
+          setCookieHideMobileWarning(expiration_hours);
+          mobile_warning_container.classList.add('hidden');
+        });
+      } else {
+        mobile_warning_container.classList.add('hidden');
+      }
+    }
+
+    var checkMobileWarningLayer = function () {
+      var mobile_warning_container = document.getElementsByClassName('ih-mobile-warning-container')[0];
+      (document.body && mobile_warning_container)? manageMobileWarning(mobile_warning_container) :  window.requestAnimationFrame(checkMobileWarningLayer);
+    }
+
+    window.requestAnimationFrame(checkMobileWarningLayer);
+  </script>
+
+</head>
+
+<body class="ltr view-in-course view-courseware courseware  lang_en">
+
+<div class="ih-mobile-warning-container">
+  <img class="logo" src="../../../../../static/ih-lms-theme/images/logo.6230fc40336b.svg" />
+  <div class="ih-mobile-warning-title">
+    The Learning Platform is best experienced on Desktop devices
+  </div>
+  <div class="ih-mobile-warning-description">
+    We recommend using a Desktop device to get the full experience of the Learning Platform.
+  </div>
+  <div class="ih-mobile-warning-dismiss ih-js-hide-mobile-warning">
+   Continue anyway
+  </div>
+</div>
+
+
+<div id="page-prompt"></div>
+  <div class="window-wrap" dir="ltr">
+    <a class="nav-skip sr-only sr-only-focusable" href="#main">Skip to main content</a>
+
+    
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+<header class="global-header slim ih-global-header">
+    <div class="ih-header-wrapper">
+        <div class="main-header ih-main-header">
+            
+
+
+
+
+
+<h1 class="header-logo">
+  <a href="../../../../../dashboard.html">
+    
+    <img  class="logo" src="../../../../../static/ih-lms-theme/images/logo.6230fc40336b.svg" alt="Ironhack Student Platform Home Page"/>
+    
+  </a>
+    <div class="course-header">
+          
+      
+      <span class="course-name">Data Analytics</span>
+    </div>
+</h1>
+
+            <div class="hamburger-menu" role="button" aria-label=Options Menu aria-expanded="false" aria-controls="mobile-menu" tabindex="0">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+                
+
+
+
+
+
+
+
+
+
+
+<div class="nav-links">
+  <div class="main">
+      
+  </div>
+  <div class="secondary ih-secondary">
+    
+
+
+
+
+
+
+  
+
+<div class="nav-item hidden-mobile toggle-user-dropdown ih-username-container">
+    <div class="menu-title">
+        
+        <span class="sr-only">Dashboard for:</span>
+        <span class="username ih-username">Ironhack (NoahB)</span>
+    </div>
+</div>
+<div class="nav-item hidden-mobile nav-item-dropdown ih-dropdown-wrapper" tabindex="-1">
+    <div class="toggle-user-dropdown ih-toggle-user-dropdown" role="button" aria-label=Options Menu aria-expanded="false" tabindex="0" aria-controls="user-menu">
+        <span class="fa fa-caret-down" aria-hidden="true"></span>
+    </div>
+    <div class="dropdown-user-menu hidden ih-dropdown-user-menu" aria-label=More Options role="menu" id="user-menu" tabindex="-1">
+        <div class="mobile-nav-item dropdown-item dropdown-nav-item ih-dropdown-nav-item"><a href="../../../../../dashboard.html" role="menuitem">My courses</a></div>
+            
+        <div class="mobile-nav-item dropdown-item dropdown-nav-item ih-dropdown-nav-item"><a href="../../../../../account/settings.html" role="menuitem">Account</a></div>
+        <div class="mobile-nav-item dropdown-item dropdown-nav-item ih-dropdown-nav-item"><a href="../../../../../index.html" role="menuitem">Sign Out</a></div>
+    </div>
+</div>
+  </div>
+</div>
+        </div>
+        <div class="mobile-menu hidden" aria-label=More Options role="menu" id="mobile-menu"></div>
+    </div>    
+</header>
+
+<!--[if lte IE 9]>
+<div class="ie-banner" aria-hidden="true"><strong>Warning:</strong> Your browser is not fully supported. We strongly recommend using <a href="https://www.google.com/chrome" target="_blank">Chrome</a> or <a href="http://www.mozilla.org/firefox" target="_blank">Firefox</a>.</div>
+<![endif]-->
+
+
+
+
+            
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+    
+    
+
+      <div 
+          class="ih-content"
+      >
+        <div class="marketing-hero"></div>
+
+        <div class="content-wrapper main-container ih-main-container" id="content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/template" id="image-modal-tpl">
+    <div class="wrapper-modal wrapper-modal-image">
+  <section class="image-link">
+    <%= smallHTML%>
+    <a href="#" class="modal-ui-icon action-fullscreen" role="button">
+      <span class="label">
+        <span class="icon fa fa-arrows-alt fa-large" aria-hidden="true"></span> <%- gettext("Fullscreen") %>
+      </span>
+    </a>
+  </section>
+
+  <section class="image-modal">
+    <section class="image-content">
+      <div class="image-wrapper">
+        <img alt="<%= largeALT %>, <%- gettext('Large') %>" src="<%= largeSRC %>" />
+      </div>
+
+      <a href="#" class="modal-ui-icon action-close" role="button">
+        <span class="label">
+          <span class="icon fa fa-remove fa-large" aria-hidden="true"></span> <%- gettext("Close") %>
+        </span>
+      </a>
+
+      <ul class="image-controls">
+        <li class="image-control">
+          <a href="#" class="modal-ui-icon action-zoom-in" role="button">
+            <span class="label">
+              <span class="icon fa fa fa-search-plus fa-large" aria-hidden="true"></span> <%- gettext("Zoom In") %>
+            </span>
+          </a>
+        </li>
+
+        <li class="image-control">
+          <a href="#" class="modal-ui-icon action-zoom-out is-disabled" aria-disabled="true" role="button">
+            <span class="label">
+              <span class="icon fa fa fa-search-minus fa-large" aria-hidden="true"></span> <%- gettext("Zoom Out") %>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </section>
+</div>
+
+</script>
+
+
+
+
+
+
+
+
+<div class="message-banner" aria-live="polite"></div>
+  
+
+
+
+
+
+
+
+
+    
+        <nav class="navbar course-tabs pb-0 navbar-expand ih-navbar-container" aria-label="Course">
+            <ul class="navbar-nav mr-auto ih-course-tabs">
+                    
+                    
+                        <li class="nav-item ih-nav-item active">
+                            <a href="../../../course/index.html" class="nav-link">
+                                Course
+                                    <span class="sr-only">, current location</span>
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="nav-item ih-nav-item ">
+                            <a href="../../../discussion/forum/index.html" class="nav-link">
+                                Discussion
+                            </a>
+                        </li>
+                    
+                    
+            </ul>
+        </nav>
+
+
+<div class="container ih-course-container"
+    lang="en"
+  >
+  <div class="course-wrapper ih-course-wrapper" role="presentation">
+
+    <section class="course-content" id="course-content">
+        <header class="page-header has-secondary">
+            <div class="page-header-main">
+                <nav aria-label="Course" class="sr-is-focusable" tabindex="-1">
+                    <div class="has-breadcrumbs">
+                        <div class="breadcrumbs">
+                                <span class="nav-item nav-item-course">
+                                    <a href="../../../course/index.html">Course</a>
+                                </span>
+                                <span class="icon fa fa-angle-right" aria-hidden="true"></span>
+                                <span class="nav-item nav-item-chapter" data-course-position="4" data-chapter-position="1">
+                                    <a href="../../../course/index.html#block-v1:IRONHACK+DAFT+201906_MIA+type@chapter+block@e2f61b976da74fd492e303fedf04a426">Final Project</a>
+                                </span>
+                                <span class="icon fa fa-angle-right" aria-hidden="true"></span>
+                                <span class="nav-item nav-item-section">
+                                    <a href="../../../course/index.html#block-v1:IRONHACK+DAFT+201906_MIA+type@sequential+block@aca211df6ffb4191b18d34882428a0b0">Capstone Project</a>
+                                </span>
+                                <span class="icon fa fa-angle-right" aria-hidden="true"></span>
+                            <span class="nav-item nav-item-sequence">Capstone Project Template</span>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <main id="main" tabindex="-1" aria-label="Content">
+
+              <div class="xblock xblock-student_view xblock-student_view-sequential xmodule_display xmodule_SequenceModule" data-runtime-class="LmsRuntime" data-init="XBlockToXModuleShim" data-block-type="sequential" data-request-token="a0ca0a36939911e99a866e487447f8c8" data-runtime-version="1" data-usage-id="block-v1:IRONHACK+DAFT+201906_MIA+type@sequential+block@aca211df6ffb4191b18d34882428a0b0" data-type="Sequence" data-course-id="course-v1:IRONHACK+DAFT+201906_MIA">
+  <script type="json/xblock-args" class="xblock-json-init-args">
+    {"xmodule-type": "Sequence"}
+  </script>
+  
+
+
+<div id="sequence_aca211df6ffb4191b18d34882428a0b0" class="sequence" data-id="block-v1:IRONHACK+DAFT+201906_MIA+type@sequential+block@aca211df6ffb4191b18d34882428a0b0" data-position="2" data-ajax-url="/courses/course-v1:IRONHACK+DAFT+201906_MIA/xblock/block-v1:IRONHACK+DAFT+201906_MIA+type@sequential+block@aca211df6ffb4191b18d34882428a0b0/handler/xmodule_handler" data-next-url="None" data-prev-url="/courses/course-v1:IRONHACK+DAFT+201906_MIA/courseware/c36289e68f4e4029a57c62cfbc5b8ec5/e42795de07004f87bc900e4a6ceeb3fe/?child=last">
+
+  <div class="sequence-nav ih-js-fire-highlighting-controls">
+    <button class="sequence-nav-button button-previous">
+      <span class="icon fa fa-chevron-prev" aria-hidden="true"></span>
+      <span class="sequence-nav-button-label">Previous</span>
+    </button>
+    <button class="sequence-nav-button button-next">
+      <span class="sequence-nav-button-label">Next</span>
+      <span class="icon fa fa-chevron-next" aria-hidden="true"></span>
+    </button>
+    <nav class="sequence-list-wrapper" aria-label="Sequence">
+      <ol id="sequence-list" role="tablist">
+        <li role="presentation">
+          <button class="seq_other inactive nav-item tab"
+            role="tab"
+            tabindex="-1"
+            aria-selected="false"
+            aria-expanded="false"
+            aria-controls="seq_content"
+            data-index="0"
+            data-id="block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@ca46380e7bcf4ba4bd76bdda1657d310"
+            data-element="1"
+            data-page-title="Capstone Project Requirements"
+            data-path="Final Project &gt; Capstone Project &gt; Capstone Project Requirements"
+            data-graded="False"
+            id="tab_0"
+            >
+            <span class="icon fa seq_other" aria-hidden="true"></span>
+              <span 
+                class="fa fa-check-circle check-circle is-hidden" 
+                style="color:green"
+                aria-hidden="true"
+              ></span>
+            <span class="fa fa-fw fa-bookmark bookmark-icon is-hidden" aria-hidden="true"></span>
+            <div class="sequence-tooltip sr"><span class="sr">other&nbsp;</span>Capstone Project Requirements<span class="sr bookmark-icon-sr">&nbsp;</span></div>
+          </button>
+        </li>
+        <li role="presentation">
+          <button class="seq_other inactive nav-item tab"
+            role="tab"
+            tabindex="-1"
+            aria-selected="false"
+            aria-expanded="false"
+            aria-controls="seq_content"
+            data-index="1"
+            data-id="block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@bd9076fc94a44ebe80831dac0efc7f99"
+            data-element="2"
+            data-page-title="Capstone Project Template"
+            data-path="Final Project &gt; Capstone Project &gt; Capstone Project Template"
+            data-graded="False"
+            id="tab_1"
+            >
+            <span class="icon fa seq_other" aria-hidden="true"></span>
+              <span 
+                class="fa fa-check-circle check-circle is-hidden" 
+                style="color:green"
+                aria-hidden="true"
+              ></span>
+            <span class="fa fa-fw fa-bookmark bookmark-icon is-hidden" aria-hidden="true"></span>
+            <div class="sequence-tooltip sr"><span class="sr">other&nbsp;</span>Capstone Project Template<span class="sr bookmark-icon-sr">&nbsp;</span></div>
+          </button>
+        </li>
+      </ol>
+    </nav>
+  </div>
+  <div class="sr-is-focusable" tabindex="-1"></div>
+
+  <div id="seq_contents_0"
+    aria-labelledby="tab_0"
+    aria-hidden="true"
+    class="seq_contents tex2jax_ignore asciimath2jax_ignore">
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-vertical&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;VerticalStudentView&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34; data-request-token=&#34;a0ca0a36939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@ca46380e7bcf4ba4bd76bdda1657d310&#34; data-block-type=&#34;vertical&#34;&gt;
+  
+
+  &lt;h2 class=&#34;hd hd-2 unit-title&#34;&gt;Capstone Project Requirements&lt;/h2&gt;
+
+    &lt;div class=&#34;ih-bookmark-button-wrapper&#34;&gt;
+    	
+
+
+
+&lt;div class=&#34;bookmark-button-wrapper&#34;&gt;
+  &lt;button class=&#34;btn btn-link bookmark-button &#34;
+    aria-pressed=&#34;false&#34;
+    data-bookmark-id=&#34;NoahB,block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@ca46380e7bcf4ba4bd76bdda1657d310&#34;
+    data-bookmarks-api-url=&#34;/api/bookmarks/v1/bookmarks/&#34;&gt;
+     &lt;span class=&#34;bookmark-text&#34;&gt;Bookmark this page&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+
+    &lt;/div&gt;	
+
+&lt;div class=&#34;vert-mod&#34;&gt;
+  &lt;div class=&#34;vert vert-0&#34; data-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@d388f85c0e3a4143980d080dc360c6a7&#34;&gt;
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;a0ca0a36939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@d388f85c0e3a4143980d080dc360c6a7&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  &lt;h2&gt;
+    &lt;a id=&#34;user-content-overview&#34; class=&#34;anchor&#34; href=&#34;#overview&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Overview
+&lt;/h2&gt;
+&lt;p&gt;The goal of the Capstone Project is to give you an opportunity to demonstrate the skills you have built throughout this program. In this project, you will use Python, SQL, and Tableau to put together a complete analytics workflow, including:&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;Data acquisition&lt;/li&gt;
+    &lt;li&gt;Data wrangling&lt;/li&gt;
+    &lt;li&gt;Data storage&lt;/li&gt;
+    &lt;li&gt;Data exploration and analysis&lt;/li&gt;
+    &lt;li&gt;Feature selection&lt;/li&gt;
+    &lt;li&gt;Machine learning model training&lt;/li&gt;
+    &lt;li&gt;Model evaluation&lt;/li&gt;
+    &lt;li&gt;Reporting and presentation of insights&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The final project is structured into 4 days in which you build up your deliverables progressively and iteratively. We have provided a list of data sets for you to choose from. However, you are encouraged to obtain your own data sets. Using the knowledge you have acquired and your experience working with data, you will come up with a plan for what you are going to do and then design the project around the data set you have chosen.&lt;/p&gt;
+&lt;p&gt;
+    &lt;strong&gt;You will be working individually for this project&lt;/strong&gt;, but we&#39;ll be guiding you along the process and helping you as you go. You will be working on this project over the course of 4 days. The proposed progression for each day is listed below. However, if you finish a certain step ahead of time, you can proceed to the next step. In that case, you will conduct more iterations of your deliverables by for example deep cleanining your data, selecting better features, comparing different ML models, improving model predictions, and so on. Also, remember that data analysis is iterative. So from time to time you may need to step back to a previous phase and iterate.
+&lt;/p&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-day-1---brain-storming-and-data-preparation&#34; class=&#34;anchor&#34; href=&#34;#day-1---brain-storming-and-data-preparation&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Day 1 - Brain Storming and Data Preparation
+&lt;/h3&gt;
+&lt;ul&gt;
+    &lt;li&gt;Idea generation &amp;amp; planning&lt;/li&gt;
+    &lt;li&gt;Data gathering &amp;amp; cleaning&lt;/li&gt;
+    &lt;li&gt;Data storage&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-day-2---exploratory-data-analysis&#34; class=&#34;anchor&#34; href=&#34;#day-2---exploratory-data-analysis&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Day 2 - Exploratory Data Analysis
+&lt;/h3&gt;
+&lt;ul&gt;
+    &lt;li&gt;Data exploration&lt;/li&gt;
+    &lt;li&gt;Data visualization&lt;/li&gt;
+    &lt;li&gt;Data transformation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-day-3---data-analysis-first-iteration&#34; class=&#34;anchor&#34; href=&#34;#day-3---data-analysis-first-iteration&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Day 3 - Data Analysis First Iteration
+&lt;/h3&gt;
+&lt;ul&gt;
+    &lt;li&gt;Feature selection&lt;/li&gt;
+    &lt;li&gt;Model training and evaluation&lt;/li&gt;
+    &lt;li&gt;Model evaluation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-day-4---data-analysis-more-iterations&#34; class=&#34;anchor&#34; href=&#34;#day-4---data-analysis-more-iterations&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Day 4 - Data Analysis More Iterations
+&lt;/h3&gt;
+&lt;ul&gt;
+    &lt;li&gt;Iterations on your modeling&lt;/li&gt;
+    &lt;li&gt;Model evaluation and comparison&lt;/li&gt;
+    &lt;li&gt;Prepare for presentation&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-project-instructions&#34; class=&#34;anchor&#34; href=&#34;#project-instructions&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Project Instructions
+&lt;/h2&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-day-1&#34; class=&#34;anchor&#34; href=&#34;#day-1&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Day 1
+&lt;/h3&gt;
+&lt;p&gt;On the first day of your project, you will be planning your project, choosing a data set, downloading and cleaning it, and storing it in a MySQL database.&lt;/p&gt;
+&lt;p&gt;To get started, explore and choose from one of the following data sets:&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;
+        &lt;a href=&#34;https://www.kaggle.com/blastchar/telco-customer-churn&#34; rel=&#34;nofollow&#34;&gt;Telecom Customer Churn Data Set&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&#34;https://www.kaggle.com/osmi/mental-health-in-tech-survey&#34; rel=&#34;nofollow&#34;&gt;Mental Health in Tech Survey Data Set&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&#34;https://www.kaggle.com/usdot/flight-delays&#34; rel=&#34;nofollow&#34;&gt;Flight Delays and Cancellations Data Set&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&#34;https://www.kaggle.com/nickhould/craft-cans&#34; rel=&#34;nofollow&#34;&gt;Craft Beers Data Set&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&#34;https://www.kaggle.com/rhuebner/human-resources-data-set&#34; rel=&#34;nofollow&#34;&gt;Human Resources Data Set&lt;/a&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;These are all Kaggle data sets, so you can gain some context about them by looking at the field descriptions and the 
+    &lt;em&gt;Overview&lt;/em&gt; tab for each data set. You can also get project ideas by looking at the different
+    &lt;em&gt;Kernels&lt;/em&gt; that people have created using the data sets and the approaches they have taken, but please
+    &lt;strong&gt;do not plagiarize or copy someone else&#39;s work.&lt;/strong&gt; Remember that the goal of this project is to demonstrate
+    &lt;em&gt;your&lt;/em&gt; skills, not someone else&#39;s.
+&lt;/p&gt;
+&lt;p&gt;You are free to use other data sources from 
+    &lt;a href=&#34;https://www.kaggle.com&#34; rel=&#34;nofollow&#34;&gt;Kaggle&lt;/a&gt;,
+    &lt;a href=&#34;https://archive.ics.uci.edu/ml/datasets.html&#34; rel=&#34;nofollow&#34;&gt;UCI ML Repository&lt;/a&gt;,
+    &lt;a href=&#34;https://www.data.gov/&#34; rel=&#34;nofollow&#34;&gt;data.gov&lt;/a&gt;, public APIs, websites, etc. However you will need to spend more time to search and evaluate the quality and complexity of the data set you want to use. Discuss with your instructor as early as possible regarding your project ideas in order to avoid potential blockers.
+&lt;/p&gt;
+&lt;h4&gt;
+    &lt;a id=&#34;user-content-project-ideas&#34; class=&#34;anchor&#34; href=&#34;#project-ideas&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Project Ideas
+&lt;/h4&gt;
+&lt;p&gt;As you are evaluating the data sets and deciding which you would like to use for your project, think about the different types of information that could be extracted from each one and what problems you could potentially solve. You are not required to use machine learning but it is definitely a plus if you use it. It is totally fine if you are more of a business-focused person and use Tableau to extract business intelligence from the data. It is also fine if you are more of a traditional data analyst and primarily conduct statistical analysis on your data. But challenging your own limit is always beneficial.&lt;/p&gt;
+&lt;p&gt;Below are some ideas for the data sets we selected for you which can help get you started with these data sets.&lt;/p&gt;
+&lt;h5&gt;
+    &lt;a id=&#34;user-content-telecom-customer-churn&#34; class=&#34;anchor&#34; href=&#34;#telecom-customer-churn&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Telecom Customer Churn
+&lt;/h5&gt;
+&lt;p&gt;This data set is great for practicing supervised machine learning. The most obvious supervised learning problem to model with this data set is attempting to predict churn (whether or not a customer is going to leave). Another supervised problem you can try to solve is predicting tenure, or how long a customer will end up staying with the company. There are also a lot of ways to slice, dice, and analyze this data set - for example, looking at how monthly charges increase or decrease depending on different types of contract, tenure, and services provided.&lt;/p&gt;
+&lt;h5&gt;
+    &lt;a id=&#34;user-content-mental-health-in-tech&#34; class=&#34;anchor&#34; href=&#34;#mental-health-in-tech&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Mental Health in Tech
+&lt;/h5&gt;
+&lt;p&gt;This data set is also good for supervised learning, where you would attempt to predict the whether the employee taking the survey has received treatment for mental health (treatment variable). You can also analyze how the other variables in the data set contribute to whether someone seeks treatment for mental health and explore what types of environments result in employees with the best mental heath states.&lt;/p&gt;
+&lt;h5&gt;
+    &lt;a id=&#34;user-content-flight-delays-and-cancellations&#34; class=&#34;anchor&#34; href=&#34;#flight-delays-and-cancellations&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Flight Delays and Cancellations
+&lt;/h5&gt;
+&lt;p&gt;This relational data set can help you practice your SQL joins as well as supervised learning as you attempt to predict which flights will be delayed and by how much time. There are also a variety of ways to explore this data set to determine which airlines are most efficient, what times of day there tends to be the most delays, which cities have more frequent delays than others, and how all this changes over time.&lt;/p&gt;
+&lt;h5&gt;
+    &lt;a id=&#34;user-content-craft-beers&#34; class=&#34;anchor&#34; href=&#34;#craft-beers&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Craft Beers
+&lt;/h5&gt;
+&lt;p&gt;This relational data set has fewer variables than the others, and that means that choosing it for your project will require you to apply some extra creativity. For example, you can create categorical variables out of the numeric abv and ibu variables to categorize a beer&#39;s strength and hopiness. You can also use  string operations on the style field to extract additional keyword-based categories (e.g. IPAs, American, English, Wheat, etc.). For modeling, you can attempt to predict the style of the beer or the probability that it falls into a particular style. Alternatively, you can attempt to compute similarity between beers to determine which ones are most like which other ones.&lt;/p&gt;
+&lt;h5&gt;
+    &lt;a id=&#34;user-content-human-resources&#34; class=&#34;anchor&#34; href=&#34;#human-resources&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Human Resources
+&lt;/h5&gt;
+&lt;p&gt;This is another relational data set where you can practice your SQL joins as well as data wrangling, analysis, and machine learning. As far as applying machine learning to this data set, you can attempt to cluster employees together into similar groups, you can attempt to predict performance scores or pay rate, or you can attempt to predict whether an employee will be terminated within a certain amount of time. Additionally, you can also analyze the relationship between pay and performance by position, department, and manager as well as employee demographics.&lt;/p&gt;
+&lt;p&gt;Once you have chosen a data set, you will need to download it. In order to do so, you will need to create a free Kaggle account if you don&#39;t already have one. Once you have downloaded the data, you should perform the steps below:&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;Create a new MySQL database where your data will eventually be stored.&lt;/li&gt;
+    &lt;li&gt;Create a new Jupyter Notebook for your project.&lt;/li&gt;
+    &lt;li&gt;In the Jupyter Notebook, read the data files using Python.&lt;/li&gt;
+    &lt;li&gt;Perform any necessary data wrangling and cleaning using Python.&lt;/li&gt;
+    &lt;li&gt;Create a connection to your MySQL database using 
+        &lt;code&gt;pymysql&lt;/code&gt; and
+        &lt;code&gt;sqlalchemy&lt;/code&gt; and write the clean version of the data to the database.
+    &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;
+    &lt;a id=&#34;user-content-additional-ideas&#34; class=&#34;anchor&#34; href=&#34;#additional-ideas&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Additional Ideas
+&lt;/h4&gt;
+&lt;h5&gt;
+    &lt;a id=&#34;user-content-analyze-your-own-facebook-data&#34; class=&#34;anchor&#34; href=&#34;#analyze-your-own-facebook-data&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Analyze Your Own Facebook Data
+&lt;/h5&gt;
+&lt;p&gt;Do you know you can download your own Facebook data to your harddisk? You can use this data to do social network analysis or visualize your friendships.&lt;/p&gt;
+&lt;p&gt;
+    &lt;strong&gt;Warning: Downloading your Facebook data takes a lot of time.&lt;/strong&gt; You need to first request your data in your Facebook account. Then Facebook will prepare your data for you to download as a ZIP file. If you request all your data (e.g. posts, photos, likes, friends, places, etc.), it takes at least a whole day for Facebook to get your data ready. But instead of requesting all your data, you can also request only the categories you want to analyze such as friends and places, which takes significantly less time. In either case, request your data as early as you can so that you can have the data before the project week begins.
+&lt;/p&gt;
+&lt;p&gt;Besides, when you request your data from Facebook, choose if you would like the data to be in JSON or HTML format. It&#39;s a strategic choice depending on what topic you want to work on for your final project. If you request JSON, you will be able to focus on data visualization and analysis. If you request HTML, the data may be more suitable for natural language processing but you will need to spend time on parsing the HTML data.&lt;/p&gt;
+&lt;p&gt;Resources:&lt;/p&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://www.facebook.com/help/1701730696756992&#34; rel=&#34;nofollow&#34;&gt;Accessing &amp;amp; Downloading Your Facebook Information&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://linkurio.us/blog/how-to-visualize-your-facebook-network/&#34; rel=&#34;nofollow&#34;&gt;How to Visualize Your Facebook Network&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;
+    &lt;a href=&#34;http://www.fmsasg.com/socialnetworkanalysis/facebook/&#34; rel=&#34;nofollow&#34;&gt;Facebook Social Network Analysis&lt;/a&gt;
+&lt;/p&gt;
+&lt;h5&gt;
+    &lt;a id=&#34;user-content-web-scraping&#34; class=&#34;anchor&#34; href=&#34;#web-scraping&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Web Scraping
+&lt;/h5&gt;
+&lt;p&gt;The web is a free source of unlimited data. There are Wikipedia, Google Maps, YouTube, Amazon, and countless content you can download and dig. General advise? Choose a website you know well and are conerned about. Use API instead of HTML data if you can.&lt;/p&gt;
+&lt;p&gt;Resources:&lt;/p&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://www.quora.com/What-are-some-interesting-web-scraping-projects-you-have-done&#34; rel=&#34;nofollow&#34;&gt;What are some interesting web scraping projects you have done&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://www.agenty.com/docs/blog/39/web-scraping-top-15-ways-to-use-it-for-business&#34; rel=&#34;nofollow&#34;&gt;Web Scraping: Top 15 Ways To Use It For Business&lt;/a&gt;
+&lt;/p&gt;
+&lt;h5&gt;
+    &lt;a id=&#34;user-content-data-visualization&#34; class=&#34;anchor&#34; href=&#34;#data-visualization&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Data Visualization
+&lt;/h5&gt;
+&lt;p&gt;In addition to your Facebook data, there are tons of other data visualizaiton ideas. You can visualize virtually everything such as people, animals, countries, products, music, weather, Github, etc.&lt;/p&gt;
+&lt;p&gt;Resources:&lt;/p&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://blog.udacity.com/2015/01/15-data-visualizations-will-blow-mind.html&#34; rel=&#34;nofollow&#34;&gt;15 Data Visualizations That Will Blow Your Mind&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://carto.com/blog/eighty-data-visualizations-examples-using-location-data-maps/&#34; rel=&#34;nofollow&#34;&gt;80 Data Visualization Examples Using Location Data and Maps&lt;/a&gt;
+&lt;/p&gt;
+&lt;h5&gt;
+    &lt;a id=&#34;user-content-even-more&#34; class=&#34;anchor&#34; href=&#34;#even-more&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Even More
+&lt;/h5&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://www.analyticsvidhya.com/blog/2018/05/24-ultimate-data-science-projects-to-boost-your-knowledge-and-skills/&#34; rel=&#34;nofollow&#34;&gt;24 Ultimate Data Science Projects To Boost Your Knowledge and Skills&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://www.quora.com/What-are-some-good-data-science-projects&#34; rel=&#34;nofollow&#34;&gt;What are some good data science projects?&lt;/a&gt;
+&lt;/p&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-day-2&#34; class=&#34;anchor&#34; href=&#34;#day-2&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Day 2
+&lt;/h3&gt;
+&lt;p&gt;On the second day of your project, you will start with the clean data set you stored in your database on the previous day. You will explore, analyze, and visualize the data using Python and Tableau, applying the variety of techniques you learned throughout the program.&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;In your Jupyter Notebook, read the clean data from your MySQL database.&lt;/li&gt;
+    &lt;li&gt;Using Pandas, generate summaries of the data and calculate descriptive statistics.&lt;/li&gt;
+    &lt;li&gt;Practice generating a few basic charts and graphs using 
+        &lt;code&gt;matplotlib&lt;/code&gt; or
+        &lt;code&gt;seaborn&lt;/code&gt; as well.
+    &lt;/li&gt;
+    &lt;li&gt;Export your clean data set to a CSV file.&lt;/li&gt;
+    &lt;li&gt;Open Tableau Public and load the CSV file.&lt;/li&gt;
+    &lt;li&gt;Explore the data in Tableau and look for interesting insights.&lt;/li&gt;
+    &lt;li&gt;Put together an annotated Tableau Story communicating the insights you have discovered.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-day-3&#34; class=&#34;anchor&#34; href=&#34;#day-3&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Day 3
+&lt;/h3&gt;
+&lt;p&gt;On the third day of your project, you will be using the analysis you performed and the insights you discovered the previous day to help frame your machine learning problem, select and engineer appropriate features, train your models, and evaluate performance.&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;If you are planning on doing supervised machine learning, identify the target variable you would like to train a model to predict. Also determine whether you will be doing regression (target variable is continuous) or classification (target variable is discrete).&lt;/li&gt;
+    &lt;li&gt;Perform feature selection/engineering to arrive at the features you feel best represent the problem you are trying to solve. During this stage, you may need to normalize or scale your variables.&lt;/li&gt;
+    &lt;li&gt;Train a couple machine learning models on the data.&lt;/li&gt;
+    &lt;li&gt;Evaluate the performance of the models.&lt;/li&gt;
+    &lt;li&gt;Prepare a presentation of your findings and results.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-day-4&#34; class=&#34;anchor&#34; href=&#34;#day-4&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Day 4
+&lt;/h3&gt;
+&lt;p&gt;Should you have a fourth day of final project work, you should spend the day refining your machine learning models and your presentation. If you have time, you may also go back and perform additional data exploration and analysis.&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;Continue iterating on your machine learning models with the objective of optimizing their performance.&lt;/li&gt;
+    &lt;li&gt;Organize your machine learning steps into a pipeline that performs feature selection/engineering, model training, model evaluation, and model storage.&lt;/li&gt;
+    &lt;li&gt;Further refine your presentation based on additional findings and results.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-necessary-deliverables&#34; class=&#34;anchor&#34; href=&#34;#necessary-deliverables&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Necessary Deliverables
+&lt;/h2&gt;
+&lt;p&gt;A 
+    &lt;a href=&#34;final-project-template.md&#34;&gt;Final Project Template&lt;/a&gt; has been prepared for you to document and report your final project. You can use the structure in that template to prepare your report or presentation. But you are not limited to the Markdown file format in turning in your report as long as you follow the structure prescribed in the template.
+&lt;/p&gt;
+&lt;p&gt;The following deliverables should be pushed to your Github repo.&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;A Jupyter Notebook (.ipynb) file containing all your Python code.&lt;/li&gt;
+    &lt;li&gt;A data folder containing your original data set and your clean data set in CSV format.&lt;/li&gt;
+    &lt;li&gt;Your final project report/presentation created from template.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-presentation-guideline-and-criteria&#34; class=&#34;anchor&#34; href=&#34;#presentation-guideline-and-criteria&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Presentation Guideline and Criteria
+&lt;/h2&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-format&#34; class=&#34;anchor&#34; href=&#34;#format&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Format
+&lt;/h3&gt;
+&lt;ul&gt;
+    &lt;li&gt;Presentation Time: 12 minutes&lt;/li&gt;
+    &lt;li&gt;Q &amp;amp; A: 3 minutes&lt;/li&gt;
+    &lt;li&gt;
+        &lt;strong&gt;Total Time:&lt;/strong&gt; 15 minutes
+    &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-attire&#34; class=&#34;anchor&#34; href=&#34;#attire&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Attire
+&lt;/h3&gt;
+&lt;ul&gt;
+    &lt;li&gt;DRESS TO IMPRESS: 
+        &lt;a href=&#34;https://en.wikipedia.org/wiki/Smart_casual&#34; rel=&#34;nofollow&#34;&gt;Smart casual&lt;/a&gt; would be great
+    &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-outputs&#34; class=&#34;anchor&#34; href=&#34;#outputs&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Outputs
+&lt;/h3&gt;
+&lt;ul&gt;
+    &lt;li&gt;A presentation in 
+        &lt;a href=&#34;https://slides.com/&#34; rel=&#34;nofollow&#34;&gt;slides.com&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;A demo deployed on GitHub Pages&lt;/li&gt;
+    &lt;li&gt;The presentation and demo will be executed on a class computer (instead of your own)&lt;/li&gt;
+    &lt;li&gt;Get ready to explain some of your code in GitHub&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-things-you-might-want-to-talk-about&#34; class=&#34;anchor&#34; href=&#34;#things-you-might-want-to-talk-about&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Things you might want to talk about
+&lt;/h3&gt;
+&lt;ul&gt;
+    &lt;li&gt;Short presentation of yourself:
+
+        &lt;ul&gt;
+            &lt;li&gt;Who are you?&lt;/li&gt;
+            &lt;li&gt;A hobby you have.&lt;/li&gt;
+            &lt;li&gt;
+                &lt;strong&gt;Note: we are getting you ready for final presentation!&lt;/strong&gt;
+            &lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Elevator pitch:
+
+        &lt;ul&gt;
+            &lt;li&gt;Data set you chose.&lt;/li&gt;
+            &lt;li&gt;Why did you chose that data set?&lt;/li&gt;
+            &lt;li&gt;The most important thing you learned.&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;One technical challenge you faced:
+
+        &lt;ul&gt;
+            &lt;li&gt;Explain the challenge.&lt;/li&gt;
+            &lt;li&gt;Explain how and what you did to overcome it.&lt;/li&gt;
+            &lt;li&gt;Show and explain code snippets in your presentation slides.&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Git:
+
+        &lt;ul&gt;
+            &lt;li&gt;Display a screenshot of your GitHub graphs to show your commit frequency and how much work you did.&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Final Project Walkthrough:
+
+        &lt;ul&gt;
+            &lt;li&gt;Walk the audience through the data set you chose, providing an overview of some of the fields and other information contained in the data.&lt;/li&gt;
+            &lt;li&gt;Walk the audience through your process of cleaning, exploring, analyzing, and performing machine learning on your data including what tools and techniques you employed, what avenues you decided to pursue and why, what interesting insights you discovered, and what lessons you learned.&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Below are a few videos of the Ironhack Hackshow where our graudates presented their final projects. Take a quick look on how our past students presented their projects.&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;
+        &lt;a href=&#34;https://www.youtube.com/watch?v=MnUxEL3iiig&#34; rel=&#34;nofollow&#34;&gt;Web Dev final project demo&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&#34;https://www.youtube.com/watch?v=oII8I2nl7WM&#34; rel=&#34;nofollow&#34;&gt;UX/UI final project demo&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;a href=&#34;https://www.youtube.com/watch?v=64Jav707V9E&#34; rel=&#34;nofollow&#34;&gt;Hackshow diciembre 2017 - Madrid&lt;/a&gt; (Spanish)
+    &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-5-tips-for-successful-completion&#34; class=&#34;anchor&#34; href=&#34;#5-tips-for-successful-completion&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;5 Tips for Successful Completion
+&lt;/h2&gt;
+&lt;ul&gt;
+    &lt;li&gt;
+        &lt;p&gt;Generate a project idea that solves a data problem with practical values. Make sure the problem you try to solve is clearly defined. Make sure the scope of the problem is manageable so that you can complete within the project timeframe. Meanwhile, think beyond the problem itself - can your solution of the problem inform how to solve other bigger/deeper problems?&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p&gt;Obtain timely feedback on your ideas, plans, progress, and products from the instructional staff. This ensures you stay on the right track and deliver impressive results.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p&gt;Be prepared for technical difficulties. Manage your time wisely and pace yourself. Stick to the project agenda strictly.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p&gt;Commit your codes and push to Github on regular basis. You should commit every time you complete a task and push at least once a day. This will help you avoid accidential data loss and is also the easiest way to document your iterative development process.&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p&gt;Before final project presentation, test every component and step of your demo. Make sure your demo will run smoothly.&lt;/p&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-may-the-force-be-with-you&#34; class=&#34;anchor&#34; href=&#34;#may-the-force-be-with-you&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;May the force be with you!
+&lt;/h2&gt;
+&lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+  </div>
+  <div id="seq_contents_1"
+    aria-labelledby="tab_1"
+    aria-hidden="true"
+    class="seq_contents tex2jax_ignore asciimath2jax_ignore">
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-vertical&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;VerticalStudentView&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34; data-request-token=&#34;a0ca0a36939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@bd9076fc94a44ebe80831dac0efc7f99&#34; data-block-type=&#34;vertical&#34;&gt;
+  
+
+  &lt;h2 class=&#34;hd hd-2 unit-title&#34;&gt;Capstone Project Template&lt;/h2&gt;
+
+    &lt;div class=&#34;ih-bookmark-button-wrapper&#34;&gt;
+    	
+
+
+
+&lt;div class=&#34;bookmark-button-wrapper&#34;&gt;
+  &lt;button class=&#34;btn btn-link bookmark-button &#34;
+    aria-pressed=&#34;false&#34;
+    data-bookmark-id=&#34;NoahB,block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@bd9076fc94a44ebe80831dac0efc7f99&#34;
+    data-bookmarks-api-url=&#34;/api/bookmarks/v1/bookmarks/&#34;&gt;
+     &lt;span class=&#34;bookmark-text&#34;&gt;Bookmark this page&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+
+    &lt;/div&gt;	
+
+&lt;div class=&#34;vert-mod&#34;&gt;
+  &lt;div class=&#34;vert vert-0&#34; data-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@fb976fddc9414ff7b8f54eb851781d46&#34;&gt;
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;a0ca0a36939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@fb976fddc9414ff7b8f54eb851781d46&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  &lt;h1&gt;
+    &lt;a id=&#34;user-content-your-final-project-title&#34; class=&#34;anchor&#34; href=&#34;#your-final-project-title&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;[Your Final Project Title]
+&lt;/h1&gt;
+&lt;p&gt;
+    &lt;strong&gt;[Your Name]&lt;/strong&gt;
+&lt;/p&gt;
+&lt;p&gt;
+    &lt;strong&gt;[Your Cohort Campus &amp;amp; Time]&lt;/strong&gt;
+&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-overview&#34; class=&#34;anchor&#34; href=&#34;#overview&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Overview
+&lt;/h2&gt;
+&lt;p&gt;Include the following points in your overview:&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;What data/business/research/personal question you would like to answer?
+
+        &lt;ul&gt;
+            &lt;li&gt;Make sure the question description is human-friendly because you will have non-tech audience to see your final project presentation.&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;What is the hypothesis you would like to test in order to answer your question?
+
+        &lt;ul&gt;
+            &lt;li&gt;Frame your hypothesis with statistical/data languages (i.e. define Null and Alternative Hypothesis). You can use formulas if you want but that is not required.&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;How will you test your hypothesis?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Notes:&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;You can submit the final project with Jupyter Notebook. If you would like to submit a different file format, make sure to discuss with the instructor.&lt;/li&gt;
+    &lt;li&gt;Based on the nature of your goal and your intended problem-solving approach, you are encouraged to use as many skills, technologies, and tools as possible that you have learned in this course, which include but are not limited to:
+
+        &lt;ul&gt;
+            &lt;li&gt;Python&lt;/li&gt;
+            &lt;li&gt;MySQL&lt;/li&gt;
+            &lt;li&gt;Statistical analysis&lt;/li&gt;
+            &lt;li&gt;Data visualization&lt;/li&gt;
+            &lt;li&gt;Jupyter Notebook&lt;/li&gt;
+            &lt;li&gt;Tableau&lt;/li&gt;
+            &lt;li&gt;Machine Learning&lt;/li&gt;
+            &lt;li&gt;Apache Spark / Network Analysis / Natual Language Processing&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Include screenshots wherever relevant.&lt;/li&gt;
+    &lt;li&gt;Feel free to add more sections to this worksheet.&lt;/li&gt;
+    &lt;li&gt;Meet with your instructor/TA on daily basis to obtain feedback and support.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-data-preparation&#34; class=&#34;anchor&#34; href=&#34;#data-preparation&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Data Preparation
+&lt;/h2&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-overview-1&#34; class=&#34;anchor&#34; href=&#34;#overview-1&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Overview:
+&lt;/h3&gt;
+&lt;ul&gt;
+    &lt;li&gt;What is your dataset about?&lt;/li&gt;
+    &lt;li&gt;Where/how did you obtain your dataset?
+
+        &lt;ul&gt;
+            &lt;li&gt;It can be either a public dataset or collected with API/web scraping.&lt;/li&gt;
+            &lt;li&gt;Provide a link if possible.&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;General description of the dataset such as the size, complexity, data types, etc.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-data-ingestion&#34; class=&#34;anchor&#34; href=&#34;#data-ingestion&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Data Ingestion
+&lt;/h3&gt;
+&lt;ul&gt;
+    &lt;li&gt;If you downloaded a dataset (either public or private), describe where you downloaded it and include the command to load the dataset.&lt;/li&gt;
+    &lt;li&gt;If you obtain the data via API/web scraping, provide the scripts.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-data-wrangling-and-cleaning&#34; class=&#34;anchor&#34; href=&#34;#data-wrangling-and-cleaning&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Data Wrangling and Cleaning
+&lt;/h3&gt;
+&lt;ul&gt;
+    &lt;li&gt;Your full process of data wrangling and cleaning.&lt;/li&gt;
+    &lt;li&gt;Document your workflow and thinking process.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-data-storage&#34; class=&#34;anchor&#34; href=&#34;#data-storage&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Data Storage
+&lt;/h3&gt;
+&lt;ul&gt;
+    &lt;li&gt;Dump your data to a MySQL database and/or a 
+        &lt;code&gt;.csv&lt;/code&gt; file.
+    &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-data-analysis&#34; class=&#34;anchor&#34; href=&#34;#data-analysis&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Data Analysis
+&lt;/h2&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-overview-2&#34; class=&#34;anchor&#34; href=&#34;#overview-2&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Overview
+&lt;/h3&gt;
+&lt;p&gt;Overview the general steps you will go through to analyze your data in order to test your hypothesis.&lt;/p&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-data-exploration-and-visualization&#34; class=&#34;anchor&#34; href=&#34;#data-exploration-and-visualization&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Data Exploration and Visualization
+&lt;/h3&gt;
+&lt;ul&gt;
+    &lt;li&gt;Document each step of your data exploration and analysis.&lt;/li&gt;
+    &lt;li&gt;Print charts to demonstrate the effect of your work. Charts make your presentation look good too.&lt;/li&gt;
+    &lt;li&gt;If you use ML in your final project, also describe your feature selection process.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-model-training-and-evaluation&#34; class=&#34;anchor&#34; href=&#34;#model-training-and-evaluation&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Model Training and Evaluation
+&lt;/h3&gt;
+&lt;ul&gt;
+    &lt;li&gt;Train your ML model, produce results, and evaluate.&lt;/li&gt;
+    &lt;li&gt;This is an iterative process. Try your best to improve your model performance by:
+
+        &lt;ul&gt;
+            &lt;li&gt;More data cleaning.&lt;/li&gt;
+            &lt;li&gt;Try different models and select one that is the simplest yet produce the best result.&lt;/li&gt;
+            &lt;li&gt;Try advanced techniques and see if they improve the result.&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-conclusion&#34; class=&#34;anchor&#34; href=&#34;#conclusion&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Conclusion
+&lt;/h2&gt;
+&lt;ul&gt;
+    &lt;li&gt;Summarize your data analysis result.&lt;/li&gt;
+    &lt;li&gt;State your conclusion of your hypothesis testing.&lt;/li&gt;
+    &lt;li&gt;Interpret your findings in terms of the human-understandable question you try to answer.&lt;/li&gt;
+    &lt;li&gt;What are the next steps?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+  </div>
+  <div id="seq_content" class="ih-learnig-unit" role="tabpanel"></div>
+
+  <nav class="sequence-bottom ih-js-fire-highlighting-controls" aria-label="Section">
+    <button class="sequence-nav-button button-previous">
+      <span class="icon fa fa-chevron-prev" aria-hidden="true"></span>
+      <span>Previous</span>
+    </button>
+    <button class="sequence-nav-button button-next">
+      <span>Next</span>
+      <span class="icon fa fa-chevron-next" aria-hidden="true"></span>
+    </button>
+  </nav>
+</div>
+
+</div>
+
+        </main>
+    </section>
+
+    <section class="courseware-results-wrapper">
+      <div id="loading-message" aria-live="polite" aria-relevant="all"></div>
+      <div id="error-message" aria-live="polite"></div>
+      <div class="courseware-results search-results" data-course-id="course-v1:IRONHACK+DAFT+201906_MIA" data-lang-code="en"></div>
+    </section>
+
+  </div>
+  
+
+
+
+
+
+
+
+
+
+    
+    
+    <script type="text/javascript" src="../../../../../static/bundles/CourseSock.43ffb68a30fa51e4e467.1f398818dd61.js" ></script>
+      <script type="text/javascript">
+        
+    new CourseSock({
+        el:'.verification-sock'
+    });
+
+      </script>
+
+
+</div>
+<div class="container-footer">
+</div>
+
+          
+        </div>
+      </div>
+
+    
+    
+
+      <div class="ih-beta-banner">
+        <span class="icon fa fa-flask"></span>
+        <span class="ih-beta-banner-text">We just launched a new version of the student platform. Everything should be fine, but if you encounter a bug, don't hesitate and send it our way.</span>
+      </div>
+
+  </div>
+
+  
+  
+  <script type="text/javascript" src="../../../../../static/common/js/vendor/jquery.scrollTo.525edcc52fe8.js"></script>
+  <script type="text/javascript" src="../../../../../static/js/vendor/flot/jquery.flot.d3d45ff0c6a8.js"></script>
+
+  
+    <script type="text/javascript" src="../../../../../static/js/lms-courseware.43ed60564822.js" charset="utf-8"></script>
+
+
+  
+
+
+
+<script type="text/javascript">
+    // Fast Preview was introduced in 2.5. However, it
+    // causes undesirable flashing/font size changes when
+    // MathJax is used for interactive preview (equation editor).
+    // Setting processSectionDelay to 0 (see below) fully eliminates
+    // fast preview, but to reduce confusion, we are also setting
+    // the option as displayed in the context menu to false.
+    // When upgrading to 2.6, check if this variable name changed.
+    window.MathJax = {
+      menuSettings: {CHTMLpreview: false}
+    };
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [
+        ["\\(","\\)"],
+        ['[mathjaxinline]','[/mathjaxinline]']
+      ],
+      displayMath: [
+        ["\\[","\\]"],
+        ['[mathjax]','[/mathjax]']
+      ]
+    }
+  });
+</script>
+<script type="text/x-mathjax-config">
+
+  // In order to eliminate all flashing during interactive
+  // preview, it is necessary to set processSectionDelay to 0
+  // (remove delay between input and output phases). This
+  // effectively disables fast preview, regardless of
+  // the fast preview setting as shown in the context menu.
+  MathJax.Hub.processSectionDelay = 0;
+
+  MathJax.Hub.signal.Interest(function(message) {
+    if(message[0] === "End Math") {
+        set_mathjax_display_div_settings();
+    }
+  });
+  function set_mathjax_display_div_settings() {
+    $('.MathJax_Display').each(function( index ) {
+      this.setAttribute('tabindex', '0');
+      this.setAttribute('aria-live', 'off');
+      this.removeAttribute('role');
+      this.removeAttribute('aria-readonly');
+    });
+  }
+</script>
+
+
+<!-- This must appear after all mathjax-config blocks, so it is after the imports from the other templates.
+     It can't be run through static.url because MathJax uses crazy url introspection to do lazy loading of
+     MathJax extension libraries -->
+<script type="text/javascript" src="../../../../../../cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJaxf4fa.js?config=TeX-MML-AM_SVG"></script>
+
+
+    
+    
+      <script type="text/javascript" src="../../../../../static/course_search/js/course_search_factory.26a9d7197c46bdd1.js?raw"></script>
+    <script type="text/javascript">
+        (function (require) {
+            require(['course_search/js/course_search_factory'], function (CourseSearchFactory) {
+                
+        var courseId = $('.courseware-results').data('courseId');
+        CourseSearchFactory({
+            courseId: courseId,
+            searchHeader: $('.search-bar')
+        });
+    
+            });
+        }).call(this, require || RequireJS.require);
+    </script>
+
+
+  
+    
+      <script type="text/javascript" src="../../../../../static/js/courseware/courseware_factory.1504fc10caefbdd1.js?raw"></script>
+    <script type="text/javascript">
+        (function (require) {
+            require(['js/courseware/courseware_factory'], function (CoursewareFactory) {
+                
+    CoursewareFactory();
+  
+            });
+        }).call(this, require || RequireJS.require);
+    </script>
+
+
+
+  <script type="text/javascript">
+    var $$course_id = "course\u002Dv1:IRONHACK+DAFT+201906_MIA";
+  </script>
+
+
+
+
+
+
+  
+
+
+
+  <script type="text/javascript" src="../../../../../static/js/vendor/noreferrer.aa62a3e70ffa.js" charset="utf-8"></script>
+  <script type="text/javascript" src="../../../../../static/js/utils/navigation.08930e16ab3d.js" charset="utf-8"></script>
+  <script type="text/javascript" src="../../../../../static/js/header/header.309a1243e175.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="../../../../../static/ih-lms-theme/js/vendor/highlight.min.496e109b43ca.js" ></script>
+    <script type="text/javascript" src="../../../../../static/ih-lms-theme/js/vendor/ih-highlight.0f32f131ba83.js" ></script>
+  
+</body>
+</html>
+
+

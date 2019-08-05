@@ -1,0 +1,1308 @@
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<!--[if lte IE 9]><html class="ie ie9 lte9" lang="en"><![endif]-->
+<!--[if !IE]><!--><html lang="en"><!--<![endif]-->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head dir="ltr">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+  
+<title data-base-title="
+ Applied Statistics in Python | DAFT Courseware | Ironhack Student Platform">
+  
+ Time Series Analysis | Applied Statistics in Python | DAFT Courseware | Ironhack Student Platform
+</title>
+
+
+      <script type="text/javascript">
+        /* immediately break out of an iframe if coming from the marketing website */
+        (function(window) {
+          if (window.location !== window.top.location) {
+            window.top.location = window.location;
+          }
+        })(this);
+      </script>
+
+  
+
+  <script type="text/javascript" src="../../../../../static/js/i18n/en/djangojs.e37eef1ffc63.js"></script>
+  <script type="text/javascript" src="../../../../../static/js/ie11_find_array.bd1c6dc7a133.js"></script>
+
+  <link rel="icon" type="image/x-icon" href="../../../../../static/ih-lms-theme/images/favicon.0de58aa5bfca.ico" />
+
+  
+  
+
+    <link href="../../../../../static/ih-lms-theme/css/lms-style-vendor.68e48093f5dd.css" rel="stylesheet" type="text/css" />
+
+
+
+      <link rel="stylesheet" href="../../../../../static/ih-lms-theme/css/bootstrap/lms-main.c54b2923d249.css" type="text/css" media="all" />
+
+    
+    <script type="text/javascript" src="../../../../../static/js/lms-main_vendor.a04b73033169.js" charset="utf-8"></script>
+
+
+    
+    <script type="text/javascript" src="../../../../../static/js/lms-application.e7bd4b65d083.js" charset="utf-8"></script>
+
+
+
+  
+    
+    
+    <script type="text/javascript" src="../../../../../static/bundles/commons.d60dcd98c024881d011e.c835e91d09f6.js" ></script>
+
+
+
+  <script>
+    window.baseUrl = "../../../../../static/index.html";
+    (function (require) {
+      require.config({
+          baseUrl: window.baseUrl
+      });
+    }).call(this, require || RequireJS.require);
+  </script>
+  <script type="text/javascript" src="../../../../../static/lms/js/require-config.8e00198660b0.js"></script>
+  
+    <script type="text/javascript">
+        (function (require) {
+          require.config({
+              paths: {
+                'js/courseware/courseware_factory': 'js/courseware/courseware_factory.1504fc10caef',
+'draggabilly': 'js/vendor/draggabilly.26caba6f7187',
+'js/courseware/toggle_element_visibility': 'js/courseware/toggle_element_visibility.d5f10bc65ed0',
+'hls': 'common/js/vendor/hls.b10b9ef4015b',
+'js/courseware/link_clicked_events': 'js/courseware/link_clicked_events',
+'moment': 'common/js/vendor/moment-with-locales.084396f4103c',
+'moment-timezone': 'common/js/vendor/moment-timezone-with-data.60142e6c4416',
+'js/student_account/logistration_factory': 'js/student_account/logistration_factory.d7765e4e6715',
+'js/groups/views/cohorts_dashboard_factory': 'js/groups/views/cohorts_dashboard_factory.7f46663f97b4',
+'js/dateutil_factory': 'js/dateutil_factory.841c29e02056',
+'course_bookmarks/js/views/bookmark_button': 'course_bookmarks/js/views/bookmark_button.d4cfaf3361fa',
+'js/courseware/accordion_events': 'js/courseware/accordion_events.6064c7809de5',
+'js/views/message_banner': 'js/views/message_banner.af013d0ecbd4',
+'js/groups/discussions_management/discussions_dashboard_factory': 'js/discussions_management/views/discussions_dashboard_factory.2e10d9097343',
+'js/courseware/course_info_events': 'js/courseware/course_info_events.2fc35b57627f'
+            }
+          });
+        }).call(this, require || RequireJS.require);
+    </script>
+  
+
+  
+
+  
+
+    <link href="../../../../../static/ih-lms-theme/css/lms-style-course-vendor.691e50c64ad7.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+
+    <link href="../../../../../static/ih-lms-theme/css/lms-course.1d0edf3ec473.css" rel="stylesheet" type="text/css" />
+
+
+
+
+<script type="text/javascript" src="../../../../../static/js/jquery.autocomplete.3bd10d7510d2.js"></script>
+<script type="text/javascript" src="../../../../../static/js/src/tooltip_manager.da362490e199.js"></script>
+
+<link href="../../../../../static/css/vendor/jquery.autocomplete.896181d3ec33.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="../../../../../static/bundles/XModuleShim.68b7a679342e3bdb698f.c506d949a49b.js" ></script>
+<script type="text/javascript" src="../../../../../static/bundles/HtmlModule.174055b73c05dccfbd8b.823874f69fef.js" ></script>
+<script type="text/javascript" src="../../../../../static/bundles/VerticalStudentView.6f1068648eb9e8d18da9.0a2f678d6564.js" ></script>
+<script type="text/javascript" src="../../../../../static/bundles/SequenceModule.251564cf8963e6f00227.ef752443db97.js" ></script>
+
+  
+
+  
+
+
+  
+
+
+<script type="application/json" id="user-metadata">
+    {"username": "NoahB", "enrollment_mode": "audit", "upgrade_link": null, "user_id": 489, "course_start": "2019-06-10T00:00:00+00:00", "upgrade_deadline": null, "course_key_fields": {"org": "IRONHACK", "run": "201906_MIA", "course": "DAFT"}, "course_end": "2019-08-19T00:00:00+00:00", "pacing_type": "instructor_paced", "upgrade_price": "Free", "course_id": "course-v1:IRONHACK+DAFT+201906_MIA", "has_staff_access": false, "forum_roles": [["Student"]], "enrollment_time": "2019-06-11T20:48:51.323840+00:00", "schedule_start": null, "email": "noahbeckerman@gmail.com"}
+</script>
+
+  
+
+  
+
+
+  
+
+
+<!-- dummy Segment -->
+<script type="text/javascript">
+  var analytics = {
+    track: function() { return; },
+    trackLink: function() { return; },
+    pageview: function() { return; },
+    page: function() { return; }
+  };
+</script>
+<!-- end dummy Segment -->
+
+
+  <meta name="path_prefix" content="">
+  
+  
+
+  <meta name="openedx-release-line" content="hawthorn" />
+
+
+
+
+
+
+  <!-- Hotjar Tracking Code for https://ironhack.school -->
+  <script type="text/javascript">
+      (function(h,o,t,j,a,r){
+          h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+          h._hjSettings={hjid:1193918,hjsv:6};
+          a=o.getElementsByTagName('head')[0];
+          r=o.createElement('script');r.async=1;
+          r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+          a.appendChild(r);
+      })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+  </script>
+
+  <script type="text/javascript">
+    function setCookieHideMobileWarning(expiration_hours) {
+      var date = new Date();
+      date.setTime(date.getTime()+(expiration_hours*60*60*1000));
+      var expires = "; expires=" + date.toGMTString();
+      document.cookie = "ihHideMobileWarning=true" + expires;
+    }
+    
+    function isHideMobileWarningCookieSet() {
+      return document.cookie.replace(/(?:(?:^|.*;\s*)ihHideMobileWarning\s*\=\s*([^;]*).*$)|^.*$/, "$1") !== "true"; 
+    }
+
+    function manageMobileWarning(mobile_warning_container) {
+      if (isHideMobileWarningCookieSet()) {
+        var mobile_warning_dismiss = document.getElementsByClassName('ih-js-hide-mobile-warning', mobile_warning_container)[0];
+        mobile_warning_dismiss.addEventListener('click', function() {
+          var expiration_hours = 48;
+          setCookieHideMobileWarning(expiration_hours);
+          mobile_warning_container.classList.add('hidden');
+        });
+      } else {
+        mobile_warning_container.classList.add('hidden');
+      }
+    }
+
+    var checkMobileWarningLayer = function () {
+      var mobile_warning_container = document.getElementsByClassName('ih-mobile-warning-container')[0];
+      (document.body && mobile_warning_container)? manageMobileWarning(mobile_warning_container) :  window.requestAnimationFrame(checkMobileWarningLayer);
+    }
+
+    window.requestAnimationFrame(checkMobileWarningLayer);
+  </script>
+
+</head>
+
+<body class="ltr view-in-course view-courseware courseware  lang_en">
+
+<div class="ih-mobile-warning-container">
+  <img class="logo" src="../../../../../static/ih-lms-theme/images/logo.6230fc40336b.svg" />
+  <div class="ih-mobile-warning-title">
+    The Learning Platform is best experienced on Desktop devices
+  </div>
+  <div class="ih-mobile-warning-description">
+    We recommend using a Desktop device to get the full experience of the Learning Platform.
+  </div>
+  <div class="ih-mobile-warning-dismiss ih-js-hide-mobile-warning">
+   Continue anyway
+  </div>
+</div>
+
+
+<div id="page-prompt"></div>
+  <div class="window-wrap" dir="ltr">
+    <a class="nav-skip sr-only sr-only-focusable" href="#main">Skip to main content</a>
+
+    
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+<header class="global-header slim ih-global-header">
+    <div class="ih-header-wrapper">
+        <div class="main-header ih-main-header">
+            
+
+
+
+
+
+<h1 class="header-logo">
+  <a href="../../../../../dashboard.html">
+    
+    <img  class="logo" src="../../../../../static/ih-lms-theme/images/logo.6230fc40336b.svg" alt="Ironhack Student Platform Home Page"/>
+    
+  </a>
+    <div class="course-header">
+          
+      
+      <span class="course-name">Data Analytics</span>
+    </div>
+</h1>
+
+            <div class="hamburger-menu" role="button" aria-label=Options Menu aria-expanded="false" aria-controls="mobile-menu" tabindex="0">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+                
+
+
+
+
+
+
+
+
+
+
+<div class="nav-links">
+  <div class="main">
+      
+  </div>
+  <div class="secondary ih-secondary">
+    
+
+
+
+
+
+
+  
+
+<div class="nav-item hidden-mobile toggle-user-dropdown ih-username-container">
+    <div class="menu-title">
+        
+        <span class="sr-only">Dashboard for:</span>
+        <span class="username ih-username">Ironhack (NoahB)</span>
+    </div>
+</div>
+<div class="nav-item hidden-mobile nav-item-dropdown ih-dropdown-wrapper" tabindex="-1">
+    <div class="toggle-user-dropdown ih-toggle-user-dropdown" role="button" aria-label=Options Menu aria-expanded="false" tabindex="0" aria-controls="user-menu">
+        <span class="fa fa-caret-down" aria-hidden="true"></span>
+    </div>
+    <div class="dropdown-user-menu hidden ih-dropdown-user-menu" aria-label=More Options role="menu" id="user-menu" tabindex="-1">
+        <div class="mobile-nav-item dropdown-item dropdown-nav-item ih-dropdown-nav-item"><a href="../../../../../dashboard.html" role="menuitem">My courses</a></div>
+            
+        <div class="mobile-nav-item dropdown-item dropdown-nav-item ih-dropdown-nav-item"><a href="../../../../../account/settings.html" role="menuitem">Account</a></div>
+        <div class="mobile-nav-item dropdown-item dropdown-nav-item ih-dropdown-nav-item"><a href="../../../../../index.html" role="menuitem">Sign Out</a></div>
+    </div>
+</div>
+  </div>
+</div>
+        </div>
+        <div class="mobile-menu hidden" aria-label=More Options role="menu" id="mobile-menu"></div>
+    </div>    
+</header>
+
+<!--[if lte IE 9]>
+<div class="ie-banner" aria-hidden="true"><strong>Warning:</strong> Your browser is not fully supported. We strongly recommend using <a href="https://www.google.com/chrome" target="_blank">Chrome</a> or <a href="http://www.mozilla.org/firefox" target="_blank">Firefox</a>.</div>
+<![endif]-->
+
+
+
+
+            
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+    
+    
+
+      <div 
+          class="ih-content"
+      >
+        <div class="marketing-hero"></div>
+
+        <div class="content-wrapper main-container ih-main-container" id="content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/template" id="image-modal-tpl">
+    <div class="wrapper-modal wrapper-modal-image">
+  <section class="image-link">
+    <%= smallHTML%>
+    <a href="#" class="modal-ui-icon action-fullscreen" role="button">
+      <span class="label">
+        <span class="icon fa fa-arrows-alt fa-large" aria-hidden="true"></span> <%- gettext("Fullscreen") %>
+      </span>
+    </a>
+  </section>
+
+  <section class="image-modal">
+    <section class="image-content">
+      <div class="image-wrapper">
+        <img alt="<%= largeALT %>, <%- gettext('Large') %>" src="<%= largeSRC %>" />
+      </div>
+
+      <a href="#" class="modal-ui-icon action-close" role="button">
+        <span class="label">
+          <span class="icon fa fa-remove fa-large" aria-hidden="true"></span> <%- gettext("Close") %>
+        </span>
+      </a>
+
+      <ul class="image-controls">
+        <li class="image-control">
+          <a href="#" class="modal-ui-icon action-zoom-in" role="button">
+            <span class="label">
+              <span class="icon fa fa fa-search-plus fa-large" aria-hidden="true"></span> <%- gettext("Zoom In") %>
+            </span>
+          </a>
+        </li>
+
+        <li class="image-control">
+          <a href="#" class="modal-ui-icon action-zoom-out is-disabled" aria-disabled="true" role="button">
+            <span class="label">
+              <span class="icon fa fa fa-search-minus fa-large" aria-hidden="true"></span> <%- gettext("Zoom Out") %>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </section>
+</div>
+
+</script>
+
+
+
+
+
+
+
+
+<div class="message-banner" aria-live="polite"></div>
+  
+
+
+
+
+
+
+
+
+    
+        <nav class="navbar course-tabs pb-0 navbar-expand ih-navbar-container" aria-label="Course">
+            <ul class="navbar-nav mr-auto ih-course-tabs">
+                    
+                    
+                        <li class="nav-item ih-nav-item active">
+                            <a href="../../../course/index.html" class="nav-link">
+                                Course
+                                    <span class="sr-only">, current location</span>
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="nav-item ih-nav-item ">
+                            <a href="../../../discussion/forum/index.html" class="nav-link">
+                                Discussion
+                            </a>
+                        </li>
+                    
+                    
+            </ul>
+        </nav>
+
+
+<div class="container ih-course-container"
+    lang="en"
+  >
+  <div class="course-wrapper ih-course-wrapper" role="presentation">
+
+    <section class="course-content" id="course-content">
+        <header class="page-header has-secondary">
+            <div class="page-header-main">
+                <nav aria-label="Course" class="sr-is-focusable" tabindex="-1">
+                    <div class="has-breadcrumbs">
+                        <div class="breadcrumbs">
+                                <span class="nav-item nav-item-course">
+                                    <a href="../../../course/index.html">Course</a>
+                                </span>
+                                <span class="icon fa fa-angle-right" aria-hidden="true"></span>
+                                <span class="nav-item nav-item-chapter" data-course-position="2" data-chapter-position="4">
+                                    <a href="../../../course/index.html#block-v1:IRONHACK+DAFT+201906_MIA+type@chapter+block@26bdd799b69648c083b612c305cae17b">Module 2</a>
+                                </span>
+                                <span class="icon fa fa-angle-right" aria-hidden="true"></span>
+                                <span class="nav-item nav-item-section">
+                                    <a href="../../../course/index.html#block-v1:IRONHACK+DAFT+201906_MIA+type@sequential+block@aac9162564384e31bf24c402d1064692">Applied Statistics in Python</a>
+                                </span>
+                                <span class="icon fa fa-angle-right" aria-hidden="true"></span>
+                            <span class="nav-item nav-item-sequence">Time Series Analysis</span>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <main id="main" tabindex="-1" aria-label="Content">
+
+              <div class="xblock xblock-student_view xblock-student_view-sequential xmodule_display xmodule_SequenceModule" data-runtime-class="LmsRuntime" data-init="XBlockToXModuleShim" data-block-type="sequential" data-request-token="6ca0a8e6939911e99a866e487447f8c8" data-runtime-version="1" data-usage-id="block-v1:IRONHACK+DAFT+201906_MIA+type@sequential+block@aac9162564384e31bf24c402d1064692" data-type="Sequence" data-course-id="course-v1:IRONHACK+DAFT+201906_MIA">
+  <script type="json/xblock-args" class="xblock-json-init-args">
+    {"xmodule-type": "Sequence"}
+  </script>
+  
+
+
+<div id="sequence_aac9162564384e31bf24c402d1064692" class="sequence" data-id="block-v1:IRONHACK+DAFT+201906_MIA+type@sequential+block@aac9162564384e31bf24c402d1064692" data-position="3" data-ajax-url="/courses/course-v1:IRONHACK+DAFT+201906_MIA/xblock/block-v1:IRONHACK+DAFT+201906_MIA+type@sequential+block@aac9162564384e31bf24c402d1064692/handler/xmodule_handler" data-next-url="/courses/course-v1:IRONHACK+DAFT+201906_MIA/courseware/26bdd799b69648c083b612c305cae17b/2ac2e0eec48f46d8a49b7cd586e3ecab/?child=first" data-prev-url="/courses/course-v1:IRONHACK+DAFT+201906_MIA/courseware/26bdd799b69648c083b612c305cae17b/9dee227c3fd34cdd94674a2643aef397/?child=last">
+
+  <div class="sequence-nav ih-js-fire-highlighting-controls">
+    <button class="sequence-nav-button button-previous">
+      <span class="icon fa fa-chevron-prev" aria-hidden="true"></span>
+      <span class="sequence-nav-button-label">Previous</span>
+    </button>
+    <button class="sequence-nav-button button-next">
+      <span class="sequence-nav-button-label">Next</span>
+      <span class="icon fa fa-chevron-next" aria-hidden="true"></span>
+    </button>
+    <nav class="sequence-list-wrapper" aria-label="Sequence">
+      <ol id="sequence-list" role="tablist">
+        <li role="presentation">
+          <button class="seq_other inactive nav-item tab"
+            role="tab"
+            tabindex="-1"
+            aria-selected="false"
+            aria-expanded="false"
+            aria-controls="seq_content"
+            data-index="0"
+            data-id="block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@798975c30b174a6baaec88f9622e071f"
+            data-element="1"
+            data-page-title="Introduction to Recommender Systems"
+            data-path="Module 2 &gt; Applied Statistics in Python &gt; Introduction to Recommender Systems"
+            data-graded="False"
+            id="tab_0"
+            >
+            <span class="icon fa seq_other" aria-hidden="true"></span>
+              <span 
+                class="fa fa-check-circle check-circle is-hidden" 
+                style="color:green"
+                aria-hidden="true"
+              ></span>
+            <span class="fa fa-fw fa-bookmark bookmark-icon is-hidden" aria-hidden="true"></span>
+            <div class="sequence-tooltip sr"><span class="sr">other&nbsp;</span>Introduction to Recommender Systems<span class="sr bookmark-icon-sr">&nbsp;</span></div>
+          </button>
+        </li>
+        <li role="presentation">
+          <button class="seq_other inactive nav-item tab"
+            role="tab"
+            tabindex="-1"
+            aria-selected="false"
+            aria-expanded="false"
+            aria-controls="seq_content"
+            data-index="1"
+            data-id="block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@057ece429ce94b2d8844f86b4ba1f7c2"
+            data-element="2"
+            data-page-title="Survival Analysis"
+            data-path="Module 2 &gt; Applied Statistics in Python &gt; Survival Analysis"
+            data-graded="False"
+            id="tab_1"
+            >
+            <span class="icon fa seq_other" aria-hidden="true"></span>
+              <span 
+                class="fa fa-check-circle check-circle is-hidden" 
+                style="color:green"
+                aria-hidden="true"
+              ></span>
+            <span class="fa fa-fw fa-bookmark bookmark-icon is-hidden" aria-hidden="true"></span>
+            <div class="sequence-tooltip sr"><span class="sr">other&nbsp;</span>Survival Analysis<span class="sr bookmark-icon-sr">&nbsp;</span></div>
+          </button>
+        </li>
+        <li role="presentation">
+          <button class="seq_other inactive nav-item tab"
+            role="tab"
+            tabindex="-1"
+            aria-selected="false"
+            aria-expanded="false"
+            aria-controls="seq_content"
+            data-index="2"
+            data-id="block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@a9e0c9c70f7342e485991e2fe5928d5c"
+            data-element="3"
+            data-page-title="Time Series Analysis"
+            data-path="Module 2 &gt; Applied Statistics in Python &gt; Time Series Analysis"
+            data-graded="False"
+            id="tab_2"
+            >
+            <span class="icon fa seq_other" aria-hidden="true"></span>
+              <span 
+                class="fa fa-check-circle check-circle is-hidden" 
+                style="color:green"
+                aria-hidden="true"
+              ></span>
+            <span class="fa fa-fw fa-bookmark bookmark-icon is-hidden" aria-hidden="true"></span>
+            <div class="sequence-tooltip sr"><span class="sr">other&nbsp;</span>Time Series Analysis<span class="sr bookmark-icon-sr">&nbsp;</span></div>
+          </button>
+        </li>
+      </ol>
+    </nav>
+  </div>
+  <div class="sr-is-focusable" tabindex="-1"></div>
+
+  <div id="seq_contents_0"
+    aria-labelledby="tab_0"
+    aria-hidden="true"
+    class="seq_contents tex2jax_ignore asciimath2jax_ignore">
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-vertical&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;VerticalStudentView&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34; data-request-token=&#34;6ca0a8e6939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@798975c30b174a6baaec88f9622e071f&#34; data-block-type=&#34;vertical&#34;&gt;
+  
+
+  &lt;h2 class=&#34;hd hd-2 unit-title&#34;&gt;Introduction to Recommender Systems&lt;/h2&gt;
+
+    &lt;div class=&#34;ih-bookmark-button-wrapper&#34;&gt;
+    	
+
+
+
+&lt;div class=&#34;bookmark-button-wrapper&#34;&gt;
+  &lt;button class=&#34;btn btn-link bookmark-button &#34;
+    aria-pressed=&#34;false&#34;
+    data-bookmark-id=&#34;NoahB,block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@798975c30b174a6baaec88f9622e071f&#34;
+    data-bookmarks-api-url=&#34;/api/bookmarks/v1/bookmarks/&#34;&gt;
+     &lt;span class=&#34;bookmark-text&#34;&gt;Bookmark this page&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+
+    &lt;/div&gt;	
+
+&lt;div class=&#34;vert-mod&#34;&gt;
+  &lt;div class=&#34;vert vert-0&#34; data-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@95e4bfa3dc2748a384feaa97b339cb7a&#34;&gt;
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;6ca0a8e6939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@95e4bfa3dc2748a384feaa97b339cb7a&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  &lt;h2&gt;
+&lt;a id=&#34;user-content-lesson-goals&#34; class=&#34;anchor&#34; href=&#34;#lesson-goals&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Lesson Goals&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Learn about recommender systems.&lt;/li&gt;
+&lt;li&gt;Define collaborative filtering.&lt;/li&gt;
+&lt;li&gt;Visualize user ratings across preference space.&lt;/li&gt;
+&lt;li&gt;Calculate user similarities across all preference spaces.&lt;/li&gt;
+&lt;li&gt;Use similarity scores to weight ratings.&lt;/li&gt;
+&lt;li&gt;Rank weighted ratings to produce recommendations.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;
+&lt;a id=&#34;user-content-introduction&#34; class=&#34;anchor&#34; href=&#34;#introduction&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Recommender systems are a foundational part of the digital world today. They are used to personalize the experience a user has with a website or application, thus making it more useful to the user. Some of today&#39;s most prominent companies have recommender systems at the core of the customer experience.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Amazon recommends you products based on past product purchases, ratings, and the purchases/ratings of other customers similar to you.&lt;/li&gt;
+&lt;li&gt;Netflix recommends you movies based on the movies you&#39;ve watched, your rating of movies, and the behavior of other users similar to you.&lt;/li&gt;
+&lt;li&gt;Facebook, Twitter, &amp;amp; LinkedIn recommend people you might know based on your connections and the connections of those you are connected to and also use this information to personalize your newsfeed.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In this lesson, we will learn the fundamentals of recommender systems, how they work, and how to create a basic user-based filtering system using Python.&lt;/p&gt;
+&lt;h2&gt;
+&lt;a id=&#34;user-content-collaborative-filtering&#34; class=&#34;anchor&#34; href=&#34;#collaborative-filtering&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Collaborative Filtering&lt;/h2&gt;
+&lt;p&gt;Before recommender systems existed, the primary way to get recommendations about things like movies or products was to ask your friends. As you followed recommendations from them, you would get a sense of which friends had tastes that were most similar to yours and rely on their recommendations more frequently. However, as the number of options available to us has increased drastically over the last few decades, it became increasingly difficult to rely on recommendations from a small group of friends because it also became increasingly likely that they were not aware of all the available options. The solution for this was a method called &lt;em&gt;collaborative filtering&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;Collaborative filtering provides us with a way of making automatic predictions (filtering) about the interests of a user by collecting preferences from many users (collaborating). The underlying assumption is that if two people have the same opinion on one issue, they are likely to have a similar opinion on other issues as well. There are a few different ways to approach collaborative filtering, but generally speaking, they involve finding a group of people similar to a user, analyzing the things they like, and coming up with a ranked list of recommendations for the user.&lt;/p&gt;
+&lt;h2&gt;
+&lt;a id=&#34;user-content-user-similarity&#34; class=&#34;anchor&#34; href=&#34;#user-similarity&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;User Similarity&lt;/h2&gt;
+&lt;p&gt;User similarity is at the heart of collaborative filtering. In order to make good recommendations, we need to know how alike two users are. The way to do this is by comparing how similar their ratings for the same product have been. For example, let&#39;s import the &lt;a href=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/data/module-2/movie_ratings.csv&#34; rel=&#34;nofollow&#34;&gt;movie_ratings.csv&lt;/a&gt; file.&lt;/p&gt;
+&lt;div class=&#34;highlight highlight-source-python&#34;&gt;&lt;pre&gt;&lt;span class=&#34;pl-k&#34;&gt;import&lt;/span&gt; pandas &lt;span class=&#34;pl-k&#34;&gt;as&lt;/span&gt; pd
+
+ratings &lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt; pd.read_csv(&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;movie_ratings.csv&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;).set_index(&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Movie&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;)&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This data frame contains 10 movies and ratings from 5 users on a scale from 1 (they didn&#39;t like it) to 5 (they loved it).&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/6c5d26f8a9ee8eed174ffdc342ea899a45b9e3ba/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6d6f7669652d726174696e67732e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/6c5d26f8a9ee8eed174ffdc342ea899a45b9e3ba/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6d6f7669652d726174696e67732e706e67&#34; alt=&#34;Movie Ratings Data Set&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/movie-ratings.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;If we wanted to take a look at their user ratings across the preference space of two movies, we could define a function that accepts two movie titles and scatter plots the user ratings as follows.&lt;/p&gt;
+&lt;div class=&#34;highlight highlight-source-python&#34;&gt;&lt;pre&gt;&lt;span class=&#34;pl-k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;pl-en&#34;&gt;ratings_scatter&lt;/span&gt;(&lt;span class=&#34;pl-smi&#34;&gt;movie1&lt;/span&gt;, &lt;span class=&#34;pl-smi&#34;&gt;movie2&lt;/span&gt;):
+    x &lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt; ratings.T[movie1]
+    y &lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt; ratings.T[movie2]
+    n &lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;pl-c1&#34;&gt;list&lt;/span&gt;(ratings.T.index)
+
+    fig, ax &lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt; plt.subplots()
+    ax.scatter(x, y, &lt;span class=&#34;pl-v&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-c1&#34;&gt;0&lt;/span&gt;)
+    fig.set_figwidth(&lt;span class=&#34;pl-c1&#34;&gt;12&lt;/span&gt;)
+    fig.set_figheight(&lt;span class=&#34;pl-c1&#34;&gt;8&lt;/span&gt;)
+    plt.title(&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#34;&lt;/span&gt;Preference Space for &lt;span class=&#34;pl-pds&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;+&lt;/span&gt; movie1 &lt;span class=&#34;pl-k&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#34;&lt;/span&gt; vs. &lt;span class=&#34;pl-pds&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt; &lt;span class=&#34;pl-k&#34;&gt;+&lt;/span&gt; movie2, &lt;span class=&#34;pl-v&#34;&gt;fontsize&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-c1&#34;&gt;20&lt;/span&gt;)
+    ax.set_xlabel(movie1, &lt;span class=&#34;pl-v&#34;&gt;fontsize&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-c1&#34;&gt;16&lt;/span&gt;)
+    ax.set_ylabel(movie2, &lt;span class=&#34;pl-v&#34;&gt;fontsize&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-c1&#34;&gt;16&lt;/span&gt;) 
+
+    &lt;span class=&#34;pl-k&#34;&gt;for&lt;/span&gt; i, txt &lt;span class=&#34;pl-k&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;pl-c1&#34;&gt;enumerate&lt;/span&gt;(n):
+        ax.annotate(txt, (x[i], y[i]), &lt;span class=&#34;pl-v&#34;&gt;fontsize&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-c1&#34;&gt;12&lt;/span&gt;)&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Then, we would just need to choose two titles and generate the plot to visualize the preference space for users across those two movies. For example, below is the preference space across the movies Venom and Incredibles 2.&lt;/p&gt;
+&lt;div class=&#34;highlight highlight-source-python&#34;&gt;&lt;pre&gt;ratings_scatter(&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Venom&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Incredibles 2&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;)&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/2105bc4488ebfeb4f759fd7d3cf0f43a851e1d84/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f707265666572656e63652d73706163652d76656e6f6d2d696e6372656469626c65732e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/2105bc4488ebfeb4f759fd7d3cf0f43a851e1d84/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f707265666572656e63652d73706163652d76656e6f6d2d696e6372656469626c65732e706e67&#34; alt=&#34;Preference Space Venom Incredibles&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/preference-space-venom-incredibles.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;We can see that across this preference space, Rusty is more similar to Brandon than he is Emily. However, this can vary across different sets of movies. If we instead scatter plot the ratings for Bohemian Rhapsody and Jurassic World, Rusty is more similar to Emily than to Brandon in this preference space.&lt;/p&gt;
+&lt;div class=&#34;highlight highlight-source-python&#34;&gt;&lt;pre&gt;ratings_scatter(&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Bohemian Rhapsody&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Jurassic World: Fallen Kingdom&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;)&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/d394cc98f142490bab332b7cfc57f395441c4ec4/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f707265666572656e63652d73706163652d626f68656d69616e2d6a757261737369632e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/d394cc98f142490bab332b7cfc57f395441c4ec4/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f707265666572656e63652d73706163652d626f68656d69616e2d6a757261737369632e706e67&#34; alt=&#34;Preference Space Bohemian Jurassic&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/preference-space-bohemian-jurassic.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;To get the aggregate distance across all the preference spaces, we can use &lt;code&gt;squareform&lt;/code&gt; and &lt;code&gt;pdist&lt;/code&gt; from the Scipy library to create a matrix containing the Euclidean distances between all our users.&lt;/p&gt;
+&lt;div class=&#34;highlight highlight-source-python&#34;&gt;&lt;pre&gt;&lt;span class=&#34;pl-k&#34;&gt;from&lt;/span&gt; scipy.spatial.distance &lt;span class=&#34;pl-k&#34;&gt;import&lt;/span&gt; pdist, squareform
+
+squareform(pdist(ratings.T, &lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;euclidean&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;))
+
+array([[&lt;span class=&#34;pl-c1&#34;&gt;0&lt;/span&gt;., &lt;span class=&#34;pl-c1&#34;&gt;6.63324958&lt;/span&gt;, &lt;span class=&#34;pl-c1&#34;&gt;6&lt;/span&gt;., &lt;span class=&#34;pl-c1&#34;&gt;7.41619849&lt;/span&gt;, &lt;span class=&#34;pl-c1&#34;&gt;7.48331477&lt;/span&gt;],
+       [&lt;span class=&#34;pl-c1&#34;&gt;6.63324958&lt;/span&gt;, &lt;span class=&#34;pl-c1&#34;&gt;0&lt;/span&gt;., &lt;span class=&#34;pl-c1&#34;&gt;6.92820323&lt;/span&gt;, &lt;span class=&#34;pl-c1&#34;&gt;6.40312424&lt;/span&gt;, &lt;span class=&#34;pl-c1&#34;&gt;5.09901951&lt;/span&gt;],
+       [&lt;span class=&#34;pl-c1&#34;&gt;6&lt;/span&gt;., &lt;span class=&#34;pl-c1&#34;&gt;6.92820323&lt;/span&gt;, &lt;span class=&#34;pl-c1&#34;&gt;0&lt;/span&gt;., &lt;span class=&#34;pl-c1&#34;&gt;5.56776436&lt;/span&gt;, &lt;span class=&#34;pl-c1&#34;&gt;8.24621125&lt;/span&gt;],
+       [&lt;span class=&#34;pl-c1&#34;&gt;7.41619849&lt;/span&gt;, &lt;span class=&#34;pl-c1&#34;&gt;6.40312424&lt;/span&gt;, &lt;span class=&#34;pl-c1&#34;&gt;5.56776436&lt;/span&gt;, &lt;span class=&#34;pl-c1&#34;&gt;0&lt;/span&gt;., &lt;span class=&#34;pl-c1&#34;&gt;6.70820393&lt;/span&gt;],
+       [&lt;span class=&#34;pl-c1&#34;&gt;7.48331477&lt;/span&gt;, &lt;span class=&#34;pl-c1&#34;&gt;5.09901951&lt;/span&gt;, &lt;span class=&#34;pl-c1&#34;&gt;8.24621125&lt;/span&gt;, &lt;span class=&#34;pl-c1&#34;&gt;6.70820393&lt;/span&gt;, &lt;span class=&#34;pl-c1&#34;&gt;0&lt;/span&gt;.        ]])&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;These distances are smaller for users that are more similar, but for our purposes it would be preferable to have a higher score for users that are more similar and a lower score for users that are less similar. We can easily achieve this by adding 1 to the scores and inverting them. Let&#39;s also import them into a data frame so that we can more easily view and analyze them.&lt;/p&gt;
+&lt;div class=&#34;highlight highlight-source-python&#34;&gt;&lt;pre&gt;distances &lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt; pd.DataFrame(&lt;span class=&#34;pl-c1&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;/&lt;/span&gt;(&lt;span class=&#34;pl-c1&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;pl-k&#34;&gt;+&lt;/span&gt; squareform(pdist(ratings.T, &lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;euclidean&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;))), 
+                         &lt;span class=&#34;pl-v&#34;&gt;index&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;ratings.columns, &lt;span class=&#34;pl-v&#34;&gt;columns&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;ratings.columns)
+
+distances&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/99310f26985bdd1d6088c0445060aa44538781f5/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f757365722d64697374616e6365732e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/99310f26985bdd1d6088c0445060aa44538781f5/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f757365722d64697374616e6365732e706e67&#34; alt=&#34;User Distances&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/user-distances.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;
+&lt;a id=&#34;user-content-generating-recommendations-for-a-user&#34; class=&#34;anchor&#34; href=&#34;#generating-recommendations-for-a-user&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Generating Recommendations for a User&lt;/h2&gt;
+&lt;p&gt;Suppose that we had a new user named Tom who came to us with the following ratings for each movie.&lt;/p&gt;
+&lt;div class=&#34;highlight highlight-source-python&#34;&gt;&lt;pre&gt;tom &lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt; {&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Aquaman&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;: &lt;span class=&#34;pl-c1&#34;&gt;2&lt;/span&gt;,
+ &lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Avengers: Infinity War&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;: &lt;span class=&#34;pl-c1&#34;&gt;1&lt;/span&gt;,
+ &lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Black Panther&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;: &lt;span class=&#34;pl-c1&#34;&gt;5&lt;/span&gt;,
+ &lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Bohemian Rhapsody&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;: &lt;span class=&#34;pl-c1&#34;&gt;5&lt;/span&gt;,
+ &lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Deadpool 2&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;: &lt;span class=&#34;pl-c1&#34;&gt;2&lt;/span&gt;,
+ &lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Fantastic Beasts: The Crimes of Grindelwald&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;: &lt;span class=&#34;pl-c1&#34;&gt;3&lt;/span&gt;,
+ &lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Incredibles 2&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;: &lt;span class=&#34;pl-c1&#34;&gt;3&lt;/span&gt;,
+ &lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Jurassic World: Fallen Kingdom&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;: &lt;span class=&#34;pl-c1&#34;&gt;4&lt;/span&gt;,
+ &lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Mission: Impossible вЂ“ Fallout&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;: &lt;span class=&#34;pl-c1&#34;&gt;3&lt;/span&gt;,
+ &lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Venom&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;: &lt;span class=&#34;pl-c1&#34;&gt;3&lt;/span&gt;}&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We could factor Tom into our similarity matrix and then determine which other users are most similar to him.&lt;/p&gt;
+&lt;div class=&#34;highlight highlight-source-python&#34;&gt;&lt;pre&gt;ratings[&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Tom&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;] &lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt; pd.Series(tom)
+
+distances &lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt; pd.DataFrame(&lt;span class=&#34;pl-c1&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;/&lt;/span&gt;(&lt;span class=&#34;pl-c1&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;pl-k&#34;&gt;+&lt;/span&gt; squareform(pdist(ratings.T, &lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;euclidean&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;))), 
+                         &lt;span class=&#34;pl-v&#34;&gt;index&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;ratings.columns, &lt;span class=&#34;pl-v&#34;&gt;columns&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;ratings.columns)
+
+similarities &lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt; distances[&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Tom&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;].sort_values(&lt;span class=&#34;pl-v&#34;&gt;ascending&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-c1&#34;&gt;False&lt;/span&gt;)[&lt;span class=&#34;pl-c1&#34;&gt;1&lt;/span&gt;:]
+similarities
+
+Cleo        &lt;span class=&#34;pl-c1&#34;&gt;0.217129&lt;/span&gt;
+Brandon     &lt;span class=&#34;pl-c1&#34;&gt;0.156613&lt;/span&gt;
+Emily       &lt;span class=&#34;pl-c1&#34;&gt;0.135078&lt;/span&gt;
+Rusty       &lt;span class=&#34;pl-c1&#34;&gt;0.126132&lt;/span&gt;
+Samantha    &lt;span class=&#34;pl-c1&#34;&gt;0.116961&lt;/span&gt;
+Name: Tom, dtype: float64&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;It looks like Cleo is the user that is most similar to Tom, followed by Brandon, Emily, Rusty, and then Samantha. These similarity scores should be taken into consideration when recommending movies to Tom that he has not yet seen.&lt;/p&gt;
+&lt;p&gt;Let&#39;s say that everyone but Tom also rated the movies in the &lt;a href=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/data/module-2/movie_ratings2.csv&#34; rel=&#34;nofollow&#34;&gt;movie_ratings2.csv&lt;/a&gt; file. Let&#39;s import those ratings and then combine them with the similarity scores to generate movie recommendations to Tom.&lt;/p&gt;
+&lt;div class=&#34;highlight highlight-source-python&#34;&gt;&lt;pre&gt;new_ratings &lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt; pd.read_csv(&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;movie_ratings2.csv&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;).set_index(&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Movie&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;)&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Once we have our new_ratings data frame, we are going to copy it to a new recommendations data frame which we will perform our calculations on.&lt;/p&gt;
+&lt;div class=&#34;highlight highlight-source-python&#34;&gt;&lt;pre&gt;recommendations &lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt; new_ratings.copy()&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We are going to iterate through each of the other users&#39; similarity scores with Tom and weight their recommendations of these new movies by their similarity score. We are then going to create a new Total column that sums up the total scores for each movie and sort on that so that the movies are in the order that they should be recommended to Tom.&lt;/p&gt;
+&lt;div class=&#34;highlight highlight-source-python&#34;&gt;&lt;pre&gt;&lt;span class=&#34;pl-k&#34;&gt;for&lt;/span&gt; name, score &lt;span class=&#34;pl-k&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;pl-c1&#34;&gt;dict&lt;/span&gt;(similarities).items():
+    recommendations[name] &lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt; recommendations[name] &lt;span class=&#34;pl-k&#34;&gt;*&lt;/span&gt; score
+
+recommendations[&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Total&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;] &lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt; recommendations.sum(&lt;span class=&#34;pl-v&#34;&gt;axis&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-c1&#34;&gt;1&lt;/span&gt;)
+recommendations.sort_values(&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Total&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;ascending&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-c1&#34;&gt;False&lt;/span&gt;)&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/1cfa622e6a9bd92d8f4ffaadbafb74fb62a17367/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6d6f7669652d7265636f6d6d656e646174696f6e732e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/1cfa622e6a9bd92d8f4ffaadbafb74fb62a17367/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6d6f7669652d7265636f6d6d656e646174696f6e732e706e67&#34; alt=&#34;Movie Recommendations&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/movie-recommendations.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;From these results, it looks like Tom should like Despicable Me 3, Wonder Woman, and Thor but perhaps not Star Wars or The Fate of the Furious.&lt;/p&gt;
+&lt;h2&gt;
+&lt;a id=&#34;user-content-using-different-similarity-metrics&#34; class=&#34;anchor&#34; href=&#34;#using-different-similarity-metrics&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Using Different Similarity Metrics&lt;/h2&gt;
+&lt;p&gt;Now that we have generated an initial set of recommendations, there is an important topic we would like to circle back and discuss. When we computed our user similarity metrics, we used Euclidean distance as our distance metric. It is important to note that there are a number of other distance metrics in Scipy that we could potentially use to get different results. A full list of all the ones available can be found &lt;a href=&#34;https://docs.scipy.org/doc/scipy/reference/spatial.distance.html&#34; rel=&#34;nofollow&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;To see what the recommendations look like using a different distance metric, all we need to do is swap out the name if the metric in the first line of code below. For example, if we wanted to use cosine distance instead, the results would look like this.&lt;/p&gt;
+&lt;div class=&#34;highlight highlight-source-python&#34;&gt;&lt;pre&gt;distances &lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt; pd.DataFrame(&lt;span class=&#34;pl-c1&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;/&lt;/span&gt;(&lt;span class=&#34;pl-c1&#34;&gt;1&lt;/span&gt; &lt;span class=&#34;pl-k&#34;&gt;+&lt;/span&gt; squareform(pdist(ratings.T, &lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;cosine&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;))), 
+                         &lt;span class=&#34;pl-v&#34;&gt;index&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;ratings.columns, &lt;span class=&#34;pl-v&#34;&gt;columns&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;ratings.columns)
+
+similarities &lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt; distances[&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Tom&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;].sort_values(&lt;span class=&#34;pl-v&#34;&gt;ascending&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-c1&#34;&gt;False&lt;/span&gt;)[&lt;span class=&#34;pl-c1&#34;&gt;1&lt;/span&gt;:]
+
+recommendations &lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt; new_ratings.copy()
+
+&lt;span class=&#34;pl-k&#34;&gt;for&lt;/span&gt; name, score &lt;span class=&#34;pl-k&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;pl-c1&#34;&gt;dict&lt;/span&gt;(similarities).items():
+    recommendations[name] &lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt; recommendations[name] &lt;span class=&#34;pl-k&#34;&gt;*&lt;/span&gt; score
+    
+recommendations[&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Total&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;] &lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt; recommendations.sum(&lt;span class=&#34;pl-v&#34;&gt;axis&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-c1&#34;&gt;1&lt;/span&gt;)
+recommendations.sort_values(&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Total&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;ascending&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-c1&#34;&gt;False&lt;/span&gt;)&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/99a6c4cb875ff4b995501eaf3d1c35676aecc674/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7265636f6d6d656e646174696f6e732d636f73696e652e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/99a6c4cb875ff4b995501eaf3d1c35676aecc674/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7265636f6d6d656e646174696f6e732d636f73696e652e706e67&#34; alt=&#34;Movie Recommendations&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/recommendations-cosine.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;We can see that Wonder Woman is now at the top of the list, Guardians of the Galaxy dropped a few places, and Wolf Warrior crept up to the number 4 spot.&lt;/p&gt;
+&lt;p&gt;If we tried cityblock distance instead, Guardians of the Galaxy shoots up to the number 3 spot and Spider-Man creeps up into the top 5.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/98dcecde5c82c7941b2435cf8d5ec5a1990e9e03/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7265636f6d6d656e646174696f6e732d63697479626c6f636b2e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/98dcecde5c82c7941b2435cf8d5ec5a1990e9e03/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7265636f6d6d656e646174696f6e732d63697479626c6f636b2e706e67&#34; alt=&#34;Movie Recommendations&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/recommendations-cityblock.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Try some of the other distance metrics and note the impact on the rankings.&lt;/p&gt;
+&lt;h2&gt;
+&lt;a id=&#34;user-content-summary&#34; class=&#34;anchor&#34; href=&#34;#summary&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Summary&lt;/h2&gt;
+&lt;p&gt;In this lesson, we provided an introduction to recommender systems and took a look at how we could create a user-based filtering recommender. Along the way, we visualized user preference spaces for pairs of movies, calculated similarity scores between groups of users, and combined those similarity scores with ratings to rank movies so that we could recommend them to a particular user. This is just the tip of the iceberg when it comes to recommender systems, but hopefully this lesson gave you a sense of how these types of systems work and how you might put one together of your very own.&lt;/p&gt;
+
+&lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+  </div>
+  <div id="seq_contents_1"
+    aria-labelledby="tab_1"
+    aria-hidden="true"
+    class="seq_contents tex2jax_ignore asciimath2jax_ignore">
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-vertical&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;VerticalStudentView&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34; data-request-token=&#34;6ca0a8e6939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@057ece429ce94b2d8844f86b4ba1f7c2&#34; data-block-type=&#34;vertical&#34;&gt;
+  
+
+  &lt;h2 class=&#34;hd hd-2 unit-title&#34;&gt;Survival Analysis&lt;/h2&gt;
+
+    &lt;div class=&#34;ih-bookmark-button-wrapper&#34;&gt;
+    	
+
+
+
+&lt;div class=&#34;bookmark-button-wrapper&#34;&gt;
+  &lt;button class=&#34;btn btn-link bookmark-button &#34;
+    aria-pressed=&#34;false&#34;
+    data-bookmark-id=&#34;NoahB,block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@057ece429ce94b2d8844f86b4ba1f7c2&#34;
+    data-bookmarks-api-url=&#34;/api/bookmarks/v1/bookmarks/&#34;&gt;
+     &lt;span class=&#34;bookmark-text&#34;&gt;Bookmark this page&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+
+    &lt;/div&gt;	
+
+&lt;div class=&#34;vert-mod&#34;&gt;
+  &lt;div class=&#34;vert vert-0&#34; data-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@adaf72df36a34cd4be746331586168c7&#34;&gt;
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;6ca0a8e6939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@adaf72df36a34cd4be746331586168c7&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  &lt;h2&gt;
+&lt;a id=&#34;user-content-lesson-goals&#34; class=&#34;anchor&#34; href=&#34;#lesson-goals&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Lesson Goals&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Introduce survival analysis&lt;/li&gt;
+&lt;li&gt;Introduce Kaplan-Meier estimates&lt;/li&gt;
+&lt;li&gt;Perform survival analysis on event data&lt;/li&gt;
+&lt;li&gt;Visualize and compare survival curves&lt;/li&gt;
+&lt;li&gt;Perform survival analysis for cohorts from different perspectives&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;
+&lt;a id=&#34;user-content-introduction&#34; class=&#34;anchor&#34; href=&#34;#introduction&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Survival analysis is an important topic in analytics that rarely receives the coverage it deserves. As the name implies, it was originally developed to quantify and measure the lifespans of individuals (how likely someone was to die or survive). For example, if you wanted to know what the probability of death over time was for a certain a group of people who had contracted some illness, you would use survival analysis. However, the techniques used in survival analysis can be applied to a wide variety of situations.&lt;/p&gt;
+&lt;p&gt;In this lesson, we are going to cover the basics of survival analysis so that you can leverage this valuable set of techniques in analyses that you conduct going forward. To do this, we will need to install a new Python library called &lt;code&gt;lifelines&lt;/code&gt; that is specifically used for conducting survival analysis.&lt;/p&gt;
+&lt;div class=&#34;highlight highlight-source-shell&#34;&gt;&lt;pre&gt;$ pip install lifelines&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We will import the components of lifelines a little later as we need them. We are also going to be using Pandas in this lesson as well as Plotly and Cufflinks, so let&#39;s go ahead and import those.&lt;/p&gt;
+&lt;div class=&#34;highlight highlight-source-python&#34;&gt;&lt;pre&gt;&lt;span class=&#34;pl-k&#34;&gt;import&lt;/span&gt; pandas &lt;span class=&#34;pl-k&#34;&gt;as&lt;/span&gt; pd
+&lt;span class=&#34;pl-k&#34;&gt;import&lt;/span&gt; plotly.plotly &lt;span class=&#34;pl-k&#34;&gt;as&lt;/span&gt; py
+&lt;span class=&#34;pl-k&#34;&gt;import&lt;/span&gt; cufflinks &lt;span class=&#34;pl-k&#34;&gt;as&lt;/span&gt; cf
+
+cf.go_offline()&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;
+&lt;a id=&#34;user-content-survival-analysis&#34; class=&#34;anchor&#34; href=&#34;#survival-analysis&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Survival Analysis&lt;/h2&gt;
+&lt;p&gt;Survival analysis can be performed on various scenarios:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Estimating human lifespans&lt;/li&gt;
+&lt;li&gt;Estimating mechanical failures over time&lt;/li&gt;
+&lt;li&gt;Estimating length of customer retention&lt;/li&gt;
+&lt;li&gt;Estimating time to recovery for illnesses&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;There are certain requirements for conducting a survival analysis. The first of these is that you need to have a field in your data that represents the occurrence (or lack thereof) of an event.&lt;/p&gt;
+&lt;p&gt;The second requirement is that you need to have a field that represents the passage of time in some fashion. This can be datetimes or it can be a number that increases with the passage of time, such as number of days/weeks/months/years, the number of uses, distance traveled, etc.&lt;/p&gt;
+&lt;p&gt;The third and final requirement is that you need to have at least one field to group by. Survival analysis calculates the survival rates for groups that something in common. The group by field is the thing they have in common. If you have multiple fields you can group by, you can perform the analysis for the groups represented by each field individually or you can combine them into more granular segments and examine the survival rates of those. However, you can only do this up to a point where the number of examples in a group become too few to reliably calculate their survival rates. So you need to balance the ability drill down into granular details with the need to have large enough groups to calculate meaningful and reliable survival rates.&lt;/p&gt;
+&lt;h2&gt;
+&lt;a id=&#34;user-content-the-data&#34; class=&#34;anchor&#34; href=&#34;#the-data&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;The Data&lt;/h2&gt;
+&lt;p&gt;The data we will be working with in this lesson will be the customer churn data set from previous lessons. This data meets all three of our criteria above. It contains an event field (ChurnBinary) that indicates whether or not a customer has churned. It contains a field that represents the passage of time (tenure). And finally, it contains several categorical fields by which we can group customers so that we can explore their retention rates from different perspectives.&lt;/p&gt;
+&lt;p&gt;Let&#39;s go ahead and import the data which you can download &lt;a href=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/data/module-2/churn.csv&#34; rel=&#34;nofollow&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight highlight-source-python&#34;&gt;&lt;pre&gt;data &lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt; pd.read_csv(&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;churn.csv&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;)&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;
+&lt;a id=&#34;user-content-performing-a-survival-analysis&#34; class=&#34;anchor&#34; href=&#34;#performing-a-survival-analysis&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Performing a Survival Analysis&lt;/h2&gt;
+&lt;p&gt;Now that we have identified the data we want to use and the corresponding fields, we can begin our analysis. The objective of our analysis is going to be to get a sense of the decline in customer retention rates as tenure increases among the different groups of customers we have in our data set.&lt;/p&gt;
+&lt;p&gt;The easiest way to do this in Python is with the lifelines library. We are going to import the &lt;code&gt;KaplanMeierFitter&lt;/code&gt; from lifelines. &lt;a href=&#34;https://en.wikipedia.org/wiki/Kaplan%E2%80%93Meier_estimator&#34; rel=&#34;nofollow&#34;&gt;Kaplain-Meier curves&lt;/a&gt; are one of the most common statistical techniques used in survival analysis, and they will help us estimate the survival function of the different cohorts we designate (e.g. males vs. females, senior citizens vs. non-seniors, etc.).&lt;/p&gt;
+&lt;div class=&#34;highlight highlight-source-python&#34;&gt;&lt;pre&gt;&lt;span class=&#34;pl-k&#34;&gt;from&lt;/span&gt; lifelines &lt;span class=&#34;pl-k&#34;&gt;import&lt;/span&gt; KaplanMeierFitter&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;From there, we are going to define a &lt;code&gt;survival&lt;/code&gt; function that is going to accept a data frame and then specify each of the three necessary components for conducting a survival analysis (a group field, a time field, and an event field). Within the function, we are going to define our model and then create an empty list in which we are going to store our results. From there, we loop through the each of the unique values in the group field, grab the data in the time and event fields, fit our model to the data, and append the survival function results to our &lt;code&gt;results&lt;/code&gt; list. At the end, we concatenate the data for each unique group field value together and then return those results.&lt;/p&gt;
+&lt;div class=&#34;highlight highlight-source-python&#34;&gt;&lt;pre&gt;&lt;span class=&#34;pl-k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;pl-en&#34;&gt;survival&lt;/span&gt;(&lt;span class=&#34;pl-smi&#34;&gt;data&lt;/span&gt;, &lt;span class=&#34;pl-smi&#34;&gt;group_field&lt;/span&gt;, &lt;span class=&#34;pl-smi&#34;&gt;time_field&lt;/span&gt;, &lt;span class=&#34;pl-smi&#34;&gt;event_field&lt;/span&gt;):
+    model &lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt; KaplanMeierFitter()
+    results &lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt; []
+    
+    &lt;span class=&#34;pl-k&#34;&gt;for&lt;/span&gt; i &lt;span class=&#34;pl-k&#34;&gt;in&lt;/span&gt; data[group_field].unique():
+        group &lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt; data[data[group_field]&lt;span class=&#34;pl-k&#34;&gt;==&lt;/span&gt;i]
+        T &lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt; group[time_field]
+        E &lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt; group[event_field]
+        model.fit(T, E, &lt;span class=&#34;pl-v&#34;&gt;label&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-c1&#34;&gt;str&lt;/span&gt;(i))
+        results.append(model.survival_function_)
+    
+    survival &lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt; pd.concat(results, &lt;span class=&#34;pl-v&#34;&gt;axis&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-c1&#34;&gt;1&lt;/span&gt;)
+    &lt;span class=&#34;pl-k&#34;&gt;return&lt;/span&gt; survival&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Once we have this function, it is relatively easy to generate survival curves for any of the cohorts in our data set. For example, if we wanted to visualize retention rates over time by gender, we could do that with just a couple lines of code.&lt;/p&gt;
+&lt;div class=&#34;highlight highlight-source-python&#34;&gt;&lt;pre&gt;rates &lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt; survival(data, &lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;gender&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;tenure&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;ChurnBinary&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;)
+
+rates.iplot(&lt;span class=&#34;pl-v&#34;&gt;kind&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;line&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;xTitle&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Tenure (Months)&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;yTitle&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Retention Rate&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;,
+            &lt;span class=&#34;pl-v&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Retention Rates by Tenure and Gender&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;)&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/27baea745fae4d284eae6c3c9ce002a57a81f97e/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f67656e6465722d726574656e74696f6e2e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/27baea745fae4d284eae6c3c9ce002a57a81f97e/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f67656e6465722d726574656e74696f6e2e706e67&#34; alt=&#34;Retention Rates by Gender&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/gender-retention.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;We can see that at tenure 0, both survival curves start at 1 (100%). The female curve then declines a little faster than the male curve and then they both continue to decline gradually until they get past 60 months, at which point the male curve takes a steeper dive below the female retention rates. Both curves end at around the 60% mark, meaning that after 70 months of tenure, a customer is approximately 40% likely to churn (60% retention rate).&lt;/p&gt;
+&lt;p&gt;Using our function, we can easily swap out group fields to take a look at survival rates form different perspectives. Here are the survival curves for senior citizens and non-seniors.&lt;/p&gt;
+&lt;div class=&#34;highlight highlight-source-python&#34;&gt;&lt;pre&gt;rates &lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt; survival(data, &lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;SeniorCitizen&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;tenure&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;ChurnBinary&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;)
+
+rates.iplot(&lt;span class=&#34;pl-v&#34;&gt;kind&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;line&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;xTitle&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Tenure (Months)&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;yTitle&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Retention Rate&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;,
+            &lt;span class=&#34;pl-v&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Retention Rates by Tenure and Senior Citizen&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;)&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/0a579012a05a63781a3b2a89b0ac6554fb47790a/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f73656e696f722d726574656e74696f6e2e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/0a579012a05a63781a3b2a89b0ac6554fb47790a/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f73656e696f722d726574656e74696f6e2e706e67&#34; alt=&#34;Retention Rates by Senior&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/senior-retention.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;From this perspective, we can see that the survival curve for senior citizens has a steeper slope than the curve for non-seniors, which causes them to end up with a much lower retention rate than non-seniors.&lt;/p&gt;
+&lt;p&gt;What if we define our cohorts around the type of Internet service the customer has as opposed to demographics?&lt;/p&gt;
+&lt;div class=&#34;highlight highlight-source-python&#34;&gt;&lt;pre&gt;rates &lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt; survival(data, &lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;InternetService&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;tenure&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;ChurnBinary&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;)
+
+rates.iplot(&lt;span class=&#34;pl-v&#34;&gt;kind&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;line&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;xTitle&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Tenure (Months)&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;yTitle&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Retention Rate&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;,
+            &lt;span class=&#34;pl-v&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Retention Rates by Tenure and Internet Service&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;)&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/fdfc3a0dac841d09bd4d8756f4aeca064eee06dc/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f696e7465726e65742d726574656e74696f6e2e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/fdfc3a0dac841d09bd4d8756f4aeca064eee06dc/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f696e7465726e65742d726574656e74696f6e2e706e67&#34; alt=&#34;Retention Rates by Internet&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/internet-retention.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;From this perspective, we can see that customers without Internet service tend to have higher retention rates than ones who do. Among the ones that do have Internet service with the company, the ones that have DSL have much higher retention rates compared to the ones that have fiber optic, perhaps because the latter tends to be significantly more expensive.&lt;/p&gt;
+&lt;p&gt;The company also provides customers with the option of signing up for one year or two year contracts as opposed to just paying for their services month-to-month. Let&#39;s see how the survival curves look for each of those three options.&lt;/p&gt;
+&lt;div class=&#34;highlight highlight-source-python&#34;&gt;&lt;pre&gt;rates &lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt; survival(data, &lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Contract&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;tenure&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;ChurnBinary&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;)
+
+rates.iplot(&lt;span class=&#34;pl-v&#34;&gt;kind&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;line&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;xTitle&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Tenure (Months)&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;yTitle&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Retention Rate&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;,
+            &lt;span class=&#34;pl-v&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Retention Rates by Tenure and Senior Citizen&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;)&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/5bc5efa608d66c7ef786190ecfdeb7f9589f38f4/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f636f6e74726163742d726574656e74696f6e2e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/5bc5efa608d66c7ef786190ecfdeb7f9589f38f4/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f636f6e74726163742d726574656e74696f6e2e706e67&#34; alt=&#34;Retention Rates by Contract&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/contract-retention.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;As you probably expected, the customers on two year contracts have the highest retention rates, even well past the 24 month (2 year) mark. Customers on one year contracts have high retention rates until about 40 months out, and then the rate at which they churn increases. And finally, the customers who pay month-to-month start churning almost right away with a very steep decline in retention between 0 and 10 months and then leveling off slightly but still pretty steep.&lt;/p&gt;
+&lt;h2&gt;
+&lt;a id=&#34;user-content-usefulness-of-survival-analysis&#34; class=&#34;anchor&#34; href=&#34;#usefulness-of-survival-analysis&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Usefulness of Survival Analysis&lt;/h2&gt;
+&lt;p&gt;As we saw above, survival analysis is useful for deriving insights about what factors matter most when you have event data over time. In our case, we were able to observe the survival curves estimating what percentage of customers the company would retain and what percentage are likely to churn over time from varying perspectives.&lt;/p&gt;
+&lt;p&gt;This is useful to companies, as it allows them estimate when a customer is most likely to cancel their service. The company could then determine the appropriate time to intervene and offer the customer either a discounted upgrade or a lower price on the service they currently have (perhaps tied to a one or two year contract) to prevent them from leaving and thus increasing their retention rates.&lt;/p&gt;
+&lt;h2&gt;
+&lt;a id=&#34;user-content-summary&#34; class=&#34;anchor&#34; href=&#34;#summary&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Summary&lt;/h2&gt;
+&lt;p&gt;In this lesson, we covered the basics of survival analysis in Python. We introduced the lifelines library as well as Kaplan-Meier curves and then we used them to fit model to the group, event, and time data we had to generate survival functions for each cohort. We performed this analysis from several different perspectives to get a good sense of what factors have the most influence on churn rates.&lt;/p&gt;
+
+&lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+  </div>
+  <div id="seq_contents_2"
+    aria-labelledby="tab_2"
+    aria-hidden="true"
+    class="seq_contents tex2jax_ignore asciimath2jax_ignore">
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-vertical&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;VerticalStudentView&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34; data-request-token=&#34;6ca0a8e6939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@a9e0c9c70f7342e485991e2fe5928d5c&#34; data-block-type=&#34;vertical&#34;&gt;
+  
+
+  &lt;h2 class=&#34;hd hd-2 unit-title&#34;&gt;Time Series Analysis&lt;/h2&gt;
+
+    &lt;div class=&#34;ih-bookmark-button-wrapper&#34;&gt;
+    	
+
+
+
+&lt;div class=&#34;bookmark-button-wrapper&#34;&gt;
+  &lt;button class=&#34;btn btn-link bookmark-button &#34;
+    aria-pressed=&#34;false&#34;
+    data-bookmark-id=&#34;NoahB,block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@a9e0c9c70f7342e485991e2fe5928d5c&#34;
+    data-bookmarks-api-url=&#34;/api/bookmarks/v1/bookmarks/&#34;&gt;
+     &lt;span class=&#34;bookmark-text&#34;&gt;Bookmark this page&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+
+    &lt;/div&gt;	
+
+&lt;div class=&#34;vert-mod&#34;&gt;
+  &lt;div class=&#34;vert vert-0&#34; data-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@69b3def1ca1f4c2488f20f234b3ba03d&#34;&gt;
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;6ca0a8e6939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@69b3def1ca1f4c2488f20f234b3ba03d&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  &lt;h2&gt;&lt;a id=&#34;user-content-lesson-goals&#34; class=&#34;anchor&#34; href=&#34;#lesson-goals&#34; aria-hidden=&#34;true&#34;&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt; &lt;/a&gt;Lesson Goals&lt;/h2&gt;
+&lt;p&gt;In this lesson we will discover the branch of statistics that deals with time ordered data, also known as time series. We will learn about the different types of time series, about correlation and auto-correlation, and about different prediction methods for time series data.&lt;/p&gt;
+&lt;h2&gt;&lt;a id=&#34;user-content-introduction&#34; class=&#34;anchor&#34; href=&#34;#introduction&#34; aria-hidden=&#34;true&#34;&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt; &lt;/a&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;So far we have studied data that is static in time. This was important since many models require that we assume that observations are independent of one another. However, when dealing with time ordered data, many times this assumption is no longer valid. For example, the temperature observed today is not independent of the temperature yesterday. Another example is the stock market. Today&#39;s stock prices are related to yesterday&#39;s stock prices. In this lesson we will explore how to deal with data that contains such relationships&lt;/p&gt;
+&lt;h2&gt;&lt;a id=&#34;user-content-time-series-decomposition&#34; class=&#34;anchor&#34; href=&#34;#time-series-decomposition&#34; aria-hidden=&#34;true&#34;&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt; &lt;/a&gt;Time Series Decomposition&lt;/h2&gt;
+&lt;p&gt;One of the ways to overcome the issues caused by having a relationship between the observations is to decompose the data into components. Typically, we split the data into two types of components - &lt;strong&gt;systematic&lt;/strong&gt; and &lt;strong&gt;non-systematic&lt;/strong&gt;.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Systematic&lt;/strong&gt; components are components that can have consistency or recurrence.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Non-systematic&lt;/strong&gt; components cannot be modeled.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We can typically decompose a time series into 4 components - 3 systematic components and one noise component.:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The &lt;strong&gt;mean&lt;/strong&gt; of the series&lt;/li&gt;
+&lt;li&gt;The &lt;strong&gt;seasonality&lt;/strong&gt; or cyclical pattern of the series&lt;/li&gt;
+&lt;li&gt;The &lt;strong&gt;trend&lt;/strong&gt; of the series - this component is what we would like to model&lt;/li&gt;
+&lt;li&gt;The &lt;strong&gt;noise&lt;/strong&gt; is typically the random variation in our data&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;&lt;a id=&#34;user-content-time-series-decomposition-in-python&#34; class=&#34;anchor&#34; href=&#34;#time-series-decomposition-in-python&#34; aria-hidden=&#34;true&#34;&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt; &lt;/a&gt;Time Series Decomposition in Python&lt;/h3&gt;
+&lt;p&gt;We will focus on the &lt;code&gt;statsmodels&lt;/code&gt; library for modeling and plotting time series data in Python. &lt;code&gt;statsmodels&lt;/code&gt; contains a function called &lt;code&gt;seasonal_decompose&lt;/code&gt; that will allow us to plot the decomposed time series data.&lt;/p&gt;
+&lt;p&gt;For our example, we will use the &lt;a href=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/data/module-2/occupancy.csv&#34; rel=&#34;nofollow&#34;&gt;occupancy dataset&lt;/a&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;occupancy = pd.read_csv(&#39;occupancy.csv&#39;)
+occupancy.head()
+ 	date 	Temperature 	Humidity 	Light 	CO2 	HumidityRatio 	Occupancy
+0 	2/2/2015 14:00 	23.7000 	26.272 	585.200000 	749.200000 	0.004764 	1
+1 	2/2/2015 15:00 	23.7180 	26.290 	578.400000 	760.400000 	0.004773 	1
+2 	2/2/2015 16:00 	23.7300 	26.230 	572.666667 	769.666667 	0.004765 	1
+3 	2/2/2015 17:00 	23.7225 	26.125 	493.750000 	774.750000 	0.004744 	1
+4 	2/2/2015 18:00 	23.7540 	26.200 	488.600000 	779.000000 	0.004767 	1
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;To plot this data, we must make sure our index is a time series with a known frequency. To analyze time series data, the data needs to be equally spaced. In the code below, we will change the type of the date column to &lt;code&gt;datetime&lt;/code&gt; and change the index to the date column. Our frequency is 1 hour. Even though we can see that the difference between observation is 1 hour, it is not inferred, and we need to specify it ourselves. To read more about frequencies, look &lt;a href=&#34;https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#timeseries-offset-aliases&#34; rel=&#34;nofollow&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;occupancy.date = pd.to_datetime(occupancy.date)
+occupancy.index = pd.DatetimeIndex(occupancy.date, freq=&#39;H&#39;)
+occupancy.index
+DatetimeIndex([&#39;2015-02-02 14:00:00&#39;, &#39;2015-02-02 15:00:00&#39;,
+               &#39;2015-02-02 16:00:00&#39;, &#39;2015-02-02 17:00:00&#39;,
+               &#39;2015-02-02 18:00:00&#39;, &#39;2015-02-02 19:00:00&#39;,
+               &#39;2015-02-02 20:00:00&#39;, &#39;2015-02-02 21:00:00&#39;,
+               &#39;2015-02-02 22:00:00&#39;, &#39;2015-02-02 23:00:00&#39;,
+               ...
+               &#39;2015-05-24 04:00:00&#39;, &#39;2015-05-24 05:00:00&#39;,
+               &#39;2015-05-24 06:00:00&#39;, &#39;2015-05-24 07:00:00&#39;,
+               &#39;2015-05-24 08:00:00&#39;, &#39;2015-05-24 09:00:00&#39;,
+               &#39;2015-05-24 10:00:00&#39;, &#39;2015-05-24 11:00:00&#39;,
+               &#39;2015-05-24 12:00:00&#39;, &#39;2015-05-24 13:00:00&#39;],
+              dtype=&#39;datetime64[ns]&#39;, name=&#39;date&#39;, length=2664, freq=&#39;H&#39;)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Now we can plot the decomposed time series.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;import statsmodels.api as sm
+
+res = sm.tsa.seasonal_decompose(occupancy.CO2)
+resplot = res.plot()
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/21b07f4f0edd2c2efe5982aa969c0bc455fda423/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6465636f6d706f7365642d74732e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt; &lt;img src=&#34;https://camo.githubusercontent.com/21b07f4f0edd2c2efe5982aa969c0bc455fda423/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6465636f6d706f7365642d74732e706e67&#34; alt=&#34;decomposed time series&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/decomposed-ts.png&#34; style=&#34;max-width: 100%;&#34; /&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;&lt;a id=&#34;user-content-autoregression&#34; class=&#34;anchor&#34; href=&#34;#autoregression&#34; aria-hidden=&#34;true&#34;&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt; &lt;/a&gt;Autoregression&lt;/h2&gt;
+&lt;p&gt;An autoregressive model is a model that uses previous observations in the time series to predict the next value in the model. In previous lessons, we have looked at linear models where the response variable depends only on the predictor variables and the linear regression equation is of the form:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/14ded4d1fa56aa7e60e3318b01bfd64ed538c042/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f72656772657373696f6e2d6571756174696f6e2e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt; &lt;img src=&#34;https://camo.githubusercontent.com/14ded4d1fa56aa7e60e3318b01bfd64ed538c042/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f72656772657373696f6e2d6571756174696f6e2e706e67&#34; alt=&#34;linear regression&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/regression-equation.png&#34; style=&#34;max-width: 100%;&#34; /&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;However, when working with time series data, our response variable depends not only on the predictor variables but also on the response variable itself. A variable that depends on itself is called an &lt;strong&gt;autocorrelated&lt;/strong&gt; variable. Typically, our regression equation will be of the form below. The equation below is an autoregressive model that depends only on the previous time period.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/8e36e2a5d8aadbeaf1e1501e735ec5114613e519/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f61722d6d6f64656c2e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt; &lt;img src=&#34;https://camo.githubusercontent.com/8e36e2a5d8aadbeaf1e1501e735ec5114613e519/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f61722d6d6f64656c2e706e67&#34; alt=&#34;ar model&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/ar-model.png&#34; style=&#34;max-width: 100%;&#34; /&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Our model can also depend on more than one time period in the past.&lt;/p&gt;
+&lt;h3&gt;&lt;a id=&#34;user-content-checking-for-autocorrelation&#34; class=&#34;anchor&#34; href=&#34;#checking-for-autocorrelation&#34; aria-hidden=&#34;true&#34;&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt; &lt;/a&gt;Checking for Autocorrelation&lt;/h3&gt;
+&lt;p&gt;We can check for autocorrelation in our data using a lag plot. This plot will plot y &lt;sub&gt;t&lt;/sub&gt; against y &lt;sub&gt;t-1&lt;/sub&gt;. Pandas has a function called &lt;code&gt;lag_plot&lt;/code&gt; for detecting these relationships.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from pandas.tools.plotting import lag_plot
+
+lag_plot(occupancy.CO2)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/93d7e196530a3761a28afd10c8d15971f9fa0470/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f636f322d6c61672e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt; &lt;img src=&#34;https://camo.githubusercontent.com/93d7e196530a3761a28afd10c8d15971f9fa0470/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f636f322d6c61672e706e67&#34; alt=&#34;CO2 Lag plot&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/co2-lag.png&#34; style=&#34;max-width: 100%;&#34; /&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;A line along the diagonal shows that there is an autoregressive relationship.&lt;/p&gt;
+&lt;p&gt;To create an autoregressive model we use the &lt;code&gt;AR&lt;/code&gt; function. Typically, we note an autoregressive model with the notation AR(n) where n is the number of lag periods. In the example below, we will create an autoregressive model with lag 1 to model the rate of CO2. In the example below, we limit the lag periods to 1. However, if we do not set a limit, the model may contain more lag periods.&lt;/p&gt;
+&lt;p&gt;Note that we split the data into test and train and always use the last few observations when working with time series data. We do this to ensure that the model gives good predictions even on data it has not seen. Since the data is ordered, we cannot select the test data at random.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from statsmodels.tsa.ar_model import AR
+
+train, test = occupancy.CO2[:-10], occupancy.CO2[-10:]
+model = AR(occupancy.CO2)
+model_fit = model.fit(maxlag=1)
+predictions = model_fit.predict(start=len(train), end=len(train)+len(test)-1, dynamic=False)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Like linear regression, this model produces coefficients for the autoregressive model as well as predictions.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;print(model_fit.params)
+const     0.001078
+L1.CO2    1.000195
+dtype: float64
+
+pd.DataFrame({&#39;observed&#39;:test, &#39;predicted&#39;:predictions})
+ 	                observed 	predicted
+date 		
+2015-05-24 04:00:00 	1153.250000 	1152.725379
+2015-05-24 05:00:00 	1152.400000 	1153.475525
+2015-05-24 06:00:00 	1146.166667 	1152.625359
+2015-05-24 07:00:00 	1145.400000 	1146.390813
+2015-05-24 08:00:00 	1140.800000 	1145.623997
+2015-05-24 09:00:00 	1150.250000 	1141.023102
+2015-05-24 10:00:00 	1129.200000 	1150.474941
+2015-05-24 11:00:00 	1125.800000 	1129.420844
+2015-05-24 12:00:00 	1123.000000 	1126.020182
+2015-05-24 13:00:00 	1124.000000 	1123.219637
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;h2&gt;&lt;a id=&#34;user-content-stationarity&#34; class=&#34;anchor&#34; href=&#34;#stationarity&#34; aria-hidden=&#34;true&#34;&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt; &lt;/a&gt;Stationarity&lt;/h2&gt;
+&lt;p&gt;A time series is considered stationary if its mean and variance do not vary over time. While we cannot consider a stationary time series to be independent, stationarity is a dependence structure that can help us with a number of modeling techniques. To check whether we have a stationary time series, we can either examine the decomposition plot visually, compute the mean and standard deviation over time, or use statistical tests. One possible test is the Augmented Dickey-Fuller test. This test has the following hypothesis:&lt;/p&gt;
+&lt;p&gt;H &lt;sub&gt;0&lt;/sub&gt;: The data is not stationary&lt;/p&gt;
+&lt;p&gt;H &lt;sub&gt;1&lt;/sub&gt;: The data is stationary&lt;/p&gt;
+&lt;p&gt;We test stationarity using the &lt;code&gt;adrfuller&lt;/code&gt; function in &lt;code&gt;statsmodels&lt;/code&gt;. The example below demonstrates this with our CO2 data. The &lt;code&gt;adrfuller&lt;/code&gt; function returns multiple values. The second position in the data structure returned is the p-value of our hypothesis.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from statsmodels.tsa.stattools import adfuller
+
+adfuller(occupancy.CO2)[1]
+0.06822624483241028
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;The p-value is greater than 0.05. Therefore, with a 95% confidence interval, we do not reject the null hypothesis and conclude that the data is not stationary.&lt;/p&gt;
+&lt;h2&gt;&lt;a id=&#34;user-content-random-walks&#34; class=&#34;anchor&#34; href=&#34;#random-walks&#34; aria-hidden=&#34;true&#34;&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt; &lt;/a&gt;Random Walks&lt;/h2&gt;
+&lt;p&gt;A random walk is a type of time series model where each observation depends on the sum of the previous observation and a random noise component. The formal notation for this is:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/9e64cc728129cec230933b31a7be998677d035b6/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f72616e646f6d2d77616c6b2e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt; &lt;img src=&#34;https://camo.githubusercontent.com/9e64cc728129cec230933b31a7be998677d035b6/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f72616e646f6d2d77616c6b2e706e67&#34; alt=&#34;random walk equation&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/random-walk.png&#34; style=&#34;max-width: 100%;&#34; /&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Random walks are considered non-stationary because the covariance between observations is time dependent.&lt;/p&gt;
+&lt;h2&gt;&lt;a id=&#34;user-content-moving-average&#34; class=&#34;anchor&#34; href=&#34;#moving-average&#34; aria-hidden=&#34;true&#34;&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt; &lt;/a&gt;Moving Average&lt;/h2&gt;
+&lt;p&gt;Moving average models are similar to autoregressive models. Moving average models also depend on a linear combination of past data. However, unlike autoregressive models, these models depend on past white noise terms. While the name is the same, moving average models are not the same as calculating the moving average of a time series.&lt;/p&gt;
+&lt;p&gt;Moving average models are typically noted with MA(q) where q is the number of past white noise terms summed by the model. For example, a first order moving average model will be noted by:&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/b44290f533b6d8f267aa9afe771cdd35ebfd5894/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6d6f76696e672d617665726167652d6d6f64656c2e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt; &lt;img src=&#34;https://camo.githubusercontent.com/b44290f533b6d8f267aa9afe771cdd35ebfd5894/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6d6f76696e672d617665726167652d6d6f64656c2e706e67&#34; alt=&#34;moving average model&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/moving-average-model.png&#34; style=&#34;max-width: 100%;&#34; /&gt; &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Note that the errors are normally distributed with mean 0 and variance &amp;sigma; &lt;sub&gt;&amp;omega;&lt;/sub&gt;.&lt;/p&gt;
+&lt;p&gt;We can create a moving average model using the &lt;code&gt;ARMA&lt;/code&gt; function in the &lt;code&gt;statsmodels&lt;/code&gt; package. This function generates models that can have both an autoregressive component as well as a moving average component. However, here we will set the autoregressive lag to zero to create only a moving average model. Let&#39;s use our CO2 data again for this example.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from statsmodels.tsa.arima_model import ARMA
+
+model = ARMA(occupancy.CO2, order=(0, 1))
+model_fit = model.fit(disp=False)
+predictions = model_fit.predict(len(occupancy.CO2)-3, len(occupancy.CO2)-1)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Let&#39;s look at the predictions:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pd.DataFrame({&#39;observed&#39;:occupancy.CO2[-3:], &#39;predicted&#39;:predictions})
+ 	observed 	predicted
+date 		
+2015-05-24 11:00:00 	1125.8 	926.765185
+2015-05-24 12:00:00 	1123.0 	915.381418
+2015-05-24 13:00:00 	1124.0 	923.899751
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;We can see that this model alone is not a great fit for this data since there is a big difference between observed and predicted.&lt;/p&gt;
+&lt;h2&gt;&lt;a id=&#34;user-content-combining-autoregression-with-moving-average&#34; class=&#34;anchor&#34; href=&#34;#combining-autoregression-with-moving-average&#34; aria-hidden=&#34;true&#34;&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt; &lt;/a&gt;Combining Autoregression with Moving Average&lt;/h2&gt;
+&lt;p&gt;As we have seen in the previous paragraph, we can create a model with both an autoregressive component and a moving average component. This model is called an ARMA model and is denoted by ARMA(n, q) where n is the number of lag periods and q is the number of past white noise terms. Below is an example of an ARMA model with two lag terms and one white noise term.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from statsmodels.tsa.arima_model import ARMA
+
+# fit model
+model = ARMA(occupancy.CO2, order=(2, 1))
+model_fit = model.fit(disp=False)
+# make prediction
+predictions = model_fit.predict(len(occupancy.CO2)-3, len(occupancy.CO2)-1)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;We expect our predictions to improve:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pd.DataFrame({&#39;observed&#39;:occupancy.CO2[-3:], &#39;predicted&#39;:predictions})
+ 	observed 	predicted
+date 		
+2015-05-24 11:00:00 	1125.8 	1128.220466
+2015-05-24 12:00:00 	1123.0 	1124.658200
+2015-05-24 13:00:00 	1124.0 	1121.741400
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;h2&gt;&lt;a id=&#34;user-content-conclusion&#34; class=&#34;anchor&#34; href=&#34;#conclusion&#34; aria-hidden=&#34;true&#34;&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt; &lt;/a&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;In this lesson we were introduced to a number of basic concepts in time series modeling. Time series models require different treatment than linear models. We learned about the different components of a time series and how to plot them. We learned about stationarity, random walks, and autoregressive and moving average models. This introduction should provide you with the tools to evaluate and model time ordered data.&lt;/p&gt;
+&lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+  </div>
+  <div id="seq_content" class="ih-learnig-unit" role="tabpanel"></div>
+
+  <nav class="sequence-bottom ih-js-fire-highlighting-controls" aria-label="Section">
+    <button class="sequence-nav-button button-previous">
+      <span class="icon fa fa-chevron-prev" aria-hidden="true"></span>
+      <span>Previous</span>
+    </button>
+    <button class="sequence-nav-button button-next">
+      <span>Next</span>
+      <span class="icon fa fa-chevron-next" aria-hidden="true"></span>
+    </button>
+  </nav>
+</div>
+
+</div>
+
+        </main>
+    </section>
+
+    <section class="courseware-results-wrapper">
+      <div id="loading-message" aria-live="polite" aria-relevant="all"></div>
+      <div id="error-message" aria-live="polite"></div>
+      <div class="courseware-results search-results" data-course-id="course-v1:IRONHACK+DAFT+201906_MIA" data-lang-code="en"></div>
+    </section>
+
+  </div>
+  
+
+
+
+
+
+
+
+
+
+    
+    
+    <script type="text/javascript" src="../../../../../static/bundles/CourseSock.43ffb68a30fa51e4e467.1f398818dd61.js" ></script>
+      <script type="text/javascript">
+        
+    new CourseSock({
+        el:'.verification-sock'
+    });
+
+      </script>
+
+
+</div>
+<div class="container-footer">
+</div>
+
+          
+        </div>
+      </div>
+
+    
+    
+
+      <div class="ih-beta-banner">
+        <span class="icon fa fa-flask"></span>
+        <span class="ih-beta-banner-text">We just launched a new version of the student platform. Everything should be fine, but if you encounter a bug, don't hesitate and send it our way.</span>
+      </div>
+
+  </div>
+
+  
+  
+  <script type="text/javascript" src="../../../../../static/common/js/vendor/jquery.scrollTo.525edcc52fe8.js"></script>
+  <script type="text/javascript" src="../../../../../static/js/vendor/flot/jquery.flot.d3d45ff0c6a8.js"></script>
+
+  
+    <script type="text/javascript" src="../../../../../static/js/lms-courseware.43ed60564822.js" charset="utf-8"></script>
+
+
+  
+
+
+
+<script type="text/javascript">
+    // Fast Preview was introduced in 2.5. However, it
+    // causes undesirable flashing/font size changes when
+    // MathJax is used for interactive preview (equation editor).
+    // Setting processSectionDelay to 0 (see below) fully eliminates
+    // fast preview, but to reduce confusion, we are also setting
+    // the option as displayed in the context menu to false.
+    // When upgrading to 2.6, check if this variable name changed.
+    window.MathJax = {
+      menuSettings: {CHTMLpreview: false}
+    };
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [
+        ["\\(","\\)"],
+        ['[mathjaxinline]','[/mathjaxinline]']
+      ],
+      displayMath: [
+        ["\\[","\\]"],
+        ['[mathjax]','[/mathjax]']
+      ]
+    }
+  });
+</script>
+<script type="text/x-mathjax-config">
+
+  // In order to eliminate all flashing during interactive
+  // preview, it is necessary to set processSectionDelay to 0
+  // (remove delay between input and output phases). This
+  // effectively disables fast preview, regardless of
+  // the fast preview setting as shown in the context menu.
+  MathJax.Hub.processSectionDelay = 0;
+
+  MathJax.Hub.signal.Interest(function(message) {
+    if(message[0] === "End Math") {
+        set_mathjax_display_div_settings();
+    }
+  });
+  function set_mathjax_display_div_settings() {
+    $('.MathJax_Display').each(function( index ) {
+      this.setAttribute('tabindex', '0');
+      this.setAttribute('aria-live', 'off');
+      this.removeAttribute('role');
+      this.removeAttribute('aria-readonly');
+    });
+  }
+</script>
+
+
+<!-- This must appear after all mathjax-config blocks, so it is after the imports from the other templates.
+     It can't be run through static.url because MathJax uses crazy url introspection to do lazy loading of
+     MathJax extension libraries -->
+<script type="text/javascript" src="../../../../../../cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJaxf4fa.js?config=TeX-MML-AM_SVG"></script>
+
+
+    
+    
+      <script type="text/javascript" src="../../../../../static/course_search/js/course_search_factory.26a9d7197c46bdd1.js?raw"></script>
+    <script type="text/javascript">
+        (function (require) {
+            require(['course_search/js/course_search_factory'], function (CourseSearchFactory) {
+                
+        var courseId = $('.courseware-results').data('courseId');
+        CourseSearchFactory({
+            courseId: courseId,
+            searchHeader: $('.search-bar')
+        });
+    
+            });
+        }).call(this, require || RequireJS.require);
+    </script>
+
+
+  
+    
+      <script type="text/javascript" src="../../../../../static/js/courseware/courseware_factory.1504fc10caefbdd1.js?raw"></script>
+    <script type="text/javascript">
+        (function (require) {
+            require(['js/courseware/courseware_factory'], function (CoursewareFactory) {
+                
+    CoursewareFactory();
+  
+            });
+        }).call(this, require || RequireJS.require);
+    </script>
+
+
+
+  <script type="text/javascript">
+    var $$course_id = "course\u002Dv1:IRONHACK+DAFT+201906_MIA";
+  </script>
+
+
+
+
+
+
+  
+
+
+
+  <script type="text/javascript" src="../../../../../static/js/vendor/noreferrer.aa62a3e70ffa.js" charset="utf-8"></script>
+  <script type="text/javascript" src="../../../../../static/js/utils/navigation.08930e16ab3d.js" charset="utf-8"></script>
+  <script type="text/javascript" src="../../../../../static/js/header/header.309a1243e175.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="../../../../../static/ih-lms-theme/js/vendor/highlight.min.496e109b43ca.js" ></script>
+    <script type="text/javascript" src="../../../../../static/ih-lms-theme/js/vendor/ih-highlight.0f32f131ba83.js" ></script>
+  
+</body>
+</html>
+
+

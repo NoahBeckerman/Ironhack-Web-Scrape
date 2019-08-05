@@ -1,0 +1,2050 @@
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<!--[if lte IE 9]><html class="ie ie9 lte9" lang="en"><![endif]-->
+<!--[if !IE]><!--><html lang="en"><!--<![endif]-->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head dir="ltr">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+  
+<title data-base-title="
+ MySQL Intermediate | DAFT Courseware | Ironhack Student Platform">
+  
+ Action Queries | MySQL Intermediate | DAFT Courseware | Ironhack Student Platform
+</title>
+
+
+      <script type="text/javascript">
+        /* immediately break out of an iframe if coming from the marketing website */
+        (function(window) {
+          if (window.location !== window.top.location) {
+            window.top.location = window.location;
+          }
+        })(this);
+      </script>
+
+  
+
+  <script type="text/javascript" src="../../../../../static/js/i18n/en/djangojs.e37eef1ffc63.js"></script>
+  <script type="text/javascript" src="../../../../../static/js/ie11_find_array.bd1c6dc7a133.js"></script>
+
+  <link rel="icon" type="image/x-icon" href="../../../../../static/ih-lms-theme/images/favicon.0de58aa5bfca.ico" />
+
+  
+  
+
+    <link href="../../../../../static/ih-lms-theme/css/lms-style-vendor.68e48093f5dd.css" rel="stylesheet" type="text/css" />
+
+
+
+      <link rel="stylesheet" href="../../../../../static/ih-lms-theme/css/bootstrap/lms-main.c54b2923d249.css" type="text/css" media="all" />
+
+    
+    <script type="text/javascript" src="../../../../../static/js/lms-main_vendor.a04b73033169.js" charset="utf-8"></script>
+
+
+    
+    <script type="text/javascript" src="../../../../../static/js/lms-application.e7bd4b65d083.js" charset="utf-8"></script>
+
+
+
+  
+    
+    
+    <script type="text/javascript" src="../../../../../static/bundles/commons.d60dcd98c024881d011e.c835e91d09f6.js" ></script>
+
+
+
+  <script>
+    window.baseUrl = "../../../../../static/index.html";
+    (function (require) {
+      require.config({
+          baseUrl: window.baseUrl
+      });
+    }).call(this, require || RequireJS.require);
+  </script>
+  <script type="text/javascript" src="../../../../../static/lms/js/require-config.8e00198660b0.js"></script>
+  
+    <script type="text/javascript">
+        (function (require) {
+          require.config({
+              paths: {
+                'js/courseware/courseware_factory': 'js/courseware/courseware_factory.1504fc10caef',
+'draggabilly': 'js/vendor/draggabilly.26caba6f7187',
+'js/courseware/toggle_element_visibility': 'js/courseware/toggle_element_visibility.d5f10bc65ed0',
+'hls': 'common/js/vendor/hls.b10b9ef4015b',
+'js/courseware/link_clicked_events': 'js/courseware/link_clicked_events',
+'moment': 'common/js/vendor/moment-with-locales.084396f4103c',
+'moment-timezone': 'common/js/vendor/moment-timezone-with-data.60142e6c4416',
+'js/student_account/logistration_factory': 'js/student_account/logistration_factory.d7765e4e6715',
+'js/groups/views/cohorts_dashboard_factory': 'js/groups/views/cohorts_dashboard_factory.7f46663f97b4',
+'js/dateutil_factory': 'js/dateutil_factory.841c29e02056',
+'course_bookmarks/js/views/bookmark_button': 'course_bookmarks/js/views/bookmark_button.d4cfaf3361fa',
+'js/courseware/accordion_events': 'js/courseware/accordion_events.6064c7809de5',
+'js/views/message_banner': 'js/views/message_banner.af013d0ecbd4',
+'js/groups/discussions_management/discussions_dashboard_factory': 'js/discussions_management/views/discussions_dashboard_factory.2e10d9097343',
+'js/courseware/course_info_events': 'js/courseware/course_info_events.2fc35b57627f'
+            }
+          });
+        }).call(this, require || RequireJS.require);
+    </script>
+  
+
+  
+
+  
+
+    <link href="../../../../../static/ih-lms-theme/css/lms-style-course-vendor.691e50c64ad7.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+
+    <link href="../../../../../static/ih-lms-theme/css/lms-course.1d0edf3ec473.css" rel="stylesheet" type="text/css" />
+
+
+
+
+<script type="text/javascript" src="../../../../../static/js/jquery.autocomplete.3bd10d7510d2.js"></script>
+<script type="text/javascript" src="../../../../../static/js/src/tooltip_manager.da362490e199.js"></script>
+
+<link href="../../../../../static/css/vendor/jquery.autocomplete.896181d3ec33.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="../../../../../static/bundles/XModuleShim.68b7a679342e3bdb698f.c506d949a49b.js" ></script>
+<script type="text/javascript" src="../../../../../static/bundles/HtmlModule.174055b73c05dccfbd8b.823874f69fef.js" ></script>
+<script type="text/javascript" src="../../../../../static/bundles/VerticalStudentView.6f1068648eb9e8d18da9.0a2f678d6564.js" ></script>
+<script type="text/javascript" src="../../../../../static/bundles/SequenceModule.251564cf8963e6f00227.ef752443db97.js" ></script>
+
+  
+
+  
+
+
+  
+
+
+<script type="application/json" id="user-metadata">
+    {"username": "NoahB", "enrollment_mode": "audit", "upgrade_link": null, "user_id": 489, "course_start": "2019-06-10T00:00:00+00:00", "upgrade_deadline": null, "course_key_fields": {"org": "IRONHACK", "run": "201906_MIA", "course": "DAFT"}, "course_end": "2019-08-19T00:00:00+00:00", "pacing_type": "instructor_paced", "upgrade_price": "Free", "course_id": "course-v1:IRONHACK+DAFT+201906_MIA", "has_staff_access": false, "forum_roles": [["Student"]], "enrollment_time": "2019-06-11T20:48:51.323840+00:00", "schedule_start": null, "email": "noahbeckerman@gmail.com"}
+</script>
+
+  
+
+  
+
+
+  
+
+
+<!-- dummy Segment -->
+<script type="text/javascript">
+  var analytics = {
+    track: function() { return; },
+    trackLink: function() { return; },
+    pageview: function() { return; },
+    page: function() { return; }
+  };
+</script>
+<!-- end dummy Segment -->
+
+
+  <meta name="path_prefix" content="">
+  
+  
+
+  <meta name="openedx-release-line" content="hawthorn" />
+
+
+
+
+
+
+  <!-- Hotjar Tracking Code for https://ironhack.school -->
+  <script type="text/javascript">
+      (function(h,o,t,j,a,r){
+          h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+          h._hjSettings={hjid:1193918,hjsv:6};
+          a=o.getElementsByTagName('head')[0];
+          r=o.createElement('script');r.async=1;
+          r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+          a.appendChild(r);
+      })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+  </script>
+
+  <script type="text/javascript">
+    function setCookieHideMobileWarning(expiration_hours) {
+      var date = new Date();
+      date.setTime(date.getTime()+(expiration_hours*60*60*1000));
+      var expires = "; expires=" + date.toGMTString();
+      document.cookie = "ihHideMobileWarning=true" + expires;
+    }
+    
+    function isHideMobileWarningCookieSet() {
+      return document.cookie.replace(/(?:(?:^|.*;\s*)ihHideMobileWarning\s*\=\s*([^;]*).*$)|^.*$/, "$1") !== "true"; 
+    }
+
+    function manageMobileWarning(mobile_warning_container) {
+      if (isHideMobileWarningCookieSet()) {
+        var mobile_warning_dismiss = document.getElementsByClassName('ih-js-hide-mobile-warning', mobile_warning_container)[0];
+        mobile_warning_dismiss.addEventListener('click', function() {
+          var expiration_hours = 48;
+          setCookieHideMobileWarning(expiration_hours);
+          mobile_warning_container.classList.add('hidden');
+        });
+      } else {
+        mobile_warning_container.classList.add('hidden');
+      }
+    }
+
+    var checkMobileWarningLayer = function () {
+      var mobile_warning_container = document.getElementsByClassName('ih-mobile-warning-container')[0];
+      (document.body && mobile_warning_container)? manageMobileWarning(mobile_warning_container) :  window.requestAnimationFrame(checkMobileWarningLayer);
+    }
+
+    window.requestAnimationFrame(checkMobileWarningLayer);
+  </script>
+
+</head>
+
+<body class="ltr view-in-course view-courseware courseware  lang_en">
+
+<div class="ih-mobile-warning-container">
+  <img class="logo" src="../../../../../static/ih-lms-theme/images/logo.6230fc40336b.svg" />
+  <div class="ih-mobile-warning-title">
+    The Learning Platform is best experienced on Desktop devices
+  </div>
+  <div class="ih-mobile-warning-description">
+    We recommend using a Desktop device to get the full experience of the Learning Platform.
+  </div>
+  <div class="ih-mobile-warning-dismiss ih-js-hide-mobile-warning">
+   Continue anyway
+  </div>
+</div>
+
+
+<div id="page-prompt"></div>
+  <div class="window-wrap" dir="ltr">
+    <a class="nav-skip sr-only sr-only-focusable" href="#main">Skip to main content</a>
+
+    
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+<header class="global-header slim ih-global-header">
+    <div class="ih-header-wrapper">
+        <div class="main-header ih-main-header">
+            
+
+
+
+
+
+<h1 class="header-logo">
+  <a href="../../../../../dashboard.html">
+    
+    <img  class="logo" src="../../../../../static/ih-lms-theme/images/logo.6230fc40336b.svg" alt="Ironhack Student Platform Home Page"/>
+    
+  </a>
+    <div class="course-header">
+          
+      
+      <span class="course-name">Data Analytics</span>
+    </div>
+</h1>
+
+            <div class="hamburger-menu" role="button" aria-label=Options Menu aria-expanded="false" aria-controls="mobile-menu" tabindex="0">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+                
+
+
+
+
+
+
+
+
+
+
+<div class="nav-links">
+  <div class="main">
+      
+  </div>
+  <div class="secondary ih-secondary">
+    
+
+
+
+
+
+
+  
+
+<div class="nav-item hidden-mobile toggle-user-dropdown ih-username-container">
+    <div class="menu-title">
+        
+        <span class="sr-only">Dashboard for:</span>
+        <span class="username ih-username">Ironhack (NoahB)</span>
+    </div>
+</div>
+<div class="nav-item hidden-mobile nav-item-dropdown ih-dropdown-wrapper" tabindex="-1">
+    <div class="toggle-user-dropdown ih-toggle-user-dropdown" role="button" aria-label=Options Menu aria-expanded="false" tabindex="0" aria-controls="user-menu">
+        <span class="fa fa-caret-down" aria-hidden="true"></span>
+    </div>
+    <div class="dropdown-user-menu hidden ih-dropdown-user-menu" aria-label=More Options role="menu" id="user-menu" tabindex="-1">
+        <div class="mobile-nav-item dropdown-item dropdown-nav-item ih-dropdown-nav-item"><a href="../../../../../dashboard.html" role="menuitem">My courses</a></div>
+            
+        <div class="mobile-nav-item dropdown-item dropdown-nav-item ih-dropdown-nav-item"><a href="../../../../../account/settings.html" role="menuitem">Account</a></div>
+        <div class="mobile-nav-item dropdown-item dropdown-nav-item ih-dropdown-nav-item"><a href="../../../../../index.html" role="menuitem">Sign Out</a></div>
+    </div>
+</div>
+  </div>
+</div>
+        </div>
+        <div class="mobile-menu hidden" aria-label=More Options role="menu" id="mobile-menu"></div>
+    </div>    
+</header>
+
+<!--[if lte IE 9]>
+<div class="ie-banner" aria-hidden="true"><strong>Warning:</strong> Your browser is not fully supported. We strongly recommend using <a href="https://www.google.com/chrome" target="_blank">Chrome</a> or <a href="http://www.mozilla.org/firefox" target="_blank">Firefox</a>.</div>
+<![endif]-->
+
+
+
+
+            
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+    
+    
+
+      <div 
+          class="ih-content"
+      >
+        <div class="marketing-hero"></div>
+
+        <div class="content-wrapper main-container ih-main-container" id="content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/template" id="image-modal-tpl">
+    <div class="wrapper-modal wrapper-modal-image">
+  <section class="image-link">
+    <%= smallHTML%>
+    <a href="#" class="modal-ui-icon action-fullscreen" role="button">
+      <span class="label">
+        <span class="icon fa fa-arrows-alt fa-large" aria-hidden="true"></span> <%- gettext("Fullscreen") %>
+      </span>
+    </a>
+  </section>
+
+  <section class="image-modal">
+    <section class="image-content">
+      <div class="image-wrapper">
+        <img alt="<%= largeALT %>, <%- gettext('Large') %>" src="<%= largeSRC %>" />
+      </div>
+
+      <a href="#" class="modal-ui-icon action-close" role="button">
+        <span class="label">
+          <span class="icon fa fa-remove fa-large" aria-hidden="true"></span> <%- gettext("Close") %>
+        </span>
+      </a>
+
+      <ul class="image-controls">
+        <li class="image-control">
+          <a href="#" class="modal-ui-icon action-zoom-in" role="button">
+            <span class="label">
+              <span class="icon fa fa fa-search-plus fa-large" aria-hidden="true"></span> <%- gettext("Zoom In") %>
+            </span>
+          </a>
+        </li>
+
+        <li class="image-control">
+          <a href="#" class="modal-ui-icon action-zoom-out is-disabled" aria-disabled="true" role="button">
+            <span class="label">
+              <span class="icon fa fa fa-search-minus fa-large" aria-hidden="true"></span> <%- gettext("Zoom Out") %>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </section>
+</div>
+
+</script>
+
+
+
+
+
+
+
+
+<div class="message-banner" aria-live="polite"></div>
+  
+
+
+
+
+
+
+
+
+    
+        <nav class="navbar course-tabs pb-0 navbar-expand ih-navbar-container" aria-label="Course">
+            <ul class="navbar-nav mr-auto ih-course-tabs">
+                    
+                    
+                        <li class="nav-item ih-nav-item active">
+                            <a href="../../../course/index.html" class="nav-link">
+                                Course
+                                    <span class="sr-only">, current location</span>
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="nav-item ih-nav-item ">
+                            <a href="../../../discussion/forum/index.html" class="nav-link">
+                                Discussion
+                            </a>
+                        </li>
+                    
+                    
+            </ul>
+        </nav>
+
+
+<div class="container ih-course-container"
+    lang="en"
+  >
+  <div class="course-wrapper ih-course-wrapper" role="presentation">
+
+    <section class="course-content" id="course-content">
+        <header class="page-header has-secondary">
+            <div class="page-header-main">
+                <nav aria-label="Course" class="sr-is-focusable" tabindex="-1">
+                    <div class="has-breadcrumbs">
+                        <div class="breadcrumbs">
+                                <span class="nav-item nav-item-course">
+                                    <a href="../../../course/index.html">Course</a>
+                                </span>
+                                <span class="icon fa fa-angle-right" aria-hidden="true"></span>
+                                <span class="nav-item nav-item-chapter" data-course-position="1" data-chapter-position="3">
+                                    <a href="../../../course/index.html#block-v1:IRONHACK+DAFT+201906_MIA+type@chapter+block@f7e6f8297f8d4f9b8cc84256830dfb24">Module 1</a>
+                                </span>
+                                <span class="icon fa fa-angle-right" aria-hidden="true"></span>
+                                <span class="nav-item nav-item-section">
+                                    <a href="../../../course/index.html#block-v1:IRONHACK+DAFT+201906_MIA+type@sequential+block@9f1720afbff5499083f82cb937b314cb">MySQL Intermediate</a>
+                                </span>
+                                <span class="icon fa fa-angle-right" aria-hidden="true"></span>
+                            <span class="nav-item nav-item-sequence">Action Queries</span>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <main id="main" tabindex="-1" aria-label="Content">
+
+              <div class="xblock xblock-student_view xblock-student_view-sequential xmodule_display xmodule_SequenceModule" data-runtime-class="LmsRuntime" data-init="XBlockToXModuleShim" data-block-type="sequential" data-request-token="3b540e68939911e99a866e487447f8c8" data-runtime-version="1" data-usage-id="block-v1:IRONHACK+DAFT+201906_MIA+type@sequential+block@9f1720afbff5499083f82cb937b314cb" data-type="Sequence" data-course-id="course-v1:IRONHACK+DAFT+201906_MIA">
+  <script type="json/xblock-args" class="xblock-json-init-args">
+    {"xmodule-type": "Sequence"}
+  </script>
+  
+
+
+<div id="sequence_9f1720afbff5499083f82cb937b314cb" class="sequence" data-id="block-v1:IRONHACK+DAFT+201906_MIA+type@sequential+block@9f1720afbff5499083f82cb937b314cb" data-position="4" data-ajax-url="/courses/course-v1:IRONHACK+DAFT+201906_MIA/xblock/block-v1:IRONHACK+DAFT+201906_MIA+type@sequential+block@9f1720afbff5499083f82cb937b314cb/handler/xmodule_handler" data-next-url="/courses/course-v1:IRONHACK+DAFT+201906_MIA/courseware/f7e6f8297f8d4f9b8cc84256830dfb24/9e3d146312134b35bd5cd8efe6a748ad/?child=first" data-prev-url="/courses/course-v1:IRONHACK+DAFT+201906_MIA/courseware/f7e6f8297f8d4f9b8cc84256830dfb24/fa21131ac90f4a99bcdf011386e99d59/?child=last">
+
+  <div class="sequence-nav ih-js-fire-highlighting-controls">
+    <button class="sequence-nav-button button-previous">
+      <span class="icon fa fa-chevron-prev" aria-hidden="true"></span>
+      <span class="sequence-nav-button-label">Previous</span>
+    </button>
+    <button class="sequence-nav-button button-next">
+      <span class="sequence-nav-button-label">Next</span>
+      <span class="icon fa fa-chevron-next" aria-hidden="true"></span>
+    </button>
+    <nav class="sequence-list-wrapper" aria-label="Sequence">
+      <ol id="sequence-list" role="tablist">
+        <li role="presentation">
+          <button class="seq_other inactive nav-item tab"
+            role="tab"
+            tabindex="-1"
+            aria-selected="false"
+            aria-expanded="false"
+            aria-controls="seq_content"
+            data-index="0"
+            data-id="block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@689515e4ae744c2ea4d102bb45d047de"
+            data-element="1"
+            data-page-title="Relational Database Structure and Design"
+            data-path="Module 1 &gt; MySQL Intermediate &gt; Relational Database Structure and Design"
+            data-graded="False"
+            id="tab_0"
+            >
+            <span class="icon fa seq_other" aria-hidden="true"></span>
+              <span 
+                class="fa fa-check-circle check-circle is-hidden" 
+                style="color:green"
+                aria-hidden="true"
+              ></span>
+            <span class="fa fa-fw fa-bookmark bookmark-icon is-hidden" aria-hidden="true"></span>
+            <div class="sequence-tooltip sr"><span class="sr">other&nbsp;</span>Relational Database Structure and Design<span class="sr bookmark-icon-sr">&nbsp;</span></div>
+          </button>
+        </li>
+        <li role="presentation">
+          <button class="seq_other inactive nav-item tab"
+            role="tab"
+            tabindex="-1"
+            aria-selected="false"
+            aria-expanded="false"
+            aria-controls="seq_content"
+            data-index="1"
+            data-id="block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@d51cd4e5d6c04571b39ccd385569cb4c"
+            data-element="2"
+            data-page-title="Joins and Relationships"
+            data-path="Module 1 &gt; MySQL Intermediate &gt; Joins and Relationships"
+            data-graded="False"
+            id="tab_1"
+            >
+            <span class="icon fa seq_other" aria-hidden="true"></span>
+              <span 
+                class="fa fa-check-circle check-circle is-hidden" 
+                style="color:green"
+                aria-hidden="true"
+              ></span>
+            <span class="fa fa-fw fa-bookmark bookmark-icon is-hidden" aria-hidden="true"></span>
+            <div class="sequence-tooltip sr"><span class="sr">other&nbsp;</span>Joins and Relationships<span class="sr bookmark-icon-sr">&nbsp;</span></div>
+          </button>
+        </li>
+        <li role="presentation">
+          <button class="seq_other inactive nav-item tab"
+            role="tab"
+            tabindex="-1"
+            aria-selected="false"
+            aria-expanded="false"
+            aria-controls="seq_content"
+            data-index="2"
+            data-id="block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@acfba97d8d344ed4938b570de80edbf1"
+            data-element="3"
+            data-page-title="Subqueries and Temp Tables"
+            data-path="Module 1 &gt; MySQL Intermediate &gt; Subqueries and Temp Tables"
+            data-graded="False"
+            id="tab_2"
+            >
+            <span class="icon fa seq_other" aria-hidden="true"></span>
+              <span 
+                class="fa fa-check-circle check-circle is-hidden" 
+                style="color:green"
+                aria-hidden="true"
+              ></span>
+            <span class="fa fa-fw fa-bookmark bookmark-icon is-hidden" aria-hidden="true"></span>
+            <div class="sequence-tooltip sr"><span class="sr">other&nbsp;</span>Subqueries and Temp Tables<span class="sr bookmark-icon-sr">&nbsp;</span></div>
+          </button>
+        </li>
+        <li role="presentation">
+          <button class="seq_other inactive nav-item tab"
+            role="tab"
+            tabindex="-1"
+            aria-selected="false"
+            aria-expanded="false"
+            aria-controls="seq_content"
+            data-index="3"
+            data-id="block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@960cf7356f934f1eaaff14bf81b810e1"
+            data-element="4"
+            data-page-title="Action Queries"
+            data-path="Module 1 &gt; MySQL Intermediate &gt; Action Queries"
+            data-graded="False"
+            id="tab_3"
+            >
+            <span class="icon fa seq_other" aria-hidden="true"></span>
+              <span 
+                class="fa fa-check-circle check-circle is-hidden" 
+                style="color:green"
+                aria-hidden="true"
+              ></span>
+            <span class="fa fa-fw fa-bookmark bookmark-icon is-hidden" aria-hidden="true"></span>
+            <div class="sequence-tooltip sr"><span class="sr">other&nbsp;</span>Action Queries<span class="sr bookmark-icon-sr">&nbsp;</span></div>
+          </button>
+        </li>
+      </ol>
+    </nav>
+  </div>
+  <div class="sr-is-focusable" tabindex="-1"></div>
+
+  <div id="seq_contents_0"
+    aria-labelledby="tab_0"
+    aria-hidden="true"
+    class="seq_contents tex2jax_ignore asciimath2jax_ignore">
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-vertical&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;VerticalStudentView&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34; data-request-token=&#34;3b540e68939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@689515e4ae744c2ea4d102bb45d047de&#34; data-block-type=&#34;vertical&#34;&gt;
+  
+
+  &lt;h2 class=&#34;hd hd-2 unit-title&#34;&gt;Relational Database Structure and Design&lt;/h2&gt;
+
+    &lt;div class=&#34;ih-bookmark-button-wrapper&#34;&gt;
+    	
+
+
+
+&lt;div class=&#34;bookmark-button-wrapper&#34;&gt;
+  &lt;button class=&#34;btn btn-link bookmark-button &#34;
+    aria-pressed=&#34;false&#34;
+    data-bookmark-id=&#34;NoahB,block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@689515e4ae744c2ea4d102bb45d047de&#34;
+    data-bookmarks-api-url=&#34;/api/bookmarks/v1/bookmarks/&#34;&gt;
+     &lt;span class=&#34;bookmark-text&#34;&gt;Bookmark this page&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+
+    &lt;/div&gt;	
+
+&lt;div class=&#34;vert-mod&#34;&gt;
+  &lt;div class=&#34;vert vert-0&#34; data-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@03b7e409c305452884038a0911c69425&#34;&gt;
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;3b540e68939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@03b7e409c305452884038a0911c69425&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  &lt;h2&gt;
+&lt;a id=&#34;user-content-lesson-goals&#34; class=&#34;anchor&#34; href=&#34;#lesson-goals&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Lesson Goals&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Learn foundational database concepts such as entities and relationships.&lt;/li&gt;
+&lt;li&gt;Learn about the different types of entity relationships and how to identify them.&lt;/li&gt;
+&lt;li&gt;Learn about normalization and how entities and relationships are expressed in a database.&lt;/li&gt;
+&lt;li&gt;Learn about entity relationship diagrams and how they represent a database&#39;s schema.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;
+&lt;a id=&#34;user-content-introduction&#34; class=&#34;anchor&#34; href=&#34;#introduction&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;In the prework for this program, we learned how to get started using MySQL and how to write queries with some of the basic SQL commands. Now that you know how to do that, it is important to take a step back and learn about the concept of relational databases before delving in to more advanced queries. This lesson will hopefully help you understand the &#34;why&#34; behind what you will learn later in this chapter.&lt;/p&gt;
+&lt;h2&gt;
+&lt;a id=&#34;user-content-entities-and-attributes&#34; class=&#34;anchor&#34; href=&#34;#entities-and-attributes&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Entities and Attributes&lt;/h2&gt;
+&lt;p&gt;Data sets typically contain information about &lt;em&gt;entities&lt;/em&gt;. You can think of entities as nouns - people, places, things, or even events. For example:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;In a data set about books, you are likely to find entities such as titles, authors, publishers, sales transactions, etc.&lt;/li&gt;
+&lt;li&gt;In a data set about sports, you are likely to find entities such as players, positions, teams, games, seasons, plays, etc.&lt;/li&gt;
+&lt;li&gt;In a retail data set, you are likely to find entities such as products, customers, stores, purchases, product categories, etc.&lt;/li&gt;
+&lt;li&gt;In a movies data set, you are likely to find entities such as movies, roles, actors, directors, genres, etc.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We need to get good at identifying entities in our data because they are ultimately going to be the subjects we are analyzing.&lt;/p&gt;
+&lt;p&gt;In a relational database, entities are represented by rows in a table. These rows typically span across multiple columns, which represent &lt;em&gt;attributes&lt;/em&gt; that contain information about each entity. In the table below, the rows represent stores (entities) and for each store, we have a unique &lt;em&gt;store_id&lt;/em&gt; field as well as &lt;em&gt;stor_name&lt;/em&gt;, &lt;em&gt;stor_address&lt;/em&gt;, &lt;em&gt;city&lt;/em&gt;, &lt;em&gt;state&lt;/em&gt; and &lt;em&gt;zip&lt;/em&gt; columns (attributes).&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;stor_id&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;stor_name&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;stor_address&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;city&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;state&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;zip&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;6380&lt;/td&gt;
+&lt;td&gt;Eric the Read Books&lt;/td&gt;
+&lt;td&gt;788 Catamaugus Ave.&lt;/td&gt;
+&lt;td&gt;Seattle&lt;/td&gt;
+&lt;td&gt;WA&lt;/td&gt;
+&lt;td&gt;98056&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;7066&lt;/td&gt;
+&lt;td&gt;Barnum&#39;s&lt;/td&gt;
+&lt;td&gt;567 Pasadena Ave.&lt;/td&gt;
+&lt;td&gt;Tustin&lt;/td&gt;
+&lt;td&gt;CA&lt;/td&gt;
+&lt;td&gt;92789&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;7067&lt;/td&gt;
+&lt;td&gt;News &amp;amp; Brews&lt;/td&gt;
+&lt;td&gt;577 First St.&lt;/td&gt;
+&lt;td&gt;Los Gatos&lt;/td&gt;
+&lt;td&gt;CA&lt;/td&gt;
+&lt;td&gt;96745&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;7131&lt;/td&gt;
+&lt;td&gt;Doc-U-Mat: Quality Laundry and Books&lt;/td&gt;
+&lt;td&gt;24-A Avogadro Way&lt;/td&gt;
+&lt;td&gt;Remulade&lt;/td&gt;
+&lt;td&gt;WA&lt;/td&gt;
+&lt;td&gt;98014&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;7896&lt;/td&gt;
+&lt;td&gt;Fricative Bookshop&lt;/td&gt;
+&lt;td&gt;89 Madison St.&lt;/td&gt;
+&lt;td&gt;Fremont&lt;/td&gt;
+&lt;td&gt;CA&lt;/td&gt;
+&lt;td&gt;90019&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;8042&lt;/td&gt;
+&lt;td&gt;Bookbeat&lt;/td&gt;
+&lt;td&gt;679 Carson St.&lt;/td&gt;
+&lt;td&gt;Portland&lt;/td&gt;
+&lt;td&gt;OR&lt;/td&gt;
+&lt;td&gt;89076&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;
+&lt;a id=&#34;user-content-relationships&#34; class=&#34;anchor&#34; href=&#34;#relationships&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Relationships&lt;/h2&gt;
+&lt;p&gt;The entities in our data also can be related to other entities. For example, in the case of a sports data set, a player can play one or more positions for a specific team. In other words, there exists a relationship between the player and the position and also between the player and the team.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/1a36c04a7d74e00eef8ed33b47d330a2f4e66907/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f73696d706c655f72656c6174696f6e736869702e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/1a36c04a7d74e00eef8ed33b47d330a2f4e66907/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f73696d706c655f72656c6174696f6e736869702e706e67&#34; alt=&#34;Simple Data Relationships&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/simple_relationship.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;These relationships can range from very simple to more complex. For example, in a movie data set, a particular movie is going to consist of many roles (each played by an actor), have one or more directors, and belong to one or more genres.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/7eddf687d47b96ab2ffc19f739915bb83890712c/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f636f6d706c65785f72656c6174696f6e736869702e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/7eddf687d47b96ab2ffc19f739915bb83890712c/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f636f6d706c65785f72656c6174696f6e736869702e706e67&#34; alt=&#34;Complex Data Relationships&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/complex_relationship.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;In a relational database, these are structured as one of three types of relationships.&lt;/p&gt;
+&lt;h3&gt;
+&lt;a id=&#34;user-content-one-to-one&#34; class=&#34;anchor&#34; href=&#34;#one-to-one&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;One-to-One&lt;/h3&gt;
+&lt;p&gt;A one-to-one relationship exists when a specific entity can  have, or belong to, only one other specific entity &lt;em&gt;and vice versa&lt;/em&gt;. For example, each U.S. citizen has only one Social Security number, and a specific Social Security number can belong to only one person. True one-to-one relationships are actually the most difficult to find in the real world, and many people confuse them with the next type of relationship.&lt;/p&gt;
+&lt;h3&gt;
+&lt;a id=&#34;user-content-one-to-many&#34; class=&#34;anchor&#34; href=&#34;#one-to-many&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;One-to-Many&lt;/h3&gt;
+&lt;p&gt;A one-to-many relationship exists when an entity can have, or belong to, only one other specific entity, but the same is not true of the other entity. For example, a player can play for only one team at a time but a team consists of multiple players. This depends, however, on the scenario upon which your data is modeled. If you are looking at a specific season, then the relationship holds, but from one season to another, a player may decide to switch teams, in which case the relationship would be identified as the next type we are going to discuss.&lt;/p&gt;
+&lt;h3&gt;
+&lt;a id=&#34;user-content-many-to-many&#34; class=&#34;anchor&#34; href=&#34;#many-to-many&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Many-to-Many&lt;/h3&gt;
+&lt;p&gt;In a many-to-many relationship, one specific entity can have, or belong to, many other entities and vice versa. For example, a movie can have multiple actors in it, and actors can star in many different movies. Similarly, a book may have multiple authors, and an author may have written multiple books.&lt;/p&gt;
+&lt;p&gt;It is important to think about the different entities and relationships that exist in your data so that you can design your database appropriately. Having an understanding of these will also inform the types of analysis you can perform. In the next couple sections, we will look at how to leverage these concepts in the design of a database.&lt;/p&gt;
+&lt;h2&gt;
+&lt;a id=&#34;user-content-data-normalization&#34; class=&#34;anchor&#34; href=&#34;#data-normalization&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Data Normalization&lt;/h2&gt;
+&lt;p&gt;The data in a relational database should be organized in a &lt;em&gt;normalized&lt;/em&gt; fashion. This means that different entities in the data will have their own respective tables where each individual entity will be listed once with a unique ID assigned to it. This unique ID is called a &lt;em&gt;primary key&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;The relationships between entities will be managed by relationships inside the database where the ID for one entity will be mapped to the ID for the related entity by a &lt;em&gt;foreign key&lt;/em&gt;. A foreign key is a field in one table that refers to an identifier for an entity in another table. Queries are built on top of these entity tables and leverage these relationships to show specifically the information that the user would like to see.&lt;/p&gt;
+&lt;p&gt;One of the main advantages of storing data this way is to avoid redundancy. For example, if a player on Team A moved to Team B, you would only need to update the relationship for that player in the table that contained player-team relationships, and it would automatically get updated in every query that includes what team a player plays for.&lt;/p&gt;
+&lt;h2&gt;
+&lt;a id=&#34;user-content-relational-database-design&#34; class=&#34;anchor&#34; href=&#34;#relational-database-design&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Relational Database Design&lt;/h2&gt;
+&lt;p&gt;Now that we have covered the main aspects of a relational database, let&#39;s learn how to design one. If you wanted to design a normalized database, you would need to take stock of the entities and relationships you have in your data, split the entities up into their own tables, and then create the relationships in the database&#39;s schema.&lt;/p&gt;
+&lt;p&gt;An &lt;em&gt;entity relationship diagram&lt;/em&gt; (ERD) is a visual representation of a that schema. It allows you to get an overview of what tables are in your database and how those tables relate to each other. Below is an example ERD for a publications database.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/4b420843c62d42c249542ed7e4da86186246ee25/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6572642e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/4b420843c62d42c249542ed7e4da86186246ee25/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6572642e706e67&#34; alt=&#34;Entity Relationship Diagram&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/erd.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;As you can see, the diagram includes tables for each type of entity, and the lines joining the tables together represent the different entity relationships that are present in the schema of this database. For example, we see a one-to-many relationship between the &lt;code&gt;titles&lt;/code&gt; table and the &lt;code&gt;sales&lt;/code&gt; table and also between the &lt;code&gt;publishers&lt;/code&gt; table and the &lt;code&gt;employees&lt;/code&gt; table. There are also a couple many-to-many relationships in this database, such as the those between the &lt;code&gt;titles&lt;/code&gt; and &lt;code&gt;authors&lt;/code&gt; tables and between the &lt;code&gt;stores&lt;/code&gt; and &lt;code&gt;titles&lt;/code&gt; tables. Note that these many-to-many relationships are established via intermediary relationship tables (&lt;code&gt;titleauthor&lt;/code&gt; and &lt;code&gt;sales&lt;/code&gt; respectively) that are both part of one-to-many relationships on both sides.&lt;/p&gt;
+&lt;p&gt;Also, notice that the primary keys are labeled with a little key icon next to their field names. The foreign keys are a little more difficult to spot, but they include the &lt;em&gt;au_id&lt;/em&gt;, &lt;em&gt;title_id&lt;/em&gt;, &lt;em&gt;store_id&lt;/em&gt;, and &lt;em&gt;pub_id&lt;/em&gt; fields referenced in  tables other than those in which they are the primary key.&lt;/p&gt;
+&lt;h2&gt;
+&lt;a id=&#34;user-content-summary&#34; class=&#34;anchor&#34; href=&#34;#summary&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Summary&lt;/h2&gt;
+&lt;p&gt;In this lesson, we took a step back from SQL to learn about foundational concepts in relational database design. First, we covered the concepts of entities and relationships in data. Then, we learned about the different types of relationships that can exist and looked at a few examples to help us identify them. We then discussed how these concepts are actually represented in a relational database via normalization. Finally, we introduced entity relationship diagrams and looked at an example so that you could get a visual sense of the different components of a database. Now that we have an understanding of these basic concepts, we are ready to dive back into SQL and write some queries that leverage what we have learned here.&lt;/p&gt;
+
+&lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+  </div>
+  <div id="seq_contents_1"
+    aria-labelledby="tab_1"
+    aria-hidden="true"
+    class="seq_contents tex2jax_ignore asciimath2jax_ignore">
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-vertical&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;VerticalStudentView&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34; data-request-token=&#34;3b540e68939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@d51cd4e5d6c04571b39ccd385569cb4c&#34; data-block-type=&#34;vertical&#34;&gt;
+  
+
+  &lt;h2 class=&#34;hd hd-2 unit-title&#34;&gt;Joins and Relationships&lt;/h2&gt;
+
+    &lt;div class=&#34;ih-bookmark-button-wrapper&#34;&gt;
+    	
+
+
+
+&lt;div class=&#34;bookmark-button-wrapper&#34;&gt;
+  &lt;button class=&#34;btn btn-link bookmark-button &#34;
+    aria-pressed=&#34;false&#34;
+    data-bookmark-id=&#34;NoahB,block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@d51cd4e5d6c04571b39ccd385569cb4c&#34;
+    data-bookmarks-api-url=&#34;/api/bookmarks/v1/bookmarks/&#34;&gt;
+     &lt;span class=&#34;bookmark-text&#34;&gt;Bookmark this page&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+
+    &lt;/div&gt;	
+
+&lt;div class=&#34;vert-mod&#34;&gt;
+  &lt;div class=&#34;vert vert-0&#34; data-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@cf7c8decbbfd4ee4892c71035e28c8e2&#34;&gt;
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;3b540e68939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@cf7c8decbbfd4ee4892c71035e28c8e2&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  &lt;h2&gt;
+&lt;a id=&#34;user-content-lesson-goals&#34; class=&#34;anchor&#34; href=&#34;#lesson-goals&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Lesson Goals&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Learn about the concept of joins.&lt;/li&gt;
+&lt;li&gt;Learn about the different types of joins and what subsets of the data each returns.&lt;/li&gt;
+&lt;li&gt;Learn how to write queries that join tables.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;
+&lt;a id=&#34;user-content-introduction&#34; class=&#34;anchor&#34; href=&#34;#introduction&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;In the last lesson, we learned about relational database concepts and structure, including the different types of relationships that can exist in a database (one-to-one, one-to-many, and many-to-many). In this lesson, we will learn how to leverage that structure and those relationships to write more robust queries with SQL. We will do this by using &lt;em&gt;joins&lt;/em&gt;, which will allow us to specify relationships between entities from within our queries.&lt;/p&gt;
+&lt;p&gt;For this lesson, we will revisit the publications data set that we examined the ERD diagram in the previous lesson. Because we know how that database is designed and what entity tables relate in what ways to other entity tables, we will be able to easily create queries that join those entities together. As a reminder, below is how the database is structured and the relationships that exist.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/4b420843c62d42c249542ed7e4da86186246ee25/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6572642e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/4b420843c62d42c249542ed7e4da86186246ee25/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6572642e706e67&#34; alt=&#34;Entity Relationship Diagram&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/erd.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;To follow along, you must obtain the publications data set and import it into MySQL. Below are step-by-step instructions for how to do that.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Download &lt;a href=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/data/module-1/publications.sql.zip&#34; rel=&#34;nofollow&#34;&gt;publications.sql.zip&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Unzip the downloaded file and extract the database dump file on your machine.&lt;/li&gt;
+&lt;li&gt;In Sequel Pro, create a new database called &#34;publications&#34; by running the following command: &lt;code&gt;CREATE DATABASE publications;&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;From the &lt;em&gt;Select Database&lt;/em&gt; dropdown menu on the upper left, select the publications database.&lt;/li&gt;
+&lt;li&gt;From the top menu, select &lt;em&gt;File&lt;/em&gt; and then the &lt;em&gt;Import&lt;/em&gt; menu option.&lt;/li&gt;
+&lt;li&gt;Navigate to the publications.sql dump file and import it.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;You should now see the database tables listed under &lt;em&gt;TABLES&lt;/em&gt; in the left sidebar listed.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/7e9862430d8c0ce37304142107b1cd4819101480/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f64617461626173652d696d706f72742e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/7e9862430d8c0ce37304142107b1cd4819101480/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f64617461626173652d696d706f72742e706e67&#34; alt=&#34;Database Import&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/database-import.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;
+&lt;a id=&#34;user-content-join-basics&#34; class=&#34;anchor&#34; href=&#34;#join-basics&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Join Basics&lt;/h2&gt;
+&lt;p&gt;Before we jump into writing queries with joins on our data set, let&#39;s go over some basic concepts as well as the different types of joins you will need to know.&lt;/p&gt;
+&lt;p&gt;When you join two tables, you join them based on a field that they have in common. For example, if you wanted to join the &lt;code&gt;publishers&lt;/code&gt; table and the &lt;code&gt;employees&lt;/code&gt; table in our database, you would join on the &lt;code&gt;pub_id&lt;/code&gt; fields in each table since they both reference the same thing (the publisher&#39;s unique ID).&lt;/p&gt;
+&lt;p&gt;In a join, the table you declare first (we will call it Table A) will be the considered the &lt;em&gt;left&lt;/em&gt; table and the second table you declare (Table B) will be the &lt;em&gt;right&lt;/em&gt; table. You will want to keep track of which tables are left and right, as this will impact the results of your query for certain types of joins.&lt;/p&gt;
+&lt;p&gt;Below are explanations of the major types of joins you are likely to encounter as well as visual depictions of how their results differ.&lt;/p&gt;
+&lt;h3&gt;
+&lt;a id=&#34;user-content-inner-join&#34; class=&#34;anchor&#34; href=&#34;#inner-join&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;INNER JOIN&lt;/h3&gt;
+&lt;p&gt;The most basic type of join is the &lt;em&gt;inner join&lt;/em&gt;. When you inner join two tables (Table A and Table B), the records returned are only those where there was a match in both tables.&lt;/p&gt;
+&lt;div class=&#34;highlight highlight-source-sql&#34;&gt;&lt;pre&gt;&lt;span class=&#34;pl-k&#34;&gt;SELECT&lt;/span&gt; &lt;span class=&#34;pl-k&#34;&gt;*&lt;/span&gt;
+&lt;span class=&#34;pl-k&#34;&gt;FROM&lt;/span&gt; Table_A
+&lt;span class=&#34;pl-k&#34;&gt;INNER JOIN&lt;/span&gt; Table_B
+&lt;span class=&#34;pl-k&#34;&gt;ON&lt;/span&gt; &lt;span class=&#34;pl-c1&#34;&gt;Table_A&lt;/span&gt;.&lt;span class=&#34;pl-c1&#34;&gt;Key&lt;/span&gt; &lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;pl-c1&#34;&gt;Table_B&lt;/span&gt;.&lt;span class=&#34;pl-c1&#34;&gt;Key&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/0cb25c5fa2af4b7fadafc9b68fb89a304fdc9786/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f696e6e65725f6a6f696e2e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/0cb25c5fa2af4b7fadafc9b68fb89a304fdc9786/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f696e6e65725f6a6f696e2e706e67&#34; alt=&#34;Inner Join&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/inner_join.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;
+&lt;a id=&#34;user-content-left-join&#34; class=&#34;anchor&#34; href=&#34;#left-join&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;LEFT JOIN&lt;/h3&gt;
+&lt;p&gt;With a &lt;em&gt;left join&lt;/em&gt;, the query will return all the records in the left table (the table declared first) and the matched records from the right table (the table declared second).&lt;/p&gt;
+&lt;div class=&#34;highlight highlight-source-sql&#34;&gt;&lt;pre&gt;&lt;span class=&#34;pl-k&#34;&gt;SELECT&lt;/span&gt; &lt;span class=&#34;pl-k&#34;&gt;*&lt;/span&gt;
+&lt;span class=&#34;pl-k&#34;&gt;FROM&lt;/span&gt; Table_A
+&lt;span class=&#34;pl-k&#34;&gt;LEFT JOIN&lt;/span&gt; Table_B
+&lt;span class=&#34;pl-k&#34;&gt;ON&lt;/span&gt; &lt;span class=&#34;pl-c1&#34;&gt;Table_A&lt;/span&gt;.&lt;span class=&#34;pl-c1&#34;&gt;Key&lt;/span&gt; &lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;pl-c1&#34;&gt;Table_B&lt;/span&gt;.&lt;span class=&#34;pl-c1&#34;&gt;Key&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/ef1d648e1f55989fc36e4b91c5f6da73bcadb165/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6c6566745f6a6f696e2e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/ef1d648e1f55989fc36e4b91c5f6da73bcadb165/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6c6566745f6a6f696e2e706e67&#34; alt=&#34;Left Join&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/left_join.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;
+&lt;a id=&#34;user-content-right-join&#34; class=&#34;anchor&#34; href=&#34;#right-join&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;RIGHT JOIN&lt;/h3&gt;
+&lt;p&gt;A &lt;em&gt;right join&lt;/em&gt; does the exact opposite of a left join. It returns all the records from the right table and just the matching records from the left table.&lt;/p&gt;
+&lt;div class=&#34;highlight highlight-source-sql&#34;&gt;&lt;pre&gt;&lt;span class=&#34;pl-k&#34;&gt;SELECT&lt;/span&gt; &lt;span class=&#34;pl-k&#34;&gt;*&lt;/span&gt;
+&lt;span class=&#34;pl-k&#34;&gt;FROM&lt;/span&gt; Table_A
+&lt;span class=&#34;pl-k&#34;&gt;RIGHT JOIN&lt;/span&gt; Table_B
+&lt;span class=&#34;pl-k&#34;&gt;ON&lt;/span&gt; &lt;span class=&#34;pl-c1&#34;&gt;Table_A&lt;/span&gt;.&lt;span class=&#34;pl-c1&#34;&gt;Key&lt;/span&gt; &lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;pl-c1&#34;&gt;Table_B&lt;/span&gt;.&lt;span class=&#34;pl-c1&#34;&gt;Key&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/647f1d9e59c198f3f730ddf025661d941c81ffc6/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f72696768745f6a6f696e2e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/647f1d9e59c198f3f730ddf025661d941c81ffc6/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f72696768745f6a6f696e2e706e67&#34; alt=&#34;Right Join&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/right_join.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;
+&lt;a id=&#34;user-content-outer-join&#34; class=&#34;anchor&#34; href=&#34;#outer-join&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;OUTER JOIN&lt;/h3&gt;
+&lt;p&gt;An &lt;em&gt;outer join&lt;/em&gt; will return every record that there is a match for in both the left and right tables.&lt;/p&gt;
+&lt;div class=&#34;highlight highlight-source-sql&#34;&gt;&lt;pre&gt;&lt;span class=&#34;pl-k&#34;&gt;SELECT&lt;/span&gt; &lt;span class=&#34;pl-k&#34;&gt;*&lt;/span&gt;
+&lt;span class=&#34;pl-k&#34;&gt;FROM&lt;/span&gt; Table_A
+OUTER &lt;span class=&#34;pl-k&#34;&gt;JOIN&lt;/span&gt; Table_B
+&lt;span class=&#34;pl-k&#34;&gt;ON&lt;/span&gt; &lt;span class=&#34;pl-c1&#34;&gt;Table_A&lt;/span&gt;.&lt;span class=&#34;pl-c1&#34;&gt;Key&lt;/span&gt; &lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;pl-c1&#34;&gt;Table_B&lt;/span&gt;.&lt;span class=&#34;pl-c1&#34;&gt;Key&lt;/span&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/0aad3b0f777b7e24544477894552b8583a3d2fee/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6f757465725f6a6f696e2e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/0aad3b0f777b7e24544477894552b8583a3d2fee/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6f757465725f6a6f696e2e706e67&#34; alt=&#34;Outer Join&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/outer_join.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;
+&lt;a id=&#34;user-content-creating-queries-with-joins&#34; class=&#34;anchor&#34; href=&#34;#creating-queries-with-joins&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Creating Queries with Joins&lt;/h2&gt;
+&lt;p&gt;Now that we know about the different types of joins and have our data loaded in to MySQL, we are ready to start writing queries with joins in them.&lt;/p&gt;
+&lt;p&gt;From looking at our ERD, we know that publishers and titles have a one-to-many relationship. Let&#39;s join them and get a count of the number of titles each publisher has published.&lt;/p&gt;
+&lt;div class=&#34;highlight highlight-source-sql&#34;&gt;&lt;pre&gt;&lt;span class=&#34;pl-k&#34;&gt;SELECT&lt;/span&gt; &lt;span class=&#34;pl-c1&#34;&gt;pubs&lt;/span&gt;.&lt;span class=&#34;pl-c1&#34;&gt;pub_name&lt;/span&gt;, &lt;span class=&#34;pl-c1&#34;&gt;COUNT&lt;/span&gt;(&lt;span class=&#34;pl-c1&#34;&gt;titles&lt;/span&gt;.&lt;span class=&#34;pl-c1&#34;&gt;title_id&lt;/span&gt;) &lt;span class=&#34;pl-k&#34;&gt;AS&lt;/span&gt; Titles
+&lt;span class=&#34;pl-k&#34;&gt;FROM&lt;/span&gt; &lt;span class=&#34;pl-c1&#34;&gt;publications&lt;/span&gt;.&lt;span class=&#34;pl-c1&#34;&gt;publishers&lt;/span&gt; pubs
+&lt;span class=&#34;pl-k&#34;&gt;INNER JOIN&lt;/span&gt; &lt;span class=&#34;pl-c1&#34;&gt;publications&lt;/span&gt;.&lt;span class=&#34;pl-c1&#34;&gt;titles&lt;/span&gt; titles
+&lt;span class=&#34;pl-k&#34;&gt;ON&lt;/span&gt; &lt;span class=&#34;pl-c1&#34;&gt;pubs&lt;/span&gt;.&lt;span class=&#34;pl-c1&#34;&gt;pub_id&lt;/span&gt; &lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;pl-c1&#34;&gt;titles&lt;/span&gt;.&lt;span class=&#34;pl-c1&#34;&gt;pub_id&lt;/span&gt;
+&lt;span class=&#34;pl-k&#34;&gt;GROUP BY&lt;/span&gt; &lt;span class=&#34;pl-c1&#34;&gt;pubs&lt;/span&gt;.&lt;span class=&#34;pl-c1&#34;&gt;pub_name&lt;/span&gt;;&lt;/pre&gt;&lt;/div&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;pub_name&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;Titles&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;New Moon Books&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Binnet &amp;amp; Hardley&lt;/td&gt;
+&lt;td&gt;7&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Algodata Infosystems&lt;/td&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Because we used an &lt;code&gt;INNER JOIN&lt;/code&gt; for this query, it returns only results for publishers whose &lt;code&gt;pub_id&lt;/code&gt; is in both tables. What if we wanted the results to return records for all the publishers, regardless of whether they had published any titles? This is exactly what a left join can help us with. All we need to do is replace our &lt;code&gt;INNER JOIN&lt;/code&gt; with a &lt;code&gt;LEFT JOIN&lt;/code&gt; and it will return all the records in the &lt;code&gt;publishers&lt;/code&gt; table and count zero records for the ones that do not have any titles published.&lt;/p&gt;
+&lt;div class=&#34;highlight highlight-source-sql&#34;&gt;&lt;pre&gt;&lt;span class=&#34;pl-k&#34;&gt;SELECT&lt;/span&gt; &lt;span class=&#34;pl-c1&#34;&gt;pubs&lt;/span&gt;.&lt;span class=&#34;pl-c1&#34;&gt;pub_name&lt;/span&gt;, &lt;span class=&#34;pl-c1&#34;&gt;COUNT&lt;/span&gt;(&lt;span class=&#34;pl-c1&#34;&gt;titles&lt;/span&gt;.&lt;span class=&#34;pl-c1&#34;&gt;title_id&lt;/span&gt;) &lt;span class=&#34;pl-k&#34;&gt;AS&lt;/span&gt; Titles
+&lt;span class=&#34;pl-k&#34;&gt;FROM&lt;/span&gt; &lt;span class=&#34;pl-c1&#34;&gt;publications&lt;/span&gt;.&lt;span class=&#34;pl-c1&#34;&gt;publishers&lt;/span&gt; pubs
+&lt;span class=&#34;pl-k&#34;&gt;LEFT JOIN&lt;/span&gt; &lt;span class=&#34;pl-c1&#34;&gt;publications&lt;/span&gt;.&lt;span class=&#34;pl-c1&#34;&gt;titles&lt;/span&gt; titles
+&lt;span class=&#34;pl-k&#34;&gt;ON&lt;/span&gt; &lt;span class=&#34;pl-c1&#34;&gt;pubs&lt;/span&gt;.&lt;span class=&#34;pl-c1&#34;&gt;pub_id&lt;/span&gt; &lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;pl-c1&#34;&gt;titles&lt;/span&gt;.&lt;span class=&#34;pl-c1&#34;&gt;pub_id&lt;/span&gt;
+&lt;span class=&#34;pl-k&#34;&gt;GROUP BY&lt;/span&gt; &lt;span class=&#34;pl-c1&#34;&gt;pubs&lt;/span&gt;.&lt;span class=&#34;pl-c1&#34;&gt;pub_name&lt;/span&gt;;&lt;/pre&gt;&lt;/div&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;pub_name&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;Titles&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;New Moon Books&lt;/td&gt;
+&lt;td&gt;5&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Binnet &amp;amp; Hardley&lt;/td&gt;
+&lt;td&gt;7&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Algodata Infosystems&lt;/td&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Five Lakes Publishing&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Ramona Publishers&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;GGG&amp;amp;G&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Scootney Books&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Lucerne Publishing&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;What if we wanted to analyze how many units were sold for each title? We could declare our &lt;code&gt;sales&lt;/code&gt; table first, our &lt;code&gt;titles&lt;/code&gt; table second, and use a &lt;code&gt;RIGHT JOIN&lt;/code&gt; to ensure that our query returns a record for every title (even the ones that did not have any sales).&lt;/p&gt;
+&lt;div class=&#34;highlight highlight-source-sql&#34;&gt;&lt;pre&gt;&lt;span class=&#34;pl-k&#34;&gt;SELECT&lt;/span&gt; &lt;span class=&#34;pl-c1&#34;&gt;titles&lt;/span&gt;.&lt;span class=&#34;pl-c1&#34;&gt;title&lt;/span&gt;, &lt;span class=&#34;pl-c1&#34;&gt;titles&lt;/span&gt;.&lt;span class=&#34;pl-c1&#34;&gt;type&lt;/span&gt;, &lt;span class=&#34;pl-c1&#34;&gt;titles&lt;/span&gt;.&lt;span class=&#34;pl-c1&#34;&gt;price&lt;/span&gt;, &lt;span class=&#34;pl-c1&#34;&gt;SUM&lt;/span&gt;(&lt;span class=&#34;pl-c1&#34;&gt;sales&lt;/span&gt;.&lt;span class=&#34;pl-c1&#34;&gt;qty&lt;/span&gt;) &lt;span class=&#34;pl-k&#34;&gt;AS&lt;/span&gt; units_sold
+&lt;span class=&#34;pl-k&#34;&gt;FROM&lt;/span&gt; &lt;span class=&#34;pl-c1&#34;&gt;publications&lt;/span&gt;.&lt;span class=&#34;pl-c1&#34;&gt;sales&lt;/span&gt; sales
+&lt;span class=&#34;pl-k&#34;&gt;RIGHT JOIN&lt;/span&gt; &lt;span class=&#34;pl-c1&#34;&gt;publications&lt;/span&gt;.&lt;span class=&#34;pl-c1&#34;&gt;titles&lt;/span&gt; titles
+&lt;span class=&#34;pl-k&#34;&gt;ON&lt;/span&gt; &lt;span class=&#34;pl-c1&#34;&gt;sales&lt;/span&gt;.&lt;span class=&#34;pl-c1&#34;&gt;title_id&lt;/span&gt; &lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;pl-c1&#34;&gt;titles&lt;/span&gt;.&lt;span class=&#34;pl-c1&#34;&gt;title_id&lt;/span&gt;
+&lt;span class=&#34;pl-k&#34;&gt;GROUP BY&lt;/span&gt; &lt;span class=&#34;pl-c1&#34;&gt;titles&lt;/span&gt;.&lt;span class=&#34;pl-c1&#34;&gt;title&lt;/span&gt;, &lt;span class=&#34;pl-c1&#34;&gt;titles&lt;/span&gt;.&lt;span class=&#34;pl-c1&#34;&gt;type&lt;/span&gt;, &lt;span class=&#34;pl-c1&#34;&gt;titles&lt;/span&gt;.&lt;span class=&#34;pl-c1&#34;&gt;price&lt;/span&gt;;&lt;/pre&gt;&lt;/div&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;title&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;type&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;price&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;&lt;strong&gt;units_sold&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;The Busy Executive&#39;s Database Guide&lt;/td&gt;
+&lt;td&gt;business&lt;/td&gt;
+&lt;td&gt;19.99&lt;/td&gt;
+&lt;td&gt;15&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Cooking with Computers: Surreptitious Balance Sheets&lt;/td&gt;
+&lt;td&gt;business&lt;/td&gt;
+&lt;td&gt;11.95&lt;/td&gt;
+&lt;td&gt;25&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;You Can Combat Computer Stress!&lt;/td&gt;
+&lt;td&gt;business&lt;/td&gt;
+&lt;td&gt;2.99&lt;/td&gt;
+&lt;td&gt;35&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Straight Talk About Computers&lt;/td&gt;
+&lt;td&gt;business&lt;/td&gt;
+&lt;td&gt;19.99&lt;/td&gt;
+&lt;td&gt;15&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Silicon Valley Gastronomic Treats&lt;/td&gt;
+&lt;td&gt;mod_cook&lt;/td&gt;
+&lt;td&gt;19.99&lt;/td&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;The Gourmet Microwave&lt;/td&gt;
+&lt;td&gt;mod_cook&lt;/td&gt;
+&lt;td&gt;2.99&lt;/td&gt;
+&lt;td&gt;40&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;The Psychology of Computer Cooking&lt;/td&gt;
+&lt;td&gt;UNDECIDED&lt;/td&gt;
+&lt;td&gt;NULL&lt;/td&gt;
+&lt;td&gt;NULL&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;But Is It User Friendly?&lt;/td&gt;
+&lt;td&gt;popular_comp&lt;/td&gt;
+&lt;td&gt;22.95&lt;/td&gt;
+&lt;td&gt;30&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Secrets of Silicon Valley&lt;/td&gt;
+&lt;td&gt;popular_comp&lt;/td&gt;
+&lt;td&gt;20&lt;/td&gt;
+&lt;td&gt;50&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Net Etiquette&lt;/td&gt;
+&lt;td&gt;popular_comp&lt;/td&gt;
+&lt;td&gt;NULL&lt;/td&gt;
+&lt;td&gt;NULL&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Computer Phobic AND Non-Phobic Individuals: Behavior Variations&lt;/td&gt;
+&lt;td&gt;psychology&lt;/td&gt;
+&lt;td&gt;21.59&lt;/td&gt;
+&lt;td&gt;20&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Is Anger the Enemy?&lt;/td&gt;
+&lt;td&gt;psychology&lt;/td&gt;
+&lt;td&gt;10.95&lt;/td&gt;
+&lt;td&gt;108&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Life Without Fear&lt;/td&gt;
+&lt;td&gt;psychology&lt;/td&gt;
+&lt;td&gt;7&lt;/td&gt;
+&lt;td&gt;25&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Prolonged Data Deprivation: Four Case Studies&lt;/td&gt;
+&lt;td&gt;psychology&lt;/td&gt;
+&lt;td&gt;19.99&lt;/td&gt;
+&lt;td&gt;15&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Emotional Security: A New Algorithm&lt;/td&gt;
+&lt;td&gt;psychology&lt;/td&gt;
+&lt;td&gt;7.99&lt;/td&gt;
+&lt;td&gt;25&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Onions, Leeks, and Garlic: Cooking Secrets of the Mediterranean&lt;/td&gt;
+&lt;td&gt;trad_cook&lt;/td&gt;
+&lt;td&gt;20.95&lt;/td&gt;
+&lt;td&gt;40&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Fifty Years in Buckingham Palace Kitchens&lt;/td&gt;
+&lt;td&gt;trad_cook&lt;/td&gt;
+&lt;td&gt;11.95&lt;/td&gt;
+&lt;td&gt;20&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Sushi, Anyone?&lt;/td&gt;
+&lt;td&gt;trad_cook&lt;/td&gt;
+&lt;td&gt;14.99&lt;/td&gt;
+&lt;td&gt;20&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;We can see from the results that there is one title that has sold very well (&lt;em&gt;Is Anger the Enemy?&lt;/em&gt;) and two titles that have not had sales (which show NULL in the &lt;code&gt;units_sold&lt;/code&gt; field).&lt;/p&gt;
+&lt;p&gt;The command for an outer join is typically &lt;code&gt;FULL OUTER JOIN&lt;/code&gt;. However, MySQL does not support full outer joins, so we must improvise and perform them using a combination of the &lt;code&gt;LEFT JOIN&lt;/code&gt;, &lt;code&gt;RIGHT JOIN&lt;/code&gt;, and &lt;code&gt;UNION&lt;/code&gt; commands. The left and right joins will collectively return all the records from each of the joined tables. The &lt;code&gt;UNION&lt;/code&gt; command combines the results of two queries, and it should be placed directly between them. For example, if we wanted to see what employees were assigned to which jobs, ensuring that the query returns both employees not assigned to a job and jobs not assigned to any employee, we would write our query as follows.&lt;/p&gt;
+&lt;div class=&#34;highlight highlight-source-sql&#34;&gt;&lt;pre&gt;&lt;span class=&#34;pl-k&#34;&gt;SELECT&lt;/span&gt; &lt;span class=&#34;pl-k&#34;&gt;*&lt;/span&gt;
+&lt;span class=&#34;pl-k&#34;&gt;FROM&lt;/span&gt; &lt;span class=&#34;pl-c1&#34;&gt;publications&lt;/span&gt;.&lt;span class=&#34;pl-c1&#34;&gt;employee&lt;/span&gt; emp
+&lt;span class=&#34;pl-k&#34;&gt;RIGHT JOIN&lt;/span&gt; &lt;span class=&#34;pl-c1&#34;&gt;publications&lt;/span&gt;.&lt;span class=&#34;pl-c1&#34;&gt;jobs&lt;/span&gt; job
+&lt;span class=&#34;pl-k&#34;&gt;ON&lt;/span&gt; &lt;span class=&#34;pl-c1&#34;&gt;emp&lt;/span&gt;.&lt;span class=&#34;pl-c1&#34;&gt;job_id&lt;/span&gt; &lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;pl-c1&#34;&gt;job&lt;/span&gt;.&lt;span class=&#34;pl-c1&#34;&gt;job_id&lt;/span&gt;
+&lt;span class=&#34;pl-k&#34;&gt;UNION&lt;/span&gt;
+&lt;span class=&#34;pl-k&#34;&gt;SELECT&lt;/span&gt; &lt;span class=&#34;pl-k&#34;&gt;*&lt;/span&gt;
+&lt;span class=&#34;pl-k&#34;&gt;FROM&lt;/span&gt; &lt;span class=&#34;pl-c1&#34;&gt;publications&lt;/span&gt;.&lt;span class=&#34;pl-c1&#34;&gt;employee&lt;/span&gt; emp
+&lt;span class=&#34;pl-k&#34;&gt;LEFT JOIN&lt;/span&gt; &lt;span class=&#34;pl-c1&#34;&gt;publications&lt;/span&gt;.&lt;span class=&#34;pl-c1&#34;&gt;jobs&lt;/span&gt; job
+&lt;span class=&#34;pl-k&#34;&gt;ON&lt;/span&gt; &lt;span class=&#34;pl-c1&#34;&gt;emp&lt;/span&gt;.&lt;span class=&#34;pl-c1&#34;&gt;job_id&lt;/span&gt; &lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;pl-c1&#34;&gt;job&lt;/span&gt;.&lt;span class=&#34;pl-c1&#34;&gt;job_id&lt;/span&gt;;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;
+&lt;a id=&#34;user-content-summary&#34; class=&#34;anchor&#34; href=&#34;#summary&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Summary&lt;/h2&gt;
+&lt;p&gt;In this lesson, we learned how joins help bring data about separate entities together. We also learned about the different types of joins, the subsets of the data we can expect queries that use them to return, and how to incorporate them into our queries. By combining joins with the SQL commands you learned in the pre-work for the program, you should now be able to construct fairly complex queries that bring information from disparate tables together.&lt;/p&gt;
+
+&lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+  </div>
+  <div id="seq_contents_2"
+    aria-labelledby="tab_2"
+    aria-hidden="true"
+    class="seq_contents tex2jax_ignore asciimath2jax_ignore">
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-vertical&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;VerticalStudentView&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34; data-request-token=&#34;3b540e68939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@acfba97d8d344ed4938b570de80edbf1&#34; data-block-type=&#34;vertical&#34;&gt;
+  
+
+  &lt;h2 class=&#34;hd hd-2 unit-title&#34;&gt;Subqueries and Temp Tables&lt;/h2&gt;
+
+    &lt;div class=&#34;ih-bookmark-button-wrapper&#34;&gt;
+    	
+
+
+
+&lt;div class=&#34;bookmark-button-wrapper&#34;&gt;
+  &lt;button class=&#34;btn btn-link bookmark-button &#34;
+    aria-pressed=&#34;false&#34;
+    data-bookmark-id=&#34;NoahB,block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@acfba97d8d344ed4938b570de80edbf1&#34;
+    data-bookmarks-api-url=&#34;/api/bookmarks/v1/bookmarks/&#34;&gt;
+     &lt;span class=&#34;bookmark-text&#34;&gt;Bookmark this page&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+
+    &lt;/div&gt;	
+
+&lt;div class=&#34;vert-mod&#34;&gt;
+  &lt;div class=&#34;vert vert-0&#34; data-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@4e61491972b14f9eaff103af69434e1e&#34;&gt;
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;3b540e68939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@4e61491972b14f9eaff103af69434e1e&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  &lt;h2&gt;&lt;a id=&#34;user-content-lesson-goals&#34; class=&#34;anchor&#34; href=&#34;#lesson-goals&#34; aria-hidden=&#34;true&#34;&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt; &lt;/a&gt;Lesson Goals&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Understand the need for subqueries and temp tables.&lt;/li&gt;
+&lt;li&gt;Learn about subqueries and how they work.&lt;/li&gt;
+&lt;li&gt;Learn how to join subqueries to tables inside a main query.&lt;/li&gt;
+&lt;li&gt;Learn about temp tables and their benefits over subqueries.&lt;/li&gt;
+&lt;li&gt;Learn how to swap out subqueries and temp tables from queries.&lt;/li&gt;
+&lt;li&gt;Learn how to write efficient SQL queries.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;&lt;a id=&#34;user-content-introduction&#34; class=&#34;anchor&#34; href=&#34;#introduction&#34; aria-hidden=&#34;true&#34;&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt; &lt;/a&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;When working with data in databases, there will often be times when you will need to perform a series of steps to transform the data into a form that answers the exact question you want to answer. These steps often require you to create a series of queries. There may be one query that returns part of the result you are looking for, a second query that returns another part, and a third query that provides the remaining information you need to put a report together. In cases like these, knowing how to properly use subqueries and temp tables can help you construct an efficient and repeatable analytical process for retrieving the information you need.&lt;/p&gt;
+&lt;p&gt;In this lesson, we are going to learn about subqueries and temp tables, including the differences between them, how to write SQL code that utilizes them, and when one is preferable over the other. We will continue using the familiar publications database from previous lessons to explore examples of how these concepts can be applied. Finally, we will provide you with some useful tips on how to write efficient SQL queries.&lt;/p&gt;
+&lt;h2&gt;&lt;a id=&#34;user-content-subqueries&#34; class=&#34;anchor&#34; href=&#34;#subqueries&#34; aria-hidden=&#34;true&#34;&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt; &lt;/a&gt;Subqueries&lt;/h2&gt;
+&lt;p&gt;Subqueries are queries nested within other queries. A subquery returns results that can be used by the main query it is embedded in, transformed further, or joined with other tables or subqueries. Let&#39;s look at an example using our publications data set.&lt;/p&gt;
+&lt;p&gt;Suppose we had built a query to summarize store sales, including the number of orders, the number of items, and the total quantity of units sold.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;SELECT stores.stor_name AS Store, COUNT(DISTINCT(ord_num)) AS Orders, COUNT(title_id) AS Items, SUM(qty) AS Qty
+FROM publications.sales sales
+INNER JOIN publications.stores stores ON stores.stor_id = sales.stor_id
+GROUP BY Store;
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;&lt;th&gt;&lt;strong&gt;Store&lt;/strong&gt;&lt;/th&gt;&lt;th&gt;&lt;strong&gt;Orders&lt;/strong&gt;&lt;/th&gt;&lt;th&gt;&lt;strong&gt;Items&lt;/strong&gt;&lt;/th&gt;&lt;th&gt;&lt;strong&gt;Qty&lt;/strong&gt;&lt;/th&gt;&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Barnum&#39;s&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;125&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Bookbeat&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;80&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Doc-U-Mat: Quality Laundry and Books&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;td&gt;130&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Eric the Read Books&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;8&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Fricative Bookshop&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;60&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;News &amp;amp; Brews&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;90&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;If we wanted to then show the average number of items per order and average quantity per item for each store, we could do that by embedding this query as a subquery into another query that performs those calculations.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;SELECT Store, Items/Orders AS AvgItems, Qty/Items AS AvgQty
+FROM (
+    SELECT stores.stor_name AS Store, COUNT(DISTINCT(ord_num)) AS Orders, COUNT(title_id) AS Items, SUM(qty) AS Qty
+    FROM publications.sales sales
+    INNER JOIN publications.stores stores ON stores.stor_id = sales.stor_id
+    GROUP BY Store
+) summary;
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;&lt;th&gt;&lt;strong&gt;Store&lt;/strong&gt;&lt;/th&gt;&lt;th&gt;&lt;strong&gt;AvgItems&lt;/strong&gt;&lt;/th&gt;&lt;th&gt;&lt;strong&gt;AvgQty&lt;/strong&gt;&lt;/th&gt;&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Barnum&#39;s&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;62.5&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Bookbeat&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;20&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Doc-U-Mat: Quality Laundry and Books&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;21.6667&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Eric the Read Books&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Fricative Bookshop&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;20&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;News &amp;amp; Brews&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;22.5&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;The main query uses the results of the subquery and allows us to perform the calculations using the field names we assigned in the subquery. In order to access the results from the subquery, we also needed to enclose it in parentheses and give the subquery a name (summary).&lt;/p&gt;
+&lt;p&gt;A main query can contain multiple subqueries, sometimes with other subqueries nested within them as well. From the perspective of the main query, the results returned from a subquery serve the same purpose as a table would. They are a source of data for the main query. In fact, you can even join tables and subquery results inside the main query.&lt;/p&gt;
+&lt;p&gt;Suppose we wanted to see sales by title for the two stores that averaged more than one item per order. We can obtain these results by adding the &lt;code&gt;stor_id&lt;/code&gt; field to our subquery, joining the subquery results to the sales table, creating another join between the sales table and the title table, and then adding a &lt;code&gt;WHERE&lt;/code&gt; clause to the main query so that it returns only results where the average items per order were greater than 1.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;SELECT Store, ord_num AS OrderNumber, ord_date AS OrderDate, title AS Title, sales.qty AS Qty, price AS Price, type as Type
+FROM (
+	SELECT stores.stor_id AS StoreID, stores.stor_name AS Store, COUNT(DISTINCT(ord_num)) AS Orders, COUNT(title_id) AS Items, SUM(qty) AS Qty
+	FROM publications.sales sales
+	INNER JOIN publications.stores stores ON stores.stor_id = sales.stor_id
+	GROUP BY StoreID, Store
+) summary
+INNER JOIN publications.sales sales ON summary.StoreID = sales.stor_id
+INNER JOIN publications.titles ON sales.title_id = titles.title_id
+WHERE Items / Orders &amp;gt; 1;
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;&lt;th&gt;&lt;strong&gt;Store&lt;/strong&gt;&lt;/th&gt;&lt;th&gt;&lt;strong&gt;OrderNumber&lt;/strong&gt;&lt;/th&gt;&lt;th&gt;&lt;strong&gt;OrderDate&lt;/strong&gt;&lt;/th&gt;&lt;th&gt;&lt;strong&gt;Title&lt;/strong&gt;&lt;/th&gt;&lt;th&gt;&lt;strong&gt;Qty&lt;/strong&gt;&lt;/th&gt;&lt;th&gt;&lt;strong&gt;Price&lt;/strong&gt;&lt;/th&gt;&lt;th&gt;&lt;strong&gt;Type&lt;/strong&gt;&lt;/th&gt;&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;News &amp;amp; Brews&lt;/td&gt;
+&lt;td&gt;D4482&lt;/td&gt;
+&lt;td&gt;9/14/94 0:00&lt;/td&gt;
+&lt;td&gt;Is Anger the Enemy?&lt;/td&gt;
+&lt;td&gt;10&lt;/td&gt;
+&lt;td&gt;10.95&lt;/td&gt;
+&lt;td&gt;psychology&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;News &amp;amp; Brews&lt;/td&gt;
+&lt;td&gt;P2121&lt;/td&gt;
+&lt;td&gt;6/15/92 0:00&lt;/td&gt;
+&lt;td&gt;Onions, Leeks, and Garlic: Cooking Secrets of the Mediterranean&lt;/td&gt;
+&lt;td&gt;40&lt;/td&gt;
+&lt;td&gt;20.95&lt;/td&gt;
+&lt;td&gt;trad_cook&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;News &amp;amp; Brews&lt;/td&gt;
+&lt;td&gt;P2121&lt;/td&gt;
+&lt;td&gt;6/15/92 0:00&lt;/td&gt;
+&lt;td&gt;Fifty Years in Buckingham Palace Kitchens&lt;/td&gt;
+&lt;td&gt;20&lt;/td&gt;
+&lt;td&gt;11.95&lt;/td&gt;
+&lt;td&gt;trad_cook&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;News &amp;amp; Brews&lt;/td&gt;
+&lt;td&gt;P2121&lt;/td&gt;
+&lt;td&gt;6/15/92 0:00&lt;/td&gt;
+&lt;td&gt;Sushi, Anyone?&lt;/td&gt;
+&lt;td&gt;20&lt;/td&gt;
+&lt;td&gt;14.99&lt;/td&gt;
+&lt;td&gt;trad_cook&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Doc-U-Mat: Quality Laundry and Books&lt;/td&gt;
+&lt;td&gt;N914008&lt;/td&gt;
+&lt;td&gt;9/14/94 0:00&lt;/td&gt;
+&lt;td&gt;Is Anger the Enemy?&lt;/td&gt;
+&lt;td&gt;20&lt;/td&gt;
+&lt;td&gt;10.95&lt;/td&gt;
+&lt;td&gt;psychology&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Doc-U-Mat: Quality Laundry and Books&lt;/td&gt;
+&lt;td&gt;N914014&lt;/td&gt;
+&lt;td&gt;9/14/94 0:00&lt;/td&gt;
+&lt;td&gt;The Gourmet Microwave&lt;/td&gt;
+&lt;td&gt;25&lt;/td&gt;
+&lt;td&gt;2.99&lt;/td&gt;
+&lt;td&gt;mod_cook&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Doc-U-Mat: Quality Laundry and Books&lt;/td&gt;
+&lt;td&gt;P3087a&lt;/td&gt;
+&lt;td&gt;5/29/93 0:00&lt;/td&gt;
+&lt;td&gt;Computer Phobic AND Non-Phobic Individuals: Behavior Variations&lt;/td&gt;
+&lt;td&gt;20&lt;/td&gt;
+&lt;td&gt;21.59&lt;/td&gt;
+&lt;td&gt;psychology&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Doc-U-Mat: Quality Laundry and Books&lt;/td&gt;
+&lt;td&gt;P3087a&lt;/td&gt;
+&lt;td&gt;5/29/93 0:00&lt;/td&gt;
+&lt;td&gt;Life Without Fear&lt;/td&gt;
+&lt;td&gt;25&lt;/td&gt;
+&lt;td&gt;7&lt;/td&gt;
+&lt;td&gt;psychology&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Doc-U-Mat: Quality Laundry and Books&lt;/td&gt;
+&lt;td&gt;P3087a&lt;/td&gt;
+&lt;td&gt;5/29/93 0:00&lt;/td&gt;
+&lt;td&gt;Prolonged Data Deprivation: Four Case Studies&lt;/td&gt;
+&lt;td&gt;15&lt;/td&gt;
+&lt;td&gt;19.99&lt;/td&gt;
+&lt;td&gt;psychology&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Doc-U-Mat: Quality Laundry and Books&lt;/td&gt;
+&lt;td&gt;P3087a&lt;/td&gt;
+&lt;td&gt;5/29/93 0:00&lt;/td&gt;
+&lt;td&gt;Emotional Security: A New Algorithm&lt;/td&gt;
+&lt;td&gt;25&lt;/td&gt;
+&lt;td&gt;7.99&lt;/td&gt;
+&lt;td&gt;psychology&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;As you can imagine, this has the potential to get quite complicated, especially when there gets to be multiple tables and subqueries all joined together. When code gets complicated like this, the likelihood of there being errors increases. Additionally, it is important to note that subqueries are executed on-the-fly within their specific main query. That means that if you want to use the same subquery for a different main query, you would need to rewrite it (or copy it). This redundancy exposes you to potential inconsistencies in the way you pull your data together, which is something we would like to avoid if possible. One way to prevent your queries from getting overly complex and avoid redundancy is to use temp tables.&lt;/p&gt;
+&lt;h2&gt;&lt;a id=&#34;user-content-temp-tables&#34; class=&#34;anchor&#34; href=&#34;#temp-tables&#34; aria-hidden=&#34;true&#34;&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt; &lt;/a&gt;Temp Tables&lt;/h2&gt;
+&lt;p&gt;Temp tables are temporary tables that are built from query results and deleted once your database session is over. They serve the purpose of storing query results for use later in the session. The way we would avoid having to write the same subquery multiple times is by saving the query results to a temp table and then querying the temp table every time we need to access those results.&lt;/p&gt;
+&lt;p&gt;Let&#39;s see how we could have swapped out the subquery in the previous section for a temp table. We can use the &lt;code&gt;CREATE TEMPORARY TABLE&lt;/code&gt; command to do this, followed by the name we want to give the new table and then the query.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;CREATE TEMPORARY TABLE publications.store_sales_summary
+SELECT stores.stor_id AS StoreID, stores.stor_name AS Store, COUNT(DISTINCT(ord_num)) AS Orders, COUNT(title_id) AS Items, SUM(qty) AS Qty
+FROM publications.sales sales
+INNER JOIN publications.stores stores ON stores.stor_id = sales.stor_id
+GROUP BY StoreID, Store;&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;This created a new temp table in the publications database that has the results of our query stored in it. Now that our temp table has been created, we can query it just like any other table.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;SELECT * FROM publications.store_sales_summary;
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;&lt;th&gt;&lt;strong&gt;StoreID&lt;/strong&gt;&lt;/th&gt;&lt;th&gt;&lt;strong&gt;Store&lt;/strong&gt;&lt;/th&gt;&lt;th&gt;&lt;strong&gt;Orders&lt;/strong&gt;&lt;/th&gt;&lt;th&gt;&lt;strong&gt;Items&lt;/strong&gt;&lt;/th&gt;&lt;th&gt;&lt;strong&gt;Qty&lt;/strong&gt;&lt;/th&gt;&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;6380&lt;/td&gt;
+&lt;td&gt;Eric the Read Books&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;8&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;7066&lt;/td&gt;
+&lt;td&gt;Barnum&#39;s&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;125&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;7067&lt;/td&gt;
+&lt;td&gt;News &amp;amp; Brews&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;90&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;7131&lt;/td&gt;
+&lt;td&gt;Doc-U-Mat: Quality Laundry and Books&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;td&gt;130&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;7896&lt;/td&gt;
+&lt;td&gt;Fricative Bookshop&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;60&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;8042&lt;/td&gt;
+&lt;td&gt;Bookbeat&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;80&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;We can now replace our subquery with this table in the main query where we retrieved title sales details for stores with average items per order greater than 1.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;SELECT Store, ord_num AS OrderNumber, ord_date AS OrderDate, title AS Title, sales.qty AS Qty, price AS Price, type as Type
+FROM publications.store_sales_summary summary
+INNER JOIN publications.sales sales ON summary.StoreID = sales.stor_id
+INNER JOIN publications.titles ON sales.title_id = titles.title_id
+WHERE Items / Orders &amp;gt; 1&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;This is much easier to read than the example with the subquery in it. Additionally, if we need to use the data stored in the temp table again, we can just query it or add a join to that table.&lt;/p&gt;
+&lt;h2&gt;&lt;a id=&#34;user-content-efficient-sql-tips&#34; class=&#34;anchor&#34; href=&#34;#efficient-sql-tips&#34; aria-hidden=&#34;true&#34;&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt; &lt;/a&gt;Efficient SQL Tips&lt;/h2&gt;
+&lt;p&gt;As you learn to use increasingly more complex SQL queries, it&#39;s a good idea to provide you with some useful tips on how to write efficient SQL queries.&lt;/p&gt;
+&lt;h3&gt;&lt;a id=&#34;user-content-retrieve-only-the-dataset-you-need&#34; class=&#34;anchor&#34; href=&#34;#retrieve-only-the-dataset-you-need&#34; aria-hidden=&#34;true&#34;&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt; &lt;/a&gt;Retrieve only the dataset you need&lt;/h3&gt;
+&lt;p&gt;If you only need 100 rows from your database, add &lt;code&gt;LIMIT 100&lt;/code&gt; to your query instead of selecting all the records.&lt;/p&gt;
+&lt;p&gt;Also, don&#39;t always use &lt;code&gt;SELECT *&lt;/code&gt; on tables with lot of columns. If you need the data from only a few columns, specify which columns to select e.g.:&lt;/p&gt;
+&lt;pre&gt;    &lt;code&gt;SELECT column_1, column_2, column_3, ... FROM table_name
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;h3&gt;&lt;a id=&#34;user-content-optimize-where&#34; class=&#34;anchor&#34; href=&#34;#optimize-where&#34; aria-hidden=&#34;true&#34;&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt; &lt;/a&gt;Optimize &lt;code&gt;WHERE&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;In &lt;code&gt;WHERE&lt;/code&gt; clause, avoid using unnecessary parentheses and unnecessary conditions.&lt;/p&gt;
+&lt;h4&gt;&lt;a id=&#34;user-content-example-1&#34; class=&#34;anchor&#34; href=&#34;#example-1&#34; aria-hidden=&#34;true&#34;&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt; &lt;/a&gt;Example 1&lt;/h4&gt;
+&lt;p&gt;Avoid:&lt;/p&gt;
+&lt;pre&gt;    &lt;code&gt;((a AND b) AND c OR (((a AND b) AND (c AND d))))
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Use:&lt;/p&gt;
+&lt;pre&gt;    &lt;code&gt;(a AND b AND c) OR (a AND b AND c AND d)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;h4&gt;&lt;a id=&#34;user-content-example-2&#34; class=&#34;anchor&#34; href=&#34;#example-2&#34; aria-hidden=&#34;true&#34;&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt; &lt;/a&gt;Example 2&lt;/h4&gt;
+&lt;p&gt;Avoid:&lt;/p&gt;
+&lt;pre&gt;    &lt;code&gt;(B&amp;gt;=5 AND B=5) OR (B=6 AND 5=5) OR (B=7 AND 5=6)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Use:&lt;/p&gt;
+&lt;pre&gt;    &lt;code&gt;B=5 OR B=6
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;h3&gt;&lt;a id=&#34;user-content-optimize-join&#34; class=&#34;anchor&#34; href=&#34;#optimize-join&#34; aria-hidden=&#34;true&#34;&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt; &lt;/a&gt;Optimize &lt;code&gt;JOIN&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;If all columns in ORDER BY and GROUP BY clauses come from the same table, that table is preferred first when joining. For example, instead of using:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;SELECT c.year, c.color, c.name
+FROM sales s
+INNER JOIN cars c
+ON s.car_id = c.car_id
+WHERE s.date = &#39;01-01-2019&#39;;
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Use:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;SELECT c.year, c.color, c.name
+FROM cars c
+INNER JOIN sales s
+ON c.car_id = s.car_id
+WHERE s.date = &#39;01-01-2019&#39;;
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;For the full documentation on MySQL optimization, refer to the &lt;a href=&#34;https://dev.mysql.com/doc/refman/8.0/en/optimization.html&#34; rel=&#34;nofollow&#34;&gt;MySQL Reference Manual&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;&lt;a id=&#34;user-content-summary&#34; class=&#34;anchor&#34; href=&#34;#summary&#34; aria-hidden=&#34;true&#34;&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt; &lt;/a&gt;Summary&lt;/h2&gt;
+&lt;p&gt;In this lesson, we have introduced subqueries and temp tables. While both are useful for putting together more complex, multi-step data analyses, an important difference between them is that you can store temp table results for use later in your SQL session. As you continue to build your analytical abilities, you will find opportunities to use these concepts to keep your processes intuitive and efficient.&lt;/p&gt;
+&lt;p&gt;Also, we provided some helpful tips on how to write efficient SQL queries. You will find these tips useful when you write increasingly complex queries with massive databases.&lt;/p&gt;
+&lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+  </div>
+  <div id="seq_contents_3"
+    aria-labelledby="tab_3"
+    aria-hidden="true"
+    class="seq_contents tex2jax_ignore asciimath2jax_ignore">
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-vertical&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;VerticalStudentView&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34; data-request-token=&#34;3b540e68939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@960cf7356f934f1eaaff14bf81b810e1&#34; data-block-type=&#34;vertical&#34;&gt;
+  
+
+  &lt;h2 class=&#34;hd hd-2 unit-title&#34;&gt;Action Queries&lt;/h2&gt;
+
+    &lt;div class=&#34;ih-bookmark-button-wrapper&#34;&gt;
+    	
+
+
+
+&lt;div class=&#34;bookmark-button-wrapper&#34;&gt;
+  &lt;button class=&#34;btn btn-link bookmark-button &#34;
+    aria-pressed=&#34;false&#34;
+    data-bookmark-id=&#34;NoahB,block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@960cf7356f934f1eaaff14bf81b810e1&#34;
+    data-bookmarks-api-url=&#34;/api/bookmarks/v1/bookmarks/&#34;&gt;
+     &lt;span class=&#34;bookmark-text&#34;&gt;Bookmark this page&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+
+    &lt;/div&gt;	
+
+&lt;div class=&#34;vert-mod&#34;&gt;
+  &lt;div class=&#34;vert vert-0&#34; data-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@d05c03c8c1a34909b642241a366f745e&#34;&gt;
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;3b540e68939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@d05c03c8c1a34909b642241a366f745e&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  &lt;h2&gt;Lesson Goals&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Learn about the different types of action queries in MySQL.&lt;/li&gt;
+&lt;li&gt;Learn about how to create new tables with make table queries.&lt;/li&gt;
+&lt;li&gt;Learn how to remove records from tables with delete queries.&lt;/li&gt;
+&lt;li&gt;Learn how to add new records to tables with append queries.&lt;/li&gt;
+&lt;li&gt;Learn how to change and update table values with update queries.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;&lt;a id=&#34;user-content-introduction&#34; class=&#34;anchor&#34; href=&#34;#introduction&#34; aria-hidden=&#34;true&#34;&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt; &lt;/a&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Up until this point, we have been using &lt;code&gt;SELECT&lt;/code&gt; queries to retrieve data from a database. However, this is only part of what queries can help you do. There is an entire class of queries called &lt;em&gt;action queries&lt;/em&gt; that let you perform various actions such as:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Creating a new table&lt;/li&gt;
+&lt;li&gt;Appending records into a table&lt;/li&gt;
+&lt;li&gt;Deleting records from a table&lt;/li&gt;
+&lt;li&gt;Updating records in a table&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In this lesson, we will learn about these action queries and how to append, delete, and update records using them in MySQL.&lt;/p&gt;
+&lt;h2&gt;&lt;a id=&#34;user-content-make-table-queries&#34; class=&#34;anchor&#34; href=&#34;#make-table-queries&#34; aria-hidden=&#34;true&#34;&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt; &lt;/a&gt;Make Table Queries&lt;/h2&gt;
+&lt;p&gt;A &lt;em&gt;make table query&lt;/em&gt; creates a new, permanent table in the database from the results of a query. This is similar to how a temp table is created, but the table resulting from a make table query will still exist in the database after the SQL session has ended whereas a temp table will not.&lt;/p&gt;
+&lt;p&gt;For example, if we wanted to create a permanent table containing the total number of orders, items sold, and quantity sold per store in our publications database, we would do so using the &lt;code&gt;CREATE TABLE&lt;/code&gt; command as follows.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;CREATE TABLE publications.store_sales_summary
+SELECT stores.stor_id AS StoreID, stores.stor_name AS Store, COUNT(DISTINCT(ord_num)) AS Orders, COUNT(title_id) AS Items, SUM(qty) AS Qty
+FROM publications.sales sales
+INNER JOIN publications.stores stores ON stores.stor_id = sales.stor_id
+GROUP BY StoreID, Store;
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Even if we end our SQL session and start a new one, we will still be able to query this table as it is now a permanent table in the database.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;SELECT *
+FROM publications.store_sales_summary;
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;&lt;th&gt;&lt;strong&gt;StoreID&lt;/strong&gt;&lt;/th&gt;&lt;th&gt;&lt;strong&gt;Store&lt;/strong&gt;&lt;/th&gt;&lt;th&gt;&lt;strong&gt;Orders&lt;/strong&gt;&lt;/th&gt;&lt;th&gt;&lt;strong&gt;Items&lt;/strong&gt;&lt;/th&gt;&lt;th&gt;&lt;strong&gt;Qty&lt;/strong&gt;&lt;/th&gt;&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;6380&lt;/td&gt;
+&lt;td&gt;Eric the Read Books&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;8&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;7066&lt;/td&gt;
+&lt;td&gt;Barnum&#39;s&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;125&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;7067&lt;/td&gt;
+&lt;td&gt;News &amp;amp; Brews&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;90&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;7131&lt;/td&gt;
+&lt;td&gt;Doc-U-Mat: Quality Laundry and Books&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;td&gt;130&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;7896&lt;/td&gt;
+&lt;td&gt;Fricative Bookshop&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;60&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;8042&lt;/td&gt;
+&lt;td&gt;Bookbeat&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;80&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;&lt;a id=&#34;user-content-delete-queries&#34; class=&#34;anchor&#34; href=&#34;#delete-queries&#34; aria-hidden=&#34;true&#34;&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt; &lt;/a&gt;Delete Queries&lt;/h2&gt;
+&lt;p&gt;A &lt;em&gt;delete query&lt;/em&gt; removes records from a table. It allows for deletion of records either completely or based on some condition. For example, if we wanted to delete stores from our &lt;code&gt;store_sales_summary&lt;/code&gt; table that sold less than 80 units, we would do so using the &lt;code&gt;DELETE FROM&lt;/code&gt; command along with a &lt;code&gt;WHERE&lt;/code&gt; clause.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;DELETE FROM publications.store_sales_summary
+WHERE Qty &amp;lt; 80;
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;If we select all records from this table again, we can see that the stores with less than 80 units sold have been removed.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;SELECT *
+FROM publications.store_sales_summary;
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;&lt;th&gt;&lt;strong&gt;StoreID&lt;/strong&gt;&lt;/th&gt;&lt;th&gt;&lt;strong&gt;Store&lt;/strong&gt;&lt;/th&gt;&lt;th&gt;&lt;strong&gt;Orders&lt;/strong&gt;&lt;/th&gt;&lt;th&gt;&lt;strong&gt;Items&lt;/strong&gt;&lt;/th&gt;&lt;th&gt;&lt;strong&gt;Qty&lt;/strong&gt;&lt;/th&gt;&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;7066&lt;/td&gt;
+&lt;td&gt;Barnum&#39;s&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;125&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;7067&lt;/td&gt;
+&lt;td&gt;News &amp;amp; Brews&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;90&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;7131&lt;/td&gt;
+&lt;td&gt;Doc-U-Mat: Quality Laundry and Books&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;td&gt;130&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;8042&lt;/td&gt;
+&lt;td&gt;Bookbeat&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;80&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;If you want to clear a table out completely and still maintain the table structure and the data types for each field, you can just drop the &lt;code&gt;WHERE&lt;/code&gt; clause from your delete statement.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;DELETE FROM publications.store_sales_summary;
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;The table structure still exists, but it no longer contains any data.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;SELECT *
+FROM publications.store_sales_summary;
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;&lt;th&gt;&lt;strong&gt;StoreID&lt;/strong&gt;&lt;/th&gt;&lt;th&gt;&lt;strong&gt;Store&lt;/strong&gt;&lt;/th&gt;&lt;th&gt;&lt;strong&gt;Orders&lt;/strong&gt;&lt;/th&gt;&lt;th&gt;&lt;strong&gt;Items&lt;/strong&gt;&lt;/th&gt;&lt;th&gt;&lt;strong&gt;Qty&lt;/strong&gt;&lt;/th&gt;&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;/table&gt;
+&lt;h2&gt;&lt;a id=&#34;user-content-append-queries&#34; class=&#34;anchor&#34; href=&#34;#append-queries&#34; aria-hidden=&#34;true&#34;&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt; &lt;/a&gt;Append Queries&lt;/h2&gt;
+&lt;p&gt;Another useful action query is the &lt;em&gt;append query&lt;/em&gt;. As the name implies, an append query adds records to a table. For example, if we wanted to repopulate our now empty &lt;code&gt;store_sales_summary&lt;/code&gt; table, we could do that using the &lt;code&gt;INSERT INTO&lt;/code&gt; command and the same query we originally used to produce the results.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;INSERT INTO publications.store_sales_summary
+SELECT stores.stor_id AS StoreID, stores.stor_name AS Store, COUNT(DISTINCT(ord_num)) AS Orders, COUNT(title_id) AS Items, SUM(qty) AS Qty
+FROM publications.sales sales
+INNER JOIN publications.stores stores ON stores.stor_id = sales.stor_id
+GROUP BY StoreID, Store;
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Now when we select all from this table, we can see that all the records are populated again.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;SELECT *
+FROM publications.store_sales_summary;
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;&lt;th&gt;&lt;strong&gt;StoreID&lt;/strong&gt;&lt;/th&gt;&lt;th&gt;&lt;strong&gt;Store&lt;/strong&gt;&lt;/th&gt;&lt;th&gt;&lt;strong&gt;Orders&lt;/strong&gt;&lt;/th&gt;&lt;th&gt;&lt;strong&gt;Items&lt;/strong&gt;&lt;/th&gt;&lt;th&gt;&lt;strong&gt;Qty&lt;/strong&gt;&lt;/th&gt;&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;6380&lt;/td&gt;
+&lt;td&gt;Eric the Read Books&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;8&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;7066&lt;/td&gt;
+&lt;td&gt;Barnum&#39;s&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;125&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;7067&lt;/td&gt;
+&lt;td&gt;News &amp;amp; Brews&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;90&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;7131&lt;/td&gt;
+&lt;td&gt;Doc-U-Mat: Quality Laundry and Books&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;td&gt;130&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;7896&lt;/td&gt;
+&lt;td&gt;Fricative Bookshop&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;60&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;8042&lt;/td&gt;
+&lt;td&gt;Bookbeat&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;80&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;&lt;a id=&#34;user-content-update-queries&#34; class=&#34;anchor&#34; href=&#34;#update-queries&#34; aria-hidden=&#34;true&#34;&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt; &lt;/a&gt;Update Queries&lt;/h2&gt;
+&lt;p&gt;The last type of query we will cover in this lesson is the &lt;em&gt;update query&lt;/em&gt;. An update query changes values stored in a table. For example, suppose each store sold 5 more units today and we want to update the quantities in our &lt;code&gt;store_sales_summary&lt;/code&gt; table. The update query below will add 5 units to the values in each store&#39;s Qty column.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;UPDATE publications.store_sales_summary
+SET Qty = Qty + 5
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;If we select all from the table, we can see the updated quantities.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;SELECT *
+FROM publications.store_sales_summary;
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;&lt;th&gt;&lt;strong&gt;StoreID&lt;/strong&gt;&lt;/th&gt;&lt;th&gt;&lt;strong&gt;Store&lt;/strong&gt;&lt;/th&gt;&lt;th&gt;&lt;strong&gt;Orders&lt;/strong&gt;&lt;/th&gt;&lt;th&gt;&lt;strong&gt;Items&lt;/strong&gt;&lt;/th&gt;&lt;th&gt;&lt;strong&gt;Qty&lt;/strong&gt;&lt;/th&gt;&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;6380&lt;/td&gt;
+&lt;td&gt;Eric the Read Books&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;13&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;7066&lt;/td&gt;
+&lt;td&gt;Barnum&#39;s&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;130&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;7067&lt;/td&gt;
+&lt;td&gt;News &amp;amp; Brews&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;95&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;7131&lt;/td&gt;
+&lt;td&gt;Doc-U-Mat: Quality Laundry and Books&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;td&gt;135&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;7896&lt;/td&gt;
+&lt;td&gt;Fricative Bookshop&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;65&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;8042&lt;/td&gt;
+&lt;td&gt;Bookbeat&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;85&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;We can also choose to only update values where certain conditions are met by adding a &lt;code&gt;WHERE&lt;/code&gt; clause to our query. For example, if we want to add 10 additional units but only to the stores that have sold less than 100 units, we would do so as follows.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;UPDATE publications.store_sales_summary
+SET Qty = Qty + 10
+WHERE Qty &amp;lt; 100
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Once we select all records from the table again, we can see the updated values for just those records.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;SELECT *
+FROM publications.store_sales_summary;
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;&lt;th&gt;&lt;strong&gt;StoreID&lt;/strong&gt;&lt;/th&gt;&lt;th&gt;&lt;strong&gt;Store&lt;/strong&gt;&lt;/th&gt;&lt;th&gt;&lt;strong&gt;Orders&lt;/strong&gt;&lt;/th&gt;&lt;th&gt;&lt;strong&gt;Items&lt;/strong&gt;&lt;/th&gt;&lt;th&gt;&lt;strong&gt;Qty&lt;/strong&gt;&lt;/th&gt;&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;6380&lt;/td&gt;
+&lt;td&gt;Eric the Read Books&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;23&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;7066&lt;/td&gt;
+&lt;td&gt;Barnum&#39;s&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;130&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;7067&lt;/td&gt;
+&lt;td&gt;News &amp;amp; Brews&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;105&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;7131&lt;/td&gt;
+&lt;td&gt;Doc-U-Mat: Quality Laundry and Books&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;td&gt;135&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;7896&lt;/td&gt;
+&lt;td&gt;Fricative Bookshop&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;75&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;8042&lt;/td&gt;
+&lt;td&gt;Bookbeat&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;95&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2&gt;&lt;a id=&#34;user-content-summary&#34; class=&#34;anchor&#34; href=&#34;#summary&#34; aria-hidden=&#34;true&#34;&gt; &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt; &lt;/a&gt;Summary&lt;/h2&gt;
+&lt;p&gt;In this lesson, we went beyond simple select queries and learned how to leverage action queries to perform different operations in our MySQL databases. First, we learned how to create new tables using make table queries. Then we learned how to remove records from tables with delete queries. We also learned how to insert records from a query result into an already-existing table using append queries. Finally, we covered updating values in tables using update queries. Now that you understand and know how to use these intermediate SQL concepts, you should have the tools you need to construct complex queries and string them together into an intuitive analytical process.&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+  </div>
+  <div id="seq_content" class="ih-learnig-unit" role="tabpanel"></div>
+
+  <nav class="sequence-bottom ih-js-fire-highlighting-controls" aria-label="Section">
+    <button class="sequence-nav-button button-previous">
+      <span class="icon fa fa-chevron-prev" aria-hidden="true"></span>
+      <span>Previous</span>
+    </button>
+    <button class="sequence-nav-button button-next">
+      <span>Next</span>
+      <span class="icon fa fa-chevron-next" aria-hidden="true"></span>
+    </button>
+  </nav>
+</div>
+
+</div>
+
+        </main>
+    </section>
+
+    <section class="courseware-results-wrapper">
+      <div id="loading-message" aria-live="polite" aria-relevant="all"></div>
+      <div id="error-message" aria-live="polite"></div>
+      <div class="courseware-results search-results" data-course-id="course-v1:IRONHACK+DAFT+201906_MIA" data-lang-code="en"></div>
+    </section>
+
+  </div>
+  
+
+
+
+
+
+
+
+
+
+    
+    
+    <script type="text/javascript" src="../../../../../static/bundles/CourseSock.43ffb68a30fa51e4e467.1f398818dd61.js" ></script>
+      <script type="text/javascript">
+        
+    new CourseSock({
+        el:'.verification-sock'
+    });
+
+      </script>
+
+
+</div>
+<div class="container-footer">
+</div>
+
+          
+        </div>
+      </div>
+
+    
+    
+
+      <div class="ih-beta-banner">
+        <span class="icon fa fa-flask"></span>
+        <span class="ih-beta-banner-text">We just launched a new version of the student platform. Everything should be fine, but if you encounter a bug, don't hesitate and send it our way.</span>
+      </div>
+
+  </div>
+
+  
+  
+  <script type="text/javascript" src="../../../../../static/common/js/vendor/jquery.scrollTo.525edcc52fe8.js"></script>
+  <script type="text/javascript" src="../../../../../static/js/vendor/flot/jquery.flot.d3d45ff0c6a8.js"></script>
+
+  
+    <script type="text/javascript" src="../../../../../static/js/lms-courseware.43ed60564822.js" charset="utf-8"></script>
+
+
+  
+
+
+
+<script type="text/javascript">
+    // Fast Preview was introduced in 2.5. However, it
+    // causes undesirable flashing/font size changes when
+    // MathJax is used for interactive preview (equation editor).
+    // Setting processSectionDelay to 0 (see below) fully eliminates
+    // fast preview, but to reduce confusion, we are also setting
+    // the option as displayed in the context menu to false.
+    // When upgrading to 2.6, check if this variable name changed.
+    window.MathJax = {
+      menuSettings: {CHTMLpreview: false}
+    };
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [
+        ["\\(","\\)"],
+        ['[mathjaxinline]','[/mathjaxinline]']
+      ],
+      displayMath: [
+        ["\\[","\\]"],
+        ['[mathjax]','[/mathjax]']
+      ]
+    }
+  });
+</script>
+<script type="text/x-mathjax-config">
+
+  // In order to eliminate all flashing during interactive
+  // preview, it is necessary to set processSectionDelay to 0
+  // (remove delay between input and output phases). This
+  // effectively disables fast preview, regardless of
+  // the fast preview setting as shown in the context menu.
+  MathJax.Hub.processSectionDelay = 0;
+
+  MathJax.Hub.signal.Interest(function(message) {
+    if(message[0] === "End Math") {
+        set_mathjax_display_div_settings();
+    }
+  });
+  function set_mathjax_display_div_settings() {
+    $('.MathJax_Display').each(function( index ) {
+      this.setAttribute('tabindex', '0');
+      this.setAttribute('aria-live', 'off');
+      this.removeAttribute('role');
+      this.removeAttribute('aria-readonly');
+    });
+  }
+</script>
+
+
+<!-- This must appear after all mathjax-config blocks, so it is after the imports from the other templates.
+     It can't be run through static.url because MathJax uses crazy url introspection to do lazy loading of
+     MathJax extension libraries -->
+<script type="text/javascript" src="../../../../../../cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJaxf4fa.js?config=TeX-MML-AM_SVG"></script>
+
+
+    
+    
+      <script type="text/javascript" src="../../../../../static/course_search/js/course_search_factory.26a9d7197c46bdd1.js?raw"></script>
+    <script type="text/javascript">
+        (function (require) {
+            require(['course_search/js/course_search_factory'], function (CourseSearchFactory) {
+                
+        var courseId = $('.courseware-results').data('courseId');
+        CourseSearchFactory({
+            courseId: courseId,
+            searchHeader: $('.search-bar')
+        });
+    
+            });
+        }).call(this, require || RequireJS.require);
+    </script>
+
+
+  
+    
+      <script type="text/javascript" src="../../../../../static/js/courseware/courseware_factory.1504fc10caefbdd1.js?raw"></script>
+    <script type="text/javascript">
+        (function (require) {
+            require(['js/courseware/courseware_factory'], function (CoursewareFactory) {
+                
+    CoursewareFactory();
+  
+            });
+        }).call(this, require || RequireJS.require);
+    </script>
+
+
+
+  <script type="text/javascript">
+    var $$course_id = "course\u002Dv1:IRONHACK+DAFT+201906_MIA";
+  </script>
+
+
+
+
+
+
+  
+
+
+
+  <script type="text/javascript" src="../../../../../static/js/vendor/noreferrer.aa62a3e70ffa.js" charset="utf-8"></script>
+  <script type="text/javascript" src="../../../../../static/js/utils/navigation.08930e16ab3d.js" charset="utf-8"></script>
+  <script type="text/javascript" src="../../../../../static/js/header/header.309a1243e175.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="../../../../../static/ih-lms-theme/js/vendor/highlight.min.496e109b43ca.js" ></script>
+    <script type="text/javascript" src="../../../../../static/ih-lms-theme/js/vendor/ih-highlight.0f32f131ba83.js" ></script>
+  
+</body>
+</html>
+
+

@@ -1,0 +1,2033 @@
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<!--[if lte IE 9]><html class="ie ie9 lte9" lang="en"><![endif]-->
+<!--[if !IE]><!--><html lang="en"><!--<![endif]-->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head dir="ltr">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+  
+<title data-base-title="
+ Machine Learning Basics | DAFT Courseware | Ironhack Student Platform">
+  
+ Introduction to Scikit-Learn | Machine Learning Basics | DAFT Courseware | Ironhack Student Platform
+</title>
+
+
+      <script type="text/javascript">
+        /* immediately break out of an iframe if coming from the marketing website */
+        (function(window) {
+          if (window.location !== window.top.location) {
+            window.top.location = window.location;
+          }
+        })(this);
+      </script>
+
+  
+
+  <script type="text/javascript" src="../../../../../static/js/i18n/en/djangojs.e37eef1ffc63.js"></script>
+  <script type="text/javascript" src="../../../../../static/js/ie11_find_array.bd1c6dc7a133.js"></script>
+
+  <link rel="icon" type="image/x-icon" href="../../../../../static/ih-lms-theme/images/favicon.0de58aa5bfca.ico" />
+
+  
+  
+
+    <link href="../../../../../static/ih-lms-theme/css/lms-style-vendor.68e48093f5dd.css" rel="stylesheet" type="text/css" />
+
+
+
+      <link rel="stylesheet" href="../../../../../static/ih-lms-theme/css/bootstrap/lms-main.c54b2923d249.css" type="text/css" media="all" />
+
+    
+    <script type="text/javascript" src="../../../../../static/js/lms-main_vendor.a04b73033169.js" charset="utf-8"></script>
+
+
+    
+    <script type="text/javascript" src="../../../../../static/js/lms-application.e7bd4b65d083.js" charset="utf-8"></script>
+
+
+
+  
+    
+    
+    <script type="text/javascript" src="../../../../../static/bundles/commons.d60dcd98c024881d011e.c835e91d09f6.js" ></script>
+
+
+
+  <script>
+    window.baseUrl = "../../../../../static/index.html";
+    (function (require) {
+      require.config({
+          baseUrl: window.baseUrl
+      });
+    }).call(this, require || RequireJS.require);
+  </script>
+  <script type="text/javascript" src="../../../../../static/lms/js/require-config.8e00198660b0.js"></script>
+  
+    <script type="text/javascript">
+        (function (require) {
+          require.config({
+              paths: {
+                'js/courseware/courseware_factory': 'js/courseware/courseware_factory.1504fc10caef',
+'draggabilly': 'js/vendor/draggabilly.26caba6f7187',
+'js/courseware/toggle_element_visibility': 'js/courseware/toggle_element_visibility.d5f10bc65ed0',
+'hls': 'common/js/vendor/hls.b10b9ef4015b',
+'js/courseware/link_clicked_events': 'js/courseware/link_clicked_events',
+'moment': 'common/js/vendor/moment-with-locales.084396f4103c',
+'moment-timezone': 'common/js/vendor/moment-timezone-with-data.60142e6c4416',
+'js/student_account/logistration_factory': 'js/student_account/logistration_factory.d7765e4e6715',
+'js/groups/views/cohorts_dashboard_factory': 'js/groups/views/cohorts_dashboard_factory.7f46663f97b4',
+'js/dateutil_factory': 'js/dateutil_factory.841c29e02056',
+'course_bookmarks/js/views/bookmark_button': 'course_bookmarks/js/views/bookmark_button.d4cfaf3361fa',
+'js/courseware/accordion_events': 'js/courseware/accordion_events.6064c7809de5',
+'js/views/message_banner': 'js/views/message_banner.af013d0ecbd4',
+'js/groups/discussions_management/discussions_dashboard_factory': 'js/discussions_management/views/discussions_dashboard_factory.2e10d9097343',
+'js/courseware/course_info_events': 'js/courseware/course_info_events.2fc35b57627f'
+            }
+          });
+        }).call(this, require || RequireJS.require);
+    </script>
+  
+
+  
+
+  
+
+    <link href="../../../../../static/ih-lms-theme/css/lms-style-course-vendor.691e50c64ad7.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+
+    <link href="../../../../../static/ih-lms-theme/css/lms-course.1d0edf3ec473.css" rel="stylesheet" type="text/css" />
+
+
+
+
+<script type="text/javascript" src="../../../../../static/js/jquery.autocomplete.3bd10d7510d2.js"></script>
+<script type="text/javascript" src="../../../../../static/js/src/tooltip_manager.da362490e199.js"></script>
+
+<link href="../../../../../static/css/vendor/jquery.autocomplete.896181d3ec33.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="../../../../../static/bundles/XModuleShim.68b7a679342e3bdb698f.c506d949a49b.js" ></script>
+<script type="text/javascript" src="../../../../../static/bundles/HtmlModule.174055b73c05dccfbd8b.823874f69fef.js" ></script>
+<script type="text/javascript" src="../../../../../static/bundles/VerticalStudentView.6f1068648eb9e8d18da9.0a2f678d6564.js" ></script>
+<script type="text/javascript" src="../../../../../static/bundles/SequenceModule.251564cf8963e6f00227.ef752443db97.js" ></script>
+
+  
+
+  
+
+
+  
+
+
+<script type="application/json" id="user-metadata">
+    {"username": "NoahB", "enrollment_mode": "audit", "upgrade_link": null, "user_id": 489, "course_start": "2019-06-10T00:00:00+00:00", "upgrade_deadline": null, "course_key_fields": {"org": "IRONHACK", "run": "201906_MIA", "course": "DAFT"}, "course_end": "2019-08-19T00:00:00+00:00", "pacing_type": "instructor_paced", "upgrade_price": "Free", "course_id": "course-v1:IRONHACK+DAFT+201906_MIA", "has_staff_access": false, "forum_roles": [["Student"]], "enrollment_time": "2019-06-11T20:48:51.323840+00:00", "schedule_start": null, "email": "noahbeckerman@gmail.com"}
+</script>
+
+  
+
+  
+
+
+  
+
+
+<!-- dummy Segment -->
+<script type="text/javascript">
+  var analytics = {
+    track: function() { return; },
+    trackLink: function() { return; },
+    pageview: function() { return; },
+    page: function() { return; }
+  };
+</script>
+<!-- end dummy Segment -->
+
+
+  <meta name="path_prefix" content="">
+  
+  
+
+  <meta name="openedx-release-line" content="hawthorn" />
+
+
+
+
+
+
+  <!-- Hotjar Tracking Code for https://ironhack.school -->
+  <script type="text/javascript">
+      (function(h,o,t,j,a,r){
+          h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+          h._hjSettings={hjid:1193918,hjsv:6};
+          a=o.getElementsByTagName('head')[0];
+          r=o.createElement('script');r.async=1;
+          r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+          a.appendChild(r);
+      })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+  </script>
+
+  <script type="text/javascript">
+    function setCookieHideMobileWarning(expiration_hours) {
+      var date = new Date();
+      date.setTime(date.getTime()+(expiration_hours*60*60*1000));
+      var expires = "; expires=" + date.toGMTString();
+      document.cookie = "ihHideMobileWarning=true" + expires;
+    }
+    
+    function isHideMobileWarningCookieSet() {
+      return document.cookie.replace(/(?:(?:^|.*;\s*)ihHideMobileWarning\s*\=\s*([^;]*).*$)|^.*$/, "$1") !== "true"; 
+    }
+
+    function manageMobileWarning(mobile_warning_container) {
+      if (isHideMobileWarningCookieSet()) {
+        var mobile_warning_dismiss = document.getElementsByClassName('ih-js-hide-mobile-warning', mobile_warning_container)[0];
+        mobile_warning_dismiss.addEventListener('click', function() {
+          var expiration_hours = 48;
+          setCookieHideMobileWarning(expiration_hours);
+          mobile_warning_container.classList.add('hidden');
+        });
+      } else {
+        mobile_warning_container.classList.add('hidden');
+      }
+    }
+
+    var checkMobileWarningLayer = function () {
+      var mobile_warning_container = document.getElementsByClassName('ih-mobile-warning-container')[0];
+      (document.body && mobile_warning_container)? manageMobileWarning(mobile_warning_container) :  window.requestAnimationFrame(checkMobileWarningLayer);
+    }
+
+    window.requestAnimationFrame(checkMobileWarningLayer);
+  </script>
+
+</head>
+
+<body class="ltr view-in-course view-courseware courseware  lang_en">
+
+<div class="ih-mobile-warning-container">
+  <img class="logo" src="../../../../../static/ih-lms-theme/images/logo.6230fc40336b.svg" />
+  <div class="ih-mobile-warning-title">
+    The Learning Platform is best experienced on Desktop devices
+  </div>
+  <div class="ih-mobile-warning-description">
+    We recommend using a Desktop device to get the full experience of the Learning Platform.
+  </div>
+  <div class="ih-mobile-warning-dismiss ih-js-hide-mobile-warning">
+   Continue anyway
+  </div>
+</div>
+
+
+<div id="page-prompt"></div>
+  <div class="window-wrap" dir="ltr">
+    <a class="nav-skip sr-only sr-only-focusable" href="#main">Skip to main content</a>
+
+    
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+<header class="global-header slim ih-global-header">
+    <div class="ih-header-wrapper">
+        <div class="main-header ih-main-header">
+            
+
+
+
+
+
+<h1 class="header-logo">
+  <a href="../../../../../dashboard.html">
+    
+    <img  class="logo" src="../../../../../static/ih-lms-theme/images/logo.6230fc40336b.svg" alt="Ironhack Student Platform Home Page"/>
+    
+  </a>
+    <div class="course-header">
+          
+      
+      <span class="course-name">Data Analytics</span>
+    </div>
+</h1>
+
+            <div class="hamburger-menu" role="button" aria-label=Options Menu aria-expanded="false" aria-controls="mobile-menu" tabindex="0">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+                
+
+
+
+
+
+
+
+
+
+
+<div class="nav-links">
+  <div class="main">
+      
+  </div>
+  <div class="secondary ih-secondary">
+    
+
+
+
+
+
+
+  
+
+<div class="nav-item hidden-mobile toggle-user-dropdown ih-username-container">
+    <div class="menu-title">
+        
+        <span class="sr-only">Dashboard for:</span>
+        <span class="username ih-username">Ironhack (NoahB)</span>
+    </div>
+</div>
+<div class="nav-item hidden-mobile nav-item-dropdown ih-dropdown-wrapper" tabindex="-1">
+    <div class="toggle-user-dropdown ih-toggle-user-dropdown" role="button" aria-label=Options Menu aria-expanded="false" tabindex="0" aria-controls="user-menu">
+        <span class="fa fa-caret-down" aria-hidden="true"></span>
+    </div>
+    <div class="dropdown-user-menu hidden ih-dropdown-user-menu" aria-label=More Options role="menu" id="user-menu" tabindex="-1">
+        <div class="mobile-nav-item dropdown-item dropdown-nav-item ih-dropdown-nav-item"><a href="../../../../../dashboard.html" role="menuitem">My courses</a></div>
+            
+        <div class="mobile-nav-item dropdown-item dropdown-nav-item ih-dropdown-nav-item"><a href="../../../../../account/settings.html" role="menuitem">Account</a></div>
+        <div class="mobile-nav-item dropdown-item dropdown-nav-item ih-dropdown-nav-item"><a href="../../../../../index.html" role="menuitem">Sign Out</a></div>
+    </div>
+</div>
+  </div>
+</div>
+        </div>
+        <div class="mobile-menu hidden" aria-label=More Options role="menu" id="mobile-menu"></div>
+    </div>    
+</header>
+
+<!--[if lte IE 9]>
+<div class="ie-banner" aria-hidden="true"><strong>Warning:</strong> Your browser is not fully supported. We strongly recommend using <a href="https://www.google.com/chrome" target="_blank">Chrome</a> or <a href="http://www.mozilla.org/firefox" target="_blank">Firefox</a>.</div>
+<![endif]-->
+
+
+
+
+            
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+    
+    
+
+      <div 
+          class="ih-content"
+      >
+        <div class="marketing-hero"></div>
+
+        <div class="content-wrapper main-container ih-main-container" id="content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/template" id="image-modal-tpl">
+    <div class="wrapper-modal wrapper-modal-image">
+  <section class="image-link">
+    <%= smallHTML%>
+    <a href="#" class="modal-ui-icon action-fullscreen" role="button">
+      <span class="label">
+        <span class="icon fa fa-arrows-alt fa-large" aria-hidden="true"></span> <%- gettext("Fullscreen") %>
+      </span>
+    </a>
+  </section>
+
+  <section class="image-modal">
+    <section class="image-content">
+      <div class="image-wrapper">
+        <img alt="<%= largeALT %>, <%- gettext('Large') %>" src="<%= largeSRC %>" />
+      </div>
+
+      <a href="#" class="modal-ui-icon action-close" role="button">
+        <span class="label">
+          <span class="icon fa fa-remove fa-large" aria-hidden="true"></span> <%- gettext("Close") %>
+        </span>
+      </a>
+
+      <ul class="image-controls">
+        <li class="image-control">
+          <a href="#" class="modal-ui-icon action-zoom-in" role="button">
+            <span class="label">
+              <span class="icon fa fa fa-search-plus fa-large" aria-hidden="true"></span> <%- gettext("Zoom In") %>
+            </span>
+          </a>
+        </li>
+
+        <li class="image-control">
+          <a href="#" class="modal-ui-icon action-zoom-out is-disabled" aria-disabled="true" role="button">
+            <span class="label">
+              <span class="icon fa fa fa-search-minus fa-large" aria-hidden="true"></span> <%- gettext("Zoom Out") %>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </section>
+</div>
+
+</script>
+
+
+
+
+
+
+
+
+<div class="message-banner" aria-live="polite"></div>
+  
+
+
+
+
+
+
+
+
+    
+        <nav class="navbar course-tabs pb-0 navbar-expand ih-navbar-container" aria-label="Course">
+            <ul class="navbar-nav mr-auto ih-course-tabs">
+                    
+                    
+                        <li class="nav-item ih-nav-item active">
+                            <a href="../../../course/index.html" class="nav-link">
+                                Course
+                                    <span class="sr-only">, current location</span>
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="nav-item ih-nav-item ">
+                            <a href="../../../discussion/forum/index.html" class="nav-link">
+                                Discussion
+                            </a>
+                        </li>
+                    
+                    
+            </ul>
+        </nav>
+
+
+<div class="container ih-course-container"
+    lang="en"
+  >
+  <div class="course-wrapper ih-course-wrapper" role="presentation">
+
+    <section class="course-content" id="course-content">
+        <header class="page-header has-secondary">
+            <div class="page-header-main">
+                <nav aria-label="Course" class="sr-is-focusable" tabindex="-1">
+                    <div class="has-breadcrumbs">
+                        <div class="breadcrumbs">
+                                <span class="nav-item nav-item-course">
+                                    <a href="../../../course/index.html">Course</a>
+                                </span>
+                                <span class="icon fa fa-angle-right" aria-hidden="true"></span>
+                                <span class="nav-item nav-item-chapter" data-course-position="3" data-chapter-position="1">
+                                    <a href="../../../course/index.html#block-v1:IRONHACK+DAFT+201906_MIA+type@chapter+block@c36289e68f4e4029a57c62cfbc5b8ec5">Module 3</a>
+                                </span>
+                                <span class="icon fa fa-angle-right" aria-hidden="true"></span>
+                                <span class="nav-item nav-item-section">
+                                    <a href="../../../course/index.html#block-v1:IRONHACK+DAFT+201906_MIA+type@sequential+block@c0023a8b1a944355879206af7c1ad140">Machine Learning Basics</a>
+                                </span>
+                                <span class="icon fa fa-angle-right" aria-hidden="true"></span>
+                            <span class="nav-item nav-item-sequence">Introduction to Scikit-Learn</span>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <main id="main" tabindex="-1" aria-label="Content">
+
+              <div class="xblock xblock-student_view xblock-student_view-sequential xmodule_display xmodule_SequenceModule" data-runtime-class="LmsRuntime" data-init="XBlockToXModuleShim" data-block-type="sequential" data-request-token="74e842c0939911e99a866e487447f8c8" data-runtime-version="1" data-usage-id="block-v1:IRONHACK+DAFT+201906_MIA+type@sequential+block@c0023a8b1a944355879206af7c1ad140" data-type="Sequence" data-course-id="course-v1:IRONHACK+DAFT+201906_MIA">
+  <script type="json/xblock-args" class="xblock-json-init-args">
+    {"xmodule-type": "Sequence"}
+  </script>
+  
+
+
+<div id="sequence_c0023a8b1a944355879206af7c1ad140" class="sequence" data-id="block-v1:IRONHACK+DAFT+201906_MIA+type@sequential+block@c0023a8b1a944355879206af7c1ad140" data-position="4" data-ajax-url="/courses/course-v1:IRONHACK+DAFT+201906_MIA/xblock/block-v1:IRONHACK+DAFT+201906_MIA+type@sequential+block@c0023a8b1a944355879206af7c1ad140/handler/xmodule_handler" data-next-url="/courses/course-v1:IRONHACK+DAFT+201906_MIA/courseware/c36289e68f4e4029a57c62cfbc5b8ec5/bd9567dc82ba40d1948c334a9a7e2c71/?child=first" data-prev-url="/courses/course-v1:IRONHACK+DAFT+201906_MIA/courseware/26bdd799b69648c083b612c305cae17b/660e88cc59324d5488321dddcaf596a5/?child=last">
+
+  <div class="sequence-nav ih-js-fire-highlighting-controls">
+    <button class="sequence-nav-button button-previous">
+      <span class="icon fa fa-chevron-prev" aria-hidden="true"></span>
+      <span class="sequence-nav-button-label">Previous</span>
+    </button>
+    <button class="sequence-nav-button button-next">
+      <span class="sequence-nav-button-label">Next</span>
+      <span class="icon fa fa-chevron-next" aria-hidden="true"></span>
+    </button>
+    <nav class="sequence-list-wrapper" aria-label="Sequence">
+      <ol id="sequence-list" role="tablist">
+        <li role="presentation">
+          <button class="seq_other inactive nav-item tab"
+            role="tab"
+            tabindex="-1"
+            aria-selected="false"
+            aria-expanded="false"
+            aria-controls="seq_content"
+            data-index="0"
+            data-id="block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@57449e3022a243b8876f6eb6751131e4"
+            data-element="1"
+            data-page-title="Introduction to Machine Learning"
+            data-path="Module 3 &gt; Machine Learning Basics &gt; Introduction to Machine Learning"
+            data-graded="False"
+            id="tab_0"
+            >
+            <span class="icon fa seq_other" aria-hidden="true"></span>
+              <span 
+                class="fa fa-check-circle check-circle is-hidden" 
+                style="color:green"
+                aria-hidden="true"
+              ></span>
+            <span class="fa fa-fw fa-bookmark bookmark-icon is-hidden" aria-hidden="true"></span>
+            <div class="sequence-tooltip sr"><span class="sr">other&nbsp;</span>Introduction to Machine Learning<span class="sr bookmark-icon-sr">&nbsp;</span></div>
+          </button>
+        </li>
+        <li role="presentation">
+          <button class="seq_other inactive nav-item tab"
+            role="tab"
+            tabindex="-1"
+            aria-selected="false"
+            aria-expanded="false"
+            aria-controls="seq_content"
+            data-index="1"
+            data-id="block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@a750db0be3974015a9d991f5b6399fb8"
+            data-element="2"
+            data-page-title="Machine Learning Workflow"
+            data-path="Module 3 &gt; Machine Learning Basics &gt; Machine Learning Workflow"
+            data-graded="False"
+            id="tab_1"
+            >
+            <span class="icon fa seq_other" aria-hidden="true"></span>
+              <span 
+                class="fa fa-check-circle check-circle is-hidden" 
+                style="color:green"
+                aria-hidden="true"
+              ></span>
+            <span class="fa fa-fw fa-bookmark bookmark-icon is-hidden" aria-hidden="true"></span>
+            <div class="sequence-tooltip sr"><span class="sr">other&nbsp;</span>Machine Learning Workflow<span class="sr bookmark-icon-sr">&nbsp;</span></div>
+          </button>
+        </li>
+        <li role="presentation">
+          <button class="seq_other inactive nav-item tab"
+            role="tab"
+            tabindex="-1"
+            aria-selected="false"
+            aria-expanded="false"
+            aria-controls="seq_content"
+            data-index="2"
+            data-id="block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@0384c22d33af4cf4be851bc058d18bdb"
+            data-element="3"
+            data-page-title="Feature Extraction and Engineering"
+            data-path="Module 3 &gt; Machine Learning Basics &gt; Feature Extraction and Engineering"
+            data-graded="False"
+            id="tab_2"
+            >
+            <span class="icon fa seq_other" aria-hidden="true"></span>
+              <span 
+                class="fa fa-check-circle check-circle is-hidden" 
+                style="color:green"
+                aria-hidden="true"
+              ></span>
+            <span class="fa fa-fw fa-bookmark bookmark-icon is-hidden" aria-hidden="true"></span>
+            <div class="sequence-tooltip sr"><span class="sr">other&nbsp;</span>Feature Extraction and Engineering<span class="sr bookmark-icon-sr">&nbsp;</span></div>
+          </button>
+        </li>
+        <li role="presentation">
+          <button class="seq_other inactive nav-item tab"
+            role="tab"
+            tabindex="-1"
+            aria-selected="false"
+            aria-expanded="false"
+            aria-controls="seq_content"
+            data-index="3"
+            data-id="block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@e52ac8979b23446e920f892e7ee44730"
+            data-element="4"
+            data-page-title="Introduction to Scikit-Learn"
+            data-path="Module 3 &gt; Machine Learning Basics &gt; Introduction to Scikit-Learn"
+            data-graded="False"
+            id="tab_3"
+            >
+            <span class="icon fa seq_other" aria-hidden="true"></span>
+              <span 
+                class="fa fa-check-circle check-circle is-hidden" 
+                style="color:green"
+                aria-hidden="true"
+              ></span>
+            <span class="fa fa-fw fa-bookmark bookmark-icon is-hidden" aria-hidden="true"></span>
+            <div class="sequence-tooltip sr"><span class="sr">other&nbsp;</span>Introduction to Scikit-Learn<span class="sr bookmark-icon-sr">&nbsp;</span></div>
+          </button>
+        </li>
+        <li role="presentation">
+          <button class="seq_other inactive nav-item tab"
+            role="tab"
+            tabindex="-1"
+            aria-selected="false"
+            aria-expanded="false"
+            aria-controls="seq_content"
+            data-index="4"
+            data-id="block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@29bf3156718b43a2ae51451e1abf5126"
+            data-element="5"
+            data-page-title="Loading Datasets into Scikit-learn"
+            data-path="Module 3 &gt; Machine Learning Basics &gt; Loading Datasets into Scikit-learn"
+            data-graded="False"
+            id="tab_4"
+            >
+            <span class="icon fa seq_other" aria-hidden="true"></span>
+              <span 
+                class="fa fa-check-circle check-circle is-hidden" 
+                style="color:green"
+                aria-hidden="true"
+              ></span>
+            <span class="fa fa-fw fa-bookmark bookmark-icon is-hidden" aria-hidden="true"></span>
+            <div class="sequence-tooltip sr"><span class="sr">other&nbsp;</span>Loading Datasets into Scikit-learn<span class="sr bookmark-icon-sr">&nbsp;</span></div>
+          </button>
+        </li>
+      </ol>
+    </nav>
+  </div>
+  <div class="sr-is-focusable" tabindex="-1"></div>
+
+  <div id="seq_contents_0"
+    aria-labelledby="tab_0"
+    aria-hidden="true"
+    class="seq_contents tex2jax_ignore asciimath2jax_ignore">
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-vertical&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;VerticalStudentView&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34; data-request-token=&#34;74e842c0939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@57449e3022a243b8876f6eb6751131e4&#34; data-block-type=&#34;vertical&#34;&gt;
+  
+
+  &lt;h2 class=&#34;hd hd-2 unit-title&#34;&gt;Introduction to Machine Learning&lt;/h2&gt;
+
+    &lt;div class=&#34;ih-bookmark-button-wrapper&#34;&gt;
+    	
+
+
+
+&lt;div class=&#34;bookmark-button-wrapper&#34;&gt;
+  &lt;button class=&#34;btn btn-link bookmark-button &#34;
+    aria-pressed=&#34;false&#34;
+    data-bookmark-id=&#34;NoahB,block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@57449e3022a243b8876f6eb6751131e4&#34;
+    data-bookmarks-api-url=&#34;/api/bookmarks/v1/bookmarks/&#34;&gt;
+     &lt;span class=&#34;bookmark-text&#34;&gt;Bookmark this page&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+
+    &lt;/div&gt;	
+
+&lt;div class=&#34;vert-mod&#34;&gt;
+  &lt;div class=&#34;vert vert-0&#34; data-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@e02c3c7b9bd04c338397ec4200f611c0&#34;&gt;
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;74e842c0939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@e02c3c7b9bd04c338397ec4200f611c0&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  &lt;h2&gt;
+    &lt;a id=&#34;user-content-lesson-goals&#34; class=&#34;anchor&#34; href=&#34;#lesson-goals&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Lesson Goals
+&lt;/h2&gt;
+&lt;p&gt;In this lesson you will start to learn about Machine Learning, more concretely:&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;You will learn what Machine Learning does.&lt;/li&gt;
+    &lt;li&gt;You will learn about the main types of Machine Learning.&lt;/li&gt;
+    &lt;li&gt;You will learn what types of problems you can apply Machine Learning to.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-introduction&#34; class=&#34;anchor&#34; href=&#34;#introduction&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Introduction
+&lt;/h2&gt;
+&lt;p&gt;Machine Learning is a fundamental part of Data Science, and of Artificial Intelligence as well. It is an important technology for leveraging data to make informed data-driven decisions, and for creating business value from datasets. Machine Learning is a field that builds on contributions from disciplines like Probability Theory, Computer Science, Statistics, Information Theory, and Symbolic Reasoning. If we think about machine learning in the simplest terms, we can think of two competing concepts. On the one hand we have our data. This data represents the ground truth. However, this data has no explanatory power. We are not able to make future predictions with this data. On the other hand we have our machine learning model. This model simplifies reality using a mathematical algorithm. The model has explanatory power but also causes a loss of the granular information contained in the original dataset. Our job as machine learning experts is to minimize the loss of information that happens when we use a model.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-what-is-machine-learning&#34; class=&#34;anchor&#34; href=&#34;#what-is-machine-learning&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;What is Machine Learning?
+&lt;/h2&gt;
+&lt;p&gt;Machine Learning is the capability that a software may have to learn from 
+    &lt;em&gt;experience&lt;/em&gt;. For instance, the software used to compute the payroll of a small business does not typically have the capability of learning; but the software used by a car insurance company to estimate the cost of premiums usually has the capability of Machine Learning to differentiate cases of high risk from cases of low risk.
+&lt;/p&gt;
+&lt;p&gt;Experience is typically provided in the form of a dataset, that contains inherent patterns or regularities hidden in the data. In the car insurance case, that dataset may be contained in a historical database, containing customer profiles, claim history, pricing, policies, a temporal series of risk scores, and others. This database contains inherent patterns that Machine Learning can discover and which provide business value. For instance, Machine Learning may be used to find the profiles of customers of car insurance most likely to purchase home insurance from the same provider. This information has business value since it can help to improve the targeting of cross selling campaigns.&lt;/p&gt;
+&lt;p&gt;The output of the Machine Learning process is the knowledge learned, expressed as a Machine Learning (trained) 
+    &lt;strong&gt;model&lt;/strong&gt;. A Machine Learning model refers to an entity that uses learned knowledge to solve new problems. This entity is also known as an
+    &lt;strong&gt;estimator&lt;/strong&gt;.
+&lt;/p&gt;
+&lt;p&gt;Machine Learning is a fundamental part of both Data Science, and Artificial Intelligence. You will gain a better understanding of Machine Learning by looking at it from both perspectives.&lt;/p&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-the-data-science-perspective&#34; class=&#34;anchor&#34; href=&#34;#the-data-science-perspective&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;The Data Science Perspective
+&lt;/h3&gt;
+&lt;p&gt;The preceding use case of Machine Learning in the insurance sector, can be seen as a problem in 
+    &lt;strong&gt;Inferential statistics&lt;/strong&gt;, where each existing car insurance customer is assigned a score measuring the propensity of acquiring home insurance from the same company. This score is actually the inferred &#34;a posteriori&#34; probability provided by a model trained on a historical database containing data from both past customers that purchased home insurance after having purchased car insurance from the same provider and from those who didn&#39;t.
+&lt;/p&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-the-artificial-intelligence-perspective&#34; class=&#34;anchor&#34; href=&#34;#the-artificial-intelligence-perspective&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;The Artificial Intelligence Perspective
+&lt;/h3&gt;
+&lt;p&gt;There has been an ongoing controversy regarding the definition of Artificial Intelligence, although the following seems to be a good consensus definition.&lt;/p&gt;
+&lt;p&gt;Artificial Intelligence (AI) is the capability of computer systems to&lt;/p&gt;
+&lt;ol&gt;
+    &lt;li&gt;Learn knowledge from experience, and&lt;/li&gt;
+    &lt;li&gt;Use that knowledge to solve problems.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Criterion number 1 is telling us that Machine Learning is a requisite ingredient of AI systems.&lt;/p&gt;
+&lt;p&gt;In our car insurance example, the knowledge learned from the past experience contained in the historical database will be used to categorize current and future car insurance clients as good or bad targets for the home insurance cross selling campaign.&lt;/p&gt;
+&lt;p&gt;Both perspectives provide different views of the same reality: Machine Learning finds regularities or patterns from datasets that can be incorporated into decision making software to improve solutions by leveraging data-driven criteria.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-types-of-machine-learning&#34; class=&#34;anchor&#34; href=&#34;#types-of-machine-learning&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Types of Machine Learning
+&lt;/h2&gt;
+&lt;p&gt;In your professional practice, you will face many different data analytics projects. Different projects may ask for different Machine Learning approaches or solutions. It will be very helpful to know the different types of Machine Learning available when evaluating the suitability of candidate approaches.&lt;/p&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-supervised-learning&#34; class=&#34;anchor&#34; href=&#34;#supervised-learning&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Supervised Learning
+&lt;/h3&gt;
+&lt;p&gt;Supervised learning is used when we use an input dataset to predict a certain output. Typically we use a dataset to generate the algorithm called a 
+    &lt;b&gt;training&lt;/b&gt; dataset. We validate the algorithm using a test dataset.
+&lt;/p&gt;
+&lt;p&gt;Supervised learning algorithms can be divided into the following groups:&lt;/p&gt;
+&lt;h4&gt;
+    &lt;a id=&#34;user-content-classification&#34; class=&#34;anchor&#34; href=&#34;#classification&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Classification
+&lt;/h4&gt;
+&lt;p&gt;In classification problems, Machine Learning is used to classify instances into a predetermined set of classes. In our running example about car insurance, a classification task for Machine Learning would be to learn a model based on current and former customers and classify new incoming car insurance customers as high, medium, or low value depending on the expected propensity to also acquire home insurance in the future. Note that in this example the classes have symbolic identifiers (e.g. &#34;high&#34;) and are disjoint and discrete.&lt;/p&gt;
+&lt;h4&gt;
+    &lt;a id=&#34;user-content-regression&#34; class=&#34;anchor&#34; href=&#34;#regression&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Regression
+&lt;/h4&gt;
+&lt;p&gt;In contrast to classification, in regression problems the target attribute has a continuous (real valued) range. In our car insurance example, we might use Machine Learning to estimate the cost of a car repair from a set of photographs of the damaged parts. The output of the model would be the expected dollar cost of repairing the damage. Note that in this case, the output of the model would be a real-valued number instead of a symbol, and thus the range would be continuous as opposed to discrete.&lt;/p&gt;
+&lt;h4&gt;
+    &lt;a id=&#34;user-content-prediction&#34; class=&#34;anchor&#34; href=&#34;#prediction&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Prediction
+&lt;/h4&gt;
+&lt;p&gt;In prediction you are assuming that past history is a valid indication of future events. In our car insurance example, estimating the probability of cross selling home insurance to current car insurance customers is a prediction problem. We are estimating the probability that a certain event will happen in the future, for instance, within the next year. Another typical example is to predict the value of the USD / EUR exchange rate (how many dollars you buy with one euro) tomorrow, given the time series of the last year.&lt;/p&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-unsupervised-learning&#34; class=&#34;anchor&#34; href=&#34;#unsupervised-learning&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Unsupervised Learning
+&lt;/h3&gt;
+&lt;p&gt;Unsupervised learning is used when we want to find patterns in a dataset in a situation where we don&#39;t have a defined output that we want to predict using an input. An example of an unsupervised learning problem is customer clustering. Many marketing companies want to create targeted advertising campaigns. In order to do this more effectively, companies cluster their customers and find the similarities in the groups and then target them accordingly.&lt;/p&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-reinforcement-learning&#34; class=&#34;anchor&#34; href=&#34;#reinforcement-learning&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Reinforcement Learning
+&lt;/h3&gt;
+&lt;p&gt;Reinforcement learning is an area in machine learning that enables a machine to learn through a process of trial and error. Instead of providing the algorithm with labeled training examples, we provide the algorithm with feedback (either positive or negative) after every action. The applications of reinforcement learning are slightly different from supervised and unsupervised learning and include examples like teaching a computer how to play a game.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-problems-solved-by-machine-learning&#34; class=&#34;anchor&#34; href=&#34;#problems-solved-by-machine-learning&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Problems Solved by Machine Learning
+&lt;/h2&gt;
+&lt;p&gt;After learning some concepts about Machine Learning, now you are probably wondering what problems can I solve with this technology? Here we explain the most common types of problems that you will be solving with Machine Learning in the future.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-summary&#34; class=&#34;anchor&#34; href=&#34;#summary&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Summary
+&lt;/h2&gt;
+&lt;p&gt;Machine Learning plays an important role in Data Science and Artificial Intelligence. Machine Learning algorithms analyze datasets, looking for regularities and predictive/indicative dependences among sets of variables. This knowledge obtained from the dataset is put into a model that can leverage it by solving new incoming problems based on data-driven criteria.&lt;/p&gt;
+&lt;p&gt;In some Machine Learning problems, we can leverage pre-existing datasets containing solved problems, so that Machine Learning can learn how to solve problems (that would be supervised Machine Learning). But this may not always be the case, we may only have a set of unsolved problems (unsupervised Machine Learning), or someone commenting on how satisfactory an intended solution was (reinforcement learning).&lt;/p&gt;
+&lt;p&gt;The main three types of supervised Machine Learning problems are classification (discrete valued output), regression (real-valued output) and prediction (estimating a future value that may have continuous or discrete range).&lt;/p&gt;
+&lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+  </div>
+  <div id="seq_contents_1"
+    aria-labelledby="tab_1"
+    aria-hidden="true"
+    class="seq_contents tex2jax_ignore asciimath2jax_ignore">
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-vertical&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;VerticalStudentView&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34; data-request-token=&#34;74e842c0939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@a750db0be3974015a9d991f5b6399fb8&#34; data-block-type=&#34;vertical&#34;&gt;
+  
+
+  &lt;h2 class=&#34;hd hd-2 unit-title&#34;&gt;Machine Learning Workflow&lt;/h2&gt;
+
+    &lt;div class=&#34;ih-bookmark-button-wrapper&#34;&gt;
+    	
+
+
+
+&lt;div class=&#34;bookmark-button-wrapper&#34;&gt;
+  &lt;button class=&#34;btn btn-link bookmark-button &#34;
+    aria-pressed=&#34;false&#34;
+    data-bookmark-id=&#34;NoahB,block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@a750db0be3974015a9d991f5b6399fb8&#34;
+    data-bookmarks-api-url=&#34;/api/bookmarks/v1/bookmarks/&#34;&gt;
+     &lt;span class=&#34;bookmark-text&#34;&gt;Bookmark this page&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+
+    &lt;/div&gt;	
+
+&lt;div class=&#34;vert-mod&#34;&gt;
+  &lt;div class=&#34;vert vert-0&#34; data-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@6c583f5b58a14a39997b708a9ec18b88&#34;&gt;
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;74e842c0939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@6c583f5b58a14a39997b708a9ec18b88&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  &lt;h2&gt;
+    &lt;a id=&#34;user-content-lesson-goals&#34; class=&#34;anchor&#34; href=&#34;#lesson-goals&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Lesson Goals
+&lt;/h2&gt;
+&lt;p&gt;In this lesson you will learn:&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;The procedure to apply Machine Learning.&lt;/li&gt;
+    &lt;li&gt;The inputs and outputs of every stage of the procedure.&lt;/li&gt;
+    &lt;li&gt;The role of experiments in Machine Learning.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-introduction&#34; class=&#34;anchor&#34; href=&#34;#introduction&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Introduction
+&lt;/h2&gt;
+&lt;p&gt;At this moment you may be wondering how to apply Machine Learning to a problem. This lesson provides the answers by breaking down the process into stages and explaining each stage, including the expected inputs and outputs. The Machine Learning workflow is composed of a series of subprocesses, or stages, so that the output of one subprocess is fed as input to the next subprocess. A helpful visual image is a pipeline connecting multiple processing machines.&lt;/p&gt;
+&lt;p&gt;Let&#39;s consider as a running example for this lesson an application to eHealth: a project for mining eHRs (electronic Health Records) to improve the quality and effectiveness of health care. More concretely, let&#39;s consider the problem of predicting the outcome of a medical treatment prescribed to a patient. Every patient is represented by an instance composed of a set of attributes describing the patient, for example: age, gender, height, weight, risk factors, medication, daily dosage, amount of intakes per day, dosage per intake, lowest blood pressure value, highest blood presure value, etc.&lt;/p&gt;
+&lt;p&gt;You can think of a patient as a vector of values, which are the independent variables. We use Machine Learning to learn a model to estimate the value of the dependent variable &#34;efficacy of treatment&#34; that we can model as a real variable in the range [0, 1] with 0 meaning that the treatment is totally ineffective, and 1 meaning totally effective. To evaluate the estimation produced by Machine Learning, we can compare the estimated value to the actual value, and consider the estimation as accurate enough if the difference is 3% at most.&lt;/p&gt;
+&lt;p&gt;In this lesson we will demonstrate the different stages of a machine learning workflow using the census dataset used in previous lessons.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-etl&#34; class=&#34;anchor&#34; href=&#34;#etl&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;ETL
+&lt;/h2&gt;
+&lt;p&gt;ETL stands for 
+    &lt;strong&gt;Extraction, Transformation and Loading&lt;/strong&gt; of data. And it is a preliminary process that has to be completed before proceeding to the application of Machine Learning.
+&lt;/p&gt;
+&lt;p&gt;In the 
+    &lt;strong&gt;Extraction&lt;/strong&gt; phase, data is imported from data sources to a data storage with a single unified view, like a Data Warehouse. The data sources may be heterogeneous and distributed. For instance, in our eHealth example, the medical history of a patient may be distributed across different databases belonging to the same or different health systems.
+&lt;/p&gt;
+&lt;p&gt;In the 
+    &lt;strong&gt;Transformation&lt;/strong&gt; phase, the extracted data is homogenized. This includes transforming the data in the following ways:
+&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;
+        &lt;p&gt;
+            &lt;strong&gt;Conversion:&lt;/strong&gt; magnitudes expressed in different units are all converted to a single reference unit. For instance, all volume magnitudes are converted to milliliters (ml).
+        &lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p&gt;
+            &lt;strong&gt;Remove outliers:&lt;/strong&gt; an outlier is a data point that clearly does not belong to the distribution of the rest of the dataset. In our eHealth example we can consider that an age of 150 years is certainly an outlier not belonging to the distribution of a representative sample of the general population. Whatever Machine Learning learns from the analysis of this instance is highly likely to not be applicable to the rest of the population. So the outlier is removed. There is another reason to remove the outlier from the data quality perspective. As we will see in the next bullet point, scaling the range of the age variable so that the highest age is mapped to 1, would make the rest of the mapped values to be inadequately compressed.
+        &lt;/p&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Recall our census dataset. Let&#39;s look at the dataset using the describe function.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;census.describe()
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/7b2fd387209e3841fb770403546e185fbd60a38c/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f63656e7375732d64657363726962652e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/7b2fd387209e3841fb770403546e185fbd60a38c/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f63656e7375732d64657363726962652e706e67&#34; alt=&#34;Census describe&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/census-describe.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;Let&#39;s look for outliers in our census data. Even though the census data is thoroughly cleaned before it is released, for the sake of this exercise, let&#39;s pick the 
+    &lt;code&gt;FamilyWork&lt;/code&gt; feature in our dataset. This column show the percent of people in each county that primarily perform unpaid family work. We can plot the boxplot of the feature to see how many points are extreme outliers.
+&lt;/p&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/ae25867bb0a4ff0b60dba3c7546d77aa2aa547a7/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f63656e7375732d66616d696c79776f726b2e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/ae25867bb0a4ff0b60dba3c7546d77aa2aa547a7/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f63656e7375732d66616d696c79776f726b2e706e67&#34; alt=&#34;Census familywork&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/census-familywork.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;As we can see, quite a bit of data is considered extreme outliers in this boxplot. To get rid of these outliers, we typically remove the entire row that contains the outlier. We compute the outer fence which is 3 times the IQR from the first and third quartiles. We then remove the outliers using the following code.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;import numpy as np
+
+q1 = np.percentile(census.FamilyWork, 25)
+q3 = np.percentile(census.FamilyWork, 75)
+iqr = q3 - q1
+upper_fence = q3 + 3 * iqr
+lower_fence = q1 - 3 * iqr
+census_without_outliers = census[census.FamilyWork &amp;lt; upper_fence &amp;amp; census.FamilyWork &amp;gt; lower_fence]
+census_without_outliers
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/71059b5e94747b55a981f656efc07239cf5a3df9/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f63656e7375732d776974686f75742d6f75746c696572732e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/71059b5e94747b55a981f656efc07239cf5a3df9/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f63656e7375732d776974686f75742d6f75746c696572732e706e67&#34; alt=&#34;Census without outliers&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/census-without-outliers.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;Our initial dataset has 3220 rows and after removing outliers we have only 3022 rows. A total of 198 rows were removed.&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;
+        &lt;strong&gt;Scaling:&lt;/strong&gt; all variables are scaled so that they take values from the same range, typically this range is [0, 1] (also known as
+        &lt;em&gt;Normalization&lt;/em&gt;). This is done to avoid bias effects in error metrics. For instance, consider variable A whose range is [0, 1] and variable B whose range is [0, 100]. A 10% error in the measurement of A would cause a &#34;noise&#34; of 0.01, but the same percentage of error in variable B would add a &#34;noise&#34; of 10. Thus the overall error might be dominated by errors in B due to scaling reasons, but not necessarily because of the right reason (possibly B has more influence in estimating the right value). Note that if we use an algorithm to scale the training data, then we will have to scale input data with the same algorithm before inputting it to the model learned by Machine Learning.
+    &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;One thing we note in our dataset is that many columns in this dataset are expressed as a percent of the county population. These columns contain a number between 0 and 100. It might be easier for our calculations if we used a number between 0 and 1 and divided all these columns by 100.&lt;/p&gt;
+&lt;p&gt;We can do this one column at a time, for example, here we convert the 
+    &lt;code&gt;Hispanic&lt;/code&gt; column:
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;census[&#39;HispanicRate&#39;] = census[&#39;Hispanic&#39;] / 100
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;However, this is not very efficient. It is more efficient to convery all columns at once. First we make a list of the columns to be converted and then convert them.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;def to_percent(x):
+    return(x/100)
+
+conversion_list = [&#39;Hispanic&#39;, &#39;White&#39;, &#39;Black&#39;, &#39;Native&#39;, &#39;Asian&#39;, &#39;Pacific&#39;, &#39;Poverty&#39;, &#39;ChildPoverty&#39;, &#39;Professional&#39;, &#39;Service&#39;, &#39;Office&#39;, &#39;Construction&#39;, &#39;Production&#39;, &#39;Drive&#39;, &#39;Carpool&#39;, &#39;Transit&#39;, &#39;Walk&#39;, &#39;OtherTransp&#39;, &#39;WorkAtHome&#39;, &#39;Employed&#39;, &#39;PrivateWork&#39;, &#39;PublicWork&#39;]
+
+#we create a new list of columns. We prefer doing this since we&#39;d rather keep the old data around just in case.
+
+new_column_list = [x+&#39;Rate&#39; for x in conversion_list]
+census[new_column_list] = census[conversion_list].apply(to_percent)
+
+#Let&#39;s look at the Black rate to be sure this worked
+
+census.BlackRate                                                                                                                                                       &#39;SelfEmployed&#39;, &#39;FamilyWork&#39;
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/9dd913dd9485bddece98f4ffd10f40e605d4223e/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f63656e7375732d626c61636b2d726174652e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/9dd913dd9485bddece98f4ffd10f40e605d4223e/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f63656e7375732d626c61636b2d726174652e706e67&#34; alt=&#34;Census black rate&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/census-black-rate.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;
+        &lt;strong&gt;Rounding:&lt;/strong&gt; all real values are rounded to the same amount of decimal figures. For instance 0.333333333333 becomes 0.3333.
+    &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Rounding can be done using the 
+    &lt;code&gt;round&lt;/code&gt; function in Python.
+&lt;/p&gt;
+&lt;p&gt;We can round one of the rate columns that we generated. For example, we can round the 
+    &lt;code&gt;NativeRate&lt;/code&gt; column to reduce the decimal places to 3.
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;census[&#39;NativeRateRounded&#39;] = round(census[&#39;NativeRate&#39;], 3)
+census.NativeRateRounded
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/a7211ba42194ce62f2ef3a7c1e9c21a9590dfcd7/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f63656e7375732d6e61746976652d726174652d726f756e6465642e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/a7211ba42194ce62f2ef3a7c1e9c21a9590dfcd7/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f63656e7375732d6e61746976652d726174652d726f756e6465642e706e67&#34; alt=&#34;Census native rate rounded&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/census-native-rate-rounded.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;
+        &lt;strong&gt;Standardization:&lt;/strong&gt; transform the data so that it has zero mean (mean removal) and unit variance (variance rescaling). For instance, w = (x-mean) / sigma.
+    &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We can demonstrate this by standardizing the population size in each county. Scikit-learn (which is a library that we will introduce in greater detail in subsequent lessons) has a function that performs this task called 
+    &lt;code&gt;MinMaxScaler&lt;/code&gt;.
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from sklearn.preprocessing import MinMaxScaler
+
+#This code uses the reshape function to change the input into a two dimensional numpy array 
+#since this is the input that the function takes.
+census[&#39;TotalPopScaled&#39;] = MinMaxScaler().fit_transform(census.TotalPop.values.reshape(-1,1))
+census.TotalPopScaled.describe()
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/942d09f3d3f0a9d0498001e3c58d5eb914174dc7/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f63656e7375732d746f74616c706f702d7363616c65642e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/942d09f3d3f0a9d0498001e3c58d5eb914174dc7/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f63656e7375732d746f74616c706f702d7363616c65642e706e67&#34; alt=&#34;Census TotalPop scaled&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/census-totalpop-scaled.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;Note: If you have not installed Scikit-learn yet, you can install it directly in your Jupyter notebook by typing:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;!pip install sklearn
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;ul&gt;
+    &lt;li&gt;
+        &lt;strong&gt;Dummy Variables/One Hot Encoding:&lt;/strong&gt; In order to use categorical variables in our models, we perform a transformation that is known in statistics as creating dummy variables and as one hot encoding in computer science. The main idea is to add a variable to the dataset for each value of the categorical variable but one. These variables then take a value of either zero or one to indicate whether the original feature was equal to the value in the new dummy variable column. For example, in the census dataset, we can create a dummy variable for the state feature. We will create a variable for every state and territory but one. The reason for this is that since only one of the dummy variables can be 1 for each row, this means that we can exactly predict the value of one column using the sum of all the rest. This will add a perfectly correlated column to our dataset. As we have shown in previous lessons, this scenario should be avoided.
+    &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Here is the code for creating a dummy variable for the 
+    &lt;code&gt;State&lt;/code&gt; feature.
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;states = pd.get_dummies(census.State, drop_first=True)
+census_dummy = pd.concat([census, states], axis=1)
+census_dummy.columns.values
+
+array([&#39;CensusId&#39;, &#39;State&#39;, &#39;County&#39;, &#39;TotalPop&#39;, &#39;Men&#39;, &#39;Women&#39;,
+       &#39;Hispanic&#39;, &#39;White&#39;, &#39;Black&#39;, &#39;Native&#39;, &#39;Asian&#39;, &#39;Pacific&#39;,
+       &#39;Citizen&#39;, &#39;Income&#39;, &#39;IncomeErr&#39;, &#39;IncomePerCap&#39;,
+       &#39;IncomePerCapErr&#39;, &#39;Poverty&#39;, &#39;ChildPoverty&#39;, &#39;Professional&#39;,
+       &#39;Service&#39;, &#39;Office&#39;, &#39;Construction&#39;, &#39;Production&#39;, &#39;Drive&#39;,
+       &#39;Carpool&#39;, &#39;Transit&#39;, &#39;Walk&#39;, &#39;OtherTransp&#39;, &#39;WorkAtHome&#39;,
+       &#39;MeanCommute&#39;, &#39;Employed&#39;, &#39;PrivateWork&#39;, &#39;PublicWork&#39;,
+       &#39;SelfEmployed&#39;, &#39;FamilyWork&#39;, &#39;Unemployment&#39;, &#39;HispanicRate&#39;,
+       &#39;WhiteRate&#39;, &#39;BlackRate&#39;, &#39;NativeRate&#39;, &#39;AsianRate&#39;, &#39;PacificRate&#39;,
+       &#39;PovertyRate&#39;, &#39;ChildPovertyRate&#39;, &#39;ProfessionalRate&#39;,
+       &#39;ServiceRate&#39;, &#39;OfficeRate&#39;, &#39;ConstructionRate&#39;, &#39;ProductionRate&#39;,
+       &#39;DriveRate&#39;, &#39;CarpoolRate&#39;, &#39;TransitRate&#39;, &#39;WalkRate&#39;,
+       &#39;OtherTranspRate&#39;, &#39;WorkAtHomeRate&#39;, &#39;EmployedRate&#39;,
+       &#39;PrivateWorkRate&#39;, &#39;PublicWorkRate&#39;, &#39;NativeRateRounded&#39;,
+       &#39;TotalPopScaled&#39;, &#39;Alaska&#39;, &#39;Arizona&#39;, &#39;Arkansas&#39;, &#39;California&#39;,
+       &#39;Colorado&#39;, &#39;Connecticut&#39;, &#39;Delaware&#39;, &#39;District of Columbia&#39;,
+       &#39;Florida&#39;, &#39;Georgia&#39;, &#39;Hawaii&#39;, &#39;Idaho&#39;, &#39;Illinois&#39;, &#39;Indiana&#39;,
+       &#39;Iowa&#39;, &#39;Kansas&#39;, &#39;Kentucky&#39;, &#39;Louisiana&#39;, &#39;Maine&#39;, &#39;Maryland&#39;,
+       &#39;Massachusetts&#39;, &#39;Michigan&#39;, &#39;Minnesota&#39;, &#39;Mississippi&#39;,
+       &#39;Missouri&#39;, &#39;Montana&#39;, &#39;Nebraska&#39;, &#39;Nevada&#39;, &#39;New Hampshire&#39;,
+       &#39;New Jersey&#39;, &#39;New Mexico&#39;, &#39;New York&#39;, &#39;North Carolina&#39;,
+       &#39;North Dakota&#39;, &#39;Ohio&#39;, &#39;Oklahoma&#39;, &#39;Oregon&#39;, &#39;Pennsylvania&#39;,
+       &#39;Puerto Rico&#39;, &#39;Rhode Island&#39;, &#39;South Carolina&#39;, &#39;South Dakota&#39;,
+       &#39;Tennessee&#39;, &#39;Texas&#39;, &#39;Utah&#39;, &#39;Vermont&#39;, &#39;Virginia&#39;, &#39;Washington&#39;,
+       &#39;West Virginia&#39;, &#39;Wisconsin&#39;, &#39;Wyoming&#39;], dtype=object)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;ul&gt;
+    &lt;li&gt;
+        &lt;strong&gt;Shuffling:&lt;/strong&gt; when working with datasets contained in files (for instance ARFF files or CSV files), it makes sense to shuffle the rows. Otherwise other operations that will happen later in this workflow might be biased. In our eHealth example, if we have the dataset ordered by gender, train the model on the first half, and test it with the second, we would be applying the knowledge learned from the female population to the male population, which might bias the estimations.
+    &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In Pandas, we can shuffle rows using the 
+    &lt;code&gt;sample&lt;/code&gt; function. We can take a random sample where we select 100% of our original data (sample proportion = 1). This will result in a random ordering of the data.
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;shuffled_census = census.sample(frac=1)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;After the dataset has been transformed, the 
+    &lt;strong&gt;Loading&lt;/strong&gt; phase is executed to store the resulting dataset into a data store, for instance a database.
+&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-sampling&#34; class=&#34;anchor&#34; href=&#34;#sampling&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Sampling
+&lt;/h2&gt;
+&lt;p&gt;After we have performed ETL on the raw data, we need to split the transformed dataset. At this point you have the option to apply Machine Learning in different ways (that will be explained in the following sections). The option that you choose to use is called your &#34;Experimental Design&#34;. Depending on this experimental design you will need to split your transformed dataset in different ways. For the time being, it is enough to know about the simplest experimental design, known as train-test split. The train-test split means that the transformed dataset is divided into two disjoint subsets: one subset that will be used for training Machine Learning (known as the 
+    &lt;strong&gt;Training Set&lt;/strong&gt;), and another to test the model learned by Machine Learning (known as the
+    &lt;strong&gt;Test Set&lt;/strong&gt;).
+&lt;/p&gt;
+&lt;p&gt;Note that the sampling used to select the train set and the test set must be random. If the transformed dataset is contained in a text file, it is very helpful to have this file shuffled during ETL (as mentioned in the preceding section).&lt;/p&gt;
+&lt;p&gt;Sampling is done using the 
+    &lt;code&gt;sample&lt;/code&gt; function. Using this function, we can determine the number of rows we want in our sample or the proportion of the dataset.
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#sample using proportion
+census_prop_sample = census.sample(frac=0.5)
+#sample using number of rows
+census_size_sample = census.sample(n=1000)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-holdout-set&#34; class=&#34;anchor&#34; href=&#34;#holdout-set&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Holdout Set
+&lt;/h3&gt;
+&lt;p&gt;A Holdout Set is a subset that we obtain from the transformed dataset and that is not available to Machine Learning during the training phase (this phase is explained in the next section). In the case of the train-test split, the subset used to test the Machine Learning model is a holdout set known as the 
+    &lt;strong&gt;Test Set&lt;/strong&gt;. And it is very important that this test set not be available to Machine Learning during training.
+&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-training&#34; class=&#34;anchor&#34; href=&#34;#training&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Training
+&lt;/h2&gt;
+&lt;p&gt;After the Training Set is available as a result of the completion of the sampling phase, we are ready to put Machine Learning to work. Our first step is to select the Machine Learning algorithm. After selecting the Machine Learning algorithm, we train it on the Training Set.&lt;/p&gt;
+&lt;p&gt;If we want to perform a train test split, there is a specific function to perform this task called 
+    &lt;code&gt;train_test_split&lt;/code&gt; in Scikit-learn. Using this function, we pick what proportion of the data will be in the training set and the remainder will be in the test set. Typically we like to have the majority of the dataset in our training set. This is because the more data we use for training, the more accurate our model will be.
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from sklearn.model_selection import train_test_split
+
+census_train, census_test = train_test_split(census, test_size = 0.2)
+census_train
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/81abb68817e70170a54dbeaedf6e2ad4a302bb54/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f63656e7375732d747261696e2e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/81abb68817e70170a54dbeaedf6e2ad4a302bb54/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f63656e7375732d747261696e2e706e67&#34; alt=&#34;Census train&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/census-train.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;census_test
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/47355ac69169aaffd9805737c8e91f1a2b71c0df/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f63656e7375732d746573742e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/47355ac69169aaffd9805737c8e91f1a2b71c0df/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f63656e7375732d746573742e706e67&#34; alt=&#34;Census test&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/census-test.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-what-happens-during-training&#34; class=&#34;anchor&#34; href=&#34;#what-happens-during-training&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;What Happens During Training?
+&lt;/h3&gt;
+&lt;p&gt;During training, we apply the machine learning algorithm to our data. The algorithm typically comprised of two mathematical equations. The first equation is the mathematical model. The model describes the mathematical relationship between the features in the data. The second part of the algorithm is the loss function. The loss function quantifies how much information was lost using our model by comparing the actual data with the predicted data that is outputted by the model. Our goal is to optimize the loss. Some machine learning algorithms will continue iterating until achieving an optimal loss.&lt;/p&gt;
+&lt;p&gt;The output of the training phase is a trained model that incorporates the knowledge learned by Machine Learning, which can be queried to solve unseen problems (new problems different from those present in the training set).&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-testing&#34; class=&#34;anchor&#34; href=&#34;#testing&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Testing
+&lt;/h2&gt;
+&lt;p&gt;Now, you might be wondering &#34;how good is the model for solving new problems?&#34; This is the question that the testing phase answers by computing the value of a 
+    &lt;strong&gt;quality metric&lt;/strong&gt;. Usually you will have a threshold value for this quality metric, meaning that for the model to be usefull the value of its quality metric must be equal or greater to the threshold value.
+&lt;/p&gt;
+&lt;p&gt;It is important to note that the test set cannot be used for training. The fact that Machine Learning is trained with a training set of solved problems (supervised Machine Learning), and the fact that it solves those problems well, does not provide any useful information on how well it generalizes (how well it solves 
+    &lt;em&gt;new&lt;/em&gt; problems).
+&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-experimental-design&#34; class=&#34;anchor&#34; href=&#34;#experimental-design&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Experimental Design
+&lt;/h2&gt;
+&lt;p&gt;Machine Learning is an experimental science. This means that when you approach a new problem, you don&#39;t know beforehand what Machine Learning algorithm will solve the problem satisfactorily. So you have to try different algorithms and analyze what happens. Every time you perform one of these trials you are actually making a Machine Learning experiment. That is why it is said that Machine Learning is an experimental science.&lt;/p&gt;
+&lt;p&gt;Before you perform any Machine Learning experiment, you have to think about how you will proceed. This is what is called the experimental design. Next, you will learn about the most common expèrimental designs that you can try out in solving Machine Learning problems.&lt;/p&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-train-test-split&#34; class=&#34;anchor&#34; href=&#34;#train-test-split&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Train-Test Split
+&lt;/h3&gt;
+&lt;p&gt;We have already introduced this experimental design in the preceding sections. You proceed by randomly splitting the dataset into disjoint training and test sets. Then you train with the training set and evaluate how good the learned model is by feeding it the test set and comparing the model&#39;s estimations to those of the test set. This figure summarizes the workflow from the beginning:&lt;/p&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/c2731c1c8b78396da3f7150b90619bfb62e0c7da/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6d6c2d776f726b666c6f772e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/c2731c1c8b78396da3f7150b90619bfb62e0c7da/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6d6c2d776f726b666c6f772e706e67&#34; alt=&#34;Types of Machine Learning&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/ml-workflow.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-cross-validation&#34; class=&#34;anchor&#34; href=&#34;#cross-validation&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Cross Validation
+&lt;/h3&gt;
+&lt;p&gt;There is a probability that the train-test split tests the model on the only subset where it performs well, thus providing an unreliable quality metric. To reduce this probability, you can test on many different test sets and compute an average of the individual quality metrics obtained. This is what cross validation does. The procedure is:&lt;/p&gt;
+&lt;ol&gt;
+    &lt;li&gt;Randomly partition the dataset in 
+        &lt;em&gt;n&lt;/em&gt; bins.
+    &lt;/li&gt;
+    &lt;li&gt;For every bin (
+        &lt;em&gt;b&lt;/em&gt;):
+        &lt;ul&gt;
+            &lt;li&gt;Train with the remaining (
+                &lt;em&gt;n-1&lt;/em&gt;) bins.
+            &lt;/li&gt;
+            &lt;li&gt;Test with 
+                &lt;em&gt;b&lt;/em&gt; and obtain quality metric.
+            &lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Output the average of the 
+        &lt;em&gt;n&lt;/em&gt; quality metrics obtained.
+    &lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-train-validation-test-split&#34; class=&#34;anchor&#34; href=&#34;#train-validation-test-split&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Train-Validation-Test Split
+&lt;/h3&gt;
+&lt;p&gt;The training of some Machine Learning algorithms may be interpreted as learning a set of parameters that minimize the estimation error of the resulting model. How these parameters are learned is controlled by another set of parameters, that are called 
+    &lt;em&gt;hyper parameters&lt;/em&gt; to avoid the confusion between both sets of parameters. Typical examples of this kind of Machine Learning paradigms are SVMs (Support Vector Machines) and Artificial Neural Networks.
+&lt;/p&gt;
+&lt;p&gt;The basic procedure is:&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;Randomly partition the dataset in 3 disjoint subsets (training, validation, and test sets).&lt;/li&gt;
+    &lt;li&gt;Initialize the hyperparameters&lt;/li&gt;
+    &lt;li&gt;Train with the train set.&lt;/li&gt;
+    &lt;li&gt;Evaluate on validation set.&lt;/li&gt;
+    &lt;li&gt;Update best performing hyperparameters.&lt;/li&gt;
+    &lt;li&gt;Recompute/modify the hyperparameters while maximum number of iterations not reached.&lt;/li&gt;
+    &lt;li&gt;Using the best performing hyperparameters, compute the definitive quality metric on the test set.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-summary&#34; class=&#34;anchor&#34; href=&#34;#summary&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Summary
+&lt;/h2&gt;
+&lt;p&gt;In this chapter, you have learned the workflow of Machine Learning: ETL, sampling, training, and testing. Every time you execute this workflow you have performed one Machine Learning experiment, for which you have obtain a quality metric. At this point, you may wish to improve the quality metric, and consequently you may want to perform another experiment changing something, for instance the Machine Learning algorithm being used. As you see, this is an iterative process, and Machine Learning is an experimental science.&lt;/p&gt;
+&lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+  </div>
+  <div id="seq_contents_2"
+    aria-labelledby="tab_2"
+    aria-hidden="true"
+    class="seq_contents tex2jax_ignore asciimath2jax_ignore">
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-vertical&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;VerticalStudentView&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34; data-request-token=&#34;74e842c0939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@0384c22d33af4cf4be851bc058d18bdb&#34; data-block-type=&#34;vertical&#34;&gt;
+  
+
+  &lt;h2 class=&#34;hd hd-2 unit-title&#34;&gt;Feature Extraction and Engineering&lt;/h2&gt;
+
+    &lt;div class=&#34;ih-bookmark-button-wrapper&#34;&gt;
+    	
+
+
+
+&lt;div class=&#34;bookmark-button-wrapper&#34;&gt;
+  &lt;button class=&#34;btn btn-link bookmark-button &#34;
+    aria-pressed=&#34;false&#34;
+    data-bookmark-id=&#34;NoahB,block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@0384c22d33af4cf4be851bc058d18bdb&#34;
+    data-bookmarks-api-url=&#34;/api/bookmarks/v1/bookmarks/&#34;&gt;
+     &lt;span class=&#34;bookmark-text&#34;&gt;Bookmark this page&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+
+    &lt;/div&gt;	
+
+&lt;div class=&#34;vert-mod&#34;&gt;
+  &lt;div class=&#34;vert vert-0&#34; data-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@4b5b696b032648c3bad037554e3513ee&#34;&gt;
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;74e842c0939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@4b5b696b032648c3bad037554e3513ee&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  &lt;h2&gt;
+    &lt;a id=&#34;user-content-lesson-goals&#34; class=&#34;anchor&#34; href=&#34;#lesson-goals&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Lesson Goals
+&lt;/h2&gt;
+&lt;p&gt;In this lesson you are going to learn:&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;What feature selection is.&lt;/li&gt;
+    &lt;li&gt;Why you need to select features.&lt;/li&gt;
+    &lt;li&gt;How to select features.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-introduction&#34; class=&#34;anchor&#34; href=&#34;#introduction&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Introduction
+&lt;/h2&gt;
+&lt;p&gt;From the Machine Learning perspective, a dataset represents a set of observations. Every observation in the dataset is represented by a row. Each row contains a number of columns or features. For example, in an application of financial credit assignment, every consumer applying for a loan is an observation in our dataset, and each observation is described by features such as age, marital status, amount of dependent persons, employment status, yearly income, etc. We would then generate a classification algorithm that would return a decision on whether we should approve a loan for each customer.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-feature-selection&#34; class=&#34;anchor&#34; href=&#34;#feature-selection&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Feature Selection
+&lt;/h2&gt;
+&lt;p&gt;In Machine Learning, feature engineering is the task of deciding how to represent an observation. There may be many features available, but all of them may not be necessarily useful. For instance, in our example credit application, the favorite refrigerator color of the consumer would not be relevant, and thus we would not include it in our list of features.&lt;/p&gt;
+&lt;p&gt;In this lesson we will use the Kaggle Census dataset to demonstrate the data transformations.&lt;/p&gt;
+&lt;p&gt;First, we will load the dataset using Pandas and look at the first five rows using the 
+    &lt;code&gt;head&lt;/code&gt; function.
+&lt;/p&gt;
+&lt;p&gt;
+    &lt;code&gt;import numpy as np
+import pandas as pd
+
+census = pd.read_csv(&#39;./acs2015_county_data.csv&#39;)
+census.head
+&lt;/code&gt;
+&lt;/p&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/ef9cf42e724d4a2916d114d86d3c7a6ba67ecd2f/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f63656e7375735f686561642e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/ef9cf42e724d4a2916d114d86d3c7a6ba67ecd2f/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f63656e7375735f686561642e706e67&#34; alt=&#34;census head&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/census_head.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-data-types&#34; class=&#34;anchor&#34; href=&#34;#data-types&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Data Types
+&lt;/h3&gt;
+&lt;p&gt;Another issue that we will have to decide is the type of the attributes, it may be continuous, discrete, numeric, or categorical, and this decision may have further repercussions down the road.&lt;/p&gt;
+&lt;h4&gt;
+    &lt;a id=&#34;user-content-discrete-variables&#34; class=&#34;anchor&#34; href=&#34;#discrete-variables&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Discrete Variables
+&lt;/h4&gt;
+&lt;p&gt;A discrete variable is a variable that can only take on integer values. This type of variable is useful to describe features like age in years or number of children.&lt;/p&gt;
+&lt;h4&gt;
+    &lt;a id=&#34;user-content-continuous-variables&#34; class=&#34;anchor&#34; href=&#34;#continuous-variables&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Continuous Variables
+&lt;/h4&gt;
+&lt;p&gt;A continuous variable can take on any number within its defined range. Examples of continuous variables are an exact weight measurement of an object or a measurement of an exact distance between two points.&lt;/p&gt;
+&lt;h4&gt;
+    &lt;a id=&#34;user-content-categorical-variables&#34; class=&#34;anchor&#34; href=&#34;#categorical-variables&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Categorical Variables
+&lt;/h4&gt;
+&lt;p&gt;A categorical variable is a variable that can have a finite number of values within its defined range. Typically a categorical variable will have two or more values. The values may or may not be ordinal. An example of a ordinal categorical variable is a variable that describes the risk level of customers of an insurance company (for example, low, medium and high). An example of a non ordinal variable can be blood type or eye color. Either of these variables do not have an inherent ordering to them.&lt;/p&gt;
+&lt;p&gt;Looking at the census dataset, we can see that 
+    &lt;code&gt;TotalPop&lt;/code&gt; is a discrete variable since it is of type
+    &lt;code&gt;int64&lt;/code&gt;.
+    &lt;code&gt;PrivateWork&lt;/code&gt; and
+    &lt;code&gt;PublicWork&lt;/code&gt; are continuous variables as they are of type
+    &lt;code&gt;float64&lt;/code&gt;.
+    &lt;code&gt;State&lt;/code&gt; and
+    &lt;code&gt;County&lt;/code&gt; are categorical variables.
+&lt;/p&gt;
+&lt;p&gt;
+    &lt;code&gt;census.dtypes
+&lt;/code&gt;
+&lt;/p&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/cc1ae8608d8990d0b5e8b61fefbc5214b28f7100/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f63656e7375732d6474797065732e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/cc1ae8608d8990d0b5e8b61fefbc5214b28f7100/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f63656e7375732d6474797065732e706e67&#34; alt=&#34;census dtypes&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/census-dtypes.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-transforming-a-variable-and-changing-its-type&#34; class=&#34;anchor&#34; href=&#34;#transforming-a-variable-and-changing-its-type&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Transforming a Variable and Changing its Type
+&lt;/h3&gt;
+&lt;p&gt;There are cases where we may opt to transform a variable to change its type. Typically we take a discrete or continuous variable and transform it into a categorical variable by dividing the range into bins. For example, we might take a variable describing income and divide it into 3 bins - low income, medium income, and high income. Doing this comes with a cost of information loss. We simplify the variable but we have now lost information about each person&#39;s income.&lt;/p&gt;
+&lt;p&gt;In the census dataset, we can convert the 
+    &lt;code&gt;Income&lt;/code&gt; variable from continuous to categorical. Pandas offers us two functions to perform this task called
+    &lt;code&gt;cut&lt;/code&gt; and
+    &lt;code&gt;qcut&lt;/code&gt;. First we can look at the distribution of income using a histogram. This will give us a better idea of how many bins we want to have and how much of the data each bin should contain.
+&lt;/p&gt;
+&lt;p&gt;
+    &lt;code&gt;census.Income.hist()
+&lt;/code&gt;
+&lt;/p&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/9ae77bb92bd69fd75b0088e0e8c5b67bd8ed4a61/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f63656e7375732d696e636f6d652d686973742e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/9ae77bb92bd69fd75b0088e0e8c5b67bd8ed4a61/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f63656e7375732d696e636f6d652d686973742e706e67&#34; alt=&#34;census income histogram&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/census-income-hist.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;We can see that the bulk of the data falls between approximately $30,000 and $70,000. If we created bins by dividing the range evenly into 3 bins, it would mean that there would be more people in the middle bin. Let&#39;s explore creating bins both based on the range of the data as well as based on the distribution of the data (in other words, based on percentiles of the population).&lt;/p&gt;
+&lt;p&gt;We can pass to the 
+    &lt;code&gt;cut&lt;/code&gt; function the number of bins and thus create bins using the range of the variable.
+&lt;/p&gt;
+&lt;p&gt;
+    &lt;code&gt;census[&#39;IncomeRange&#39;] = pd.cut(census.Income, 3)
+census.IncomeRange.value_counts()
+&lt;/code&gt;
+&lt;/p&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/f513c3671b3ad86974e98cc6bb8aad2e751ad8e1/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f63656e7375732d696e636f6d652d72616e67652d636f756e74732e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/f513c3671b3ad86974e98cc6bb8aad2e751ad8e1/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f63656e7375732d696e636f6d652d72616e67652d636f756e74732e706e67&#34; alt=&#34;census income range counts&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/census-income-range-counts.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;We can also opt to create bins based on the distribution. In this case, we will look at the min, 33rd percentile, 66th percentile and the max. We can pass these percentiles to the 
+    &lt;code&gt;qcut&lt;/code&gt; function
+&lt;/p&gt;
+&lt;p&gt;
+    &lt;code&gt;census[&#39;IncomePercentile&#39;] = pd.qcut(census.Income, [0, 0.3333, 0.6666, 1])
+census.IncomePercentile.value_counts()
+&lt;/code&gt;
+&lt;/p&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/2b11c8740bd98ba93274ec0d7d219ea7b66d4bfe/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f63656e7375732d696e636f6d652d70657263656e74696c652d636f756e74732e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/2b11c8740bd98ba93274ec0d7d219ea7b66d4bfe/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f63656e7375732d696e636f6d652d70657263656e74696c652d636f756e74732e706e67&#34; alt=&#34;census income percentile counts&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/census-income-percentile-counts.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-variable-selection&#34; class=&#34;anchor&#34; href=&#34;#variable-selection&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Variable Selection
+&lt;/h2&gt;
+&lt;p&gt;We have mentioned in previous lessons that machine learning seeks to balance predictive power and information loss. Creating more complex models can be computationally expensive. Therefore, it is our goal to create a simple model while sacrificing as little information as possible.&lt;/p&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-correlated-features&#34; class=&#34;anchor&#34; href=&#34;#correlated-features&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Correlated Features
+&lt;/h3&gt;
+&lt;p&gt;A simple and important way to reduce variables is by removing correlated features. In performing feature selection, we want to avoid highly correlated features and dependent features. The reason is that adding one new highly correlated or dependent feature to the instance representation does not provide new information the Machine Learning can leverage, and it has the disadvantage of unnecessarily complicating the learning process and the resulting model. In our example, if we already have a yearly income feature, it may be redundant to include a fixed monthly income feature.&lt;/p&gt;
+&lt;p&gt;In the census data, we would also like to avoid correlated features. One way to detect correlation between features is by computing the pairwise correlation of all numeric variables in the dataset.&lt;/p&gt;
+&lt;p&gt;
+    &lt;code&gt;census.corr()
+&lt;/code&gt;
+&lt;/p&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/74c594d7e6387db91908d04a956703ea62ae3458/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f63656e7375732d636f72722e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/74c594d7e6387db91908d04a956703ea62ae3458/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f63656e7375732d636f72722e706e67&#34; alt=&#34;census correlation&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/census-corr.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;We can see that 
+    &lt;code&gt;Men&lt;/code&gt; and
+    &lt;code&gt;Women&lt;/code&gt; have a correlation of 0.999527. Therefore, we should drop one of the two to avoid redundant information.
+&lt;/p&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-forward-greedy-feature-selection&#34; class=&#34;anchor&#34; href=&#34;#forward-greedy-feature-selection&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Forward Greedy Feature Selection
+&lt;/h3&gt;
+&lt;p&gt;Forward greedy feature selection is an algorithm that starts off with a single feature and keeps adding features to the model while there is still a significant improvement in a performance metric. We stop adding features once we no longer see a significant improvement. Our algorithm for forward feature selection can be described as the following:&lt;/p&gt;
+&lt;p&gt;For every remaining feature f:&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;m is the model resulting from adding f to the best estimator with q features.&lt;/li&gt;
+    &lt;li&gt;Test m.&lt;/li&gt;
+    &lt;li&gt;Update b which is the best feature to add so far.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The best performing q+1 features are the original q features plus feature b.&lt;/p&gt;
+&lt;p&gt;This algorithm is a greedy algorithm. This means that we only make the optimal decision at each stage. We cannot go back and replace variables that we have already added. We can only move forward and add more variables or decide to stop.&lt;/p&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-backward-elimination&#34; class=&#34;anchor&#34; href=&#34;#backward-elimination&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Backward Elimination
+&lt;/h3&gt;
+&lt;p&gt;This algorithm is also greedy and has the opposite strategy of forward selection. We start with all features and eliminate features one by one. Each time we select the variable for removal that has the least impact on model performance. Typically, we stop at a predetermined number of features.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-derived-features&#34; class=&#34;anchor&#34; href=&#34;#derived-features&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Derived Features
+&lt;/h2&gt;
+&lt;p&gt;A derived feature is a new feature that you create by combining two or more preexisting raw features. In our census example, we can create a derived feature for detecting counties that have a low median household income and unemployment higher than 7 percent.&lt;/p&gt;
+&lt;p&gt;
+    &lt;code&gt;census[&#39;HighUnemploymentLowIncome&#39;] = np.where((census.Unemployment &amp;gt; 0.07) &amp;amp; (census.IncomePercentile.cat.codes == 0), 1, 0)
+census.HighUnemploymentLowIncome.value_counts()
+
+0    2147
+1    1073
+&lt;/code&gt;
+&lt;/p&gt;
+&lt;p&gt;Note that we converted the categorical column into coded data to allow easy comparison and then selected the lowest income group (where the code equals zero).&lt;/p&gt;
+&lt;p&gt;How do we know whether Machine Learning will improve with our new derived feature? As mentioned previously on this chapter, Machine Learning is an experimental science, so you make the experiment of adding the new derived feature and compare the resulting quality metric with that of the original model.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-wrappers&#34; class=&#34;anchor&#34; href=&#34;#wrappers&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Wrappers
+&lt;/h2&gt;
+&lt;p&gt;A wrapper is a program that performs feature selection and provides the resulting feature set to the Machine Learning workflow. In our example credit application, if every applicant is described by a set of 20 features, but we suspect that not all of them are independent and informative, we may use a backward elimination wrapper, that will find the smallest best performing subset of features, let&#39;s assume that it has only 8 features, then the Machine Learning workflow would proceed from the sampling phase considering for the rest of the workflow only those 8 features.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-summary&#34; class=&#34;anchor&#34; href=&#34;#summary&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Summary
+&lt;/h2&gt;
+&lt;p&gt;Data Modeling in Machine Learning includes selecting the features to be given to the Machine Learning pipeline. Usually there will be some irrelevant or dependent features that will hinder Machine Learning. The recommended practice is to perform feature selection to extract from the available features only those that are potentially useful for Machine Learning.&lt;/p&gt;
+&lt;p&gt;In this lesson, we also discussed methods for variable selection. The two main methods discussed in the lesson were forward greedy selection and backwards elimination.&lt;/p&gt;
+&lt;p&gt;We also mentioned augmenting our model by adding derived features. We can add derived features by combining preexisting raw features. We also discussed wrappers. A wrapper is a feature selection software that provides the Machine Learning workflow with the resulting best set of features.&lt;/p&gt;
+&lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+  </div>
+  <div id="seq_contents_3"
+    aria-labelledby="tab_3"
+    aria-hidden="true"
+    class="seq_contents tex2jax_ignore asciimath2jax_ignore">
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-vertical&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;VerticalStudentView&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34; data-request-token=&#34;74e842c0939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@e52ac8979b23446e920f892e7ee44730&#34; data-block-type=&#34;vertical&#34;&gt;
+  
+
+  &lt;h2 class=&#34;hd hd-2 unit-title&#34;&gt;Introduction to Scikit-Learn&lt;/h2&gt;
+
+    &lt;div class=&#34;ih-bookmark-button-wrapper&#34;&gt;
+    	
+
+
+
+&lt;div class=&#34;bookmark-button-wrapper&#34;&gt;
+  &lt;button class=&#34;btn btn-link bookmark-button &#34;
+    aria-pressed=&#34;false&#34;
+    data-bookmark-id=&#34;NoahB,block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@e52ac8979b23446e920f892e7ee44730&#34;
+    data-bookmarks-api-url=&#34;/api/bookmarks/v1/bookmarks/&#34;&gt;
+     &lt;span class=&#34;bookmark-text&#34;&gt;Bookmark this page&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+
+    &lt;/div&gt;	
+
+&lt;div class=&#34;vert-mod&#34;&gt;
+  &lt;div class=&#34;vert vert-0&#34; data-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@93c099a830f64e8ebd5389d75e0df94f&#34;&gt;
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;74e842c0939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@93c099a830f64e8ebd5389d75e0df94f&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  &lt;h2&gt;
+    &lt;a id=&#34;user-content-lesson-goals&#34; class=&#34;anchor&#34; href=&#34;#lesson-goals&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Lesson Goals
+&lt;/h2&gt;
+&lt;p&gt;In this lesson we focus on explaining the Scikit-learn Machine Learning Toolkit:&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;You will learn how to install Scikit-learn and its dependencies.&lt;/li&gt;
+    &lt;li&gt;You will learn about the functionalities of Scikit-learn that will help you in the implementation of the Machine Learning workflow in your Machine Learning projects.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-introduction&#34; class=&#34;anchor&#34; href=&#34;#introduction&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Introduction
+&lt;/h2&gt;
+&lt;p&gt;Scikit-learn is the leading machine learning library in Python. It is an open source library with contributions from hundreds of developers as well as support from major corporations like Google. Scikit-learn utilizes numpy and scipy.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-installation&#34; class=&#34;anchor&#34; href=&#34;#installation&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Installation
+&lt;/h2&gt;
+&lt;p&gt;In this section, we will guide you through the process of installing Scikit-learn as a python package. Scikit-learn depends on other packages, so first we have to check that those dependecies are installed.&lt;/p&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-dependencies&#34; class=&#34;anchor&#34; href=&#34;#dependencies&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Dependencies
+&lt;/h3&gt;
+&lt;p&gt;Scikit-learn depends on NumPy and SciPy, so before proceeding to install the Scikit-learn package, we will check the availability of the Numpy and Scipy packages. We can invoke the Python interpreter asking it to load Numpy, and it will reply with an error if Numpy is unavailable. We can start up a Jupyter notebook and enter the following code in a cell:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;import numpy
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;The Python interpreter will try load the Numpy package. If the Numpy package is not installed, the python interpreter will print a message similar to the following.&lt;/p&gt;
+&lt;p&gt;
+    &lt;code&gt;ImportError: No module named &#39;numpy&#39;&lt;/code&gt;
+&lt;/p&gt;
+&lt;p&gt;In this case, we will install Numpy directly in Jupyter by adding an exclamation before the command.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pip install numpy
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Now we will check the installation of the Scipy package in a similar way. Just type at the command prompt:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;import scipy
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;If no error is reported, then it means that the Scipy package is installed and accessible to the Python interpreter.&lt;/p&gt;
+&lt;p&gt;If the package is not installed, you can install the package similarly with the command:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pip install scipy
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-install-scikit-learn&#34; class=&#34;anchor&#34; href=&#34;#install-scikit-learn&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Install Scikit-learn
+&lt;/h3&gt;
+&lt;p&gt;So far you have checked that the required dependencies of the Scikit-learn package are in place, so now you are ready to proceed to install the Scikit-learn package.&lt;/p&gt;
+&lt;p&gt;The quickest and easiest way is to install the scikit-learn package directly in Jupyter. As before, we add an exclamation before the command.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pip install sklearn
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;The log should indicate that the installation was successful and note what version was installed.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-main-functionalities&#34; class=&#34;anchor&#34; href=&#34;#main-functionalities&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Main Functionalities
+&lt;/h2&gt;
+&lt;p&gt;In previous lessons we have discussed the machine learning workflow. As an open source library, scikit-learn has benefited from many contributions that have turned the library a great resource for all stages of the machine learning workflow.&lt;/p&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-load-dataset&#34; class=&#34;anchor&#34; href=&#34;#load-dataset&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Load Dataset
+&lt;/h3&gt;
+&lt;p&gt;Scikit-learn comes bundled with several well known public datasets, to take you up to speed quickly, avoiding the hassle of finding and downloading datasets from the web. These bundled datasets can be loaded by name without even providing a path to the dataset file. This is an example:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from sklearn import datasets
+diabetesDataset = datasets.load_diabetes()
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;This data structure contains 5 different components:&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;
+        &lt;p&gt;The data, which is a numpy array with 442 rows and 10 columns&lt;/p&gt;
+        &lt;pre&gt;&lt;code&gt;diabetesDataset.data
+&lt;/code&gt;
+        &lt;/pre&gt;
+        &lt;p&gt;
+            &lt;a href=&#34;https://camo.githubusercontent.com/e00a36850c4c65f2663f59db5e5c98905f717f6c/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f64696162657465732d646174612e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+                &lt;img src=&#34;https://camo.githubusercontent.com/e00a36850c4c65f2663f59db5e5c98905f717f6c/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f64696162657465732d646174612e706e67&#34; alt=&#34;diabetes data&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/diabetes-data.png&#34; style=&#34;max-width:100%;&#34;&gt;
+            &lt;/a&gt;
+        &lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p&gt;The target (this is the variable that we would like to predict) which is a one dimensional array with 442 rows.&lt;/p&gt;
+        &lt;pre&gt;&lt;code&gt;diabetesDataset.target
+&lt;/code&gt;
+        &lt;/pre&gt;
+        &lt;p&gt;
+            &lt;a href=&#34;https://camo.githubusercontent.com/329e710ff31d71d3f7a847f268455148acaf7071/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f64696162657465732d7461726765742e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+                &lt;img src=&#34;https://camo.githubusercontent.com/329e710ff31d71d3f7a847f268455148acaf7071/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f64696162657465732d7461726765742e706e67&#34; alt=&#34;diabetes target&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/diabetes-target.png&#34; style=&#34;max-width:100%;&#34;&gt;
+            &lt;/a&gt;
+        &lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p&gt;The description of the dataset&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p&gt;The data filename (this contains the file path)&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+        &lt;p&gt;The target filename (also contains a file path)&lt;/p&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;While the library contains preloaded datasets, we can use Pandas dataframes as well in scikit-learn. One major point is that when using a Pandas dataframe to perform a machine learning task with scikit-learn, we must separate the dataset into predictor variables and response variables. The predictor variables are used to estimate the response variable (or target variable).&lt;/p&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-preprocess-dataset&#34; class=&#34;anchor&#34; href=&#34;#preprocess-dataset&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Preprocess Dataset
+&lt;/h3&gt;
+&lt;p&gt;In previous lessons, we have mentioned a number of data preprocessing functions including scaling and test train splitting. Scikit-learn has many data preprocessing functions that are geared towards numpy arrays.&lt;/p&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-feature-selection&#34; class=&#34;anchor&#34; href=&#34;#feature-selection&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Feature Selection
+&lt;/h3&gt;
+&lt;p&gt;This is another stage of our Machine Learning workflow for which Scikit-Learn provides support. As mentioned previously on this course, there are multiple ways to select the best features for our model. Scikit-learn comes with a number of functions that help us perform this task.&lt;/p&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-train-a-model&#34; class=&#34;anchor&#34; href=&#34;#train-a-model&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Train a Model
+&lt;/h3&gt;
+&lt;p&gt;Model-training is the core functionality of Scikit-Learn. It provides a variety of Machine Learning algorithms grouped according to the availability of the teaching signal (availability of supervision/criticism) criterion. In previous lessons, the interpretation of a 
+    &lt;strong&gt;training set&lt;/strong&gt; as a set of solved problems was introduced. If a supervisor provided the solutions, then we can perform supervised Machine Learning. If no solutions are available then we are restricted to unsupervised Machine Learning.
+&lt;/p&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-model-selection-and-evaluation&#34; class=&#34;anchor&#34; href=&#34;#model-selection-and-evaluation&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Model Selection and Evaluation
+&lt;/h3&gt;
+&lt;p&gt;Scikit-Learn test and tuning functionalities include the functionalities that were introduced in the previous lessons.
+These functionalities are available as functions from the 
+    &lt;code&gt;sklearn.metrics&lt;/code&gt; package.
+&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-summary&#34; class=&#34;anchor&#34; href=&#34;#summary&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Summary
+&lt;/h2&gt;
+&lt;p&gt;In this chapter, you have learned what Scikit-learn can do for you: its functionalities help you implement the Machine Learning workflow explained in previous lessons. You have also learned how to install Scikit-learn and its dependencies. We have introduced some concepts and techniques that will be useful to you in developing projects, and that you can implement invoking the Scikit-learn API. Now that you know what Scikit-learn can do for you, in the following lessons, you will be presented with programming examples of the key functionalities, so that you can reuse them as a template in your projects.&lt;/p&gt;
+&lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+  </div>
+  <div id="seq_contents_4"
+    aria-labelledby="tab_4"
+    aria-hidden="true"
+    class="seq_contents tex2jax_ignore asciimath2jax_ignore">
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-vertical&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;VerticalStudentView&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34; data-request-token=&#34;74e842c0939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@29bf3156718b43a2ae51451e1abf5126&#34; data-block-type=&#34;vertical&#34;&gt;
+  
+
+  &lt;h2 class=&#34;hd hd-2 unit-title&#34;&gt;Loading Datasets into Scikit-learn&lt;/h2&gt;
+
+    &lt;div class=&#34;ih-bookmark-button-wrapper&#34;&gt;
+    	
+
+
+
+&lt;div class=&#34;bookmark-button-wrapper&#34;&gt;
+  &lt;button class=&#34;btn btn-link bookmark-button &#34;
+    aria-pressed=&#34;false&#34;
+    data-bookmark-id=&#34;NoahB,block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@29bf3156718b43a2ae51451e1abf5126&#34;
+    data-bookmarks-api-url=&#34;/api/bookmarks/v1/bookmarks/&#34;&gt;
+     &lt;span class=&#34;bookmark-text&#34;&gt;Bookmark this page&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+
+    &lt;/div&gt;	
+
+&lt;div class=&#34;vert-mod&#34;&gt;
+  &lt;div class=&#34;vert vert-0&#34; data-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@13bf900c7a2644f181dd7f0c9ad29a9d&#34;&gt;
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;74e842c0939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@13bf900c7a2644f181dd7f0c9ad29a9d&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  &lt;h2&gt;
+    &lt;a id=&#34;user-content-lesson-goals&#34; class=&#34;anchor&#34; href=&#34;#lesson-goals&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Lesson Goals
+&lt;/h2&gt;
+&lt;p&gt;In this lesson you will learn how to:&lt;/p&gt;
+&lt;ul&gt;
+    &lt;li&gt;Load Scikit-learn&#39;s bundled datasets.&lt;/li&gt;
+    &lt;li&gt;Load other external datasets of the most relevant formats.&lt;/li&gt;
+    &lt;li&gt;Visualize your dataset.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-introduction&#34; class=&#34;anchor&#34; href=&#34;#introduction&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Introduction
+&lt;/h2&gt;
+&lt;p&gt;In the Machine Learning workflow presented in previous lessons, extracting data, transforming it, and loading your dataset are your first stages. When you read the dataset from your Python application, you will load the dataset into a data object: typically a dataframe, an ndarray, a dictionary, or a list. The process of loading a dataset with scikit-learn depends on the type of dataset: whether it is a dataset bundled with scikit-learn or not, and if not, depending on the format of the dataset. We will cover the cases separately, providing you with code snippets for you to reuse in the implementations of your Machine Learning workflow.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-load-bundled-dataset&#34; class=&#34;anchor&#34; href=&#34;#load-bundled-dataset&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Load Bundled Dataset
+&lt;/h2&gt;
+&lt;p&gt;As mentioned in the lesson introducing Scikit-learn, it comes with several datasets bundled that you can load quickly from your Python application. There are three datasets representing 
+    &lt;strong&gt;regression problems&lt;/strong&gt;:
+&lt;/p&gt;
+&lt;ol&gt;
+    &lt;li&gt;Boston house prices.&lt;/li&gt;
+    &lt;li&gt;Diabetes.&lt;/li&gt;
+    &lt;li&gt;Linnerud.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;In these datasets, the domain of the target attribute is numeric.&lt;/p&gt;
+&lt;p&gt;There are also four datasets representing 
+    &lt;strong&gt;classification problems&lt;/strong&gt;:
+&lt;/p&gt;
+&lt;ol&gt;
+    &lt;li&gt;Iris.&lt;/li&gt;
+    &lt;li&gt;Digits.&lt;/li&gt;
+    &lt;li&gt;Wine.&lt;/li&gt;
+    &lt;li&gt;Breast cancer.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;In these datasets, the target attribute might be categorical or an integer with a limited number of values (for example, 0 or 1).&lt;/p&gt;
+&lt;p&gt;All of them are public open datasets that you can use to test your Machine Learning workflows.&lt;/p&gt;
+&lt;p&gt;You can load one of these datasets and have a look at the structure using the following Python code:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from sklearn import datasets
+
+# dictionary-like object
+diabetesDataset = datasets.load_diabetes()
+
+# Print all attributes
+diabetesDataset.keys
+dict_keys([&#39;data&#39;, &#39;target&#39;, &#39;DESCR&#39;, &#39;feature_names&#39;, &#39;data_filename&#39;, &#39;target_filename&#39;])
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;By printing the DESCR attribute of the dataset you get its documentation informing you about what the dataset describes, number of instances, number of attributes, target attribute, any preprocessing already performed on the dataset, and a citation of its original source. But note that this only works for the bundled datasets.&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-load-external-dataset&#34; class=&#34;anchor&#34; href=&#34;#load-external-dataset&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Load External Dataset
+&lt;/h2&gt;
+&lt;p&gt;The datasets that come bundled with Scikit-learn are very convenient to get you started quickly with building Machine Learning workflows and testing your code. But most of the time you will be working with external datasets that you will download from the web and load from your computer storage device (e.g. your hard disk) into your Python program.&lt;/p&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-csv-format&#34; class=&#34;anchor&#34; href=&#34;#csv-format&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;CSV Format
+&lt;/h3&gt;
+&lt;p&gt;CSV stands for &#34;Comma Separated Values.&#34; In a csv file, data is saved in a table format where in each row, columns (or features) are separated by a comma.&lt;/p&gt;
+&lt;p&gt;Typically, we read the csv dataset into a pandas DataFrame, which is often a good idea due to its flexibility and versatility. In this lesson, we will use the census data to demonstrate loading.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;import pandas as pd
+
+census = pd.read_csv(&#39;./acs2015_county_data.csv&#39;)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;It is often a good idea to check the shape of the resulting DataFrame:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;census.shape
+(3220, 61)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;We can also look at the columns and their types using the 
+    &lt;code&gt;dtypes&lt;/code&gt; function:
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;census.dtypes
+CensusId               int64
+State                 object
+County                object
+TotalPop               int64
+Men                    int64
+                      ...   
+EmployedRate         float64
+PrivateWorkRate      float64
+PublicWorkRate       float64
+NativeRateRounded    float64
+TotalPopScaled       float64
+Length: 61, dtype: object
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Note that not all csv files will contain the column names in the first row. If this is the case, it is best to read the csv file with the following argument in the 
+    &lt;code&gt;read_csv&lt;/code&gt; function:
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#we name the columns ourselves by creating a list of column names. For example, we have here a dataset with student name and age
+column_list = [&#39;name&#39;, &#39;age&#39;]
+df = pd.read_csv(path, header=None, names=column_list)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;h3&gt;
+    &lt;a id=&#34;user-content-json-format&#34; class=&#34;anchor&#34; href=&#34;#json-format&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;JSON Format
+&lt;/h3&gt;
+&lt;p&gt;JSON is a popular data format. JSON stands for (JavaScript Object Notation) and it is documented at 
+    &lt;a href=&#34;http://www.json.org&#34; rel=&#34;nofollow&#34;&gt;www.json.org&lt;/a&gt;. A JSON object is a sequence of label:value pairs, conceptually similar to a Python dictionary or database record. To read a JSON dataset into a pandas DataFrame you can use this code:
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;df = pd.read_json(path)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Sometimes our data might be nested. To flatten the data, we can use the 
+    &lt;code&gt;json_normalize&lt;/code&gt; function provided in Pandas. Here is an example of flattening an online json file containing information about different Pokemon.
+&lt;/p&gt;
+&lt;p&gt;Since we are using a file that is stored online rather than saved locally, we will need to load the data from the web using the urllib library and then extract the json object using the json library&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;import json
+from urllib.requests import urlopen
+import pandas as pd
+from pandas.io.json import json_normalize
+
+url = &#39;https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json&#39;
+#In Python3 we will need to decode the data as well, hence the use of the decode function
+url_read = urlopen(url).read().decode()
+url_json = json.loads(url_read)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;In order to confirm that we are properly flattening, let&#39;s look at the data&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;url_json
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/098f5d2d9708f3041ec6268f976e52a17f649e4b/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f706f6b656d6f6e2d6a736f6e2e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/098f5d2d9708f3041ec6268f976e52a17f649e4b/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f706f6b656d6f6e2d6a736f6e2e706e67&#34; alt=&#34;pokemon json&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/pokemon-json.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;It looks like there is one key in this dictionary with many nested values; therefore, flattening at this level will not produce great results. We can see this by looking at the keys in this dictionary:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;url_json.keys()
+dict_keys([&#39;pokemon&#39;])
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;Therefore, we will flatten one layer into the nesting in this json object.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pokemon = json_normalize(url_json[&#39;pokemon&#39;])
+pokemon
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;p&gt;
+    &lt;a href=&#34;https://camo.githubusercontent.com/28ee7ee2f3084ed2ac9460a492081fb5af25aaea/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f706f6b656d6f6e2d64662e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;
+        &lt;img src=&#34;https://camo.githubusercontent.com/28ee7ee2f3084ed2ac9460a492081fb5af25aaea/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f706f6b656d6f6e2d64662e706e67&#34; alt=&#34;pokemon df&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/pokemon-df.png&#34; style=&#34;max-width:100%;&#34;&gt;
+    &lt;/a&gt;
+&lt;/p&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-dataset-generator&#34; class=&#34;anchor&#34; href=&#34;#dataset-generator&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Dataset Generator
+&lt;/h2&gt;
+&lt;p&gt;Instead of looking for the appropriate dataset, downloading it, and reading it, to test your workflow, you can also create a synthetic dataset according to your needs, using Scikit-learn. For instance, you can use 
+    &lt;code&gt;sklearn.datasets.make_classification()&lt;/code&gt; to generate a synthetic dataset to test your classification workflow:
+&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;from sklearn import datasets
+
+featureVectors, targets = datasets.make_classification(amt_instances, amt_features, amt_classes)
+&lt;/code&gt;
+&lt;/pre&gt;
+&lt;h2&gt;
+    &lt;a id=&#34;user-content-summary&#34; class=&#34;anchor&#34; href=&#34;#summary&#34; aria-hidden=&#34;true&#34;&gt;
+        &lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;
+    &lt;/a&gt;Summary
+&lt;/h2&gt;
+&lt;p&gt;In this chapter, you have learned about the most popular dataset formats in Machine Learning, and how to load those datasets to a data object in your Python program using Scikit-learn. The methods you will use for reading the dataset depend on the dataset format: CSV and JSON are the two main data formats that you will be working with and have been presented in this lesson. They will cover your most usual needs. Inspecting the data object where the dataset was loaded is usually a good idea. You have learned several ways to do it that you can reuse in your projects. Plotting the dataset before proceeding to training is usually a good idea also. You have learned from several code snippets, how to load, segment and plot a 2 dimensional projection of a possibly higher dimension dataset. And you also have a sample Python program that you can adapt to visualize your dataset (remember to set the values of the constants to what you want to visualize!).&lt;/p&gt;
+&lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+  </div>
+  <div id="seq_content" class="ih-learnig-unit" role="tabpanel"></div>
+
+  <nav class="sequence-bottom ih-js-fire-highlighting-controls" aria-label="Section">
+    <button class="sequence-nav-button button-previous">
+      <span class="icon fa fa-chevron-prev" aria-hidden="true"></span>
+      <span>Previous</span>
+    </button>
+    <button class="sequence-nav-button button-next">
+      <span>Next</span>
+      <span class="icon fa fa-chevron-next" aria-hidden="true"></span>
+    </button>
+  </nav>
+</div>
+
+</div>
+
+        </main>
+    </section>
+
+    <section class="courseware-results-wrapper">
+      <div id="loading-message" aria-live="polite" aria-relevant="all"></div>
+      <div id="error-message" aria-live="polite"></div>
+      <div class="courseware-results search-results" data-course-id="course-v1:IRONHACK+DAFT+201906_MIA" data-lang-code="en"></div>
+    </section>
+
+  </div>
+  
+
+
+
+
+
+
+
+
+
+    
+    
+    <script type="text/javascript" src="../../../../../static/bundles/CourseSock.43ffb68a30fa51e4e467.1f398818dd61.js" ></script>
+      <script type="text/javascript">
+        
+    new CourseSock({
+        el:'.verification-sock'
+    });
+
+      </script>
+
+
+</div>
+<div class="container-footer">
+</div>
+
+          
+        </div>
+      </div>
+
+    
+    
+
+      <div class="ih-beta-banner">
+        <span class="icon fa fa-flask"></span>
+        <span class="ih-beta-banner-text">We just launched a new version of the student platform. Everything should be fine, but if you encounter a bug, don't hesitate and send it our way.</span>
+      </div>
+
+  </div>
+
+  
+  
+  <script type="text/javascript" src="../../../../../static/common/js/vendor/jquery.scrollTo.525edcc52fe8.js"></script>
+  <script type="text/javascript" src="../../../../../static/js/vendor/flot/jquery.flot.d3d45ff0c6a8.js"></script>
+
+  
+    <script type="text/javascript" src="../../../../../static/js/lms-courseware.43ed60564822.js" charset="utf-8"></script>
+
+
+  
+
+
+
+<script type="text/javascript">
+    // Fast Preview was introduced in 2.5. However, it
+    // causes undesirable flashing/font size changes when
+    // MathJax is used for interactive preview (equation editor).
+    // Setting processSectionDelay to 0 (see below) fully eliminates
+    // fast preview, but to reduce confusion, we are also setting
+    // the option as displayed in the context menu to false.
+    // When upgrading to 2.6, check if this variable name changed.
+    window.MathJax = {
+      menuSettings: {CHTMLpreview: false}
+    };
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [
+        ["\\(","\\)"],
+        ['[mathjaxinline]','[/mathjaxinline]']
+      ],
+      displayMath: [
+        ["\\[","\\]"],
+        ['[mathjax]','[/mathjax]']
+      ]
+    }
+  });
+</script>
+<script type="text/x-mathjax-config">
+
+  // In order to eliminate all flashing during interactive
+  // preview, it is necessary to set processSectionDelay to 0
+  // (remove delay between input and output phases). This
+  // effectively disables fast preview, regardless of
+  // the fast preview setting as shown in the context menu.
+  MathJax.Hub.processSectionDelay = 0;
+
+  MathJax.Hub.signal.Interest(function(message) {
+    if(message[0] === "End Math") {
+        set_mathjax_display_div_settings();
+    }
+  });
+  function set_mathjax_display_div_settings() {
+    $('.MathJax_Display').each(function( index ) {
+      this.setAttribute('tabindex', '0');
+      this.setAttribute('aria-live', 'off');
+      this.removeAttribute('role');
+      this.removeAttribute('aria-readonly');
+    });
+  }
+</script>
+
+
+<!-- This must appear after all mathjax-config blocks, so it is after the imports from the other templates.
+     It can't be run through static.url because MathJax uses crazy url introspection to do lazy loading of
+     MathJax extension libraries -->
+<script type="text/javascript" src="../../../../../../cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJaxf4fa.js?config=TeX-MML-AM_SVG"></script>
+
+
+    
+    
+      <script type="text/javascript" src="../../../../../static/course_search/js/course_search_factory.26a9d7197c46bdd1.js?raw"></script>
+    <script type="text/javascript">
+        (function (require) {
+            require(['course_search/js/course_search_factory'], function (CourseSearchFactory) {
+                
+        var courseId = $('.courseware-results').data('courseId');
+        CourseSearchFactory({
+            courseId: courseId,
+            searchHeader: $('.search-bar')
+        });
+    
+            });
+        }).call(this, require || RequireJS.require);
+    </script>
+
+
+  
+    
+      <script type="text/javascript" src="../../../../../static/js/courseware/courseware_factory.1504fc10caefbdd1.js?raw"></script>
+    <script type="text/javascript">
+        (function (require) {
+            require(['js/courseware/courseware_factory'], function (CoursewareFactory) {
+                
+    CoursewareFactory();
+  
+            });
+        }).call(this, require || RequireJS.require);
+    </script>
+
+
+
+  <script type="text/javascript">
+    var $$course_id = "course\u002Dv1:IRONHACK+DAFT+201906_MIA";
+  </script>
+
+
+
+
+
+
+  
+
+
+
+  <script type="text/javascript" src="../../../../../static/js/vendor/noreferrer.aa62a3e70ffa.js" charset="utf-8"></script>
+  <script type="text/javascript" src="../../../../../static/js/utils/navigation.08930e16ab3d.js" charset="utf-8"></script>
+  <script type="text/javascript" src="../../../../../static/js/header/header.309a1243e175.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="../../../../../static/ih-lms-theme/js/vendor/highlight.min.496e109b43ca.js" ></script>
+    <script type="text/javascript" src="../../../../../static/ih-lms-theme/js/vendor/ih-highlight.0f32f131ba83.js" ></script>
+  
+</body>
+</html>
+
+

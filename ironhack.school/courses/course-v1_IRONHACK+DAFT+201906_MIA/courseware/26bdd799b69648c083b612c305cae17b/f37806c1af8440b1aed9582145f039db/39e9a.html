@@ -1,0 +1,1672 @@
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<!--[if lte IE 9]><html class="ie ie9 lte9" lang="en"><![endif]-->
+<!--[if !IE]><!--><html lang="en"><!--<![endif]-->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head dir="ltr">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+  
+<title data-base-title="
+ Data Visualization | DAFT Courseware | Ironhack Student Platform">
+  
+ Plotting Multiple Data Series | Data Visualization | DAFT Courseware | Ironhack Student Platform
+</title>
+
+
+      <script type="text/javascript">
+        /* immediately break out of an iframe if coming from the marketing website */
+        (function(window) {
+          if (window.location !== window.top.location) {
+            window.top.location = window.location;
+          }
+        })(this);
+      </script>
+
+  
+
+  <script type="text/javascript" src="../../../../../static/js/i18n/en/djangojs.e37eef1ffc63.js"></script>
+  <script type="text/javascript" src="../../../../../static/js/ie11_find_array.bd1c6dc7a133.js"></script>
+
+  <link rel="icon" type="image/x-icon" href="../../../../../static/ih-lms-theme/images/favicon.0de58aa5bfca.ico" />
+
+  
+  
+
+    <link href="../../../../../static/ih-lms-theme/css/lms-style-vendor.68e48093f5dd.css" rel="stylesheet" type="text/css" />
+
+
+
+      <link rel="stylesheet" href="../../../../../static/ih-lms-theme/css/bootstrap/lms-main.c54b2923d249.css" type="text/css" media="all" />
+
+    
+    <script type="text/javascript" src="../../../../../static/js/lms-main_vendor.a04b73033169.js" charset="utf-8"></script>
+
+
+    
+    <script type="text/javascript" src="../../../../../static/js/lms-application.e7bd4b65d083.js" charset="utf-8"></script>
+
+
+
+  
+    
+    
+    <script type="text/javascript" src="../../../../../static/bundles/commons.d60dcd98c024881d011e.c835e91d09f6.js" ></script>
+
+
+
+  <script>
+    window.baseUrl = "../../../../../static/index.html";
+    (function (require) {
+      require.config({
+          baseUrl: window.baseUrl
+      });
+    }).call(this, require || RequireJS.require);
+  </script>
+  <script type="text/javascript" src="../../../../../static/lms/js/require-config.8e00198660b0.js"></script>
+  
+    <script type="text/javascript">
+        (function (require) {
+          require.config({
+              paths: {
+                'js/courseware/courseware_factory': 'js/courseware/courseware_factory.1504fc10caef',
+'draggabilly': 'js/vendor/draggabilly.26caba6f7187',
+'js/courseware/toggle_element_visibility': 'js/courseware/toggle_element_visibility.d5f10bc65ed0',
+'hls': 'common/js/vendor/hls.b10b9ef4015b',
+'js/courseware/link_clicked_events': 'js/courseware/link_clicked_events',
+'moment': 'common/js/vendor/moment-with-locales.084396f4103c',
+'moment-timezone': 'common/js/vendor/moment-timezone-with-data.60142e6c4416',
+'js/student_account/logistration_factory': 'js/student_account/logistration_factory.d7765e4e6715',
+'js/groups/views/cohorts_dashboard_factory': 'js/groups/views/cohorts_dashboard_factory.7f46663f97b4',
+'js/dateutil_factory': 'js/dateutil_factory.841c29e02056',
+'course_bookmarks/js/views/bookmark_button': 'course_bookmarks/js/views/bookmark_button.d4cfaf3361fa',
+'js/courseware/accordion_events': 'js/courseware/accordion_events.6064c7809de5',
+'js/views/message_banner': 'js/views/message_banner.af013d0ecbd4',
+'js/groups/discussions_management/discussions_dashboard_factory': 'js/discussions_management/views/discussions_dashboard_factory.2e10d9097343',
+'js/courseware/course_info_events': 'js/courseware/course_info_events.2fc35b57627f'
+            }
+          });
+        }).call(this, require || RequireJS.require);
+    </script>
+  
+
+  
+
+  
+
+    <link href="../../../../../static/ih-lms-theme/css/lms-style-course-vendor.691e50c64ad7.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+
+    <link href="../../../../../static/ih-lms-theme/css/lms-course.1d0edf3ec473.css" rel="stylesheet" type="text/css" />
+
+
+
+
+<script type="text/javascript" src="../../../../../static/js/jquery.autocomplete.3bd10d7510d2.js"></script>
+<script type="text/javascript" src="../../../../../static/js/src/tooltip_manager.da362490e199.js"></script>
+
+<link href="../../../../../static/css/vendor/jquery.autocomplete.896181d3ec33.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="../../../../../static/bundles/XModuleShim.68b7a679342e3bdb698f.c506d949a49b.js" ></script>
+<script type="text/javascript" src="../../../../../static/bundles/HtmlModule.174055b73c05dccfbd8b.823874f69fef.js" ></script>
+<script type="text/javascript" src="../../../../../static/bundles/VerticalStudentView.6f1068648eb9e8d18da9.0a2f678d6564.js" ></script>
+<script type="text/javascript" src="../../../../../static/bundles/SequenceModule.251564cf8963e6f00227.ef752443db97.js" ></script>
+
+  
+
+  
+
+
+  
+
+
+<script type="application/json" id="user-metadata">
+    {"username": "NoahB", "enrollment_mode": "audit", "upgrade_link": null, "user_id": 489, "course_start": "2019-06-10T00:00:00+00:00", "upgrade_deadline": null, "course_key_fields": {"org": "IRONHACK", "run": "201906_MIA", "course": "DAFT"}, "course_end": "2019-08-19T00:00:00+00:00", "pacing_type": "instructor_paced", "upgrade_price": "Free", "course_id": "course-v1:IRONHACK+DAFT+201906_MIA", "has_staff_access": false, "forum_roles": [["Student"]], "enrollment_time": "2019-06-11T20:48:51.323840+00:00", "schedule_start": null, "email": "noahbeckerman@gmail.com"}
+</script>
+
+  
+
+  
+
+
+  
+
+
+<!-- dummy Segment -->
+<script type="text/javascript">
+  var analytics = {
+    track: function() { return; },
+    trackLink: function() { return; },
+    pageview: function() { return; },
+    page: function() { return; }
+  };
+</script>
+<!-- end dummy Segment -->
+
+
+  <meta name="path_prefix" content="">
+  
+  
+
+  <meta name="openedx-release-line" content="hawthorn" />
+
+
+
+
+
+
+  <!-- Hotjar Tracking Code for https://ironhack.school -->
+  <script type="text/javascript">
+      (function(h,o,t,j,a,r){
+          h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+          h._hjSettings={hjid:1193918,hjsv:6};
+          a=o.getElementsByTagName('head')[0];
+          r=o.createElement('script');r.async=1;
+          r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+          a.appendChild(r);
+      })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+  </script>
+
+  <script type="text/javascript">
+    function setCookieHideMobileWarning(expiration_hours) {
+      var date = new Date();
+      date.setTime(date.getTime()+(expiration_hours*60*60*1000));
+      var expires = "; expires=" + date.toGMTString();
+      document.cookie = "ihHideMobileWarning=true" + expires;
+    }
+    
+    function isHideMobileWarningCookieSet() {
+      return document.cookie.replace(/(?:(?:^|.*;\s*)ihHideMobileWarning\s*\=\s*([^;]*).*$)|^.*$/, "$1") !== "true"; 
+    }
+
+    function manageMobileWarning(mobile_warning_container) {
+      if (isHideMobileWarningCookieSet()) {
+        var mobile_warning_dismiss = document.getElementsByClassName('ih-js-hide-mobile-warning', mobile_warning_container)[0];
+        mobile_warning_dismiss.addEventListener('click', function() {
+          var expiration_hours = 48;
+          setCookieHideMobileWarning(expiration_hours);
+          mobile_warning_container.classList.add('hidden');
+        });
+      } else {
+        mobile_warning_container.classList.add('hidden');
+      }
+    }
+
+    var checkMobileWarningLayer = function () {
+      var mobile_warning_container = document.getElementsByClassName('ih-mobile-warning-container')[0];
+      (document.body && mobile_warning_container)? manageMobileWarning(mobile_warning_container) :  window.requestAnimationFrame(checkMobileWarningLayer);
+    }
+
+    window.requestAnimationFrame(checkMobileWarningLayer);
+  </script>
+
+</head>
+
+<body class="ltr view-in-course view-courseware courseware  lang_en">
+
+<div class="ih-mobile-warning-container">
+  <img class="logo" src="../../../../../static/ih-lms-theme/images/logo.6230fc40336b.svg" />
+  <div class="ih-mobile-warning-title">
+    The Learning Platform is best experienced on Desktop devices
+  </div>
+  <div class="ih-mobile-warning-description">
+    We recommend using a Desktop device to get the full experience of the Learning Platform.
+  </div>
+  <div class="ih-mobile-warning-dismiss ih-js-hide-mobile-warning">
+   Continue anyway
+  </div>
+</div>
+
+
+<div id="page-prompt"></div>
+  <div class="window-wrap" dir="ltr">
+    <a class="nav-skip sr-only sr-only-focusable" href="#main">Skip to main content</a>
+
+    
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+<header class="global-header slim ih-global-header">
+    <div class="ih-header-wrapper">
+        <div class="main-header ih-main-header">
+            
+
+
+
+
+
+<h1 class="header-logo">
+  <a href="../../../../../dashboard.html">
+    
+    <img  class="logo" src="../../../../../static/ih-lms-theme/images/logo.6230fc40336b.svg" alt="Ironhack Student Platform Home Page"/>
+    
+  </a>
+    <div class="course-header">
+          
+      
+      <span class="course-name">Data Analytics</span>
+    </div>
+</h1>
+
+            <div class="hamburger-menu" role="button" aria-label=Options Menu aria-expanded="false" aria-controls="mobile-menu" tabindex="0">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+                
+
+
+
+
+
+
+
+
+
+
+<div class="nav-links">
+  <div class="main">
+      
+  </div>
+  <div class="secondary ih-secondary">
+    
+
+
+
+
+
+
+  
+
+<div class="nav-item hidden-mobile toggle-user-dropdown ih-username-container">
+    <div class="menu-title">
+        
+        <span class="sr-only">Dashboard for:</span>
+        <span class="username ih-username">Ironhack (NoahB)</span>
+    </div>
+</div>
+<div class="nav-item hidden-mobile nav-item-dropdown ih-dropdown-wrapper" tabindex="-1">
+    <div class="toggle-user-dropdown ih-toggle-user-dropdown" role="button" aria-label=Options Menu aria-expanded="false" tabindex="0" aria-controls="user-menu">
+        <span class="fa fa-caret-down" aria-hidden="true"></span>
+    </div>
+    <div class="dropdown-user-menu hidden ih-dropdown-user-menu" aria-label=More Options role="menu" id="user-menu" tabindex="-1">
+        <div class="mobile-nav-item dropdown-item dropdown-nav-item ih-dropdown-nav-item"><a href="../../../../../dashboard.html" role="menuitem">My courses</a></div>
+            
+        <div class="mobile-nav-item dropdown-item dropdown-nav-item ih-dropdown-nav-item"><a href="../../../../../account/settings.html" role="menuitem">Account</a></div>
+        <div class="mobile-nav-item dropdown-item dropdown-nav-item ih-dropdown-nav-item"><a href="../../../../../index.html" role="menuitem">Sign Out</a></div>
+    </div>
+</div>
+  </div>
+</div>
+        </div>
+        <div class="mobile-menu hidden" aria-label=More Options role="menu" id="mobile-menu"></div>
+    </div>    
+</header>
+
+<!--[if lte IE 9]>
+<div class="ie-banner" aria-hidden="true"><strong>Warning:</strong> Your browser is not fully supported. We strongly recommend using <a href="https://www.google.com/chrome" target="_blank">Chrome</a> or <a href="http://www.mozilla.org/firefox" target="_blank">Firefox</a>.</div>
+<![endif]-->
+
+
+
+
+            
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+    
+    
+
+      <div 
+          class="ih-content"
+      >
+        <div class="marketing-hero"></div>
+
+        <div class="content-wrapper main-container ih-main-container" id="content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/template" id="image-modal-tpl">
+    <div class="wrapper-modal wrapper-modal-image">
+  <section class="image-link">
+    <%= smallHTML%>
+    <a href="#" class="modal-ui-icon action-fullscreen" role="button">
+      <span class="label">
+        <span class="icon fa fa-arrows-alt fa-large" aria-hidden="true"></span> <%- gettext("Fullscreen") %>
+      </span>
+    </a>
+  </section>
+
+  <section class="image-modal">
+    <section class="image-content">
+      <div class="image-wrapper">
+        <img alt="<%= largeALT %>, <%- gettext('Large') %>" src="<%= largeSRC %>" />
+      </div>
+
+      <a href="#" class="modal-ui-icon action-close" role="button">
+        <span class="label">
+          <span class="icon fa fa-remove fa-large" aria-hidden="true"></span> <%- gettext("Close") %>
+        </span>
+      </a>
+
+      <ul class="image-controls">
+        <li class="image-control">
+          <a href="#" class="modal-ui-icon action-zoom-in" role="button">
+            <span class="label">
+              <span class="icon fa fa fa-search-plus fa-large" aria-hidden="true"></span> <%- gettext("Zoom In") %>
+            </span>
+          </a>
+        </li>
+
+        <li class="image-control">
+          <a href="#" class="modal-ui-icon action-zoom-out is-disabled" aria-disabled="true" role="button">
+            <span class="label">
+              <span class="icon fa fa fa-search-minus fa-large" aria-hidden="true"></span> <%- gettext("Zoom Out") %>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </section>
+</div>
+
+</script>
+
+
+
+
+
+
+
+
+<div class="message-banner" aria-live="polite"></div>
+  
+
+
+
+
+
+
+
+
+    
+        <nav class="navbar course-tabs pb-0 navbar-expand ih-navbar-container" aria-label="Course">
+            <ul class="navbar-nav mr-auto ih-course-tabs">
+                    
+                    
+                        <li class="nav-item ih-nav-item active">
+                            <a href="../../../course/index.html" class="nav-link">
+                                Course
+                                    <span class="sr-only">, current location</span>
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="nav-item ih-nav-item ">
+                            <a href="../../../discussion/forum/index.html" class="nav-link">
+                                Discussion
+                            </a>
+                        </li>
+                    
+                    
+            </ul>
+        </nav>
+
+
+<div class="container ih-course-container"
+    lang="en"
+  >
+  <div class="course-wrapper ih-course-wrapper" role="presentation">
+
+    <section class="course-content" id="course-content">
+        <header class="page-header has-secondary">
+            <div class="page-header-main">
+                <nav aria-label="Course" class="sr-is-focusable" tabindex="-1">
+                    <div class="has-breadcrumbs">
+                        <div class="breadcrumbs">
+                                <span class="nav-item nav-item-course">
+                                    <a href="../../../course/index.html">Course</a>
+                                </span>
+                                <span class="icon fa fa-angle-right" aria-hidden="true"></span>
+                                <span class="nav-item nav-item-chapter" data-course-position="2" data-chapter-position="2">
+                                    <a href="../../../course/index.html#block-v1:IRONHACK+DAFT+201906_MIA+type@chapter+block@26bdd799b69648c083b612c305cae17b">Module 2</a>
+                                </span>
+                                <span class="icon fa fa-angle-right" aria-hidden="true"></span>
+                                <span class="nav-item nav-item-section">
+                                    <a href="../../../course/index.html#block-v1:IRONHACK+DAFT+201906_MIA+type@sequential+block@f37806c1af8440b1aed9582145f039db">Data Visualization</a>
+                                </span>
+                                <span class="icon fa fa-angle-right" aria-hidden="true"></span>
+                            <span class="nav-item nav-item-sequence">Plotting Multiple Data Series</span>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <main id="main" tabindex="-1" aria-label="Content">
+
+              <div class="xblock xblock-student_view xblock-student_view-sequential xmodule_display xmodule_SequenceModule" data-runtime-class="LmsRuntime" data-init="XBlockToXModuleShim" data-block-type="sequential" data-request-token="577a6a74939911e99a866e487447f8c8" data-runtime-version="1" data-usage-id="block-v1:IRONHACK+DAFT+201906_MIA+type@sequential+block@f37806c1af8440b1aed9582145f039db" data-type="Sequence" data-course-id="course-v1:IRONHACK+DAFT+201906_MIA">
+  <script type="json/xblock-args" class="xblock-json-init-args">
+    {"xmodule-type": "Sequence"}
+  </script>
+  
+
+
+<div id="sequence_f37806c1af8440b1aed9582145f039db" class="sequence" data-id="block-v1:IRONHACK+DAFT+201906_MIA+type@sequential+block@f37806c1af8440b1aed9582145f039db" data-position="3" data-ajax-url="/courses/course-v1:IRONHACK+DAFT+201906_MIA/xblock/block-v1:IRONHACK+DAFT+201906_MIA+type@sequential+block@f37806c1af8440b1aed9582145f039db/handler/xmodule_handler" data-next-url="/courses/course-v1:IRONHACK+DAFT+201906_MIA/courseware/26bdd799b69648c083b612c305cae17b/9dee227c3fd34cdd94674a2643aef397/?child=first" data-prev-url="/courses/course-v1:IRONHACK+DAFT+201906_MIA/courseware/26bdd799b69648c083b612c305cae17b/a4b556226da149059116aa83b90bf58c/?child=last">
+
+  <div class="sequence-nav ih-js-fire-highlighting-controls">
+    <button class="sequence-nav-button button-previous">
+      <span class="icon fa fa-chevron-prev" aria-hidden="true"></span>
+      <span class="sequence-nav-button-label">Previous</span>
+    </button>
+    <button class="sequence-nav-button button-next">
+      <span class="sequence-nav-button-label">Next</span>
+      <span class="icon fa fa-chevron-next" aria-hidden="true"></span>
+    </button>
+    <nav class="sequence-list-wrapper" aria-label="Sequence">
+      <ol id="sequence-list" role="tablist">
+        <li role="presentation">
+          <button class="seq_other inactive nav-item tab"
+            role="tab"
+            tabindex="-1"
+            aria-selected="false"
+            aria-expanded="false"
+            aria-controls="seq_content"
+            data-index="0"
+            data-id="block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@f43b4e3cd78542e2be50de41cb5e6781"
+            data-element="1"
+            data-page-title="Introduction to Matplotlib and Seaborn"
+            data-path="Module 2 &gt; Data Visualization &gt; Introduction to Matplotlib and Seaborn"
+            data-graded="False"
+            id="tab_0"
+            >
+            <span class="icon fa seq_other" aria-hidden="true"></span>
+              <span 
+                class="fa fa-check-circle check-circle is-hidden" 
+                style="color:green"
+                aria-hidden="true"
+              ></span>
+            <span class="fa fa-fw fa-bookmark bookmark-icon is-hidden" aria-hidden="true"></span>
+            <div class="sequence-tooltip sr"><span class="sr">other&nbsp;</span>Introduction to Matplotlib and Seaborn<span class="sr bookmark-icon-sr">&nbsp;</span></div>
+          </button>
+        </li>
+        <li role="presentation">
+          <button class="seq_other inactive nav-item tab"
+            role="tab"
+            tabindex="-1"
+            aria-selected="false"
+            aria-expanded="false"
+            aria-controls="seq_content"
+            data-index="1"
+            data-id="block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@09da87b310434343b2aab8b3e9f5b765"
+            data-element="2"
+            data-page-title="Exploratory Data Visualization Charts"
+            data-path="Module 2 &gt; Data Visualization &gt; Exploratory Data Visualization Charts"
+            data-graded="False"
+            id="tab_1"
+            >
+            <span class="icon fa seq_other" aria-hidden="true"></span>
+              <span 
+                class="fa fa-check-circle check-circle is-hidden" 
+                style="color:green"
+                aria-hidden="true"
+              ></span>
+            <span class="fa fa-fw fa-bookmark bookmark-icon is-hidden" aria-hidden="true"></span>
+            <div class="sequence-tooltip sr"><span class="sr">other&nbsp;</span>Exploratory Data Visualization Charts<span class="sr bookmark-icon-sr">&nbsp;</span></div>
+          </button>
+        </li>
+        <li role="presentation">
+          <button class="seq_other inactive nav-item tab"
+            role="tab"
+            tabindex="-1"
+            aria-selected="false"
+            aria-expanded="false"
+            aria-controls="seq_content"
+            data-index="2"
+            data-id="block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@4b8a364e308f4877a8782419703a2c14"
+            data-element="3"
+            data-page-title="Plotting Multiple Data Series"
+            data-path="Module 2 &gt; Data Visualization &gt; Plotting Multiple Data Series"
+            data-graded="False"
+            id="tab_2"
+            >
+            <span class="icon fa seq_other" aria-hidden="true"></span>
+              <span 
+                class="fa fa-check-circle check-circle is-hidden" 
+                style="color:green"
+                aria-hidden="true"
+              ></span>
+            <span class="fa fa-fw fa-bookmark bookmark-icon is-hidden" aria-hidden="true"></span>
+            <div class="sequence-tooltip sr"><span class="sr">other&nbsp;</span>Plotting Multiple Data Series<span class="sr bookmark-icon-sr">&nbsp;</span></div>
+          </button>
+        </li>
+        <li role="presentation">
+          <button class="seq_other inactive nav-item tab"
+            role="tab"
+            tabindex="-1"
+            aria-selected="false"
+            aria-expanded="false"
+            aria-controls="seq_content"
+            data-index="3"
+            data-id="block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@cd8ff0b0df9f49f4a05acc99ea4446d5"
+            data-element="4"
+            data-page-title="Interactive Data Visualization"
+            data-path="Module 2 &gt; Data Visualization &gt; Interactive Data Visualization"
+            data-graded="False"
+            id="tab_3"
+            >
+            <span class="icon fa seq_other" aria-hidden="true"></span>
+              <span 
+                class="fa fa-check-circle check-circle is-hidden" 
+                style="color:green"
+                aria-hidden="true"
+              ></span>
+            <span class="fa fa-fw fa-bookmark bookmark-icon is-hidden" aria-hidden="true"></span>
+            <div class="sequence-tooltip sr"><span class="sr">other&nbsp;</span>Interactive Data Visualization<span class="sr bookmark-icon-sr">&nbsp;</span></div>
+          </button>
+        </li>
+        <li role="presentation">
+          <button class="seq_other inactive nav-item tab"
+            role="tab"
+            tabindex="-1"
+            aria-selected="false"
+            aria-expanded="false"
+            aria-controls="seq_content"
+            data-index="4"
+            data-id="block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@4ffedf7f510542e78d6eafaaf4241cbd"
+            data-element="5"
+            data-page-title="Improving Plot Aesthetics"
+            data-path="Module 2 &gt; Data Visualization &gt; Improving Plot Aesthetics"
+            data-graded="False"
+            id="tab_4"
+            >
+            <span class="icon fa seq_other" aria-hidden="true"></span>
+              <span 
+                class="fa fa-check-circle check-circle is-hidden" 
+                style="color:green"
+                aria-hidden="true"
+              ></span>
+            <span class="fa fa-fw fa-bookmark bookmark-icon is-hidden" aria-hidden="true"></span>
+            <div class="sequence-tooltip sr"><span class="sr">other&nbsp;</span>Improving Plot Aesthetics<span class="sr bookmark-icon-sr">&nbsp;</span></div>
+          </button>
+        </li>
+        <li role="presentation">
+          <button class="seq_other inactive nav-item tab"
+            role="tab"
+            tabindex="-1"
+            aria-selected="false"
+            aria-expanded="false"
+            aria-controls="seq_content"
+            data-index="5"
+            data-id="block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@5bd9b674612b40cda218e0b6682dbc90"
+            data-element="6"
+            data-page-title="Telling Stories Using Graphs"
+            data-path="Module 2 &gt; Data Visualization &gt; Telling Stories Using Graphs"
+            data-graded="False"
+            id="tab_5"
+            >
+            <span class="icon fa seq_other" aria-hidden="true"></span>
+              <span 
+                class="fa fa-check-circle check-circle is-hidden" 
+                style="color:green"
+                aria-hidden="true"
+              ></span>
+            <span class="fa fa-fw fa-bookmark bookmark-icon is-hidden" aria-hidden="true"></span>
+            <div class="sequence-tooltip sr"><span class="sr">other&nbsp;</span>Telling Stories Using Graphs<span class="sr bookmark-icon-sr">&nbsp;</span></div>
+          </button>
+        </li>
+      </ol>
+    </nav>
+  </div>
+  <div class="sr-is-focusable" tabindex="-1"></div>
+
+  <div id="seq_contents_0"
+    aria-labelledby="tab_0"
+    aria-hidden="true"
+    class="seq_contents tex2jax_ignore asciimath2jax_ignore">
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-vertical&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;VerticalStudentView&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34; data-request-token=&#34;577a6a74939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@f43b4e3cd78542e2be50de41cb5e6781&#34; data-block-type=&#34;vertical&#34;&gt;
+  
+
+  &lt;h2 class=&#34;hd hd-2 unit-title&#34;&gt;Introduction to Matplotlib and Seaborn&lt;/h2&gt;
+
+    &lt;div class=&#34;ih-bookmark-button-wrapper&#34;&gt;
+    	
+
+
+
+&lt;div class=&#34;bookmark-button-wrapper&#34;&gt;
+  &lt;button class=&#34;btn btn-link bookmark-button &#34;
+    aria-pressed=&#34;false&#34;
+    data-bookmark-id=&#34;NoahB,block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@f43b4e3cd78542e2be50de41cb5e6781&#34;
+    data-bookmarks-api-url=&#34;/api/bookmarks/v1/bookmarks/&#34;&gt;
+     &lt;span class=&#34;bookmark-text&#34;&gt;Bookmark this page&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+
+    &lt;/div&gt;	
+
+&lt;div class=&#34;vert-mod&#34;&gt;
+  &lt;div class=&#34;vert vert-0&#34; data-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@0b41ba4df11e4a1992c6941913f70508&#34;&gt;
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;577a6a74939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@0b41ba4df11e4a1992c6941913f70508&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  &lt;h2&gt;Lesson Goals&lt;/h2&gt;
+&lt;p&gt;In this lesson we will learn about the basics of Matplotlib and Seaborn.&lt;/p&gt;
+&lt;/div&gt;
+
+  &lt;/div&gt;
+  &lt;div class=&#34;vert vert-1&#34; data-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@30774595ce8a4632bfaa20f7ad510314&#34;&gt;
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;577a6a74939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@30774595ce8a4632bfaa20f7ad510314&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  &lt;h2&gt;Matplotlib&lt;/h2&gt;
+&lt;h3&gt;Introduction&lt;/h3&gt;
+&lt;p&gt;Matplotlib is a data visualization package built on numpy arrays for making 2D plots. It makes extensive use of numpy arrays and other extension code to provide good performance even for large arrays.&lt;/p&gt;
+&lt;p&gt;Fun fact: This is Matplotlib original logo (2003-2008)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/assets/courseware/v1/553f86e9288a31c708c2e8ef648330f4/asset-v1:IRONHACK+DAFT+201906_MIA+type@asset+block/Screenshot_from_2019-05-17_14-03-06.png&#34; alt=&#34;&#34; width=&#34;258&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;The package is fairly old, with version 0.1 released in 2003. The main advantage of this package is that it allows for flexible visualization in Python across versions and operating systems.&lt;br /&gt;&lt;br /&gt;It is important to note the hierarchy: Name of library is &lt;em&gt;Matplotlib&lt;/em&gt; whereas the name of the module is &lt;em&gt;matplotlib.pyplot&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Anatomy of a figure:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/assets/courseware/v1/32e7d5dc3ec5a0168b23cf0acd47b08a/asset-v1:IRONHACK+DAFT+201906_MIA+type@asset+block/Screenshot_from_2019-05-17_14-03-59.png&#34; alt=&#34;&#34; width=&#34;595&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Basic plots in Matplotlib:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Line Plot&lt;/li&gt;
+&lt;li&gt;Scatter plot&lt;/li&gt;
+&lt;li&gt;Pie charts&lt;/li&gt;
+&lt;li&gt;Histograms&lt;/li&gt;
+&lt;li&gt;Bar charts&lt;/li&gt;
+&lt;li&gt;Paths&lt;/li&gt;
+&lt;li&gt;Three dimensional plotting&lt;/li&gt;
+&lt;li&gt;Images&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Getting Started&lt;/h3&gt;
+&lt;p&gt;Since we are using Jupyter notebook, we start our notebook with this line:&lt;/p&gt;
+&lt;pre&gt;%matplotlib inline&lt;/pre&gt;
+&lt;p&gt;This ensures that our visualizations will render in the notebook itself.&lt;br /&gt;&lt;br /&gt;We now load the matplotlib library:&lt;/p&gt;
+&lt;pre&gt;import matplotlib.pyplot as plt&lt;/pre&gt;
+&lt;h3&gt;Basic Plots&lt;/h3&gt;
+&lt;h4&gt;Line Plot&lt;/h4&gt;
+&lt;p&gt;Line plots can be linear or non-linear depending on the kind of data we have. A simple representation has been shown below:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/assets/courseware/v1/7311e85a7d8879ea509e98cbc99cde9f/asset-v1:IRONHACK+DAFT+201906_MIA+type@asset+block/Screenshot_from_2019-05-17_14-05-01.png&#34; alt=&#34;&#34; width=&#34;511&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;We can generate two numpy arrays and then plot them as a line plot.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;import numpy as np
+x1 = np.arange(0,10,1)&lt;br /&gt;x2 = np.linspace(0,5,10)&lt;br /&gt;plt.plot(x1, x1, label=&#39;linear&#39;)
+plt.plot(x1, x2**2, label=&#39;quadratic&#39;)&lt;br /&gt;&lt;br /&gt;plt.xlabel(&#39;x label&#39;)&lt;br /&gt;plt.ylabel(&#39;y label&#39;)&lt;br /&gt;&lt;br /&gt;plt.title(&#34;Linear vs Non Linear Plots&#34;)&lt;br /&gt;plt.legend()&lt;br /&gt;plt.show()&lt;br /&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/assets/courseware/v1/c0b9f5e09f5499c9b112b28c93121bdd/asset-v1:IRONHACK+DAFT+201906_MIA+type@asset+block/Screenshot_from_2019-05-17_14-05-40.png&#34; alt=&#34;&#34; width=&#34;403&#34; /&gt;&lt;/p&gt;
+&lt;h4&gt;Making Sub-plots&lt;/h4&gt;
+&lt;pre&gt;&lt;code&gt;fig, [ax1, ax2] = plt.subplots(1,2)&lt;br /&gt;ax1.plot(x1,x2)&lt;br /&gt;ax1.set_title(&#39;LINEAR PLOT&#39;)&amp;nbsp;&amp;nbsp; &lt;br /&gt;ax1.set_xlabel(&#39;x label&#39;)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; &lt;br /&gt;ax1.set_ylabel(&#39;y label&#39;)&amp;nbsp;&amp;nbsp; &lt;br /&gt;&lt;br /&gt;ax2.plot(x,y)&lt;br /&gt;ax2.set_title(&#39;COSINE PLOT&#39;)&lt;br /&gt;ax2.set_xlabel(&#39;x label&#39;)&lt;br /&gt;ax2.set_ylabel(&#39;y label&#39;)&lt;br /&gt;&lt;br /&gt;plt.show()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/assets/courseware/v1/e19bb788386ef41025e58b110f710d8d/asset-v1:IRONHACK+DAFT+201906_MIA+type@asset+block/Screenshot_from_2019-05-17_14-06-23.png&#34; alt=&#34;&#34; width=&#34;338&#34; /&gt;&lt;/p&gt;
+&lt;h4&gt;Scatter Plot&lt;/h4&gt;
+&lt;p&gt;Scatter plots are very useful to see the relationship between two variables (also known as correlation). &lt;br /&gt;&lt;br /&gt;Let&amp;rsquo;s consider an example where we are given a data-set with price of houses in a neighborhood. Some of the variables on which the price could depend include area and number of years since it was built.&lt;br /&gt;&lt;br /&gt;Positive correlation: When one variable increases with the increase in the other variable, and vice-versa &lt;br /&gt;&lt;br /&gt;Negative correlation: When one variable decreases with the increase in the other variable, and vice-versa&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;x = np.random.randn(10)&lt;br /&gt;y = np.random.randn(10)&lt;br /&gt;plt.scatter(x,y)&lt;br /&gt;plt.xlabel(&#39;X axis&#39;)&lt;br /&gt;plt.ylabel(&#39;Y axis&#39;)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/assets/courseware/v1/83e14c45a66cc9283d8f848f9d3b8f3c/asset-v1:IRONHACK+DAFT+201906_MIA+type@asset+block/Screenshot_from_2019-05-17_14-08-12.png&#34; alt=&#34;&#34; width=&#34;400&#34; /&gt;&lt;/p&gt;
+&lt;h4&gt;Pie charts&lt;/h4&gt;
+&lt;p&gt;It is a circular statistical graphic, which is divided into slices to illustrate numerical proportion of each slice. It is an important business tool to visually see the percentage shares of different components under investigation.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;labels = [&#39;Vegetarians&#39;, &#39;Non-Vegetarians&#39;, &#39;Vegans&#39;]&lt;br /&gt;sizes = [40, 45, 15]&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;explode = (0, 0.1, 0)&lt;br /&gt;fig1, ax1 = plt.subplots()&lt;br /&gt;ax1.pie(sizes, explode=explode, labels=labels, autopct=&#39;%1.1f%%&#39;, shadow=True, startangle=90)&lt;br /&gt;ax1.axis(&#39;equal&#39;)plt.show()&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/assets/courseware/v1/136c8ca62a032e71769be0768aff91bc/asset-v1:IRONHACK+DAFT+201906_MIA+type@asset+block/Screenshot_from_2019-05-17_14-09-00.png&#34; alt=&#34;&#34; width=&#34;361&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+  &lt;/div&gt;
+  &lt;div class=&#34;vert vert-2&#34; data-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@c4fd693ca9504b87bb2b706a79706dff&#34;&gt;
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;577a6a74939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@c4fd693ca9504b87bb2b706a79706dff&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  &lt;h2&gt;Seaborn&lt;/h2&gt;
+&lt;h3&gt;Introduction&lt;/h3&gt;
+&lt;p&gt;Seaborn is a data visualization library that was created to complement matplotlib and it is closely integrated with pandas data structures. Some of the advantages of this library are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Streamlines the amount of code needed to write to create matplotlib visualizations&lt;/li&gt;
+&lt;li&gt;Enables us to work with pandas dataframes which is a big advantage over matplotlib&lt;/li&gt;
+&lt;li&gt;Provides specialized support for using categorical variables&lt;/li&gt;
+&lt;li&gt;Has functions to examine relationships between multiple variables&lt;/li&gt;
+&lt;li&gt;Provides convenient views onto the overall structure of complex datasets&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Getting Started&lt;/h3&gt;
+&lt;p&gt;Let&#39;s proceed with importing our libraries&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;%matplotlib inline&lt;br /&gt;import matplotlib.pyplot as plt&lt;br /&gt;import seaborn as sns
+sns.set()&lt;/code&gt;&lt;/pre&gt;
+&lt;h3&gt;Basic Plots&lt;/h3&gt;
+&lt;h4&gt;Line Plots&lt;/h4&gt;
+&lt;p&gt;We can create a Pandas DataFrame using the two variables we created earlier.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;data = pd.DataFrame()&lt;br /&gt;data[&#39;X&#39;] = np.arange(0,10,1)&lt;br /&gt;data[&#39;Y&#39;] = data[&#39;X&#39;]**2
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now that we have our DataFrame, we can plot the data using seaborn.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sns.lineplot(data.X, data.Y)&lt;br /&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/assets/courseware/v1/177bdcbe775b76693c6aa9ddd48430e9/asset-v1:IRONHACK+DAFT+201906_MIA+type@asset+block/Screenshot_from_2019-05-17_15-40-05.png&#34; alt=&#34;&#34; width=&#34;329&#34; /&gt;&lt;/p&gt;
+&lt;h4&gt;Scatter Plots&lt;/h4&gt;
+&lt;p&gt;Here we use the seaborn &lt;code&gt;lmplot&lt;/code&gt; function and set the option to fit the regression line to false.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sns.lmplot(&#34;X&#34;, &#34;Y&#34;, data=data, fit_reg=False)&lt;br /&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img src=&#34;/assets/courseware/v1/374f3f52cd32efbf2646f3d5fb2ace47/asset-v1:IRONHACK+DAFT+201906_MIA+type@asset+block/Screenshot_from_2019-05-17_14-11-07.png&#34; alt=&#34;&#34; width=&#34;278&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;As we can see, here it is also possible to enhance a scatter-plot to include a linear regression model&lt;/p&gt;
+&lt;h2&gt;Using Pandas&lt;/h2&gt;
+&lt;p&gt;Matplotlib has been integrated into Pandas and now we are able to plot matplotlib visualizations directly from Pandas without having to use the matplotlib or seaborn syntax. However, we still need to import matplotlib and set %matplotlib inline&lt;/p&gt;
+&lt;h3&gt;Working on Dataframes Using Seaborn&lt;/h3&gt;
+&lt;p&gt;Let&#39;s start by reading the &#39;vehicles.csv&#39; file that we had already downloaded before. (&lt;a href=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/data/module-1/vehicles.zip&#34; target=&#34;_blank&#34;&gt;vehicles data&lt;/a&gt;)&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;data = pd.read_csv(&#39;~path/vehicles.csv&#39;) &lt;br /&gt;sns.scatterplot(x=&#34;CO2 Emission Grams/Mile&#34;, y=&#34;Highway MPG&#34;, hue=&#34;Drivetrain&#34;, data=data)&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;&lt;img src=&#34;/assets/courseware/v1/adb3d747248fe3d508479cc24d53c0e7/asset-v1:IRONHACK+DAFT+201906_MIA+type@asset+block/Screenshot_from_2019-05-17_14-12-23.png&#34; alt=&#34;&#34; width=&#34;352&#34; /&gt;&lt;/h4&gt;
+&lt;p&gt;Seaborn provides a host of functions that lets you present that data in a more meaningful and visually appealing way&amp;nbsp; &lt;a href=&#34;https://seaborn.pydata.org/generated/seaborn.scatterplot.html#seaborn.scatterplot&#34; target=&#34;_blank&#34;&gt;(link)&lt;/a&gt;&lt;/p&gt;
+&lt;h4&gt;relplot: Facetgrid&lt;/h4&gt;
+&lt;p&gt;The new version of seaborn uses this function that combines the lineplot() and scatterplot() using a Facetgrid. &lt;br /&gt;&lt;br /&gt;FacetGrid class helps in visualizing the relationship between multiple variables on the same plot by introducing multiple dimensions using parameters such as col (for column), hue, style, and size. For example, a plot using relplot() is shown below:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/assets/courseware/v1/86bd05b58607d68ec0fe541a11320dfa/asset-v1:IRONHACK+DAFT+201906_MIA+type@asset+block/Screenshot_from_2019-05-17_14-13-07.png&#34; alt=&#34;&#34; width=&#34;666&#34; /&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sns.relplot(x=&#39;CO2 Emission Grams/Mile&#39;, y=&#39;Highway MPG&#39;, hue=&#34;Fuel Type&#34;, size=&#34;Fuel Type&#34;, data=data)&lt;/code&gt;&lt;/pre&gt;
+&lt;h4&gt;catplot&lt;/h4&gt;
+&lt;p&gt;These are specialized categorical plots. It is used to show the relationship between a numerical and one or more categorical variables&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sns.catplot(x=&#34;Highway MPG&#34;, y=&#34;Drivetrain&#34;, hue=&#34;Fuel Type&#34;, data=data)&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;Summary&lt;/h2&gt;
+&lt;p&gt;In this lesson we learned how to plot visualizations using three different tools. All three use matplotlib under the hood. However, Seaborn and Pandas have improved on the original Python library and enabled us to visualize DataFrames as well.&lt;/p&gt;
+&lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+  </div>
+  <div id="seq_contents_1"
+    aria-labelledby="tab_1"
+    aria-hidden="true"
+    class="seq_contents tex2jax_ignore asciimath2jax_ignore">
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-vertical&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;VerticalStudentView&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34; data-request-token=&#34;577a6a74939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@09da87b310434343b2aab8b3e9f5b765&#34; data-block-type=&#34;vertical&#34;&gt;
+  
+
+  &lt;h2 class=&#34;hd hd-2 unit-title&#34;&gt;Exploratory Data Visualization Charts&lt;/h2&gt;
+
+    &lt;div class=&#34;ih-bookmark-button-wrapper&#34;&gt;
+    	
+
+
+
+&lt;div class=&#34;bookmark-button-wrapper&#34;&gt;
+  &lt;button class=&#34;btn btn-link bookmark-button &#34;
+    aria-pressed=&#34;false&#34;
+    data-bookmark-id=&#34;NoahB,block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@09da87b310434343b2aab8b3e9f5b765&#34;
+    data-bookmarks-api-url=&#34;/api/bookmarks/v1/bookmarks/&#34;&gt;
+     &lt;span class=&#34;bookmark-text&#34;&gt;Bookmark this page&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+
+    &lt;/div&gt;	
+
+&lt;div class=&#34;vert-mod&#34;&gt;
+  &lt;div class=&#34;vert vert-0&#34; data-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@b1750482ede040689944e2c5959f7ad3&#34;&gt;
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;577a6a74939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@b1750482ede040689944e2c5959f7ad3&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  &lt;h2&gt;Lesson Goals&lt;/h2&gt;
+&lt;p&gt;In this lesson we will learn to use the following charts:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Box Plots&lt;/li&gt;
+&lt;li&gt;Violin Plots&lt;/li&gt;
+&lt;li&gt;Histograms&lt;/li&gt;
+&lt;li&gt;Bar Plots&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We will learn to use these visualizations using the pandas matplotlib API and seaborn when necessary.&lt;/p&gt;
+&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;The goal of exploratory data analysis is to gain initial insight on our dataset. Many times, this can be accomplished with a myriad of summary statistics. However, sometimes we find that &#34;a picture is worth a thousand words&#34; and that data visualizations can capture a large amount of data all at once in a clear and concise manner.&lt;/p&gt;
+&lt;h2&gt;Box Plot (aka Box whisker plot)&lt;/h2&gt;
+&lt;p&gt;Box plots are an amazing way to show the distribution of quantitative data and make comparisons across levels of a categorical variables. They help to visualize the 5-number summary as well as create a boundary that will help us distinguish which outliers are extreme. Those 5 numbers are minimum, 25th percentile, 50th percentile (Median), 75th percentile, maximum&lt;/p&gt;
+&lt;p&gt;The box is defined as containing the data between the 25th and 75th percentiles. A line is drawn in the box to show where the median (or 50th percentile) lies. Box plots also have two lines extending from each end of the box called whiskers. The whiskers are typically drawn by finding the smallest and largest points still within 1.5 times the interquartile range minus the lower quartile or 1.5 times the interquartile range plus the upper quartile.&lt;/p&gt;
+&lt;p&gt;The interquartile range is the difference between the first and third quartiles.&amp;nbsp;Since this verbal explanation might be confusing, here are some formulas:&lt;/p&gt;
+&lt;pre&gt;IQR = Third Quartile - First Quartile&lt;/pre&gt;
+&lt;pre&gt;Upper Whisker Limit &amp;lt; Third Quartile + 1.5 * IQR&lt;/pre&gt;
+&lt;pre&gt;Lower Whisker Limit &amp;gt; First Quartile - 1.5 * IQR&lt;/pre&gt;
+&lt;p&gt;With all of this in mind, let&#39;s plot a box plot of our vehicles data. We first load the &lt;a href=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/data/module-1/vehicles.zip&#34;&gt;&lt;span style=&#34;-webkit-font-kerning: none; color: #1d8ad0;&#34;&gt;vehicles dataset&lt;/span&gt;&lt;/a&gt; using pandas. And then we will plot a box plot of the combined MPG&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;import pandas as pd&lt;br /&gt;data = pd.read_csv(&#39;~path/vehicles.csv&#39;)&lt;br /&gt;data.boxplot(column=&#34;Combined MPG&#34;)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img height=&#34;246&#34; width=&#34;322&#34; src=&#34;/assets/courseware/v1/81f2ca2830a59fff5393d0162a7635bc/asset-v1:IRONHACK+DAFT+201906_MIA+type@asset+block/Screen_Shot_2019-05-20_at_9.34.51_AM.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Note that we did not use the &lt;code&gt;.plot&lt;/code&gt; function here.We can infer from this box plot that the data is skewed due to a large number of extreme outliers that have very good MPG. We can also see that the median is not exactly in the middle of the box.&lt;/p&gt;
+&lt;h2&gt;Box plots using Seaborn&lt;/h2&gt;
+&lt;p&gt;More detailed plots can be made using the seaborn library. In this example we are finding the relation between a numerical variable (Highway MPG here) and a categorical variable (Fuel Type).&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ax = sns.boxplot(x=&#34;Fuel Type&#34;, y=&#34;Highway MPG&#34;, data=data)&lt;br /&gt;ax.set_xticklabels(ax.get_xticklabels(),rotation=90)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img height=&#34;349&#34; width=&#34;349&#34; src=&#34;/assets/courseware/v1/53b1c5ea9885db115ab1f4b5b32b73b8/asset-v1:IRONHACK+DAFT+201906_MIA+type@asset+block/Screen_Shot_2019-05-20_at_9.37.15_AM.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;We can also draw box plot with nested grouping by two categorical variables. Let&#39;s say we want to add an additional layer classification in the above box plot based on the cylinder types 4.0 liters and 6.0 liters. Note that we have over 10 different categories of values in the column &#34;Cylinders&#34;. Therefore the first step is to select/filter the data that we are interested in.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;cyl = [6.0,4.0]&lt;br /&gt;data.Cylinders.isin(cyl)&lt;br /&gt;data1 = data[data.Cylinders.isin(cyl)]&lt;br /&gt;data1.shape&lt;br /&gt;&lt;br /&gt;&lt;/code&gt;(26259, 15)&lt;/pre&gt;
+&lt;p&gt;Now we can use the box plot on tis new data-frame as shown below:&lt;/p&gt;
+&lt;pre&gt;ax = sns.boxplot(x=&#34;Fuel Type&#34;, y=&#34;Highway MPG&#34;, hue=&#34;Cylinders&#34;,data=data1, palette=&#34;Set3&#34;)&lt;br /&gt;ax.set_xticklabels(ax.get_xticklabels(),rotation=90)&lt;br /&gt;&lt;br /&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img height=&#34;359&#34; width=&#34;359&#34; src=&#34;/assets/courseware/v1/ce9e8899cef170617b9cb3cd45db444e/asset-v1:IRONHACK+DAFT+201906_MIA+type@asset+block/Screen_Shot_2019-05-20_at_9.38.07_AM.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;It is important to note that we are using Facetgrid feature of seaborn library as discussed in the previous class.&lt;/p&gt;
+&lt;p&gt;More details on seaborn box plots can be found &lt;a href=&#34;https://seaborn.pydata.org/generated/seaborn.boxplot.html&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;Violin Plot&lt;/h2&gt;
+&lt;p&gt;The violin plot is very similar to the box plot. The main difference is that the box plot is of even width while the violin plot varies in thickness throughout the plot. The variation in thickness signifies how common a value is (with the thickest section signifying the mode average). There is an additional layer inside that signifies values that occur 95% of the time. Finally there is a central dot that signifies the median average value.&lt;/p&gt;
+&lt;p&gt;The violin plot can be visualized using seaborn.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;import seaborn as sns
+sns.violinplot(&#34;Combined MPG&#34;, data=data)&lt;br /&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img height=&#34;377&#34; width=&#34;309&#34; src=&#34;/assets/courseware/v1/b14c900008879b61722e4133c5da0ee7/asset-v1:IRONHACK+DAFT+201906_MIA+type@asset+block/Screen_Shot_2019-05-20_at_10.08.57_AM.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;h2&gt;Histogram&lt;/h2&gt;
+&lt;p&gt;Histograms are great plots for a simplified look at the distribution of a dataset. We separate the data into bins and then plot the count in each bin.&amp;nbsp;The number of bins can greatly alter how the histogram looks. Therefore, we need to be cautious of our selection of the number of bins. The default number of bins with Pandas is 10.&lt;/p&gt;
+&lt;p&gt;As an example, we will plot the histogram for Fuel Barrels/Year.This is the histogram for the default 10 bins. Notice how it resembles the normal distribution.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;vehicles[&#39;Fuel Barrels/Year&#39;].hist()&lt;br /&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img height=&#34;399&#34; width=&#34;277&#34; src=&#34;/assets/courseware/v1/ae4f7f0d125563029f701ebbb7eb6c49/asset-v1:IRONHACK+DAFT+201906_MIA+type@asset+block/Screen_Shot_2019-05-20_at_10.12.26_AM.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;When we switch to 50 bins, the data almost looks bimodal.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;vehicles[&#39;Fuel Barrels/Year&#39;].hist(bins=50)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img height=&#34;518&#34; width=&#34;362&#34; src=&#34;/assets/courseware/v1/2a1213e54905d058512de7de366c356e/asset-v1:IRONHACK+DAFT+201906_MIA+type@asset+block/Screen_Shot_2019-05-20_at_10.12.45_AM.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;h2&gt;Using Seaborn for histograms&lt;/h2&gt;
+&lt;p&gt;We can use the distplot() in seaborn to plot the distribution of variables&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sns.distplot(x);&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img height=&#34;290&#34; width=&#34;391&#34; src=&#34;/assets/courseware/v1/6461f83d754ccf3e3b382a768ef8634a/asset-v1:IRONHACK+DAFT+201906_MIA+type@asset+block/Screen_Shot_2019-05-20_at_9.42.18_AM.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sns.distplot(x, bins=20)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img height=&#34;291&#34; width=&#34;392&#34; src=&#34;/assets/courseware/v1/4850dc67819b056375f86ce1cc08c3c3/asset-v1:IRONHACK+DAFT+201906_MIA+type@asset+block/Screen_Shot_2019-05-20_at_9.42.52_AM.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p style=&#34;margin: 0px; font-stretch: normal; font-size: 25.6px; line-height: normal; font-family: Helvetica; color: #515151;&#34;&gt;&lt;span style=&#34;font-kerning: none;&#34;&gt;Bar Plots&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Bar plots are visually similar to histograms. However, they represent different data. Bar plots display categorical data while histograms display numerical data. Each bar shows the count of each category. This way we are able to clearly visualize the distribution of the data between the different categories.&lt;/p&gt;
+&lt;p&gt;In this example we would like to plot the bar plot for drivetrain. In order to do this, we first find the counts of each category in this variable using the &lt;code&gt;value_counts&lt;/code&gt; function.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;data[&#39;Drivetrain&#39;].value_counts().plot.bar()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img height=&#34;437&#34; width=&#34;445&#34; src=&#34;/assets/courseware/v1/f0f697556c96a7c45549abc8c91e1640/asset-v1:IRONHACK+DAFT+201906_MIA+type@asset+block/Screen_Shot_2019-05-20_at_9.40.39_AM.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;h2&gt;Using Seaborn for Bar plots&lt;/h2&gt;
+&lt;p&gt;We can use the barplot() as illustrated below:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;ax = sns.barplot(x=&#34;Fuel Type&#34;, y=&#34;Highway MPG&#34;, hue=&#34;Cylinders&#34;, data=data1)&lt;br /&gt;ax.set_xticklabels(ax.get_xticklabels(),rotation=90)&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img height=&#34;406&#34; width=&#34;406&#34; src=&#34;/assets/courseware/v1/149d81b907fab9b0e9865f55d55ed3e6/asset-v1:IRONHACK+DAFT+201906_MIA+type@asset+block/Screen_Shot_2019-05-20_at_9.38.54_AM.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;h2&gt;Summary&lt;/h2&gt;
+&lt;p&gt;In this lesson we learned how to plot different visualizations that can help us discover information about our data. We learned about box plots and to visualize the 5-number summary as well as outliers. We learned about violin plots that add an element of frequency to box plots. We learned about histograms that can help us visualize the distribution of our data by bucketing the data and plotting the count in each bucket. Finally we learned about bar plots. These plots help us visualize the distribution in categorical data. Hopefully, all four visualizations will give us the tools we need to be effective at exploratory data analysis.&lt;/p&gt;
+&lt;p&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+  </div>
+  <div id="seq_contents_2"
+    aria-labelledby="tab_2"
+    aria-hidden="true"
+    class="seq_contents tex2jax_ignore asciimath2jax_ignore">
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-vertical&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;VerticalStudentView&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34; data-request-token=&#34;577a6a74939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@4b8a364e308f4877a8782419703a2c14&#34; data-block-type=&#34;vertical&#34;&gt;
+  
+
+  &lt;h2 class=&#34;hd hd-2 unit-title&#34;&gt;Plotting Multiple Data Series&lt;/h2&gt;
+
+    &lt;div class=&#34;ih-bookmark-button-wrapper&#34;&gt;
+    	
+
+
+
+&lt;div class=&#34;bookmark-button-wrapper&#34;&gt;
+  &lt;button class=&#34;btn btn-link bookmark-button &#34;
+    aria-pressed=&#34;false&#34;
+    data-bookmark-id=&#34;NoahB,block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@4b8a364e308f4877a8782419703a2c14&#34;
+    data-bookmarks-api-url=&#34;/api/bookmarks/v1/bookmarks/&#34;&gt;
+     &lt;span class=&#34;bookmark-text&#34;&gt;Bookmark this page&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+
+    &lt;/div&gt;	
+
+&lt;div class=&#34;vert-mod&#34;&gt;
+  &lt;div class=&#34;vert vert-0&#34; data-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@6ab44a954b8d4518a60ec903ab32a2c4&#34;&gt;
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;577a6a74939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@6ab44a954b8d4518a60ec903ab32a2c4&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  &lt;h2&gt;
+&lt;a id=&#34;user-content-lesson-goals&#34; class=&#34;anchor&#34; href=&#34;#lesson-goals&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Lesson Goals&lt;/h2&gt;
+&lt;p&gt;In this lesson we will learn to use the following charts to plot multiple data series:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Multiple line plots&lt;/li&gt;
+&lt;li&gt;Multiple bar plots&lt;/li&gt;
+&lt;li&gt;Scatter matrices&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We will learn to use these visualizations using matplotlib, the Pandas matplotlib API or Seaborn when necessary.&lt;/p&gt;
+&lt;h2&gt;
+&lt;a id=&#34;user-content-introduction&#34; class=&#34;anchor&#34; href=&#34;#introduction&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;There are many cases when a more elaborate visualization can help us understand our data better. Therefore, in this lesson we will focus on generating such visualizations.&lt;/p&gt;
+&lt;h2&gt;
+&lt;a id=&#34;user-content-multiple-line-plots&#34; class=&#34;anchor&#34; href=&#34;#multiple-line-plots&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Multiple Line Plots&lt;/h2&gt;
+&lt;p&gt;Recalling our vehicles dataset, we might want to compare the relationship between city MPG, highway MPG and CO2 emissions.&lt;/p&gt;
+&lt;p&gt;In order to do this, we can use the &lt;code&gt;.plot&lt;/code&gt; function in Pandas. With this function, we can specify which variables will be in the x axis and which will be in the y axis. We will put CO2 emissions in the x axis and the MPG variables in the y axis.&lt;/p&gt;
+&lt;p&gt;In order to get a meaningful visualization, we should sort our DataFrame by these variables first. This is because Python does not sort by default. It will just connect a line between any two points in the chart that are sequential. This can lead to a very unclear chart.&lt;/p&gt;
+&lt;p&gt;In the code examples below, we use the &lt;a href=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/data/module-1/vehicles.zip&#34; rel=&#34;nofollow&#34;&gt;vehicles dataset&lt;/a&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight highlight-source-python&#34;&gt;&lt;pre&gt;&lt;span class=&#34;pl-k&#34;&gt;%&lt;/span&gt;matplotlib inline
+&lt;span class=&#34;pl-k&#34;&gt;import&lt;/span&gt; numpy &lt;span class=&#34;pl-k&#34;&gt;as&lt;/span&gt; np
+&lt;span class=&#34;pl-k&#34;&gt;import&lt;/span&gt; pandas &lt;span class=&#34;pl-k&#34;&gt;as&lt;/span&gt; pd
+&lt;span class=&#34;pl-k&#34;&gt;import&lt;/span&gt; matplotlib.pyplot &lt;span class=&#34;pl-k&#34;&gt;as&lt;/span&gt; plt
+vehicles &lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt; pd.read_csv(&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;vehicles.csv&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;)
+
+vehicles.sort_values(&lt;span class=&#34;pl-v&#34;&gt;by&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;[&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#34;&lt;/span&gt;CO2 Emission Grams/Mile&lt;span class=&#34;pl-pds&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#34;&lt;/span&gt;City MPG&lt;span class=&#34;pl-pds&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#34;&lt;/span&gt;Highway MPG&lt;span class=&#34;pl-pds&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;], &lt;span class=&#34;pl-v&#34;&gt;inplace&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-c1&#34;&gt;True&lt;/span&gt;)
+vehicles.plot(&lt;span class=&#34;pl-v&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#34;&lt;/span&gt;CO2 Emission Grams/Mile&lt;span class=&#34;pl-pds&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;[&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#34;&lt;/span&gt;City MPG&lt;span class=&#34;pl-pds&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#34;&lt;/span&gt;Highway MPG&lt;span class=&#34;pl-pds&#34;&gt;&#34;&lt;/span&gt;&lt;/span&gt;])&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/cf6eab9e4b99c84e2cb1ea9daf5fe548a891862e/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f70616e6461732d6d756c7469706c652d6c696e652e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/cf6eab9e4b99c84e2cb1ea9daf5fe548a891862e/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f70616e6461732d6d756c7469706c652d6c696e652e706e67&#34; alt=&#34;pandas multiple line&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/pandas-multiple-line.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;
+&lt;a id=&#34;user-content-multiple-bar-plots&#34; class=&#34;anchor&#34; href=&#34;#multiple-bar-plots&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Multiple Bar Plots&lt;/h2&gt;
+&lt;p&gt;When plotting categorical data, there is value to plotting two or more groups side by side and being able to compare them. There are a few ways of creating such a plot.&lt;/p&gt;
+&lt;h3&gt;
+&lt;a id=&#34;user-content-side-by-side-bar-plots&#34; class=&#34;anchor&#34; href=&#34;#side-by-side-bar-plots&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Side By Side Bar Plots&lt;/h3&gt;
+&lt;p&gt;If we include multiple columns in our bar plot, they will show up side by side in different colors.&lt;/p&gt;
+&lt;p&gt;In the example below we aggregate both highway and city MPG by drivetrain. Since a bar plot will plot one value per group, we will aggregate and compute the mean.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;vehicles_mean = vehicles[[&#34;Highway MPG&#34;, &#34;City MPG&#34;, &#34;Drivetrain&#34;]].groupby([&#34;Drivetrain&#34;]).agg(&#34;mean&#34;)
+vehicles_mean.plot.bar()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/f6f8b23de9aedb3eccfc5a916729bcc4b2ae49c9/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f70616e6461732d736964652d62792d736964652d6261722e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/f6f8b23de9aedb3eccfc5a916729bcc4b2ae49c9/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f70616e6461732d736964652d62792d736964652d6261722e706e67&#34; alt=&#34;pandas side by side bar&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/pandas-side-by-side-bar.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;
+&lt;a id=&#34;user-content-side-by-side-horizontal-bar-plots&#34; class=&#34;anchor&#34; href=&#34;#side-by-side-horizontal-bar-plots&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Side By Side Horizontal Bar Plots&lt;/h3&gt;
+&lt;p&gt;We can use the &lt;code&gt;.barh&lt;/code&gt; function to produce horizontal bars.&lt;/p&gt;
+&lt;div class=&#34;highlight highlight-source-python&#34;&gt;&lt;pre&gt;vehicles_mean.plot.barh()&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/babdb42b432f0388a63bddb313a848f105a1a519/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f70616e6461732d736964652d62792d736964652d626172682e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/babdb42b432f0388a63bddb313a848f105a1a519/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f70616e6461732d736964652d62792d736964652d626172682e706e67&#34; alt=&#34;pandas side by side barh&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/pandas-side-by-side-barh.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;
+&lt;a id=&#34;user-content-scatter-matrices&#34; class=&#34;anchor&#34; href=&#34;#scatter-matrices&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Scatter Matrices&lt;/h2&gt;
+&lt;p&gt;A scatter matrix is a useful tool particularly in exploratory data analysis. We can look at the pairwise relationships between multiple variables at the same time. Typically what we look for is linear relationships between the pairs of variables. This information can help us in the future when modeling the data. There are also non linear relationships that we can detect like a logarithmic or exponential relationship between two variables. In this case, we can apply a transformation to the variables to produce a linear relationship.&lt;/p&gt;
+&lt;p&gt;We will be using the &lt;code&gt;scatter_matrix&lt;/code&gt; function. This function will create a scatter plot for any two numeric variables in our data.&lt;/p&gt;
+&lt;p&gt;By default the scatter matrix displays the histogram of each variable along the diagonal. We can also show the kernel density estimation along the diagonal instead.&lt;/p&gt;
+&lt;div class=&#34;highlight highlight-source-python&#34;&gt;&lt;pre&gt;pd.plotting.scatter_matrix(vehicles)&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/3db314805521b0abfd6842c10ae349fb2031c8a3/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f736361747465722d706c6f742e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/3db314805521b0abfd6842c10ae349fb2031c8a3/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f736361747465722d706c6f742e706e67&#34; alt=&#34;pandas scatter matrix&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/scatter-plot.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This visualization may seem a bit cluttered but it tells us quite a bit about our data. The main takeaways are that there is a linear relationship between combined MPG, city MPG and highway MPG. There is a non linear relationship between MPG and CO2 emissions and MPG and fuel cost per year. The relationship between those pairs of variables could benefit from a transformation in order to make those relationships linear.&lt;/p&gt;
+&lt;h2&gt;
+&lt;a id=&#34;user-content-summary&#34; class=&#34;anchor&#34; href=&#34;#summary&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Summary&lt;/h2&gt;
+&lt;p&gt;In this lesson we learned how to plot multiple pieces of information in one chart. We plotted two line graphs in one chart as well as two bar graphs. Additionally, we created a scatter chart with all pairwise combinations in a dataset. These charts can be very useful; however, we must perform appropriate data transformations sometimes in order to make them more interpretable. The code snippets presented in this lesson will serve you as a template to create you own dataset visualizations for your projects.&lt;/p&gt;
+
+&lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+  </div>
+  <div id="seq_contents_3"
+    aria-labelledby="tab_3"
+    aria-hidden="true"
+    class="seq_contents tex2jax_ignore asciimath2jax_ignore">
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-vertical&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;VerticalStudentView&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34; data-request-token=&#34;577a6a74939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@cd8ff0b0df9f49f4a05acc99ea4446d5&#34; data-block-type=&#34;vertical&#34;&gt;
+  
+
+  &lt;h2 class=&#34;hd hd-2 unit-title&#34;&gt;Interactive Data Visualization&lt;/h2&gt;
+
+    &lt;div class=&#34;ih-bookmark-button-wrapper&#34;&gt;
+    	
+
+
+
+&lt;div class=&#34;bookmark-button-wrapper&#34;&gt;
+  &lt;button class=&#34;btn btn-link bookmark-button &#34;
+    aria-pressed=&#34;false&#34;
+    data-bookmark-id=&#34;NoahB,block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@cd8ff0b0df9f49f4a05acc99ea4446d5&#34;
+    data-bookmarks-api-url=&#34;/api/bookmarks/v1/bookmarks/&#34;&gt;
+     &lt;span class=&#34;bookmark-text&#34;&gt;Bookmark this page&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+
+    &lt;/div&gt;	
+
+&lt;div class=&#34;vert-mod&#34;&gt;
+  &lt;div class=&#34;vert vert-0&#34; data-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@927c6a4316834e9684f54afa5ad0d049&#34;&gt;
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;577a6a74939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@927c6a4316834e9684f54afa5ad0d049&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  &lt;h2&gt;
+&lt;a id=&#34;user-content-lesson-goals&#34; class=&#34;anchor&#34; href=&#34;#lesson-goals&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Lesson Goals&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Learn about interactive visualizations.&lt;/li&gt;
+&lt;li&gt;Introduce the plotly and cufflinks libraries.&lt;/li&gt;
+&lt;li&gt;Create interactive histograms.&lt;/li&gt;
+&lt;li&gt;Create interactive bar charts.&lt;/li&gt;
+&lt;li&gt;Create interactive line charts.&lt;/li&gt;
+&lt;li&gt;Create interactive scatter plots.&lt;/li&gt;
+&lt;li&gt;Create interactive bubble charts.&lt;/li&gt;
+&lt;li&gt;Create interactive heatmaps.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;
+&lt;a id=&#34;user-content-introduction&#34; class=&#34;anchor&#34; href=&#34;#introduction&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;So far in the program, we have covered a variety of ways to visualize information. We have seen histograms, bar charts, line charts, scatter plots, and even some more advanced visualizations like box plots, violin plots, and scatter matrices.&lt;/p&gt;
+&lt;p&gt;However, these visualizations have been static and, while perfectly suitable and informative, the world is moving in the direction of interactive visualization. When we add interactivity to our visualizations, one of the benefits we immediately derive is the ability to view values of different data points simply by hovering over them. We also get the ability to zoom in and out as well as remove and add back different series of data points, which allows us to explore our data in ways that we simply could not with static visualizations.&lt;/p&gt;
+&lt;p&gt;In the past, in order to construct interactive visualizations in the browser, you had to learn D3 or JavaScript. These days, there are Python libraries that sit on top of D3 which give us the ability to generate interactive visualizations directly from Python. In this lesson, we will be using a couple of these new libraries (Plotly and cufflinks) to construct our interactive visualizations. Plotly is an open source visualization library, and cufflinks is a wrapper around Plotly that allows you to easily produce interactive visualizations - often with a single line of code!&lt;/p&gt;
+&lt;p&gt;Before we jump into the lesson, let&#39;s make sure both of these libraries are installed.&lt;/p&gt;
+&lt;div class=&#34;highlight highlight-source-shell&#34;&gt;&lt;pre&gt;$ pip install plotly
+$ pip install cufflinks&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Let&#39;s also import the libraries we are going to need for this lesson and set cufflinks to offline mode so that we can just visualize our interactive charts in the Jupyter Notebook. If we did not specify, it would push each visualization created up to your Plotly account.&lt;/p&gt;
+&lt;div class=&#34;highlight highlight-source-python&#34;&gt;&lt;pre&gt;&lt;span class=&#34;pl-k&#34;&gt;import&lt;/span&gt; plotly.plotly &lt;span class=&#34;pl-k&#34;&gt;as&lt;/span&gt; py
+&lt;span class=&#34;pl-k&#34;&gt;import&lt;/span&gt; cufflinks &lt;span class=&#34;pl-k&#34;&gt;as&lt;/span&gt; cf
+&lt;span class=&#34;pl-k&#34;&gt;import&lt;/span&gt; pandas &lt;span class=&#34;pl-k&#34;&gt;as&lt;/span&gt; pd
+
+cf.go_offline()&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;
+&lt;a id=&#34;user-content-the-data&#34; class=&#34;anchor&#34; href=&#34;#the-data&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;The Data&lt;/h2&gt;
+&lt;p&gt;The data set we will be using for this lesson is the Telco Customer Churn data set from Kaggle. Let&#39;s go ahead and import the data set using the Pandas &lt;code&gt;read_csv&lt;/code&gt; method and take a look at what columns we have to work with.&lt;/p&gt;
+&lt;div class=&#34;highlight highlight-source-python&#34;&gt;&lt;pre&gt;df &lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt; pd.read_csv(&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;./data/churn.csv&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;)
+
+df.columns&lt;/pre&gt;&lt;/div&gt;
+&lt;pre lang=&#34;text&#34;&gt;&lt;code&gt;Index([&#39;customerID&#39;, &#39;gender&#39;, &#39;SeniorCitizen&#39;, &#39;Partner&#39;, &#39;Dependents&#39;,
+       &#39;tenure&#39;, &#39;PhoneService&#39;, &#39;MultipleLines&#39;, &#39;InternetService&#39;,
+       &#39;OnlineSecurity&#39;, &#39;OnlineBackup&#39;, &#39;DeviceProtection&#39;, &#39;TechSupport&#39;,
+       &#39;StreamingTV&#39;, &#39;StreamingMovies&#39;, &#39;Contract&#39;, &#39;PaperlessBilling&#39;,
+       &#39;PaymentMethod&#39;, &#39;MonthlyCharges&#39;, &#39;TotalCharges&#39;, &#39;Churn&#39;,
+       &#39;MonthLevel&#39;, &#39;TotalLevel&#39;, &#39;TenureLevel&#39;, &#39;ChurnBinary&#39;],
+      dtype=&#39;object&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;
+&lt;a id=&#34;user-content-interactive-histograms&#34; class=&#34;anchor&#34; href=&#34;#interactive-histograms&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Interactive Histograms&lt;/h2&gt;
+&lt;p&gt;The first type of interactive visualization we will be generating with Plotly and cufflinks is a histogram. As mentioned in prior lessons, histograms help us visualize how the values in a specific field are distributed. For example, let&#39;s take the TotalCharges column of our data set and create a basic interactive histogram for it.&lt;/p&gt;
+&lt;p&gt;To do that we would call the &lt;code&gt;iplot&lt;/code&gt; method and pass &#34;hist&#34; to the &lt;code&gt;kind&lt;/code&gt; argument along with what we want the x and y axis to be named (to the xTitle and yTitle arguments respectively) and what title we want displayed on our visualization to the title argument. These last three arguments are present in every interactive chart we will generate.&lt;/p&gt;
+&lt;div class=&#34;highlight highlight-source-python&#34;&gt;&lt;pre&gt;data &lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt; df[&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;TotalCharges&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;]
+
+data.iplot(&lt;span class=&#34;pl-v&#34;&gt;kind&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;hist&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;xTitle&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Total Charges&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;yTitle&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Count&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, 
+           &lt;span class=&#34;pl-v&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Total Charges Distribution&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;)&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/940b8058424dcc4cd2b84b78391b9487b52e737d/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f746f74616c2d636861726765732d646973747269627574696f6e2e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/940b8058424dcc4cd2b84b78391b9487b52e737d/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f746f74616c2d636861726765732d646973747269627574696f6e2e706e67&#34; alt=&#34;Total Charges Distribution&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/total-charges-distribution.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The resulting plot should look like the image above, only yours should be interactive! When you hover over each bar of the histogram, it should display the number of records that fall into the bin that bar represents.&lt;/p&gt;
+&lt;p&gt;Plotly and cufflinks allow us to do a few other interesting things with histograms. In the example below, we are creating a pivot table from our original data frame that has the different Internet Services represented in separate columns and Monthly Charges by customer as the values in the table.&lt;/p&gt;
+&lt;p&gt;We then create a histogram from this data set and, by default, it creates overlay histograms representing the Monthly Charge ranges for all three Internet Services. Note also that we have added a new &lt;code&gt;histnorm&lt;/code&gt; argument and have passed it the value &#34;percent.&#34; What this does is converts the y axis to show the percentage instead of the number of records each bin makes up.&lt;/p&gt;
+&lt;div class=&#34;highlight highlight-source-python&#34;&gt;&lt;pre&gt;data &lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt; df.pivot_table(&lt;span class=&#34;pl-v&#34;&gt;values&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;MonthlyCharges&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;columns&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;InternetService&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, 
+                      &lt;span class=&#34;pl-v&#34;&gt;index&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;customerID&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;aggfunc&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;sum&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;)
+
+data.iplot(&lt;span class=&#34;pl-v&#34;&gt;kind&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;hist&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;histnorm&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;percent&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;xTitle&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Value&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, 
+           &lt;span class=&#34;pl-v&#34;&gt;yTitle&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Percent&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Monthly Charge by Internet Service&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;)&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/a02e3ee8e7510622e5668d31d6d03f340ae51360/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6d6f6e74686c792d6368617267652d736572766963652e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/a02e3ee8e7510622e5668d31d6d03f340ae51360/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6d6f6e74686c792d6368617267652d736572766963652e706e67&#34; alt=&#34;Monthly Charges by Service Distribution&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/monthly-charge-service.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;In addition to being able to hover over components in the visualization and see their values, another useful feature of these types of interactive visualizations is that you can filter categories when there are more than one of them and they are included in a legend. For example, to remove the No category, simply click on it. It disappears and the visualization automatically rescales itself according to the remaining data points. If you click it again, it appears in the visualization again.&lt;/p&gt;
+&lt;p&gt;Another useful feature that is great for histograms is the &lt;code&gt;subplot&lt;/code&gt; feature. When this value is included and set to True, instead of overlapping histograms, you get back a grid of histograms. In the example below, we create a pivot table where the columns represent different payment methods and the values represent monthly charges by customer. When we call the &lt;code&gt;iplot&lt;/code&gt; method to generate histograms from this data and include the &lt;code&gt;subplot&lt;/code&gt; argument, it returns four separate histograms - one for each type of payment method.&lt;/p&gt;
+&lt;div class=&#34;highlight highlight-source-python&#34;&gt;&lt;pre&gt;data &lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt; df.pivot_table(&lt;span class=&#34;pl-v&#34;&gt;values&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;MonthlyCharges&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;columns&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;PaymentMethod&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;index&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;customerID&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;aggfunc&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;sum&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;)
+
+data.iplot(&lt;span class=&#34;pl-v&#34;&gt;kind&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;hist&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;histnorm&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;percent&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;xTitle&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Value&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;subplots&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-c1&#34;&gt;True&lt;/span&gt;,
+&lt;span class=&#34;pl-v&#34;&gt;yTitle&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Percent&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Monthly Charge by Payment Method&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;)&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/58973756f3457d1f466b46c5cc753ee69f115885/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6d6f6e74686c792d6368617267652d7061796d656e742d6d6574686f642e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/58973756f3457d1f466b46c5cc753ee69f115885/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6d6f6e74686c792d6368617267652d7061796d656e742d6d6574686f642e706e67&#34; alt=&#34;Monthly Charges by Payment Method&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/monthly-charge-payment-method.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;
+&lt;a id=&#34;user-content-interactive-bar-charts&#34; class=&#34;anchor&#34; href=&#34;#interactive-bar-charts&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Interactive Bar Charts&lt;/h2&gt;
+&lt;p&gt;In addition to histograms, another useful type of interactive visualization is the interactive bar chart. Below is a basic example where we calculate the average churn rate for each payment method and then create a bar chart by setting the &lt;code&gt;kind&lt;/code&gt; argument to &#34;bar.&#34;&lt;/p&gt;
+&lt;div class=&#34;highlight highlight-source-python&#34;&gt;&lt;pre&gt;data &lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt; df.groupby(&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;PaymentMethod&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;as_index&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-c1&#34;&gt;False&lt;/span&gt;).agg({&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;ChurnBinary&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;:&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;mean&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;})
+
+data.iplot(&lt;span class=&#34;pl-v&#34;&gt;kind&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;bar&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;PaymentMethod&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;xTitle&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Payment Method&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;color&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;green&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;,
+           &lt;span class=&#34;pl-v&#34;&gt;yTitle&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Avg. Churn %&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Avg. Churn Rate by Payment Method&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;)&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/b95e8ba6d1cb1a279f41dfd801dbc81013ebfad2/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f636875726e2d7061796d656e742d6d6574686f642e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/b95e8ba6d1cb1a279f41dfd801dbc81013ebfad2/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f636875726e2d7061796d656e742d6d6574686f642e706e67&#34; alt=&#34;Avg. Churn Rate by Payment Method&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/churn-payment-method.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Note that we also included a color argument to specify that we would like the bars to be green. Feel free to try changing it to whatever your favorite color is.&lt;/p&gt;
+&lt;p&gt;Basic bar charts are very helpful, but sometimes the need arises to create more complex bar charts, such as when we need to see bars in groups. To set this up with the data set we are currently working with, below we are creating three sets of pivot tables that each calculate average monthly charges by tenure level but for different demographic variables (gender, senior citizen, and partner). We combine all the three pivot tables together (concat columns) and sort according to the intuitive order of customer tenure level - new customers, regular customers, loyal customers, and very loyal customers.&lt;/p&gt;
+&lt;div class=&#34;highlight highlight-source-python&#34;&gt;&lt;pre&gt;gender &lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt; df.pivot_table(&lt;span class=&#34;pl-v&#34;&gt;values&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;MonthlyCharges&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;columns&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;gender&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, 
+                        &lt;span class=&#34;pl-v&#34;&gt;index&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;TenureLevel&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;aggfunc&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;mean&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;)
+
+senior &lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt; df.pivot_table(&lt;span class=&#34;pl-v&#34;&gt;values&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;MonthlyCharges&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;columns&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;SeniorCitizen&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, 
+                        &lt;span class=&#34;pl-v&#34;&gt;index&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;TenureLevel&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;aggfunc&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;mean&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;)
+
+partner &lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt; df.pivot_table(&lt;span class=&#34;pl-v&#34;&gt;values&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;MonthlyCharges&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;columns&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Partner&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, 
+                         &lt;span class=&#34;pl-v&#34;&gt;index&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;TenureLevel&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;aggfunc&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;mean&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;)
+
+data &lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt; pd.concat([gender, senior, partner], &lt;span class=&#34;pl-v&#34;&gt;axis&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-c1&#34;&gt;1&lt;/span&gt;)
+data.columns &lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt; [&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Female&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Male&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;NonSenior&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Senior&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Single&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Partner&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;]
+data &lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt; data.reset_index()
+
+custom_dict &lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt; {&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;New&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;: &lt;span class=&#34;pl-c1&#34;&gt;0&lt;/span&gt;, &lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Regular&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;: &lt;span class=&#34;pl-c1&#34;&gt;1&lt;/span&gt;, &lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Loyal&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;: &lt;span class=&#34;pl-c1&#34;&gt;2&lt;/span&gt;, &lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Very Loyal&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt; : &lt;span class=&#34;pl-c1&#34;&gt;3&lt;/span&gt;}  
+data &lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt; data.iloc[data[&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;TenureLevel&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;].map(custom_dict).argsort()]&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Now that are data is formatted how we need it to be, we can simply call &lt;code&gt;iplot&lt;/code&gt; to generate a bar chart that will create a bar for each of the demographic columns, group them by tenure level, and even display the tenure levels in the order we assigned them. This lets us see the overall increase in monthly charges from new customers to very loyal customers as well as the variations across demographics within each one.&lt;/p&gt;
+&lt;div class=&#34;highlight highlight-source-python&#34;&gt;&lt;pre&gt;data.iplot(&lt;span class=&#34;pl-v&#34;&gt;kind&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;bar&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;TenureLevel&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;xTitle&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Tenure Level&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, 
+           &lt;span class=&#34;pl-v&#34;&gt;yTitle&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Avg. Monthly Charge&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Avg. Monthly Charge by Demographics&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;)&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/899d8922052415777e59211eb6ad81d9828bf85a/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6d6f6e74686c792d6368617267652d64656d6f67726170686963732e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/899d8922052415777e59211eb6ad81d9828bf85a/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6d6f6e74686c792d6368617267652d64656d6f67726170686963732e706e67&#34; alt=&#34;Monthly Charge by Demographics&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/monthly-charge-demographics.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;
+&lt;a id=&#34;user-content-interactive-line-charts&#34; class=&#34;anchor&#34; href=&#34;#interactive-line-charts&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Interactive Line Charts&lt;/h2&gt;
+&lt;p&gt;In addition to histograms and bar charts, another very useful interactive visualization is the line chart. Interactive line charts allow us to not only visualize how a variable changes, but it can also let us hover over and find out the exact values even when there are a lot of points across the x axis.&lt;/p&gt;
+&lt;p&gt;In the example below, we are creating calculating the average churn rate by tenure and then creating a basic single line chart that shows the overall decrease in churn rate as tenure increases. Note that all we had to do was pass &#34;line&#34; to the &lt;code&gt;kind&lt;/code&gt; argument and then the appropriate fields, titles, and colors to their respective arguments.&lt;/p&gt;
+&lt;div class=&#34;highlight highlight-source-python&#34;&gt;&lt;pre&gt;data &lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt; df.groupby(&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;tenure&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;as_index&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-c1&#34;&gt;False&lt;/span&gt;).agg({&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;ChurnBinary&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;:&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;mean&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;})
+
+data.iplot(&lt;span class=&#34;pl-v&#34;&gt;kind&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;line&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;tenure&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;xTitle&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Tenure&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;color&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;blue&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;,
+           &lt;span class=&#34;pl-v&#34;&gt;yTitle&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Avg. Churn Rate&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Avg. Churn Rate by Tenure&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;)&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/86187e1a03a7e4a2accba6385b3c39fd47004bae/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f636875726e2d74656e7572652e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/86187e1a03a7e4a2accba6385b3c39fd47004bae/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f636875726e2d74656e7572652e706e67&#34; alt=&#34;Churn Rate by Tenure&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/churn-tenure.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This gives us a sense of what happens with aggregate churn rates, but how does that differ by demographics? To find out, we can take the same approach as we did with our grouped bar chart. Below, we create three pivot tables again and combine them.&lt;/p&gt;
+&lt;div class=&#34;highlight highlight-source-python&#34;&gt;&lt;pre&gt;gender &lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt; df.pivot_table(&lt;span class=&#34;pl-v&#34;&gt;values&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;ChurnBinary&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;columns&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;gender&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, 
+                        &lt;span class=&#34;pl-v&#34;&gt;index&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;tenure&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;aggfunc&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;mean&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;)
+
+senior &lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt; df.pivot_table(&lt;span class=&#34;pl-v&#34;&gt;values&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;ChurnBinary&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;columns&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;SeniorCitizen&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, 
+                        &lt;span class=&#34;pl-v&#34;&gt;index&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;tenure&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;aggfunc&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;mean&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;)
+
+partner &lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt; df.pivot_table(&lt;span class=&#34;pl-v&#34;&gt;values&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;ChurnBinary&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;columns&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Partner&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, 
+                         &lt;span class=&#34;pl-v&#34;&gt;index&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;tenure&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;aggfunc&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;mean&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;)
+
+data &lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt; pd.concat([gender, senior, partner], &lt;span class=&#34;pl-v&#34;&gt;axis&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-c1&#34;&gt;1&lt;/span&gt;)
+data.columns &lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt; [&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Female&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Male&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;NonSenior&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Senior&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Single&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Partner&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;]
+data &lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt; data.reset_index()&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We now have the data in the format we need to create an interactive multi-line chart. To do that, we call the &lt;code&gt;iplot&lt;/code&gt; method again and pass the appropriate values to each argument.&lt;/p&gt;
+&lt;div class=&#34;highlight highlight-source-python&#34;&gt;&lt;pre&gt;data.iplot(&lt;span class=&#34;pl-v&#34;&gt;kind&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;line&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;tenure&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;xTitle&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Tenure&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, 
+           &lt;span class=&#34;pl-v&#34;&gt;yTitle&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Avg. Churn Rate&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Avg. Churn Rate by Demographics&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;)&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/8e341631eb8722708833d854f8e2238d1f93dedd/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f636875726e2d64656d6f67726170686963732d74656e7572652e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/8e341631eb8722708833d854f8e2238d1f93dedd/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f636875726e2d64656d6f67726170686963732d74656e7572652e706e67&#34; alt=&#34;Churn Rate Demographics by Tenure&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/churn-demographics-tenure.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;
+&lt;a id=&#34;user-content-interactive-scatter-plots&#34; class=&#34;anchor&#34; href=&#34;#interactive-scatter-plots&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Interactive Scatter Plots&lt;/h2&gt;
+&lt;p&gt;Another useful type of interactive visualization is the scatter plot. Like with line charts, one of the valuable features of interactivity with scatter plots is the ability to hover over each of the points and see their value. It is often also useful to apply the filtering by group like we did with the histograms earlier. However, one drawback about creating interactive scatter plots is that scatter plots tend to have a lot of data points, so creating interactive ones can quickly get computationally intensive and the results can look a bit cluttered.&lt;/p&gt;
+&lt;p&gt;In the example below, we capitalize on the advantages mentioned above while avoiding the disadvantages by filtering our data set for a subset that we would like to investigate (customers on one year contracts that pay with credit cards).&lt;/p&gt;
+&lt;div class=&#34;highlight highlight-source-python&#34;&gt;&lt;pre&gt;data &lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt; df[(df[&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Contract&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;]&lt;span class=&#34;pl-k&#34;&gt;==&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;One year&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;) &lt;span class=&#34;pl-k&#34;&gt;&amp;amp;&lt;/span&gt; (df[&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;PaymentMethod&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;]&lt;span class=&#34;pl-k&#34;&gt;==&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Credit card (automatic)&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;)]&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;We then call the &lt;code&gt;iplot&lt;/code&gt; method to generate our interactive visualization. Note that to create a scatter plot, we did not need to pass anything to the &lt;code&gt;kind&lt;/code&gt; argument but we did need to specify which fields would be represented on both the x and y axes. We also added a new &lt;code&gt;categories&lt;/code&gt; argument that we passed the type of Internet Service to so that we can distinguish between those groups in our visualization.&lt;/p&gt;
+&lt;div class=&#34;highlight highlight-source-python&#34;&gt;&lt;pre&gt;data.iplot(&lt;span class=&#34;pl-v&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;tenure&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;TotalCharges&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;categories&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;InternetService&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;,
+           &lt;span class=&#34;pl-v&#34;&gt;xTitle&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Tenure&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;yTitle&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Total Charges&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;,
+           &lt;span class=&#34;pl-v&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Charges vs. Tenure: One Year Contract, Credit Card Customers&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;)&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/ddc2c802eb3eae36537243024e8548b5ae354a52/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f636861726765732d74656e7572652d736361747465722e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/ddc2c802eb3eae36537243024e8548b5ae354a52/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f636861726765732d74656e7572652d736361747465722e706e67&#34; alt=&#34;Churn Rate Demographics by Tenure Scatter&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/charges-tenure-scatter.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Due to our filtering of the data, the resulting visualization contains a reasonable number of data points and allows us to clearly distinguish between the different groups in our data.&lt;/p&gt;
+&lt;h2&gt;
+&lt;a id=&#34;user-content-interactive-bubble-charts&#34; class=&#34;anchor&#34; href=&#34;#interactive-bubble-charts&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Interactive Bubble Charts&lt;/h2&gt;
+&lt;p&gt;Bubble charts are essentially scatter plots with an additional dimension - the size of the bubbles. This can provide us with additional insights but also makes it so that the visualization has the potential to get cluttered even easier than with a scatter plot. Because of this, it is best to use interactive bubble charts when we have filtered our data significantly to a number of data points that will be reasonable for this type of visualization.&lt;/p&gt;
+&lt;p&gt;Below, we are starting with the data subset that we used for our scatter plot above and we are filtering it even further by keeping only the customers that do not have phone service. This makes our data sufficiently small to visualize using a bubble chart.&lt;/p&gt;
+&lt;p&gt;To create the bubble chart, we call &lt;code&gt;iplot&lt;/code&gt;, pass &#34;bubble&#34; to the &lt;code&gt;kind&lt;/code&gt; argument, and then fill in all the rest of the arguments with appropriate values.&lt;/p&gt;
+&lt;div class=&#34;highlight highlight-source-python&#34;&gt;&lt;pre&gt;data &lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt; data[data[&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;PhoneService&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;]&lt;span class=&#34;pl-k&#34;&gt;==&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;No&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;]
+
+data.iplot(&lt;span class=&#34;pl-v&#34;&gt;kind&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;bubble&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;tenure&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;MonthlyCharges&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;size&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;TotalCharges&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;,
+           &lt;span class=&#34;pl-v&#34;&gt;categories&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;gender&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;xTitle&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Tenure&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;yTitle&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Total Charges&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;,
+           &lt;span class=&#34;pl-v&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Charges vs. Tenure: One Year Contract, Credit Card Customers&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;)&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/51c23e00170099d13196a84334ad71b6d808d677/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f636861726765732d74656e7572652d627562626c652e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/51c23e00170099d13196a84334ad71b6d808d677/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f636861726765732d74656e7572652d627562626c652e706e67&#34; alt=&#34;Churn Rate Demographics by Tenure Bubble&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/charges-tenure-bubble.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The result is an informative, interactive bubble chart that conveys information about both monthly and total charges, tenure, and gender for this specific segment of customers.&lt;/p&gt;
+&lt;h2&gt;
+&lt;a id=&#34;user-content-interactive-heatmaps&#34; class=&#34;anchor&#34; href=&#34;#interactive-heatmaps&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Interactive Heatmaps&lt;/h2&gt;
+&lt;p&gt;The last type of interactive visualization we will cover in this lesson is the heatmap. Heatmaps are useful for seeing how relatively high or low values are across combinations of categories. For example, below we create a pivot table containing average churn rates by level of monthly charges and tenure.&lt;/p&gt;
+&lt;div class=&#34;highlight highlight-source-python&#34;&gt;&lt;pre&gt;data &lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt; df.pivot_table(&lt;span class=&#34;pl-v&#34;&gt;values&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;ChurnBinary&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;columns&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;MonthLevel&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, 
+                      &lt;span class=&#34;pl-v&#34;&gt;index&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;tenure&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;aggfunc&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;mean&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;)
+&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;From there, we call &lt;code&gt;iplot&lt;/code&gt;, pass &#34;heatmap&#34; to the &lt;code&gt;kind&lt;/code&gt; argument, specify an appropriate colorscale, and then fill in the rest of the arguments. This generates an informative heatmap that looks like the following.&lt;/p&gt;
+&lt;div class=&#34;highlight highlight-source-python&#34;&gt;&lt;pre&gt;data.iplot(&lt;span class=&#34;pl-v&#34;&gt;kind&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;heatmap&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;colorscale&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;YlOrRd&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;xTitle&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Tenure&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, 
+           &lt;span class=&#34;pl-v&#34;&gt;yTitle&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Month Level&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;, &lt;span class=&#34;pl-v&#34;&gt;title&lt;/span&gt;&lt;span class=&#34;pl-k&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;pl-s&#34;&gt;&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;Avg. Churn Rates by Month Level &amp;amp; Tenure&lt;span class=&#34;pl-pds&#34;&gt;&#39;&lt;/span&gt;&lt;/span&gt;)&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/88518bd37e8735dbb7656810323760af42adcbdf/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f636875726e2d726174652d686561746d61702e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/88518bd37e8735dbb7656810323760af42adcbdf/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f636875726e2d726174652d686561746d61702e706e67&#34; alt=&#34;Churn Rate Heatmap&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/churn-rate-heatmap.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;In this heatmap, we can see that the High and Very High categories are where the highest churn rates are occurring, particularly early in the customer tenure.&lt;/p&gt;
+&lt;h2&gt;
+&lt;a id=&#34;user-content-summary&#34; class=&#34;anchor&#34; href=&#34;#summary&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Summary&lt;/h2&gt;
+&lt;p&gt;In this lesson, we have explored a variety of interactive visualizations. We began the lesson by introducing the plotly and cufflinks libraries, which when used together make generating interactive visualizations as easy as writing a single line of Python code. We then looked at examples of how to create interactive histograms, bar charts, line charts, scatter plots, bubble charts, and heatmaps. We hope that the ease with which we were able to create all of these makes you strongly consider incorporating interactive visualizations into your analytical workflow.&lt;/p&gt;
+
+&lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+  </div>
+  <div id="seq_contents_4"
+    aria-labelledby="tab_4"
+    aria-hidden="true"
+    class="seq_contents tex2jax_ignore asciimath2jax_ignore">
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-vertical&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;VerticalStudentView&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34; data-request-token=&#34;577a6a74939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@4ffedf7f510542e78d6eafaaf4241cbd&#34; data-block-type=&#34;vertical&#34;&gt;
+  
+
+  &lt;h2 class=&#34;hd hd-2 unit-title&#34;&gt;Improving Plot Aesthetics&lt;/h2&gt;
+
+    &lt;div class=&#34;ih-bookmark-button-wrapper&#34;&gt;
+    	
+
+
+
+&lt;div class=&#34;bookmark-button-wrapper&#34;&gt;
+  &lt;button class=&#34;btn btn-link bookmark-button &#34;
+    aria-pressed=&#34;false&#34;
+    data-bookmark-id=&#34;NoahB,block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@4ffedf7f510542e78d6eafaaf4241cbd&#34;
+    data-bookmarks-api-url=&#34;/api/bookmarks/v1/bookmarks/&#34;&gt;
+     &lt;span class=&#34;bookmark-text&#34;&gt;Bookmark this page&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+
+    &lt;/div&gt;	
+
+&lt;div class=&#34;vert-mod&#34;&gt;
+  &lt;div class=&#34;vert vert-0&#34; data-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@822012a316a441218aa042f6c0aa3e73&#34;&gt;
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;577a6a74939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@822012a316a441218aa042f6c0aa3e73&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  &lt;h2&gt;
+&lt;a id=&#34;user-content-lesson-goals&#34; class=&#34;anchor&#34; href=&#34;#lesson-goals&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Lesson Goals&lt;/h2&gt;
+&lt;p&gt;In this lesson we will learn how to customize our visualizations and make them more appealing.&lt;/p&gt;
+&lt;h2&gt;
+&lt;a id=&#34;user-content-introduction&#34; class=&#34;anchor&#34; href=&#34;#introduction&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;While it is possible to use the default mode for all visualizations and still get your message across just fine, customizing your visualizations makes you message clearer and your charts more visually appealing.&lt;/p&gt;
+&lt;h2&gt;
+&lt;a id=&#34;user-content-customizing-bar-graphs&#34; class=&#34;anchor&#34; href=&#34;#customizing-bar-graphs&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Customizing Bar Graphs&lt;/h2&gt;
+&lt;h3&gt;
+&lt;a id=&#34;user-content-adding-titles-legends-and-resizing&#34; class=&#34;anchor&#34; href=&#34;#adding-titles-legends-and-resizing&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Adding Titles, Legends and Resizing&lt;/h3&gt;
+&lt;p&gt;Adding a title can be done by passing a title argument to the graph function. A legend can be added by setting the legend argument to true. We can also resize by passing a width and a height to the figsize argument. For instance, using the vehicles dataset of previous lessons:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;vehicles[&#39;Drivetrain&#39;].value_counts().plot(kind=&#34;bar&#34;, title=&#34;Count of Vehicles by Type of Drivetrain&#34;, figsize=(10, 2), legend=True)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/c59f9911f1c2487407e26f162809680e461a4168/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f637573746f6d697a65642d6261722d67726170682e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/c59f9911f1c2487407e26f162809680e461a4168/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f637573746f6d697a65642d6261722d67726170682e706e67&#34; alt=&#34;customized bar graph&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/customized-bar-graph.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;
+&lt;a id=&#34;user-content-colors&#34; class=&#34;anchor&#34; href=&#34;#colors&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Colors&lt;/h3&gt;
+&lt;p&gt;When plotting a bar graph, we can use the standard color scheme but we can also use another color scheme.&lt;/p&gt;
+&lt;p&gt;Matplotlib has a long list of preset color maps.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/97e25d37100f8ea9d0f9168485646e55fd25a05d/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f636f6c6f726d61707333346338332e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/97e25d37100f8ea9d0f9168485646e55fd25a05d/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f636f6c6f726d61707333346338332e706e67&#34; alt=&#34;colormap&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/colormaps34c83.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The main issue is that these color maps have a set length that is sometimes longer than our data. In order to make sure that we get a diverse sampling from the color map, we must get the correct number of colors from the color map.&lt;/p&gt;
+&lt;p&gt;We do this by first finding out the number of unique values in our column:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;vehicles.Drivetrain.nunique()
+8
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then we generate an array of values 0 through one minus the number of unique values in the column&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;np.arange(vehicles.Drivetrain.nunique())
+array([0, 1, 2, 3, 4, 5, 6, 7])
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;We pick a colormap and apply the length to it. In this case we picked the paired color map.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;plt.cm.Paired(np.arange(vehicles.Drivetrain.nunique())
+array([[0.65098039, 0.80784314, 0.89019608, 1.        ],
+        [0.12156863, 0.47058824, 0.70588235, 1.        ],
+        [0.69803922, 0.8745098 , 0.54117647, 1.        ],
+        [0.2       , 0.62745098, 0.17254902, 1.        ],
+        [0.98431373, 0.60392157, 0.6       , 1.        ],
+        [0.89019608, 0.10196078, 0.10980392, 1.        ],
+        [0.99215686, 0.74901961, 0.43529412, 1.        ],
+        [1.        , 0.49803922, 0.        , 1.        ]]
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Finally, we plot our bar graph:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;vehicles[&#39;Drivetrain&#39;].value_counts().plot(kind=&#34;bar&#34;, color=plt.cm.Dark2(np.arange(vehicles.Drivetrain.nunique())))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/a1d293dac7833cd0c9c318a854f0a79ac518f9a9/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7061697265642d6261722d67726170682e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/a1d293dac7833cd0c9c318a854f0a79ac518f9a9/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f7061697265642d6261722d67726170682e706e67&#34; alt=&#34;paired bar graph&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/paired-bar-graph.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;
+&lt;a id=&#34;user-content-customizing-scatter-plots&#34; class=&#34;anchor&#34; href=&#34;#customizing-scatter-plots&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Customizing Scatter Plots&lt;/h2&gt;
+&lt;h3&gt;
+&lt;a id=&#34;user-content-changing-the-alpha&#34; class=&#34;anchor&#34; href=&#34;#changing-the-alpha&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Changing the Alpha&lt;/h3&gt;
+&lt;p&gt;The alpha channel measures opaqueness. Alpha varies in the interval [0, 1], where the 0 value corresponds to full transparency, and 1 to opaqueness. Sometimes points tend to get clumped together. Reducing the alpha (i.e. increasing transparency) helps us to clearly detect distinct points even when there is a dense cluster of points.&lt;/p&gt;
+&lt;p&gt;Notice that in the plot below it is hard to tell how many points overlap. However, in the following plot with alpha=0.2, it is easier to tell.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;vehicles.plot.scatter(x=&#34;CO2 Emission Grams/Mile&#34;, y=&#34;Fuel Barrels/Year&#34;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/6d470ab57a245373c889e06f179c31c28eae367c/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f656d7373696f6e732d7065722d62617272656c2e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/6d470ab57a245373c889e06f179c31c28eae367c/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f656d7373696f6e732d7065722d62617272656c2e706e67&#34; alt=&#34;emissions per barrel&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/emssions-per-barrel.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;vehicles.plot.scatter(x=&#34;CO2 Emission Grams/Mile&#34;, y=&#34;Fuel Barrels/Year&#34;, alpha=0.2)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/becd3033c64731f7e48f5a2d3a18ce77c0e6fbff/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f656d7373696f6e732d7065722d62617272656c30322e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/becd3033c64731f7e48f5a2d3a18ce77c0e6fbff/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f656d7373696f6e732d7065722d62617272656c30322e706e67&#34; alt=&#34;emissions per barrel&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/emssions-per-barrel02.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;
+&lt;a id=&#34;user-content-adding-a-grid&#34; class=&#34;anchor&#34; href=&#34;#adding-a-grid&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Adding a Grid&lt;/h3&gt;
+&lt;p&gt;Having a grid can help read a scatter plot. In order to add a grid, we set the grid argument to true.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;vehicles.plot.scatter(x=&#34;CO2 Emission Grams/Mile&#34;, y=&#34;Fuel Barrels/Year&#34;, alpha=0.2, grid=True)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/3358266139216b85c2d17cff4b02317467bdea4d/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f656d697373696f6e732d7065722d62617272656c2d677269642e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/3358266139216b85c2d17cff4b02317467bdea4d/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f656d697373696f6e732d7065722d62617272656c2d677269642e706e67&#34; alt=&#34;emissions per barrel&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/emissions-per-barrel-grid.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;
+&lt;a id=&#34;user-content-summary&#34; class=&#34;anchor&#34; href=&#34;#summary&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Summary&lt;/h2&gt;
+&lt;p&gt;In this lesson we learned various ways to customize visualizations in order to make them clearer. We now know how to add titles, legends, grid lines, resize visualizations and customize the color and the alpha.&lt;/p&gt;
+&lt;p&gt;Hopefully this will help you to make great visualizations in the future!&lt;/p&gt;
+
+&lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+  </div>
+  <div id="seq_contents_5"
+    aria-labelledby="tab_5"
+    aria-hidden="true"
+    class="seq_contents tex2jax_ignore asciimath2jax_ignore">
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-vertical&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;VerticalStudentView&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34; data-request-token=&#34;577a6a74939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@5bd9b674612b40cda218e0b6682dbc90&#34; data-block-type=&#34;vertical&#34;&gt;
+  
+
+  &lt;h2 class=&#34;hd hd-2 unit-title&#34;&gt;Telling Stories Using Graphs&lt;/h2&gt;
+
+    &lt;div class=&#34;ih-bookmark-button-wrapper&#34;&gt;
+    	
+
+
+
+&lt;div class=&#34;bookmark-button-wrapper&#34;&gt;
+  &lt;button class=&#34;btn btn-link bookmark-button &#34;
+    aria-pressed=&#34;false&#34;
+    data-bookmark-id=&#34;NoahB,block-v1:IRONHACK+DAFT+201906_MIA+type@vertical+block@5bd9b674612b40cda218e0b6682dbc90&#34;
+    data-bookmarks-api-url=&#34;/api/bookmarks/v1/bookmarks/&#34;&gt;
+     &lt;span class=&#34;bookmark-text&#34;&gt;Bookmark this page&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+
+    &lt;/div&gt;	
+
+&lt;div class=&#34;vert-mod&#34;&gt;
+  &lt;div class=&#34;vert vert-0&#34; data-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@0db9d55b7cb84c48875ce3d6797467f2&#34;&gt;
+    &lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;577a6a74939911e99a866e487447f8c8&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:IRONHACK+DAFT+201906_MIA+type@html+block@0db9d55b7cb84c48875ce3d6797467f2&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:IRONHACK+DAFT+201906_MIA&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  &lt;h2&gt;
+&lt;a id=&#34;user-content-lesson-goals&#34; class=&#34;anchor&#34; href=&#34;#lesson-goals&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Lesson Goals&lt;/h2&gt;
+&lt;p&gt;In this lesson we will go over the types of data comparisons and what visualizations are best suited for each one.&lt;/p&gt;
+&lt;h2&gt;
+&lt;a id=&#34;user-content-introduction&#34; class=&#34;anchor&#34; href=&#34;#introduction&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;There is an old saying that states, &lt;a href=&#34;https://en.wikipedia.org/wiki/A_picture_is_worth_a_thousand_words&#34; rel=&#34;nofollow&#34;&gt;a picture is worth a thousand words&lt;/a&gt;. People have been using pictures to tell stories and sell ideas for over a century. As data analysts or data scientists today, we are not limited to conducting analysis on data. We also want to use data to help us tell stories. People who can and have the patience to understand complex data are very few. Therefore, we need to use the &#34;picture&#34; way to tell our stories to people so that they can &#34;see&#34; complex data in the way we expect.&lt;/p&gt;
+&lt;p&gt;In this lesson we will first review two main principles of good storytelling with data visualization. Then we will examine the different types of relationships between data and the most appropriate choice of chart to visually represent each type of relationship.&lt;/p&gt;
+&lt;h2&gt;
+&lt;a id=&#34;user-content-principles-of-good-storytelling&#34; class=&#34;anchor&#34; href=&#34;#principles-of-good-storytelling&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Principles of Good Storytelling&lt;/h2&gt;
+&lt;p&gt;Good storytelling via data visualization has two main principles:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;To make the information we want to convey &lt;strong&gt;salient&lt;/strong&gt; and &lt;strong&gt;relevant&lt;/strong&gt; to the audience.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;To allow the audience to &lt;strong&gt;accurately&lt;/strong&gt; interpret the information we want to convey.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Data visualization is good at extracting relevant information from the real world and presenting a sustained &#34;snapshot&#34; so that the audience can examine in depth over time. However, even in data visualization, the information contained in the charts can still be overwhelming and noisy (i.e. having a lot of irrelevant information to distract the audience from the main point). Techniques must be employed to highlight the main information we want to convey so that the audience can capture it easily.&lt;/p&gt;
+&lt;p&gt;One example technique to present salient and relevant information is by using the appropriate visual mode (e.g. color, layout, size, perspective, etc.). Consider the following scenario where the audience is expected to &#34;see&#34; how frequent the word &lt;em&gt;data&lt;/em&gt; appears in an article. Which of the two presentations allows the audience to capture the information better?&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/2756a27768654dca60c3591e6fe7767d697b8339/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f636f6c6f722d6d6f64652e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/2756a27768654dca60c3591e6fe7767d697b8339/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f636f6c6f722d6d6f64652e706e67&#34; alt=&#34;Color Mode&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/color-mode.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;As seen in the example above, using the color mode can help the audience more easily capture the information you want to convey.&lt;/p&gt;
+&lt;p&gt;Sometimes we expect the audience to more accurately capture the information we present to them such as the relationships between data. In this case, we should choose the appropriate type of graph. Consider the following graphs that shows the &lt;strong&gt;big data IT application industry investiment structure in China&lt;/strong&gt; (according to data from China National Bureau of Statistics):&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/116ada1301c49af5558e97098ae58657ca516c15/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6269672d646174612d7374727563747572652d7069652e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/116ada1301c49af5558e97098ae58657ca516c15/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6269672d646174612d7374727563747572652d7069652e706e67&#34; alt=&#34;Big Data Structure Pie&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/big-data-structure-pie.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/f5996df4bcce5e516a5c85c33ba32492d3f64b1c/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6269672d646174612d7374727563747572652d6261722e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/f5996df4bcce5e516a5c85c33ba32492d3f64b1c/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f6269672d646174612d7374727563747572652d6261722e706e67&#34; alt=&#34;Big Data Structure Bar&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/big-data-structure-bar.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;As seen in the example above, pie graph allows the audience to better perceive the proportion of different data categories. And bar graph allows the audience to rank the data categories by value. Therefore, it is important to understand which graph type is appropriate to tell what kind of stories. In the rest of this lesson, we will have a deeper dive into the purposes of different types of graphs.&lt;/p&gt;
+&lt;h2&gt;
+&lt;a id=&#34;user-content-using-the-appropriate-type-of-graph-for-storytelling&#34; class=&#34;anchor&#34; href=&#34;#using-the-appropriate-type-of-graph-for-storytelling&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Using The Appropriate Type of Graph for Storytelling&lt;/h2&gt;
+&lt;p&gt;Next we will go over the graph types we have learned so far and explain when to use each type to present what kind of data relationships. We will use our vehicles dataset to demonstrate these visualizations.&lt;/p&gt;
+&lt;h3&gt;
+&lt;a id=&#34;user-content-scatter-plots&#34; class=&#34;anchor&#34; href=&#34;#scatter-plots&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Scatter Plots&lt;/h3&gt;
+&lt;p&gt;A clear and concise visualization that can be used to determine the existence and type of relationship between two variables is a &lt;strong&gt;scatter plot&lt;/strong&gt;. If we would like to plot 3 variables, we can add additional dimensions to our chart using color or size. However, we should be careful not to overload the chart with information. This will make our chart no longer clear and concise. For more than two variables that we would like to compare pairwise, we may opt to use a &lt;strong&gt;scatter matrix&lt;/strong&gt; instead. A scatter plot can help us detect whether there is a linear relationship between two variables or whether there is a different type of relationship (for example, an exponential or logarithmic relationship). In some cases, we may observe a random distribution of points which means there is no relationship between the two variables. Scatter plots are also useful in identifying outliers and certain aspects underlying in the distribution of our data.&lt;/p&gt;
+&lt;p&gt;The following scenarios are presented as examples for you to decide which type of scatter plot should be used in different situations.&lt;/p&gt;
+&lt;h4&gt;
+&lt;a id=&#34;user-content-scenario-1-two-variables&#34; class=&#34;anchor&#34; href=&#34;#scenario-1-two-variables&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Scenario 1: Two Variables&lt;/h4&gt;
+&lt;p&gt;We have two variables &lt;code&gt;City MPG&lt;/code&gt; and &lt;code&gt;Highway MPG&lt;/code&gt; which are linearly correlated. In this scenario, a single-color two-dimensional scatter plot is adequate to represent the linear relationship of the variables:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;vehicles.plot.scatter(x=&#34;City MPG&#34;, y=&#34;Highway MPG&#34;, alpha=0.2, grid=True)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/d1b423bc5763c008cdbf26c07e855a55095c2bc5/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f636974792d6d70672d76732d686967687761792d6d70672e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/d1b423bc5763c008cdbf26c07e855a55095c2bc5/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f636974792d6d70672d76732d686967687761792d6d70672e706e67&#34; alt=&#34;city mpg vs. highway mpg&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/city-mpg-vs-highway-mpg.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4&gt;
+&lt;a id=&#34;user-content-scenario-2-three-variables&#34; class=&#34;anchor&#34; href=&#34;#scenario-2-three-variables&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Scenario 2: Three Variables&lt;/h4&gt;
+&lt;p&gt;In addition to &lt;code&gt;City MPG&lt;/code&gt; and &lt;code&gt;Highway MPG&lt;/code&gt;, now we have a third variable: &lt;code&gt;CO2 Emission Grams/Mile&lt;/code&gt;. How to visualize the third dimension in a 2-dimensional scatter plot? The answer is to use point color or size.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;import seaborn as sns
+
+cmap = sns.cubehelix_palette(as_cmap=True)
+vehicles.plot.scatter(x=&#34;City MPG&#34;, y=&#34;Highway MPG&#34;, c=&#34;CO2 Emission Grams/Mile&#34;, cmap=cmap, alpha=0.2, grid=True)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/9e7dad3ac121f88be56b107982d795ece44d1f7c/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f636974792d6d70672d76732d686967687761792d6d70672d76732e656d697373696f6e732e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/9e7dad3ac121f88be56b107982d795ece44d1f7c/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f636974792d6d70672d76732d686967687761792d6d70672d76732e656d697373696f6e732e706e67&#34; alt=&#34;pandas scatter matrix&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/city-mpg-vs-highway-mpg-vs.emissions.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4&gt;
+&lt;a id=&#34;user-content-scenario-3-more-than-three-variables&#34; class=&#34;anchor&#34; href=&#34;#scenario-3-more-than-three-variables&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Scenario 3: More Than Three Variables&lt;/h4&gt;
+&lt;p&gt;But the vehicles dataset has 9 numeric variables. How do we visualize 9 variables in a 2-dimensional scatter plot? Well, a single scatter plot obviously does not meet our needs. We can use a scatter plot matrix to visualize the pair-wise relationships of those variables.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;pd.plotting.scatter_matrix(vehicles, figsize=(20,10))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/3db314805521b0abfd6842c10ae349fb2031c8a3/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f736361747465722d706c6f742e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/3db314805521b0abfd6842c10ae349fb2031c8a3/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f736361747465722d706c6f742e706e67&#34; alt=&#34;pandas line plot&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/scatter-plot.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;In the matrix above, the sub-plots in the diagonal can be ignored because they are each variable&#39;s relationship to itself. In other sub-plots, you can roughly tell some variables have linear relationships (e.g. &lt;code&gt;Fuel Barrels/Year&lt;/code&gt; vs &lt;code&gt;CO2 Emission Grams/Mile&lt;/code&gt;), curvilinear relationships (e.g. &lt;code&gt;Fuel Barrels/Year&lt;/code&gt; vs &lt;code&gt;Combined MPG&lt;/code&gt;), and no relationship (e.g. &lt;code&gt;Year&lt;/code&gt; vs all others).&lt;/p&gt;
+&lt;h3&gt;
+&lt;a id=&#34;user-content-line-charts&#34; class=&#34;anchor&#34; href=&#34;#line-charts&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Line Charts&lt;/h3&gt;
+&lt;p&gt;Line charts are similar to scatter plots. There are different ways to connect the points in a line chart. While we can simply connect the lines without looking for a trend, we can also create a linear trend or or use other methods like spline interpolation.&lt;/p&gt;
+&lt;p&gt;Using a line chart makes it easier to plot more than one variable at once using the same x and y axis. To do this, we must reshape the data first using the melt function.&lt;/p&gt;
+&lt;p&gt;The melt function will create a dataset that has all MPG values in one column and another column will indicate what type of MPG this is. We then use this indicator column for plotting the color.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;m = pd.melt(vehicles[[&#39;City MPG&#39;, &#39;Highway MPG&#39;, &#39;CO2 Emission Grams/Mile&#39;]], id_vars=&#39;CO2 Emission Grams/Mile&#39;, var_name=&#39;MPG&#39;)
+m
+
+	CO2 Emission Grams/Mile 	MPG 	value
+0 	    522.764706 	             City MPG 	 18
+1 	    683.615385 	             City MPG 	 13
+2 	    555.437500 	             City MPG 	 16
+3 	    683.615385 	             City MPG 	 13
+4 	    555.437500 	             City MPG 	 14
+... 	... 	... 	...
+71899 	    244.000000 	           Highway MPG 	 38
+71900 	    243.000000 	           Highway MPG 	 38
+71901 	    244.000000 	           Highway MPG 	 38
+71902 	    246.000000 	           Highway MPG 	 39
+71903 	    255.000000 	           Highway MPG 	 39
+
+71904 rows Г— 3 columns
+
+sns.lmplot(x=&#39;value&#39;,y=&#39;CO2 Emission Grams/Mile&#39;, hue=&#39;MPG&#39;, data=m,fit_reg=True) 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/b3f4d74a839c8023c760381749f46ac1a86cffbf/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f646f75626c652d6c696e652d706c6f742e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/b3f4d74a839c8023c760381749f46ac1a86cffbf/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f646f75626c652d6c696e652d706c6f742e706e67&#34; alt=&#34;double line plot&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/double-line-plot.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;
+&lt;a id=&#34;user-content-histograms&#34; class=&#34;anchor&#34; href=&#34;#histograms&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Histograms&lt;/h3&gt;
+&lt;p&gt;Histograms are typically used to illustrate the distribution of the data. Similar to scatter plots, histograms can also help us to identify outliers. Histograms can also show us whether there is a general trend of skewness or symmetry in the data. Histograms are a good choice for examining the distribution of one variable at a time. With a careful selection of bins, we can also identify whether the data has a single mode or whether it is bimodal or multimodal.&lt;/p&gt;
+&lt;p&gt;Recall that the default number of bins is 10.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;vehicles[&#39;City MPG&#39;].hist()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/c28d0215fc6306c6f7abc687b7e3a300660e15d8/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f636974792d6d70672d686973742e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/c28d0215fc6306c6f7abc687b7e3a300660e15d8/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f636974792d6d70672d686973742e706e67&#34; alt=&#34;city mpg hist&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/city-mpg-hist.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;vehicles[&#39;City MPG&#39;].hist(bins=20)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/ba1fce53bda58d23f743a43f2caceccbb0895934/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f636974792d6d70672d686973742d62696e732d32302e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/ba1fce53bda58d23f743a43f2caceccbb0895934/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f636974792d6d70672d686973742d62696e732d32302e706e67&#34; alt=&#34;city mpg hist bins=20&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/city-mpg-hist-bins-20.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;
+&lt;a id=&#34;user-content-bar-charts&#34; class=&#34;anchor&#34; href=&#34;#bar-charts&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Bar Charts&lt;/h3&gt;
+&lt;p&gt;Bar charts can be used to compare within categorical variables. We can use these charts for comparison between time periods (for example, this year vs. last year) or between two subgroups in the population (like males and females). In this example we are comparing two variables that describe a vehicle&#39;s MPG.&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;vehicles_mean = vehicles[[&#34;Highway MPG&#34;, &#34;City MPG&#34;, &#34;Drivetrain&#34;]].groupby([&#34;Drivetrain&#34;]).agg(&#34;mean&#34;)
+vehicles_mean.plot.barh()
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;a href=&#34;https://camo.githubusercontent.com/babdb42b432f0388a63bddb313a848f105a1a519/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f70616e6461732d736964652d62792d736964652d626172682e706e67&#34; target=&#34;_blank&#34; rel=&#34;nofollow&#34;&gt;&lt;img src=&#34;https://camo.githubusercontent.com/babdb42b432f0388a63bddb313a848f105a1a519/68747470733a2f2f73332d65752d776573742d312e616d617a6f6e6177732e636f6d2f69682d6d6174657269616c732f75706c6f6164732f646174612d7374617469632f696d616765732f70616e6461732d736964652d62792d736964652d626172682e706e67&#34; alt=&#34;city mpg hist bins=20&#34; data-canonical-src=&#34;https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/images/pandas-side-by-side-barh.png&#34; style=&#34;max-width:100%;&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3&gt;
+&lt;a id=&#34;user-content-pie-charts&#34; class=&#34;anchor&#34; href=&#34;#pie-charts&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Pie Charts&lt;/h3&gt;
+&lt;p&gt;Many experts in the field of data visualization recommend not using pie charts. Pie charts are intended to demonstrate the proportionate difference between the different groups in a categorical variable. However, looking at the different groups as a fraction of a whole means a loss of information about the original data. There are always better suited visualizations than pie charts. The most obvious alternative is a bar chart.&lt;/p&gt;
+&lt;h2&gt;
+&lt;a id=&#34;user-content-summary&#34; class=&#34;anchor&#34; href=&#34;#summary&#34; aria-hidden=&#34;true&#34;&gt;&lt;span aria-hidden=&#34;true&#34; class=&#34;octicon octicon-link&#34;&gt;&lt;/span&gt;&lt;/a&gt;Summary&lt;/h2&gt;
+&lt;p&gt;In this lesson we learned about the main types of visualizations and what they can be used for. We also learned which visualizations not to use in order to communicate our findings effectively.&lt;/p&gt;
+
+&lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+  </div>
+  <div id="seq_content" class="ih-learnig-unit" role="tabpanel"></div>
+
+  <nav class="sequence-bottom ih-js-fire-highlighting-controls" aria-label="Section">
+    <button class="sequence-nav-button button-previous">
+      <span class="icon fa fa-chevron-prev" aria-hidden="true"></span>
+      <span>Previous</span>
+    </button>
+    <button class="sequence-nav-button button-next">
+      <span>Next</span>
+      <span class="icon fa fa-chevron-next" aria-hidden="true"></span>
+    </button>
+  </nav>
+</div>
+
+</div>
+
+        </main>
+    </section>
+
+    <section class="courseware-results-wrapper">
+      <div id="loading-message" aria-live="polite" aria-relevant="all"></div>
+      <div id="error-message" aria-live="polite"></div>
+      <div class="courseware-results search-results" data-course-id="course-v1:IRONHACK+DAFT+201906_MIA" data-lang-code="en"></div>
+    </section>
+
+  </div>
+  
+
+
+
+
+
+
+
+
+
+    
+    
+    <script type="text/javascript" src="../../../../../static/bundles/CourseSock.43ffb68a30fa51e4e467.1f398818dd61.js" ></script>
+      <script type="text/javascript">
+        
+    new CourseSock({
+        el:'.verification-sock'
+    });
+
+      </script>
+
+
+</div>
+<div class="container-footer">
+</div>
+
+          
+        </div>
+      </div>
+
+    
+    
+
+      <div class="ih-beta-banner">
+        <span class="icon fa fa-flask"></span>
+        <span class="ih-beta-banner-text">We just launched a new version of the student platform. Everything should be fine, but if you encounter a bug, don't hesitate and send it our way.</span>
+      </div>
+
+  </div>
+
+  
+  
+  <script type="text/javascript" src="../../../../../static/common/js/vendor/jquery.scrollTo.525edcc52fe8.js"></script>
+  <script type="text/javascript" src="../../../../../static/js/vendor/flot/jquery.flot.d3d45ff0c6a8.js"></script>
+
+  
+    <script type="text/javascript" src="../../../../../static/js/lms-courseware.43ed60564822.js" charset="utf-8"></script>
+
+
+  
+
+
+
+<script type="text/javascript">
+    // Fast Preview was introduced in 2.5. However, it
+    // causes undesirable flashing/font size changes when
+    // MathJax is used for interactive preview (equation editor).
+    // Setting processSectionDelay to 0 (see below) fully eliminates
+    // fast preview, but to reduce confusion, we are also setting
+    // the option as displayed in the context menu to false.
+    // When upgrading to 2.6, check if this variable name changed.
+    window.MathJax = {
+      menuSettings: {CHTMLpreview: false}
+    };
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [
+        ["\\(","\\)"],
+        ['[mathjaxinline]','[/mathjaxinline]']
+      ],
+      displayMath: [
+        ["\\[","\\]"],
+        ['[mathjax]','[/mathjax]']
+      ]
+    }
+  });
+</script>
+<script type="text/x-mathjax-config">
+
+  // In order to eliminate all flashing during interactive
+  // preview, it is necessary to set processSectionDelay to 0
+  // (remove delay between input and output phases). This
+  // effectively disables fast preview, regardless of
+  // the fast preview setting as shown in the context menu.
+  MathJax.Hub.processSectionDelay = 0;
+
+  MathJax.Hub.signal.Interest(function(message) {
+    if(message[0] === "End Math") {
+        set_mathjax_display_div_settings();
+    }
+  });
+  function set_mathjax_display_div_settings() {
+    $('.MathJax_Display').each(function( index ) {
+      this.setAttribute('tabindex', '0');
+      this.setAttribute('aria-live', 'off');
+      this.removeAttribute('role');
+      this.removeAttribute('aria-readonly');
+    });
+  }
+</script>
+
+
+<!-- This must appear after all mathjax-config blocks, so it is after the imports from the other templates.
+     It can't be run through static.url because MathJax uses crazy url introspection to do lazy loading of
+     MathJax extension libraries -->
+<script type="text/javascript" src="../../../../../../cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJaxf4fa.js?config=TeX-MML-AM_SVG"></script>
+
+
+    
+    
+      <script type="text/javascript" src="../../../../../static/course_search/js/course_search_factory.26a9d7197c46bdd1.js?raw"></script>
+    <script type="text/javascript">
+        (function (require) {
+            require(['course_search/js/course_search_factory'], function (CourseSearchFactory) {
+                
+        var courseId = $('.courseware-results').data('courseId');
+        CourseSearchFactory({
+            courseId: courseId,
+            searchHeader: $('.search-bar')
+        });
+    
+            });
+        }).call(this, require || RequireJS.require);
+    </script>
+
+
+  
+    
+      <script type="text/javascript" src="../../../../../static/js/courseware/courseware_factory.1504fc10caefbdd1.js?raw"></script>
+    <script type="text/javascript">
+        (function (require) {
+            require(['js/courseware/courseware_factory'], function (CoursewareFactory) {
+                
+    CoursewareFactory();
+  
+            });
+        }).call(this, require || RequireJS.require);
+    </script>
+
+
+
+  <script type="text/javascript">
+    var $$course_id = "course\u002Dv1:IRONHACK+DAFT+201906_MIA";
+  </script>
+
+
+
+
+
+
+  
+
+
+
+  <script type="text/javascript" src="../../../../../static/js/vendor/noreferrer.aa62a3e70ffa.js" charset="utf-8"></script>
+  <script type="text/javascript" src="../../../../../static/js/utils/navigation.08930e16ab3d.js" charset="utf-8"></script>
+  <script type="text/javascript" src="../../../../../static/js/header/header.309a1243e175.js"></script>
+  
+
+  
+
+    <script type="text/javascript" src="../../../../../static/ih-lms-theme/js/vendor/highlight.min.496e109b43ca.js" ></script>
+    <script type="text/javascript" src="../../../../../static/ih-lms-theme/js/vendor/ih-highlight.0f32f131ba83.js" ></script>
+  
+</body>
+</html>
+
+
